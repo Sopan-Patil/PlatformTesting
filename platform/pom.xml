@@ -5,6 +5,46 @@
   <artifactId>Platform</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
+   <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+<dependency>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>2.9.0</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.beust/jcommander -->
+<dependency>
+    <groupId>com.beust</groupId>
+    <artifactId>jcommander</artifactId>
+    <version>1.81</version>
+</dependency>
+
+  
+  <dependency>
+
+<groupId>com.googlecode.json-simple</groupId>
+
+<artifactId>json-simple</artifactId>
+
+<version>1.1.1</version>
+
+</dependency>
+ <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.4.0</version>
+    <!-- <scope>test</scope> -->
+</dependency>
+  
+  <dependency>
+
+<groupId>com.browserstack</groupId>
+
+<artifactId>browserstack-local-java</artifactId>
+
+<version>0.1.0</version>
+
+</dependency>
   	     <dependency>
     <groupId>com.stripe</groupId>
     <artifactId>stripe-java</artifactId>
@@ -15,6 +55,12 @@
 			<artifactId>cucumber-java</artifactId>
 			<version>1.2.5</version>			
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-server</artifactId>
+    <version>4.0.0-alpha-2</version>
+</dependency>
 		
 		<dependency>
     			<groupId>info.cukes</groupId>
@@ -93,6 +139,26 @@
 	    <artifactId>selenium-firefox-driver</artifactId>
 	    <version>3.11.0</version>
 	</dependency>
+	<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>4.4.3</version>
+</dependency>
+
+   <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>3.141.59</version>
+</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.0.0-beta-4</version>
+</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
 	<dependency>

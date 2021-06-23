@@ -23,10 +23,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/Sopan/Project/Automation/jar/selenium-server-4.0.0-beta-4.jar"/>
-	<classpathentry kind="lib" path="D:/Sopan/Project/Automation/jar/comm-win32_all-2.0.1.jar"/>
-	<classpathentry kind="lib" path="D:/Sopan/Project/Automation/jar/stripe-java-16.4.0-javadoc.jar"/>
-	<classpathentry kind="lib" path="D:/Sopan/Project/Automation/cucumber-junit-1.1.1.jar/cucumber-junit-1.1.1.jar"/>
-	<classpathentry kind="lib" path="D:/Sopan/Project/Automation/selenium-chrome-driver-2.26.0.jar/selenium-chrome-driver-2.26.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
