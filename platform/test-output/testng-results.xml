@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="oneshift" duration-ms="28738" started-at="2018-09-05T20:03:29Z" finished-at="2018-09-05T20:03:58Z">
+    <groups>
+    </groups>
+    <test name="oneshift" duration-ms="28738" started-at="2018-09-05T20:03:29Z" finished-at="2018-09-05T20:03:58Z">
+      <class name="poc.JiraLogin">
+        <test-method status="PASS" signature="openbrowser()[pri:0, instance:poc.JiraLogin@281e3708]" name="openbrowser" is-config="true" duration-ms="5691" started-at="2018-09-05T13:03:23Z" finished-at="2018-09-05T13:03:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openbrowser -->
+        <test-method status="PASS" signature="jiralogin()[pri:0, instance:poc.JiraLogin@281e3708]" name="jiralogin" duration-ms="28723" started-at="2018-09-05T13:03:29Z" finished-at="2018-09-05T13:03:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- jiralogin -->
+        <test-method status="PASS" signature="setTestResult(org.testng.ITestResult)[pri:0, instance:poc.JiraLogin@281e3708]" name="setTestResult" is-config="true" duration-ms="1" started-at="2018-09-05T13:03:58Z" finished-at="2018-09-05T13:03:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=jiralogin status=SUCCESS method=JiraLogin.jiralogin()[pri:0, instance:poc.JiraLogin@281e3708] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestResult -->
+        <test-method status="PASS" signature="closebroswer()[pri:0, instance:poc.JiraLogin@281e3708]" name="closebroswer" is-config="true" duration-ms="2291" started-at="2018-09-05T13:03:58Z" finished-at="2018-09-05T13:04:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closebroswer -->
+      </class> <!-- poc.JiraLogin -->
+    </test> <!-- oneshift -->
+  </suite> <!-- oneshift -->
+</testng-results>
