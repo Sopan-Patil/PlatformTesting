@@ -1,21 +1,26 @@
-package platformstepdefinition;
+package base;
 
 import java.time.LocalDateTime;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 
-import platform.platformobjects.LoginPage;
-import platformproperties.ConfigProp;
+import platform.properties.ConfigProp;
 import utils.ObjectHelper;
 import utils.WebHandler;
 
+/**
+ * Author : Chetan Sonparote Date of Modification : 24 Jun 2021 Description:
+ * Added public driver and removed static refrences
+ */
 public class NewBaseClass {
 
-	public static LoginPage lp;
+	public WebDriver driver;
+	// public static LoginPage lp;
 
 	public static String greencolorRGB = "rgb(179, 198, 53)";
 
-	public void openbrowser() throws Exception {
+	public /* void */ WebDriver openbrowser() throws Exception {
 
 		String testDataFileName = ConfigProp.testDataFile;
 		ObjectHelper.enviURL = ConfigProp.platformenvironmentURL;
@@ -36,7 +41,8 @@ public class NewBaseClass {
 		ObjectHelper.driver.navigate().to(ObjectHelper.enviURL);// API
 		replaceurl();
 
-		lp = new LoginPage(ObjectHelper.driver);
+		// lp = new LoginPage(ObjectHelper.driver);
+		return ObjectHelper.driver;
 
 	}
 
@@ -45,7 +51,7 @@ public class NewBaseClass {
 		String newURL = ObjectHelper.driver.getCurrentUrl().replace("https://", "https://sgepuser:9tg6gxxCEaL3@");
 		System.out.println(newURL);
 		ObjectHelper.driver.get(newURL);
-		ObjectHelper.driver.manage().window().maximize();
+		// ObjectHelper.driver.manage().window().maximize();
 	}
 
 	public void closebrowser() {

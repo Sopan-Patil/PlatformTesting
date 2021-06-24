@@ -11,7 +11,7 @@ import cucumber.api.CucumberOptions;
 @ExtendedCucumberOptions(jsonReport = "target/cucumber.json", overviewReport = true, outputFolder = "target")
 
 @CucumberOptions(monochrome = true, strict = false, dryRun = false, features = {
-		".//src//main//java//platformfeatures/PFQA_123_1.feature"
+		".//src//test//java//platformfeatures/PFQA_123_1.feature"
 
 }, glue = { "platformstepdefinition" }, tags = { "@FunctionalTest" }, plugin = { "pretty",
 		"html:target/cucumber_html_report", "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",

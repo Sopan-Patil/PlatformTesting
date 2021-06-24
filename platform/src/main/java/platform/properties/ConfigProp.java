@@ -1,4 +1,4 @@
-package platformproperties;
+package platform.properties;
 
 public class ConfigProp {
 
