@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.poi.ss.usermodel.Chart;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -32,9 +33,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.configuration.Config;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.aventstack.extentreports.reporter.configuration.ChartLocation;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import reporting.HTMLReportFormat;
 
@@ -164,7 +163,7 @@ public class WebHandler {
 			writer.write("");
 			writer.close();
 
-			ObjectHelper.htmlReporter = new ExtentHtmlReporter(
+			ObjectHelper.htmlReporter = new /*ExtentHtmlReporter*/ExtentSparkReporter(
 					new File(".", ObjectHelper.reportsFolder + "//" + reportname + ".html").getAbsolutePath());
 			ObjectHelper.reports = new ExtentReports();
 
@@ -174,14 +173,16 @@ public class WebHandler {
 			ObjectHelper.reports.setSystemInfo("User Name", System.getProperty("user.name"));
 			ObjectHelper.reports.setSystemInfo("OS Version", System.getProperty("os.name"));
 
-			ObjectHelper.htmlReporter.loadConfig(
+			ObjectHelper.htmlReporter.loadXMLConfig/*loadConfig*/(
 					new File(".", ObjectHelper.reportsFolder + "//" + reportname + ".html").getAbsolutePath()); // modifying
 			// report
 
-			ObjectHelper.htmlReporter.config().setChartVisibilityOnOpen(true);
+			//ObjectHelper.htmlReporter.config().setChartVisibilityOnOpen(true);
+			//ObjectHelper.htmlReporter.config().set
 			ObjectHelper.htmlReporter.config().setDocumentTitle(title);
 			ObjectHelper.htmlReporter.config().setReportName(reportname);
-			ObjectHelper.htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
+			//ObjectHelper.htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
+			//ObjectHelper.htmlReporter.config().setTestViewChartLocation(TOP);
 
 			ObjectHelper.reports.flush();
 			ObjectHelper.reportfilepath = ObjectHelper.reportsFolder + "//" + reportname + ".html";

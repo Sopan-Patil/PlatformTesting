@@ -186,11 +186,12 @@
 	</dependency>
 	
 	<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-	<dependency>
-	    <groupId>com.aventstack</groupId>
-	    <artifactId>extentreports</artifactId>
-	    <version>3.0.6</version>	     	  
-	</dependency>
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>5.0.8</version>
+</dependency>
+
 	
 	 <dependency>
 		  <groupId>org.testng</groupId>

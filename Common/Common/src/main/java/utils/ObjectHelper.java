@@ -5,7 +5,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
+
 
 public class ObjectHelper {
 	public static WebDriver driver;
@@ -27,7 +29,8 @@ public class ObjectHelper {
 	/***********************************/
 
 	public static ExtentReports reports;
-	public static ExtentHtmlReporter htmlReporter;
+	//public static ExtentHtmlReporter htmlReporter;
+	public static ExtentSparkReporter htmlReporter;
 	public static ExtentTest test;
 
 	public static String placeholder_url = "https://google.com";
