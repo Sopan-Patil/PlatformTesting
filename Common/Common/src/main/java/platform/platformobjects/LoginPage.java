@@ -1,10 +1,14 @@
 package platform.platformobjects;
 
 import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 import utils.CommonFunctions;
 
 public class LoginPage {
@@ -27,8 +31,11 @@ public class LoginPage {
 		PageFactory.initElements(driver, this);
 	}
 
+	private static Logger log = LogManager.getLogger(LoginPage.class.getName());
+	
 	public static void Platform_LogIn() throws Exception {
 		LoginPage.logInButton.click();
+		log.info("Login button is clicked");
 		LoginPage.emailtextfield.click();
 		LoginPage.emailtextfield.sendKeys("Sopan181");
 		LoginPage.passwordTextField.sendKeys("Test-123");
