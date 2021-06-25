@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
 import base.NewBaseClass;
@@ -45,12 +46,13 @@ public class LoginVerification extends NewBaseClass {
 	 * 
 	 * @Optional("null") String environment) throws Exception {
 	 */
-	public void initialize() throws Exception {
+	@org.testng.annotations.Parameters(value = { "localBrowser" })
+	public void initialize(@Optional("null") String localBrowser) throws Exception {
 
 		// driver = getDriver(localBrowser, config, environment);
 
 		// driver.get(getEnvironmentURL());
-		driver = openbrowser();
+		driver = openbrowser(localBrowser);
 
 		log.info("Navigated to topPage");
 	}

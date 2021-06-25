@@ -1,9 +1,21 @@
 package platform.properties;
 
+/**
+ * Author : Chetan Sonparote Date of Modification : 25 Jun 2021 Description:
+ * Added envrionment variables and run mode. Move it to properties file later
+ */
+
 public class ConfigProp {
 
 	public static String browser = "chrome";
-	public static String platformenvironmentURL = "https://stg.studygear.evidus.net/";
+
+	// Environment wise URL below
+	public static String stageURL = "https://stg.studygear.evidus.net/";
+	public static String devURL = "https://dev.studygear.evidus.net/";
+	public static String prdURL = "https://prd-studygear.evidus.net/";
+
+	public static String platformEnvironmentURL = stageURL;
+
 	public static String user = "sgepuser";
 	public static String password = "9tg6gxxCEaL3";
 	public static String newtestDataFile = "newtestdata.xlsx";

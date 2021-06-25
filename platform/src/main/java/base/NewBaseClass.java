@@ -24,18 +24,20 @@ public class NewBaseClass {
 
 	public static String greencolorRGB = "rgb(179, 198, 53)";
 
-	public /* void */ WebDriver openbrowser(/* String browser */) throws Exception {
+	public /* void */ WebDriver openbrowser(String browser) throws Exception {
 
 		String testDataFileName = ConfigProp.testDataFile;
-		ObjectHelper.enviURL = ConfigProp.platformenvironmentURL;
+		ObjectHelper.enviURL = ConfigProp.platformEnvironmentURL;
 
 		ObjectHelper.sendreportinemail = ConfigProp.sendreportinemail;
 
-		/*
-		 * if (browser == null) { ObjectHelper.browsertype = ConfigProp.browser; } else
-		 * { ObjectHelper.browsertype = browser;// ConfigProp.browser; }
-		 */
-		ObjectHelper.browsertype = ConfigProp.browser;
+		if (browser == null) {
+			ObjectHelper.browsertype = ConfigProp.browser;
+		} else {
+			ObjectHelper.browsertype = browser;// ConfigProp.browser;
+		}
+
+		// ObjectHelper.browsertype = ConfigProp.browser;
 
 		ObjectHelper.dburl = ConfigProp.dburl;
 
