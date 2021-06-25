@@ -4,6 +4,7 @@
   <groupId>Platform</groupId>
   <artifactId>Platform</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
   <dependencies>
    <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 <dependency>
@@ -217,7 +218,9 @@
 		<artifactId>common</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 		<scope>compile</scope>	
-	 </dependency>
+		<type>jar</type>
+		
+		  </dependency>
    	
    	<!-- https://mvnrepository.com/artifact/org.json/json -->
 	<dependency>
