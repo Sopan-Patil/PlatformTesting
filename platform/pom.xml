@@ -212,11 +212,11 @@
             <version>3.17</version>
      </dependency>
      
-     <!--  <dependency>
+      <dependency>
 		<groupId>Platform</groupId>
 		<artifactId>Common</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-	 </dependency> -->
+	 </dependency>
    	
    	<!-- https://mvnrepository.com/artifact/org.json/json -->
 	<dependency>
