@@ -305,7 +305,10 @@
 						<configuration>						 
 					       <includes>
 					       		<exclude>**/*PlatformTestRunners.java</exclude>
-					       </includes>							
+					       </includes>	
+					        <suiteXmlFiles>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>						
 						</configuration>
 					</plugin>
 				</plugins>
