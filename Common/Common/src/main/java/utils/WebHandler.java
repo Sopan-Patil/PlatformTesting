@@ -67,8 +67,12 @@ public class WebHandler {
 		
 		} else if (ObjectHelper.browsertype.equals("firefox")) {
 
-			System.setProperty("webdriver.gecko.driver",
-					new File(".", "\\Drivers\\geckodriver_3_11.exe").getAbsolutePath());
+			/*
+			 * System.setProperty("webdriver.gecko.driver", new File(".",
+			 * "\\Drivers\\geckodriver_3_11.exe").getAbsolutePath());
+			 */
+			WebDriverManager.firefoxdriver().setup();
+			
 			FirefoxOptions ffOptions = new FirefoxOptions();
 			FirefoxProfile ffprofile = new FirefoxProfile();
 			ffprofile.setPreference("browser.download.folderList", 2);

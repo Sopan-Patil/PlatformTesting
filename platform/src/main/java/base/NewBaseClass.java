@@ -13,6 +13,10 @@ import utils.WebHandler;
  * Author : Chetan Sonparote Date of Modification : 24 Jun 2021 Description:
  * Added public driver and removed static refrences
  */
+/**
+ * Author : Chetan Sonparote Date of Modification : 25 Jun 2021 Description:
+ * Added string on openbrowser for single and cross browser test
+ */
 public class NewBaseClass {
 
 	public WebDriver driver;
@@ -20,13 +24,19 @@ public class NewBaseClass {
 
 	public static String greencolorRGB = "rgb(179, 198, 53)";
 
-	public /* void */ WebDriver openbrowser() throws Exception {
+	public /* void */ WebDriver openbrowser(/* String browser */) throws Exception {
 
 		String testDataFileName = ConfigProp.testDataFile;
 		ObjectHelper.enviURL = ConfigProp.platformenvironmentURL;
 
 		ObjectHelper.sendreportinemail = ConfigProp.sendreportinemail;
+
+		/*
+		 * if (browser == null) { ObjectHelper.browsertype = ConfigProp.browser; } else
+		 * { ObjectHelper.browsertype = browser;// ConfigProp.browser; }
+		 */
 		ObjectHelper.browsertype = ConfigProp.browser;
+
 		ObjectHelper.dburl = ConfigProp.dburl;
 
 		String dirName = "Test At " + LocalDateTime.now().toString().replace(":", ".");
