@@ -35,21 +35,30 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import reporting.HTMLReportFormat;
-
+/**
+ * Author : Chetan Sonparote
+ *  Date of Modification : 25 Jun 2021 
+ *  Description: Added WebDriverManager
+ */
 public class WebHandler {
 
 	public static void openBrowser() {
 
 		if (ObjectHelper.browsertype.equals("chrome")) {
 
-			System.setProperty("webdriver.chrome.driver",
-					new File(".", "\\Drivers\\chromedriver91.exe").getAbsolutePath());
-			///// To set the download folder
-			String downloadFilepath = new File(".", ObjectHelper.downloadsFolder).getAbsolutePath();
-			HashMap<String, Object> chromePreferences = new HashMap<String, Object>();
-			chromePreferences.put("profile.default_content_settings.popups", 0);
-			chromePreferences.put("download.default_directory", downloadFilepath);
+			/*
+			 * System.setProperty("webdriver.chrome.driver", new File(".",
+			 * "\\Drivers\\chromedriver91.exe").getAbsolutePath()); ///// To set the
+			 * download folder String downloadFilepath = new File(".",
+			 * ObjectHelper.downloadsFolder).getAbsolutePath(); HashMap<String, Object>
+			 * chromePreferences = new HashMap<String, Object>();
+			 * chromePreferences.put("profile.default_content_settings.popups", 0);
+			 * chromePreferences.put("download.default_directory", downloadFilepath);
+			 */
+			
+			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 			//options.setExperimentalOption("prefs", chromePreferences);
 			ObjectHelper.driver = new ChromeDriver(options);
@@ -86,9 +95,11 @@ public class WebHandler {
 			setobjects();
 
 		} else if (ObjectHelper.browsertype.equals("edge")) {
-
-			System.setProperty("webdriver.edge.driver",
-					new File(".", "\\Drivers\\MicrosoftWebDriver.exe").getAbsolutePath());
+			/*
+			 * System.setProperty("webdriver.edge.driver", new File(".",
+			 * "\\Drivers\\MicrosoftWebDriver.exe").getAbsolutePath());
+			 */
+			WebDriverManager.edgedriver().setup();
 			ObjectHelper.driver = new EdgeDriver();
 
 		} else if (ObjectHelper.browsertype.equals("ie")) {
