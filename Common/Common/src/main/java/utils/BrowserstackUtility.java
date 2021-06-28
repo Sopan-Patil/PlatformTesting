@@ -22,14 +22,16 @@ import org.apache.hc.core5.http.NameValuePair;
 import org.apache.hc.core5.http.message.BasicNameValuePair;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.json.JSONObject;
+import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.SessionId;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Optional;
+import org.testng.annotations.Test;
 
 import com.browserstack.local.Local;
 
@@ -56,6 +58,7 @@ public class BrowserstackUtility {
 
 	// @BeforeMethod(alwaysRun=true)
 	// @org.testng.annotations.Parameters(value={"config", "environment"})
+	@Test
 	public  WebDriver initializaBrowserstackDriver(@Optional("local.conf.json") String config_file,
 			@Optional("chrome") String environment) throws Exception {
 		 loadPropertiesFile();
@@ -83,15 +86,7 @@ public class BrowserstackUtility {
 			}
 		}
 
-		/*
-		 * String username = System.getenv("BROWSERSTACK_USERNAME"); if (username ==
-		 * null) { username = (String) config.get("user"); }
-		 * 
-		 * String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY"); if (accessKey ==
-		 * null) { accessKey = (String) config.get("key"); }
-		 */
-
-	//	ConfigProp configProp = new ConfigProp();
+	
 
 		String username =  properties.getProperty("BROWSERSTACK_USERNAME");
 		String accessKey =  properties.getProperty("BROWSERSTACK_ACCESS_KEY");
@@ -113,55 +108,18 @@ public class BrowserstackUtility {
 				new URL("https://" + username + ":" + accessKey + "@" + config.get("server") + "/wd/hub"),
 				capabilities);
 
-		// object helper code here
-		/*
-		 * String testDataFileName = ConfigProp.testDataFile; ObjectHelper.enviURL =
-		 * ConfigProp.platformEnvironmentURL;
-		 * 
-		 * ObjectHelper.sendreportinemail = ConfigProp.sendreportinemail;
-		 */
-//		if (ConfigProp.runMode.equalsIgnoreCase("localBrowser")) {
-
-		/*
-		 * if (browser == null) { ObjectHelper.browsertype = ConfigProp.browser; } else
-		 * { ObjectHelper.browsertype = browser;// ConfigProp.browser; }
-		 */
-		// }
-
-//		if (ConfigProp.runMode.equalsIgnoreCase("browserstack")) {
-//			BrowserstackUtility browserstackUtility = new BrowserstackUtility();
-//		}
-
-		// ObjectHelper.browsertype = ConfigProp.browser;
-
-		/*
-		 * ObjectHelper.dburl = ConfigProp.dburl;
-		 * 
-		 * String dirName = "Test At " + LocalDateTime.now().toString().replace(":",
-		 * "."); WebHandler.setupOutputFolder(dirName);
-		 * 
-		 * ObjectHelper.testtitle = ConfigProp.testtitle; ObjectHelper.reportfilepath =
-		 * "//ExtentReport//UPP_Status_Report.html";
-		 * 
-		 * WebHandler.openBrowser(); WebHandler.createextentreport("Platform Testing",
-		 * ObjectHelper.testtitle, ObjectHelper.enviURL);
-		 * 
-		 * ObjectHelper.driver.navigate().to(ObjectHelper.enviURL);// API
-		 */		// replaceurl();
-
-		// lp = new LoginPage(ObjectHelper.driver);
-
-		// object helper end here
+		
 
 		SessionId session = ((RemoteWebDriver) driver).getSessionId();
-		// System.out.println("Session id: " + session.toString());
+		
 		mark(session, username, accessKey);
 
 		 return driver;
-		//return ObjectHelper.driver;
+		
 	}
 
-	@AfterMethod(alwaysRun = true)
+	//@AfterMethod(alwaysRun = true)
+	@AfterTest(alwaysRun = true)
 	public void tearDown() throws Exception {
 		driver.quit();
 		if (l != null)

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 
 import platform.properties.ConfigProp;
+import utils.BrowserstackUtility;
 import utils.ObjectHelper;
 import utils.WebHandler;
 
@@ -20,8 +21,8 @@ import utils.WebHandler;
 
 /**
  * Author : Chetan Sonparote Date of Modification : 28 Jun 2021 Description:
- * Added setUpOpenhelper(), navigateToUrl(), createExtentReport() by breaking up
- * openBrowser() for browserstack
+ * Added setUpObjectHelper(), navigateToUrl(), createExtentReport() by breaking
+ * up openBrowser() for browserstack
  */
 public class NewBaseClass {
 
@@ -30,7 +31,7 @@ public class NewBaseClass {
 
 	public static String greencolorRGB = "rgb(179, 198, 53)";
 
-	private void setUpOpenhelper() {
+	private void setUpObjectHelper() {
 		String testDataFileName = ConfigProp.testDataFile;
 		ObjectHelper.enviURL = ConfigProp.platformEnvironmentURL;
 
@@ -54,6 +55,20 @@ public class NewBaseClass {
 		WebHandler.createextentreport("Platform Testing", ObjectHelper.testtitle, ObjectHelper.enviURL);
 	}
 
+	public WebDriver openBrowserstack(String config, String environment) throws Exception {
+		BrowserstackUtility browserstackUtility = new BrowserstackUtility();
+
+		ObjectHelper.driver = browserstackUtility.initializaBrowserstackDriver(config, environment);
+		// setObjectHelper();
+		setUpObjectHelper();
+
+		// WebHandler.openBrowser();
+
+		createExtentReport();
+		navigateToUrl();
+		return ObjectHelper.driver;
+	}
+
 	public WebDriver openbrowser(String browser) throws Exception {
 
 		if (browser == null) {
@@ -62,7 +77,7 @@ public class NewBaseClass {
 			ObjectHelper.browsertype = browser;
 		}
 
-		setUpOpenhelper();
+		setUpObjectHelper();
 
 		WebHandler.openBrowser();
 

@@ -14,6 +14,11 @@ import platform.pageobjects.LoginPage;
  * Author : Chetan Sonparote Date of Modification : 25 Jun 2021 Description:
  * Modified method to accept browser parameter from feature file
  */
+
+/**
+ * Author : Chetan Sonparote Date of Modification : 28 Jun 2021 Description:
+ * Added method for browserstack
+ */
 @RunWith(Cucumber.class)
 public class PFQA_123_1 extends NewBaseClass {
 
@@ -36,6 +41,7 @@ public class PFQA_123_1 extends NewBaseClass {
 
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.loginToPlatform();
+		// closebrowser();
 
 	}
 
@@ -44,4 +50,16 @@ public class PFQA_123_1 extends NewBaseClass {
 		// throw new PendingException();
 		closebrowser();
 	}
+
+	@Given("^Navigate to URL with (.+) and (.+) PFQA_123_1$")
+	public void navigate_to_url_with_and_pfqa1231(String config, String environment) throws Throwable {
+		// throw new PendingException();
+		driver = openBrowserstack(config, environment);
+
+	}
+
+	/*
+	 * @AfterTest public void tearDown() { driver.quit(); }
+	 */
+
 }
