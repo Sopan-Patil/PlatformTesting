@@ -17,6 +17,12 @@ import utils.WebHandler;
  * Author : Chetan Sonparote Date of Modification : 25 Jun 2021 Description:
  * Added string on openbrowser for single and cross browser test
  */
+
+/**
+ * Author : Chetan Sonparote Date of Modification : 28 Jun 2021 Description:
+ * Added setUpOpenhelper(), navigateToUrl(), createExtentReport() by breaking up
+ * openBrowser() for browserstack
+ */
 public class NewBaseClass {
 
 	public WebDriver driver;
@@ -24,20 +30,11 @@ public class NewBaseClass {
 
 	public static String greencolorRGB = "rgb(179, 198, 53)";
 
-	public /* void */ WebDriver openbrowser(String browser) throws Exception {
-
+	private void setUpOpenhelper() {
 		String testDataFileName = ConfigProp.testDataFile;
 		ObjectHelper.enviURL = ConfigProp.platformEnvironmentURL;
 
 		ObjectHelper.sendreportinemail = ConfigProp.sendreportinemail;
-
-		if (browser == null) {
-			ObjectHelper.browsertype = ConfigProp.browser;
-		} else {
-			ObjectHelper.browsertype = browser;// ConfigProp.browser;
-		}
-
-		// ObjectHelper.browsertype = ConfigProp.browser;
 
 		ObjectHelper.dburl = ConfigProp.dburl;
 
@@ -46,14 +43,32 @@ public class NewBaseClass {
 
 		ObjectHelper.testtitle = ConfigProp.testtitle;
 		ObjectHelper.reportfilepath = "//ExtentReport//UPP_Status_Report.html";
+	}
 
-		WebHandler.openBrowser();
-		WebHandler.createextentreport("Platform Testing", ObjectHelper.testtitle, ObjectHelper.enviURL);
-
+	private void navigateToUrl() {
 		ObjectHelper.driver.navigate().to(ObjectHelper.enviURL);// API
 		replaceurl();
+	}
 
-		// lp = new LoginPage(ObjectHelper.driver);
+	private void createExtentReport() {
+		WebHandler.createextentreport("Platform Testing", ObjectHelper.testtitle, ObjectHelper.enviURL);
+	}
+
+	public WebDriver openbrowser(String browser) throws Exception {
+
+		if (browser == null) {
+			ObjectHelper.browsertype = ConfigProp.browser;
+		} else {
+			ObjectHelper.browsertype = browser;
+		}
+
+		setUpOpenhelper();
+
+		WebHandler.openBrowser();
+
+		createExtentReport();
+		navigateToUrl();
+
 		return ObjectHelper.driver;
 
 	}
