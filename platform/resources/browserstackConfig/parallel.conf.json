@@ -1,0 +1,23 @@
+{
+  "server": "hub-cloud.browserstack.com",
+ 
+
+  "capabilities": {
+    "build": "browserstack-build-parallel",
+    "name": "parallel_test",
+    "browserstack.debug": true
+  },
+
+  "environments": {
+    "env1": {
+      "browser": "chrome"
+    },
+    "env2": {
+      "browser": "firefox"
+    },
+    "env3": {
+      "os": "OS X",
+      "browser": "safari"
+    }
+  }
+}

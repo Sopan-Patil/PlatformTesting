@@ -1,0 +1,28 @@
+{
+	"server": "hub-cloud.browserstack.com",
+	"capabilities": {
+		"build": "browserstack_must_have",
+		"name": "must_have_test",
+		"browserstack.debug": true
+	},
+	"environments": {
+		"env1": {
+			"os": "Windows",
+			"os_version": "10",
+			"browser": "chrome",
+			"browser_version": "latest"
+		},
+		"env2": {
+			"os": "Windows",
+			"os_version": "10",
+			"browser": "Edge",
+			"browser_version": "latest"
+		},
+		"env3": {
+			"os": "OS X",
+			"os_version": "Big Sur",
+			"browser": "safari",
+			"browser_version": "14.0"
+		}
+	}
+}

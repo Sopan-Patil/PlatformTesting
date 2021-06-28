@@ -1,0 +1,17 @@
+{
+  "server": "hub-cloud.browserstack.com",
+ 
+
+  "capabilities": {
+    "build": "browserstack-build-local",
+    "name": "local_test",
+    "browserstack.debug": true,
+    "browserstack.local": true
+  },
+
+  "environments": {
+    "chrome": {
+      "browser": "chrome"
+    }
+  }
+}
