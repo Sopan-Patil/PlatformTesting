@@ -4,6 +4,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import base.NewBaseClass;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
@@ -36,5 +37,11 @@ public class PFQA_123_1 extends NewBaseClass {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.loginToPlatform();
 
+	}
+
+	@And("^Close browser$")
+	public void close_browser() throws Throwable {
+		// throw new PendingException();
+		closebrowser();
 	}
 }
