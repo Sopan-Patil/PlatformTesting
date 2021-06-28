@@ -20,6 +20,6 @@ And Close browser
 
 Examples:
 |config|environment|
-#|single.conf.json|chrome|
-|mustHave.conf.json|env6|
+|single.conf.json|chrome|
+#|mustHave.conf.json|env6|
 
