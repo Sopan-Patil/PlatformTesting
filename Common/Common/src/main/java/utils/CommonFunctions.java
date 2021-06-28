@@ -144,6 +144,17 @@ public class CommonFunctions {
 		}
 	}
 
+	
+	public static boolean isElementVisible(WebElement webe) {
+
+		try {
+			WebDriverWait wait = new WebDriverWait(ObjectHelper.driver, 5);
+			wait.until(ExpectedConditions.visibilityOf(webe));
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
 	public static void createFolder(String string) {
 		// TODO Auto-generated method stub
 		

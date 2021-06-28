@@ -11,10 +11,15 @@ import org.openqa.selenium.support.PageFactory;
 
 import utils.CommonFunctions;
 
+/**
+ * Author : Chetan Sonparote Date of Modification : 28 Jun 2021 Description:
+ * Added wait for locators
+ */
 public class LoginPage {
 	List<String[]> testdata;
 	public WebDriver driver;
 	private static Logger log = LogManager.getLogger(LoginPage.class.getName());
+	int waitTime = 1;
 
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
@@ -27,8 +32,7 @@ public class LoginPage {
 	@FindBy(xpath = "//input[@id='password']")
 	public WebElement passwordTextField;
 
-	@FindBy(xpath = "//a[@href='login']")
-
+	@FindBy(xpath = "//span[contains(text(),'ログイン')]")
 	public WebElement logInButton;
 
 	@FindBy(xpath = "//button[@type='submit']")
@@ -36,12 +40,24 @@ public class LoginPage {
 
 	public void loginToPlatform() throws Exception {
 
-		logInButton.click();
+		if (CommonFunctions.isElementClickable(logInButton)) {
+			logInButton.click();
+		}
+
 		log.info("Login button is clicked");
-		emailtextfield.click();
-		emailtextfield.sendKeys("Sopan181");
-		passwordTextField.sendKeys("Test-123");
-		CommonFunctions.clickUsingJavaExecutor(SubmitButton);
+
+		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
+			emailtextfield.click();
+			emailtextfield.sendKeys("Sopan181");
+		}
+
+		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
+			passwordTextField.sendKeys("Test-123");
+		}
+
+		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
+			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
+		}
 
 	}
 

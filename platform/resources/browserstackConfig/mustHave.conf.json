@@ -23,6 +23,28 @@
 			"os_version": "Big Sur",
 			"browser": "safari",
 			"browser_version": "14.0"
+		},
+		"env4": {
+			"os_version": "11.0",
+			"device": "Samsung Galaxy S21",
+			"real_mobile": "true",
+			"browserstack.local": "false"
+		},
+		"env5": {
+			"os_version": "10.0",
+			"device": "Samsung Galaxy Tab S7",
+			"real_mobile": "true",
+			"browserstack.local": "false"
 		}
+		,
+		"env6": {
+			"os_version": "14",
+"device": "iPhone 12",
+			"real_mobile": "true",
+			"browserstack.local": "false"
+		}
+		
+		
+
 	}
 }

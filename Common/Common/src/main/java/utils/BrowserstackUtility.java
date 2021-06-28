@@ -103,6 +103,8 @@ public class BrowserstackUtility {
 			options.put("key", accessKey);
 			l.start(options);
 		}
+		
+		capabilities.setCapability("browserstack.idleTimeout", "30");
 
 		driver = new RemoteWebDriver(
 				new URL("https://" + username + ":" + accessKey + "@" + config.get("server") + "/wd/hub"),
