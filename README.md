@@ -8,5 +8,9 @@ Moreover this projct is used to schedule test on remote Jenkins server for our g
 
 ## Tools
 [Eclipse](https://www.eclipse.org/downloads/)
+[Selenium](https://www.selenium.dev/downloads/)
+[Apache Maven](https://maven.apache.org/download.cgi)
+[TestNG](https://testng.org/doc/download.html)
+[Cucumber](https://cucumber.io/docs/installation/)
 
 ## Configuration
