@@ -7,13 +7,6 @@ PlatformTesting automation is beneficial in testing features for multiple users,
 Moreover this projct is used to schedule test on remote Jenkins server for our global team.
 
 ## Tools
-
-### Eclipse
-
-Eclipse for Java developers is primary IDE used for this project. Download here 
-Eclipse
 [Eclipse](https://www.eclipse.org/downloads/)
-
-
 
 ## Configuration
