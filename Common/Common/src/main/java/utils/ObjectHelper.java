@@ -41,4 +41,5 @@ public class ObjectHelper {
 	public static String sessionid;
 	public static boolean sendreportinemail = false;
 	public static int APICallStatuscode = 0;
+
 }

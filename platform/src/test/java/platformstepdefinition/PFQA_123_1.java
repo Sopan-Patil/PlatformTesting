@@ -28,10 +28,11 @@ public class PFQA_123_1 extends NewBaseClass {
 
 	@Given("^Navigate to URL on (.+) PFQA_123_1$")
 	public void navigate_to_url_on_pfqa1231(String browser) throws Throwable {
-
-		// @Given("^Navigate to URL PFQA_123_1$")
-		// public void Navigate_to_URL_Platform() throws Throwable {
-
+//		String[] shipmentdata;
+//		// shipmentdata = XLHandlerold.readexcel("Register", 1, "NewTestData.xlsx");
+//		shipmentdata = XLHandler.readexcel("User", "NewTestData.xlsx");
+//		System.out.println(shipmentdata[0]);
+//		System.out.println(shipmentdata[1]);
 		driver = openbrowser(browser);
 
 	}
@@ -42,6 +43,9 @@ public class PFQA_123_1 extends NewBaseClass {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.loginToPlatform();
 		// closebrowser();
+
+		// ForgotPassword ForgotPassword = new ForgotPassword(driver);
+		// ForgotPassword.ForgotPassword();
 
 	}
 

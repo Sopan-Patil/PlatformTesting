@@ -10,6 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utils.CommonFunctions;
+import utils.ReadExcelSheetData;
 
 /**
  * Author : Chetan Sonparote Date of Modification : 28 Jun 2021 Description:
@@ -39,6 +40,11 @@ public class LoginPage {
 	public WebElement SubmitButton;
 
 	public void loginToPlatform() throws Exception {
+		String[] shipmentdata;
+
+		shipmentdata = ReadExcelSheetData.readexcel("User", "NewTestData.xlsx");
+		System.out.println(shipmentdata[0]);
+		System.out.println(shipmentdata[1]);
 
 		if (CommonFunctions.isElementClickable(logInButton)) {
 			logInButton.click();
@@ -48,11 +54,13 @@ public class LoginPage {
 
 		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
 			emailtextfield.click();
-			emailtextfield.sendKeys("Sopan181");
+			// emailtextfield.sendKeys("Sopan181");
+			emailtextfield.sendKeys(shipmentdata[0]);
 		}
 
 		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
-			passwordTextField.sendKeys("Test-123");
+			// passwordTextField.sendKeys("Test-123");
+			passwordTextField.sendKeys(shipmentdata[1]);
 		}
 
 		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
