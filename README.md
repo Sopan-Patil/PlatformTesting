@@ -2,7 +2,7 @@
 
 PlatformTesting project contains automation of Platform site. 
 
-##Description
+## Description
 PlatformTesting automation is beneficial in testing features for multiple users, performing different level of testing ex:smoke, P1 etc., combining multiple test cases and generating detailed reports.
 Moreover this projct is used to schedule test on remote Jenkins server for our global team.
 
