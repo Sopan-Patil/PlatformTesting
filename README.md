@@ -3,9 +3,13 @@
 PlatformTesting project contains automation of Platform site. 
 
 ## Description
-PlatformTesting automation is beneficial in testing features for multiple users, performing different level of testing ex:smoke, P1 etc., combining multiple test cases and generating detailed reports.\
-Moreover this projct is used to schedule test on remote Jenkins server for our global team.\
-Project is also integrated with browserstack. TenstNG xml can be executed via command or jenkins to trigger browserstack test with desired capabilities.
+- PlatformTesting automation is beneficial in testing features by creating multiple users
+- Different level of testing can be performed ex:smoke, P1 etc.
+- Multiple test cases can be combined using cucumber tags
+- Extent report helps in generating detailed reports.
+- Log 4j is used for logging and daily reports are generated.
+- Schedule test on remote Jenkins server
+- Project is integrated with browserstack. TenstNG xml can be executed via command or jenkins to trigger browserstack test with desired capabilities.
 
 ## Tools
 [Eclipse](https://www.eclipse.org/downloads/)\
@@ -18,6 +22,12 @@ Project is also integrated with browserstack. TenstNG xml can be executed via co
 
 ## Configuration
 
-Set browserstack credentials in data.properties file\
-Set project related credentials in /platform/src/main/java/platform/properties/ConfigProp.java\
-Use [Maven repository](https://mvnrepository.com/artifact/org.apache.maven.surefire/surefire-report-parser) to download dependancy i pom.xml 
+- Set browserstack credentials in data.properties file\
+- Set project related credentials in /platform/src/main/java/platform/properties/ConfigProp.java\
+- Use [Maven repository](https://mvnrepository.com/artifact/org.apache.maven.surefire/surefire-report-parser) to download dependancy in pom.xml 
+
+## Usage
+
+- Set properties from configuration
+- Run testng.xml with command line or eclipse
+- Run test runner as Junit or TestNG for testing individual scripts
