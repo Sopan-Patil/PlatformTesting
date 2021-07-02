@@ -59,8 +59,10 @@ public class NewBaseClass {
 		WebHandler.createextentreport("Platform Testing", ObjectHelper.testtitle, ObjectHelper.enviURL);
 	}
 
+	BrowserstackUtility browserstackUtility;
+
 	public WebDriver openBrowserstack(String config, String environment) throws Exception {
-		BrowserstackUtility browserstackUtility = new BrowserstackUtility();
+		browserstackUtility = new BrowserstackUtility();
 
 		ObjectHelper.driver = browserstackUtility.initializaBrowserstackDriver(config, environment);
 		// setObjectHelper();
@@ -102,6 +104,13 @@ public class NewBaseClass {
 
 	public void closebrowser() {
 		WebHandler.closebrowser();
+		try {
+			browserstackUtility.tearDown();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 
 	public static void setTestResult(ITestResult result) {
