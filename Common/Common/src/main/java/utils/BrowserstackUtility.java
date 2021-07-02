@@ -91,6 +91,7 @@ public class BrowserstackUtility {
 
 		String username =  properties.getProperty("BROWSERSTACK_USERNAME");
 		String accessKey =  properties.getProperty("BROWSERSTACK_ACCESS_KEY");
+	//	System.out.println("BROWSERSTACK_USERNAME :"+System.getenv("BROWSERSTACK_USERNAME"));
 
 		String app = System.getenv("BROWSERSTACK_APP_ID");
 		if (app != null && !app.isEmpty()) {
