@@ -79,13 +79,10 @@ public class LoginPage {
 		 * @implNote :- test login failure for jenkin
 		 *
 		 */
-		System.out.println("jenkin test con message");
-		SubmitButton.sendKeys("should fail");
-		// do not remove, added for jenkins testing
 
-		// if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
-		// CommonFunctions.clickUsingJavaExecutor(SubmitButton);
-		// }
+		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
+			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
+		}
 
 	}
 
