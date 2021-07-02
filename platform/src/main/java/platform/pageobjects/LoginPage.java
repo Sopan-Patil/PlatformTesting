@@ -16,6 +16,7 @@ import utils.ReadExcelSheetData;
  * Author : Chetan Sonparote Date of Modification : 28 Jun 2021 Description:
  * Added wait for locators
  */
+
 public class LoginPage {
 	List<String[]> testdata;
 	public WebDriver driver;
@@ -47,10 +48,26 @@ public class LoginPage {
 		System.out.println(shipmentdata[1]);
 
 		if (CommonFunctions.isElementClickable(logInButton)) {
-			logInButton.click();
+			/**
+			 * @author User:- rahul shinde 02-july-2021
+			 * @implNote :- test login failure for jenkin
+			 *
+			 */
+			// logInButton.click();
+			System.out.println("jenkin test con message");
+			logInButton.sendKeys("should fail");
+			// do not remove, added for jenkins testing
+
 		}
 
 		log.info("Login button is clicked");
+		log.info("Navigated to topPage");
+		log.trace("Trace Message!");
+		log.debug("Debug Message!");
+		log.info("Info Message!");
+		log.warn("Warn Message!");
+		log.error("Error Message!");
+		log.fatal("Fatal Message!");
 
 		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
 			emailtextfield.click();

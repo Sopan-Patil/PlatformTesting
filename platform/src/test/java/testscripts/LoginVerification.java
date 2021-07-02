@@ -53,7 +53,6 @@ public class LoginVerification extends NewBaseClass {
 
 		// driver.get(getEnvironmentURL());
 		driver = openbrowser(localBrowser);
-
-		log.info("Navigated to topPage");
+		log.info("open browser");
 	}
 }

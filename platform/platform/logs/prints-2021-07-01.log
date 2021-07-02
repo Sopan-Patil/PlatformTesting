@@ -1,0 +1,7 @@
+17:23:48.358 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+17:23:48.369 [main] TRACE testscripts.LoginVerification - Trace Message!
+17:23:48.370 [main] DEBUG testscripts.LoginVerification - Debug Message!
+17:23:48.370 [main] INFO  testscripts.LoginVerification - Info Message!
+17:23:48.370 [main] WARN  testscripts.LoginVerification - Warn Message!
+17:23:48.370 [main] ERROR testscripts.LoginVerification - Error Message!
+17:23:48.370 [main] FATAL testscripts.LoginVerification - Fatal Message!

@@ -1,0 +1,7 @@
+18:08:49.149 [main] INFO  testscripts.LoginVerification - Info Message!
+18:08:49.153 [main] WARN  testscripts.LoginVerification - Warn Message!
+18:08:49.154 [main] ERROR testscripts.LoginVerification - Error Message!
+18:08:49.154 [main] FATAL testscripts.LoginVerification - Fatal Message!
+18:08:54.091 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+18:09:29.036 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+18:09:29.040 [main] TRACE testscripts.LoginVerification - Trace Message!
