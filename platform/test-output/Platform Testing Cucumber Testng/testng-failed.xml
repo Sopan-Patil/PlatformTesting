@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" name="Failed suite [Platform Testing Cucumber Testng]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="testscripts.Listeners"/>
+  </listeners>
+  <test name="Cucumber Testng(failed)">
+    <classes>
+      <class name="platformrunner.PlatformTestRunners">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="feature"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- platformrunner.PlatformTestRunners -->
+    </classes>
+  </test> <!-- Cucumber Testng(failed) -->
+</suite> <!-- Failed suite [Platform Testing Cucumber Testng] -->

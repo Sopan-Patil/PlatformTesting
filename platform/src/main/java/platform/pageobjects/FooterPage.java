@@ -9,9 +9,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utils.CommonFunctions;
+
 /**
- * Author : Chetan Sonparote Date of Creation : 26 Jun 2021 Description:
- * Additional Locator variables and Methods for footer.
+ * @Author : Chetan Sonparote
+ * @Date of Creation : 26 Jun 2021
+ * @Description: Additional Locator variables and Methods for footer.
  */
 
 public class FooterPage {
@@ -24,19 +27,19 @@ public class FooterPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][contains(text(),'利用�?約')]")
+	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][contains(text(),'利用�?約')]")
 	public WebElement termsOfUseLink;
 
-	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][contains(text(),'利用�?約')]")
+	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][contains(text(),'利用�?約')]")
 	public WebElement privacyPolicyLink;
 
-	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][contains(text(),'特定商�?�?�引法')]")
+	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][contains(text(),'特定商�?�?�引法')]")
 	public WebElement specifiedCommodityTradingLawLink;
 
 	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][normalize-space()='Q&A']")
 	public WebElement qnALink;
 
-	@FindBy(xpath = "//a[@class='link'][contains(text(),'�?�験�?�窓�?�')]")
+	@FindBy(xpath = "//a[@class='link'][contains(text(),'�?�験�?�窓�?�')]")
 	public WebElement footerExaminationWindowLink;
 
 	@FindBy(xpath = "//a[@class='sub-menu__text']//font//font[contains(text(),'英検S-CBT')]")
@@ -53,9 +56,6 @@ public class FooterPage {
 
 	@FindBy(xpath = "//a[@class='link']//font//font[contains(text(),'Information window')]")
 	public WebElement informationWindowLink;
-	// public By informationWindowLink =
-	// By.xpath("//a[@class='link']//font//font[contains(text(),'Information
-	// window')]");
 
 	@FindBy(xpath = "//a[@class='sub-menu__text js-pitaElement']//font//font[contains(text(),'Cram school pita')]")
 	public WebElement cramSchoolPitaLink;
@@ -97,7 +97,10 @@ public class FooterPage {
 
 	public void clickFooterScbtLink() {
 
-		footerScbtLink.click();
+		CommonFunctions.scrolltoElement(footerScbtLink);
+		if (CommonFunctions.isElementClickable(footerScbtLink)) {
+			footerScbtLink.click();
+		}
 
 	}
 
