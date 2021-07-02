@@ -48,15 +48,8 @@ public class LoginPage {
 		System.out.println(shipmentdata[1]);
 
 		if (CommonFunctions.isElementClickable(logInButton)) {
-			/**
-			 * @author User:- rahul shinde 02-july-2021
-			 * @implNote :- test login failure for jenkin
-			 *
-			 */
-			// logInButton.click();
-			System.out.println("jenkin test con message");
-			logInButton.sendKeys("should fail");
-			// do not remove, added for jenkins testing
+
+			logInButton.click();
 
 		}
 
@@ -80,9 +73,18 @@ public class LoginPage {
 			passwordTextField.sendKeys(shipmentdata[1]);
 		}
 
-		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
-			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
-		}
+		/**
+		 * @author User:- rahul shinde 02-july-2021
+		 * @implNote :- test login failure for jenkin
+		 *
+		 */
+		System.out.println("jenkin test con message");
+		SubmitButton.sendKeys("should fail");
+		// do not remove, added for jenkins testing
+
+		// if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
+		// CommonFunctions.clickUsingJavaExecutor(SubmitButton);
+		// }
 
 	}
 
