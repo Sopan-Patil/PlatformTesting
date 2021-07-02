@@ -22,8 +22,8 @@ PlatformTesting project contains automation of Platform site.
 
 ## Configuration
 
-- Set browserstack credentials in data.properties file\
-- Set project related credentials in /platform/src/main/java/platform/properties/ConfigProp.java\
+- Set browserstack credentials in data.properties file
+- Set project related credentials in /platform/src/main/java/platform/properties/ConfigProp.java
 - Use [Maven repository](https://mvnrepository.com/artifact/org.apache.maven.surefire/surefire-report-parser) to download dependancy in pom.xml 
 
 ## Usage
