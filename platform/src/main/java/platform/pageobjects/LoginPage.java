@@ -13,8 +13,9 @@ import utils.CommonFunctions;
 import utils.ReadExcelSheetData;
 
 /**
- * Author : Chetan Sonparote Date of Modification : 28 Jun 2021 Description:
- * Added wait for locators
+ * @Author : Chetan Sonparote
+ * @Date : 28 Jun 2021
+ * @Description: Added wait for locators
  */
 
 public class LoginPage {

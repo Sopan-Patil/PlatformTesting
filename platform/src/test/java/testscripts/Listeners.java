@@ -14,8 +14,9 @@ import com.aventstack.extentreports.Status;
 import reporting.ExtentReporter;
 
 /**
- * Author : Chetan Sonparote Date of Creation : 24 Jun 2021 Description:
- * Listener class with thread local for parallel execution
+ * @Author : Chetan Sonparote
+ * @Date : 24 Jun 2021
+ * @Description: Listener class with thread local for parallel execution
  */
 
 public class Listeners extends ExtentReporter implements ITestListener {
