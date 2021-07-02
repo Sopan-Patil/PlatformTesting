@@ -13,8 +13,9 @@ import base.NewBaseClass;
 import platform.pageobjects.LoginPage;
 
 /**
- * Author : Chetan Sonparote Date of Creation : 24 Jun 2021 Description: test
- * script to verify login with testng
+ * @Author : Chetan Sonparote
+ * @Date : 24 Jun 2021
+ * @Description: test script to verify login with testng
  */
 
 public class LoginVerification extends NewBaseClass {

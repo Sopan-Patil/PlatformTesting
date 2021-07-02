@@ -11,18 +11,22 @@ import utils.ObjectHelper;
 import utils.WebHandler;
 
 /**
- * Author : Chetan Sonparote Date of Modification : 24 Jun 2021 Description:
- * Added public driver and removed static refrences
+ * @Author : Chetan Sonparote 
+ * @Date   : 24 Jun 2021 
+ * @Description: Added public driver and removed static refrences
  */
 /**
- * Author : Chetan Sonparote Date of Modification : 25 Jun 2021 Description:
- * Added string on openbrowser for single and cross browser test
+ * @Author : Chetan Sonparote 
+ * @Date  : 25 Jun 2021 
+ * @Description: Added string on openbrowser for single and cross browser test
  */
 
 /**
- * Author : Chetan Sonparote Date of Modification : 28 Jun 2021 Description:
- * Added setUpObjectHelper(), navigateToUrl(), createExtentReport() by breaking
- * up openBrowser() for browserstack
+ * @Author : Chetan Sonparote
+ * @Date : 28 Jun 2021
+ * @Description: Added setUpObjectHelper(), navigateToUrl(),
+ *               createExtentReport() by breaking up openBrowser() for
+ *               browserstack
  */
 public class NewBaseClass {
 

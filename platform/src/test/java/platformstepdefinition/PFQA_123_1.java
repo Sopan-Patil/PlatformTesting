@@ -11,13 +11,16 @@ import cucumber.api.junit.Cucumber;
 import platform.pageobjects.LoginPage;
 
 /**
- * Author : Chetan Sonparote Date of Modification : 25 Jun 2021 Description:
+ * @Author : Chetan Sonparote 
+ * @Date : 25 Jun 2021 
+ * @Description:
  * Modified method to accept browser parameter from feature file
  */
 
 /**
- * Author : Chetan Sonparote Date of Modification : 28 Jun 2021 Description:
- * Added method for browserstack
+ * @Author : Chetan Sonparote
+ * @Date : 28 Jun 2021
+ * @Description: Added method for browserstack
  */
 @RunWith(Cucumber.class)
 public class PFQA_123_1 extends NewBaseClass {

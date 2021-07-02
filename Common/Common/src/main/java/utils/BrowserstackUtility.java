@@ -40,8 +40,9 @@ import com.browserstack.local.Local;
 
 
 /**
- * Author : Chetan Sonparote Date of Creation : 27 Jun 2021 Description:
- * Browserstack utility
+ * @Author : Chetan Sonparote 
+ * @Date : 27 Jun 2021 
+ * @Description: Browserstack utility
  */
 
 public class BrowserstackUtility {
