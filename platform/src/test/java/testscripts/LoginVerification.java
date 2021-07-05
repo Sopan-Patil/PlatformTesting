@@ -1,5 +1,8 @@
 package testscripts;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -22,6 +25,9 @@ import platform.pageobjects.LoginPage;
 public class LoginVerification extends NewBaseClass {
 	public WebDriver driver;
 	private static Logger log = LogManager.getLogger(LoginVerification.class.getName());
+	// timestamp
+	private static final SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
+	Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
 	@Test
 	public void loginToPlatform() throws Exception {
@@ -54,7 +60,19 @@ public class LoginVerification extends NewBaseClass {
 		// driver = getDriver(localBrowser, config, environment);
 
 		// driver.get(getEnvironmentURL());
+
+		System.out.println("timestamp manual log");
+
+		System.out.println(sdf1.format(timestamp));
+
 		driver = openbrowser(localBrowser);
-		log.info("open browser");
+		log.info(sdf1.format(timestamp) + " log with timestamp");
+		log.info("Navigated to topPage");
+		log.trace("Trace Message!");
+		log.debug("Debug Message!");
+		log.info("Info Message!");
+		log.warn("Warn Message!");
+		log.error("Error Message!");
+		log.fatal("Fatal Message!");
 	}
 }
