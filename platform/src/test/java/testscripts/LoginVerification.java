@@ -18,7 +18,8 @@ import platform.pageobjects.LoginPage;
 /**
  * @Author : Chetan Sonparote
  * @Date : 24 Jun 2021
- * @Description: test script to verify login with testng
+ * @Description: test script to verify login with testng. Only for testing
+ *               purposes as a sample
  */
 
 public class LoginVerification extends NewBaseClass {

@@ -28,6 +28,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.SessionId;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Optional;
@@ -138,12 +139,67 @@ public class BrowserstackUtility {
 				+ ".json");
 		HttpPut putRequest = new HttpPut(uri);
 
+	//	System.out.println("getResult():"+getResult());
+		
 		ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-		nameValuePairs.add((new BasicNameValuePair("status", "completed")));
-		nameValuePairs.add((new BasicNameValuePair("reason", "")));
+		//nameValuePairs.add((new BasicNameValuePair("status", "completed")));
+		nameValuePairs.add((new BasicNameValuePair("status", result)));
+		//nameValuePairs.add((new BasicNameValuePair("reason", "")));
 		putRequest.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
 		HttpClientBuilder.create().build().execute(putRequest);
+	}
+	
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 2 Jul 2021
+	 * @Description: Added method to get test result
+	 */
+
+	public String result;
+	
+	
+	public void setResult(String result) {
+		this.result = result;
+	}
+
+	public  ITestResult resultStatus;
+
+	public  ITestResult getResultStatus() {
+		return resultStatus;
+	}
+
+	public  void setResultStatus(ITestResult resultStatus) {
+		 this.resultStatus = resultStatus;
+	}
+	
+	String getResult()
+	{
+		String result = null;
+		//resultStatus = getResultStatus();
+		resultStatus = getResultStatus();
+		
+		if(resultStatus.getStatus() == ITestResult.SUCCESS)
+	    {
+
+	        //Do something here
+	        System.out.println("passed **********");
+	        result = "PASS";
+	    }
+
+	    else if(resultStatus.getStatus()  == ITestResult.FAILURE)
+	    {
+	         //Do something here
+	        System.out.println("Failed ***********");
+	        result = "FAIL";
+	    }
+
+	     else if(resultStatus.getStatus()  == ITestResult.SKIP ){
+
+	        System.out.println("Skiped***********");
+	        result = "SKIPPED";
+	    }
+		return result;
 	}
 
 }

@@ -44,6 +44,7 @@ public class PFQA_123_1 extends NewBaseClass {
 	public void Login_for_Platform() throws Throwable {
 
 		LoginPage loginPage = new LoginPage(driver);
+
 		loginPage.loginToPlatform();
 		// closebrowser();
 

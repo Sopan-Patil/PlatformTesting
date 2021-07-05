@@ -11,8 +11,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 /**
- * Author : Chetan Sonparote Date of Creation : 26 Jun 2021 Description: Locator
- * variables and Methods for top bar
+ * @Author : Chetan Sonparote
+ * @Date : 26 Jun 2021
+ * @Description: Locator variables and Methods for top bar
  */
 
 public class TopBar {

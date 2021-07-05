@@ -33,7 +33,8 @@ public class ExtentReporter {
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 		extent.setSystemInfo("Tester", "Chetan S");// get tester name from properties
-
+		
+		
 		return extent;
 	}
 

@@ -13,9 +13,10 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions(monochrome = true, strict = false, dryRun = false, features = {
 		".//src//test//java//platformfeatures/PFQA_123_1.feature"
+// ".//src//test//java//platformfeatures/PFQA_Footer.feature"
 
-}, glue = { "platformstepdefinition" }, tags = { "@FunctionalTest", "~@BrowserstackTest" }, plugin = { "pretty",
-		"html:target/cucumber_html_report", "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",
+}, glue = { "platformstepdefinition" }, tags = { "~@FooterTest", "@FunctionalTest", "~@BrowserstackTest" }, plugin = {
+		"pretty", "html:target/cucumber_html_report", "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",
 		"usage:target/cucumber-usage.json", "junit:target/cucumber_html_report/junit_platform.xml" })
 public class PlatformTestRunners extends AbstractTestNGCucumberTests {
 }
