@@ -1,3 +1,259 @@
-[INFO ] 2021-07-02 10:27:03.990 [main] LoginVerification - open browser
-[INFO ] 2021-07-02 10:44:50.613 [main] LoginVerification - open browser
-[INFO ] 2021-07-02 10:49:53.487 [main] LoginVerification - open browser
+17:57:27.700 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+17:57:27.705 [main] TRACE testscripts.LoginVerification - Trace Message!
+17:57:27.705 [main] DEBUG testscripts.LoginVerification - Debug Message!
+17:57:27.705 [main] INFO  testscripts.LoginVerification - Info Message!
+17:57:27.705 [main] WARN  testscripts.LoginVerification - Warn Message!
+17:57:27.707 [main] ERROR testscripts.LoginVerification - Error Message!
+17:57:27.707 [main] FATAL testscripts.LoginVerification - Fatal Message!
+17:57:31.585 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+18:17:44.146 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+18:17:44.184 [main] TRACE testscripts.LoginVerification - Trace Message!
+18:17:44.186 [main] DEBUG testscripts.LoginVerification - Debug Message!
+18:17:44.186 [main] INFO  testscripts.LoginVerification - Info Message!
+18:17:44.186 [main] WARN  testscripts.LoginVerification - Warn Message!
+18:17:44.187 [main] ERROR testscripts.LoginVerification - Error Message!
+18:17:44.187 [main] FATAL testscripts.LoginVerification - Fatal Message!
+18:17:48.340 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+18:20:15.506 [main] INFO  testscripts.LoginVerification - 2021.07.02.18.20.02
+18:20:15.558 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+18:20:15.558 [main] TRACE testscripts.LoginVerification - Trace Message!
+18:20:15.558 [main] DEBUG testscripts.LoginVerification - Debug Message!
+18:20:15.559 [main] INFO  testscripts.LoginVerification - Info Message!
+18:20:15.559 [main] WARN  testscripts.LoginVerification - Warn Message!
+18:20:15.559 [main] ERROR testscripts.LoginVerification - Error Message!
+18:20:15.559 [main] FATAL testscripts.LoginVerification - Fatal Message!
+18:20:19.395 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+09:24:40.427 [main] INFO  testscripts.LoginVerification - 2021.07.05.09.24.18
+09:24:40.475 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+09:24:40.476 [main] TRACE testscripts.LoginVerification - Trace Message!
+09:24:40.476 [main] DEBUG testscripts.LoginVerification - Debug Message!
+09:24:40.477 [main] INFO  testscripts.LoginVerification - Info Message!
+09:24:40.477 [main] WARN  testscripts.LoginVerification - Warn Message!
+09:24:40.478 [main] ERROR testscripts.LoginVerification - Error Message!
+09:24:40.478 [main] FATAL testscripts.LoginVerification - Fatal Message!
+09:24:45.745 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+09:38:23.043 [main] INFO  testscripts.LoginVerification - 2021.07.05.09.38.08
+09:38:23.080 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+09:38:23.081 [main] TRACE testscripts.LoginVerification - Trace Message!
+09:38:23.081 [main] DEBUG testscripts.LoginVerification - Debug Message!
+09:38:23.081 [main] INFO  testscripts.LoginVerification - Info Message!
+09:38:23.082 [main] WARN  testscripts.LoginVerification - Warn Message!
+09:38:23.082 [main] ERROR testscripts.LoginVerification - Error Message!
+09:38:23.082 [main] FATAL testscripts.LoginVerification - Fatal Message!
+09:38:29.914 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+09:45:08.609 [main] INFO  testscripts.LoginVerification - 2021.07.05.09.44.52
+09:45:08.658 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+09:45:08.659 [main] TRACE testscripts.LoginVerification - Trace Message!
+09:45:08.659 [main] DEBUG testscripts.LoginVerification - Debug Message!
+09:45:08.659 [main] INFO  testscripts.LoginVerification - Info Message!
+09:45:08.660 [main] WARN  testscripts.LoginVerification - Warn Message!
+09:45:08.660 [main] ERROR testscripts.LoginVerification - Error Message!
+09:45:08.660 [main] FATAL testscripts.LoginVerification - Fatal Message!
+09:45:15.179 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+09:46:51.580 [main] INFO  testscripts.LoginVerification - 2021.07.05.09.46.35
+09:46:51.585 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+09:46:51.586 [main] TRACE testscripts.LoginVerification - Trace Message!
+09:46:51.586 [main] DEBUG testscripts.LoginVerification - Debug Message!
+09:46:51.586 [main] INFO  testscripts.LoginVerification - Info Message!
+09:46:51.587 [main] WARN  testscripts.LoginVerification - Warn Message!
+09:46:51.587 [main] ERROR testscripts.LoginVerification - Error Message!
+09:46:51.587 [main] FATAL testscripts.LoginVerification - Fatal Message!
+09:46:55.831 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+09:51:30.901 [main] INFO  testscripts.LoginVerification - 2021.07.05.09.51.15
+09:51:30.904 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+09:51:30.905 [main] TRACE testscripts.LoginVerification - Trace Message!
+09:51:30.905 [main] DEBUG testscripts.LoginVerification - Debug Message!
+09:51:30.905 [main] INFO  testscripts.LoginVerification - Info Message!
+09:51:30.906 [main] WARN  testscripts.LoginVerification - Warn Message!
+09:51:30.906 [main] ERROR testscripts.LoginVerification - Error Message!
+09:51:30.906 [main] FATAL testscripts.LoginVerification - Fatal Message!
+09:51:35.048 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+10:00:26.403 [main] INFO  testscripts.LoginVerification - 2021.07.05.10.00.08
+10:00:26.409 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+10:00:26.410 [main] TRACE testscripts.LoginVerification - Trace Message!
+10:00:26.410 [main] DEBUG testscripts.LoginVerification - Debug Message!
+10:00:26.410 [main] INFO  testscripts.LoginVerification - Info Message!
+10:00:26.411 [main] WARN  testscripts.LoginVerification - Warn Message!
+10:00:26.411 [main] ERROR testscripts.LoginVerification - Error Message!
+10:00:26.411 [main] FATAL testscripts.LoginVerification - Fatal Message!
+10:00:33.559 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+10:02:12.944 [main] INFO  testscripts.LoginVerification - 2021.07.05.10.01.57
+10:02:12.948 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+10:02:12.949 [main] TRACE testscripts.LoginVerification - Trace Message!
+10:02:12.949 [main] DEBUG testscripts.LoginVerification - Debug Message!
+10:02:12.950 [main] INFO  testscripts.LoginVerification - Info Message!
+10:02:12.950 [main] WARN  testscripts.LoginVerification - Warn Message!
+10:02:12.950 [main] ERROR testscripts.LoginVerification - Error Message!
+10:02:12.950 [main] FATAL testscripts.LoginVerification - Fatal Message!
+10:02:18.859 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+10:04:32.969 [main] INFO  testscripts.LoginVerification - 2021.07.05.10.04.16
+10:04:32.973 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+10:04:32.973 [main] TRACE testscripts.LoginVerification - Trace Message!
+10:04:32.973 [main] DEBUG testscripts.LoginVerification - Debug Message!
+10:04:32.973 [main] INFO  testscripts.LoginVerification - Info Message!
+10:04:32.974 [main] WARN  testscripts.LoginVerification - Warn Message!
+10:04:32.974 [main] ERROR testscripts.LoginVerification - Error Message!
+10:04:32.974 [main] FATAL testscripts.LoginVerification - Fatal Message!
+10:04:36.894 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+10:06:53.011 [main] INFO  testscripts.LoginVerification - 2021.07.05.10.06.37
+10:06:53.015 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+10:06:53.016 [main] TRACE testscripts.LoginVerification - Trace Message!
+10:06:53.016 [main] DEBUG testscripts.LoginVerification - Debug Message!
+10:06:53.017 [main] INFO  testscripts.LoginVerification - Info Message!
+10:06:53.017 [main] WARN  testscripts.LoginVerification - Warn Message!
+10:06:53.017 [main] ERROR testscripts.LoginVerification - Error Message!
+10:06:53.017 [main] FATAL testscripts.LoginVerification - Fatal Message!
+10:06:58.843 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+10:10:24.518 [main] INFO  testscripts.LoginVerification - 2021.07.05.10.10.08
+10:10:24.526 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+10:10:24.526 [main] TRACE testscripts.LoginVerification - Trace Message!
+10:10:24.526 [main] DEBUG testscripts.LoginVerification - Debug Message!
+10:10:24.527 [main] INFO  testscripts.LoginVerification - Info Message!
+10:10:24.527 [main] WARN  testscripts.LoginVerification - Warn Message!
+10:10:24.527 [main] ERROR testscripts.LoginVerification - Error Message!
+10:10:24.528 [main] FATAL testscripts.LoginVerification - Fatal Message!
+10:10:27.693 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+10:12:08.872 [main] INFO  testscripts.LoginVerification - 2021.07.05.10.11.54
+10:12:08.875 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+10:12:08.876 [main] TRACE testscripts.LoginVerification - Trace Message!
+10:12:08.876 [main] DEBUG testscripts.LoginVerification - Debug Message!
+10:12:08.876 [main] INFO  testscripts.LoginVerification - Info Message!
+10:12:08.877 [main] WARN  testscripts.LoginVerification - Warn Message!
+10:12:08.877 [main] ERROR testscripts.LoginVerification - Error Message!
+10:12:08.877 [main] FATAL testscripts.LoginVerification - Fatal Message!
+10:12:13.551 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+10:15:39.768 [main] INFO  testscripts.LoginVerification - 2021.07.05.10.15.24
+10:15:39.772 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+10:15:39.772 [main] TRACE testscripts.LoginVerification - Trace Message!
+10:15:39.773 [main] DEBUG testscripts.LoginVerification - Debug Message!
+10:15:39.773 [main] INFO  testscripts.LoginVerification - Info Message!
+10:15:39.773 [main] WARN  testscripts.LoginVerification - Warn Message!
+10:15:39.773 [main] ERROR testscripts.LoginVerification - Error Message!
+10:15:39.773 [main] FATAL testscripts.LoginVerification - Fatal Message!
+10:15:44.302 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+10:17:48.439 [main] INFO  testscripts.LoginVerification - 2021.07.05.10.17.32
+10:17:48.443 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+10:17:48.443 [main] TRACE testscripts.LoginVerification - Trace Message!
+10:17:48.443 [main] DEBUG testscripts.LoginVerification - Debug Message!
+10:17:48.443 [main] INFO  testscripts.LoginVerification - Info Message!
+10:17:48.444 [main] WARN  testscripts.LoginVerification - Warn Message!
+10:17:48.444 [main] ERROR testscripts.LoginVerification - Error Message!
+10:17:48.444 [main] FATAL testscripts.LoginVerification - Fatal Message!
+10:17:52.855 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+10:21:51.890 [main] INFO  testscripts.LoginVerification - 2021.07.05.10.21.37
+10:21:51.894 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+10:21:51.894 [main] TRACE testscripts.LoginVerification - Trace Message!
+10:21:51.894 [main] DEBUG testscripts.LoginVerification - Debug Message!
+10:21:51.895 [main] INFO  testscripts.LoginVerification - Info Message!
+10:21:51.895 [main] WARN  testscripts.LoginVerification - Warn Message!
+10:21:51.895 [main] ERROR testscripts.LoginVerification - Error Message!
+10:21:51.895 [main] FATAL testscripts.LoginVerification - Fatal Message!
+10:21:55.743 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+10:24:41.338 [main] INFO  testscripts.LoginVerification - 2021.07.05.10.24.24
+10:24:41.342 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+10:24:41.342 [main] TRACE testscripts.LoginVerification - Trace Message!
+10:24:41.342 [main] DEBUG testscripts.LoginVerification - Debug Message!
+10:24:41.343 [main] INFO  testscripts.LoginVerification - Info Message!
+10:24:41.343 [main] WARN  testscripts.LoginVerification - Warn Message!
+10:24:41.343 [main] ERROR testscripts.LoginVerification - Error Message!
+10:24:41.343 [main] FATAL testscripts.LoginVerification - Fatal Message!
+10:24:45.334 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+10:26:24.757 [main] INFO  testscripts.LoginVerification - 2021.07.05.10.26.10
+10:26:24.760 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+10:26:24.760 [main] TRACE testscripts.LoginVerification - Trace Message!
+10:26:24.761 [main] DEBUG testscripts.LoginVerification - Debug Message!
+10:26:24.761 [main] INFO  testscripts.LoginVerification - Info Message!
+10:26:24.761 [main] WARN  testscripts.LoginVerification - Warn Message!
+10:26:24.761 [main] ERROR testscripts.LoginVerification - Error Message!
+10:26:24.761 [main] FATAL testscripts.LoginVerification - Fatal Message!
+10:26:28.030 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+10:28:15.630 [main] INFO  testscripts.LoginVerification - 2021.07.05.10.27.52
+10:28:15.634 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+10:28:15.635 [main] TRACE testscripts.LoginVerification - Trace Message!
+10:28:15.636 [main] DEBUG testscripts.LoginVerification - Debug Message!
+10:28:15.636 [main] INFO  testscripts.LoginVerification - Info Message!
+10:28:15.636 [main] WARN  testscripts.LoginVerification - Warn Message!
+10:28:15.637 [main] ERROR testscripts.LoginVerification - Error Message!
+10:28:15.637 [main] FATAL testscripts.LoginVerification - Fatal Message!
+10:28:19.368 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+10:31:18.157 [main] INFO  testscripts.LoginVerification - 2021.07.05.10.31.01
+10:31:18.162 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+10:31:18.163 [main] TRACE testscripts.LoginVerification - Trace Message!
+10:31:18.163 [main] DEBUG testscripts.LoginVerification - Debug Message!
+10:31:18.163 [main] INFO  testscripts.LoginVerification - Info Message!
+10:31:18.164 [main] WARN  testscripts.LoginVerification - Warn Message!
+10:31:18.164 [main] ERROR testscripts.LoginVerification - Error Message!
+10:31:18.164 [main] FATAL testscripts.LoginVerification - Fatal Message!
+10:31:22.266 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+10:32:11.492 [main] INFO  testscripts.LoginVerification - 2021.07.05.10.31.56
+10:32:11.496 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+10:32:11.496 [main] TRACE testscripts.LoginVerification - Trace Message!
+10:32:11.496 [main] DEBUG testscripts.LoginVerification - Debug Message!
+10:32:11.496 [main] INFO  testscripts.LoginVerification - Info Message!
+10:32:11.497 [main] WARN  testscripts.LoginVerification - Warn Message!
+10:32:11.497 [main] ERROR testscripts.LoginVerification - Error Message!
+10:32:11.497 [main] FATAL testscripts.LoginVerification - Fatal Message!
+10:32:15.015 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+10:38:20.323 [main] INFO  testscripts.LoginVerification - 2021.07.05.10.38.04
+10:38:20.421 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+10:38:20.423 [main] TRACE testscripts.LoginVerification - Trace Message!
+10:38:20.424 [main] DEBUG testscripts.LoginVerification - Debug Message!
+10:38:20.425 [main] INFO  testscripts.LoginVerification - Info Message!
+10:38:20.425 [main] WARN  testscripts.LoginVerification - Warn Message!
+10:38:20.425 [main] ERROR testscripts.LoginVerification - Error Message!
+10:38:20.425 [main] FATAL testscripts.LoginVerification - Fatal Message!
+10:38:25.088 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+10:40:36.349 [main] INFO  testscripts.LoginVerification - 2021.07.05.10.40.22
+10:40:36.355 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+10:40:36.355 [main] TRACE testscripts.LoginVerification - Trace Message!
+10:40:36.355 [main] DEBUG testscripts.LoginVerification - Debug Message!
+10:40:36.356 [main] INFO  testscripts.LoginVerification - Info Message!
+10:40:36.356 [main] WARN  testscripts.LoginVerification - Warn Message!
+10:40:36.356 [main] ERROR testscripts.LoginVerification - Error Message!
+10:40:36.356 [main] FATAL testscripts.LoginVerification - Fatal Message!
+10:40:40.590 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+10:49:02.715 [main] INFO  testscripts.LoginVerification - 2021.07.05.10.48.46log with timestamp
+10:49:02.781 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+10:49:02.783 [main] TRACE testscripts.LoginVerification - Trace Message!
+10:49:02.784 [main] DEBUG testscripts.LoginVerification - Debug Message!
+10:49:02.785 [main] INFO  testscripts.LoginVerification - Info Message!
+10:49:02.786 [main] WARN  testscripts.LoginVerification - Warn Message!
+10:49:02.787 [main] ERROR testscripts.LoginVerification - Error Message!
+10:49:02.788 [main] FATAL testscripts.LoginVerification - Fatal Message!
+10:49:08.112 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+10:50:20.842 [main] INFO  testscripts.LoginVerification - 2021.07.05.10.50.06 log with timestamp
+10:50:20.898 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+10:50:20.899 [main] TRACE testscripts.LoginVerification - Trace Message!
+10:50:20.899 [main] DEBUG testscripts.LoginVerification - Debug Message!
+10:50:20.899 [main] INFO  testscripts.LoginVerification - Info Message!
+10:50:20.900 [main] WARN  testscripts.LoginVerification - Warn Message!
+10:50:20.900 [main] ERROR testscripts.LoginVerification - Error Message!
+10:50:20.900 [main] FATAL testscripts.LoginVerification - Fatal Message!
+10:50:25.553 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+10:54:07.110 [main] INFO  testscripts.LoginVerification - 2021.07.05.10.53.52 log with timestamp
+10:54:07.545 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+10:54:07.546 [main] TRACE testscripts.LoginVerification - Trace Message!
+10:54:07.546 [main] DEBUG testscripts.LoginVerification - Debug Message!
+10:54:07.547 [main] INFO  testscripts.LoginVerification - Info Message!
+10:54:07.547 [main] WARN  testscripts.LoginVerification - Warn Message!
+10:54:07.547 [main] ERROR testscripts.LoginVerification - Error Message!
+10:54:07.547 [main] FATAL testscripts.LoginVerification - Fatal Message!
+10:54:12.723 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+11:04:20.113 [main] INFO  testscripts.LoginVerification - 2021.07.05.11.04.05 log with timestamp
+11:04:20.176 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+11:04:20.178 [main] TRACE testscripts.LoginVerification - Trace Message!
+11:04:20.179 [main] DEBUG testscripts.LoginVerification - Debug Message!
+11:04:20.180 [main] INFO  testscripts.LoginVerification - Info Message!
+11:04:20.180 [main] WARN  testscripts.LoginVerification - Warn Message!
+11:04:20.180 [main] ERROR testscripts.LoginVerification - Error Message!
+11:04:20.181 [main] FATAL testscripts.LoginVerification - Fatal Message!
+11:04:24.962 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+11:05:58.166 [main] INFO  testscripts.LoginVerification - 2021.07.05.11.05.43 log with timestamp
+11:05:58.173 [main] INFO  testscripts.LoginVerification - Navigated to topPage
+11:05:58.174 [main] TRACE testscripts.LoginVerification - Trace Message!
+11:05:58.174 [main] DEBUG testscripts.LoginVerification - Debug Message!
+11:05:58.174 [main] INFO  testscripts.LoginVerification - Info Message!
+11:05:58.174 [main] WARN  testscripts.LoginVerification - Warn Message!
+11:05:58.175 [main] ERROR testscripts.LoginVerification - Error Message!
+11:05:58.175 [main] FATAL testscripts.LoginVerification - Fatal Message!
+11:06:04.694 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
