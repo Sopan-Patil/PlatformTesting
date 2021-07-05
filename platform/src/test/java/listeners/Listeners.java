@@ -1,4 +1,4 @@
-package testscripts;
+package listeners;
 
 import java.io.IOException;
 
@@ -12,6 +12,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import reporting.ExtentReporter;
+import utils.BrowserstackUtility;
 
 /**
  * @Author : Chetan Sonparote
@@ -21,9 +22,10 @@ import reporting.ExtentReporter;
 
 public class Listeners extends ExtentReporter implements ITestListener {
 
-	ExtentTest test;
+	public ExtentTest test;
 	ExtentReports extent = ExtentReporter.getReportObject();
 	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
+	BrowserstackUtility browserstackUtility;
 
 	@Override
 	public void onTestStart(ITestResult result) {
@@ -31,6 +33,7 @@ public class Listeners extends ExtentReporter implements ITestListener {
 
 		test = extent.createTest(result.getMethod().getMethodName());
 		extentTest.set(test);
+		browserstackUtility = new BrowserstackUtility();
 
 	}
 
@@ -38,7 +41,8 @@ public class Listeners extends ExtentReporter implements ITestListener {
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
 		extentTest.get().log(Status.PASS, "Test Passed");
-
+		// browserstackUtility.setResultStatus(result);
+		browserstackUtility.setResult("PASS");
 	}
 
 	@Override
@@ -66,12 +70,14 @@ public class Listeners extends ExtentReporter implements ITestListener {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+		browserstackUtility.setResult("FAIL");
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		// TODO Auto-generated method stub
-
+		browserstackUtility.setResult("SKIPPED");
 	}
 
 	@Override
@@ -80,12 +86,10 @@ public class Listeners extends ExtentReporter implements ITestListener {
 
 	}
 
-	/*
-	 * @Override public void onTestFailedWithTimeout(ITestResult result) { // TODO
-	 * Auto-generated method stub
-	 * 
-	 * }
-	 */
+	// public void onTestFailedWithTimeout(ITestResult result) { // TODO
+	// Auto-generated method stub
+
+	// }
 
 	@Override
 	public void onStart(ITestContext context) {
