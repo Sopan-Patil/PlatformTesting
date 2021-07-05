@@ -30,7 +30,7 @@ public class ForgotPassword {
 	@FindBy(xpath = "//input[@id='userNameOrEmail']")
 	public WebElement emailtextfield;
 
-	@FindBy(xpath = "//a[@href='login']")
+	@FindBy(xpath = "//span[contains(text(),'メール送信')]")
 	public WebElement SendemailButton;
 
 	public void ForgotPassword() throws Exception {
@@ -38,7 +38,7 @@ public class ForgotPassword {
 		logInButton.click();
 		log.info("Login button is clicked");
 		FotgotPasswordLink.click();
-		emailtextfield.sendKeys("Sopan181");
+		emailtextfield.sendKeys("sopan5@mailinator.com");
 		CommonFunctions.clickUsingJavaExecutor(SendemailButton);
 
 	}

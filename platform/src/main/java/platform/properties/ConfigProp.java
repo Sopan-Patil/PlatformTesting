@@ -13,8 +13,10 @@ public class ConfigProp {
 	public static String stageURL = "https://stg.studygear.evidus.net/";
 	public static String devURL = "https://dev.studygear.evidus.net/";
 	public static String prdURL = "https://prd-studygear.evidus.net/";
+	public static String mailinatorURL = "https://www.mailinator.com/v3/#/#inboxpane";
 
 	public static String platformEnvironmentURL = stageURL;
+	public static String mailinatorEnvironmentURL = mailinatorURL;
 
 	public static String user = "sgepuser";
 	public static String password = "9tg6gxxCEaL3";

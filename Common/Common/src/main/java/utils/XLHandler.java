@@ -16,11 +16,22 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class XLHandler {
+<<<<<<< Updated upstream
 	/**
 	 * @Author : Sopan Patil
 	 * @Date : 02 Jul 2021
 	 * @Description: Added Excel read utility
 	 */
+=======
+	
+	/**
+	*@author Sopan patil
+	*@Date : 01 Jul 21
+	*@Description : Read Excel sheet
+	*
+	 */
+	
+>>>>>>> Stashed changes
 	@SuppressWarnings("null")
 	public static String[] readexcel(String sheetname, String filename)
 			throws EncryptedDocumentException, InvalidFormatException, IOException {
@@ -41,9 +52,15 @@ public class XLHandler {
 				DataFormatter formatter = new DataFormatter();
 				String text = formatter.formatCellValue(cell);
 				//System.out.println(text);
+<<<<<<< Updated upstream
 				// value[cell.getRowIndex()] = formatter.formatCellValue(cell);
 				value[cell.getColumnIndex()] = formatter.formatCellValue(cell);
 				//return value;
+=======
+				//value[cell.getRowIndex()] = formatter.formatCellValue(cell);
+				value[cell.getColumnIndex()] = formatter.formatCellValue(cell);
+				
+>>>>>>> Stashed changes
 			}
 			//System.out.println();
 		}

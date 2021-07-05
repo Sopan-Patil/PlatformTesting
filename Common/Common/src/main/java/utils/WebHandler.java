@@ -65,7 +65,7 @@ public class WebHandler {
 			System.out.println("Orignal"+ObjectHelper.driver);
 			ObjectHelper.driver.manage().window().maximize();
 			// ClearCache.chromeclear();
-		
+			ObjectHelper.driver.manage().window().maximize();
 		} else if (ObjectHelper.browsertype.equals("firefox")) {
 
 			/*

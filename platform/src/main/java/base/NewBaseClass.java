@@ -37,7 +37,22 @@ public class NewBaseClass {
 
 	private void setUpObjectHelper() {
 		String testDataFileName = ConfigProp.testDataFile;
-		ObjectHelper.enviURL = ConfigProp.platformEnvironmentURL;
+		ObjectHelper.enviURL = ConfigProp.stageURL;
+
+		ObjectHelper.sendreportinemail = ConfigProp.sendreportinemail;
+
+		ObjectHelper.dburl = ConfigProp.dburl;
+
+		String dirName = "Test At " + LocalDateTime.now().toString().replace(":", ".");
+		WebHandler.setupOutputFolder(dirName);
+
+		ObjectHelper.testtitle = ConfigProp.testtitle;
+		ObjectHelper.reportfilepath = "//ExtentReport//UPP_Status_Report.html";
+	}
+
+	private void setUpObjectHelper1() {
+		String testDataFileName = ConfigProp.testDataFile;
+		ObjectHelper.enviURL = ConfigProp.mailinatorURL;
 
 		ObjectHelper.sendreportinemail = ConfigProp.sendreportinemail;
 
@@ -88,6 +103,28 @@ public class NewBaseClass {
 		WebHandler.openBrowser();
 
 		// createExtentReport();
+<<<<<<< Updated upstream
+=======
+		navigateToUrl();
+
+		return ObjectHelper.driver;
+
+	}
+
+	public WebDriver openbrowser1(String browser) throws Exception {
+
+		if (browser == null) {
+			ObjectHelper.browsertype = ConfigProp.browser;
+		} else {
+			ObjectHelper.browsertype = browser;
+		}
+
+		setUpObjectHelper1();
+
+		WebHandler.openBrowser();
+
+		// createExtentReport();
+>>>>>>> Stashed changes
 		navigateToUrl();
 
 		return ObjectHelper.driver;
