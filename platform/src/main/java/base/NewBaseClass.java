@@ -104,7 +104,10 @@ public class NewBaseClass {
 
 		// createExtentReport();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 		navigateToUrl();
 
 		return ObjectHelper.driver;
@@ -124,6 +127,9 @@ public class NewBaseClass {
 		WebHandler.openBrowser();
 
 		// createExtentReport();
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 		navigateToUrl();
 

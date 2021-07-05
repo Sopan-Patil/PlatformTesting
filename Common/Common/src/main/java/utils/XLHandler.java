@@ -17,12 +17,15 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class XLHandler {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	/**
 	 * @Author : Sopan Patil
 	 * @Date : 02 Jul 2021
 	 * @Description: Added Excel read utility
 	 */
 =======
+=======
+>>>>>>> Stashed changes
 	
 	/**
 	*@author Sopan patil
@@ -31,6 +34,9 @@ public class XLHandler {
 	*
 	 */
 	
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 	@SuppressWarnings("null")
 	public static String[] readexcel(String sheetname, String filename)
@@ -53,9 +59,15 @@ public class XLHandler {
 				String text = formatter.formatCellValue(cell);
 				//System.out.println(text);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 				// value[cell.getRowIndex()] = formatter.formatCellValue(cell);
 				value[cell.getColumnIndex()] = formatter.formatCellValue(cell);
 				//return value;
+=======
+				//value[cell.getRowIndex()] = formatter.formatCellValue(cell);
+				value[cell.getColumnIndex()] = formatter.formatCellValue(cell);
+				
+>>>>>>> Stashed changes
 =======
 				//value[cell.getRowIndex()] = formatter.formatCellValue(cell);
 				value[cell.getColumnIndex()] = formatter.formatCellValue(cell);
