@@ -257,3 +257,4 @@
 11:05:58.175 [main] ERROR testscripts.LoginVerification - Error Message!
 11:05:58.175 [main] FATAL testscripts.LoginVerification - Fatal Message!
 11:06:04.694 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+11:41:17.467 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked

@@ -51,16 +51,12 @@ public class LoginPage {
 		String[] shipmentdata;
 
 		shipmentdata = XLHandler.readexcel("User", "NewTestData.xlsx");
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
 		// System.out.println(shipmentdata[0]);
 		// System.out.println(shipmentdata[1]);
-=======
-=======
->>>>>>> Stashed changes
+
 		System.out.println(shipmentdata[0]);
 		System.out.println(shipmentdata[1]);
->>>>>>> Stashed changes
 
 		if (CommonFunctions.isElementClickable(logInButton)) {
 
@@ -76,14 +72,10 @@ public class LoginPage {
 		}
 
 		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
-<<<<<<< Updated upstream
-=======
+
 			// passwordTextField.sendKeys("Test-123");
 			passwordTextField.click();
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
 			passwordTextField.sendKeys(shipmentdata[1]);
 			System.out.println(passwordTextField.getText());
 		}
