@@ -10,12 +10,18 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utils.CommonFunctions;
-import utils.ReadExcelSheetData;
+import utils.XLHandler;
 
 /**
  * @Author : Chetan Sonparote
  * @Date : 28 Jun 2021
  * @Description: Added wait for locators
+ */
+
+/**
+ * @Author : Sopan Patil
+ * @Date : 01 Jul 2021
+ * @Description: Added Login function
  */
 
 public class LoginPage {
@@ -44,9 +50,9 @@ public class LoginPage {
 	public void loginToPlatform() throws Exception {
 		String[] shipmentdata;
 
-		shipmentdata = ReadExcelSheetData.readexcel("User", "NewTestData.xlsx");
-		System.out.println(shipmentdata[0]);
-		System.out.println(shipmentdata[1]);
+		shipmentdata = XLHandler.readexcel("User", "NewTestData.xlsx");
+		// System.out.println(shipmentdata[0]);
+		// System.out.println(shipmentdata[1]);
 
 		if (CommonFunctions.isElementClickable(logInButton)) {
 
@@ -65,21 +71,12 @@ public class LoginPage {
 
 		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
 			emailtextfield.click();
-			// emailtextfield.sendKeys("Sopan181");
 			emailtextfield.sendKeys(shipmentdata[0]);
 		}
 
 		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
-			// passwordTextField.sendKeys("Test-123");
 			passwordTextField.sendKeys(shipmentdata[1]);
 		}
-
-		/**
-		 * @author User:- rahul shinde 02-july-2021
-		 * @implNote :- test login failure for jenkin
-		 *
-		 */
-
 		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
 			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
 		}

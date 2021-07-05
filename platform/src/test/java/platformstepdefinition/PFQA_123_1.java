@@ -31,32 +31,27 @@ public class PFQA_123_1 extends NewBaseClass {
 
 	@Given("^Navigate to URL on (.+) PFQA_123_1$")
 	public void navigate_to_url_on_pfqa1231(String browser) throws Throwable {
-//		String[] shipmentdata;
-//		// shipmentdata = XLHandlerold.readexcel("Register", 1, "NewTestData.xlsx");
-//		shipmentdata = XLHandler.readexcel("User", "NewTestData.xlsx");
-//		System.out.println(shipmentdata[0]);
-//		System.out.println(shipmentdata[1]);
 		driver = openbrowser(browser);
 
 	}
 
+	/**
+	 * @Author : Sopan Patil
+	 * @Date : 01 Jul 2021
+	 * @Description: Added Login stetps
+	 */
 	@Then("^Login for PFQA_123_1$")
 	public void Login_for_Platform() throws Throwable {
 
 		LoginPage loginPage = new LoginPage(driver);
 
 		loginPage.loginToPlatform();
-		// closebrowser();
-
-		// ForgotPassword ForgotPassword = new ForgotPassword(driver);
-		// ForgotPassword.ForgotPassword();
-
 	}
 
 	@And("^Close browser$")
 	public void close_browser() throws Throwable {
 		// throw new PendingException();
-		closebrowser();
+		// closebrowser();
 	}
 
 	@Given("^Navigate to URL with (.+) and (.+) PFQA_123_1$")

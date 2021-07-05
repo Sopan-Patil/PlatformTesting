@@ -63,6 +63,7 @@ public class WebHandler {
 			//options.setExperimentalOption("prefs", chromePreferences);
 			ObjectHelper.driver = new ChromeDriver(options);
 			System.out.println("Orignal"+ObjectHelper.driver);
+			ObjectHelper.driver.manage().window().maximize();
 			// ClearCache.chromeclear();
 		
 		} else if (ObjectHelper.browsertype.equals("firefox")) {
