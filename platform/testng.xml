@@ -3,7 +3,7 @@
 <suite name="Platform Testing Cucumber Testng" verbose="1" parallel="tests">
 
 <listeners>
-<listener class-name="testscripts.Listeners" />
+<listener class-name="listeners.Listeners" />
 <!-- <listener class-name = "resources.ExtentReporterNG"/> -->
 </listeners>
       
