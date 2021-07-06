@@ -355,9 +355,9 @@
         <version>1.0.0</version>
         <!--   <version>1.0.0-SNAPSHOT</version> -->
         <configuration>
-            <source>${jdk.source.version}</source>
+          <!--   <source>${jdk.source.version}</source>
             <target>${jdk.target.version}</target>
-            <complianceLevel>${jdk.source.version}</complianceLevel>
+            <complianceLevel>${jdk.source.version}</complianceLevel> -->
                <source>1.8</source>
             <target>1.8</target>
             <complianceLevel>1.8</complianceLevel>
