@@ -60,14 +60,6 @@ public class LoginPage {
 
 		logInButton.click();
 
-//
-//		try {
-//			logInButton.click();
-//			log.info("Login button is clicked");
-//		} catch (Exception e) {
-//			String fileName =Scenario.getGherkinName();
-//			Screenshots.takeScreenshot(fileName, driver);
-//		}
 		log.info("Login button is clicked");
 
 		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
