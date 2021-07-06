@@ -52,9 +52,6 @@ public class LoginPage {
 
 		shipmentdata = XLHandler.readexcel("User", "NewTestData.xlsx");
 
-		// System.out.println(shipmentdata[0]);
-		// System.out.println(shipmentdata[1]);
-
 		System.out.println(shipmentdata[0]);
 		System.out.println(shipmentdata[1]);
 
