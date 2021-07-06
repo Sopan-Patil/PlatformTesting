@@ -15,6 +15,19 @@
           </reporter-output>
         </test-method> <!-- setUpClass -->
         <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:platformrunner.PlatformTestRunners@1f3f02ee]" name="feature" duration-ms="64835" started-at="2021-07-06T18:09:52Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2021-07-06T18:10:57Z">
+  <suite started-at="2021-07-06T10:31:49Z" name="Platform Testing Cucumber Testng" finished-at="2021-07-06T10:32:26Z" duration-ms="37224">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:platformrunner.PlatformTestRunners@2654635]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2021-07-06T10:31:49Z" name="Cucumber Testng" finished-at="2021-07-06T10:32:26Z" duration-ms="37224">
+      <class name="platformrunner.PlatformTestRunners">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:platformrunner.PlatformTestRunners@2654635]" started-at="2021-07-06T16:01:49Z" name="setUpClass" finished-at="2021-07-06T16:01:50Z" duration-ms="461" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:platformrunner.PlatformTestRunners@2654635]" started-at="2021-07-06T16:01:50Z" name="feature" description="Runs Cucumber Feature" data-provider="features" finished-at="2021-07-06T16:02:26Z" duration-ms="36498" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -34,6 +47,7 @@
           </reporter-output>
         </test-method> <!-- feature -->
         <test-method status="PASS" signature="tearDownClass()[pri:0, instance:platformrunner.PlatformTestRunners@1f3f02ee]" name="tearDownClass" is-config="true" duration-ms="149" started-at="2021-07-06T18:11:31Z" finished-at="2021-07-06T18:11:32Z">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:platformrunner.PlatformTestRunners@2654635]" started-at="2021-07-06T16:02:26Z" name="tearDownClass" finished-at="2021-07-06T16:02:26Z" duration-ms="74" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

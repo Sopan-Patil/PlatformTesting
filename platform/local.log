@@ -1,0 +1,5 @@
+
+Mon Jul 05 2021 16:09:06 GMT+0530 (India Standard Time) -- [ERROR] Necessary ports to start BrowserStack Binary were occupied by PID: -
+Mon Jul 05 2021 16:09:06 GMT+0530 (India Standard Time) -- [ERROR] Please ensure that 45691 is available to use
+Mon Jul 05 2021 16:09:06 GMT+0530 (India Standard Time) -- [ERROR] SYS_CONFLICT:1001 https://browserstack.com/docs/local-testing/binary/errors/1001
+Mon Jul 05 2021 16:09:06 GMT+0530 (India Standard Time) -- You can learn more about BrowserStack Binary flags by running BrowserStackLocal.exe --help
