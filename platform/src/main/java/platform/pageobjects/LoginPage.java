@@ -41,7 +41,7 @@ public class LoginPage {
 	@FindBy(xpath = "//input[@id='password']")
 	public WebElement passwordTextField;
 
-	@FindBy(xpath = "//span[contains(text(),'ログイン')]")
+	@FindBy(xpath = "//ddddspan[contains(text(),'ログイン')]")
 	public WebElement logInButton;
 
 	@FindBy(xpath = "//button[@type='submit']")
@@ -58,17 +58,22 @@ public class LoginPage {
 		System.out.println(shipmentdata[0]);
 		System.out.println(shipmentdata[1]);
 
-		if (CommonFunctions.isElementClickable(logInButton)) {
+		logInButton.click();
 
-			logInButton.click();
-
-		}
-
+//
+//		try {
+//			logInButton.click();
+//			log.info("Login button is clicked");
+//		} catch (Exception e) {
+//			String fileName =Scenario.getGherkinName();
+//			Screenshots.takeScreenshot(fileName, driver);
+//		}
 		log.info("Login button is clicked");
 
 		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
 			emailtextfield.click();
 			emailtextfield.sendKeys(shipmentdata[0]);
+
 		}
 
 		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {

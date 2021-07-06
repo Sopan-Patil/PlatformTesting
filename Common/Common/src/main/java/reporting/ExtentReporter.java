@@ -45,4 +45,5 @@ public class ExtentReporter {
 		FileUtils.copyFile(source, new File(destinationFile));
 		return destinationFile;
 	}
+	
 }

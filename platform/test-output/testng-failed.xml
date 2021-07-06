@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="-1" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test name="Default test(failed)">
+<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Platform Testing Cucumber Testng]">
+  <listeners>
+    <listener class-name="listeners.Listeners"/>
+  </listeners>
+  <test name="Cucumber Testng(failed)">
     <classes>
       <class name="platformrunner.PlatformTestRunners">
         <methods>
@@ -11,5 +14,5 @@
         </methods>
       </class> <!-- platformrunner.PlatformTestRunners -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Cucumber Testng(failed) -->
+</suite> <!-- Failed suite [Platform Testing Cucumber Testng] -->

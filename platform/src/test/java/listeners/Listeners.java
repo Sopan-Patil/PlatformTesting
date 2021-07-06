@@ -1,7 +1,5 @@
 package listeners;
 
-import java.io.IOException;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -13,6 +11,8 @@ import com.aventstack.extentreports.Status;
 
 import reporting.ExtentReporter;
 import utils.BrowserstackUtility;
+import utils.ObjectHelper;
+import utils.Screenshots;
 
 /**
  * @Author : Chetan Sonparote
@@ -61,17 +61,17 @@ public class Listeners extends ExtentReporter implements ITestListener {
 		} catch (Exception e) {
 
 		}
-		try {
-
-			extentTest.get().addScreenCaptureFromPath(getScreenShotPath(testMethodName, driver),
-					result.getMethod().getMethodName());
-
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+		String fileName = null;
+		extentTest.get().addScreenCaptureFromPath(Screenshots.takeScreenshot(fileName, ObjectHelper.driver),
+				result.getMethod().getMethodName());
+		// Screenshots.takeScreenshot(fileName, ObjectHelper.driver);
 		browserstackUtility.setResult("FAIL");
+
+	}
+
+	private String takeScreenshot(String testMethodName, WebDriver driver) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
