@@ -1,8 +1,7 @@
 Feature: Open and close browserstack 
 
-@OpenBrowserstackSingle
+@OpenBrowserstackSingle @OpenBrowserstack
 Scenario Outline: Open browserstack single browser
-
 Given Navigate to URL on browserstack with <config> and <environment> 
 Then Validate if browserstack browser is open
 
@@ -14,7 +13,6 @@ Examples:
 
 @OpenBrowserstackCrossBrowser
 Scenario Outline: Open browserstack cross browser
-
 Given Navigate to URL on browserstack with <config> and <environment> 
 Then Validate if browserstack browser is open
 
@@ -27,8 +25,7 @@ Examples:
 |parallel.conf.json	|env3		|
 
 @OpenBrowserstackMustHave
-Scenario Outline: Open browserstack cross browser
-
+Scenario Outline: Open browserstack browser for Must Have configuration
 Given Navigate to URL on browserstack with <config> and <environment> 
 Then Validate if browserstack browser is open
 
@@ -47,7 +44,6 @@ Examples:
 
 @CloseBrowserstack
 Scenario: Close browserstack browser
-
 Given Browserstack browser is open
 Then Close browserstack browser
 

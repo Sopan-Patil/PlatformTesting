@@ -14,7 +14,7 @@ Examples:
 @CloseBrowser
 Scenario: Close local browser
 
-Given Browser is open
+Given Local browser is open
 Then Close local browser
 
 

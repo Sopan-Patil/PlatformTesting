@@ -19,9 +19,10 @@ public class PFQA_Footer extends NewBaseClass {
 
 	public WebDriver driver;
 
-	@Given("^Navigate to URL on (.+) for footer link verification$")
-	public void navigate_to_url_on_for_footer_link_verification(String browser) throws Throwable {
-		driver = openbrowser(browser);
+	@Given("^Browser is open$")
+	public void browser_is_open() throws Throwable {
+		// throw new PendingException();
+		checkBrowserOpen();
 	}
 
 	@Then("^Validate footer links$")
@@ -31,10 +32,5 @@ public class PFQA_Footer extends NewBaseClass {
 
 		footerPage.clickFooterScbtLink();
 	}
-
-	/*
-	 * @And("^Close browser$") public void close_browser() throws Throwable { // //
-	 * throw new PendingException(); closebrowser(); }
-	 */
 
 }
