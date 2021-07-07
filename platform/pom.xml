@@ -329,9 +329,9 @@
 						<artifactId>maven-surefire-plugin</artifactId>
 						<version>2.18.1</version>
 						<configuration>						 
-					       <includes>
+					      <!--  <includes>
 					       		<exclude>**/*PlatformTestRunners.java</exclude>
-					       </includes>	
+					       </includes>	 -->
 					        <suiteXmlFiles>
     <!-- pass testng.xml files as argument from command line -->
     <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
