@@ -9,7 +9,7 @@ Then Login for PFQA_123_1
 
 Examples:
 |browser|
-|chrome|
+|chrome	|
 
 @BrowserstackTest
 Scenario Outline: Validate new login features 
