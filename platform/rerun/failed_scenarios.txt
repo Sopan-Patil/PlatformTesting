@@ -1,1 +1,1 @@
-./src/test/java/platformfeatures/PFQA_123_1.feature:26
+./src/test/java/platformfeatures/PFQA_123_1.feature:12

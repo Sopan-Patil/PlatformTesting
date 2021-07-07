@@ -4,6 +4,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import base.NewBaseClass;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
@@ -47,10 +48,11 @@ public class PFQA_123_1 extends NewBaseClass {
 		loginPage.loginToPlatform();
 	}
 
-	/*
-	 * @And("^Close browser$") public void close_browser() throws Throwable { //
-	 * throw new PendingException(); closebrowser(); }
-	 */
+	@And("^Close browser$")
+	public void close_browser() throws Throwable { //
+		// throw new PendingException();
+		closebrowser();
+	}
 
 	@Given("^Navigate to URL with (.+) and (.+) PFQA_123_1$")
 	public void navigate_to_url_with_and_pfqa1231(String config, String environment) throws Throwable {

@@ -140,13 +140,21 @@ public class NewBaseClass {
 
 	public void closebrowser() {
 		WebHandler.closebrowser();
+
+	}
+
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 7 Jul 2021
+	 * @Description: Added close browser method for browserstack
+	 */
+	public void closeBrowserstack() {
 		try {
 			browserstackUtility.tearDown();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 
 	public static void setTestResult(ITestResult result) {

@@ -15,7 +15,7 @@ Examples:
 Scenario: Close local browser
 
 Given Browser is open
-Then Close browser
+Then Close local browser
 
 
 

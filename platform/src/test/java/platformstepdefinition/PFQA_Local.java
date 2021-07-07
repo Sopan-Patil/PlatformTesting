@@ -6,7 +6,6 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import base.NewBaseClass;
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
@@ -45,8 +44,10 @@ public class PFQA_Local extends NewBaseClass {
 		validate_if_browser_is_open();
 	}
 
-	@And("^Close browser$")
-	public void close_browser() throws Throwable {
+	@Then("^Close local browser$")
+	public void close_local_browser() throws Throwable {
+		// throw new PendingException();
+		// }
 		// throw new PendingException();
 		closebrowser();
 	}
