@@ -1,13 +1,8 @@
 Feature: Validate footer links
 
 @FooterTest
-Scenario Outline: Validate footer links
+Scenario: Validate footer links
 
-Given Navigate to URL on <browser> for footer link verification
+Given Browser is open
 Then Validate footer links
-And Close browser
 
-Examples:
-|browser|
-|chrome|
-|edge|

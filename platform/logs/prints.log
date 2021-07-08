@@ -305,3 +305,6 @@
 15:57:56.411 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
 16:01:23.326 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
 16:02:15.740 [main] INFO  platform.pageobjects.LoginPage - Login button is clicked
+16:24:55.311 [main] ERROR base.NewBaseClass - Brower window is closed
+16:24:55.389 [main] ERROR base.NewBaseClass - Brower window is closed
+16:27:01.893 [main] ERROR base.NewBaseClass - Brower window is closed

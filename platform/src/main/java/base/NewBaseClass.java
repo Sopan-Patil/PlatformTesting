@@ -2,6 +2,8 @@ package base;
 
 import java.time.LocalDateTime;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 
@@ -34,6 +36,7 @@ public class NewBaseClass {
 	// public static LoginPage lp;
 
 	public static String greencolorRGB = "rgb(179, 198, 53)";
+	private static Logger log = LogManager.getLogger(NewBaseClass.class.getName());
 
 	private void setUpObjectHelper() {
 		String testDataFileName = ConfigProp.testDataFile;
@@ -141,6 +144,29 @@ public class NewBaseClass {
 	public void closebrowser() {
 		WebHandler.closebrowser();
 
+	}
+
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 7 Jul 2021
+	 * @Description: Added close browser method for browserstack
+	 */
+	public void checkBrowserOpen() {
+
+		/*
+		 * boolean open = false;
+		 * 
+		 * if (ObjectHelper.driver.getTitle() != null) { open = true; } else if
+		 * (ObjectHelper.driver.getTitle().isEmpty()) { open = false; }
+		 * 
+		 * return open;
+		 */
+		try {
+			ObjectHelper.driver.getTitle();
+			log.info("Browser Window is still exist");
+		} catch (Exception e) {
+			log.error("Brower window is closed");
+		}
 	}
 
 	/**

@@ -96,7 +96,7 @@ public class WebHandler {
 
 			ObjectHelper.driver = new FirefoxDriver(ffOptions);
 
-			ClearCache.firefoxclear();
+			//ClearCache.firefoxclear();
 			setobjects();
 
 		} else if (ObjectHelper.browsertype.equals("edge")) {

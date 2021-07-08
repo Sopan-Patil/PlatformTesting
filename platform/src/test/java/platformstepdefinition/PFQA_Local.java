@@ -30,25 +30,18 @@ public class PFQA_Local extends NewBaseClass {
 	@Then("^Validate if browser is open$")
 	public void validate_if_browser_is_open() throws Throwable {
 		// throw new PendingException();
-		try {
-			driver.getTitle();
-			log.info("Browser Window is still exist");
-		} catch (Exception e) {
-			log.error("Brower window is closed");
-		}
+		checkBrowserOpen();
 	}
 
-	@Given("^Browser is open$")
-	public void browser_is_open() throws Throwable {
+	@Given("^Local browser is open$")
+	public void local_browser_is_open() throws Throwable {
 		// throw new PendingException();
-		validate_if_browser_is_open();
+		checkBrowserOpen();
 	}
 
 	@Then("^Close local browser$")
 	public void close_local_browser() throws Throwable {
-		// throw new PendingException();
-		// }
-		// throw new PendingException();
+
 		closebrowser();
 	}
 
