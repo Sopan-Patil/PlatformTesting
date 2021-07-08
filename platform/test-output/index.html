@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Lenovo\AppData\Local\Temp\testng-eclipse--654906720\testng-customsuite.xml</span>
+                    <span>C:\Users\Lenovo\AppData\Local\Temp\testng-eclipse--1501832483\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="platformrunner.PlatformTestRunners" class="method navigator-link" hash-for-method="feature(Validate new login)">feature(Validate new login)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="platformrunner.BrowserstackRunner" class="method navigator-link" hash-for-method="feature(Open and close browserstack)">feature(Open and close browserstack)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -120,22 +120,21 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">platformrunner.PlatformTestRunners</span>
+              <span class="class-name">platformrunner.BrowserstackRunner</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="feature(Validate new login)">
-                  </a> <!-- feature(Validate new login) -->
+                  <a name="feature(Open and close browserstack)">
+                  </a> <!-- feature(Open and close browserstack) -->
                   <span class="method-name">feature</span>
-                  <span class="parameters">(Validate new login)</span>
-                  <div class="stack-trace">cucumber.runtime.CucumberException: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//fffspan[contains(text(),&apos;ログイン&apos;)]&quot;}
-  (Session info: chrome=91.0.4472.106)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;150-129-2-163&apos;, ip: &apos;150.129.2.163&apos;, os.name: &apos;windows&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.2&apos;, java.version: &apos;1.8.0_181&apos;
-Driver info: driver.version: unknown
-Command duration or timeout: 0 milliseconds
+                  <span class="parameters">(Open and close browserstack)</span>
+                  <div class="stack-trace">cucumber.runtime.CucumberException: org.openqa.selenium.WebDriverException: An unknown error has occurred
+Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
+System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;192.168.1.5&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: Safari, browserVersion: 12.1.2, javascriptEnabled: true, platform: MAC, platformName: MAC, safari:automaticInspection: false, safari:automaticProfiling: false, safari:diagnose: false, setWindowRect: true, strictFileInteractability: false, webdriver.remote.sessionid: e59fc333da1e1823ad17ad7f57b..., webkit:WebRTC: {DisableICECandidateFiltering: false, DisableInsecureMediaCapture: false}}
+Session ID: e59fc333da1e1823ad17ad7f57ba58003dc8a1b0
 	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
 	at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -163,45 +162,29 @@ Command duration or timeout: 0 milliseconds
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//fffspan[contains(text(),&apos;ログイン&apos;)]&quot;}
-  (Session info: chrome=91.0.4472.106)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;150-129-2-163&apos;, ip: &apos;150.129.2.163&apos;, os.name: &apos;windows&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.2&apos;, java.version: &apos;1.8.0_181&apos;
-Driver info: driver.version: unknown
-Command duration or timeout: 0 milliseconds
+Caused by: org.openqa.selenium.WebDriverException: An unknown error has occurred
+Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
+System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;192.168.1.5&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: Safari, browserVersion: 12.1.2, javascriptEnabled: true, platform: MAC, platformName: MAC, safari:automaticInspection: false, safari:automaticProfiling: false, safari:diagnose: false, setWindowRect: true, strictFileInteractability: false, webdriver.remote.sessionid: e59fc333da1e1823ad17ad7f57b..., webkit:WebRTC: {DisableICECandidateFiltering: false, DisableInsecureMediaCapture: false}}
+Session ID: e59fc333da1e1823ad17ad7f57ba58003dc8a1b0
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:421)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy40.click(Unknown Source)
-	at platform.pageobjects.LoginPage.loginToPlatform(LoginPage.java:58)
-	at platformstepdefinition.PFQA_123_1.Login_for_Platform(PFQA_123_1.java:48)
-	at ✽.Then Login for PFQA_123_1(./src/test/java/platformfeatures/PFQA_123_1.feature:19)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//fffspan[contains(text(),&apos;ログイン&apos;)]&quot;}
-  (Session info: chrome=91.0.4472.106)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;150-129-2-163&apos;, ip: &apos;150.129.2.163&apos;, os.name: &apos;windows&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.2&apos;, java.version: &apos;1.8.0_181&apos;
-Driver info: driver.version: unknown
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;192.168.1.5&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
-Driver info: driver.version: unknown
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebDriver.getCurrentUrl(RemoteWebDriver.java:283)
+	at base.NewBaseClass.replaceurl(NewBaseClass.java:137)
+	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:73)
+	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:92)
+	at platformstepdefinition.PFQA_Browserstack.navigate_to_url_with_and_on_browserstack(PFQA_Browserstack.java:26)
+	at ✽.Given Navigate to URL with parallel.conf.json and env3 on browserstack(PFQA_browserstack.feature:7)
 
 </div> <!-- stack-trace -->
                   <em>
@@ -213,7 +196,7 @@ Driver info: driver.version: unknown
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Lenovo\AppData\Local\Temp\testng-eclipse--654906720\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Lenovo\AppData\Local\Temp\testng-eclipse--1501832483\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -222,7 +205,7 @@ Driver info: driver.version: unknown
 &lt;suite thread-count=&quot;-1&quot; name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;platformrunner.PlatformTestRunners&quot;/&gt;
+      &lt;class name=&quot;platformrunner.BrowserstackRunner&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -273,13 +256,13 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'feature')
-data.setCell(0, 2, 'platformrunner.PlatformTestRunners')
-data.setCell(0, 3, 16126);
+data.setCell(0, 2, 'platformrunner.BrowserstackRunner')
+data.setCell(0, 3, 673485);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 16 seconds</span>
+              <span class="suite-total-time">Total running time: 11 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -305,7 +288,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">platformrunner.PlatformTestRunners</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">platformrunner.BrowserstackRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
                 <span class="method-start">0 ms</span>
@@ -313,12 +296,12 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">feature(Validate new login)</span>
-                <span class="method-start">534 ms</span>
+                <span class="method-name">feature(Open and close browserstack)</span>
+                <span class="method-start">489 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">16669 ms</span>
+                <span class="method-start">673984 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

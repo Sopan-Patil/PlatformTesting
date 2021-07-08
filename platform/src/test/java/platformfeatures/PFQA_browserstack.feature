@@ -4,8 +4,8 @@ Feature: Open and close browserstack
 
 @OpenBrowserstack
 Scenario Outline: Open browserstack 
-	Given Navigate to URL on browserstack with <config> and <environment> 
-	Then Validate if browserstack browser is open 
+Given Navigate to URL with <config> and <environment> on browserstack 
+Then Validate if browserstack browser is open 
 	
 	Examples: Single browser parameters 
 		|config				|environment|
