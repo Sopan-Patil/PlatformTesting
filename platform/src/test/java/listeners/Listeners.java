@@ -1,5 +1,8 @@
 package listeners;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -61,10 +64,12 @@ public class Listeners extends ExtentReporter implements ITestListener {
 		} catch (Exception e) {
 
 		}
-		String fileName = null;
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy-HH-mm-ss");
+		LocalDateTime now = LocalDateTime.now();
+
+		String fileName = dtf.format(now);
 		extentTest.get().addScreenCaptureFromPath(Screenshots.takeScreenshot(fileName, ObjectHelper.driver),
 				result.getMethod().getMethodName());
-		// Screenshots.takeScreenshot(fileName, ObjectHelper.driver);
 		browserstackUtility.setResult("FAIL");
 
 	}
