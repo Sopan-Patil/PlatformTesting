@@ -12,6 +12,11 @@ Then Close browserstack browser
 		|config				|environment|
 		|single.conf.json	|chrome		|
 		
+		@BrowserstackLocal 
+	Examples: Single browser parameters 
+		|config				|environment|
+		|local.conf.json	|chrome		|
+		
 	@CrossBrowser
 	Examples: Cross browser parameters 
 		|config				|environment|
