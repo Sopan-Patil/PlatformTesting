@@ -19,7 +19,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 		glue = { "platformstepdefinition" },
 
-		tags = { "@OpenBrowserstack" },
+		tags = { "@MustHave" },
 		// tags = { "@OpenBrowserstack", "@FooterTest", "@CloseBrowserstack" },
 
 		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",

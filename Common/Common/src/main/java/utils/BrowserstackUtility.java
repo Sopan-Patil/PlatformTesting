@@ -107,6 +107,7 @@ public class BrowserstackUtility {
 			l.start(options);
 		}
 		
+		capabilities.setCapability("acceptSslCerts", "true");
 		capabilities.setCapability("browserstack.idleTimeout", "30");
 
 		driver = new RemoteWebDriver(

@@ -23,6 +23,7 @@ Examples:
 #|config|
 #|single.conf.json|
 |config|environment|
-|single.conf.json|chrome|
+|local.conf.json|chrome|
+#|single.conf.json|chrome|
 #|mustHave.conf.json|env6|
 

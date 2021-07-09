@@ -1,1 +1,1 @@
-PFQA_browserstack.feature:19:26:27:28:29
+./src/test/java/platformfeatures/PFQA_123_1.feature:26

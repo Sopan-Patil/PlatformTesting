@@ -2,23 +2,24 @@ Feature: Open and close browserstack
 
 
 
-@OpenBrowserstack
+
 Scenario Outline: Open browserstack 
 Given Navigate to URL with <config> and <environment> on browserstack 
-Then Validate if browserstack browser is open 
+Then Close browserstack browser
 	
+	@SingleBrowser 
 	Examples: Single browser parameters 
 		|config				|environment|
 		|single.conf.json	|chrome		|
 		
-	
+	@CrossBrowser
 	Examples: Cross browser parameters 
 		|config				|environment|
 		|parallel.conf.json	|env1		|
 		|parallel.conf.json	|env2		|
 		|parallel.conf.json	|env3		|
 		
-	
+	@MustHave
 	Examples: Must Have parameters 
 		|config				|environment|
 		|mustHave.conf.json	|env1		|
