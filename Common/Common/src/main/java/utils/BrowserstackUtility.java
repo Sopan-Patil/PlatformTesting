@@ -125,7 +125,7 @@ public class BrowserstackUtility {
 	}
 
 	//@AfterMethod(alwaysRun = true)
-	@AfterTest(alwaysRun = true)
+	//@AfterTest(alwaysRun = true)
 	public void tearDown() throws Exception {
 		driver.quit();
 		if (l != null)

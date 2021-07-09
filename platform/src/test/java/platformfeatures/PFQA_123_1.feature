@@ -20,10 +20,8 @@ Then Login for PFQA_123_1
 And Close browser
 
 Examples:
-#|config|
-#|single.conf.json|
+
 |config|environment|
-#|local.conf.json|chrome|
 |single.conf.json|chrome|
-#|mustHave.conf.json|env6|
+
 
