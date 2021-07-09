@@ -3,9 +3,8 @@
  
 
   "capabilities": {
-  "project": "platform",
     "build": "browserstack-build-single",
-    "name": "single_test",
+    "name": "BStack-[Java] Sample Test",
     "browserstack.debug": true
   },
 
