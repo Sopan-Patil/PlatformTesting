@@ -10,7 +10,12 @@
 
   "environments": {
     "chrome": {
-      "browser": "chrome"
+      "browser": "chrome",
+      "browser_version": "latest",
+      "os": "Windows",
+      "os_version": "10",
+      "browserstack.local": "false",
+      "browserstack.selenium_version": "3.14.0"
     }
   }
 }
