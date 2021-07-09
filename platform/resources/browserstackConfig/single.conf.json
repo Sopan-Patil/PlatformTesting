@@ -15,7 +15,10 @@
       "os": "Windows",
       "os_version": "10",
       "browserstack.local": "false",
-      "browserstack.selenium_version": "3.14.0"
+      "browserstack.selenium_version": "3.14.0",
+         "build": "browserstack-build-single",
+    "name": "single_test",
+    "browserstack.debug": true
     }
   }
 }
