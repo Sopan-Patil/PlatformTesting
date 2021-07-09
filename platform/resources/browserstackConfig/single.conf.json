@@ -4,8 +4,10 @@
 
   "capabilities": {
     "build": "browserstack-build-single",
-    "name": "BStack-[Java] Sample Test",
-    "browserstack.debug": true
+    "name": "single_test",
+    "browserstack.debug": true,
+    "browserstack.local":"browserstackLocal",
+	"browserstack.localIdentifier":"browserstackLocalIdentifier"
   },
 
   "environments": {
