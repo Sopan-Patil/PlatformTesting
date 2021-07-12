@@ -15,22 +15,22 @@ import utils.EmailAddressAndEIDGenerate;
 /**
  * @Author : Sopan Patil
  * @Date : 12 Jul 2021
- * @Description: Added SignIn function
+ * @Description: Added Signup function
  */
 
-public class SignIn {
+public class SignUp {
 	List<String[]> testdata;
 	public WebDriver driver;
-	private static Logger log = LogManager.getLogger(SignIn.class.getName());
+	private static Logger log = LogManager.getLogger(SignUp.class.getName());
 	int waitTime = 1;
 
-	public SignIn(WebDriver driver) {
+	public SignUp(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
 	@FindBy(xpath = "//a[@class='link link--smaller']")
-	public WebElement SignInLink;
+	public WebElement SignUpLink;
 
 	@FindBy(xpath = "//input[@id='email']")
 	public WebElement Emailtextfield;
@@ -41,10 +41,10 @@ public class SignIn {
 	@FindBy(xpath = "//button[@type='submit']")
 	public WebElement SubmitButton;
 
-	public void SignInToPlatform(String emailaddress, String eid) throws Exception {
+	public void SignUpToPlatform(String emailaddress, String eid) throws Exception {
 
-		if (CommonFunctions.waitForVisiblity(SignInLink, waitTime)) {
-			SignInLink.click();
+		if (CommonFunctions.waitForVisiblity(SignUpLink, waitTime)) {
+			SignUpLink.click();
 		}
 
 		if (CommonFunctions.waitForVisiblity(Emailtextfield, waitTime)) {

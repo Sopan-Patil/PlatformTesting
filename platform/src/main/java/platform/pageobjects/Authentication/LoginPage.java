@@ -41,7 +41,7 @@ public class LoginPage {
 	@FindBy(xpath = "//input[@id='password']")
 	public WebElement passwordTextField;
 
-	@FindBy(xpath = "//fffspan[contains(text(),'ログイン')]")
+	@FindBy(xpath = "//span[contains(text(),'ログイン')]")
 	public WebElement logInButton;
 
 	@FindBy(xpath = "//button[@type='submit']")

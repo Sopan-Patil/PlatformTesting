@@ -4,7 +4,7 @@ Feature: Validate new login
 Scenario Outline: Validate new SingIn features 
 
 Given Navigate to URL on <browser> Platform
-Then SignIn for Platform
+Then SignUp for Platform
 
 
 Examples:

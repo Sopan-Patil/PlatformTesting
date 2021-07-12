@@ -10,13 +10,13 @@ public class ConfigProp {
 	public static String browser = "chrome";
 
 	// Environment wise URL below
-	public static String stageURL = "https://tempmailo.com/";
+	public static String stageURL = "https://stg.studygear.evidus.net/";
 	public static String devURL = "https://dev.studygear.evidus.net/";
 	public static String prdURL = "https://prd-studygear.evidus.net/";
-	public static String mailinatorURL = "https://www.mailinator.com/v4/public/inboxes.jsp?to=sopan";
+	
 
 	public static String platformEnvironmentURL = stageURL;
-	public static String mailinatorEnvironmentURL = mailinatorURL;
+	
 
 	public static String user = "sgepuser";
 	public static String password = "9tg6gxxCEaL3";

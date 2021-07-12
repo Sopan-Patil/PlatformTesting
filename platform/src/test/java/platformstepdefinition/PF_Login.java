@@ -6,7 +6,9 @@ import org.openqa.selenium.WebDriver;
 import base.NewBaseClass;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
+import platform.pageobjects.Authentication.LoginPage;
 
 /**
  * @Author : Chetan Sonparote 
@@ -27,8 +29,8 @@ public class PF_Login extends NewBaseClass {
 
 	String emailid = "";
 
-	@Given("^Navigate to URL on (.+) PFQA_123_1$")
-	public void navigate_to_url_on_pfqa1231(String browser) throws Throwable {
+	@Given("^Navigate to URL on (.+)$")
+	public void navigate_to_url_(String browser) throws Throwable {
 		driver = openbrowser(browser);
 
 	}
@@ -38,12 +40,12 @@ public class PF_Login extends NewBaseClass {
 	 * @Date : 01 Jul 2021
 	 * @Description: Added Login stetps
 	 */
-//	@Then("^Login for PFQA_123_1$")
-//	public void Login_for_Platform() throws Throwable {
-//
-//		LoginPage loginToPlatform = new LoginPage(driver);
-//		loginToPlatform.loginToPlatform();
-//	}
+	@Then("^Login To Platform$")
+	public void Login_to_Platform() throws Throwable {
+
+		LoginPage loginToPlatform = new LoginPage(driver);
+		loginToPlatform.loginToPlatform();
+	}
 
 	@And("^Close browser$")
 	public void close_browser() throws Throwable { // //
