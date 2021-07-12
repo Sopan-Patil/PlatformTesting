@@ -1,6 +1,7 @@
+@LoginFeature @Smoke
 Feature: Validate new login 
 
-@FunctionalTest
+#@FunctionalTest 
 Scenario Outline: Validate new login features 
 
 Given Navigate to URL on <browser> PFQA_123_1
@@ -11,7 +12,8 @@ Examples:
 |browser|
 |chrome	|
 
-@BrowserstackTest
+
+#@BrowserstackTest
 Scenario Outline: Validate new login features 
 
 Given Navigate to URL with <config> and <environment> PFQA_123_1
