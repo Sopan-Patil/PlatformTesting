@@ -27,5 +27,5 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
 				"junit:target/cucumber_html_report/junit_platform.xml", "rerun:rerun/failed_scenarios.txt", })
 
-public class BrowserstackRunner extends AbstractTestNGCucumberTests {
+public class Runner extends AbstractTestNGCucumberTests {
 }
