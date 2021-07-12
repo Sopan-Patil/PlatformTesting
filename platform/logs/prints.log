@@ -308,3 +308,8 @@
 16:24:55.311 [main] ERROR base.NewBaseClass - Brower window is closed
 16:24:55.389 [main] ERROR base.NewBaseClass - Brower window is closed
 16:27:01.893 [main] ERROR base.NewBaseClass - Brower window is closed
+18:20:06.552 [main] INFO  base.NewBaseClass - Browser Window is still exist
+18:20:19.260 [main] INFO  base.NewBaseClass - Browser Window is still exist
+18:20:39.790 [main] INFO  base.NewBaseClass - Browser Window is still exist
+18:25:17.887 [main] INFO  base.NewBaseClass - Browser Window is still exist
+18:25:31.192 [main] INFO  base.NewBaseClass - Browser Window is still exist

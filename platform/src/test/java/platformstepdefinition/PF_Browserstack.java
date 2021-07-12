@@ -21,15 +21,14 @@ public class PF_Browserstack extends NewBaseClass {
 	public WebDriver driver;
 	private static Logger log = LogManager.getLogger(PF_Browserstack.class.getName());
 
-	@Given("^Navigate to URL on browserstack with (.+) and (.+) $")
-	public void navigate_to_url_on_browserstack_with_and(String config, String environment) throws Throwable {
-		// throw new PendingException();
+	@Given("^Navigate to URL with (.+) and (.+) on browserstack$")
+	public void navigate_to_url_with_and_on_browserstack(String config, String environment) throws Throwable {
 		driver = openBrowserstack(config, environment);
 	}
 
 	@Then("^Validate if browserstack browser is open$")
 	public void validate_if_browserstack_browser_is_open() throws Throwable {
-		// throw new PendingException();
+
 		checkBrowserOpen();
 	}
 

@@ -46,8 +46,7 @@ public class PF_Login extends NewBaseClass {
 //	}
 
 	@And("^Close browser$")
-	public void close_browser() throws Throwable { //
-		// throw new PendingException();
+	public void close_browser() throws Throwable { // //
 		closebrowser();
 	}
 

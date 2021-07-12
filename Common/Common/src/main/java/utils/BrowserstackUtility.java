@@ -107,6 +107,7 @@ public class BrowserstackUtility {
 			l.start(options);
 		}
 		
+		capabilities.setCapability("acceptSslCerts", "true");
 		capabilities.setCapability("browserstack.idleTimeout", "30");
 
 		driver = new RemoteWebDriver(
@@ -117,14 +118,17 @@ public class BrowserstackUtility {
 
 		SessionId session = ((RemoteWebDriver) driver).getSessionId();
 		
+		browserName = ((RemoteWebDriver) driver).getCapabilities().getBrowserName().toLowerCase();
+		
 		mark(session, username, accessKey);
 
 		 return driver;
 		
 	}
 
+	public static String browserName;
 	//@AfterMethod(alwaysRun = true)
-	@AfterTest(alwaysRun = true)
+	//@AfterTest(alwaysRun = true)
 	public void tearDown() throws Exception {
 		driver.quit();
 		if (l != null)
