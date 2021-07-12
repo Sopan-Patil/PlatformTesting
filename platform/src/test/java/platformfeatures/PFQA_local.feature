@@ -2,7 +2,7 @@ Feature: Open and close local browser
 
 
 Scenario Outline: Open local browser
-Given Navigate to url on local <browser> 
+Given Navigate to url on <browser> local
 Then Run test script
 And Close local browser
 

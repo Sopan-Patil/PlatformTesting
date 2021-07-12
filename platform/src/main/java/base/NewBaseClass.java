@@ -76,13 +76,12 @@ public class NewBaseClass {
 
 		// else
 
-		if (BrowserstackUtility.browserName.equalsIgnoreCase("safari")) {
-
-			runAppleScript();
-		} else {
-			replaceurl();
-		}
-
+		/*
+		 * if (BrowserstackUtility.browserName.equalsIgnoreCase("safari")) {
+		 * 
+		 * runAppleScript(); } else { replaceurl(); }
+		 */
+		replaceurl();
 	}
 
 	/**

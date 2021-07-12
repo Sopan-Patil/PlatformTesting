@@ -6,7 +6,6 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import base.NewBaseClass;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -78,10 +77,16 @@ public class PFQA_Local extends NewBaseClass {
 	 * closebrowser(); }
 	 */
 
-	@Given("^Navigate to url on local (.+) $")
+	/*
+	 * @Given("^Navigate to url on local (.+) $") public void
+	 * navigate_to_url_on_local(String browser) throws Throwable { driver =
+	 * openbrowser(browser); throw new PendingException(); }
+	 */
+
+	@Given("^Navigate to url on (.+) local$")
 	public void navigate_to_url_on_local(String browser) throws Throwable {
 		driver = openbrowser(browser);
-		throw new PendingException();
+		// throw new PendingException();
 	}
 
 	@Then("^Run test script$")
@@ -89,13 +94,13 @@ public class PFQA_Local extends NewBaseClass {
 		LoginPage loginPage = new LoginPage(driver);
 
 		loginPage.loginToPlatform();
-		throw new PendingException();
+		// throw new PendingException();
 	}
 
 	@And("^Close local browser$")
 	public void close_local_browser() throws Throwable {
 		closebrowser();
-		throw new PendingException();
+		// throw new PendingException();
 	}
 
 }
