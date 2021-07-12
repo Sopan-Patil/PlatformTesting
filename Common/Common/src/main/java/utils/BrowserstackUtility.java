@@ -118,12 +118,15 @@ public class BrowserstackUtility {
 
 		SessionId session = ((RemoteWebDriver) driver).getSessionId();
 		
+		browserName = ((RemoteWebDriver) driver).getCapabilities().getBrowserName().toLowerCase();
+		
 		mark(session, username, accessKey);
 
 		 return driver;
 		
 	}
 
+	public static String browserName;
 	//@AfterMethod(alwaysRun = true)
 	//@AfterTest(alwaysRun = true)
 	public void tearDown() throws Exception {

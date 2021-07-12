@@ -1,30 +1,25 @@
 Feature: Open and close local browser
 
-@OpenBrowser
+
 Scenario Outline: Open local browser
+Given Navigate to url on local <browser> 
+Then Run test script
+And Close local browser
 
-Given Navigate to URL on local <browser> 
-Then Close local browser
-
-
+@LocalSingleBrowser
 Examples: Local single browser
 |browser|
 |chrome|
 
+
+@LocalCrossBrowser
 Examples: Local cross browser
 |browser|
 |chrome|
 |edge|
-
 |firefox|
 
 
-
-#@CloseBrowser
-#Scenario: Close local browser
-
-#Given Local browser is open
-#Then Close local browser
 
 
 
