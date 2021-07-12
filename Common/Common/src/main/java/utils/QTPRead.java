@@ -48,7 +48,14 @@ public class QTPRead {
 				System.out.println("Subject: " + message.getSubject());
 				System.out.println("From: " + message.getFrom()[0]);
 				System.out.println("Text: " + message.getContent().toString());
-
+				
+				System.out.println("Desc: " + message.getLineCount());
+				System.out.println("Desc: " + message.getMessageNumber());
+				System.out.println("Desc: " + message.getFrom());
+				System.out.println("Desc: " + message.getInputStream());
+			    System.out.println(message.getContentType());
+			    
+				
 			}
 
 			inbox.close(false);
