@@ -8,44 +8,30 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
-import platform.pageobjects.LoginPage;
+import platform.pageobjects.Authentication.SignIn;
 
-/**
- * @Author : Chetan Sonparote 
- * @Date : 25 Jun 2021 
- * @Description:
- * Modified method to accept browser parameter from feature file
- */
-
-/**
- * @Author : Chetan Sonparote
- * @Date : 28 Jun 2021
- * @Description: Added method for browserstack
- */
 @RunWith(Cucumber.class)
-public class PFQA_123_1 extends NewBaseClass {
-
+public class PF_SignIn extends NewBaseClass {
+	/**
+	 * @Author : Sopan Patil
+	 * @Date : 12 Jul 2021
+	 * @Description: Added SignIn stetps
+	 */
 	public WebDriver driver;
 
 	String emailid = "";
 
-	@Given("^Navigate to URL on (.+) PFQA_123_1$")
-	public void navigate_to_url_on_pfqa1231(String browser) throws Throwable {
+	@Given("^Navigate to URL on (.+) Platform$")
+	public void navigate_to_url_on_PFQA_SignIn(String browser) throws Throwable {
 		driver = openbrowser(browser);
 
 	}
 
-	/**
-	 * @Author : Sopan Patil
-	 * @Date : 01 Jul 2021
-	 * @Description: Added Login stetps
-	 */
-	@Then("^Login for PFQA_123_1$")
-	public void Login_for_Platform() throws Throwable {
+	@Then("^SignIn for Platform$")
+	public void SignIn_for_Platform(String emailaddress, String eid) throws Throwable {
 
-		LoginPage loginPage = new LoginPage(driver);
-
-		loginPage.loginToPlatform();
+		SignIn SignIn = new SignIn(driver);
+		SignIn.SignInToPlatform(emailaddress, eid);
 	}
 
 	@And("^Close browser$")

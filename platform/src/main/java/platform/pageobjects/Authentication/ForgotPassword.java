@@ -1,4 +1,4 @@
-package platform.pageobjects;
+package platform.pageobjects.Authentication;
 
 import java.util.List;
 

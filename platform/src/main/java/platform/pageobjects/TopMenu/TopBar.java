@@ -1,4 +1,4 @@
-package platform.pageobjects;
+package platform.pageobjects.TopMenu;
 
 import java.util.List;
 
@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+
+import platform.pageobjects.Authentication.LoginPage;
 
 /**
  * @Author : Chetan Sonparote

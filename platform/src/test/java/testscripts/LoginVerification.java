@@ -13,7 +13,7 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
 import base.NewBaseClass;
-import platform.pageobjects.LoginPage;
+import platform.pageobjects.Authentication.LoginPage;
 
 /**
  * @Author : Chetan Sonparote

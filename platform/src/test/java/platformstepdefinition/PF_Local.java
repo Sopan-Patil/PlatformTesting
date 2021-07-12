@@ -16,10 +16,10 @@ import cucumber.api.junit.Cucumber;
  * @Description: Step def for local browser operations
  */
 @RunWith(Cucumber.class)
-public class PFQA_Local extends NewBaseClass {
+public class PF_Local extends NewBaseClass {
 
 	public WebDriver driver;
-	private static Logger log = LogManager.getLogger(PFQA_Local.class.getName());
+	private static Logger log = LogManager.getLogger(PF_Local.class.getName());
 
 	@Given("^Navigate to URL on local (.+) $")
 	public void navigate_to_url_on_local(String browser) throws Throwable {
