@@ -17,7 +17,8 @@ public class OTPReader {
 		try {
 			Session session = Session.getInstance(props, null);
 			Store store = session.getStore();
-			store.connect("imap.gmail.com", "scopsnotify@gmail.com", "scispl@sgfm20");
+			//store.connect("imap.gmail.com", "scopsnotify@gmail.com", "scispl@sgfm20");
+			store.connect("imap.gmail.com", "TestPF1221@gmail.com", "Test-123");
 
 			Folder inbox = store.getFolder("INBOX");
 

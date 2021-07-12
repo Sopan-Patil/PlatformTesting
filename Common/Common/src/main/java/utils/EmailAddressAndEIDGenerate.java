@@ -19,7 +19,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class EmailAddressAndEIDGenerate{
+public class EmailAddressAndEIDGenerate {
 	/**
 	 * @Author : Sopan Patil
 	 * @Date : 01 Jul 2021
@@ -27,21 +27,23 @@ public class EmailAddressAndEIDGenerate{
 	 */
 	static String generatedemail;
 	static String generatedeid;
+
 	public static String generateemailaddress(String emailaddress) {
-	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("ddMMyyyyHHmmss");
-	LocalDateTime now = LocalDateTime.now();
-	String datetime = dtf.format(now);
-	String generatedemail = "sopan.patil+" + datetime + "@scispl.com";	
-	return generatedemail;
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("ddMMyyyyHHmmss");
+		LocalDateTime now = LocalDateTime.now();
+		String datetime = dtf.format(now);
+		String generatedemail = "TestPF1221+" + datetime + "@gmail.com";
+		return generatedemail;
 	}
+
 	public static String generateeid(String eid) {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("ddMMyyyyHHmmss");
 		LocalDateTime now = LocalDateTime.now();
 		String datetime = dtf.format(now);
-		String generatedemail = "sopan.patil+" + datetime + "@scispl.com";	
-		String [] parts= generatedemail.split("@");		
-		generatedeid=parts[0];		
-		eid=generatedeid;
-		return eid;		
-		}
+		String generatedemail = "TestPF1221+" + datetime + "@gmail.com";
+		String[] parts = generatedemail.split("@");
+		generatedeid = parts[0];
+		eid = generatedeid;
+		return eid;
+	}
 }
