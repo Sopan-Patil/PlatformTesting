@@ -8,14 +8,14 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
-import platform.pageobjects.Authentication.SignIn;
+import platform.pageobjects.Authentication.SignUp;
 
 @RunWith(Cucumber.class)
-public class PF_SignIn extends NewBaseClass {
+public class PF_SignUp extends NewBaseClass {
 	/**
 	 * @Author : Sopan Patil
 	 * @Date : 12 Jul 2021
-	 * @Description: Added SignIn stetps
+	 * @Description: Added SignUp stetps
 	 */
 	public WebDriver driver;
 
@@ -27,11 +27,11 @@ public class PF_SignIn extends NewBaseClass {
 
 	}
 
-	@Then("^SignIn for Platform$")
-	public void SignIn_for_Platform(String emailaddress, String eid) throws Throwable {
+	@Then("^SignUp for Platform$")
+	public void SignUp_for_Platform(String emailaddress, String eid) throws Throwable {
 
-		SignIn SignIn = new SignIn(driver);
-		SignIn.SignInToPlatform(emailaddress, eid);
+		SignUp SignUp = new SignUp(driver);
+		SignUp.SignUpToPlatform(emailaddress, eid);
 	}
 
 	@And("^Close browser$")
