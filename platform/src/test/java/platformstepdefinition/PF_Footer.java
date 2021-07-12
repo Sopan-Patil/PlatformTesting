@@ -7,7 +7,7 @@ import base.NewBaseClass;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
-import platform.pageobjects.FooterPage;
+import platform.pageobjects.Footer.FooterPage;
 
 /**
  * @Author : Chetan Sonparote
@@ -15,7 +15,7 @@ import platform.pageobjects.FooterPage;
  * @Description: Step def for footer feature
  */
 @RunWith(Cucumber.class)
-public class PFQA_Footer extends NewBaseClass {
+public class PF_Footer extends NewBaseClass {
 
 	public WebDriver driver;
 

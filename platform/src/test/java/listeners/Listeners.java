@@ -64,7 +64,7 @@ public class Listeners extends ExtentReporter implements ITestListener {
 		} catch (Exception e) {
 
 		}
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy-HH-mm-ss");
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("ddMMyyyyHHmmss");
 		LocalDateTime now = LocalDateTime.now();
 
 		String fileName = dtf.format(now);

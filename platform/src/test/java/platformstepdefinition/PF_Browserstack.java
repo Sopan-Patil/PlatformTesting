@@ -16,10 +16,10 @@ import cucumber.api.junit.Cucumber;
  * @Description: Step def for browserstack browser operations
  */
 @RunWith(Cucumber.class)
-public class PFQA_Browserstack extends NewBaseClass {
+public class PF_Browserstack extends NewBaseClass {
 
 	public WebDriver driver;
-	private static Logger log = LogManager.getLogger(PFQA_Browserstack.class.getName());
+	private static Logger log = LogManager.getLogger(PF_Browserstack.class.getName());
 
 	@Given("^Navigate to URL with (.+) and (.+) on browserstack$")
 	public void navigate_to_url_with_and_on_browserstack(String config, String environment) throws Throwable {

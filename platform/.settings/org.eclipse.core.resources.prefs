@@ -1,6 +1,7 @@
+=\=\=\=\=\=\=
+<<<<<<<=Updated upstream
+>>>>>>>=Stashed changes
 eclipse.preferences.version=1
-<<<<<<< Updated upstream
-encoding//src/main/java/platform/pageobjects/LoginPage.java=UTF-8
-=======
-encoding//src/main/java/platform/pageobjects/ForgotPassword.java=UTF-8
->>>>>>> Stashed changes
+encoding//src/main/java/platform/pageobjects/Authentication/ForgotPassword.java=UTF-8
+encoding//src/main/java/platform/pageobjects/Authentication/LoginPage.java=UTF-8
+encoding//src/main/java/platform/pageobjects/Authentication/SignIn.java=UTF-8

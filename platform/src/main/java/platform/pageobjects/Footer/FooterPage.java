@@ -1,4 +1,4 @@
-package platform.pageobjects;
+package platform.pageobjects.Footer;
 
 import java.util.List;
 
@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import platform.pageobjects.Authentication.LoginPage;
 import utils.CommonFunctions;
 
 /**

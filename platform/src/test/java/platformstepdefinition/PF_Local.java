@@ -10,7 +10,6 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
-import platform.pageobjects.LoginPage;
 
 /**
  * @Author : Chetan Sonparote
@@ -18,10 +17,10 @@ import platform.pageobjects.LoginPage;
  * @Description: Step def for local browser operations
  */
 @RunWith(Cucumber.class)
-public class PFQA_Local extends NewBaseClass {
+public class PF_Local extends NewBaseClass {
 
 	public WebDriver driver;
-	private static Logger log = LogManager.getLogger(PFQA_Local.class.getName());
+	private static Logger log = LogManager.getLogger(PF_Local.class.getName());
 
 	/*
 	 * @Given("^Navigate to URL on local (.+) $") public void
@@ -91,7 +90,8 @@ public class PFQA_Local extends NewBaseClass {
 
 	@Then("^Run test script$")
 	public void run_test_script() throws Throwable {
-		LoginPage loginPage = new LoginPage(driver);
+		platform.pageobjects.Authentication.LoginPage loginPage = new platform.pageobjects.Authentication.LoginPage(
+				driver);
 
 		loginPage.loginToPlatform();
 		// throw new PendingException();

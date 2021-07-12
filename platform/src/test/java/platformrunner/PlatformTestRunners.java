@@ -12,7 +12,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 @ExtendedCucumberOptions(jsonReport = "target/cucumber.json", overviewReport = true, outputFolder = "target")
 
 @CucumberOptions(monochrome = true, strict = false, dryRun = false, features = {
-		".//src//test//java//platformfeatures/PFQA_123_1.feature"
+		".//src//test//java//platformfeatures/PF_SignIn.feature"
 
 }, glue = { "platformstepdefinition" }, tags = { "~@FooterTest", "@FunctionalTest", "~@BrowserstackTest" }, plugin = {
 		"pretty", "html:target/cucumber_html_report", "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",
