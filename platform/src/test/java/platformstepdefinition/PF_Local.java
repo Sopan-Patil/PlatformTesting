@@ -10,7 +10,6 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
-import platform.pageobjects.LoginPage;
 
 /**
  * @Author : Chetan Sonparote
@@ -91,7 +90,8 @@ public class PF_Local extends NewBaseClass {
 
 	@Then("^Run test script$")
 	public void run_test_script() throws Throwable {
-		LoginPage loginPage = new LoginPage(driver);
+		platform.pageobjects.Authentication.LoginPage loginPage = new platform.pageobjects.Authentication.LoginPage(
+				driver);
 
 		loginPage.loginToPlatform();
 		// throw new PendingException();
