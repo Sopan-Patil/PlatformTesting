@@ -88,23 +88,6 @@ public class NewBaseClass {
 						+ "end tell\n" +
 
 						"end tell";
-		
-		"tell application \"System Events\"" +"\n"
-		
-			"delay 10"
-			
-			"keystroke \"sgepuser\""
-			
-			"keystroke tab"
-			
-			"keystroke \"9tg6gxxCEaL3\""
-			
-			"delay 10"
-			
-			"keystroke return"
-			
-			"end tell"
-		
 
 		String[] args = { "osascript", "-e", applescriptCommand };
 

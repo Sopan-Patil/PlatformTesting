@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" name="Failed suite [BrowserstackParallel]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="listeners.Listeners"/>
+  </listeners>
+  <test name="SingleTestEnv1(failed)">
+    <parameter name="mode" value="browserstack"/>
+    <parameter name="environment" value="env1"/>
+    <parameter name="config" value="parallel.conf.json"/>
+    <classes>
+      <class name="platformrunner.Runner">
+        <methods>
+          <include name="setUpBrowser"/>
+          <include name="setUpClass"/>
+          <include name="feature" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- platformrunner.Runner -->
+    </classes>
+  </test> <!-- SingleTestEnv1(failed) -->
+  <test name="SingleTestEnv2(failed)">
+    <parameter name="mode" value="browserstack"/>
+    <parameter name="environment" value="env2"/>
+    <parameter name="config" value="parallel.conf.json"/>
+    <classes>
+      <class name="platformrunner.Runner">
+        <methods>
+          <include name="setUpBrowser"/>
+          <include name="setUpClass"/>
+          <include name="feature" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- platformrunner.Runner -->
+    </classes>
+  </test> <!-- SingleTestEnv2(failed) -->
+  <test name="SingleTestEnv3(failed)">
+    <parameter name="mode" value="browserstack"/>
+    <parameter name="environment" value="env3"/>
+    <parameter name="config" value="parallel.conf.json"/>
+    <classes>
+      <class name="platformrunner.Runner">
+        <methods>
+          <include name="setUpBrowser"/>
+          <include name="setUpClass"/>
+          <include name="feature"/>
+          <include name="tearDownClass"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- platformrunner.Runner -->
+    </classes>
+  </test> <!-- SingleTestEnv3(failed) -->
+</suite> <!-- Failed suite [BrowserstackParallel] -->
