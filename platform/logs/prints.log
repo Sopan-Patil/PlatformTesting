@@ -316,3 +316,6 @@
 11:21:33.916 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
 11:25:20.957 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
 11:25:33.607 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+11:31:15.810 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+11:31:49.168 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+11:32:00.217 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
