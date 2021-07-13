@@ -17,7 +17,6 @@ public class OTPReader {
 		try {
 			Session session = Session.getInstance(props, null);
 			Store store = session.getStore();
-			//store.connect("imap.gmail.com", "scopsnotify@gmail.com", "scispl@sgfm20");
 			store.connect("imap.gmail.com", "TestPF1221@gmail.com", "Test-123");
 
 			Folder inbox = store.getFolder("INBOX");
@@ -28,15 +27,15 @@ public class OTPReader {
 			Address[] in = msg.getFrom();
 
 			for (Address address : in) {
-				System.out.println("FROM:" + address.toString());
+//				System.out.println("FROM:" + address.toString());
 			}
 
 			Multipart mp = (Multipart) msg.getContent();
 			BodyPart bp = mp.getBodyPart(0);
 
-			System.out.println("SENT DATE:" + msg.getSentDate());
-			System.out.println("SUBJECT:" + msg.getSubject());
-			System.out.println("CONTENT:" + bp.getContent());
+//			System.out.println("SENT DATE:" + msg.getSentDate());
+//			System.out.println("SUBJECT:" + msg.getSubject());
+//			System.out.println("CONTENT:" + bp.getContent());
 
 			String ob = bp.getContent().toString();
 			String sample = ob.toString();
@@ -49,7 +48,7 @@ public class OTPReader {
 			}
 
 			 OTPNumber = sb.substring(0, 6);
-			System.out.println(OTPNumber);
+//			System.out.println(OTPNumber);
 		} catch (Exception mex) {
 			mex.printStackTrace();
 		}
