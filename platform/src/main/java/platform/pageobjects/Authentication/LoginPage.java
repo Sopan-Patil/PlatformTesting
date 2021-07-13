@@ -28,7 +28,7 @@ public class LoginPage {
 	List<String[]> testdata;
 	public WebDriver driver;
 	private static Logger log = LogManager.getLogger(LoginPage.class.getName());
-	int waitTime = 1;
+	int waitTime = 5;
 
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
@@ -48,6 +48,7 @@ public class LoginPage {
 	public WebElement SubmitButton;
 
 	public void loginToPlatform() throws Exception {
+
 		String[] shipmentdata;
 
 		shipmentdata = XLHandler.readexcel("User", "NewTestData.xlsx");
@@ -55,12 +56,13 @@ public class LoginPage {
 		System.out.println(shipmentdata[0]);
 		System.out.println(shipmentdata[1]);
 
+		// CommonFunctions.wa
 		if (CommonFunctions.waitForVisiblity(logInButton, waitTime)) {
-			logInButton.click();
 
 		}
-
+		logInButton.click();
 		log.info("Login button is clicked");
+		System.out.println("inside loginToPlatform()");
 
 		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
 			emailtextfield.click();

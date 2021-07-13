@@ -39,5 +39,7 @@ public class PF_Test extends NewBaseClass {
 		// throw new PendingException();
 		LoginPage loginToPlatform = new LoginPage(driver);
 		loginToPlatform.loginToPlatform();
+		// SignUp SignUp = new SignUp(driver);
+		// SignUp.SignUpToPlatform(emailaddress, eid);
 	}
 }

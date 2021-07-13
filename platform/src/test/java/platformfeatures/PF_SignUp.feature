@@ -1,6 +1,6 @@
 Feature: Validate new login 
 
-@FunctionalTest
+#@FunctionalTest
 Scenario Outline: Validate new SingIn features 
 
 Given Navigate to URL on <browser> Platform

@@ -82,26 +82,33 @@ public class NewBaseClass {
 		// an applescript command that is multiple lines long.
 		// just create a java string, and remember the newline characters.
 		String applescriptCommand =
-				// "tell application \"Safari\"\n" +
-				// "activate\n"+
-				// "tell application \"System Events\"\n" +
-				// "click menu item \"New Private Window\" of Â\n" +
-				// "menu \"File\" of menu bar 1 of Â\n" +
-				// "application process \"Safari\"\n" +
-				// "end tell\n" +
 
-				// -- The frontmost window is the private Browsing window that just got
-				// -- opened -- change the URL to the one we want to open.
-				// "tell window 1 to set properties of current tab to
-				// {URL:\"https://stg.studygear.evidus.net\"}\n" +
 				"tell application \\\"System Events\\\"\n" + "delay 10\n" + "keystroke \\\"sgepuser\\\"\n"
 						+ "keystroke tab\n" + "keystroke \\\"9tg6gxxCEaL3\\\"\n" + "delay 10\n" + "keystroke return\n"
 						+ "end tell\n" +
 
 						"end tell";
+		
+		"tell application \"System Events\"" +"\n"
+		
+			"delay 10"
+			
+			"keystroke \"sgepuser\""
+			
+			"keystroke tab"
+			
+			"keystroke \"9tg6gxxCEaL3\""
+			
+			"delay 10"
+			
+			"keystroke return"
+			
+			"end tell"
+		
 
 		String[] args = { "osascript", "-e", applescriptCommand };
 
+		// ScriptEngineManager
 		try {
 			Process process = runtime.exec(args);
 		} catch (IOException e) {

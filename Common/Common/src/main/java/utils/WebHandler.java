@@ -57,6 +57,7 @@ public class WebHandler {
 			 * chromePreferences.put("profile.default_content_settings.popups", 0);
 			 * chromePreferences.put("download.default_directory", downloadFilepath);
 			 */
+		//	WebDriverManager.safari
 			
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
