@@ -313,3 +313,4 @@
 18:20:39.790 [main] INFO  base.NewBaseClass - Browser Window is still exist
 18:25:17.887 [main] INFO  base.NewBaseClass - Browser Window is still exist
 18:25:31.192 [main] INFO  base.NewBaseClass - Browser Window is still exist
+11:21:33.916 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked

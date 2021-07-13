@@ -3,8 +3,6 @@ package platformstepdefinition;
 import org.openqa.selenium.WebDriver;
 
 import base.NewBaseClass;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 
 public class Hooks extends NewBaseClass {
 
@@ -18,26 +16,18 @@ public class Hooks extends NewBaseClass {
 
 	public WebDriver driver;
 
-	@Before
-	@org.testng.annotations.Parameters(value = { "mode", "browser", "config", "environment" })
-	public void setUp(String mode, String browser, String config, String environment) throws Exception {
+//	@Before
 
-		System.out.println("inside before hook");
-		// driver = new FirefoxDriver();
-		// baseClass = new NewBaseClass();
-		driver = openBrowser(mode, browser, config, environment);
+	public void setUp() throws Exception {
+		// setUpBrowser(null, null, null, null);
 	}
 
 	// close driver
-	@After
-	@org.testng.annotations.Parameters(value = { "mode" })
-	public void cleanUp(String mode) {
+//	@After
+
+	public void cleanUp() {
 		// driver.close();
-		if (mode.equalsIgnoreCase("local")) {
-			closebrowser();
-		} else if (mode.equalsIgnoreCase("browserstack")) {
-			closeBrowserstack();
-		}
+		// closeBrowser(null);
 
 	}
 

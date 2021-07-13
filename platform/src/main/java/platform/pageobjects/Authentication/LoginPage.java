@@ -55,7 +55,10 @@ public class LoginPage {
 		System.out.println(shipmentdata[0]);
 		System.out.println(shipmentdata[1]);
 
-		logInButton.click();
+		if (CommonFunctions.waitForVisiblity(logInButton, waitTime)) {
+			logInButton.click();
+
+		}
 
 		log.info("Login button is clicked");
 

@@ -1,10 +1,15 @@
 package platformrunner;
 
 import org.junit.runner.RunWith;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
 
 import com.github.mkolisnyk.cucumber.runner.ExtendedCucumber;
 import com.github.mkolisnyk.cucumber.runner.ExtendedCucumberOptions;
 
+import base.NewBaseClass;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
@@ -30,5 +35,28 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 				"junit:target/cucumber_html_report/junit_platform.xml", "rerun:rerun/failed_scenarios.txt", })
 
 public class Runner extends AbstractTestNGCucumberTests {
+
+	public WebDriver driver;
+
+	NewBaseClass newBaseClass;
+
+	@BeforeTest
+	@org.testng.annotations.Parameters(value = { "mode", "browser", "config", "environment" })
+	public void setUpBrowser(@Optional("null") String mode, @Optional("null") String browser,
+			@Optional("null") String config, @Optional("null") String environment) throws Exception {
+		newBaseClass = new NewBaseClass();
+		driver = newBaseClass.openBrowser(mode, browser, config, environment);
+	}
+
+	@AfterTest
+	@org.testng.annotations.Parameters(value = { "mode" })
+	public void closeBrowser(String mode) {
+		newBaseClass = new NewBaseClass();
+		if (mode.equalsIgnoreCase("local")) {
+			newBaseClass.closebrowser();
+		} else if (mode.equalsIgnoreCase("browserstack")) {
+			newBaseClass.closeBrowserstack();
+		}
+	}
 
 }

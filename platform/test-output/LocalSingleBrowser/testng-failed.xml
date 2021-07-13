@@ -10,9 +10,11 @@
     <classes>
       <class name="platformrunner.Runner">
         <methods>
+          <include name="setUpBrowser"/>
           <include name="setUpClass"/>
-          <include name="feature"/>
+          <include name="feature" invocation-numbers="0"/>
           <include name="tearDownClass"/>
+          <include name="closeBrowser"/>
         </methods>
       </class> <!-- platformrunner.Runner -->
     </classes>
