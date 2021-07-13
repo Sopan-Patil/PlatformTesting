@@ -20,23 +20,30 @@ public class PF_Browser extends NewBaseClass {
 
 	public WebDriver driver;
 
+	@When("^User opens browser$")
+	public void user_opens_browser() throws Throwable {
+		throw new PendingException();
+	}
+
+	@Then("^Validate browser is open$")
+	public void validate_browser_is_open() throws Throwable {
+		throw new PendingException();
+	}
+
 	@Given("^Browser is open$")
 	public void browser_is_open() throws Throwable {
 		throw new PendingException();
 	}
 
-	@When("^User opens browser $")
-	public void user_opens_browser() throws Throwable {
-		throw new PendingException();
-	}
+	/*
+	 * @Then("^Close browser$") public void close_browser() throws Throwable { throw
+	 * new PendingException(); }
+	 */
 
-	@Then("^Validate browser is open $")
-	public void validate_browser_is_open() throws Throwable {
-		throw new PendingException();
-	}
-
-	@Then("^Close browser$")
-	public void close_browser() throws Throwable {
+	@When("^User opens (.+) on (.+) with (.+) and (.+)$")
+	@org.testng.annotations.Parameters(value = { "browser", "mode", "config", "environment" })
+	public void user_opens_on_with_and(String browser, String mode, String config, String environment)
+			throws Throwable {
 		throw new PendingException();
 	}
 

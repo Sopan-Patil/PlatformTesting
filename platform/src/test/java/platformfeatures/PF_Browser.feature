@@ -3,8 +3,8 @@ Feature: Open and close intended browser
 @OpenBrowser
 Scenario: Open browser
 
-When User opens browser 
-Then Validate browser is open 
+When User opens <browser> on <mode> with <config> and <environment>
+Then Validate browser is open
 
 
 @CloseBrowser

@@ -149,6 +149,25 @@ public class NewBaseClass {
 
 	}
 
+	/**
+	 * @throws Exception
+	 * @Author : Chetan Sonparote
+	 * @Date : 13 Jul 2021
+	 * @Description: Added method openBrowser() for browserstack
+	 */
+
+	public WebDriver openBrowser(String mode, String browser, String config, String environment) throws Exception {
+
+		if (mode.equalsIgnoreCase("local")) {
+			ObjectHelper.driver = openbrowser(browser);
+		} else if (mode.equalsIgnoreCase("browserstack")) {
+			ObjectHelper.driver = openBrowserstack(config, environment);
+
+		}
+
+		return ObjectHelper.driver;
+	}
+
 	public WebDriver openbrowser1(String browser) throws Exception {
 
 		if (browser == null) {

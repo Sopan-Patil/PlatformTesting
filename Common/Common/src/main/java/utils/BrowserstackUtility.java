@@ -118,7 +118,7 @@ public class BrowserstackUtility {
 
 		SessionId session = ((RemoteWebDriver) driver).getSessionId();
 		
-		browserName = ((RemoteWebDriver) driver).getCapabilities().getBrowserName().toLowerCase();
+		//browserName = ((RemoteWebDriver) driver).getCapabilities().getBrowserName().toLowerCase();
 		
 		mark(session, username, accessKey);
 
@@ -146,8 +146,8 @@ public class BrowserstackUtility {
 	//	System.out.println("getResult():"+getResult());
 		
 		ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-		//nameValuePairs.add((new BasicNameValuePair("status", "completed")));
-		nameValuePairs.add((new BasicNameValuePair("status", result)));
+		nameValuePairs.add((new BasicNameValuePair("status", "completed")));
+		//nameValuePairs.add((new BasicNameValuePair("status", result)));
 		//nameValuePairs.add((new BasicNameValuePair("reason", "")));
 		putRequest.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
@@ -160,50 +160,34 @@ public class BrowserstackUtility {
 	 * @Description: Added method to get test result
 	 */
 
-	public String result;
-	
-	
-	public void setResult(String result) {
-		this.result = result;
-	}
-
-	public  ITestResult resultStatus;
-
-	public  ITestResult getResultStatus() {
-		return resultStatus;
-	}
-
-	public  void setResultStatus(ITestResult resultStatus) {
-		 this.resultStatus = resultStatus;
-	}
-	
-	String getResult()
-	{
-		String result = null;
-		//resultStatus = getResultStatus();
-		resultStatus = getResultStatus();
-		
-		if(resultStatus.getStatus() == ITestResult.SUCCESS)
-	    {
-
-	        //Do something here
-	        System.out.println("passed **********");
-	        result = "PASS";
-	    }
-
-	    else if(resultStatus.getStatus()  == ITestResult.FAILURE)
-	    {
-	         //Do something here
-	        System.out.println("Failed ***********");
-	        result = "FAIL";
-	    }
-
-	     else if(resultStatus.getStatus()  == ITestResult.SKIP ){
-
-	        System.out.println("Skiped***********");
-	        result = "SKIPPED";
-	    }
-		return result;
-	}
+	/*
+	 * public String result;
+	 * 
+	 * 
+	 * public void setResult(String result) { this.result = result; }
+	 * 
+	 * public ITestResult resultStatus;
+	 * 
+	 * public ITestResult getResultStatus() { return resultStatus; }
+	 * 
+	 * public void setResultStatus(ITestResult resultStatus) { this.resultStatus =
+	 * resultStatus; }
+	 * 
+	 * String getResult() { String result = null; //resultStatus =
+	 * getResultStatus(); resultStatus = getResultStatus();
+	 * 
+	 * if(resultStatus.getStatus() == ITestResult.SUCCESS) {
+	 * 
+	 * //Do something here System.out.println("passed **********"); result = "PASS";
+	 * }
+	 * 
+	 * else if(resultStatus.getStatus() == ITestResult.FAILURE) { //Do something
+	 * here System.out.println("Failed ***********"); result = "FAIL"; }
+	 * 
+	 * else if(resultStatus.getStatus() == ITestResult.SKIP ){
+	 * 
+	 * System.out.println("Skiped***********"); result = "SKIPPED"; } return result;
+	 * }
+	 */
 
 }

@@ -34,7 +34,7 @@ public class PF_Test extends NewBaseClass {
 		// driver = openbrowser(browser);
 	}
 
-	@Then("^Login $")
+	@Then("^Login$")
 	public void login() throws Throwable {
 		// throw new PendingException();
 		LoginPage loginToPlatform = new LoginPage(driver);

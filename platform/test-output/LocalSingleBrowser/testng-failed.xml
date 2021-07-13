@@ -2,18 +2,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="-1" name="Failed suite [LocalSingleBrowser]" guice-stage="DEVELOPMENT">
   <listeners>
-    <listener class-name="testscripts.Listeners"/>
+    <listener class-name="listeners.Listeners"/>
   </listeners>
   <test name="SingleBrowserTest(failed)">
-    <parameter name="localBrowser" value="chrome"/>
+    <parameter name="mode" value="local"/>
+    <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testscripts.LoginVerification">
+      <class name="platformrunner.Runner">
         <methods>
-          <include name="initialize"/>
-          <include name="tearDown"/>
-          <include name="loginToPlatform"/>
+          <include name="setUpClass"/>
+          <include name="feature"/>
+          <include name="tearDownClass"/>
         </methods>
-      </class> <!-- testscripts.LoginVerification -->
+      </class> <!-- platformrunner.Runner -->
     </classes>
   </test> <!-- SingleBrowserTest(failed) -->
 </suite> <!-- Failed suite [LocalSingleBrowser] -->

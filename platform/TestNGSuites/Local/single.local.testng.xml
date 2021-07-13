@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="LocalSingleBrowser" thread-count="5" parallel="tests">
+<listeners>
+		<listener class-name="listeners.Listeners" />
+	</listeners>
+  <test name="SingleBrowserTest">
+  <parameter name="mode" value="local" />
+  <parameter name="browser" value="chrome" />
+    <classes>
+   <class name="platformrunner.Runner"/>
+    </classes>
+  </test>
+</suite>
