@@ -84,4 +84,49 @@ public class LoginPage {
 
 	}
 
+	/**
+	 * @Author : Rahul Shinde
+	 * @Date : 13 Jul 2021
+	 * @Description: used in order flow re login
+	 * 
+	 */
+	public void loginToPlatformForPayment() throws Exception {
+
+		CommonFunctions.isElementVisible(emailtextfield);
+		String[] shipmentdata;
+
+		shipmentdata = XLHandler.readexcel("User", "NewTestData.xlsx");
+
+		System.out.println(shipmentdata[0]);
+		System.out.println(shipmentdata[1]);
+
+		log.info("Re Login button is clicked");
+
+		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
+			emailtextfield.click();
+			emailtextfield.sendKeys(shipmentdata[0]);
+
+		}
+
+		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
+
+			// passwordTextField.sendKeys("Test-123");
+			passwordTextField.click();
+
+			passwordTextField.sendKeys(shipmentdata[1]);
+			System.out.println(passwordTextField.getText());
+		}
+
+		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
+
+			SubmitButton.click();
+
+		}
+		/*
+		 * if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
+		 * CommonFunctions.clickUsingJavaExecutor(SubmitButton); }
+		 */
+
+	}
+
 }
