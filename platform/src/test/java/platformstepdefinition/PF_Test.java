@@ -2,6 +2,7 @@ package platformstepdefinition;
 
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 import base.NewBaseClass;
 import cucumber.api.java.en.Given;
@@ -37,8 +38,9 @@ public class PF_Test extends NewBaseClass {
 	@Then("^Login$")
 	public void login() throws Throwable {
 		// throw new PendingException();
-		LoginPage loginToPlatform = new LoginPage(driver);
-		loginToPlatform.loginToPlatform();
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage = PageFactory.initElements(driver, LoginPage.class);
+		loginPage.clickLoginButton();
 		// SignUp SignUp = new SignUp(driver);
 		// SignUp.SignUpToPlatform(emailaddress, eid);
 	}

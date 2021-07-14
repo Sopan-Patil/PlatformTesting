@@ -35,8 +35,6 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 public class Runner extends AbstractTestNGCucumberTests {
 
-	// public WebDriver driver;
-
 	NewBaseClass newBaseClass;
 
 	@BeforeTest
