@@ -1,7 +1,7 @@
 @LoginFeature @Smoke
 Feature: Validate new login 
 
-@FunctionalTest
+@FunctionalTest1
 Scenario Outline: Validate new login features 
 
 Given Navigate to URL on <browser>
