@@ -13,7 +13,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions(monochrome = true, strict = false, dryRun = false, features = { ".//src//test//java//platformfeatures/"
 
-}, glue = { "platformstepdefinition" }, tags = { "~@FooterTest", "@FunctionalTest1", "~@BrowserstackTest" }, plugin = {
+}, glue = { "platformstepdefinition" }, tags = { "~@FooterTest", "~@FunctionalTest1", "@CreateAccountTest" }, plugin = {
 		"pretty", "html:target/cucumber_html_report", "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",
 		"usage:target/cucumber-usage.json", "junit:target/cucumber_html_report/junit_platform.xml",
 		"rerun:rerun/failed_scenarios.txt", })

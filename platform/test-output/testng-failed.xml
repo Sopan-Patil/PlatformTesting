@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="-1" name="Failed suite [LocalSingleBrowser]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="listeners.Listeners"/>
-  </listeners>
-  <test name="SingleBrowserTest(failed)">
-    <parameter name="mode" value="local"/>
-    <parameter name="browser" value="chrome"/>
+<suite thread-count="-1" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test name="Default test(failed)">
     <classes>
-      <class name="platformrunner.Runner">
+      <class name="platformrunner.PlatformTestRunners">
         <methods>
-          <include name="setUpBrowser"/>
           <include name="setUpClass"/>
           <include name="feature" invocation-numbers="0"/>
           <include name="tearDownClass"/>
-          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- platformrunner.Runner -->
+      </class> <!-- platformrunner.PlatformTestRunners -->
     </classes>
-  </test> <!-- SingleBrowserTest(failed) -->
-</suite> <!-- Failed suite [LocalSingleBrowser] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
