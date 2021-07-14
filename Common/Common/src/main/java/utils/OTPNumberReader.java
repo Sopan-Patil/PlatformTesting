@@ -8,8 +8,12 @@ import javax.mail.Message;
 import javax.mail.Multipart;
 import javax.mail.Session;
 import javax.mail.Store;
-public class OTPReader {
-	
+public class OTPNumberReader {
+	/**
+	 * @Author : Sopan Patil
+	 * @Date : 13 Jul 2021
+	 * @Description: OTP Reader Function
+	 */
 		public static String OTPNumberValue(String OTPNumber) {
 		Properties props = new Properties();
 		props.setProperty("mail.store.protocol", "imaps");
@@ -48,6 +52,7 @@ public class OTPReader {
 			}
 
 			 OTPNumber = sb.substring(0, 6);
+			 
 //			System.out.println(OTPNumber);
 		} catch (Exception mex) {
 			mex.printStackTrace();
