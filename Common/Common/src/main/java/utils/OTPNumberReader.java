@@ -52,8 +52,7 @@ public class OTPNumberReader {
 			}
 
 			 OTPNumber = sb.substring(0, 6);
-			 
-//			System.out.println(OTPNumber);
+
 		} catch (Exception mex) {
 			mex.printStackTrace();
 		}
