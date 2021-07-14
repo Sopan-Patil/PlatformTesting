@@ -44,6 +44,7 @@ public class PF_Login extends NewBaseClass {
 
 		LoginPage loginToPlatform = new LoginPage(driver);
 		loginToPlatform.loginToPlatform();
+
 	}
 
 	/*
