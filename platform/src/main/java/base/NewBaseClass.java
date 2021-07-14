@@ -146,7 +146,8 @@ public class NewBaseClass {
 	 * @Description: Added method openBrowser() for browserstack
 	 */
 
-	public WebDriver openBrowser(String mode, String browser, String config, String environment) throws Exception {
+	public /* WebDriver */void openBrowser(String mode, String browser, String config, String environment)
+			throws Exception {
 
 		if (mode.equalsIgnoreCase("local")) {
 			ObjectHelper.driver = openbrowser(browser);
@@ -155,7 +156,7 @@ public class NewBaseClass {
 
 		}
 
-		return ObjectHelper.driver;
+		// return ObjectHelper.driver;
 	}
 
 	public WebDriver openbrowser1(String browser) throws Exception {

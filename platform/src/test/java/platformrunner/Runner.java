@@ -1,7 +1,6 @@
 package platformrunner;
 
 import org.junit.runner.RunWith;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
@@ -36,7 +35,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 public class Runner extends AbstractTestNGCucumberTests {
 
-	public WebDriver driver;
+	// public WebDriver driver;
 
 	NewBaseClass newBaseClass;
 
@@ -45,7 +44,8 @@ public class Runner extends AbstractTestNGCucumberTests {
 	public void setUpBrowser(@Optional("null") String mode, @Optional("null") String browser,
 			@Optional("null") String config, @Optional("null") String environment) throws Exception {
 		newBaseClass = new NewBaseClass();
-		driver = newBaseClass.openBrowser(mode, browser, config, environment);
+		// driver =
+		newBaseClass.openBrowser(mode, browser, config, environment);
 	}
 
 	@AfterTest
