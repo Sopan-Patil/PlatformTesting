@@ -42,8 +42,11 @@ public class PF_Login extends NewBaseClass {
 	@Then("^Login To Platform$")
 	public void Login_to_Platform() throws Throwable {
 
-		LoginPage loginToPlatform = new LoginPage(driver);
-		loginToPlatform.loginToPlatform();
+		// LoginPage loginToPlatform = new LoginPage(driver);
+		// loginToPlatform.loginToPlatform();
+
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.clickLoginButton();
 	}
 
 	/*

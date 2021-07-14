@@ -47,6 +47,16 @@ public class LoginPage {
 	@FindBy(xpath = "//button[@type='submit']")
 	public WebElement SubmitButton;
 
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 14 Jul 2021
+	 * @Description: Added new method for click login
+	 */
+
+	public void clickLoginButton() {
+		logInButton.click(); // changes done
+	}
+
 	public void loginToPlatform() throws Exception {
 
 		String[] shipmentdata;
