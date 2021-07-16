@@ -43,6 +43,7 @@ public class PF_Login extends NewBaseClass {
 	public void Login_to_Platform() throws Throwable {
 
 		LoginPage loginToPlatform = new LoginPage(driver);
+
 		loginToPlatform.loginToPlatform();
 		// TopBar topBar = new TopBar(driver);
 		// topBar.clickSignUpLinkLink();

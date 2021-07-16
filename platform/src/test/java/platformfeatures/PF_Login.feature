@@ -1,6 +1,7 @@
 @LoginFeature @Smoke
 Feature: Validate new login 
 
+
 @FunctionalTest
 Scenario Outline: Validate new login features 
 

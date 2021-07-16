@@ -13,10 +13,10 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions(monochrome = true, strict = false, dryRun = false, features = { ".//src//test//java//platformfeatures/"
 
-}, glue = { "platformstepdefinition" }, tags = { "~@FunctionalTest1", "@CreateAccountTest" }, plugin = { "pretty",
-		"html:target/cucumber_html_report", "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",
-		"usage:target/cucumber-usage.json", "junit:target/cucumber_html_report/junit_platform.xml",
-		"rerun:rerun/failed_scenarios.txt", })
+}, glue = { "platformstepdefinition" }, tags = { "~@FooterTest", "~@FunctionalTest",
+		"@FunctionalLoginTest" }, plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
+				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
+				"junit:target/cucumber_html_report/junit_platform.xml", "rerun:rerun/failed_scenarios.txt", })
 
 public class PlatformTestRunners extends AbstractTestNGCucumberTests {
 }
