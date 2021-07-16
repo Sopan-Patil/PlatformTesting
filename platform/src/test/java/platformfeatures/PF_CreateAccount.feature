@@ -4,6 +4,7 @@ Feature: Create account with new user
 Scenario Outline: Create new account with valid details
 
 Given Navigate to URL on <browser>
+#Then Login To Platform
 When User begins account creation
 And creates new credentials
 And enters valid details

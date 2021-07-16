@@ -26,7 +26,7 @@ public class PF_Login extends NewBaseClass {
 
 	public WebDriver driver;
 
-	String emailid = "";
+	// String emailid = "";
 
 	@Given("^Navigate to URL on (.+)$")
 	public void navigate_to_url_(String browser) throws Throwable {
@@ -44,6 +44,8 @@ public class PF_Login extends NewBaseClass {
 
 		LoginPage loginToPlatform = new LoginPage(driver);
 		loginToPlatform.loginToPlatform();
+		// TopBar topBar = new TopBar(driver);
+		// topBar.clickSignUpLinkLink();
 
 	}
 

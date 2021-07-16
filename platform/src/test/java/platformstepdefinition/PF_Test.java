@@ -2,13 +2,13 @@ package platformstepdefinition;
 
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 
 import base.NewBaseClass;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
 import platform.pageobjects.Authentication.LoginPage;
+import utils.ObjectHelper;
 
 /**
  * @Author : Chetan Sonparote 
@@ -25,7 +25,7 @@ import platform.pageobjects.Authentication.LoginPage;
 @RunWith(Cucumber.class)
 public class PF_Test extends NewBaseClass {
 
-	public WebDriver driver;
+	public WebDriver driver = ObjectHelper.driver;
 
 	String emailid = "";
 
@@ -39,7 +39,7 @@ public class PF_Test extends NewBaseClass {
 	public void login() throws Throwable {
 		// throw new PendingException();
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage = PageFactory.initElements(driver, LoginPage.class);
+		// loginPage = PageFactory.initElements(driver, LoginPage.class);
 		loginPage.clickLoginButton();
 		// SignUp SignUp = new SignUp(driver);
 		// SignUp.SignUpToPlatform(emailaddress, eid);
