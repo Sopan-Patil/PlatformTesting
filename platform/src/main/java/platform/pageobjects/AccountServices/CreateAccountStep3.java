@@ -92,4 +92,66 @@ public class CreateAccountStep3 {
 	@FindBy(xpath = "//label[@for='protector' or contains(text(),'保護者')]")
 	public WebElement parentRadioButton;
 
+	// label[@for='school']
+	// label[contains(text(),'学校・塾関係者')]
+	@FindBy(xpath = "//label[@for='school' or contains(text(),'学校・塾関係者')]")
+	public WebElement schoolRadioButton;
+
+	// label[contains(text(),'その他')]
+	// label[@for='other']
+	@FindBy(xpath = "//label[@for='other' or contains(text(),'その他')]")
+	public WebElement otherRadioButton;
+
+	// label[@for='receive-email']//span[@class='checkmark']
+	// label[@for='receive-email']//span[@class='checkmark']
+
+	@FindBy(xpath = "//label[@for='receive-email']//span[@class='checkmark']")
+	public WebElement emailCheckbox;
+
+	// label[@for='notice-by-mail']//span[@class='checkmark']
+	@FindBy(xpath = "//label[@for='notice-by-mail']//span[@class='checkmark']")
+	public WebElement mailCheckbox;
+
+	// font[contains(text(),'Get address from zip code')]
+	// span[contains(text(),'郵便番号から住所取得')]
+	@FindBy(xpath = "//*[contains(text(),'Get address from zip code') or contains(text(),'郵便番号から住所取得')")
+	public WebElement postalButton;
+
+	// span[@id='select2-province-container']
+	@FindBy(xpath = "//span[@id='select2-province-container']")
+	public WebElement addressDropdown;
+
+	// input[@id='city']
+	@FindBy(xpath = "//input[@id='city']")
+	public WebElement cityField;
+
+	// input[@id='town']
+	// input[@id='town']
+	@FindBy(xpath = "//input[@id='town']")
+	public WebElement townField;
+
+	// input[@id='street']
+	@FindBy(xpath = "//input[@id='street']")
+	public WebElement streetField;
+
+	// input[@id='apartment']
+	@FindBy(xpath = "//input[@id='apartment']")
+	public WebElement apartmentField;
+
+	// input[@id='phone1']
+	@FindBy(xpath = "//input[@id='phone1']")
+	public WebElement phone1Field;
+
+	// input[@id='phone2']
+	@FindBy(xpath = "//input[@id='phone2']")
+	public WebElement phone2Field;
+
+	// input[@id='phone3']
+	@FindBy(xpath = "//input[@id='phone3']")
+	public WebElement phone3Field;
+
+	// font[contains(text(),'Agree to the terms below and go to the confirmatio')]
+	// span[contains(text(),'下の規約に同意して、確認画面へ')]
+	@FindBy(xpath = "//*[contains(text(),'Agree to the terms below and go to the confirmatio') or contains(text(),'下の規約に同意して、確認画面へ')]")
+	public WebElement agreeButton;
 }
