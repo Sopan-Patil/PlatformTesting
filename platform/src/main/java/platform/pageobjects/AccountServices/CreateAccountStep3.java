@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import platform.pageobjects.Authentication.LoginPage;
 
@@ -154,4 +155,31 @@ public class CreateAccountStep3 {
 	// span[contains(text(),'下の規約に同意して、確認画面へ')]
 	@FindBy(xpath = "//*[contains(text(),'Agree to the terms below and go to the confirmatio') or contains(text(),'下の規約に同意して、確認画面へ')]")
 	public WebElement agreeButton;
+
+	public void enterValidUserDetails() {
+		passwordField.sendKeys("pfqa_123");
+
+		firstNameKanjiField.sendKeys("名前");
+		lastNameKanjiField.sendKeys("名字");
+
+		firstNameKanaField.sendKeys("ヤスイ");
+		lastNameKanaField.sendKeys("アズマ");
+
+		femaleRadioButton.click();
+
+		Select yearSelect = new Select(yearDropdown);
+		yearSelect.selectByVisibleText("2000");
+
+		Select monthSelect = new Select(monthDropdown);
+		monthSelect.selectByVisibleText("1");
+
+		Select daySelect = new Select(dayDropdown);
+		daySelect.selectByVisibleText("1");
+
+		firstPostalCodeField.sendKeys("530");
+		secondPostalCodeField.sendKeys("0045");
+
+		parentRadioButton.click();
+
+	}
 }
