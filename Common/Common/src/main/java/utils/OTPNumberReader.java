@@ -14,9 +14,16 @@ public class OTPNumberReader {
 	 * @Date : 13 Jul 2021
 	 * @Description: OTP Reader Function
 	 */
-		public static String OTPNumberValue(String OTPNumber) {
+	
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 19 Jul 2021
+	 * @Description: commented OTPNumber parameter
+	 */
+	public static String getOTPNumberValue(/* String OTPNumber */) {
 		Properties props = new Properties();
 		props.setProperty("mail.store.protocol", "imaps");
+		String OTPNumber = null;
 
 		try {
 			Session session = Session.getInstance(props, null);
@@ -51,7 +58,7 @@ public class OTPNumberReader {
 				}
 			}
 
-			 OTPNumber = sb.substring(0, 6);
+			OTPNumber = sb.substring(0, 6);
 
 		} catch (Exception mex) {
 			mex.printStackTrace();

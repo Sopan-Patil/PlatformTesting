@@ -49,12 +49,39 @@ public class LoginPage {
 
 	/**
 	 * @Author : Chetan Sonparote
+	 * @Date : 19 Jul 2021
+	 * @Description: Added new method for create new account button
+	 */
+
+	// @FindBy(xpath = "//font[contains(text(),'Create a new account')] or
+	// //span[contains(text(),'新規アカウント作成')]")
+	@FindBy(xpath = "//*[contains(text(),'Create a new account') or contains(text(),'新規アカウント作成')]")
+	public WebElement createNewAccountButton;
+
+	public void clickCreateNewAccountButton() {
+
+		// System.out.println("inside clickLoginButton()");
+		if (CommonFunctions.waitForVisiblity(createNewAccountButton, waitTime)) {
+
+			createNewAccountButton.click(); // changes done
+		}
+
+	}
+
+	/**
+	 * @Author : Chetan Sonparote
 	 * @Date : 14 Jul 2021
 	 * @Description: Added new method for click login
 	 */
 
 	public void clickLoginButton() {
-		logInButton.click(); // changes done
+
+		// System.out.println("inside clickLoginButton()");
+		if (CommonFunctions.waitForVisiblity(logInButton, waitTime)) {
+
+			logInButton.click(); // changes done
+		}
+
 	}
 
 	public void loginToPlatform() throws Exception {

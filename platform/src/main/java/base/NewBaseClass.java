@@ -57,15 +57,6 @@ public class NewBaseClass {
 	private void navigateToUrl() {
 		ObjectHelper.driver.navigate().to(ObjectHelper.enviURL);// API
 
-		// check safari and run applescript
-
-		// else
-
-		/*
-		 * if (BrowserstackUtility.browserName.equalsIgnoreCase("safari")) {
-		 * 
-		 * runAppleScript(); } else { replaceurl(); }
-		 */
 		replaceurl();
 	}
 
