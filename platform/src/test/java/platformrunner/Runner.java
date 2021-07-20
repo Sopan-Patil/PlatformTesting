@@ -46,7 +46,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 		newBaseClass.openBrowser(mode, browser, config, environment);
 		// driver = ObjectHelper.driver;
 
-		newBaseClass.closeZkaiPopup();
+		// newBaseClass.closeZkaiPopup();
 	}
 
 //	@AfterTest

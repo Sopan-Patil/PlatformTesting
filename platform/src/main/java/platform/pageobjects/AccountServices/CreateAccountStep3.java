@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -65,6 +66,8 @@ public class CreateAccountStep3 {
 
 	// span[@id='select2-birthdayyear-container']//font//font[contains(text(),'2006
 	// (Heisei 18)')]
+
+	// span[@id='select2-birthdayyear-container']
 	@FindBy(xpath = "//span[@id='select2-birthdayyear-container']")
 	public WebElement yearDropdown;
 
@@ -167,8 +170,9 @@ public class CreateAccountStep3 {
 
 		femaleRadioButton.click();
 
-		Select yearSelect = new Select(yearDropdown);
-		yearSelect.selectByVisibleText("2000");
+		// Select yearSelect = new Select(yearDropdown);
+		// yearSelect.selectByVisibleText("2000");
+		selectValueFromUnorderedList(yearDropdown, "2000");
 
 		Select monthSelect = new Select(monthDropdown);
 		monthSelect.selectByVisibleText("1");
@@ -193,5 +197,23 @@ public class CreateAccountStep3 {
 		phone2Field.sendKeys("1111");
 		phone3Field.sendKeys("2222");
 
+	}
+
+	// WebElement ul = driver.findElement(By.className("chzn-results"));
+	// selectValueFromUnorderedList(ul, "Game");
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 20 Jul 2021
+	 * @Description:method for selecting elemnet from dropdown
+	 */
+	public void selectValueFromUnorderedList(WebElement unorderedList, final String value) {
+		List<WebElement> options = unorderedList.findElements(By.tagName("li"));
+
+		for (WebElement option : options) {
+			if (value.equals(option.getText())) {
+				option.click();
+				break;
+			}
+		}
 	}
 }

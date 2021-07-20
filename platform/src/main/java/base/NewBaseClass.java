@@ -59,7 +59,7 @@ public class NewBaseClass {
 		ObjectHelper.driver.navigate().to(ObjectHelper.enviURL);// API
 
 		replaceurl();
-		// closeZkaiPopup();
+		closeZkaiPopup();
 	}
 
 	/**
