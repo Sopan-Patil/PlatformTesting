@@ -83,6 +83,18 @@ public class Order {
 	@FindBy(xpath = "//ul[@class='list']")
 	public WebElement invalidCreditCardTextHandler;
 
+	@FindBy(xpath = "//span[@id='cardnoleb_id']")
+	public WebElement blankCardNoTextHandler;
+
+	@FindBy(xpath = "//span[@id='monthleb_id']")
+	public WebElement blankMonthYearCardTextHandler;
+
+	@FindBy(xpath = "//span[@id='cardNameLabel_id']")
+	public WebElement blankCardNameTextHandler;
+
+	@FindBy(xpath = "//span[@id='securitycodeLeb_id']")
+	public WebElement BlankSecurityCodeTextHandler;
+
 	// not used
 	@FindBy(xpath = "//button[@type='submit']")
 	public WebElement SubmitButton;
@@ -338,27 +350,10 @@ public class Order {
 		log.info("Step 2 tab :- click to 'Confirmation of order details' button");
 
 		CommonFunctions.isElementVisible(invalidCreditCardTextHandler);
-
-//		String expectedInValidCreditCardErrorMessage = "ご利用いただけないクレジットカードです。";
-//		CommonFunctions.assertString(invalidCreditCardTextHandler, expectedInValidCreditCardErrorMessage);
-//
-//		if (invalidCreditCardTextHandler.getText().equals("ご利用いただけないクレジットカードです。")) {
-//			log.info("It display valid error message for invalid credit card");
-//		}
-//
-//		else {
-//
-//			log.error("The error message invalid credit card is not display");
-//		}
-
-		try {
-			if (invalidCreditCardTextHandler.getText().equals("11ご利用いただけないクレジットカードです。")) {
-				log.info("1It display valid error message for invalid credit card");
-			}
-
-		} catch (Exception e) {
-			log.error("3The error message invalid credit card is not display");
-		}
+		String invalidCreditCardText = invalidCreditCardTextHandler.getText();
+		String expectedInvalidCreditCardText = "ご利用いただけないクレジットカードです。";
+		CommonFunctions.assertString(invalidCreditCardText, expectedInvalidCreditCardText);
+		log.info("The invalid credit card message match with our expected message");
 
 	}
 
@@ -396,19 +391,26 @@ public class Order {
 		step2ProceedButton.click();
 		log.info("Step 2 tab :- click to 'Confirmation of order details' button");
 
-		CommonFunctions.isElementVisible(invalidCreditCardTextHandler);
+		String expectedInvalidCreditCardText = "11入力してください";
+		CommonFunctions.isElementVisible(blankCardNoTextHandler);
+		String blankCardNoTextHandlerString = blankCardNoTextHandler.getText();
+		CommonFunctions.assertString(blankCardNoTextHandlerString, expectedInvalidCreditCardText);
+		log.info("The card no message match with our expected message");
 
-		String expectedInValidCreditCardErrorMessage = "ご利用いただけないクレジットカードです。";
-		CommonFunctions.assertString(invalidCreditCardTextHandler, expectedInValidCreditCardErrorMessage);
+		CommonFunctions.isElementVisible(blankMonthYearCardTextHandler);
+		String blankMonthYearCardTextHandlerString = blankMonthYearCardTextHandler.getText();
+		CommonFunctions.assertString(blankMonthYearCardTextHandlerString, expectedInvalidCreditCardText);
+		log.info("The month and year message match with our expected message");
 
-		if (invalidCreditCardTextHandler.getText().equals("ご利用いただけないクレジットカードです。")) {
-			log.info("It display valid error message for invalid credit card");
-		}
+		CommonFunctions.isElementVisible(blankCardNameTextHandler);
+		String blankCardNameTextHandlerString = blankCardNameTextHandler.getText();
+		CommonFunctions.assertString(blankCardNameTextHandlerString, expectedInvalidCreditCardText);
+		log.info("The card name message match with our expected message");
 
-		else {
-
-			log.error("The error message invalid credit card is not display");
-		}
+		CommonFunctions.isElementVisible(BlankSecurityCodeTextHandler);
+		String BlankSecurityCodeTextHandlerString = BlankSecurityCodeTextHandler.getText();
+		CommonFunctions.assertString(BlankSecurityCodeTextHandlerString, expectedInvalidCreditCardText);
+		log.info("The security code message match with our expected message");
 
 	}
 }
