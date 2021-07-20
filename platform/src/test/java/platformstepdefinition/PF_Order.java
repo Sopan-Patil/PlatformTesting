@@ -23,7 +23,7 @@ public class PF_Order extends NewBaseClass {
 		LoginPage loginToPlatform = new LoginPage(driver);
 		loginToPlatform.loginToPlatform();
 		Order orderobj = new Order(driver);
-		orderobj.orderWithValidCreditcard();
+		orderobj.orderWithInValidCreditcard();
 	}
 
 	@And("^Close browsers$")

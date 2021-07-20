@@ -7,6 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 public class CommonFunctions {
 
 	public static void waitandClick(By locator, int waitTime) throws Exception {
@@ -83,6 +84,41 @@ public class CommonFunctions {
 		}
 		return result;
 	}
+	
+	/**
+	 * @Author : rahul shinde
+	 * @Date : 19 Jul 2021
+	 * @Description: add waitForClickable and assert
+	 */
+	
+	public static boolean waitForClickable(WebElement element, int waitTime) {
+		boolean result = false;
+		try {
+			ObjectHelper.driver.switchTo().activeElement();
+
+			scrolltoElement(element);
+
+			WebDriverWait wait = new WebDriverWait(ObjectHelper.driver, waitTime);
+			element = wait.until(ExpectedConditions.elementToBeClickable(element));
+			//element = wait.until(ExpectedConditions.visibilityOf(element));
+			result = true;
+		} catch (Exception e) {
+			result = false;
+		}
+		return result;
+	}
+	
+	public static boolean assertString(WebElement actualText, String expectedText) {
+		boolean result = false;
+		try {
+			Assert.assertEquals(actualText.getText(),expectedText);		
+			result = true;
+		} catch (Exception e) {
+			result = false;
+		}
+		return result;
+	}
+	
 
 	public static void clickUsingJavaExecutor(String xpath) {
 		WebElement element = ObjectHelper.driver.findElement(By.xpath(xpath));

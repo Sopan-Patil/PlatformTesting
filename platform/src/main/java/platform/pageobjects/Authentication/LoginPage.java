@@ -48,6 +48,18 @@ public class LoginPage {
 	public WebElement SubmitButton;
 
 	/**
+	 * @Author : rahul shinde
+	 * @Date : 19 Jul 2021
+	 * @Description: handle zkai popup
+	 */
+
+	@FindBy(xpath = "//div[@class='modal-content']")
+	public WebElement zkai_popup;
+
+	@FindBy(xpath = "//button[@aria-label='Close']")
+	public WebElement zkai_popupCloseButton;
+
+	/**
 	 * @Author : Chetan Sonparote
 	 * @Date : 14 Jul 2021
 	 * @Description: Added new method for click login
@@ -58,6 +70,17 @@ public class LoginPage {
 	}
 
 	public void loginToPlatform() throws Exception {
+
+		/**
+		 * @Author : rahul shinde
+		 * @Date : 19 Jul 2021
+		 * @Description: handle zkai popup
+		 */
+
+		if (CommonFunctions.waitForVisiblity(zkai_popup, waitTime)) {
+			zkai_popupCloseButton.click();
+			log.info("Close Zkai pop up");
+		}
 
 		String[] shipmentdata;
 

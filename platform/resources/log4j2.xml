@@ -46,6 +46,7 @@
 			<AppenderRef ref="File" />
 			<AppenderRef ref="Rolling-default" />
 			<AppenderRef ref="fileLogger" />
+			<AppenderRef ref="Console" />
 		</Root>
 	</Loggers>
 </Configuration>
