@@ -181,5 +181,17 @@ public class CreateAccountStep3 {
 
 		parentRadioButton.click();
 
+		Select adressSelect = new Select(addressDropdown);
+		adressSelect.selectByVisibleText("Osaka");
+
+		cityField.sendKeys("大阪市北区");
+		townField.sendKeys("天神西町");
+		streetField.sendKeys("犬上郡多賀町");
+		apartmentField.sendKeys("犬上郡多賀町");
+
+		phone1Field.sendKeys("081");
+		phone2Field.sendKeys("1111");
+		phone3Field.sendKeys("2222");
+
 	}
 }

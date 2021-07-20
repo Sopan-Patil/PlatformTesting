@@ -11,6 +11,7 @@ import cucumber.api.java.en.When;
 import cucumber.api.junit.Cucumber;
 import platform.pageobjects.AccountServices.CreateAccountStep1;
 import platform.pageobjects.AccountServices.CreateAccountStep2;
+import platform.pageobjects.AccountServices.CreateAccountStep3;
 import platform.pageobjects.Authentication.LoginPage;
 import utils.ObjectHelper;
 
@@ -52,7 +53,10 @@ public class PF_CreateAccount extends NewBaseClass {
 
 	@And("^enters valid details$")
 	public void enters_valid_details() throws Throwable {
-		throw new PendingException();
+		CreateAccountStep3 createAccountStep3 = new CreateAccountStep3(driver);
+		createAccountStep3.enterValidUserDetails();
+
+		// throw new PendingException();
 	}
 
 	@And("^confirms details$")
@@ -69,7 +73,7 @@ public class PF_CreateAccount extends NewBaseClass {
 		createAccountStep2.clickNextButton();
 
 		// System.out.println("OTP :" + OTPNumberReader.getOTPNumberValue());
-		throw new PendingException();
+		// throw new PendingException();
 	}
 
 }
