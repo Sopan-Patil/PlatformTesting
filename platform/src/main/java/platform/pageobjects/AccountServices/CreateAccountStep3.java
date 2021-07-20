@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
 import platform.pageobjects.Authentication.LoginPage;
 
@@ -171,22 +170,30 @@ public class CreateAccountStep3 {
 		femaleRadioButton.click();
 
 		// Select yearSelect = new Select(yearDropdown);
-		// yearSelect.selectByVisibleText("2000");
-		selectValueFromUnorderedList(yearDropdown, "2000");
+		// yearSelect.selectByIndex(10);
+		// selectValueFromUnorderedList(yearDropdown, "2000");
+		// yearDropdown.
+		int year = 2000;
+		WebElement yearDropDownTest = driver
+				.findElement(By.xpath("//span[@id='select2-birthdayyear-container']//font//font[contains(text(),'"
+						+ year + " (Heisei 18)')]"));
+		yearDropDownTest.click();
+		// Select monthSelect = new Select(monthDropdown);
+		// monthSelect.selectByVisibleText("1");
+		// selectValueFromUnorderedList(monthDropdown, "1");
 
-		Select monthSelect = new Select(monthDropdown);
-		monthSelect.selectByVisibleText("1");
-
-		Select daySelect = new Select(dayDropdown);
-		daySelect.selectByVisibleText("1");
+		// Select daySelect = new Select(dayDropdown);
+		// daySelect.selectByVisibleText("1");
+		// selectValueFromUnorderedList(dayDropdown, "1");
 
 		firstPostalCodeField.sendKeys("530");
 		secondPostalCodeField.sendKeys("0045");
 
 		parentRadioButton.click();
 
-		Select adressSelect = new Select(addressDropdown);
-		adressSelect.selectByVisibleText("Osaka");
+		// Select adressSelect = new Select(addressDropdown);
+		// adressSelect.selectByVisibleText("Osaka");
+		// selectValueFromUnorderedList(addressDropdown, "Osaka");
 
 		cityField.sendKeys("大阪市北区");
 		townField.sendKeys("天神西町");
@@ -210,7 +217,8 @@ public class CreateAccountStep3 {
 		List<WebElement> options = unorderedList.findElements(By.tagName("li"));
 
 		for (WebElement option : options) {
-			if (value.equals(option.getText())) {
+			// if (value.contains(option.getText())) {
+			if (option.getText().contains(value)) {
 				option.click();
 				break;
 			}
