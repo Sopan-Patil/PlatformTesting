@@ -1,5 +1,6 @@
 package utils;
 
+import java.io.FileInputStream;
 import java.util.Properties;
 import javax.mail.Address;
 import javax.mail.BodyPart;
@@ -8,21 +9,32 @@ import javax.mail.Message;
 import javax.mail.Multipart;
 import javax.mail.Session;
 import javax.mail.Store;
+
 public class OTPNumberReader {
 	/**
 	 * @Author : Sopan Patil
 	 * @Date : 13 Jul 2021
 	 * @Description: OTP Reader Function
 	 */
-		public static String OTPNumberValue(String OTPNumber) {
+	public static String OTPNumberValue(String OTPNumber) {
 		Properties props = new Properties();
 		props.setProperty("mail.store.protocol", "imaps");
 
 		try {
-			Session session = Session.getInstance(props, null);
-			Store store = session.getStore();
-			store.connect("imap.gmail.com", "TestPF1221@gmail.com", "Test-123");
-
+			Properties properties = new Properties();
+			FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\resources\\data.properties");
+			properties.load(fis);
+			String host = properties.getProperty("host");
+			String username = properties.getProperty("username");
+			String password = properties.getProperty("password");
+			String mailStoreType = properties.getProperty("mailStoreType");
+			properties.put("mail.imap.host", host);
+			properties.put("mail.imap.port", "993");
+			properties.put("mail.imap.starttls.enable", "true");
+			properties.put("mail.imap.ssl.trust", host);
+			Session emailSession = Session.getDefaultInstance(properties);
+			Store store = emailSession.getStore("imaps");
+			store.connect(host, username, password);
 			Folder inbox = store.getFolder("INBOX");
 
 			inbox.open(Folder.READ_ONLY);
@@ -31,15 +43,11 @@ public class OTPNumberReader {
 			Address[] in = msg.getFrom();
 
 			for (Address address : in) {
-//				System.out.println("FROM:" + address.toString());
+
 			}
 
 			Multipart mp = (Multipart) msg.getContent();
 			BodyPart bp = mp.getBodyPart(0);
-
-//			System.out.println("SENT DATE:" + msg.getSentDate());
-//			System.out.println("SUBJECT:" + msg.getSubject());
-//			System.out.println("CONTENT:" + bp.getContent());
 
 			String ob = bp.getContent().toString();
 			String sample = ob.toString();
@@ -51,13 +59,12 @@ public class OTPNumberReader {
 				}
 			}
 
-			 OTPNumber = sb.substring(0, 6);
+			OTPNumber = sb.substring(0, 6);
 
 		} catch (Exception mex) {
 			mex.printStackTrace();
 		}
-		return OTPNumber;		
+		return OTPNumber;
 	}
-		
-		
+
 }

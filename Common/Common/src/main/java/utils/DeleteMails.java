@@ -22,14 +22,14 @@ public class DeleteMails {
 
 	public void deletemail(String emailsubject) {
 		try {
-			
+
 			Properties properties = new Properties();
 			FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\resources\\data.properties");
 			properties.load(fis);
-			String host =  properties.getProperty("host");
-			String username =  properties.getProperty("username");
-			String password =  properties.getProperty("password");
-			String mailStoreType =  properties.getProperty("mailStoreType");
+			String host = properties.getProperty("host");
+			String username = properties.getProperty("username");
+			String password = properties.getProperty("password");
+			String mailStoreType = properties.getProperty("mailStoreType");
 			properties.put("mail.imap.host", host);
 			properties.put("mail.imap.port", "993");
 			properties.put("mail.imap.starttls.enable", "true");
@@ -42,11 +42,11 @@ public class DeleteMails {
 			Folder[] f = store.getDefaultFolder().list();
 			Message[] arrayMessages = inbox.getMessages();
 			arrayMessages = inbox.getMessages();
-			for (int i = 0; i < arrayMessages.length; i++) {
-				Message message = arrayMessages[i];
-				String subject = message.getSubject();
+			Folder folderBin = store.getFolder("[Gmail]/Trash");
+			for (Message m : arrayMessages) {
+				String subject = m.getSubject();
 				if (subject.contains(emailsubject)) {
-					message.setFlag(Flags.Flag.DELETED, true);
+					m.getFolder().copyMessages(new Message[] { m }, folderBin);
 				}
 			}
 			inbox.close(false);
