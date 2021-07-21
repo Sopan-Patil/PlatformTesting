@@ -1,7 +1,14 @@
 package utils;
 
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
+
 import java.util.ArrayList;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -9,6 +16,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 public class CommonFunctions {
+	
+	private static Logger log = LogManager.getLogger(CommonFunctions.class.getName());
 
 	public static void waitandClick(By locator, int waitTime) throws Exception {
 		WebElement element;
@@ -108,18 +117,22 @@ public class CommonFunctions {
 		return result;
 	}
 	
-	public static boolean assertString(WebElement actualText, String expectedText) {
+	public static boolean assertString(String actualText, String expectedText) {
 		boolean result = false;
 		try {
-			Assert.assertEquals(actualText.getText(),expectedText);		
+			assertTrue(actualText.equals(expectedText));
+			assertFalse(actualText == expectedText);
+			assertEquals(actualText, expectedText);
 			result = true;
 		} catch (Exception e) {
 			result = false;
 		}
 		return result;
 	}
-	
 
+
+
+    
 	public static void clickUsingJavaExecutor(String xpath) {
 		WebElement element = ObjectHelper.driver.findElement(By.xpath(xpath));
 
