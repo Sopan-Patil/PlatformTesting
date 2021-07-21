@@ -16,7 +16,8 @@ public class OTPNumberReader {
 	 * @Date : 13 Jul 2021
 	 * @Description: OTP Reader Function
 	 */
-	public static String OTPNumberValue(String OTPNumber) {
+	public static String OTPNumberValue() {
+		String OTPNumber = null;
 		Properties props = new Properties();
 		props.setProperty("mail.store.protocol", "imaps");
 

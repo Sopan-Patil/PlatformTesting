@@ -50,7 +50,7 @@ public class CreateAccountStep2 {
 	List<Integer> OTPNumber;
 
 	public void convertOTPToList() {
-		String otp = OTPNumberReader.getOTPNumberValue();
+		String otp = OTPNumberReader.OTPNumberValue();// OTPNumberReader.getOTPNumberValue();
 		OTPNumber = new ArrayList<Integer>();
 		Scanner scanner = new Scanner(otp);
 
