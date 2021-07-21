@@ -4,7 +4,6 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import base.NewBaseClass;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -13,6 +12,7 @@ import platform.pageobjects.AccountServices.CreateAccountStep1;
 import platform.pageobjects.AccountServices.CreateAccountStep2;
 import platform.pageobjects.AccountServices.CreateAccountStep3;
 import platform.pageobjects.AccountServices.CreateAccountStep4;
+import platform.pageobjects.AccountServices.CreateAccountStep5;
 import platform.pageobjects.Authentication.LoginPage;
 import utils.ObjectHelper;
 
@@ -38,7 +38,9 @@ public class PF_CreateAccount extends NewBaseClass {
 
 	@Then("^Validate that new account is created$")
 	public void validate_that_new_account_is_created() throws Throwable {
-		throw new PendingException();
+		CreateAccountStep5 createAccountStep5 = new CreateAccountStep5(driver);
+		createAccountStep5.clickGotoTopLink();
+		// throw new PendingException();
 	}
 
 	@And("^creates new credentials$")
