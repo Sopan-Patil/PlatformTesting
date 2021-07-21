@@ -1,7 +1,6 @@
 package platformrunner;
 
 import org.junit.runner.RunWith;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 
@@ -27,7 +26,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 		glue = { "platformstepdefinition" },
 
-		tags = { "~@FunctionalTest1", "@TestFeature" },
+		tags = { "@CreateAccountTest", "~@Smoke" },
 
 		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
@@ -36,6 +35,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 public class Runner extends AbstractTestNGCucumberTests {
 
 	NewBaseClass newBaseClass;
+//	public WebDriver driver;// = ObjectHelper.driver;
 
 	@BeforeTest
 	@org.testng.annotations.Parameters(value = { "mode", "browser", "config", "environment" })
@@ -44,9 +44,12 @@ public class Runner extends AbstractTestNGCucumberTests {
 		newBaseClass = new NewBaseClass();
 		// driver =
 		newBaseClass.openBrowser(mode, browser, config, environment);
+		// driver = ObjectHelper.driver;
+
+		newBaseClass.closeZkaiPopup();
 	}
 
-	@AfterTest
+//	@AfterTest
 	@org.testng.annotations.Parameters(value = { "mode" })
 	public void closeBrowser(String mode) {
 		newBaseClass = new NewBaseClass();
