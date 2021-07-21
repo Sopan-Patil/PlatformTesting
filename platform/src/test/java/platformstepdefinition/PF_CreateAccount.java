@@ -55,6 +55,7 @@ public class PF_CreateAccount extends NewBaseClass {
 	public void enters_valid_details() throws Throwable {
 		CreateAccountStep3 createAccountStep3 = new CreateAccountStep3(driver);
 		createAccountStep3.enterValidUserDetails();
+		createAccountStep3.clickAgreeButton();
 
 		// throw new PendingException();
 	}

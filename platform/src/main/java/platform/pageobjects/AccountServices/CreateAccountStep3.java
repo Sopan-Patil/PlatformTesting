@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import platform.pageobjects.Authentication.LoginPage;
 
@@ -67,15 +68,19 @@ public class CreateAccountStep3 {
 	// (Heisei 18)')]
 
 	// span[@id='select2-birthdayyear-container']
-	@FindBy(xpath = "//span[@id='select2-birthdayyear-container']")
+	// @FindBy(xpath = "//span[@id='select2-birthdayyear-container']")
+	// @FindBy(xpath = "//li[@id='select2-birthdayyear-container']")
+	@FindBy(xpath = "//select[@id='birthday.year']")
 	public WebElement yearDropdown;
 
 	// span[@id='select2-birthdaymonth-container']//font//font[contains(text(),'-')]
 
-	@FindBy(xpath = "//span[@id='select2-birthdaymonth-container']")
+	// @FindBy(xpath = "//span[@id='select2-birthdaymonth-container']")
+	@FindBy(xpath = "//select[@id='birthday.month']")
 	public WebElement monthDropdown;
 
-	@FindBy(xpath = "//span[@id='select2-birthdayday-container']")
+	// @FindBy(xpath = "//span[@id='select2-birthdayday-container']")
+	@FindBy(xpath = "//select[@id='birthday.day']")
 	public WebElement dayDropdown;
 
 	// input[@id='code1']
@@ -121,7 +126,8 @@ public class CreateAccountStep3 {
 	public WebElement postalButton;
 
 	// span[@id='select2-province-container']
-	@FindBy(xpath = "//span[@id='select2-province-container']")
+	// @FindBy(xpath = "//span[@id='select2-province-container']")
+	@FindBy(xpath = "//select[@id='province']")
 	public WebElement addressDropdown;
 
 	// input[@id='city']
@@ -158,7 +164,7 @@ public class CreateAccountStep3 {
 	@FindBy(xpath = "//*[contains(text(),'Agree to the terms below and go to the confirmatio') or contains(text(),'下の規約に同意して、確認画面へ')]")
 	public WebElement agreeButton;
 
-	public void enterValidUserDetails() {
+	public void enterValidUserDetails() throws InterruptedException {
 		passwordField.sendKeys("pfqa_123");
 
 		firstNameKanjiField.sendKeys("名前");
@@ -169,30 +175,36 @@ public class CreateAccountStep3 {
 
 		femaleRadioButton.click();
 
-		// Select yearSelect = new Select(yearDropdown);
-		// yearSelect.selectByIndex(10);
+		Select yearSelect = new Select(yearDropdown);
+		yearSelect.selectByValue("2000");
+		// yearDropdown.click();
+		// Thread.sleep(3000);
 		// selectValueFromUnorderedList(yearDropdown, "2000");
 		// yearDropdown.
-		int year = 2000;
-		WebElement yearDropDownTest = driver
-				.findElement(By.xpath("//span[@id='select2-birthdayyear-container']//font//font[contains(text(),'"
-						+ year + " (Heisei 18)')]"));
-		yearDropDownTest.click();
-		// Select monthSelect = new Select(monthDropdown);
-		// monthSelect.selectByVisibleText("1");
+		/*
+		 * int year = 2000; WebElement yearDropDownTest = driver .findElement(By.xpath(
+		 * "//span[@id='select2-birthdayyear-container']//font//font[contains(text(),'"
+		 * + year + " (Heisei 18)')]")); yearDropDownTest.click();
+		 */
+
+		// yearDropdown.findElement(By.linkText("2001")).click();
+		Select monthSelect = new Select(monthDropdown);
+		monthSelect.selectByVisibleText("9");
 		// selectValueFromUnorderedList(monthDropdown, "1");
 
-		// Select daySelect = new Select(dayDropdown);
-		// daySelect.selectByVisibleText("1");
+		Select daySelect = new Select(dayDropdown);
+		daySelect.selectByVisibleText("3");
 		// selectValueFromUnorderedList(dayDropdown, "1");
 
 		firstPostalCodeField.sendKeys("530");
 		secondPostalCodeField.sendKeys("0045");
 
-		parentRadioButton.click();
+		// parentRadioButton.click();
 
-		// Select adressSelect = new Select(addressDropdown);
-		// adressSelect.selectByVisibleText("Osaka");
+		Select adressSelect = new Select(addressDropdown);
+		adressSelect.selectByVisibleText("大阪府");
+		// span[@id='select2-province-container']
+		// select2-province-result-kt6r-
 		// selectValueFromUnorderedList(addressDropdown, "Osaka");
 
 		cityField.sendKeys("大阪市北区");
@@ -206,6 +218,10 @@ public class CreateAccountStep3 {
 
 	}
 
+	public void clickAgreeButton() {
+		agreeButton.click();
+	}
+
 	// WebElement ul = driver.findElement(By.className("chzn-results"));
 	// selectValueFromUnorderedList(ul, "Game");
 	/**
@@ -214,12 +230,17 @@ public class CreateAccountStep3 {
 	 * @Description:method for selecting elemnet from dropdown
 	 */
 	public void selectValueFromUnorderedList(WebElement unorderedList, final String value) {
-		List<WebElement> options = unorderedList.findElements(By.tagName("li"));
-
-		for (WebElement option : options) {
-			// if (value.contains(option.getText())) {
-			if (option.getText().contains(value)) {
-				option.click();
+		/*
+		 * List<WebElement> options = unorderedList.findElements(By.tagName("li"));
+		 * 
+		 * for (WebElement option : options) { // if (value.contains(option.getText()))
+		 * { if (option.getText().contains(value)) { option.click(); break; } }
+		 */
+		List<WebElement> element = unorderedList.findElements(By.tagName("li"));// driver.findElements(By.cssSelector(".txt_black.heading_4"));
+		for (int i = 0; i < element.size(); i++) {
+			String temp = element.get(i).getText();
+			if (temp.contains(value)) {
+				element.get(i).click();
 				break;
 			}
 		}
