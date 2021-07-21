@@ -8,6 +8,8 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
 import platform.pageobjects.Authentication.LoginPage;
+import platform.properties.ConfigProp;
+import utils.OTPNumberReader;
 
 /**
  * @Author : Chetan Sonparote 
@@ -27,11 +29,13 @@ public class PF_Login extends NewBaseClass {
 	public WebDriver driver;
 
 	// String emailid = "";
-
+ysoskdffsjkf
 	@Given("^Navigate to URL on (.+)$")
 	public void navigate_to_url_(String browser) throws Throwable {
-		driver = openbrowser(browser);
+		// driver = openbrowser(browser);
 
+		utils.OTPNumberReader otpread = new OTPNumberReader();
+		OTPNumberReader.OTPNumberValue(ConfigProp.Stag_Email_Subject);
 	}
 
 	/**
@@ -45,6 +49,7 @@ public class PF_Login extends NewBaseClass {
 		LoginPage loginToPlatform = new LoginPage(driver);
 
 		loginToPlatform.loginToPlatform();
+
 		// TopBar topBar = new TopBar(driver);
 		// topBar.clickSignUpLinkLink();
 
