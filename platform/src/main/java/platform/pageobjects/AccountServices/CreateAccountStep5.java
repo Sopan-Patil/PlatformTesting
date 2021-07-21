@@ -30,15 +30,9 @@ public class CreateAccountStep5 {
 		PageFactory.initElements(driver, this);
 	}
 
-	// font[contains(text(),'Start using the service')]
-	// span[@class='button__text']
-	// span[@class='button__text']
-
 	@FindBy(xpath = "//*[@class='button__text' or contains(text(),'Start using the service')]")
 	public WebElement startServiceButton;
 
-	// a[contains(text(),'スタギアトップへ')]
-	// font[contains(text(),'To the staggered top')]
 	@FindBy(xpath = "//*[contains(text(),'スタギアトップへ') or contains(text(),'To the staggered top')]")
 	public WebElement gotoTopLink;
 

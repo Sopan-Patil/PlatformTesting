@@ -37,9 +37,6 @@ public class CreateAccountStep1 {
 	@FindBy(xpath = "//input[@id='entryIdentifier']")
 	public WebElement eidField;
 
-	// span[@class='button__text']
-	// font[contains(text(),'Send confirmation email')]
-
 	@FindBy(xpath = "//*[@class='button__text' or contains(text(),'Send confirmation email')]")
 	public WebElement sendConfirmationButton;
 
@@ -47,7 +44,7 @@ public class CreateAccountStep1 {
 
 		if (CommonFunctions.waitForVisiblity(sendConfirmationButton, waitTime)) {
 
-			sendConfirmationButton.click(); // changes done
+			sendConfirmationButton.click();
 		}
 
 	}
@@ -60,9 +57,6 @@ public class CreateAccountStep1 {
 		}
 		if (CommonFunctions.waitForVisiblity(eidField, waitTime)) {
 			eidField.click();
-			// EmailAddressAndEIDGenerate EmailAddressAndEIDGenerate = new
-			// EmailAddressAndEIDGenerate();
-			// eidField.sendKeys(EmailAddressAndEIDGenerate.generateeid());
 			eidField.sendKeys(CredentialsGenerator.generateEid());
 
 		}

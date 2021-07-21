@@ -30,12 +30,8 @@ public class CreateAccountStep4 {
 		PageFactory.initElements(driver, this);
 	}
 
-	// a[@id='js-btn-submit']
-
 	@FindBy(xpath = "//a[@id='js-btn-submit']")
 	public WebElement signUpButton;
-
-	// a[@class='button button--white1 button--register-step-4']
 
 	@FindBy(xpath = "//a[@class='button button--white1 button--register-step-4']")
 	public WebElement returnButton;

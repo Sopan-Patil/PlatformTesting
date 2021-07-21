@@ -33,16 +33,6 @@ public class CreateAccountStep2 {
 		PageFactory.initElements(driver, this);
 	}
 
-	// input[@id='code1']
-
-	// input[@id='code2']
-	// input[@id='code3']
-	// input[@id='code4']
-	// input[@id='code5']
-	// input[@id='code6']
-
-	// font[contains(text(),'next')]
-	// a[@role='button']
 	@FindBy(xpath = "//*[contains(text(),'next') or @role='button']")
 	public WebElement nextButton;
 

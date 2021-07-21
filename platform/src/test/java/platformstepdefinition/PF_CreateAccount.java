@@ -78,8 +78,6 @@ public class PF_CreateAccount extends NewBaseClass {
 		createAccountStep2.addConfirmationCode();
 		createAccountStep2.clickNextButton();
 
-		// System.out.println("OTP :" + OTPNumberReader.getOTPNumberValue());
-		// throw new PendingException();
 	}
 
 }
