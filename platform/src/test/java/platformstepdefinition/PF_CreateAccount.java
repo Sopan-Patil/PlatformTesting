@@ -12,6 +12,7 @@ import cucumber.api.junit.Cucumber;
 import platform.pageobjects.AccountServices.CreateAccountStep1;
 import platform.pageobjects.AccountServices.CreateAccountStep2;
 import platform.pageobjects.AccountServices.CreateAccountStep3;
+import platform.pageobjects.AccountServices.CreateAccountStep4;
 import platform.pageobjects.Authentication.LoginPage;
 import utils.ObjectHelper;
 
@@ -62,7 +63,9 @@ public class PF_CreateAccount extends NewBaseClass {
 
 	@And("^confirms details$")
 	public void confirms_details() throws Throwable {
-		throw new PendingException();
+		// throw new PendingException();
+		CreateAccountStep4 createAccountStep4 = new CreateAccountStep4(driver);
+		createAccountStep4.clickSignUpButton();
 	}
 
 	@And("^enters confirmation code$")
