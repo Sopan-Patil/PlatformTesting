@@ -115,10 +115,10 @@ public class BrowserstackUtility {
 		 * @Date : 22 Jul 2021
 		 * @Description: Added build name for jenkins
 		 */
-		
+		//String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
 		//check build on jenkins
-	//	String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
-	//	capabilities.setCapability("build", buildName); 
+		String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+		capabilities.setCapability("build", buildName); 
 
 		driver = new RemoteWebDriver(
 				//new URL("https://" + username + ":" + accessKey + "@" + config.get("server") + "/wd/hub"),
