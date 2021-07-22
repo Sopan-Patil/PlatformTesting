@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="-1" name="Failed suite [LocalSingleBrowser]" guice-stage="DEVELOPMENT">
+<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Platform Testing Cucumber Testng]">
   <listeners>
     <listener class-name="listeners.Listeners"/>
   </listeners>
-  <test name="SingleBrowserTest(failed)">
-    <parameter name="mode" value="local"/>
-    <parameter name="browser" value="chrome"/>
+  <test name="Cucumber Testng(failed)">
     <classes>
-      <class name="platformrunner.Runner">
+      <class name="platformrunner.PlatformTestRunners">
         <methods>
-          <include name="setUpBrowser"/>
           <include name="setUpClass"/>
           <include name="feature" invocation-numbers="0"/>
           <include name="tearDownClass"/>
         </methods>
-      </class> <!-- platformrunner.Runner -->
+      </class> <!-- platformrunner.PlatformTestRunners -->
     </classes>
-  </test> <!-- SingleBrowserTest(failed) -->
-</suite> <!-- Failed suite [LocalSingleBrowser] -->
+  </test> <!-- Cucumber Testng(failed) -->
+</suite> <!-- Failed suite [Platform Testing Cucumber Testng] -->
