@@ -109,6 +109,15 @@ public class BrowserstackUtility {
 		
 		capabilities.setCapability("acceptSslCerts", "true");
 		capabilities.setCapability("browserstack.idleTimeout", "30");
+		
+		/**
+		 * @Author : Chetan Sonparote
+		 * @Date : 22 Jul 2021
+		 * @Description: Added build name for jenkins
+		 */
+		
+		String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+		capabilities.setCapability("build", buildName); 
 
 		driver = new RemoteWebDriver(
 				//new URL("https://" + username + ":" + accessKey + "@" + config.get("server") + "/wd/hub"),
