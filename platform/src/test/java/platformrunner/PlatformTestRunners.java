@@ -12,9 +12,9 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 @ExtendedCucumberOptions(jsonReport = "target/cucumber.json", overviewReport = true, outputFolder = "target")
 
 @CucumberOptions(monochrome = true, strict = false, dryRun = false, features = {
-		".//src//test//java//platformfeatures/PF_Login.feature"
+		".//src//test//java//platformfeatures/PF_InvalidCC.feature"
 
-}, glue = { "platformstepdefinition" }, tags = { "~@FooterTest", "~@FunctionalTest", "@BrowserstackTest",
+}, glue = { "platformstepdefinition" }, tags = { "~@FooterTest", "@FunctionalTest", "~@BrowserstackTest",
 		"~@FunctionalLoginTest" }, plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
 				"junit:target/cucumber_html_report/junit_platform.xml", "rerun:rerun/failed_scenarios.txt", })
