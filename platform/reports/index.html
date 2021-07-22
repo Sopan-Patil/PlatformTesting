@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">PF Automation Result</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jul 20, 2021 03:36:37 PM</span></a>
+<a href="#"><span class="badge badge-primary">Jul 22, 2021 12:48:11 PM</span></a>
 </li>
 </ul>
 </div>
@@ -86,7 +86,7 @@
           <div class="test-detail">
             <p class="name">feature</p>
             <p class="text-sm">
-              <span>3:36:37 PM</span> / <span>00:01:15:623</span>
+              <span>12:48:12 PM</span> / <span>00:00:24:684</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -95,16 +95,16 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-fail">feature</h5>
-<span class='badge badge-success'>07.20.2021 3:36:37 PM</span>
-<span class='badge badge-danger'>07.20.2021 3:37:53 PM</span>
-<span class='badge badge-default'>00:01:15:623</span>
+<span class='badge badge-success'>07.22.2021 12:48:12 PM</span>
+<span class='badge badge-danger'>07.22.2021 12:48:37 PM</span>
+<span class='badge badge-default'>00:00:24:684</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
 </div>
 </div>    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='D:\Automation\Projects\PlatformTesting\platform\.\Output\Test At 2021-07-20T15.36.38.747\Screenshots\20072021153753.png' src="D:\Automation\Projects\PlatformTesting\platform\.\Output\Test At 2021-07-20T15.36.38.747\Screenshots\20072021153753.png">
+<img data-featherlight='D:\Sopan\Project\Automation\PlatformTesting\platform\.\Output\Test At 2021-07-22T12.48.13.588\Screenshots\22072021124836.png' src="D:\Sopan\Project\Automation\PlatformTesting\platform\.\Output\Test At 2021-07-22T12.48.13.588\Screenshots\22072021124836.png">
     <div class="title">feature</div>
     </div></div>
 <div class="detail-body mt-4">
@@ -113,9 +113,17 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>3:37:53 PM</td>
+        <td>12:48:36 PM</td>
         <td>
-          <textarea readonly class="code-block">cucumber.runtime.CucumberException: java.lang.AssertionError: expected [true] but found [false]
+          <textarea readonly class="code-block">cucumber.runtime.CucumberException: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//sssspan[contains(text(),'ログイン')]"}
+  (Session info: chrome=91.0.4472.164)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.8', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.164, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:65391}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b89e0cec5fa5c70db94057cd9170c42d
+*** Element info: {Using=xpath, value=//sssspan[contains(text(),'ログイン')]}
 	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
 	at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -143,15 +151,35 @@
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertTrue(Assert.java:44)
-	at org.testng.Assert.assertTrue(Assert.java:54)
-	at utils.CommonFunctions.assertString(CommonFunctions.java:123)
-	at platform.pageobjects.Order.Order.orderWithBlankValidCreditcardDetails(Order.java:397)
-	at platformstepdefinition.PF_Order.navigate_to_url_(PF_Order.java:26)
-	at ✽.Given Navigate to URL and login chrome(./src/test/java/platformfeatures/PF_Order.feature:7)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//sssspan[contains(text(),'ログイン')]"}
+  (Session info: chrome=91.0.4472.164)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.8', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.164, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:65391}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b89e0cec5fa5c70db94057cd9170c42d
+*** Element info: {Using=xpath, value=//sssspan[contains(text(),'ログイン')]}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:458)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy39.click(Unknown Source)
+	at platform.pageobjects.Authentication.LoginPage.loginToPlatform(LoginPage.java:124)
+	at platformstepdefinition.PF_Login.Login_to_Platform(PF_Login.java:47)
+	at ✽.Then Login To Platform(./src/test/java/platformfeatures/PF_Login.feature:9)
 </textarea>
           
         </td>
@@ -202,7 +230,7 @@ Caused by: java.lang.AssertionError: expected [true] but found [false]
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>15:36:37 PM</td>
+<td>12:48:12 PM</td>
 <td>
 <a href="#" class="linked" test-id='1' id='1'>feature</a>
 </td>
@@ -224,13 +252,13 @@ Caused by: java.lang.AssertionError: expected [true] but found [false]
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jul 20, 2021 03:36:37 PM</h3>
+<h3>Jul 22, 2021 12:48:11 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jul 20, 2021 03:37:53 PM</h3>
+<h3>Jul 22, 2021 12:48:37 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -300,7 +328,7 @@ Caused by: java.lang.AssertionError: expected [true] but found [false]
 </div></div>
 <script>
 var timeline = {
-"feature":75.623
+"feature":24.684
 };
 </script>
 <div class="row">
