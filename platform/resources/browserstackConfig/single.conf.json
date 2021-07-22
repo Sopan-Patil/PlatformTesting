@@ -3,7 +3,7 @@
  
 
   "capabilities": {
-"build": "BROWSERSTACK_BUILD_NAME",
+
     "name": "single_test",
     "browserstack.debug": true,
     "browserstack.local":"browserstackLocal",

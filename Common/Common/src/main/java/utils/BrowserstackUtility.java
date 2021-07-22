@@ -66,15 +66,7 @@ public class BrowserstackUtility {
 		 loadPropertiesFile();
 
 		 
-		 /**
-			 * @Author : Chetan Sonparote
-			 * @Date : 22 Jul 2021
-			 * @Description: Added build name for jenkins
-			 */
-			//String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
-			//check build on jenkins
-			String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
-		//	capabilities.setCapability("build", buildName); 
+		
 		JSONParser parser = new JSONParser();
 		JSONObject config = (JSONObject) parser.parse(new FileReader(System.getProperty("user.dir") + File.separator
 				+ "resources" + File.separator + "browserstackConfig" + File.separator + config_file));
@@ -116,6 +108,19 @@ public class BrowserstackUtility {
 			options.put("key", accessKey);
 			l.start(options);
 		}
+		
+		 /**
+		 * @Author : Chetan Sonparote
+		 * @Date : 22 Jul 2021
+		 * @Description: Added build name for jenkins
+		 */
+	//	String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+		//check build on jenkins
+		String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+		if (buildName != null && !buildName.isEmpty()) {
+			capabilities.setCapability("build", buildName);
+		}
+	//	capabilities.setCapability("build", buildName); 
 		
 		capabilities.setCapability("acceptSslCerts", "true");
 		capabilities.setCapability("browserstack.idleTimeout", "30");
