@@ -444,6 +444,8 @@ public class Order {
 
 	public void orderWithValidConvenienceStore() throws Exception {
 
+		//
+
 		CommonFunctions.waitForVisiblity(productListLink, waitTime);
 		productListLink.click();
 		log.info("Click on product list page");
