@@ -140,7 +140,7 @@ public class BrowserstackUtility {
 		//check build on jenkins
 	
 		//System.out.println("buildName:"+buildName);
-		log.info("buildName:"+buildName);
+		
 	//	if (buildName != null && !buildName.isEmpty()) {
 		//if (buildName == null) {
 			//capabilities.setCapability("build", buildName);
@@ -178,6 +178,8 @@ public class BrowserstackUtility {
 		//browserName = ((RemoteWebDriver) driver).getCapabilities().getBrowserName().toLowerCase();
 		
 		mark(session, username, accessKey);
+		
+		log.info("buildName:"+buildName);
 
 		 return driver;
 		
