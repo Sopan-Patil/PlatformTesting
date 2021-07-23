@@ -36,23 +36,19 @@ import org.testng.annotations.Test;
 
 import com.browserstack.local.Local;
 
-
-
-
-
 /**
- * @Author : Chetan Sonparote 
- * @Date : 27 Jun 2021 
+ * @Author : Chetan Sonparote
+ * @Date : 27 Jun 2021
  * @Description: Browserstack utility
  */
 
 public class BrowserstackUtility {
-	 public WebDriver driver;
+	public WebDriver driver;
 	private Local l;
-	public  Properties properties;
+	public Properties properties;
 	private static Logger log = LogManager.getLogger(BrowserstackUtility.class.getName());
 
-	public  void loadPropertiesFile() throws IOException {
+	public void loadPropertiesFile() throws IOException {
 		properties = new Properties();
 		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\resources\\data.properties");
 		properties.load(fis);
@@ -61,21 +57,20 @@ public class BrowserstackUtility {
 	// @BeforeMethod(alwaysRun=true)
 	// @org.testng.annotations.Parameters(value={"config", "environment"})
 //	@Test
-	public  WebDriver initializaBrowserstackDriver(@Optional("local.conf.json") String config_file,
+	public WebDriver initializaBrowserstackDriver(@Optional("local.conf.json") String config_file,
 			@Optional("chrome") String environment) throws Exception {
-		 loadPropertiesFile();
+		loadPropertiesFile();
 
-			//String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
-		 
-		
+		// String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+
 		JSONParser parser = new JSONParser();
 		JSONObject config = (JSONObject) parser.parse(new FileReader(System.getProperty("user.dir") + File.separator
 				+ "resources" + File.separator + "browserstackConfig" + File.separator + config_file));
 		JSONObject envs = (JSONObject) config.get("environments");
 
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-		
-		//DO not delete. commented for test
+
+		// DO not delete. commented for test
 
 		/*
 		 * Map<String, String> envCapabilities = (Map<String, String>)
@@ -92,26 +87,26 @@ public class BrowserstackUtility {
 		 * pair.getValue().toString()); } }
 		 */
 
-		
 		/**
 		 * @Author : Chetan Sonparote
 		 * @Date : 23 Jul 2021
 		 * @Description: Added user name and password from env properties for jenkins
 		 */
 
-		/*
-		 * String username = System.getenv("BROWSERSTACK_USERNAME"); if (username ==
-		 * null) { username = properties.getProperty("BROWSERSTACK_USERNAME"); }
-		 * 
-		 * String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY"); if (accessKey ==
-		 * null) { accessKey = properties.getProperty("BROWSERSTACK_ACCESS_KEY"); }
-		 */
+		String username = System.getenv("BROWSERSTACK_USERNAME");
+		if (username == null) {
+			username = properties.getProperty("BROWSERSTACK_USERNAME");
+		}
 
-	
+		String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
+		if (accessKey == null) {
+			accessKey = properties.getProperty("BROWSERSTACK_ACCESS_KEY");
+		}
 
-		String username =  properties.getProperty("BROWSERSTACK_USERNAME");
-		String accessKey =  properties.getProperty("BROWSERSTACK_ACCESS_KEY");
-	//	System.out.println("BROWSERSTACK_USERNAME :"+System.getenv("BROWSERSTACK_USERNAME"));
+		// String username = properties.getProperty("BROWSERSTACK_USERNAME");
+		// String accessKey = properties.getProperty("BROWSERSTACK_ACCESS_KEY");
+		// System.out.println("BROWSERSTACK_USERNAME
+		// :"+System.getenv("BROWSERSTACK_USERNAME"));
 
 		String app = System.getenv("BROWSERSTACK_APP_ID");
 		if (app != null && !app.isEmpty()) {
@@ -125,41 +120,22 @@ public class BrowserstackUtility {
 			options.put("key", accessKey);
 			l.start(options);
 		}
-		
-	
-		
+
 		capabilities.setCapability("acceptSslCerts", "true");
 		capabilities.setCapability("browserstack.idleTimeout", "30");
-		
-		 /**
+
+		/**
 		 * @Author : Chetan Sonparote
 		 * @Date : 22 Jul 2021
 		 * @Description: Added build name for jenkins
 		 */
 		String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
-		//check build on jenkins
 	
-		//System.out.println("buildName:"+buildName);
-		
-	//	if (buildName != null && !buildName.isEmpty()) {
-		//if (buildName == null) {
-			//capabilities.setCapability("build", buildName);
+	//	capabilities.setCapability("build", buildName);
+		log.info("buildName:" + buildName);
 
-		//	buildName = (String) config.get("build");
-			
-		//}
-		capabilities.setCapability("build", buildName);
-		
-	
-		//proxy settings here
-		Properties bsLocalArgs = null;
-		bsLocalArgs.put("proxyHost", "127.0.0.1");
-		bsLocalArgs.put("proxyPort", "8000");
-		bsLocalArgs.put("proxyUser", "user");
-		bsLocalArgs.put("proxyPass", "password");
-		
-		
-		//test capabilities
+
+		// test capabilities
 		String browserstackLocal = System.getenv("BROWSERSTACK_LOCAL");
 		String browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
 		capabilities.setCapability("os", "Windows");
@@ -170,33 +146,30 @@ public class BrowserstackUtility {
 		capabilities.setCapability("build", buildName); // CI/CD job name using BROWSERSTACK_BUILD_NAME env variable
 		capabilities.setCapability("browserstack.local", browserstackLocal);
 		capabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
-		
 
 		driver = new RemoteWebDriver(
-				//new URL("https://" + username + ":" + accessKey + "@" + config.get("server") + "/wd/hub"),
-				new URL("https://" + username + ":" + accessKey
-					+ "@hub-cloud.browserstack.com/wd/hub"),
-				capabilities);
-
-		
+				// new URL("https://" + username + ":" + accessKey + "@" + config.get("server")
+				// + "/wd/hub"),
+				new URL("https://" + username + ":" + accessKey + "@hub-cloud.browserstack.com/wd/hub"), capabilities);
 
 		SessionId session = ((RemoteWebDriver) driver).getSessionId();
-		
-		//browserName = ((RemoteWebDriver) driver).getCapabilities().getBrowserName().toLowerCase();
-		
-		mark(session, username, accessKey);
-		
-		log.info("buildName:"+buildName);
 
-		 return driver;
-		
+		// browserName = ((RemoteWebDriver)
+		// driver).getCapabilities().getBrowserName().toLowerCase();
+
+		mark(session, username, accessKey);
+
+		return driver;
+
 	}
-	//public static final String URL = "https://" + AUTOMATE_USERNAME + ":" + AUTOMATE_ACCESS_KEY
-		//	+ "@hub-cloud.browserstack.com/wd/hub";
-	
+	// public static final String URL = "https://" + AUTOMATE_USERNAME + ":" +
+	// AUTOMATE_ACCESS_KEY
+	// + "@hub-cloud.browserstack.com/wd/hub";
+
 	public static String browserName;
-	//@AfterMethod(alwaysRun = true)
-	//@AfterTest(alwaysRun = true)
+
+	// @AfterMethod(alwaysRun = true)
+	// @AfterTest(alwaysRun = true)
 	public void tearDown() throws Exception {
 		driver.quit();
 		if (l != null)
@@ -211,17 +184,17 @@ public class BrowserstackUtility {
 				+ ".json");
 		HttpPut putRequest = new HttpPut(uri);
 
-	//	System.out.println("getResult():"+getResult());
-		
+		// System.out.println("getResult():"+getResult());
+
 		ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
 		nameValuePairs.add((new BasicNameValuePair("status", "completed")));
-		//nameValuePairs.add((new BasicNameValuePair("status", result)));
-		//nameValuePairs.add((new BasicNameValuePair("reason", "")));
+		// nameValuePairs.add((new BasicNameValuePair("status", result)));
+		// nameValuePairs.add((new BasicNameValuePair("reason", "")));
 		putRequest.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
 		HttpClientBuilder.create().build().execute(putRequest);
 	}
-	
+
 	/**
 	 * @Author : Chetan Sonparote
 	 * @Date : 2 Jul 2021
@@ -257,8 +230,7 @@ public class BrowserstackUtility {
 	 * System.out.println("Skiped***********"); result = "SKIPPED"; } return result;
 	 * }
 	 */
-	
-	
+
 	/*
 	 * public void setJenkinsBuildName() { String build_name =
 	 * System.getenv("BROWSERSTACK_BUILD_NAME"); //BROWSERSTACK_BUILD_NAME is the
