@@ -228,7 +228,7 @@ public class NewBaseClass {
 		ObjectHelper.driver.manage().window().maximize();
 	}
 
-	public void replaceurlMailinator() {
+	public void replaceurlChangeCard() {
 		System.out.println("Old" + ObjectHelper.driver.getCurrentUrl());
 		String newURL = ObjectHelper.driver.getCurrentUrl().replace("https://", "https://sgepuser:9tg6gxxCEaL3@");
 		System.out.println(newURL);

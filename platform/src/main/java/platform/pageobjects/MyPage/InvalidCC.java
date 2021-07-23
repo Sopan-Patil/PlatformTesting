@@ -6,7 +6,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -34,21 +33,22 @@ public class InvalidCC {
 	@FindBy(xpath = "//a[@class='link js-not-link']")
 	public WebElement accountInformation;
 
-	@FindBy(xpath = "//a[@class='active']")
+	@FindBy(xpath = "//div[@class='ep-my-page__side-bar']//a[2]")
 	public WebElement memberShipStatus;
 
-	@FindBy(xpath = "//span[contains(text(),'カードを変更')]")
+	@FindBy(xpath = "//a[contains(@class,'button button--default button--xmedium')]")
 	public WebElement changeCard;
 
 	public void clickAccountInformation() {
 		if (CommonFunctions.waitForVisiblity(accountInformation, waitTime)) {
-
-			// Creating object of an Actions class
-			Actions action = new Actions(driver);
-
-			// Performing the mouse hover action on the target element.
-			action.moveToElement(accountInformation).perform();
 			accountInformation.click();
+
+		}
+	}
+
+	public void ClickMmemberShipStatus() {
+		if (CommonFunctions.waitForVisiblity(memberShipStatus, waitTime)) {
+			memberShipStatus.click();
 		}
 	}
 

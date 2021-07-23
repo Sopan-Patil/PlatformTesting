@@ -33,5 +33,13 @@ public class PF_InvalidCC extends NewBaseClass {
 	public void Click_on_Membership_Status() throws Throwable {
 		InvalidCC InvalidCC = new InvalidCC(driver);
 		InvalidCC.clickAccountInformation();
+		InvalidCC.ClickMmemberShipStatus();
+	}
+
+	@And("^Click on Change Card$")
+	public void Click_on_Change_Card() throws Throwable {
+		InvalidCC InvalidCC = new InvalidCC(driver);
+		InvalidCC.clickChangeCardButton();
+		replaceurlChangeCard();
 	}
 }
