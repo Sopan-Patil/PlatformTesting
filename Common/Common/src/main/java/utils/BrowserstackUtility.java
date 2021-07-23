@@ -126,7 +126,7 @@ public class BrowserstackUtility {
 		String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
 		System.out.println("buildName:"+buildName);
 		if (buildName != null && !buildName.isEmpty()) {
-			capabilities.setCapability("build_name", buildName);
+			capabilities.setCapability("build", buildName);
 		}
 		
 
