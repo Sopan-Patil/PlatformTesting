@@ -15,7 +15,6 @@
           <include name="setUpClass"/>
           <include name="feature" invocation-numbers="0"/>
           <include name="tearDownClass"/>
-          <include name="closeBrowser"/>
         </methods>
       </class> <!-- platformrunner.Runner -->
     </classes>

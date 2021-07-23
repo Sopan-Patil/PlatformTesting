@@ -47,15 +47,20 @@ public class SignUp {
 			SignUpLink.click();
 		}
 
+		/**
+		 * @Author : Chetan Sonparote
+		 * @Date : 14 Jul 2021
+		 * @Description: commented methods for test
+		 */
 		if (CommonFunctions.waitForVisiblity(Emailtextfield, waitTime)) {
 			Emailtextfield.click();
 			EmailAddressAndEIDGenerate EmailAddressAndEIDGenerate = new EmailAddressAndEIDGenerate();
-			EmailAddressAndEIDGenerate.generateemailaddress(emailaddress);
+			// EmailAddressAndEIDGenerate.generateemailaddress(emailaddress);
 		}
 		if (CommonFunctions.waitForVisiblity(EIDtextfield, waitTime)) {
 			EIDtextfield.click();
 			EmailAddressAndEIDGenerate EmailAddressAndEIDGenerate = new EmailAddressAndEIDGenerate();
-			EmailAddressAndEIDGenerate.generateeid(eid);
+			// EmailAddressAndEIDGenerate.generateeid(eid);
 		}
 		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
 			CommonFunctions.clickUsingJavaExecutor(SubmitButton);

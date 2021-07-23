@@ -25,6 +25,8 @@ public class EmailAddressAndEIDGenerate {
 	 * @Date : 01 Jul 2021
 	 * @Description: Added Generate Email addressa EID function
 	 */
+	
+
 	static String generatedemail;
 	static String generatedeid;
 
