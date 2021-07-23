@@ -1,6 +1,7 @@
 package platformrunner;
 
 import org.junit.runner.RunWith;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 
@@ -49,7 +50,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 		newBaseClass.closeZkaiPopup();
 	}
 
-//	@AfterTest
+	@AfterTest
 	@org.testng.annotations.Parameters(value = { "mode" })
 	public void closeBrowser(String mode) {
 		newBaseClass = new NewBaseClass();
