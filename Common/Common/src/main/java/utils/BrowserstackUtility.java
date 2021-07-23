@@ -99,20 +99,18 @@ public class BrowserstackUtility {
 		 * @Description: Added user name and password from env properties for jenkins
 		 */
 
-        String username = System.getenv("BROWSERSTACK_USERNAME");
-        if (username == null) {
-        	username =  properties.getProperty("BROWSERSTACK_USERNAME");
-        }
-
-        String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
-        if (accessKey == null) {
-        	accessKey =  properties.getProperty("BROWSERSTACK_ACCESS_KEY");
-        }
+		/*
+		 * String username = System.getenv("BROWSERSTACK_USERNAME"); if (username ==
+		 * null) { username = properties.getProperty("BROWSERSTACK_USERNAME"); }
+		 * 
+		 * String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY"); if (accessKey ==
+		 * null) { accessKey = properties.getProperty("BROWSERSTACK_ACCESS_KEY"); }
+		 */
 
 	
 
-		//String username =  properties.getProperty("BROWSERSTACK_USERNAME");
-		//String accessKey =  properties.getProperty("BROWSERSTACK_ACCESS_KEY");
+		String username =  properties.getProperty("BROWSERSTACK_USERNAME");
+		String accessKey =  properties.getProperty("BROWSERSTACK_ACCESS_KEY");
 	//	System.out.println("BROWSERSTACK_USERNAME :"+System.getenv("BROWSERSTACK_USERNAME"));
 
 		String app = System.getenv("BROWSERSTACK_APP_ID");
@@ -252,11 +250,13 @@ public class BrowserstackUtility {
 	 */
 	
 	
-	public void setJenkinsBuildName()
-	{
-		String build_name = System.getenv("BROWSERSTACK_BUILD_NAME"); //BROWSERSTACK_BUILD_NAME is the sample environment variable. Ensure the value of this variable is set every time before a build is run. You can do that by adding a pre-build step
-		DesiredCapabilities caps = new DesiredCapabilities();
-		caps.setCapability("build_name", build_name); // CI/CD job or build name
-	}
+	/*
+	 * public void setJenkinsBuildName() { String build_name =
+	 * System.getenv("BROWSERSTACK_BUILD_NAME"); //BROWSERSTACK_BUILD_NAME is the
+	 * sample environment variable. Ensure the value of this variable is set every
+	 * time before a build is run. You can do that by adding a pre-build step
+	 * DesiredCapabilities caps = new DesiredCapabilities();
+	 * caps.setCapability("build_name", build_name); // CI/CD job or build name }
+	 */
 
 }
