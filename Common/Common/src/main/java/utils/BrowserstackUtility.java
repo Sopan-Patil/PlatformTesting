@@ -150,6 +150,13 @@ public class BrowserstackUtility {
 		//}
 		capabilities.setCapability("build", buildName);
 		
+	
+		//proxy settings here
+		Properties bsLocalArgs = null;
+		bsLocalArgs.put("proxyHost", "127.0.0.1");
+		bsLocalArgs.put("proxyPort", "8000");
+		bsLocalArgs.put("proxyUser", "user");
+		bsLocalArgs.put("proxyPass", "password");
 		
 		
 		//test capabilities
