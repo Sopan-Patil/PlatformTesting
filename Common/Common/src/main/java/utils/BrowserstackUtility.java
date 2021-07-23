@@ -93,10 +93,27 @@ public class BrowserstackUtility {
 			}
 		}
 
+		
+		/**
+		 * @Author : Chetan Sonparote
+		 * @Date : 23 Jul 2021
+		 * @Description: Added user name and password from env properties for jenkins
+		 */
+
+        String username = System.getenv("BROWSERSTACK_USERNAME");
+        if (username == null) {
+        	username =  properties.getProperty("BROWSERSTACK_USERNAME");
+        }
+
+        String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
+        if (accessKey == null) {
+        	accessKey =  properties.getProperty("BROWSERSTACK_ACCESS_KEY");
+        }
+
 	
 
-		String username =  properties.getProperty("BROWSERSTACK_USERNAME");
-		String accessKey =  properties.getProperty("BROWSERSTACK_ACCESS_KEY");
+		//String username =  properties.getProperty("BROWSERSTACK_USERNAME");
+		//String accessKey =  properties.getProperty("BROWSERSTACK_ACCESS_KEY");
 	//	System.out.println("BROWSERSTACK_USERNAME :"+System.getenv("BROWSERSTACK_USERNAME"));
 
 		String app = System.getenv("BROWSERSTACK_APP_ID");
@@ -134,7 +151,7 @@ public class BrowserstackUtility {
 		//	buildName = (String) config.get("build");
 			
 		//}
-	//	capabilities.setCapability("build", buildName);
+		capabilities.setCapability("build", buildName);
 		
 
 		driver = new RemoteWebDriver(
@@ -220,5 +237,13 @@ public class BrowserstackUtility {
 	 * System.out.println("Skiped***********"); result = "SKIPPED"; } return result;
 	 * }
 	 */
+	
+	
+	public void setJenkinsBuildName()
+	{
+		String build_name = System.getenv("BROWSERSTACK_BUILD_NAME"); //BROWSERSTACK_BUILD_NAME is the sample environment variable. Ensure the value of this variable is set every time before a build is run. You can do that by adding a pre-build step
+		DesiredCapabilities caps = new DesiredCapabilities();
+		caps.setCapability("build_name", build_name); // CI/CD job or build name
+	}
 
 }
