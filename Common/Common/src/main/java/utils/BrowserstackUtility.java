@@ -153,6 +153,20 @@ public class BrowserstackUtility {
 		//}
 		capabilities.setCapability("build", buildName);
 		
+		
+		
+		//test capabilities
+		String browserstackLocal = System.getenv("BROWSERSTACK_LOCAL");
+		String browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
+		capabilities.setCapability("os", "Windows");
+		capabilities.setCapability("os_version", "10");
+		capabilities.setCapability("browser", "chrome");
+		capabilities.setCapability("browser_version", "latest");
+		capabilities.setCapability("name", "BStack-[Java] Sample Test"); // test buildName
+		capabilities.setCapability("build", buildName); // CI/CD job name using BROWSERSTACK_BUILD_NAME env variable
+		capabilities.setCapability("browserstack.local", browserstackLocal);
+		capabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
+		
 
 		driver = new RemoteWebDriver(
 				//new URL("https://" + username + ":" + accessKey + "@" + config.get("server") + "/wd/hub"),
