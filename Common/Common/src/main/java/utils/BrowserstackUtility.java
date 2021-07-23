@@ -60,7 +60,7 @@ public class BrowserstackUtility {
 
 	// @BeforeMethod(alwaysRun=true)
 	// @org.testng.annotations.Parameters(value={"config", "environment"})
-	@Test
+//	@Test
 	public  WebDriver initializaBrowserstackDriver(@Optional("local.conf.json") String config_file,
 			@Optional("chrome") String environment) throws Exception {
 		 loadPropertiesFile();
@@ -94,14 +94,14 @@ public class BrowserstackUtility {
 			capabilities.setCapability(pair.getKey().toString(), pair.getValue().toString());
 		}
 
-		/*
-		 * Map<String, String> commonCapabilities = (Map<String, String>)
-		 * config.get("capabilities"); it = commonCapabilities.entrySet().iterator();
-		 * while (it.hasNext()) { Map.Entry pair = (Map.Entry) it.next(); if
-		 * (capabilities.getCapability(pair.getKey().toString()) == null) {
-		 * capabilities.setCapability(pair.getKey().toString(),
-		 * pair.getValue().toString()); } }
-		 */
+		Map<String, String> commonCapabilities = (Map<String, String>) config.get("capabilities");
+		it = commonCapabilities.entrySet().iterator();
+		while (it.hasNext()) {
+			Map.Entry pair = (Map.Entry) it.next();
+			if (capabilities.getCapability(pair.getKey().toString()) == null) {
+				capabilities.setCapability(pair.getKey().toString(), pair.getValue().toString());
+			}
+		}
 
 	
 
