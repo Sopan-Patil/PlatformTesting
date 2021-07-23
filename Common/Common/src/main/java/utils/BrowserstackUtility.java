@@ -92,19 +92,15 @@ public class BrowserstackUtility {
 		 * @Date : 23 Jul 2021
 		 * @Description: Added user name and password from env properties for jenkins
 		 */
-
-		String username = System.getenv("BROWSERSTACK_USERNAME");
-		if (username == null) {
-			username = properties.getProperty("BROWSERSTACK_USERNAME");
-		}
-
-		String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
-		if (accessKey == null) {
-			accessKey = properties.getProperty("BROWSERSTACK_ACCESS_KEY");
-		}
-
-		// String username = properties.getProperty("BROWSERSTACK_USERNAME");
-		// String accessKey = properties.getProperty("BROWSERSTACK_ACCESS_KEY");
+		/*
+		 * String username = System.getenv("BROWSERSTACK_USERNAME"); if (username ==
+		 * null) { username = properties.getProperty("BROWSERSTACK_USERNAME"); }
+		 * 
+		 * String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY"); if (accessKey ==
+		 * null) { accessKey = properties.getProperty("BROWSERSTACK_ACCESS_KEY"); }
+		 */
+		 String username = properties.getProperty("BROWSERSTACK_USERNAME");
+		 String accessKey = properties.getProperty("BROWSERSTACK_ACCESS_KEY");
 		// System.out.println("BROWSERSTACK_USERNAME
 		// :"+System.getenv("BROWSERSTACK_USERNAME"));
 
