@@ -9,41 +9,40 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import platform.pageobjects.Authentication.LoginPage;
 import utils.CommonFunctions;
 
 /**
- * @Author : Chetan Sonparote
- * @Date of Creation : 26 Jun 2021
+ * @Author : Chetan Sonparote, Sahaj Balgunde
+ * @Date of Creation : 20 July 2021
  * @Description: Additional Locator variables and Methods for footer.
  */
 
 public class FooterPage {
 	List<String[]> testdata;
 	public WebDriver driver;
-	private static Logger log = LogManager.getLogger(LoginPage.class.getName());
+	private static Logger log = LogManager.getLogger(FooterPage.class.getName());
 
 	public FooterPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][contains(text(),'利用�?約')]")
+	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][contains(text(),'åˆ©ç”¨ï¿½?ç´„')]")
 	public WebElement termsOfUseLink;
 
-	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][contains(text(),'利用�?約')]")
+	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][contains(text(),'åˆ©ç”¨ï¿½?ç´„')]")
 	public WebElement privacyPolicyLink;
 
-	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][contains(text(),'特定商�?�?�引法')]")
+	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][contains(text(),'ç‰¹å®šå•†ï¿½?ï¿½?ï¿½å¼•æ³•')]")
 	public WebElement specifiedCommodityTradingLawLink;
 
 	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][normalize-space()='Q&A']")
 	public WebElement qnALink;
 
-	@FindBy(xpath = "//a[@class='link'][contains(text(),'�?�験�?�窓�?�')]")
+	@FindBy(xpath = "//a[@class='link'][contains(text(),'ï¿½?ï¿½é¨“ï¿½?ï¿½çª“ï¿½?ï¿½')]")
 	public WebElement footerExaminationWindowLink;
 
-	@FindBy(xpath = "//a[@class='sub-menu__text']//font//font[contains(text(),'英検S-CBT')]")
+	@FindBy(xpath = "//a[@class='sub-menu__text']//font//font[contains(text(),'è‹±æ¤œS-CBT')]")
 	public WebElement footerScbtLink;
 
 	@FindBy(xpath = "//a[contains(text(),'CASEC')]")
@@ -67,83 +66,173 @@ public class FooterPage {
 	@FindBy(xpath = "//a[@class='sub-menu__text']//font//font[contains(text(),'Education cost consultation support')]")
 	public WebElement educationCostConsulatationSupportLink;
 
-	@FindBy(xpath = "//a[@class='sub-menu__text']//font//font[contains(text(),'sign up')]")
-	public WebElement signUpLink;
+	@FindBy(xpath = "//a[@class='sub-menu__text'][contains(text(),'アカウントとセキュリティ')]")
+	public WebElement accountSecurity;
 
-	public void clickSignUpLinkLink() {
-		signUpLink.click();
-	}
+	@FindBy(xpath = "//a[@class='sub-menu__text'][contains(text(),'会員ステータス')]")
+	public WebElement memberStatus;
 
-	public void clickInformationWindowLink() {
-		informationWindowLink.click();
-	}
+	@FindBy(xpath = "//a[@class='sub-menu__text'][contains(text(),'ご利用中のサービス')]")
+	public WebElement servicesUsing;
 
-	public void clickFooterStagiaEikenLink() {
+	@FindBy(xpath = "//a[@class='sub-menu__text'][contains(text(),'ご注文履歴')]")
+	public WebElement orderHistory;
 
-		footerStagiaEikenLink.click();
+	@FindBy(xpath = "//a[contains(text(),'退会')]")
+	public WebElement withdraw;
 
-	}
+	@FindBy(xpath = "//a[contains(text(),'ログアウト')]")
+	public WebElement logout;
 
-	public void clickFooterLearningWindowLink() {
+	@FindBy(xpath = "//a[contains(text(),'よくある質問・お問合せ')]")
+	public WebElement accountQnA;
 
-		footerLearningWindowLink.click();
+	@FindBy(xpath = "//a[contains(text(),'利用規約・個人情報の取扱')]")
+	public WebElement accountTerms;
 
-	}
+	@FindBy(xpath = "//a[contains(text(),'個人情報保護方針')]")
+	public WebElement accountPrivacy;
 
-	public void clickFooterCasecLink() {
+	@FindBy(xpath = "//a[contains(text(),'特定商取引法に基づく表示')]")
+	public WebElement accountTax;
 
-		footerCasecLink.click();
+	public void footerFunctions() throws Exception {
 
-	}
+		CommonFunctions.scrolltoElement(termsOfUseLink);
+		if (CommonFunctions.isElementClickable(termsOfUseLink)) {
+			termsOfUseLink.click();
+		}
 
-	public void clickFooterScbtLink() {
+		CommonFunctions.scrolltoElement(privacyPolicyLink);
+		if (CommonFunctions.isElementClickable(privacyPolicyLink)) {
+			privacyPolicyLink.click();
+		}
+
+		CommonFunctions.scrolltoElement(specifiedCommodityTradingLawLink);
+		if (CommonFunctions.isElementClickable(specifiedCommodityTradingLawLink)) {
+			specifiedCommodityTradingLawLink.click();
+		}
+
+		CommonFunctions.scrolltoElement(qnALink);
+		if (CommonFunctions.isElementClickable(qnALink)) {
+			qnALink.click();
+		}
+
+		CommonFunctions.scrolltoElement(footerExaminationWindowLink);
+		if (CommonFunctions.isElementClickable(footerExaminationWindowLink)) {
+			footerExaminationWindowLink.click();
+		}
 
 		CommonFunctions.scrolltoElement(footerScbtLink);
 		if (CommonFunctions.isElementClickable(footerScbtLink)) {
 			footerScbtLink.click();
 		}
 
+		CommonFunctions.scrolltoElement(footerCasecLink);
+		if (CommonFunctions.isElementClickable(footerCasecLink)) {
+			footerCasecLink.click();
+		}
+
+		CommonFunctions.scrolltoElement(footerLearningWindowLink);
+		if (CommonFunctions.isElementClickable(footerLearningWindowLink)) {
+			footerLearningWindowLink.click();
+		}
+
+		CommonFunctions.scrolltoElement(footerStagiaEikenLink);
+		if (CommonFunctions.isElementClickable(footerStagiaEikenLink)) {
+			footerStagiaEikenLink.click();
+		}
+
+		CommonFunctions.scrolltoElement(informationWindowLink);
+		if (CommonFunctions.isElementClickable(informationWindowLink)) {
+			informationWindowLink.click();
+		}
+
+		CommonFunctions.scrolltoElement(cramSchoolPitaLink);
+		if (CommonFunctions.isElementClickable(cramSchoolPitaLink)) {
+			cramSchoolPitaLink.click();
+		}
+
+		CommonFunctions.scrolltoElement(stagiaUniversityExamLink);
+		if (CommonFunctions.isElementClickable(stagiaUniversityExamLink)) {
+			stagiaUniversityExamLink.click();
+		}
+
+		CommonFunctions.scrolltoElement(educationCostConsulatationSupportLink);
+		if (CommonFunctions.isElementClickable(educationCostConsulatationSupportLink)) {
+			educationCostConsulatationSupportLink.click();
+		}
+
 	}
 
-	public void clickFooterExaminationWindowLink() {
+	public void afterLoginFooter() throws Exception {
+		CommonFunctions.scrolltoElement(accountSecurity);
+		if (CommonFunctions.isElementClickable(accountSecurity)) {
+			accountSecurity.click();
+		}
 
-		footerExaminationWindowLink.click();
+		CommonFunctions.scrolltoElement(memberStatus);
+		if (CommonFunctions.isElementClickable(memberStatus)) {
+			memberStatus.click();
+		}
 
-	}
+		CommonFunctions.scrolltoElement(servicesUsing);
+		if (CommonFunctions.isElementClickable(servicesUsing)) {
+			servicesUsing.click();
+		}
 
-	public void clickQnALinkLink() {
+		CommonFunctions.scrolltoElement(orderHistory);
+		if (CommonFunctions.isElementClickable(orderHistory)) {
+			orderHistory.click();
+		}
 
-		qnALink.click();
-
-	}
-
-	public void clickSpecifiedCommodityTradingLawLink() {
-
-		specifiedCommodityTradingLawLink.click();
-
-	}
-
-	public void clickPrivacyPolicyLink() {
-
-		privacyPolicyLink.click();
-
-	}
-
-	public void clickTermsOfUseLink() {
-
-		termsOfUseLink.click();
+		CommonFunctions.scrolltoElement(logout);
+		if (CommonFunctions.isElementClickable(logout)) {
+			logout.click();
+		}
 
 	}
 
-	public void clickEducationCostConsulatationSupportLink() {
-		educationCostConsulatationSupportLink.click();
+	public void accountServicesOrderFooter() throws Exception {
+
+		CommonFunctions.scrolltoElement(accountQnA);
+		if (CommonFunctions.isElementClickable(accountQnA)) {
+			accountQnA.click();
+		}
+
+		CommonFunctions.scrolltoElement(accountTerms);
+		if (CommonFunctions.isElementClickable(accountTerms)) {
+			accountTerms.click();
+		}
+
+		CommonFunctions.scrolltoElement(accountPrivacy);
+		if (CommonFunctions.isElementClickable(accountPrivacy)) {
+			accountPrivacy.click();
+		}
+
+		CommonFunctions.scrolltoElement(accountTax);
+		if (CommonFunctions.isElementClickable(accountTax)) {
+			accountTax.click();
+		}
+
 	}
 
-	public void clickStagiaUniversityExamLink() {
-		stagiaUniversityExamLink.click();
+	public void AccountFooter() throws Exception {
+
+		CommonFunctions.scrolltoElement(withdraw);
+		if (CommonFunctions.isElementClickable(withdraw)) {
+			withdraw.click();
+		}
 	}
 
-	public void clickCramSchoolPitaLink() {
-		cramSchoolPitaLink.click();
-	}
+	/*
+	 * public void clickFooterScbtLink() {
+	 * 
+	 * CommonFunctions.scrolltoElement(footerScbtLink); if
+	 * (CommonFunctions.isElementClickable(footerScbtLink)) {
+	 * footerScbtLink.click(); }
+	 * 
+	 * }
+	 */
+
 }
