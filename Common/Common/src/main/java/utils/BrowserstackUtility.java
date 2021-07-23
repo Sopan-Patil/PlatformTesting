@@ -132,7 +132,7 @@ public class BrowserstackUtility {
 			buildName = (String) config.get("build");
 			
 		}
-		capabilities.setCapability("build", buildName);
+	//	capabilities.setCapability("build", buildName);
 		
 
 		driver = new RemoteWebDriver(
