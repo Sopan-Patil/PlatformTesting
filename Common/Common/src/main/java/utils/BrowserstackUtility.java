@@ -65,7 +65,7 @@ public class BrowserstackUtility {
 			@Optional("chrome") String environment) throws Exception {
 		 loadPropertiesFile();
 
-			String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+			//String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
 		 
 		
 		JSONParser parser = new JSONParser();
@@ -125,14 +125,14 @@ public class BrowserstackUtility {
 	//	String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
 		//check build on jenkins
 	
-		System.out.println("buildName:"+buildName);
+		//System.out.println("buildName:"+buildName);
 	//	if (buildName != null && !buildName.isEmpty()) {
-		if (buildName == null) {
+		//if (buildName == null) {
 			//capabilities.setCapability("build", buildName);
 
-			buildName = (String) config.get("build");
+		//	buildName = (String) config.get("build");
 			
-		}
+		//}
 	//	capabilities.setCapability("build", buildName);
 		
 
