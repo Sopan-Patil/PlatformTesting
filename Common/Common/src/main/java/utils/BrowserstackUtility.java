@@ -120,6 +120,7 @@ public class BrowserstackUtility {
 		if (buildName != null && !buildName.isEmpty()) {
 			capabilities.setCapability("build", buildName);
 		}
+		System.out.println("buildName: "+buildName);
 	//	capabilities.setCapability("build", buildName); 
 		
 		capabilities.setCapability("acceptSslCerts", "true");

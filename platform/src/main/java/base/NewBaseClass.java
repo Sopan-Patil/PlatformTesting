@@ -96,7 +96,7 @@ public class NewBaseClass {
 		// driver.findElements(By.xpath("//button[@aria-label='Close']"));
 
 		By zkai_popupCloseButton = By.xpath("//button[@aria-label='Close']");
-		System.out.println("inside closeZkaiPopup()");
+		// System.out.println("inside closeZkaiPopup()");
 		// if (CommonFunctions.isElementVisible(zkai_popup)) {
 		// zkai_popupCloseButton.click();
 		// }
