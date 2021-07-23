@@ -125,12 +125,14 @@ public class BrowserstackUtility {
 		//check build on jenkins
 		String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
 		System.out.println("buildName:"+buildName);
-		if (buildName != null && !buildName.isEmpty()) {
+	//	if (buildName != null && !buildName.isEmpty()) {
+		if (buildName == null) {
 			//capabilities.setCapability("build", buildName);
 
 			buildName = (String) config.get("build");
-			capabilities.setCapability("build", buildName);
+			
 		}
+		capabilities.setCapability("build", buildName);
 		
 
 		driver = new RemoteWebDriver(
