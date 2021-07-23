@@ -75,23 +75,22 @@ public class BrowserstackUtility {
 
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		
-		
+		//DO not delete. commented for test
 
-		Map<String, String> envCapabilities = (Map<String, String>) envs.get(environment);
-		Iterator it = envCapabilities.entrySet().iterator();
-		while (it.hasNext()) {
-			Map.Entry pair = (Map.Entry) it.next();
-			capabilities.setCapability(pair.getKey().toString(), pair.getValue().toString());
-		}
-
-		Map<String, String> commonCapabilities = (Map<String, String>) config.get("capabilities");
-		it = commonCapabilities.entrySet().iterator();
-		while (it.hasNext()) {
-			Map.Entry pair = (Map.Entry) it.next();
-			if (capabilities.getCapability(pair.getKey().toString()) == null) {
-				capabilities.setCapability(pair.getKey().toString(), pair.getValue().toString());
-			}
-		}
+		/*
+		 * Map<String, String> envCapabilities = (Map<String, String>)
+		 * envs.get(environment); Iterator it = envCapabilities.entrySet().iterator();
+		 * while (it.hasNext()) { Map.Entry pair = (Map.Entry) it.next();
+		 * capabilities.setCapability(pair.getKey().toString(),
+		 * pair.getValue().toString()); }
+		 * 
+		 * Map<String, String> commonCapabilities = (Map<String, String>)
+		 * config.get("capabilities"); it = commonCapabilities.entrySet().iterator();
+		 * while (it.hasNext()) { Map.Entry pair = (Map.Entry) it.next(); if
+		 * (capabilities.getCapability(pair.getKey().toString()) == null) {
+		 * capabilities.setCapability(pair.getKey().toString(),
+		 * pair.getValue().toString()); } }
+		 */
 
 		
 		/**
