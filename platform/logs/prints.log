@@ -341,3 +341,6 @@
 =======
 19:09:58.824 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
 >>>>>>> Stashed changes
+09:21:46.104 [main] INFO  platform.pageobjects.Authentication.LoginPage - Generated email:TestPF1221+23072021092146@gmail.com
+09:21:46.815 [main] INFO  platform.pageobjects.Authentication.LoginPage - Generated eid:TestPF1221_23072021092146
+09:22:04.712 [main] INFO  platform.pageobjects.Authentication.LoginPage - Password :pfqa_123

@@ -114,7 +114,9 @@ public class CreateAccountStep3 {
 	public WebElement agreeButton;
 
 	public void enterValidUserDetails() throws InterruptedException {
-		passwordField.sendKeys("pfqa_123");
+		String password = "pfqa_123";
+		passwordField.sendKeys(password);
+		log.info("Password :" + password);
 
 		firstNameKanjiField.sendKeys("名前");
 		lastNameKanjiField.sendKeys("名字");

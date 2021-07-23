@@ -28,7 +28,7 @@ public class PF_CreateAccount extends NewBaseClass {
 
 	@When("^User begins account creation$")
 	public void user_begins_account_creation() throws Throwable {
-		System.out.println("inside user_begins_account_creation()");
+		// System.out.println("inside user_begins_account_creation()");
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.clickLoginButton();
 		loginPage.clickCreateNewAccountButton();
