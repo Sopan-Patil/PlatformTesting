@@ -50,7 +50,11 @@ public class CreateAccountStep2 {
 	List<Integer> OTPNumber;
 
 	public void convertOTPToList() {
+
+		OTPNumberReader OTPNumberReader = new OTPNumberReader();
+		@SuppressWarnings("static-access")
 		String otp = OTPNumberReader.OTPNumberValue();// OTPNumberReader.getOTPNumberValue();
+		// System.out.println("otp:" + otp);
 		OTPNumber = new ArrayList<Integer>();
 		Scanner scanner = new Scanner(otp);
 

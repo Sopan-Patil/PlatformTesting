@@ -52,12 +52,15 @@ public class CreateAccountStep1 {
 	public void generateNewCredentials() {
 		if (CommonFunctions.waitForVisiblity(emailField, waitTime)) {
 			emailField.click();
-
-			emailField.sendKeys(CredentialsGenerator.generateEmailAddress());
+			String email = CredentialsGenerator.generateEmailAddress();
+			emailField.sendKeys(email);
+			log.info("Generated email:" + email);
 		}
 		if (CommonFunctions.waitForVisiblity(eidField, waitTime)) {
 			eidField.click();
-			eidField.sendKeys(CredentialsGenerator.generateEid());
+			String eid = CredentialsGenerator.generateEid();
+			eidField.sendKeys(eid);
+			log.info("Generated eid:" + eid);
 
 		}
 	}

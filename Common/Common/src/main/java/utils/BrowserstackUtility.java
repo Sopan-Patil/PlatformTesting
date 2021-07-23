@@ -117,6 +117,7 @@ public class BrowserstackUtility {
 	//	String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
 		//check build on jenkins
 		String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+		System.out.println("buildName:"+buildName);
 		if (buildName != null && !buildName.isEmpty()) {
 			capabilities.setCapability("build", buildName);
 		}
