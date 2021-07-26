@@ -47,6 +47,10 @@ public class Runner extends AbstractTestNGCucumberTests {
 		newBaseClass.openBrowser(mode, browser, config, environment);
 		// driver = ObjectHelper.driver;
 
+		String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+
+		// capabilities.setCapability("build", buildName);
+		System.out.println("buildName:" + buildName);
 		newBaseClass.closeZkaiPopup();
 	}
 
