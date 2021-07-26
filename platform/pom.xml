@@ -219,7 +219,6 @@
 			<artifactId>extentreports-cucumber4-adapter</artifactId>
 			<version>1.0.0</version>
 		</dependency>
-
 		<!-- Extend Report 26 Jul 2021 End -->
 
 		<dependency>
