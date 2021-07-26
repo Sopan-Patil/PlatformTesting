@@ -344,3 +344,48 @@
 09:21:46.104 [main] INFO  platform.pageobjects.Authentication.LoginPage - Generated email:TestPF1221+23072021092146@gmail.com
 09:21:46.815 [main] INFO  platform.pageobjects.Authentication.LoginPage - Generated eid:TestPF1221_23072021092146
 09:22:04.712 [main] INFO  platform.pageobjects.Authentication.LoginPage - Password :pfqa_123
+17:25:04.828 [main] INFO  utils.DeleteMails - 【STG環境】【スタギア】EiD確認コードのご案内
+17:25:05.254 [main] INFO  utils.DeleteMails - 下記コードを入力してください。<br/>
+確認コード： 740193 <br/>
+確認コードの有効期限：24時間 <br/>
+<br/>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br/>
+■ 注意事項<br/>
+・このメールは送信専用メールアドレスのため、返信してお問い合わせいただくことはできません。<br/>
+・このメールにお心あたりない方は、大変お手数ですが、本メールを削除いただくようお願いいたします。<br/>
+・このメールの無断転載・利用はご遠慮ください。<br/>
+■ お問い合わせ<br/>
+サポートセンター：https://support.evidus.com/<br/>
+■ 運営会社<br/>
+株式会社 教育測定研究所：https://www.jiem.co.jp/<br/>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+17:25:07.891 [main] INFO  utils.DeleteMails - 【STG環境】【スタギア】EiD確認コードのご案内
+17:25:08.302 [main] INFO  utils.DeleteMails - 下記コードを入力してください。<br/>
+確認コード： 657651 <br/>
+確認コードの有効期限：24時間 <br/>
+<br/>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br/>
+■ 注意事項<br/>
+・このメールは送信専用メールアドレスのため、返信してお問い合わせいただくことはできません。<br/>
+・このメールにお心あたりない方は、大変お手数ですが、本メールを削除いただくようお願いいたします。<br/>
+・このメールの無断転載・利用はご遠慮ください。<br/>
+■ お問い合わせ<br/>
+サポートセンター：https://support.evidus.com/<br/>
+■ 運営会社<br/>
+株式会社 教育測定研究所：https://www.jiem.co.jp/<br/>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+17:25:11.007 [main] INFO  utils.DeleteMails - 【STG環境】【スタギア】EiD確認コードのご案内
+17:25:11.415 [main] INFO  utils.DeleteMails - 下記コードを入力してください。<br/>
+確認コード： 363352 <br/>
+確認コードの有効期限：24時間 <br/>
+<br/>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br/>
+■ 注意事項<br/>
+・このメールは送信専用メールアドレスのため、返信してお問い合わせいただくことはできません。<br/>
+・このメールにお心あたりない方は、大変お手数ですが、本メールを削除いただくようお願いいたします。<br/>
+・このメールの無断転載・利用はご遠慮ください。<br/>
+■ お問い合わせ<br/>
+サポートセンター：https://support.evidus.com/<br/>
+■ 運営会社<br/>
+株式会社 教育測定研究所：https://www.jiem.co.jp/<br/>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

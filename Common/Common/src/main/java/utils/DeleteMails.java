@@ -3,15 +3,21 @@ package utils;
 import java.io.FileInputStream;
 import java.util.Properties;
 
+import javax.mail.Address;
+import javax.mail.BodyPart;
 import javax.mail.Flags;
 import javax.mail.Flags.Flag;
 import javax.mail.Folder;
 import javax.mail.Message;
 import javax.mail.MessagingException;
+import javax.mail.Multipart;
 import javax.mail.NoSuchProviderException;
 import javax.mail.Session;
 import javax.mail.Store;
 import javax.mail.search.FlagTerm;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class DeleteMails {
 	/**
@@ -19,6 +25,7 @@ public class DeleteMails {
 	 * @Date : 14 Jul 2021
 	 * @Description: Delete Mail from Inbox/Trash
 	 */
+	private static Logger log = LogManager.getLogger(DeleteMails.class.getName());
 
 	public void deletemail(String emailsubject) {
 		try {
@@ -46,6 +53,17 @@ public class DeleteMails {
 			for (Message m : arrayMessages) {
 				String subject = m.getSubject();
 				if (subject.contains(emailsubject)) {
+					Address[] in = m.getFrom();
+					for (Address address : in) {
+					}
+					Multipart mp = (Multipart) m.getContent();
+					BodyPart bp = mp.getBodyPart(0);
+					System.out.println("CONTENT:" + bp.getContent());
+					String ob = bp.getContent().toString();
+					String sample = ob.toString();
+					log.info(subject);
+					log.info(bp.getContent());
+					//System.out.println(arrayMessages);
 					m.getFolder().copyMessages(new Message[] { m }, folderBin);
 				}
 			}

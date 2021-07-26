@@ -3,7 +3,6 @@
 	<Properties>
 		<Property name="basePath">./logs</Property>
 	</Properties>
-
 	<Appenders>
 		<RollingFile name="File" fileName="${basePath}/prints.log"
 			filePattern="${basePath}/prints-%d{yyyy-MM-dd}.log">
