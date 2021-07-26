@@ -17,6 +17,7 @@
 
 		<jre.level>1.8</jre.level>
 		<jdk.level>1.8</jdk.level>
+
 	</properties>
 
 	<dependencies>
@@ -459,7 +460,6 @@
 	</pluginRepositories>
 
 
-
 	<build>
 		<plugins>
 			<plugin>
@@ -484,8 +484,8 @@
 					<!-- <includes> <exclude>**/*PlatformTestRunners.java</exclude> </includes> -->
 					<suiteXmlFiles>
 						<!-- pass testng.xml files as argument from command  -->
-						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
-						<!--<suiteXmlFile>.platform/testng.xml</suiteXmlFile> -->
+						<!-- <suiteXmlFile>${suiteXmlFile}</suiteXmlFile> -->
+						<suiteXmlFile>.platform/testng.xml</suiteXmlFile>
 
 
 					</suiteXmlFiles>
