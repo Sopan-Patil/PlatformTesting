@@ -485,7 +485,7 @@
 					<suiteXmlFiles>
 						<!-- pass testng.xml files as argument from command  -->
 						<!-- <suiteXmlFile>${suiteXmlFile}</suiteXmlFile> -->
-						<suiteXmlFile>.platform/testng.xml</suiteXmlFile>
+						<!-- <suiteXmlFile>.platform/testng.xml</suiteXmlFile> -->
 
 
 					</suiteXmlFiles>

@@ -1,7 +1,7 @@
 {
 	"server": "hub-cloud.browserstack.com",
 	"capabilities": {
-		"build": "browserstack_must_have",
+		"build": "browserstack_build_must_have",
 		"name": "must_have_test",
 		"browserstack.debug": true
 	},

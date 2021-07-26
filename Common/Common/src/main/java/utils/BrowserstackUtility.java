@@ -54,14 +54,22 @@ public class BrowserstackUtility {
 		properties.load(fis);
 	}
 
-	// @BeforeMethod(alwaysRun=true)
-	// @org.testng.annotations.Parameters(value={"config", "environment"})
-//	@Test
+	
 	public WebDriver initializaBrowserstackDriver(@Optional("local.conf.json") String config_file,
 			@Optional("chrome") String environment) throws Exception {
 		loadPropertiesFile();
 
-		// String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+		/**
+		 * @Author : Chetan Sonparote
+		 * @Date :26 Jul 2021
+		 * @Description: Browserstack jenkins parameters stored in this var
+		 */
+
+		String username = System.getenv("BROWSERSTACK_USERNAME");
+		String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
+		String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+		String browserstackLocal = System.getenv("BROWSERSTACK_LOCAL");
+		String browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
 
 		JSONParser parser = new JSONParser();
 		JSONObject config = (JSONObject) parser.parse(new FileReader(System.getProperty("user.dir") + File.separator
@@ -72,35 +80,40 @@ public class BrowserstackUtility {
 
 		// DO not delete. commented for test
 
-		/*
-		 * Map<String, String> envCapabilities = (Map<String, String>)
-		 * envs.get(environment); Iterator it = envCapabilities.entrySet().iterator();
-		 * while (it.hasNext()) { Map.Entry pair = (Map.Entry) it.next();
-		 * capabilities.setCapability(pair.getKey().toString(),
-		 * pair.getValue().toString()); }
-		 * 
-		 * Map<String, String> commonCapabilities = (Map<String, String>)
-		 * config.get("capabilities"); it = commonCapabilities.entrySet().iterator();
-		 * while (it.hasNext()) { Map.Entry pair = (Map.Entry) it.next(); if
-		 * (capabilities.getCapability(pair.getKey().toString()) == null) {
-		 * capabilities.setCapability(pair.getKey().toString(),
-		 * pair.getValue().toString()); } }
-		 */
+		Map<String, String> envCapabilities = (Map<String, String>) envs.get(environment);
+		Iterator it = envCapabilities.entrySet().iterator();
+		while (it.hasNext()) {
+			Map.Entry pair = (Map.Entry) it.next();
+			capabilities.setCapability(pair.getKey().toString(), pair.getValue().toString());
+		}
+
+		Map<String, String> commonCapabilities = (Map<String, String>) config.get("capabilities");
+		it = commonCapabilities.entrySet().iterator();
+		while (it.hasNext()) {
+			Map.Entry pair = (Map.Entry) it.next();
+			if (capabilities.getCapability(pair.getKey().toString()) == null) {
+				capabilities.setCapability(pair.getKey().toString(), pair.getValue().toString());
+			}
+		}
 
 		/**
 		 * @Author : Chetan Sonparote
 		 * @Date : 23 Jul 2021
 		 * @Description: Added user name and password from env properties for jenkins
 		 */
-		/*
-		 * String username = System.getenv("BROWSERSTACK_USERNAME"); if (username ==
-		 * null) { username = properties.getProperty("BROWSERSTACK_USERNAME"); }
-		 * 
-		 * String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY"); if (accessKey ==
-		 * null) { accessKey = properties.getProperty("BROWSERSTACK_ACCESS_KEY"); }
-		 */
-		 String username = properties.getProperty("BROWSERSTACK_USERNAME");
-		 String accessKey = properties.getProperty("BROWSERSTACK_ACCESS_KEY");
+
+		//String username = System.getenv("BROWSERSTACK_USERNAME");
+		if (username == null) {
+			username = properties.getProperty("BROWSERSTACK_USERNAME");
+		}
+
+		//String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
+		if (accessKey == null) {
+			accessKey = properties.getProperty("BROWSERSTACK_ACCESS_KEY");
+		}
+
+	//	String username = properties.getProperty("BROWSERSTACK_USERNAME");
+	//	String accessKey = properties.getProperty("BROWSERSTACK_ACCESS_KEY");
 		// System.out.println("BROWSERSTACK_USERNAME
 		// :"+System.getenv("BROWSERSTACK_USERNAME"));
 
@@ -125,23 +138,26 @@ public class BrowserstackUtility {
 		 * @Date : 22 Jul 2021
 		 * @Description: Added build name for jenkins
 		 */
-		String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
-	
-	//	capabilities.setCapability("build", buildName);
-		log.info("buildName:" + buildName);
+	//	String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
 
+		// capabilities.setCapability("build", buildName);
+	//	log.info("buildName:" + buildName);
 
 		// test capabilities
-		String browserstackLocal = System.getenv("BROWSERSTACK_LOCAL");
-		String browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
-		capabilities.setCapability("os", "Windows");
-		capabilities.setCapability("os_version", "10");
-		capabilities.setCapability("browser", "chrome");
-		capabilities.setCapability("browser_version", "latest");
-		capabilities.setCapability("name", "BStack-[Java] Sample Test"); // test buildName
-		capabilities.setCapability("build", buildName); // CI/CD job name using BROWSERSTACK_BUILD_NAME env variable
-		capabilities.setCapability("browserstack.local", browserstackLocal);
-		capabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
+		/*
+		 * String browserstackLocal = System.getenv("BROWSERSTACK_LOCAL"); String
+		 * browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
+		 * capabilities.setCapability("os", "Windows");
+		 * capabilities.setCapability("os_version", "10");
+		 * capabilities.setCapability("browser", "chrome");
+		 * capabilities.setCapability("browser_version", "latest");
+		 * capabilities.setCapability("name", "BStack-[Java] Sample Test"); // test
+		 * buildName capabilities.setCapability("build", buildName); // CI/CD job name
+		 * using BROWSERSTACK_BUILD_NAME env variable
+		 * capabilities.setCapability("browserstack.local", browserstackLocal);
+		 * capabilities.setCapability("browserstack.localIdentifier",
+		 * browserstackLocalIdentifier);
+		 */
 
 		driver = new RemoteWebDriver(
 				// new URL("https://" + username + ":" + accessKey + "@" + config.get("server")
@@ -150,22 +166,14 @@ public class BrowserstackUtility {
 
 		SessionId session = ((RemoteWebDriver) driver).getSessionId();
 
-		// browserName = ((RemoteWebDriver)
-		// driver).getCapabilities().getBrowserName().toLowerCase();
-
 		mark(session, username, accessKey);
 
 		return driver;
 
 	}
-	// public static final String URL = "https://" + AUTOMATE_USERNAME + ":" +
-	// AUTOMATE_ACCESS_KEY
-	// + "@hub-cloud.browserstack.com/wd/hub";
 
 	public static String browserName;
 
-	// @AfterMethod(alwaysRun = true)
-	// @AfterTest(alwaysRun = true)
 	public void tearDown() throws Exception {
 		driver.quit();
 		if (l != null)
