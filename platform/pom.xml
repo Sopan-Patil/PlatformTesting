@@ -484,7 +484,7 @@
 					<!-- <includes> <exclude>**/*PlatformTestRunners.java</exclude> </includes> -->
 					<suiteXmlFiles>
 						<!-- pass testng.xml files as argument from command  -->
-						<!-- <suiteXmlFile>${suiteXmlFile}</suiteXmlFile> -->
+						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
 						<!-- <suiteXmlFile>.platform/testng.xml</suiteXmlFile> -->
 
 
