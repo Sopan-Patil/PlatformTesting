@@ -1,12 +1,15 @@
 package platform.pageobjects.Order;
 
 import java.util.List;
+import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -123,6 +126,32 @@ public class Order {
 	@FindBy(xpath = "//input[@id='userEmail']")
 	public WebElement emailaddressTextbox;
 
+	// con store thank you page xpath
+
+	@FindBy(xpath = "//h3[contains(text(),'お申し込みありがとうございます。')]")
+	public WebElement thankYouForYourApplicationLabel;
+
+	@FindBy(xpath = "//div[@class='box-store-payment__content']//div[1]//div[2]")
+	public WebElement customerNumberLabel;
+
+	@FindBy(xpath = "//div[@class='box-store-payment__content']//div[2]//div[2]")
+	public WebElement convenienceStoreLabel;
+
+	@FindBy(xpath = "//div[@class='box-store-payment__content']//div[3]//div[2]")
+	public WebElement authorizationNumberLabel;
+
+	@FindBy(xpath = "//div[@class='box-store-payment__content']//div[4]//div[2]")
+	public WebElement paymentDeadlineLabel;
+
+	@FindBy(xpath = "//div[@class='box-body__item']//strong")
+	public WebElement orderNumberLabel;
+
+	@FindBy(xpath = "//span[contains(text(),'注文履歴を確認')]")
+	public WebElement checkOrderHistoryLink;
+
+	@FindBy(xpath = "//span[@class='button__text']")
+	public WebElement topPageButton;
+
 	// not used
 	@FindBy(xpath = "//button[@type='submit']")
 	public WebElement SubmitButton;
@@ -138,8 +167,8 @@ public class Order {
 		productlistToBuyButton.click();
 		log.info("Click on buy button from product list page,select 1st product");
 
-		CommonFunctions.isElementVisible(productlistToBuyButton);
-		CommonFunctions.waitForVisiblity(productlistToBuyButton, waitTime);
+		CommonFunctions.isElementVisible(step1ProceedButton);
+		CommonFunctions.waitForVisiblity(step1ProceedButton, waitTime);
 		step1ProceedButton.click();
 		log.info("Step 1 tab :- click to 'To payment method selection' button");
 
@@ -188,8 +217,8 @@ public class Order {
 		productlistToBuyButton.click();
 		log.info("Click on buy button from product list page,select 1st product");
 
-		CommonFunctions.isElementVisible(productlistToBuyButton);
-		CommonFunctions.waitForVisiblity(productlistToBuyButton, waitTime);
+		CommonFunctions.isElementVisible(step1ProceedButton);
+		CommonFunctions.waitForVisiblity(step1ProceedButton, waitTime);
 		step1ProceedButton.click();
 		log.info("Step 1 tab :- click to 'To payment method selection' button");
 
@@ -295,8 +324,8 @@ public class Order {
 		productlistToBuyButton.click();
 		log.info("Click on buy button from product list page,select 1st product");
 
-		CommonFunctions.isElementVisible(productlistToBuyButton);
-		CommonFunctions.waitForVisiblity(productlistToBuyButton, waitTime);
+		CommonFunctions.isElementVisible(step1ProceedButton);
+		CommonFunctions.waitForVisiblity(step1ProceedButton, waitTime);
 		step1ProceedButton.click();
 		log.info("Step 1 tab :- click to 'To payment method selection' button");
 
@@ -395,8 +424,8 @@ public class Order {
 		productlistToBuyButton.click();
 		log.info("Click on buy button from product list page,select 1st product");
 
-		CommonFunctions.isElementVisible(productlistToBuyButton);
-		CommonFunctions.waitForVisiblity(productlistToBuyButton, waitTime);
+		CommonFunctions.isElementVisible(step1ProceedButton);
+		CommonFunctions.waitForVisiblity(step1ProceedButton, waitTime);
 		step1ProceedButton.click();
 		log.info("Step 1 tab :- click to 'To payment method selection' button");
 
@@ -442,9 +471,55 @@ public class Order {
 
 	}
 
-	public void orderWithValidConvenienceStore() throws Exception {
+	public String[] methodForConStoreThankYouPage() throws Exception {
 
-		//
+		// thank you page
+		CommonFunctions.waitForVisiblity(thankYouForYourApplicationLabel, waitTime);
+		String thankYouForYourApplicationLabelSTR = thankYouForYourApplicationLabel.getText();
+		log.info("Step 4 tab :- thank You For Your Application text visible:- " + thankYouForYourApplicationLabelSTR);
+
+		CommonFunctions.waitForVisiblity(customerNumberLabel, waitTime);
+		String customerNumberLabelSTR = customerNumberLabel.getText();
+		log.info("Step 4 tab :- Customer Number text visible:- " + customerNumberLabelSTR);
+
+		CommonFunctions.waitForVisiblity(convenienceStoreLabel, waitTime);
+		String convenienceStoreLabelSTR = convenienceStoreLabel.getText();
+		log.info("Step 4 tab :- convenience store text visible:- " + convenienceStoreLabelSTR);
+
+		CommonFunctions.waitForVisiblity(authorizationNumberLabel, waitTime);
+		String authorizationNumberLabelSTR = authorizationNumberLabel.getText();
+		log.info("Step 4 tab :- Authorization number text visible:- " + authorizationNumberLabelSTR);
+
+		CommonFunctions.waitForVisiblity(paymentDeadlineLabel, waitTime);
+		String paymentDeadlineLabelSTR = paymentDeadlineLabel.getText();
+		log.info("Step 4 tab :- Payment deadline text visible:- " + paymentDeadlineLabelSTR);
+
+		String removeJapword1 = paymentDeadlineLabelSTR.substring(0, 10);
+		String removeJapword2 = removeJapword1.replaceAll("年", "/");
+		String paymentDeadlineCompareSTR = removeJapword2.replaceAll("月", "/");
+		System.out.println("Step 4 tab :- Payment deadline text capture for compare with order history page:- "
+				+ paymentDeadlineCompareSTR);
+
+		CommonFunctions.waitForVisiblity(orderNumberLabel, waitTime);
+		String orderNumberLabelSTR = orderNumberLabel.getText();
+		log.info("Step 4 tab :- Order number text visible:- " + orderNumberLabelSTR);
+
+		String[] result = new String[2];
+		result[0] = paymentDeadlineCompareSTR;
+		result[1] = orderNumberLabelSTR;
+		return result;
+
+	}
+
+	public void methodForOrderHistoryPage() throws Exception {
+		String[] conStoreThankYouPageSTRs = methodForConStoreThankYouPage();
+		String historyPagePaymentDeadlineCompareSTR = conStoreThankYouPageSTRs[0];
+		String historyPageorderNumberLabelSTR = conStoreThankYouPageSTRs[1];
+		log.info("Store Payment Deadline from methodForConStoreThankYouPage:- " + historyPagePaymentDeadlineCompareSTR);
+		log.info("Store Order Number from methodForConStoreThankYouPage:- " + historyPageorderNumberLabelSTR);
+	}
+
+	public void orderWithValidConvenienceStore() throws Exception {
 
 		CommonFunctions.waitForVisiblity(productListLink, waitTime);
 		productListLink.click();
@@ -454,8 +529,8 @@ public class Order {
 		productlistToBuyButton.click();
 		log.info("Click on buy button from product list page,select 1st product");
 
-		CommonFunctions.isElementVisible(productlistToBuyButton);
-		CommonFunctions.waitForVisiblity(productlistToBuyButton, waitTime);
+		CommonFunctions.isElementVisible(step1ProceedButton);
+		CommonFunctions.waitForVisiblity(step1ProceedButton, waitTime);
 		step1ProceedButton.click();
 		log.info("Step 1 tab :- click to 'To payment method selection' button");
 
@@ -477,63 +552,25 @@ public class Order {
 		lawsonRadioButton.click();
 		log.info("Step 2 tab :- click to 'lawson' radio button");
 
-		CommonFunctions.waitForVisiblity(creditCardNumerTextbox, waitTime);
-		creditCardNumerTextbox.sendKeys("4111111111111111");
-		log.info("Step 2 tab :- provide card no to 'credit card number' textbox");
+		CommonFunctions.waitForVisiblity(kanjiNameTextbox, waitTime);
+		kanjiNameTextbox.clear();
+		kanjiNameTextbox.sendKeys("柏木佳　奈子");
+		log.info("Step 2 tab :- provide name 'kanji Name' textbox");
 
-		CommonFunctions.waitForVisiblity(creditCardHolderNameTextbox, waitTime);
-		creditCardHolderNameTextbox.sendKeys("rahul");
-		log.info("Step 2 tab :- provide card holder name to 'card name' textbox");
+		CommonFunctions.waitForVisiblity(kanaNameTextbox, waitTime);
+		kanaNameTextbox.clear();
+		kanaNameTextbox.sendKeys("カシワギ　カナコ");
+		log.info("Step 2 tab :- provide name 'kana Name' textbox");
 
-		CommonFunctions.isElementVisible(ExpirationYearDropdown);
+		CommonFunctions.waitForVisiblity(phonenoTextbox, waitTime);
+		phonenoTextbox.clear();
+		phonenoTextbox.sendKeys("9890324119");
+		log.info("Step 2 tab :- provide phone no 'phone no' textbox");
 
-		CommonFunctions.waitForVisiblity(ExpirationYearDropdown, waitTime);
-		ExpirationYearDropdown.click();
-		log.info("Step 2 tab :- click on 'Expiration year' Dropdown");
-
-		CommonFunctions.isElementVisible(listAllYearValue);
-
-		List<WebElement> Yearlistings = driver.findElements(By.xpath("//ul[@id='select2-expire-year-results']/li"));
-		int YearitemSize = Yearlistings.size();
-		String expectedYearValue = "2025";
-		for (int i = 0; i < YearitemSize; i++) {
-			String yearoptionsValue = Yearlistings.get(i).getText();
-			System.out.println(yearoptionsValue);
-			// match the content here in the if loop
-			if (Yearlistings.get(i).getText().equals(expectedYearValue)) {
-				// perform action
-				Yearlistings.get(i).click();
-				break;
-
-			}
-		}
-		Thread.sleep(2000);
-		CommonFunctions.waitForVisiblity(securitycodeTextbox, waitTime);
-		CommonFunctions.waitForClickable(securitycodeTextbox, waitTime);
-
-		CommonFunctions.waitForVisiblity(securitycodeTextbox, waitTime);
-		securitycodeTextbox.sendKeys("123");
-		log.info("Step 2 tab :- provide security code to 'securitycode' textbox");
-
-		CommonFunctions.waitForVisiblity(ExpirationMonthDropdown, waitTime);
-		ExpirationMonthDropdown.click();
-		log.info("Step 2 tab :- click on 'Expiration Month'Dropdown");
-
-		CommonFunctions.isElementVisible(listAllMonthValue);
-
-		List<WebElement> listings = driver.findElements(By.xpath("//ul[@id='select2-expire-month-results']/li"));
-		int itemSize = listings.size();
-		String expectedMonthValue = "7月";
-		for (int i = 0; i < itemSize; i++) {
-			String optionsValue = listings.get(i).getText();
-			System.out.println(optionsValue);
-			// match the content here in the if loop
-			if (listings.get(i).getText().equals(expectedMonthValue)) {
-				// perform action
-				listings.get(i).click();
-				break;
-			}
-		}
+		CommonFunctions.waitForVisiblity(emailaddressTextbox, waitTime);
+		emailaddressTextbox.clear();
+		emailaddressTextbox.sendKeys("rahul.shinde+82@scispl.com");
+		log.info("Step 2 tab :- provide email to 'email address' textbox");
 
 		CommonFunctions.isElementVisible(step2ProceedButton);
 		CommonFunctions.waitForVisiblity(step2ProceedButton, waitTime);
@@ -545,13 +582,39 @@ public class Order {
 		step3ConfirmOrderButton.click();
 		log.info("Step 3 tab :- click to 'Confirm the order' button");
 
-		CommonFunctions.isElementVisible(step4ThankYouForYourPurchaseLabel);
-		log.info("Step 4 tab :- order complete");
+		// thank you page
+		methodForConStoreThankYouPage();
+		methodForOrderHistoryPage();
 
-		/*
-		 * if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
-		 * CommonFunctions.clickUsingJavaExecutor(SubmitButton); }
-		 */
+		// open top page on next tab
+		Actions newTab = new Actions(driver);
+		newTab.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).click(topPageButton).keyUp(Keys.CONTROL).keyUp(Keys.SHIFT)
+				.build().perform();
+		log.info("Step 4 tab :- click on top page button and it open in new browser tab");
+		Thread.sleep(2000);
+
+		// handle windows change
+		String base1 = driver.getWindowHandle();
+		Set<String> set = driver.getWindowHandles();
+
+		set.remove(base1);
+		assert set.size() == 1;
+		driver.switchTo().window((String) set.toArray()[0]);
+		log.info("Step 4 tab :- switched to top page");
+		Thread.sleep(1000);
+		CommonFunctions.waitForVisiblity(productListLink, waitTime);
+		log.info("Product list page visible on top page");
+		// close the window and sitch back to the base tab
+		driver.close();
+		driver.switchTo().window(base1);
+		log.info("Step 4 tab :- switched to thank you page again");
+
+		Thread.sleep(2000);
+		CommonFunctions.waitForVisiblity(checkOrderHistoryLink, waitTime);
+		checkOrderHistoryLink.click();
+		log.info("Step 4 tab :- click on top page button");
+
+		log.info("Step 4 tab :- order complete");
 
 	}
 }

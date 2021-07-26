@@ -11,6 +11,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -81,7 +82,6 @@ public class CommonFunctions {
 		boolean result = false;
 		try {
 			ObjectHelper.driver.switchTo().activeElement();
-
 			scrolltoElement(element);
 
 			WebDriverWait wait = new WebDriverWait(ObjectHelper.driver, waitTime);
@@ -93,6 +93,26 @@ public class CommonFunctions {
 		}
 		return result;
 	}
+	
+	public static boolean waitForVisiblity1(WebElement element, int waitTime) {
+		boolean result = false;
+		try {
+			ObjectHelper.driver.switchTo().activeElement();
+			scrolltoElement(element);
+
+			WebDriverWait wait = new WebDriverWait(ObjectHelper.driver, waitTime);
+			// element = wait.until(ExpectedConditions.elementToBeClickable(element));
+			element = wait.until(ExpectedConditions.visibilityOf(element));
+			result = true;
+		} catch (Exception e) {
+			result = false;
+			throw e;
+		}
+		return result;
+	}
+	
+	
+	
 	
 	/**
 	 * @Author : rahul shinde
@@ -117,6 +137,7 @@ public class CommonFunctions {
 		return result;
 	}
 	
+	
 	public static boolean assertString(String actualText, String expectedText) {
 		boolean result = false;
 		try {
@@ -130,9 +151,7 @@ public class CommonFunctions {
 		return result;
 	}
 
-
-
-    
+   
 	public static void clickUsingJavaExecutor(String xpath) {
 		WebElement element = ObjectHelper.driver.findElement(By.xpath(xpath));
 
