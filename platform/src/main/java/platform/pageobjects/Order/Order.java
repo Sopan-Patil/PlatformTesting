@@ -152,6 +152,29 @@ public class Order {
 	@FindBy(xpath = "//span[@class='button__text']")
 	public WebElement topPageButton;
 
+	// order history page xpath
+
+	@FindBy(xpath = "//div[@class='box-order-history']//div[1]//div[2]//div[2]//div[2]//div[2]//div[1]")
+	public WebElement orderHistoryPaymentDeadlineLabel;
+
+	@FindBy(xpath = "//div[@class='box-order-history']//div[1]//div[2]//div[2]//div[3]//a[1]//span[1]")
+	public WebElement orderHistoryBuyAgainButton;
+
+	@FindBy(xpath = "//div[@class='box-order-history']/div[1]/div[1]//div[2]//p")
+	public WebElement orderHistoryOrderNumberLabel;
+
+	@FindBy(xpath = "//div[@class='box-order-history']//div[1]//div[2]//div[2]//div[2]//div[2]//button[1]//span[1]")
+	public WebElement orderHistoryPaymentStatusLabel;
+
+	@FindBy(xpath = "//div[@class='order-history']//div[@class='box-order-history']/div[1]/div[1]/div[2]")
+	public WebElement orderHistoryProductNameLabel;
+
+	@FindBy(xpath = "//div[@class='box-order-history']//div[1]//div[2]//div[1]//div[2]//div[1]//p[2]")
+	public WebElement orderHistoryPriceLabel;
+
+	@FindBy(xpath = "//div[@class='box-order-history']/div[1]/div[1]//div[1]")
+	public WebElement orderHistoryOrderDateLabel;
+
 	// not used
 	@FindBy(xpath = "//button[@type='submit']")
 	public WebElement SubmitButton;
@@ -497,7 +520,7 @@ public class Order {
 		String removeJapword1 = paymentDeadlineLabelSTR.substring(0, 10);
 		String removeJapword2 = removeJapword1.replaceAll("年", "/");
 		String paymentDeadlineCompareSTR = removeJapword2.replaceAll("月", "/");
-		System.out.println("Step 4 tab :- Payment deadline text capture for compare with order history page:- "
+		log.info("Step 4 tab :- Payment deadline text capture for compare with order history page:- "
 				+ paymentDeadlineCompareSTR);
 
 		CommonFunctions.waitForVisiblity(orderNumberLabel, waitTime);
@@ -517,6 +540,34 @@ public class Order {
 		String historyPageorderNumberLabelSTR = conStoreThankYouPageSTRs[1];
 		log.info("Store Payment Deadline from methodForConStoreThankYouPage:- " + historyPagePaymentDeadlineCompareSTR);
 		log.info("Store Order Number from methodForConStoreThankYouPage:- " + historyPageorderNumberLabelSTR);
+
+		CommonFunctions.waitForVisiblity(orderHistoryPaymentDeadlineLabel, waitTime);
+		String orderHistoryPaymentDeadlineLabelSTR = orderHistoryPaymentDeadlineLabel.getText();
+		log.info("Order history page:- actual Payment deadline date " + orderHistoryPaymentDeadlineLabelSTR);
+
+		CommonFunctions.waitForVisiblity(orderHistoryBuyAgainButton, waitTime);
+		String orderHistoryBuyAgainButtonSTR = orderHistoryBuyAgainButton.getText();
+		log.info("Order history page:- buy again button visible " + orderHistoryBuyAgainButtonSTR);
+
+		CommonFunctions.waitForVisiblity(orderHistoryOrderNumberLabel, waitTime);
+		String orderHistoryOrderNumberLabelSTR = orderHistoryOrderNumberLabel.getText();
+		log.info("Order history page:- order number is " + orderHistoryOrderNumberLabelSTR);
+
+		CommonFunctions.waitForVisiblity(orderHistoryPaymentStatusLabel, waitTime);
+		String orderHistoryPaymentStatusLabelSTR = orderHistoryPaymentStatusLabel.getText();
+		log.info("Order history page:- payment status is Payment unconfirmed " + orderHistoryPaymentStatusLabelSTR);
+
+		CommonFunctions.waitForVisiblity(orderHistoryProductNameLabel, waitTime);
+		String orderHistoryProductNameLabelSTR = orderHistoryProductNameLabel.getText();
+		log.info("Order history page:- product name is " + orderHistoryProductNameLabelSTR);
+
+		CommonFunctions.waitForVisiblity(orderHistoryPriceLabel, waitTime);
+		String orderHistoryPriceLabelSTR = orderHistoryProductNameLabel.getText();
+		log.info("Order history page:- product price is " + orderHistoryPriceLabelSTR);
+
+		CommonFunctions.waitForVisiblity(orderHistoryOrderDateLabel, waitTime);
+		String orderHistoryOrderDateLabelSTR = orderHistoryOrderDateLabel.getText();
+		log.info("Order history page:- order date is " + orderHistoryOrderDateLabelSTR);
 	}
 
 	public void orderWithValidConvenienceStore() throws Exception {
@@ -584,7 +635,6 @@ public class Order {
 
 		// thank you page
 		methodForConStoreThankYouPage();
-		methodForOrderHistoryPage();
 
 		// open top page on next tab
 		Actions newTab = new Actions(driver);
@@ -604,7 +654,7 @@ public class Order {
 		Thread.sleep(1000);
 		CommonFunctions.waitForVisiblity(productListLink, waitTime);
 		log.info("Product list page visible on top page");
-		// close the window and sitch back to the base tab
+		// close the window and switch back to the base tab
 		driver.close();
 		driver.switchTo().window(base1);
 		log.info("Step 4 tab :- switched to thank you page again");
@@ -612,7 +662,8 @@ public class Order {
 		Thread.sleep(2000);
 		CommonFunctions.waitForVisiblity(checkOrderHistoryLink, waitTime);
 		checkOrderHistoryLink.click();
-		log.info("Step 4 tab :- click on top page button");
+
+		methodForOrderHistoryPage();
 
 		log.info("Step 4 tab :- order complete");
 
