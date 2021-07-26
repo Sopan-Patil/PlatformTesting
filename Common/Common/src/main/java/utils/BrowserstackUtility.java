@@ -132,6 +132,10 @@ public class BrowserstackUtility {
 
 		capabilities.setCapability("acceptSslCerts", "true");
 		capabilities.setCapability("browserstack.idleTimeout", "30");
+		
+		capabilities.setCapability("build", buildName); 
+		  capabilities.setCapability("browserstack.local", browserstackLocal);
+		  capabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
 
 		/**
 		 * @Author : Chetan Sonparote
