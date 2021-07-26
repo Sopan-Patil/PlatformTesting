@@ -39,6 +39,12 @@ public class InvalidCC {
 	@FindBy(xpath = "//a[contains(@class,'button button--default button--xmedium')]")
 	public WebElement changeCard;
 
+	@FindBy(xpath = "//input[@id='cardno']")
+	public WebElement creditCardTextField;
+
+	@FindBy(xpath = "//input[@id='holdername']")
+	public WebElement creditCardHolderNameTextField;
+
 	public void clickAccountInformation() {
 		if (CommonFunctions.waitForVisiblity(accountInformation, waitTime)) {
 			accountInformation.click();

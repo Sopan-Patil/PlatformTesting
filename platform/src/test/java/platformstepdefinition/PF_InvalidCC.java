@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import base.NewBaseClass;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
 import platform.pageobjects.Authentication.LoginPage;
 import platform.pageobjects.MyPage.InvalidCC;
@@ -29,17 +30,25 @@ public class PF_InvalidCC extends NewBaseClass {
 		loginPage.loginToPlatform();
 	}
 
-	@And("^Click on Membership Status$")
+	@Then("^Click on Membership Status$")
 	public void Click_on_Membership_Status() throws Throwable {
 		InvalidCC InvalidCC = new InvalidCC(driver);
 		InvalidCC.clickAccountInformation();
 		InvalidCC.ClickMmemberShipStatus();
 	}
 
-	@And("^Click on Change Card$")
+	@Then("^Click on Change Card$")
 	public void Click_on_Change_Card() throws Throwable {
 		InvalidCC InvalidCC = new InvalidCC(driver);
 		InvalidCC.clickChangeCardButton();
 		replaceurlChangeCard();
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.clickLoginButton();
+		loginPage.loginToPlatform();
+	}
+
+	@And("^Enters credit card details$")
+	public void Enters_credit_card_details() throws Throwable {
+
 	}
 }
