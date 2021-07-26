@@ -49,6 +49,8 @@ public class PF_InvalidCC extends NewBaseClass {
 
 	@And("^Enters credit card details$")
 	public void Enters_credit_card_details() throws Throwable {
+		InvalidCC InvalidCC = new InvalidCC(driver);
+		InvalidCC.orderWithInValidCreditcard();
 
 	}
 }

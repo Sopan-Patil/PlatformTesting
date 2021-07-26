@@ -16,7 +16,7 @@ public class ConfigProp {
 
 	public static String platformEnvironmentURL = stageURL;
 
-	public static String Stag_Email_Subject = "【STG環境】【スタギア】EiD確認コードのご案内";
+	public static String Stag_OTP_Email_Subject = "【STG環境】【スタギア】EiD確認コードのご案内";
 	public static String user = "sgepuser";
 	public static String password = "9tg6gxxCEaL3";
 	public static String newtestDataFile = "newtestdata.xlsx";
