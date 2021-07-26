@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
+
 <Properties>
 <Property name="basePath">./logs</Property>
 </Properties>
@@ -11,6 +12,18 @@ filePattern="${basePath}/prints-%d{yyyy-MM-dd}.log">
 pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
 <SizeBasedTriggeringPolicy size="50000000" />
 </RollingFile>
+
+	<Properties>
+		<Property name="basePath">./logs</Property>
+	</Properties>
+	<Appenders>
+		<RollingFile name="File" fileName="${basePath}/prints.log"
+			filePattern="${basePath}/prints-%d{yyyy-MM-dd}.log">
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+			<SizeBasedTriggeringPolicy size="50000000" />
+		</RollingFile>
+
 
 <RollingFile name="fileLogger"
 fileName="${basePath}/ApplicationTestLogs.html"

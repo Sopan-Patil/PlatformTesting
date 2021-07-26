@@ -460,6 +460,10 @@
             <id>maven.jenkins-ci.org</id>
             <url>https://repo.jenkins-ci.org/public</url>
         </pluginRepository>
+        <pluginRepository>
+   <id>sonatype-nexus-snapshots</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+  </pluginRepository>
     </pluginRepositories>
 
 

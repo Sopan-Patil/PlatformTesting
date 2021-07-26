@@ -2,15 +2,15 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-07-21T06:19:51Z" name="LocalSingleBrowser" finished-at="2021-07-21T06:20:20Z" duration-ms="29660">
+  <suite started-at="2021-07-23T03:51:23Z" name="LocalSingleBrowser" finished-at="2021-07-23T03:52:11Z" duration-ms="48403">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:platformrunner.Runner@50687efb]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2021-07-21T06:19:51Z" name="SingleBrowserTest" finished-at="2021-07-21T06:20:20Z" duration-ms="29660">
+    <test started-at="2021-07-23T03:51:23Z" name="SingleBrowserTest" finished-at="2021-07-23T03:52:11Z" duration-ms="48403">
       <class name="platformrunner.Runner">
-        <test-method is-config="true" signature="setUpBrowser(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:platformrunner.Runner@50687efb]" started-at="2021-07-21T11:49:51Z" name="setUpBrowser" finished-at="2021-07-21T11:50:00Z" duration-ms="8879" status="PASS">
+        <test-method is-config="true" signature="setUpBrowser(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:platformrunner.Runner@50687efb]" started-at="2021-07-23T09:21:23Z" name="setUpBrowser" finished-at="2021-07-23T09:21:36Z" duration-ms="13336" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -32,11 +32,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBrowser -->
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:platformrunner.Runner@50687efb]" started-at="2021-07-21T11:50:00Z" name="setUpClass" finished-at="2021-07-21T11:50:00Z" duration-ms="273" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:platformrunner.Runner@50687efb]" started-at="2021-07-23T09:21:36Z" name="setUpClass" finished-at="2021-07-23T09:21:37Z" duration-ms="229" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:platformrunner.Runner@50687efb]" started-at="2021-07-21T11:50:00Z" name="feature" description="Runs Cucumber Feature" data-provider="features" finished-at="2021-07-21T11:50:20Z" duration-ms="20310" status="PASS">
+        <test-method signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:platformrunner.Runner@50687efb]" started-at="2021-07-23T09:21:37Z" name="feature" description="Runs Cucumber Feature" data-provider="features" finished-at="2021-07-23T09:22:11Z" duration-ms="34639" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -47,7 +47,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:platformrunner.Runner@50687efb]" started-at="2021-07-21T11:50:20Z" name="tearDownClass" finished-at="2021-07-21T11:50:20Z" duration-ms="73" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:platformrunner.Runner@50687efb]" started-at="2021-07-23T09:22:11Z" name="tearDownClass" finished-at="2021-07-23T09:22:11Z" duration-ms="80" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
