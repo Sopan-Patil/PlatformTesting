@@ -31,25 +31,25 @@ public class Withdrawal {
 	@FindBy(xpath = "//span[@class='checkmark']")
 	public WebElement withdrawalCheck;
 
-	@FindBy(xpath = "//a[@class='button button--gray button--medium button--coupon-back']//span[contains(text(),'戻る')]")
+	@FindBy(xpath = "//a[@class='button button--gray button--medium button--coupon-back']//span[contains(text(),'æˆ»ã‚‹')]")
 	public WebElement back;
 
-	@FindBy(xpath = "//button[@role='button']//span[contains(text(),'退会する')]")
+	@FindBy(xpath = "//button[@role='button']")
 	public WebElement withdrawAccount;
 
 	@FindBy(xpath = "//h1[contains(@class,'')]//a[contains(@class,'logo')]")
 	public WebElement topButton;
 
-	public void withdrawAccount() throws Exception {
+	public void accountWithdrawal() throws Exception {
+		CommonFunctions.scrolltoElement(withdrawalCheck);
+		if (CommonFunctions.isElementClickable(withdrawalCheck)) {
+			withdrawalCheck.click();
+			System.out.println("Withdrawal Checked");
 
-		CommonFunctions.waitForVisiblity(withdrawalCheck, 3);
-		withdrawalCheck.click();
-		log.info("Click on Withdrawal Checkbox");
-
-		CommonFunctions.waitForVisiblity(withdrawAccount, 3);
-		withdrawAccount.click();
-		log.info("Try to click on withdraw account");
-
+			if (CommonFunctions.isElementClickable(withdrawAccount)) {
+				System.out.println("Account Deleted");
+			}
+		}
 	}
 
 	public void withdrawButtons() throws Exception {

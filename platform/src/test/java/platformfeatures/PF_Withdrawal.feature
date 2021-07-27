@@ -3,9 +3,10 @@
 #Keywords Summary : Withdawal Test with Checkbox and Without Checkbox
 
 
-@FunctionalTest 
+
 Feature: Withdraw user account
-Scenario: User is withdrawing the account
+@FunctionalTest 
+Scenario Outline: User is withdrawing the account
 
 #Given User is on Withdrawal Page
 #When User clicks on accept checkbox
@@ -14,22 +15,25 @@ Scenario: User is withdrawing the account
 
 #Scenario: User is withdrawing the account
 
-Given User is on Withdrawal Page
-When User clicks on accept checkbox with 退会する button
+Given User is on Withdrawal Page ticks the checkbox and withdraw account <browser>
 Then Account gets deleted
 
+
+Examples:
+|browser|
+|chrome	|
 
 #Scenario: User is withdrawing the account
 
 #Given User is on Withdrawal Page
-#When User clicks on "退会する" Button without clicking checkbox. 
+#When User clicks on "é€€ä¼šã�™ã‚‹" Button without clicking checkbox. 
 #Then Account doesn't get deleted
 
 
 #Scenario: User is withdrawing the account.
 
 #Given User is on Withdrawal Page.
-#When User clicks on "戻る" Button. 
+#When User clicks on "æˆ»ã‚‹" Button. 
 #Then Button Redirects to top page.
 
 
