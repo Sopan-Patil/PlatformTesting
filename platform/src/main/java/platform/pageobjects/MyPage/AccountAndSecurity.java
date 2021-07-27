@@ -20,14 +20,14 @@ import utils.XLHandler;
  * @Description:Class for entering invalid credit card details
  */
 
-public class InvalidCC {
+public class AccountAndSecurity {
 
 	List<String[]> testdata;
 	public WebDriver driver;
 	private static Logger log = LogManager.getLogger(LoginPage.class.getName());
 	int waitTime = 5;
 
-	public InvalidCC(WebDriver driver) {
+	public AccountAndSecurity(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -35,11 +35,8 @@ public class InvalidCC {
 	@FindBy(xpath = "//a[@class='link js-not-link']")
 	public WebElement accountInformation;
 
-	@FindBy(xpath = "//div[@class='ep-my-page__side-bar']//a[2]")
-	public WebElement memberShipStatus;
-
-	@FindBy(xpath = "//a[contains(@class,'button button--default button--xmedium')]")
-	public WebElement changeCardButton;
+	@FindBy(xpath = "//div[@class='account-security__button']/a")
+	public WebElement changeButton;
 
 	@FindBy(xpath = "//input[@id='cardno']")
 	public WebElement creditCardTextField;
@@ -69,23 +66,17 @@ public class InvalidCC {
 		}
 	}
 
-	public void ClickMmemberShipStatus() {
-		if (CommonFunctions.waitForVisiblity(memberShipStatus, waitTime)) {
-			memberShipStatus.click();
-		}
-	}
-
-	public void clickChangeCardButton() {
-		if (CommonFunctions.waitForVisiblity(changeCardButton, waitTime)) {
-			changeCardButton.click();
+	public void clickChangeButton() {
+		if (CommonFunctions.waitForVisiblity(changeButton, waitTime)) {
+			changeButton.click();
 		}
 
 	}
 
-	public void InValidCreditcard() throws Exception {
+	public void UpdateAccountAndSecurityInformation() throws Exception {
 		String[] shipmentdata;
 
-		shipmentdata = XLHandler.readexcel("CCPayment", "NewTestData.xlsx");
+		shipmentdata = XLHandler.readexcel("UpdateAccountInformation", "NewTestData.xlsx");
 
 		CommonFunctions.waitForVisiblity(creditCardTextField, waitTime);
 		creditCardTextField.sendKeys(shipmentdata[0]);
