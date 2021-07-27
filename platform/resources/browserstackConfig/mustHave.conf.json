@@ -3,7 +3,8 @@
 	"capabilities": {
 		"build": "browserstack_build_must_have",
 		"name": "must_have_test",
-		"browserstack.debug": true
+		"browserstack.debug": true,
+			"browserstack.networkLogs": true
 	},
 	"environments": {
 		"env1": {
