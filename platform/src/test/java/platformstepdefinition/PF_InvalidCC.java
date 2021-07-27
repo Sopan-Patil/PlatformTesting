@@ -30,8 +30,8 @@ public class PF_InvalidCC extends NewBaseClass {
 		loginPage.loginToPlatform();
 	}
 
-	@Then("^Click on Membership Status$")
-	public void Click_on_Membership_Status() throws Throwable {
+	@Then("^Click on Membership Status link$")
+	public void Click_on_Membership_Status_link() throws Throwable {
 		InvalidCC InvalidCC = new InvalidCC(driver);
 		InvalidCC.clickAccountInformation();
 		InvalidCC.ClickMmemberShipStatus();

@@ -4,7 +4,7 @@ Feature: Validate Invalid credit card no
 Scenario Outline: Validate Invalid Credit Card
 
 Given Login To Platform Portal <browser>
-Then Click on Membership Status
+Then Click on Membership Status link
 Then Click on Change Card
 Then Enters invalid credit card details
 
