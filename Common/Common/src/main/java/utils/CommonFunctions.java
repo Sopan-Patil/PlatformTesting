@@ -150,6 +150,33 @@ public class CommonFunctions {
 		}
 		return result;
 	}
+	
+	/**
+	 * @return 
+	 * @Author : rahul shinde
+	 * @Date : 26 Jul 2021
+	 * @Description: compare 2 strings
+	 */
+	public static  void stringContains(String actualText, String expectedText) {
+		
+		try {
+			if(actualText.contains(expectedText))	
+			{
+				log.info("string match");
+			}
+			else
+			{
+				throw  new Exception("string not match");
+				
+			}
+		
+		} catch (Exception e) {
+			e.getMessage();
+			
+		}
+		
+	}
+
 
    
 	public static void clickUsingJavaExecutor(String xpath) {

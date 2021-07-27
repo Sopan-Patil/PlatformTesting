@@ -1,5 +1,6 @@
 package platform.pageobjects.Order;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
@@ -166,7 +167,7 @@ public class Order {
 	@FindBy(xpath = "//div[@class='box-order-history']//div[1]//div[2]//div[2]//div[2]//div[2]//button[1]//span[1]")
 	public WebElement orderHistoryPaymentStatusLabel;
 
-	@FindBy(xpath = "//div[@class='order-history']//div[@class='box-order-history']/div[1]/div[1]/div[2]")
+	@FindBy(xpath = "//div[@class='box-order-history']//div[1]//h4[1]")
 	public WebElement orderHistoryProductNameLabel;
 
 	@FindBy(xpath = "//div[@class='box-order-history']//div[1]//div[2]//div[1]//div[2]//div[1]//p[2]")
@@ -527,25 +528,36 @@ public class Order {
 		String orderNumberLabelSTR = orderNumberLabel.getText();
 		log.info("Step 4 tab :- Order number text visible:- " + orderNumberLabelSTR);
 
-		String[] result = new String[2];
-		result[0] = paymentDeadlineCompareSTR;
-		result[1] = orderNumberLabelSTR;
-		return result;
+		// define string array
+		String[] ret_Array = { paymentDeadlineCompareSTR, orderNumberLabelSTR };
+		// return string array
+		return ret_Array;
+
+//		String[] result = new String[2];
+//		result[0] = paymentDeadlineCompareSTR;
+//		result[1] = orderNumberLabelSTR;
+//		return result;
 
 	}
 
-	public void methodForOrderHistoryPage() throws Exception {
-		String[] conStoreThankYouPageSTRs = methodForConStoreThankYouPage();
-		String historyPagePaymentDeadlineCompareSTR = conStoreThankYouPageSTRs[0];
-		String historyPageorderNumberLabelSTR = conStoreThankYouPageSTRs[1];
-		log.info("Store Payment Deadline from methodForConStoreThankYouPage:- " + historyPagePaymentDeadlineCompareSTR);
-		log.info("Store Order Number from methodForConStoreThankYouPage:- " + historyPageorderNumberLabelSTR);
+	public void methodForOrderHistoryPage(String thankYouPagePaymentDeadlineSTR, String thankYouPageorderNumberLabelSTR)
+			throws Exception {
+
+		String expectedThankYouPagePaymentDeadlineSTR = thankYouPagePaymentDeadlineSTR;
+		String expectedThankYouPageorderNumberLabelSTR = thankYouPageorderNumberLabelSTR;
+
+		log.info("Store Payment Deadline from methodForConStoreThankYouPage:- "
+				+ expectedThankYouPagePaymentDeadlineSTR);
+		log.info("Store Order Number from methodForConStoreThankYouPage:- " + expectedThankYouPageorderNumberLabelSTR);
 
 		CommonFunctions.waitForVisiblity(orderHistoryPaymentDeadlineLabel, waitTime);
 		String orderHistoryPaymentDeadlineLabelSTR = orderHistoryPaymentDeadlineLabel.getText();
 		log.info("Order history page:- actual Payment deadline date " + orderHistoryPaymentDeadlineLabelSTR);
+		CommonFunctions.assertString(expectedThankYouPagePaymentDeadlineSTR, orderHistoryPaymentDeadlineLabelSTR);
 
-		CommonFunctions.waitForVisiblity(orderHistoryBuyAgainButton, waitTime);
+		if (CommonFunctions.assertString(expectedThankYouPagePaymentDeadlineSTR, orderHistoryPaymentDeadlineLabelSTR))
+
+			CommonFunctions.waitForVisiblity(orderHistoryBuyAgainButton, waitTime);
 		String orderHistoryBuyAgainButtonSTR = orderHistoryBuyAgainButton.getText();
 		log.info("Order history page:- buy again button visible " + orderHistoryBuyAgainButtonSTR);
 
@@ -562,7 +574,7 @@ public class Order {
 		log.info("Order history page:- product name is " + orderHistoryProductNameLabelSTR);
 
 		CommonFunctions.waitForVisiblity(orderHistoryPriceLabel, waitTime);
-		String orderHistoryPriceLabelSTR = orderHistoryProductNameLabel.getText();
+		String orderHistoryPriceLabelSTR = orderHistoryPriceLabel.getText();
 		log.info("Order history page:- product price is " + orderHistoryPriceLabelSTR);
 
 		CommonFunctions.waitForVisiblity(orderHistoryOrderDateLabel, waitTime);
@@ -633,8 +645,17 @@ public class Order {
 		step3ConfirmOrderButton.click();
 		log.info("Step 3 tab :- click to 'Confirm the order' button");
 
-		// thank you page
-		methodForConStoreThankYouPage();
+		// call thank you method
+
+		String[] str_Array = methodForConStoreThankYouPage();
+		System.out.println("Array returned from method:" + Arrays.toString(str_Array));
+
+		String thankYouPagePaymentDeadlineSTR = str_Array[0].toString();
+		log.info("Payment date line date from thank you page,now can use to next method:- "
+				+ thankYouPagePaymentDeadlineSTR);
+
+		String thankYouPageorderNumberLabelSTR = str_Array[1].toString();
+		log.info("Order number from thank you page,now can use to next method:-  " + thankYouPageorderNumberLabelSTR);
 
 		// open top page on next tab
 		Actions newTab = new Actions(driver);
@@ -663,7 +684,7 @@ public class Order {
 		CommonFunctions.waitForVisiblity(checkOrderHistoryLink, waitTime);
 		checkOrderHistoryLink.click();
 
-		methodForOrderHistoryPage();
+		methodForOrderHistoryPage(thankYouPagePaymentDeadlineSTR, thankYouPageorderNumberLabelSTR);
 
 		log.info("Step 4 tab :- order complete");
 
