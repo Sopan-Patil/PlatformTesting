@@ -228,7 +228,13 @@ public class NewBaseClass {
 		ObjectHelper.driver.manage().window().maximize();
 	}
 
-	public void replaceurlMailinator() {
+	/**
+	 * 
+	 * @Author : Sopan Patil
+	 * @Date : 27 Jul 2021
+	 * @Description: Added method for replacing authentication popup on chnage card
+	 */
+	public void replaceurlChangeCard() {
 		System.out.println("Old" + ObjectHelper.driver.getCurrentUrl());
 		String newURL = ObjectHelper.driver.getCurrentUrl().replace("https://", "https://sgepuser:9tg6gxxCEaL3@");
 		System.out.println(newURL);
