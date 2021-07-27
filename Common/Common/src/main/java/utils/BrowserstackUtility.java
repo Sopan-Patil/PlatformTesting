@@ -54,7 +54,6 @@ public class BrowserstackUtility {
 		properties.load(fis);
 	}
 
-	
 	public WebDriver initializaBrowserstackDriver(@Optional("local.conf.json") String config_file,
 			@Optional("chrome") String environment) throws Exception {
 		loadPropertiesFile();
@@ -102,22 +101,17 @@ public class BrowserstackUtility {
 		 * @Description: Added user name and password from env properties for jenkins
 		 */
 
-		
 		if (username == null) {
 			username = properties.getProperty("BROWSERSTACK_USERNAME");
 		}
 
-		
 		if (accessKey == null) {
 			accessKey = properties.getProperty("BROWSERSTACK_ACCESS_KEY");
 		}
 
-	
-
-	
-	  if (buildName == null || buildName == "test") { buildName = (String) config.get("build"); }
-	 
-
+		if (buildName == null || buildName == "test") {
+			buildName = (String) config.get("build");
+		}
 
 		String app = System.getenv("BROWSERSTACK_APP_ID");
 		if (app != null && !app.isEmpty()) {
@@ -134,12 +128,10 @@ public class BrowserstackUtility {
 
 		capabilities.setCapability("acceptSslCerts", "true");
 		capabilities.setCapability("browserstack.idleTimeout", "30");
-		
-		capabilities.setCapability("build", buildName); 
-		  capabilities.setCapability("browserstack.local", browserstackLocal);
-		  capabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
 
-		
+		capabilities.setCapability("build", buildName);
+		capabilities.setCapability("browserstack.local", browserstackLocal);
+		capabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
 
 		driver = new RemoteWebDriver(
 				// new URL("https://" + username + ":" + accessKey + "@" + config.get("server")
@@ -157,7 +149,9 @@ public class BrowserstackUtility {
 	public static String browserName;
 
 	public void tearDown() throws Exception {
-		driver.quit();
+		
+		//this.driver = driver;
+		ObjectHelper.driver.quit();
 		if (l != null)
 			l.stop();
 	}
@@ -173,57 +167,16 @@ public class BrowserstackUtility {
 		// System.out.println("getResult():"+getResult());
 
 		ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-		nameValuePairs.add((new BasicNameValuePair("status", "completed")));
+		nameValuePairs.add((new BasicNameValuePair("status", "")));//get test status from assertion status here
 		// nameValuePairs.add((new BasicNameValuePair("status", result)));
-		// nameValuePairs.add((new BasicNameValuePair("reason", "")));
+		 nameValuePairs.add((new BasicNameValuePair("reason", "")));//get failure reason here
 		putRequest.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
 		HttpClientBuilder.create().build().execute(putRequest);
 	}
 
-	/**
-	 * @Author : Chetan Sonparote
-	 * @Date : 2 Jul 2021
-	 * @Description: Added method to get test result
-	 */
+	
 
-	/*
-	 * public String result;
-	 * 
-	 * 
-	 * public void setResult(String result) { this.result = result; }
-	 * 
-	 * public ITestResult resultStatus;
-	 * 
-	 * public ITestResult getResultStatus() { return resultStatus; }
-	 * 
-	 * public void setResultStatus(ITestResult resultStatus) { this.resultStatus =
-	 * resultStatus; }
-	 * 
-	 * String getResult() { String result = null; //resultStatus =
-	 * getResultStatus(); resultStatus = getResultStatus();
-	 * 
-	 * if(resultStatus.getStatus() == ITestResult.SUCCESS) {
-	 * 
-	 * //Do something here System.out.println("passed **********"); result = "PASS";
-	 * }
-	 * 
-	 * else if(resultStatus.getStatus() == ITestResult.FAILURE) { //Do something
-	 * here System.out.println("Failed ***********"); result = "FAIL"; }
-	 * 
-	 * else if(resultStatus.getStatus() == ITestResult.SKIP ){
-	 * 
-	 * System.out.println("Skiped***********"); result = "SKIPPED"; } return result;
-	 * }
-	 */
-
-	/*
-	 * public void setJenkinsBuildName() { String build_name =
-	 * System.getenv("BROWSERSTACK_BUILD_NAME"); //BROWSERSTACK_BUILD_NAME is the
-	 * sample environment variable. Ensure the value of this variable is set every
-	 * time before a build is run. You can do that by adding a pre-build step
-	 * DesiredCapabilities caps = new DesiredCapabilities();
-	 * caps.setCapability("build_name", build_name); // CI/CD job or build name }
-	 */
+	
 
 }

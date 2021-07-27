@@ -271,6 +271,7 @@ public class NewBaseClass {
 	 */
 	public void closeBrowserstack() {
 		try {
+			browserstackUtility = new BrowserstackUtility();
 			browserstackUtility.tearDown();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

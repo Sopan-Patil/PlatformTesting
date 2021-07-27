@@ -45,7 +45,7 @@ public class Listeners extends ExtentReporter implements ITestListener {
 		// TODO Auto-generated method stub
 		extentTest.get().log(Status.PASS, "Test Passed");
 		// browserstackUtility.setResultStatus(result);
-		// browserstackUtility.setResult("PASS");
+
 	}
 
 	@Override
@@ -72,7 +72,6 @@ public class Listeners extends ExtentReporter implements ITestListener {
 		String fileName = dtf.format(now);
 		extentTest.get().addScreenCaptureFromPath(Screenshots.takeScreenshot(fileName, ObjectHelper.driver),
 				result.getMethod().getMethodName());
-		// browserstackUtility.setResult("FAIL");
 
 	}
 
@@ -84,7 +83,7 @@ public class Listeners extends ExtentReporter implements ITestListener {
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		// TODO Auto-generated method stub
-		// browserstackUtility.setResult("SKIPPED");
+
 	}
 
 	@Override
