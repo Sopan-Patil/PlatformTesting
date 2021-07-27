@@ -7,7 +7,8 @@
     "name": "single_test",
     "browserstack.debug": true,
     "browserstack.local":"browserstackLocal",
-	"browserstack.localIdentifier":"browserstackLocalIdentifier"
+	"browserstack.localIdentifier":"browserstackLocalIdentifier",
+	"browserstack.networkLogs": true
   },
 
   "environments": {

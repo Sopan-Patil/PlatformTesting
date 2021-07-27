@@ -102,21 +102,17 @@ public class BrowserstackUtility {
 		 * @Description: Added user name and password from env properties for jenkins
 		 */
 
-		//String username = System.getenv("BROWSERSTACK_USERNAME");
+		
 		if (username == null) {
 			username = properties.getProperty("BROWSERSTACK_USERNAME");
 		}
 
-		//String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
+		
 		if (accessKey == null) {
 			accessKey = properties.getProperty("BROWSERSTACK_ACCESS_KEY");
 		}
 
-	//	String username = properties.getProperty("BROWSERSTACK_USERNAME");
-	//	String accessKey = properties.getProperty("BROWSERSTACK_ACCESS_KEY");
-		// System.out.println("BROWSERSTACK_USERNAME
-		// :"+System.getenv("BROWSERSTACK_USERNAME"));
-		
+	
 
 	
 	  if (buildName == null) { buildName = (String) config.get("build"); }
@@ -143,31 +139,7 @@ public class BrowserstackUtility {
 		  capabilities.setCapability("browserstack.local", browserstackLocal);
 		  capabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
 
-		/**
-		 * @Author : Chetan Sonparote
-		 * @Date : 22 Jul 2021
-		 * @Description: Added build name for jenkins
-		 */
-	//	String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
-
-		// capabilities.setCapability("build", buildName);
-	//	log.info("buildName:" + buildName);
-
-		// test capabilities
-		/*
-		 * String browserstackLocal = System.getenv("BROWSERSTACK_LOCAL"); String
-		 * browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
-		 * capabilities.setCapability("os", "Windows");
-		 * capabilities.setCapability("os_version", "10");
-		 * capabilities.setCapability("browser", "chrome");
-		 * capabilities.setCapability("browser_version", "latest");
-		 * capabilities.setCapability("name", "BStack-[Java] Sample Test"); // test
-		 * buildName capabilities.setCapability("build", buildName); // CI/CD job name
-		 * using BROWSERSTACK_BUILD_NAME env variable
-		 * capabilities.setCapability("browserstack.local", browserstackLocal);
-		 * capabilities.setCapability("browserstack.localIdentifier",
-		 * browserstackLocalIdentifier);
-		 */
+		
 
 		driver = new RemoteWebDriver(
 				// new URL("https://" + username + ":" + accessKey + "@" + config.get("server")
