@@ -122,7 +122,7 @@ public class InvalidCC {
 		String invalidCreditCarderror = creditCardRegistrationFailedError.getText();
 		CommonFunctions.assertString(invalidCreditCarderror, shipmentdata[5]);
 		log.info("The invalid credit card is failed message match with expected message");
-		driver.close();
+
 	}
 
 }

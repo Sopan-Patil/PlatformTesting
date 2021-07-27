@@ -27,7 +27,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 		glue = { "platformstepdefinition" },
 
-		tags = { "@FeatureTest", "~@CreateAccountTest", "~@Smoke" },
+		tags = { "~@FeatureTest", "~@CreateAccountTest", "~@Smoke", "@PFInvalidCC" },
 
 		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",

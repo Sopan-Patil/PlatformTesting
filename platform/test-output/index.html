@@ -29,15 +29,15 @@
     <div class="navigator-root">
       <div class="navigator-suite-header">
         <span>All suites</span>
-        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
-          <img src="collapseall.gif" class="collapse-all-icon">
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
           </img> <!-- collapse-all-icon -->
         </a> <!-- collapse-all-link -->
       </div> <!-- navigator-suite-header -->
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" panel-name="suite-LocalSingleBrowser" class="navigator-link">
+            <a href="#" class="navigator-link" panel-name="suite-LocalSingleBrowser">
               <span class="suite-name border-passed">LocalSingleBrowser</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
@@ -48,37 +48,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" panel-name="test-xml-LocalSingleBrowser" class="navigator-link ">
-                    <span>C:\Users\Lenovo\Desktop\WorkSpace\Project\Workspace\GitPFAutomation\PlatformTesting\platform\TestNGSuites\Local\single.local.testng.xml</span>
+                  <a href="#" class="navigator-link " panel-name="test-xml-LocalSingleBrowser">
+                    <span>D:\Sopan\Project\Automation\PlatformTesting\platform\TestNGSuites\Local\single.local.testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="testlist-LocalSingleBrowser" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="testlist-LocalSingleBrowser">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="group-LocalSingleBrowser" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="group-LocalSingleBrowser">
                     <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="times-LocalSingleBrowser" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="times-LocalSingleBrowser">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="reporter-LocalSingleBrowser" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="reporter-LocalSingleBrowser">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="ignored-methods-LocalSingleBrowser" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-LocalSingleBrowser">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="chronological-LocalSingleBrowser" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="chronological-LocalSingleBrowser">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -101,8 +101,8 @@
                     </span>
                     <div class="method-list-content passed suite-LocalSingleBrowser">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-LocalSingleBrowser" title="platformrunner.Runner" class="method navigator-link" hash-for-method="feature(Create account with new user)">feature(Create account with new user)</a> <!-- method navigator-link -->
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-LocalSingleBrowser" title="platformrunner.Runner" hash-for-method="feature(Validate Invalid credit card no)">feature(Validate Invalid credit card no)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-LocalSingleBrowser -->
@@ -125,10 +125,10 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="feature(Create account with new user)">
-                  </a> <!-- feature(Create account with new user) -->
+                  <a name="feature(Validate Invalid credit card no)">
+                  </a> <!-- feature(Validate Invalid credit card no) -->
                   <span class="method-name">feature</span>
-                  <span class="parameters">(Create account with new user)</span>
+                  <span class="parameters">(Validate Invalid credit card no)</span>
                   <em>
 (Runs Cucumber Feature)                  </em>
                 </div> <!-- method-content -->
@@ -138,13 +138,13 @@
         </div> <!-- panel LocalSingleBrowser -->
         <div panel-name="test-xml-LocalSingleBrowser" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Lenovo\Desktop\WorkSpace\Project\Workspace\GitPFAutomation\PlatformTesting\platform\TestNGSuites\Local\single.local.testng.xml</span>
+            <span class="header-content">D:\Sopan\Project\Automation\PlatformTesting\platform\TestNGSuites\Local\single.local.testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite thread-count=&quot;-1&quot; name=&quot;LocalSingleBrowser&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+&lt;suite thread-count=&quot;-1&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;LocalSingleBrowser&quot;&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;listeners.Listeners&quot;/&gt;
   &lt;/listeners&gt;
@@ -204,12 +204,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'feature')
 data.setCell(0, 2, 'platformrunner.Runner')
-data.setCell(0, 3, 34639);
+data.setCell(0, 3, 104276);
 window.suiteTableData['LocalSingleBrowser']= { tableData: data, tableDiv: 'times-div-LocalSingleBrowser'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 34 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-LocalSingleBrowser">
               </div> <!-- times-div-LocalSingleBrowser -->
             </div> <!-- times-div -->
@@ -242,16 +242,20 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
-                <span class="method-start">13344 ms</span>
+                <span class="method-start">18172 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">feature(Create account with new user)</span>
-                <span class="method-start">13673 ms</span>
+                <span class="method-name">feature(Validate Invalid credit card no)</span>
+                <span class="method-start">18539 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">48319 ms</span>
+                <span class="method-start">122822 ms</span>
               </div> <!-- configuration-class after -->
+              <div class="configuration-test after">
+                <span class="method-name">closeBrowser(local)</span>
+                <span class="method-start">122875 ms</span>
+              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
