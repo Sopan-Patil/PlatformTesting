@@ -47,10 +47,10 @@ public class PF_InvalidCC extends NewBaseClass {
 		loginPage.loginToPlatform();
 	}
 
-	@And("^Enters credit card details$")
+	@And("^Enters invalid credit card details$")
 	public void Enters_credit_card_details() throws Throwable {
 		InvalidCC InvalidCC = new InvalidCC(driver);
-		InvalidCC.orderWithInValidCreditcard();
+		InvalidCC.InValidCreditcard();
 
 	}
 }
