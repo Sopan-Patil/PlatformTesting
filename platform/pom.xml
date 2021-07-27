@@ -523,7 +523,7 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
                             <suiteXmlFiles>
-                                <suiteXmlFile>.platform/TestNGSuites/Browserstack/single.browserstack.testng.xml</suiteXmlFile>
+                                <suiteXmlFile>./TestNGSuites/Browserstack/single.browserstack.testng.xml</suiteXmlFile>
                             </suiteXmlFiles>
                         </configuration>
                     </plugin>
