@@ -6,7 +6,8 @@
 	<groupId>Platform</groupId>
 	<artifactId>Platform</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
+	<!-- <packaging>jar</packaging> -->
 
 
 
