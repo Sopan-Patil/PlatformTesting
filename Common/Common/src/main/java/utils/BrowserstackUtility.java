@@ -116,6 +116,12 @@ public class BrowserstackUtility {
 	//	String accessKey = properties.getProperty("BROWSERSTACK_ACCESS_KEY");
 		// System.out.println("BROWSERSTACK_USERNAME
 		// :"+System.getenv("BROWSERSTACK_USERNAME"));
+		
+
+	
+	  if (buildName == null) { buildName = (String) config.get("build"); }
+	 
+
 
 		String app = System.getenv("BROWSERSTACK_APP_ID");
 		if (app != null && !app.isEmpty()) {
