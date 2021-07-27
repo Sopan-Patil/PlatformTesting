@@ -115,7 +115,7 @@ public class BrowserstackUtility {
 	
 
 	
-	  if (buildName == null) { buildName = (String) config.get("build"); }
+	  if (buildName == null || buildName == "test") { buildName = (String) config.get("build"); }
 	 
 
 
