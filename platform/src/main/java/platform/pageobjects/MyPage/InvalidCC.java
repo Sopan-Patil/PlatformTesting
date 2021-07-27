@@ -87,8 +87,6 @@ public class InvalidCC {
 
 		shipmentdata = XLHandler.readexcel("CCPayment", "NewTestData.xlsx");
 
-		System.out.println(shipmentdata[0]);
-
 		CommonFunctions.waitForVisiblity(creditCardTextField, waitTime);
 		creditCardTextField.sendKeys(shipmentdata[0]);
 		log.info("entering invalid credit card no to 'credit card number' textbox");
