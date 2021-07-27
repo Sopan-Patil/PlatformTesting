@@ -6,10 +6,11 @@
 	<groupId>Platform</groupId>
 	<artifactId>Platform</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
+	<!-- <packaging>jar</packaging> -->
 
 
- 
+
 
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -17,14 +18,15 @@
 
 		<jre.level>1.8</jre.level>
 		<jdk.level>1.8</jdk.level>
+
 	</properties>
 
 	<dependencies>
-	<dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-remote-driver</artifactId>
-    <version>3.6.0</version>
-</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-remote-driver</artifactId>
+			<version>3.6.0</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 		<dependency>
 			<groupId>commons-io</groupId>
@@ -213,6 +215,13 @@
 			<version>5.0.8</version>
 		</dependency>
 
+		<!-- Extend Report 26 Jul 2021 Start -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports-cucumber4-adapter</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<!-- Extend Report 26 Jul 2021 End -->
 
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -316,156 +325,134 @@
 			<version>1.1.1</version>
 		</dependency>
 
-<!--  <dependency>
-            <groupId>org.jmockit</groupId>
-            <artifactId>jmockit</artifactId>
-            <version>1.24</version>
-            <scope>test</scope>
-        </dependency> -->
+		<!-- <dependency> <groupId>org.jmockit</groupId> <artifactId>jmockit</artifactId> 
+			<version>1.24</version> <scope>test</scope> </dependency> -->
 
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
-        </dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
 
-        <dependency>
-            <groupId>com.browserstack</groupId>
-            <artifactId>automate-client-java</artifactId>
-            <version>0.2</version>
-        </dependency>
+		<dependency>
+			<groupId>com.browserstack</groupId>
+			<artifactId>automate-client-java</artifactId>
+			<version>0.2</version>
+		</dependency>
 
-        <dependency>
-            <groupId>com.browserstack</groupId>
-            <artifactId>browserstack-local-java</artifactId>
-            <version>1.0.0</version>
-        </dependency>
+		<dependency>
+			<groupId>com.browserstack</groupId>
+			<artifactId>browserstack-local-java</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 
-        <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-            <version>1.10</version>
-        </dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.10</version>
+		</dependency>
 
-        <dependency>
-            <groupId>org.jenkins-ci.plugins</groupId>
-            <artifactId>credentials</artifactId>
-            <version>1.8</version>
-        </dependency>
+		<dependency>
+			<groupId>org.jenkins-ci.plugins</groupId>
+			<artifactId>credentials</artifactId>
+			<version>1.8</version>
+		</dependency>
 
-        <dependency>
-            <groupId>org.jenkins-ci.plugins</groupId>
-            <artifactId>junit</artifactId>
-            <version>1.10</version>
-        </dependency>
+		<dependency>
+			<groupId>org.jenkins-ci.plugins</groupId>
+			<artifactId>junit</artifactId>
+			<version>1.10</version>
+		</dependency>
 
-       <!--  <dependency>
-            <groupId>com.brsanthu</groupId>
-            <artifactId>google-analytics-java</artifactId>
-            <version>1.1.2</version>
-        </dependency> -->
+		<!-- <dependency> <groupId>com.brsanthu</groupId> <artifactId>google-analytics-java</artifactId> 
+			<version>1.1.2</version> </dependency> -->
 
 
 	</dependencies>
+
+	<!-- <parent> <groupId>org.jenkins-ci.plugins</groupId> <artifactId>plugin</artifactId> 
+		<version>1.580.1</version> </parent> -->
+
+	<!-- <artifactId>browserstack-integration</artifactId> <version>1.0.8-SNAPSHOT</version> 
+		<packaging>hpi</packaging> -->
+
+	<name>BrowserStack</name>
+	<description>This plugin allows you to integrate with BrowserStack.</description>
+	<url>https://wiki.jenkins-ci.org/display/JENKINS/BrowserStack+Plugin</url>
+
+	<developers>
+		<developer>
+			<id>support</id>
+			<name>BrowserStack Support</name>
+			<email>support@browserstack.com</email>
+		</developer>
+		<developer>
+			<id>integration</id>
+			<name>BrowserStack Integrations</name>
+			<email>integrations@browserstack.com</email>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:ssh://github.com/jenkinsci/browserstack-integration-plugin.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/jenkinsci/browserstack-integration-plugin.git</developerConnection>
+		<url>https://github.com/jenkinsci/browserstack-integration-plugin</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<!-- Adding a distribution management section here to override the now defunct 
+		mave.jenkins-ci.org. If we update the parent pom version to newer than 2.5 
+		then this section is not needed. -->
+	<distributionManagement>
+		<repository>
+			<id>maven.jenkins-ci.org</id>
+			<url>https://repo.jenkins-ci.org/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>maven.jenkins-ci.org</id>
+			<url>https://repo.jenkins-ci.org/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+
 	
-	<!-- <parent>
-        <groupId>org.jenkins-ci.plugins</groupId>
-        <artifactId>plugin</artifactId>
-        <version>1.580.1</version>
-    </parent> -->
 
-  <!--   <artifactId>browserstack-integration</artifactId>
-    <version>1.0.8-SNAPSHOT</version>
-    <packaging>hpi</packaging> -->
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://opensource.org/licenses/MIT</url>
+		</license>
+	</licenses>
 
-    <name>BrowserStack</name>
-    <description>This plugin allows you to integrate with BrowserStack.</description>
-    <url>https://wiki.jenkins-ci.org/display/JENKINS/BrowserStack+Plugin</url>
-
-    <developers>
-        <developer>
-            <id>support</id>
-            <name>BrowserStack Support</name>
-            <email>support@browserstack.com</email>
-        </developer>
-        <developer>
-            <id>integration</id>
-            <name>BrowserStack Integrations</name>
-            <email>integrations@browserstack.com</email>
-        </developer>
-    </developers>
-
-    <scm>
-        <connection>scm:git:ssh://github.com/jenkinsci/browserstack-integration-plugin.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/jenkinsci/browserstack-integration-plugin.git</developerConnection>
-        <url>https://github.com/jenkinsci/browserstack-integration-plugin</url>
-      <tag>HEAD</tag>
-    </scm>
-
-    <!-- Adding a distribution management section here to override the now defunct mave.jenkins-ci.org.
-         If we update the parent pom version to newer than 2.5 then this section is not needed. -->
-    <distributionManagement>
-        <repository>
-            <id>maven.jenkins-ci.org</id>
-            <url>https://repo.jenkins-ci.org/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>maven.jenkins-ci.org</id>
-            <url>https://repo.jenkins-ci.org/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
-
-
-  <!--   <properties>
-        Baseline Jenkins version you use to build the plugin. Users must have this version or newer to run.
-        <jenkins.version>1.580.1</jenkins.version>
-        <java.level>6</java.level>
-        <java.level.test>6</java.level.test>
-        <maven-surefire-plugin.version>2.9</maven-surefire-plugin.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-        This is the testing Tracking Id. If you want to build the project for production, please use the
-             production profile which replaces this with the production tracking id.
-        <ga.tracking.id>UA-79358556-2</ga.tracking.id>
-    </properties> -->
-
-    <licenses>
-        <license>
-            <name>MIT License</name>
-            <url>http://opensource.org/licenses/MIT</url>
-        </license>
-    </licenses>
-
-    <repositories>
-        <repository>
-            <id>repo.jenkins-ci.org</id>
-            <url>https://repo.jenkins-ci.org/public</url>
-        </repository>
-        <repository>
-            <id>maven.jenkins-ci.org</id>
-            <url>https://repo.jenkins-ci.org/public</url>
-        </repository>
-        <repository>
-            <id>sonatype-nexus-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>repo.jenkins-ci.org</id>
-            <url>https://repo.jenkins-ci.org/public</url>
-        </pluginRepository>
-        <pluginRepository>
-            <id>maven.jenkins-ci.org</id>
-            <url>https://repo.jenkins-ci.org/public</url>
-        </pluginRepository>
-        <pluginRepository>
-   <id>sonatype-nexus-snapshots</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-  </pluginRepository>
-    </pluginRepositories>
-
+	<repositories>
+		<repository>
+			<id>repo.jenkins-ci.org</id>
+			<url>https://repo.jenkins-ci.org/public</url>
+		</repository>
+		<repository>
+			<id>maven.jenkins-ci.org</id>
+			<url>https://repo.jenkins-ci.org/public</url>
+		</repository>
+		<repository>
+			<id>sonatype-nexus-snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>repo.jenkins-ci.org</id>
+			<url>https://repo.jenkins-ci.org/public</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>maven.jenkins-ci.org</id>
+			<url>https://repo.jenkins-ci.org/public</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>sonatype-nexus-snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</pluginRepository>
+	</pluginRepositories>
 
 
 	<build>
@@ -481,40 +468,27 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.7</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.18.1</version>
 				<configuration>
-					<!-- <includes> <exclude>**/*PlatformTestRunners.java</exclude> </includes> -->
+				
 					<suiteXmlFiles>
-						<!-- pass testng.xml files as argument from command line -->
-						 <suiteXmlFile>${suiteXmlFile}</suiteXmlFile> 
-						<!--<suiteXmlFile>.platform/testng.xml</suiteXmlFile> 		-->	
-						
-						
+						<!-- pass testng.xml files as argument from command  -->
+						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+						<!-- <suiteXmlFile>.platform/testng.xml</suiteXmlFile> -->
+
+
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>com.browserstack</groupId>
-				<artifactId>automate-maven-plugin</artifactId>
-				<version>1.0.0</version>
-				<!-- <version>1.0.0-SNAPSHOT</version> -->
-				<configuration>
-					<!-- <source>${jdk.source.version}</source> <target>${jdk.target.version}</target> 
-						<complianceLevel>${jdk.source.version}</complianceLevel> -->
-					<source>1.8</source>
-					<target>1.8</target>
-					<complianceLevel>1.8</complianceLevel>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>test-compile</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+			
 		</plugins>
 	</build>
+	
 
 </project>

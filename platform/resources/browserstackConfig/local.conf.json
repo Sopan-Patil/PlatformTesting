@@ -6,7 +6,8 @@
     "build": "browserstack-build-local",
     "name": "local_test",
     "browserstack.debug": true,
-    "browserstack.local": true
+    "browserstack.local": true,
+    	"browserstack.networkLogs": true
   },
 
   "environments": {
