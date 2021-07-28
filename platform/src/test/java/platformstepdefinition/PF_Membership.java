@@ -6,21 +6,23 @@ import org.openqa.selenium.WebDriver;
 import base.NewBaseClass;
 import cucumber.api.java.en.Given;
 import cucumber.api.junit.Cucumber;
+import platform.pageobjects.Authentication.LoginPage;
 import platform.pageobjects.MyPage.Membership;
 
-public class PF_Membership {
+@RunWith(Cucumber.class)
+public class PF_Membership extends NewBaseClass {
 
-	@RunWith(Cucumber.class)
-	public class PF_Login extends NewBaseClass {
+	public WebDriver driver;
 
-		public WebDriver driver;
-
-		@Given("^Login To Platform Portal (.+)$")
-		public void navigate_to_url_(String browser) throws Throwable {
-			driver = openbrowser(browser);
-			Membership membershipobj = new Membership(driver);
-			membershipobj.membershipFunctions();
-		}
+	@Given("^Login To Platform and check membership plans (.+)$")
+	public void navigate_to_url_(String browser) throws Throwable {
+		driver = openbrowser(browser);
+		LoginPage loginpage = new LoginPage(driver);
+		loginpage.clickLoginButton();
+		loginpage.loginToPlatform();
+		Membership membershipobj = new Membership(driver);
+		membershipobj.membershipPlan();
 
 	}
+
 }

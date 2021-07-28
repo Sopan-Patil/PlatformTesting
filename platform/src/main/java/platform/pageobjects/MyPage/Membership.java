@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -23,25 +24,25 @@ public class Membership {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//button[@class='button button--default button--xmedium button--member-plan aos-init aos-animate']")
+	@FindBy(xpath = "/html/body/div/div[4]/div[1]/form/button")
 	public WebElement applyPrime;
 
-	@FindBy(xpath = "//a[@class='box-link__link box-link__link-blue']")
+	@FindBy(xpath = "/html/body/div/div[4]/div[2]/ul/li[1]/a")
 	public WebElement primeBenefit1;
 
-	@FindBy(xpath = "//a[@class='box-link__link box-link__link-orange']")
+	@FindBy(xpath = "/html/body/div/div[4]/div[2]/ul/li[2]/a")
 	public WebElement primeBenefit2;
 
-	@FindBy(xpath = "//a[@class='box-link__link box-link__link-mint']")
+	@FindBy(xpath = " /html/body/div/div[4]/div[2]/ul/li[3]/a")
 	public WebElement primeBenefit3;
 
-	@FindBy(xpath = "//a[contains(text(),'8月実施分')]")
+	@FindBy(xpath = "//a[contains(text(),'8æœˆå®Ÿæ–½åˆ†')]")
 	public WebElement augustMembership;
 
-	@FindBy(xpath = "//a[contains(text(),'9月実施分')]")
+	@FindBy(xpath = "//a[contains(text(),'9æœˆå®Ÿæ–½åˆ†')]")
 	public WebElement septemberMembership;
 
-	@FindBy(xpath = "//a[contains(text(),'詳しくはこちら')]")
+	@FindBy(xpath = "//a[contains(text(),'è©³ã�—ã��ã�¯ã�“ã�¡ã‚‰')]")
 	public WebElement clickhereformoredetails;
 
 	@FindBy(xpath = "//div[@class='teaser-head teaser-head--ft']//form")
@@ -49,6 +50,15 @@ public class Membership {
 
 	@FindBy(xpath = "//button[@class='button button--default button--xmedium button--member-plan button--member-plan-last aos-init aos-animate']")
 	public WebElement applyforPrime3;
+
+	@FindBy(xpath = "//a[contains(text(),'アカウント情報')]")
+	public WebElement accountInformation;
+
+	@FindBy(xpath = "/html/body/div/div[1]/div[1]/div/div[2]/div/div/div/ul/li[2]/a")
+	public WebElement membershipStatus;
+
+	@FindBy(xpath = "//div[@class='link-learn__content']")
+	public WebElement membershipButton;
 
 	public void membershipFunctions() throws Exception {
 
@@ -108,7 +118,52 @@ public class Membership {
 				driver.navigate().back();
 			}
 
+			CommonFunctions.scrolltoElement(membershipButton);
+			if (CommonFunctions.isElementClickable(membershipButton)) {
+				membershipButton.click();
+				log.info("clicked on membership button on member status page");
+
+			}
 		}
 
 	}
+
+	public void membershipPlan() throws Exception {
+		Actions actions = new Actions(driver);
+		actions.moveToElement(accountInformation).perform();
+		log.info("Opened Submenu");
+		Thread.sleep(100);
+		membershipStatus.click();
+		log.info("Opened membership status page");
+		Thread.sleep(200);
+		// driver.navigate().back();
+
+		CommonFunctions.scrolltoElement(membershipButton);
+		CommonFunctions.isElementVisible(membershipButton);
+		membershipButton.click();
+		log.info("clicked on membership button on member status page");
+
+		CommonFunctions.scrolltoElement(applyPrime);
+		CommonFunctions.isElementVisible(applyPrime);
+		applyPrime.click();
+		log.info("clicked on membership button on member plan page");
+		driver.navigate().back();
+
+		CommonFunctions.scrolltoElement(primeBenefit1);
+		CommonFunctions.isElementVisible(primeBenefit1);
+		primeBenefit1.click();
+		log.info("clicked on prime benefit 1 ");
+
+		CommonFunctions.scrolltoElement(primeBenefit2);
+		CommonFunctions.isElementVisible(primeBenefit2);
+		primeBenefit2.click();
+		log.info("clicked on prime benefit 2 ");
+
+		CommonFunctions.scrolltoElement(primeBenefit3);
+		CommonFunctions.isElementVisible(primeBenefit3);
+		primeBenefit3.click();
+		log.info("clicked on prime benefit 3");
+
+	}
+
 }
