@@ -3,7 +3,7 @@ Feature: Validate footer links
 Scenario Outline: Validate Footer Links
 
 Given Navigate to URL and check footer links <browser>
-And check footer links after login
+#SAnd check footer links after login
 Then Close browser
 
 

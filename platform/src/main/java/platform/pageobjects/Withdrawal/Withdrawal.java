@@ -47,6 +47,7 @@ public class Withdrawal {
 			System.out.println("Withdrawal Checked");
 
 			if (CommonFunctions.isElementClickable(withdrawAccount)) {
+				withdrawAccount.click();
 				System.out.println("Account Deleted");
 			}
 		}

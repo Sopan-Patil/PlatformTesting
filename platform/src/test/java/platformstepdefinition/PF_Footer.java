@@ -35,7 +35,7 @@ public class PF_Footer extends NewBaseClass {
 
 	@Then("^Close browser(.+)$")
 	public void close_browser() throws Throwable {
-		driver.close();
+		driver.quit();
 	}
 
 	/*

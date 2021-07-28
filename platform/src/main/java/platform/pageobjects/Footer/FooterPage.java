@@ -1,5 +1,6 @@
 package platform.pageobjects.Footer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -99,93 +100,143 @@ public class FooterPage {
 	@FindBy(xpath = "//a[contains(text(),'ç‰¹å®šå•†å�–å¼•æ³•ã�«åŸºã�¥ã��è¡¨ç¤º')]")
 	public WebElement accountTax;
 
+	public void switchToPreviousTab() {
+		ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
+		driver.switchTo().window(tab.get(0));
+		// driver.close();
+	}
+
 	public void footerFunctions() throws Exception {
 
 		CommonFunctions.scrolltoElement(termsOfUseLink);
 		if (CommonFunctions.isElementClickable(termsOfUseLink)) {
 			termsOfUseLink.click();
-			System.out.println("Terms of Use Link is working");
+			log.info("Terms of Use Link is working");
+			Thread.sleep(500);
 			driver.navigate().back();
+		} else {
+			log.error("Terms of Use Link is not working");
 		}
 
 		CommonFunctions.scrolltoElement(privacyPolicyLink);
 		if (CommonFunctions.isElementClickable(privacyPolicyLink)) {
 			privacyPolicyLink.click();
-			System.out.println("Privacy Policy Link is working");
+			Thread.sleep(500);
+			log.info("Privacy Policy Link is working");
+			switchToPreviousTab();
+		} else {
+			log.error("Privacy Policy Link is not working");
 		}
 
 		CommonFunctions.scrolltoElement(specifiedCommodityTradingLawLink);
 		if (CommonFunctions.isElementClickable(specifiedCommodityTradingLawLink)) {
 			specifiedCommodityTradingLawLink.click();
-			System.out.println("specifiedCommodityTradingLawLink is working");
+			log.info("Specified Commodity Trading Law Link is working");
+			Thread.sleep(500);
 			driver.navigate().back();
+		} else {
+			log.error("Specified Commodity Trading Law Link is not working");
 		}
 
 		CommonFunctions.scrolltoElement(qnALink);
 		if (CommonFunctions.isElementClickable(qnALink)) {
 			qnALink.click();
-			System.out.println("Q and A Link working");
+			log.info("Q and A Link working");
+			Thread.sleep(500);
+			switchToPreviousTab();
+		} else {
+			log.error("Q and A Link is not working");
 		}
 
 		CommonFunctions.scrolltoElement(footerExaminationWindowLink);
 		if (CommonFunctions.isElementClickable(footerExaminationWindowLink)) {
 			footerExaminationWindowLink.click();
-			System.out.println("footerExaminationWindowLink is working");
+			log.info("footer Examination Window Link is working");
+			Thread.sleep(500);
 			driver.navigate().back();
+		} else {
+			log.error("footer Examination Window Link Link is not working");
 		}
 
 		CommonFunctions.scrolltoElement(footerScbtLink);
 		if (CommonFunctions.isElementClickable(footerScbtLink)) {
 			footerScbtLink.click();
-			System.out.println("footerScbtLink is working");
-			driver.navigate().back();
+			log.info("footer Scbt Link is working");
+			Thread.sleep(500);
+			switchToPreviousTab();
+		} else {
+			log.error("footer Scbt Link is not working");
 		}
 
 		CommonFunctions.scrolltoElement(footerCasecLink);
 		if (CommonFunctions.isElementClickable(footerCasecLink)) {
 			footerCasecLink.click();
-			System.out.println("footerCasecLink is working");
-			driver.navigate().back();
+			log.info("footer Casec Link is working");
+			Thread.sleep(500);
+			switchToPreviousTab();
+		} else {
+			log.error("footer Casec Link is not working");
 		}
 
 		CommonFunctions.scrolltoElement(footerLearningWindowLink);
 		if (CommonFunctions.isElementClickable(footerLearningWindowLink)) {
 			footerLearningWindowLink.click();
-			System.out.println("footerLearningWindowLink is working");
+			log.info("footer Learning Window Link is working");
+			Thread.sleep(500);
 			driver.navigate().back();
+		} else {
+			log.error("footer Learning Window Link is not working");
 		}
 
 		CommonFunctions.scrolltoElement(footerStagiaEikenLink);
 		if (CommonFunctions.isElementClickable(footerStagiaEikenLink)) {
 			footerStagiaEikenLink.click();
-			System.out.println("footerStagiaEikenLink is working");
+			log.info("footer Stagia Eiken Link is working");
+			Thread.sleep(500);
 			driver.navigate().back();
+		} else {
+			log.error("footer Stagia Eiken Link is not working");
 		}
 
 		CommonFunctions.scrolltoElement(informationWindowLink);
 		if (CommonFunctions.isElementClickable(informationWindowLink)) {
 			informationWindowLink.click();
-			System.out.println("informationWindowLink is working");
+			log.info("information Window Link is working");
+			Thread.sleep(500);
 			driver.navigate().back();
 
+		} else {
+			log.error("information Window Link is not working");
 		}
 
 		CommonFunctions.scrolltoElement(cramSchoolPitaLink);
 		if (CommonFunctions.isElementClickable(cramSchoolPitaLink)) {
 			cramSchoolPitaLink.click();
-			System.out.println("cramSchoolPitaLink is working");
+			log.info("cram School Pita Link is working");
+			Thread.sleep(500);
+			switchToPreviousTab();
+		} else {
+			log.error("cram School Pita Link is not working");
 		}
 
 		CommonFunctions.scrolltoElement(stagiaUniversityExamLink);
 		if (CommonFunctions.isElementClickable(stagiaUniversityExamLink)) {
 			stagiaUniversityExamLink.click();
-			System.out.println("stagiaUniversityExamLink is working");
+			log.info("stagia University Exam Link is working");
+			Thread.sleep(500);
+			switchToPreviousTab();
+		} else {
+			log.error("stagia University Exam Link is not working");
 		}
 
 		CommonFunctions.scrolltoElement(educationCostConsulatationSupportLink);
 		if (CommonFunctions.isElementClickable(educationCostConsulatationSupportLink)) {
 			educationCostConsulatationSupportLink.click();
-			System.out.println("educationCostConsulatationSupportLink is working");
+			log.info("education CostConsulatation Support Link is working");
+			Thread.sleep(500);
+			switchToPreviousTab();
+		} else {
+			log.error("education CostConsulatation Support Link is not working");
 		}
 
 	}
@@ -194,36 +245,51 @@ public class FooterPage {
 		CommonFunctions.scrolltoElement(accountSecurity);
 		if (CommonFunctions.isElementClickable(accountSecurity)) {
 			accountSecurity.click();
-			System.out.println("accountSecurity Link is working");
+			log.info("account Security Link is working");
+			Thread.sleep(500);
 			driver.navigate().back();
+		} else {
+			log.error("account Security Link is not working");
 		}
 
 		CommonFunctions.scrolltoElement(memberStatus);
 		if (CommonFunctions.isElementClickable(memberStatus)) {
 			memberStatus.click();
-			System.out.println("memberStatus Link is working");
+			log.info("Membership Status Link is working");
+			Thread.sleep(500);
 			driver.navigate().back();
+		} else {
+			log.error("Membership Status Link is not working");
 		}
 
 		CommonFunctions.scrolltoElement(servicesUsing);
 		if (CommonFunctions.isElementClickable(servicesUsing)) {
 			servicesUsing.click();
-			System.out.println("servicesUsing Link is working");
+			log.info("Services you are using Using Link is working");
+			Thread.sleep(500);
 			driver.navigate().back();
+		} else {
+			log.error("Services you are using Using Link is not working");
 		}
 
 		CommonFunctions.scrolltoElement(orderHistory);
 		if (CommonFunctions.isElementClickable(orderHistory)) {
 			orderHistory.click();
-			System.out.println("orderHistory Link is working");
+			log.info("order History Link is working");
+			Thread.sleep(500);
 			driver.navigate().back();
+		} else {
+			log.error("order History Link is not working");
 		}
 
 		CommonFunctions.scrolltoElement(logout);
 		if (CommonFunctions.isElementClickable(logout)) {
 			logout.click();
-			System.out.println("logout Link is working");
+			log.info("Logout Link is working");
+			Thread.sleep(500);
 			driver.navigate().back();
+		} else {
+			log.error("Logout Link is not working");
 		}
 
 	}
@@ -233,25 +299,37 @@ public class FooterPage {
 		CommonFunctions.scrolltoElement(accountQnA);
 		if (CommonFunctions.isElementClickable(accountQnA)) {
 			accountQnA.click();
-			System.out.println("QnA Link is working");
+			log.info("QnA Link is working");
+			Thread.sleep(500);
+		} else {
+			log.error("QnA Link is not working");
 		}
 
 		CommonFunctions.scrolltoElement(accountTerms);
 		if (CommonFunctions.isElementClickable(accountTerms)) {
 			accountTerms.click();
-			System.out.println("Terms of Use Link is working");
+			log.info("Terms of Use Link is working");
+			Thread.sleep(500);
+		} else {
+			log.error("Terms of Use Link is not working");
 		}
 
 		CommonFunctions.scrolltoElement(accountPrivacy);
 		if (CommonFunctions.isElementClickable(accountPrivacy)) {
 			accountPrivacy.click();
-			System.out.println("Privacy Policy Link is working");
+			log.info("Privacy Policy Link is working");
+			Thread.sleep(500);
+		} else {
+			log.error("Privacy Policy Link is not working");
 		}
 
 		CommonFunctions.scrolltoElement(accountTax);
 		if (CommonFunctions.isElementClickable(accountTax)) {
 			accountTax.click();
-			System.out.println("Terms of Use Link working");
+			log.info("Account Tax Link working");
+			Thread.sleep(500);
+		} else {
+			log.error("Account Tax Link is not working");
 		}
 
 	}
@@ -261,7 +339,10 @@ public class FooterPage {
 		CommonFunctions.scrolltoElement(withdraw);
 		if (CommonFunctions.isElementClickable(withdraw)) {
 			withdraw.click();
-			System.out.println("Terms of Use Link working");
+			log.info("Withdraw Link working");
+			Thread.sleep(500);
+		} else {
+			log.error("Withdraw Link is not working");
 		}
 	}
 
