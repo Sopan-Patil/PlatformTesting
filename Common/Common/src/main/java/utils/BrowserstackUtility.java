@@ -156,10 +156,11 @@ public class BrowserstackUtility {
 	public void tearDown() throws Exception {
 
 		// this.driver = driver;
-
+		//mark();
 		ObjectHelper.driver.quit();
 		if (l != null)
 			l.stop();
+		//mark();
 	}
 
 	// Method to mark test as pass / fail on BrowserStack
