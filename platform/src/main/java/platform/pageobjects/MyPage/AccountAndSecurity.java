@@ -106,6 +106,7 @@ public class AccountAndSecurity {
 	}
 
 	public void clickChangeButton() {
+		CommonFunctions.scrolltoElement(changeButton);
 		if (CommonFunctions.waitForVisiblity(changeButton, waitTime)) {
 			changeButton.click();
 		}

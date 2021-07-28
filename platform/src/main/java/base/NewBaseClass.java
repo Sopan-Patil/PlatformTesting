@@ -2,10 +2,12 @@ package base;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 
@@ -228,7 +230,6 @@ public class NewBaseClass {
 		ObjectHelper.driver.manage().window().maximize();
 	}
 
-
 	/**
 	 * 
 	 * @Author : Sopan Patil
@@ -238,10 +239,14 @@ public class NewBaseClass {
 
 	public void replaceurlChangeCard() {
 		System.out.println("Old" + ObjectHelper.driver.getCurrentUrl());
-		String newURL = ObjectHelper.driver.getCurrentUrl().replace("https://", "https://sgepuser:9tg6gxxCEaL3@");
-		System.out.println(newURL);
+		String newURL = ObjectHelper.driver.getCurrentUrl().replaceFirst("https://", "https://sgepuser:9tg6gxxCEaL3@");
+		((JavascriptExecutor) ObjectHelper.driver).executeScript("window.open()");
+		ArrayList<String> tabs = new ArrayList<String>(ObjectHelper.driver.getWindowHandles());
+		ObjectHelper.driver.switchTo().window(tabs.get(0));
+		ObjectHelper.driver.close();
+		ObjectHelper.driver.switchTo().window(tabs.get(1));
 		ObjectHelper.driver.get(newURL);
-		ObjectHelper.driver.manage().window().maximize();
+
 	}
 
 	public void closebrowser() {
