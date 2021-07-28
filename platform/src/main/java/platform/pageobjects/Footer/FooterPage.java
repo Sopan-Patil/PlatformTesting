@@ -88,16 +88,16 @@ public class FooterPage {
 	@FindBy(xpath = "//a[contains(text(),'ログアウト')]")
 	public WebElement logout;
 
-	@FindBy(xpath = "//a[contains(text(),'ã‚ˆã��ã�‚ã‚‹è³ªå•�ãƒ»ã�Šå•�å�ˆã�›')]")
+	@FindBy(xpath = "//a[contains(text(),'よくある質問・お問合せ')]")
 	public WebElement accountQnA;
 
-	@FindBy(xpath = "//a[contains(text(),'åˆ©ç”¨è¦�ç´„ãƒ»å€‹äººæƒ…å ±ã�®å�–æ‰±')]")
+	@FindBy(xpath = "//a[contains(text(),'利用規約・個人情報の取扱')]")
 	public WebElement accountTerms;
 
-	@FindBy(xpath = "//a[contains(text(),'å€‹äººæƒ…å ±ä¿�è­·æ–¹é‡�')]")
+	@FindBy(xpath = "//a[contains(text(),'個人情報保護方針')]")
 	public WebElement accountPrivacy;
 
-	@FindBy(xpath = "//a[contains(text(),'ç‰¹å®šå•†å�–å¼•æ³•ã�«åŸºã�¥ã��è¡¨ç¤º')]")
+	@FindBy(xpath = "//a[contains(text(),'特定商取引法に基づく表示')]")
 	public WebElement accountTax;
 
 	public void switchToPreviousTab() {

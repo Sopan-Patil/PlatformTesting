@@ -1,5 +1,5 @@
 Feature: Validate footer links
-@FunctionalTest 
+@FooterTopPage
 Scenario Outline: Validate Footer Links
 
 Given Navigate to URL and check footer links <browser>
