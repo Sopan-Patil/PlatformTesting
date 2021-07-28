@@ -35,28 +35,67 @@ public class AccountAndSecurity {
 	@FindBy(xpath = "//a[@class='link js-not-link']")
 	public WebElement accountInformation;
 
-	@FindBy(xpath = "//div[@class='account-security__button']/a")
+	@FindBy(xpath = "//a[contains(@class,'button button--default button--base')]")
 	public WebElement changeButton;
 
-	@FindBy(xpath = "//input[@id='cardno']")
-	public WebElement creditCardTextField;
+	@FindBy(xpath = "//input[@id='family_name']")
+	public WebElement kanjiSurNameTextField;
 
-	@FindBy(xpath = "//select[@id='expire-month']")
-	public WebElement ExpiryMonthDropdown;
+	@FindBy(xpath = "//input[@id='first-name-kana']")
+	public WebElement kanaNameTextField;
 
-	@FindBy(xpath = "//select[@id='expire-year']")
-	public WebElement ExpiryYearDropdown;
+	@FindBy(xpath = "//input[@id='last-name-kana']")
+	public WebElement kanaFirstNameTextField;
 
-	@FindBy(xpath = "//input[@id='holdername']")
-	public WebElement creditCardHolderNameTextField;
+	@FindBy(xpath = "//input[@id='last-name-kana']")
+	public WebElement kanaLastNameTextField;
 
-	@FindBy(xpath = "//input[@id='securitycode']")
-	public WebElement securitycodeTextbox;
+	@FindBy(xpath = "//input[@id='female']")
+	public WebElement genderOption;
 
-	@FindBy(xpath = "//div[@class='order-failed']/div[2]/h2/span")
-	public WebElement creditCardRegistrationFailedError;
+	@FindBy(xpath = "//span[@id='select2-birthdatebirthdate_year-container']")
+	public WebElement birthYearDropdown;
 
-	@FindBy(xpath = "//a[@id='finalizeButton']")
+	@FindBy(xpath = "//span[@id='select2-birthdatebirthdate_month-container']")
+	public WebElement birthMonthDropdown;
+
+	@FindBy(xpath = "//span[@id='select2-birthdatebirthdate_day-container']")
+	public WebElement birthDateDropdown;
+
+	@FindBy(xpath = "//input[@id='code1']")
+	public WebElement postalCode1TextField;
+
+	@FindBy(xpath = "//input[@id='code2']")
+	public WebElement postalCode2TextField;
+
+	@FindBy(xpath = "//input[@id='notice-by-mail']")
+	public WebElement receiveNotificationsByMailCheckBox;
+
+	@FindBy(xpath = "//span[@id='select2-address_prefecture-container']")
+	public WebElement AddressDropdown;
+
+	@FindBy(xpath = "//input[@id='city']")
+	public WebElement AddressCityTextField;
+
+	@FindBy(xpath = "//input[@id='town']")
+	public WebElement AddressTownTextField;
+
+	@FindBy(xpath = "//input[@id='street']")
+	public WebElement AddressStreetTextField;
+
+	@FindBy(xpath = "//input[@id='apartment']")
+	public WebElement AddressApartmentTextField;
+
+	@FindBy(xpath = "//input[@id='phone1']")
+	public WebElement phone1TextField;
+
+	@FindBy(xpath = "//input[@id='phone2']")
+	public WebElement phone2TextField;
+
+	@FindBy(xpath = "//input[@id='phone3']")
+	public WebElement phone3TextField;
+
+	@FindBy(xpath = "//button[@role='button']")
 	public WebElement saveButton;
 
 	public void clickAccountInformation() {
@@ -78,42 +117,40 @@ public class AccountAndSecurity {
 
 		shipmentdata = XLHandler.readexcel("UpdateAccountInformation", "NewTestData.xlsx");
 
-		CommonFunctions.waitForVisiblity(creditCardTextField, waitTime);
-		creditCardTextField.sendKeys(shipmentdata[0]);
-		log.info("entering invalid credit card no to 'credit card number' textbox");
+		CommonFunctions.isElementVisible(kanjiSurNameTextField);
 
-		CommonFunctions.isElementVisible(ExpiryMonthDropdown);
+		CommonFunctions.waitForVisiblity(kanjiSurNameTextField, waitTime);
 
-		CommonFunctions.waitForVisiblity(ExpiryMonthDropdown, waitTime);
+		CommonFunctions.waitForVisiblity(kanjiSurNameTextField, waitTime);
+		kanjiSurNameTextField.sendKeys(shipmentdata[0]);
+		log.info("entering Kanji Sur Name to 'kanji Sur Name' textbox");
 
-		Select ExpiryMonth = new Select(ExpiryMonthDropdown);
-		ExpiryMonth.selectByVisibleText(shipmentdata[1]);
-		log.info("clicking on 'Expiration year' Dropdown");
+		CommonFunctions.waitForVisiblity(kanaNameTextField, waitTime);
+		kanaNameTextField.sendKeys(shipmentdata[0]);
+		log.info("entering Kanji Name to 'kanji  Name' textbox");
 
-		CommonFunctions.waitForVisiblity(ExpiryYearDropdown, waitTime);
-		Select ExpiryYear = new Select(ExpiryYearDropdown);
-		ExpiryYear.selectByVisibleText(shipmentdata[2]);
-		log.info("clicking on 'Expiration year' Dropdown");
+		CommonFunctions.waitForVisiblity(kanaFirstNameTextField, waitTime);
+		kanaFirstNameTextField.sendKeys(shipmentdata[3]);
+		log.info("entering Kanji First Name to 'kanji First Name' textbox");
 
-		CommonFunctions.waitForVisiblity(creditCardHolderNameTextField, waitTime);
-		creditCardHolderNameTextField.sendKeys(shipmentdata[3]);
-		log.info("entering crdit card holder name to 'card name' textbox");
+		CommonFunctions.waitForVisiblity(kanaLastNameTextField, waitTime);
+		kanaLastNameTextField.sendKeys(shipmentdata[4]);
+		log.info("entering Kanji Last Name to 'kanji Last Name' textbox");
 
-		CommonFunctions.waitForVisiblity(securitycodeTextbox, waitTime);
-		CommonFunctions.waitForClickable(securitycodeTextbox, waitTime);
+		genderOption.click();
 
-		CommonFunctions.waitForVisiblity(securitycodeTextbox, waitTime);
-		securitycodeTextbox.sendKeys(shipmentdata[4]);
-		log.info("entering security code to 'securitycode' textbox");
+		Select BirthYear = new Select(birthYearDropdown);
+		BirthYear.selectByVisibleText(shipmentdata[2]);
+		log.info("selecting 'Birth year ' Dropdown");
 
-		if (CommonFunctions.waitForVisiblity(saveButton, waitTime)) {
-			saveButton.click();
-		}
-		CommonFunctions.isElementVisible(creditCardRegistrationFailedError);
-		String invalidCreditCarderror = creditCardRegistrationFailedError.getText();
-		CommonFunctions.assertString(invalidCreditCarderror, shipmentdata[5]);
-		log.info("The invalid credit card is failed message match with expected message");
-		driver.close();
+		Select BirthMonth = new Select(birthMonthDropdown);
+		BirthMonth.selectByVisibleText(shipmentdata[2]);
+		log.info("selecting 'Birth month ' Dropdown");
+
+		Select BirthDate = new Select(birthDateDropdown);
+		BirthDate.selectByVisibleText(shipmentdata[2]);
+		log.info("selecting 'Birth date ' Dropdown");
+
 	}
 
 }

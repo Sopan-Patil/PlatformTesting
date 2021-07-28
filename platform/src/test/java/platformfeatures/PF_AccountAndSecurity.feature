@@ -1,14 +1,12 @@
-Feature: Validate Invalid credit card no
+Feature: Validate Account information
 
-@FunctionalTest
-Scenario Outline: Validate Invalid Credit Card
-
-Given Login To Platform Portal <browser>
-Then Click on Membership Status
-Then Click on Change Card
-Then Enters invalid credit card details
-
-Examples:
-|browser|
-|chrome	|
-
+@PFAccountAndSecurity
+ Scenario:  Validate Account information
+  
+#Given Navigate to URL on <browser>
+Given Login To Platform
+Then Click on Account and Security
+    
+#Examples:
+#|browser|
+#|chrome	|
