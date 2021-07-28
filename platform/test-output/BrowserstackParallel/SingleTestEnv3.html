@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/0/1</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jul 13 19:17:13 IST 2021</td>
+<td>Started on:</td><td>Wed Jul 28 12:33:44 IST 2021</td>
 </tr>
-<tr><td>Total time:</td><td>193 seconds (193957 ms)</td>
+<tr><td>Total time:</td><td>242 seconds (242885 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,12 +76,12 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='platformrunner.Runner.setUpBrowser()'><b>setUpBrowser</b><br>Test class: platformrunner.Runner<br>Parameters: browserstack, null, parallel.conf.json, env3</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: java.net.ConnectException: Connection refused
+<td><div><pre>org.openqa.selenium.WebDriverException: An unknown error has occurred
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;192.168.1.5&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;11.11.0.40&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, browserName: Safari, browserVersion: 12.1.2, javascriptEnabled: true, platform: MAC, platformName: MAC, safari:automaticInspection: false, safari:automaticProfiling: false, safari:diagnose: false, setWindowRect: true, strictFileInteractability: false, webdriver.remote.sessionid: 5d6f49c84ae9ca682265481dc3b..., webkit:WebRTC: {DisableICECandidateFiltering: false, DisableInsecureMediaCapture: false}}
-Session ID: 5d6f49c84ae9ca682265481dc3bdeeb6b92e2273
+Capabilities {acceptInsecureCerts: false, browserName: Safari, browserVersion: 12.1.2, javascriptEnabled: true, platform: MAC, platformName: MAC, safari:automaticInspection: false, safari:automaticProfiling: false, safari:diagnose: false, setWindowRect: true, strictFileInteractability: false, webdriver.remote.sessionid: 33883df614e61a3282e45c807a1..., webkit:WebRTC: {DisableICECandidateFiltering: false, DisableInsecureMediaCapture: false}}
+Session ID: 33883df614e61a3282e45c807a1b5500f5ef6d04
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -89,18 +89,18 @@ Session ID: 5d6f49c84ae9ca682265481dc3bdeeb6b92e2273
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:643)
 	at org.openqa.selenium.remote.RemoteWebDriver.getCurrentUrl(RemoteWebDriver.java:320)
-	at base.NewBaseClass.replaceurl(NewBaseClass.java:180)
-	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:69)
-	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:118)
-	at base.NewBaseClass.openBrowser(NewBaseClass.java:154)
-	at platformrunner.Runner.setUpBrowser(Runner.java:48)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace691200351", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace691200351'><pre>org.openqa.selenium.WebDriverException: java.net.ConnectException: Connection refused
+	at base.NewBaseClass.replaceurl(NewBaseClass.java:224)
+	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:62)
+	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:161)
+	at base.NewBaseClass.openBrowser(NewBaseClass.java:198)
+	at platformrunner.Runner.setUpBrowser(Runner.java:46)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1037732398", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1037732398'><pre>org.openqa.selenium.WebDriverException: An unknown error has occurred
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;192.168.1.5&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;11.11.0.40&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, browserName: Safari, browserVersion: 12.1.2, javascriptEnabled: true, platform: MAC, platformName: MAC, safari:automaticInspection: false, safari:automaticProfiling: false, safari:diagnose: false, setWindowRect: true, strictFileInteractability: false, webdriver.remote.sessionid: 5d6f49c84ae9ca682265481dc3b..., webkit:WebRTC: {DisableICECandidateFiltering: false, DisableInsecureMediaCapture: false}}
-Session ID: 5d6f49c84ae9ca682265481dc3bdeeb6b92e2273
+Capabilities {acceptInsecureCerts: false, browserName: Safari, browserVersion: 12.1.2, javascriptEnabled: true, platform: MAC, platformName: MAC, safari:automaticInspection: false, safari:automaticProfiling: false, safari:diagnose: false, setWindowRect: true, strictFileInteractability: false, webdriver.remote.sessionid: 33883df614e61a3282e45c807a1..., webkit:WebRTC: {DisableICECandidateFiltering: false, DisableInsecureMediaCapture: false}}
+Session ID: 33883df614e61a3282e45c807a1b5500f5ef6d04
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -113,11 +113,11 @@ Session ID: 5d6f49c84ae9ca682265481dc3bdeeb6b92e2273
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:643)
 	at org.openqa.selenium.remote.RemoteWebDriver.getCurrentUrl(RemoteWebDriver.java:320)
-	at base.NewBaseClass.replaceurl(NewBaseClass.java:180)
-	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:69)
-	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:118)
-	at base.NewBaseClass.openBrowser(NewBaseClass.java:154)
-	at platformrunner.Runner.setUpBrowser(Runner.java:48)
+	at base.NewBaseClass.replaceurl(NewBaseClass.java:224)
+	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:62)
+	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:161)
+	at base.NewBaseClass.openBrowser(NewBaseClass.java:198)
+	at platformrunner.Runner.setUpBrowser(Runner.java:46)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -143,8 +143,8 @@ Session ID: 5d6f49c84ae9ca682265481dc3bdeeb6b92e2273
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>193</td>
-<td>platformrunner.Runner@550a1967</td></tr>
+<td>242</td>
+<td>platformrunner.Runner@54a67a45</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
@@ -157,7 +157,7 @@ Session ID: 5d6f49c84ae9ca682265481dc3bdeeb6b92e2273
 <td title='platformrunner.Runner.closeBrowser()'><b>closeBrowser</b><br>Test class: platformrunner.Runner</td>
 <td></td>
 <td>0</td>
-<td>platformrunner.Runner@550a1967</td></tr>
+<td>platformrunner.Runner@54a67a45</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
@@ -168,12 +168,12 @@ Session ID: 5d6f49c84ae9ca682265481dc3bdeeb6b92e2273
 </tr>
 <tr>
 <td title='platformrunner.Runner.feature()'><b>feature</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Feature</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: java.net.ConnectException: Connection refused
+<td><div><pre>org.openqa.selenium.WebDriverException: An unknown error has occurred
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;192.168.1.5&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;11.11.0.40&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, browserName: Safari, browserVersion: 12.1.2, javascriptEnabled: true, platform: MAC, platformName: MAC, safari:automaticInspection: false, safari:automaticProfiling: false, safari:diagnose: false, setWindowRect: true, strictFileInteractability: false, webdriver.remote.sessionid: 5d6f49c84ae9ca682265481dc3b..., webkit:WebRTC: {DisableICECandidateFiltering: false, DisableInsecureMediaCapture: false}}
-Session ID: 5d6f49c84ae9ca682265481dc3bdeeb6b92e2273
+Capabilities {acceptInsecureCerts: false, browserName: Safari, browserVersion: 12.1.2, javascriptEnabled: true, platform: MAC, platformName: MAC, safari:automaticInspection: false, safari:automaticProfiling: false, safari:diagnose: false, setWindowRect: true, strictFileInteractability: false, webdriver.remote.sessionid: 33883df614e61a3282e45c807a1..., webkit:WebRTC: {DisableICECandidateFiltering: false, DisableInsecureMediaCapture: false}}
+Session ID: 33883df614e61a3282e45c807a1b5500f5ef6d04
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -181,18 +181,18 @@ Session ID: 5d6f49c84ae9ca682265481dc3bdeeb6b92e2273
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:643)
 	at org.openqa.selenium.remote.RemoteWebDriver.getCurrentUrl(RemoteWebDriver.java:320)
-	at base.NewBaseClass.replaceurl(NewBaseClass.java:180)
-	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:69)
-	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:118)
-	at base.NewBaseClass.openBrowser(NewBaseClass.java:154)
-	at platformrunner.Runner.setUpBrowser(Runner.java:48)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace181281800", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace181281800'><pre>org.openqa.selenium.WebDriverException: java.net.ConnectException: Connection refused
+	at base.NewBaseClass.replaceurl(NewBaseClass.java:224)
+	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:62)
+	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:161)
+	at base.NewBaseClass.openBrowser(NewBaseClass.java:198)
+	at platformrunner.Runner.setUpBrowser(Runner.java:46)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace399685190", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace399685190'><pre>org.openqa.selenium.WebDriverException: An unknown error has occurred
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;192.168.1.5&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;11.11.0.40&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, browserName: Safari, browserVersion: 12.1.2, javascriptEnabled: true, platform: MAC, platformName: MAC, safari:automaticInspection: false, safari:automaticProfiling: false, safari:diagnose: false, setWindowRect: true, strictFileInteractability: false, webdriver.remote.sessionid: 5d6f49c84ae9ca682265481dc3b..., webkit:WebRTC: {DisableICECandidateFiltering: false, DisableInsecureMediaCapture: false}}
-Session ID: 5d6f49c84ae9ca682265481dc3bdeeb6b92e2273
+Capabilities {acceptInsecureCerts: false, browserName: Safari, browserVersion: 12.1.2, javascriptEnabled: true, platform: MAC, platformName: MAC, safari:automaticInspection: false, safari:automaticProfiling: false, safari:diagnose: false, setWindowRect: true, strictFileInteractability: false, webdriver.remote.sessionid: 33883df614e61a3282e45c807a1..., webkit:WebRTC: {DisableICECandidateFiltering: false, DisableInsecureMediaCapture: false}}
+Session ID: 33883df614e61a3282e45c807a1b5500f5ef6d04
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -205,11 +205,11 @@ Session ID: 5d6f49c84ae9ca682265481dc3bdeeb6b92e2273
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:643)
 	at org.openqa.selenium.remote.RemoteWebDriver.getCurrentUrl(RemoteWebDriver.java:320)
-	at base.NewBaseClass.replaceurl(NewBaseClass.java:180)
-	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:69)
-	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:118)
-	at base.NewBaseClass.openBrowser(NewBaseClass.java:154)
-	at platformrunner.Runner.setUpBrowser(Runner.java:48)
+	at base.NewBaseClass.replaceurl(NewBaseClass.java:224)
+	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:62)
+	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:161)
+	at base.NewBaseClass.openBrowser(NewBaseClass.java:198)
+	at platformrunner.Runner.setUpBrowser(Runner.java:46)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -236,7 +236,7 @@ Session ID: 5d6f49c84ae9ca682265481dc3bdeeb6b92e2273
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>platformrunner.Runner@550a1967</td></tr>
+<td>platformrunner.Runner@54a67a45</td></tr>
 </table><p>
 </body>
 </html>

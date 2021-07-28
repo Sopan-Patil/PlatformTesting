@@ -48,6 +48,9 @@ public class BrowserstackUtility {
 	public Properties properties;
 	private static Logger log = LogManager.getLogger(BrowserstackUtility.class.getName());
 
+	String username = null;// System.getenv("BROWSERSTACK_USERNAME");
+	String accessKey = null;// System.getenv("BROWSERSTACK_ACCESS_KEY");
+
 	public void loadPropertiesFile() throws IOException {
 		properties = new Properties();
 		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\resources\\data.properties");
@@ -56,7 +59,7 @@ public class BrowserstackUtility {
 
 	public WebDriver initializaBrowserstackDriver(@Optional("local.conf.json") String config_file,
 			@Optional("chrome") String environment) throws Exception {
-		loadPropertiesFile();
+		// loadPropertiesFile();
 
 		/**
 		 * @Author : Chetan Sonparote
@@ -64,8 +67,8 @@ public class BrowserstackUtility {
 		 * @Description: Browserstack jenkins parameters stored in this var
 		 */
 
-		String username = System.getenv("BROWSERSTACK_USERNAME");
-		String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
+		// String username = System.getenv("BROWSERSTACK_USERNAME");
+		// String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
 		String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
 		String browserstackLocal = System.getenv("BROWSERSTACK_LOCAL");
 		String browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
@@ -101,13 +104,15 @@ public class BrowserstackUtility {
 		 * @Description: Added user name and password from env properties for jenkins
 		 */
 
-		if (username == null) {
-			username = properties.getProperty("BROWSERSTACK_USERNAME");
-		}
+		/*
+		 * if (username == null) { username =
+		 * properties.getProperty("BROWSERSTACK_USERNAME"); }
+		 * 
+		 * if (accessKey == null) { accessKey =
+		 * properties.getProperty("BROWSERSTACK_ACCESS_KEY"); }
+		 */
 
-		if (accessKey == null) {
-			accessKey = properties.getProperty("BROWSERSTACK_ACCESS_KEY");
-		}
+		getUserCredentials();
 
 		if (buildName == null || buildName == "test") {
 			buildName = (String) config.get("build");
@@ -138,28 +143,34 @@ public class BrowserstackUtility {
 				// + "/wd/hub"),
 				new URL("https://" + username + ":" + accessKey + "@hub-cloud.browserstack.com/wd/hub"), capabilities);
 
-		SessionId session = ((RemoteWebDriver) driver).getSessionId();
+		// SessionId session = ((RemoteWebDriver) driver).getSessionId();
 
-		mark(session, username, accessKey);
+		// mark(/* session, */ username, accessKey);
 
 		return driver;
 
 	}
 
-	public static String browserName;
+	// public static String browserName;
 
 	public void tearDown() throws Exception {
-		
+
 		//this.driver = driver;
+		//mark();
 		ObjectHelper.driver.quit();
 		if (l != null)
 			l.stop();
+		//mark();
 	}
 
 	// Method to mark test as pass / fail on BrowserStack
 
-	public void mark(SessionId session, String username, String accessKey)
+	public void mark(
+	/* SessionId session, */ /* String username, String accessKey */)
 			throws URISyntaxException, UnsupportedEncodingException, IOException {
+		getUserCredentials();
+		SessionId session = ((RemoteWebDriver) driver).getSessionId();
+
 		URI uri = new URI("https://" + username + ":" + accessKey + "@api.browserstack.com/automate/sessions/" + session
 				+ ".json");
 		HttpPut putRequest = new HttpPut(uri);
@@ -167,16 +178,47 @@ public class BrowserstackUtility {
 		// System.out.println("getResult():"+getResult());
 
 		ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-		nameValuePairs.add((new BasicNameValuePair("status", "")));//get test status from assertion status here
+		nameValuePairs.add((new BasicNameValuePair("status", "pass")));// get test status from assertion status here
 		// nameValuePairs.add((new BasicNameValuePair("status", result)));
-		 nameValuePairs.add((new BasicNameValuePair("reason", "")));//get failure reason here
+		nameValuePairs.add((new BasicNameValuePair("reason", "")));// get failure reason here
 		putRequest.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
 		HttpClientBuilder.create().build().execute(putRequest);
 	}
 
-	
+	/**
+	 * @throws IOException
+	 * @Author : Chetan Sonparote
+	 * @Date : 28 Jul 2021
+	 * @Description: Getting user credentials
+	 */
+	void getUserCredentials() throws IOException {
+		loadPropertiesFile();
+		username = System.getenv("BROWSERSTACK_USERNAME");
+		
+		if (username == null) {
+			username = properties.getProperty("BROWSERSTACK_USERNAME");
+		}
 
-	
+		accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
+		if (accessKey == null) {
+			accessKey = properties.getProperty("BROWSERSTACK_ACCESS_KEY");
+		}
+
+	}
+
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 28 Jul 2021
+	 * @Description: Getting test results from listeners
+	 */
+	/*
+	 * String testResult = null;
+	 * 
+	 * public String getTestResult() { return testResult; }
+	 * 
+	 * public void setTestResult(String testResult) { this.testResult = testResult;
+	 * }
+	 */
 
 }

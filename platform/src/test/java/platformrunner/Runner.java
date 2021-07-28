@@ -10,6 +10,7 @@ import com.github.mkolisnyk.cucumber.runner.ExtendedCucumberOptions;
 import base.NewBaseClass;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
+import utils.ObjectHelper;
 
 /**
  * @Author : Chetan Sonparote
@@ -27,6 +28,8 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 		glue = { "platformstepdefinition" },
 
 		tags = { "~@FeatureTest", "~@CreateAccountTest", "~@Smoke", "@PFInvalidCC", "~@PFAccountAndSecurity" },
+
+
 
 		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
@@ -49,13 +52,19 @@ public class Runner extends AbstractTestNGCucumberTests {
 
 	// @AfterTest
 	@org.testng.annotations.Parameters(value = { "mode" })
-	public void closeBrowser(String mode) {
-		newBaseClass = new NewBaseClass();
-		if (mode.equalsIgnoreCase("local")) {
-			newBaseClass.closebrowser();
-		} else if (mode.equalsIgnoreCase("browserstack")) {
-			newBaseClass.closeBrowserstack();
-		}
+	public void closeBrowser(String mode) throws Exception {
+
+		ObjectHelper.driver.quit();
+		/*
+		 * newBaseClass = new NewBaseClass(); if (mode.equalsIgnoreCase("local")) {
+		 * //newBaseClass.closebrowser(); } else if
+		 * (mode.equalsIgnoreCase("browserstack")) {
+		 * 
+		 * BrowserstackUtility browserstackUtility = new BrowserstackUtility(); //
+		 * browserstackUtility.tearDown(); // newBaseClass.closeBrowserstack();
+		 * 
+		 * }
+		 */
 	}
 
 }

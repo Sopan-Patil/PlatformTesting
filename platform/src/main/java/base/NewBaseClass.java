@@ -245,6 +245,7 @@ public class NewBaseClass {
 		ObjectHelper.driver.switchTo().window(tabs.get(0));
 		ObjectHelper.driver.close();
 		ObjectHelper.driver.switchTo().window(tabs.get(1));
+		System.out.println(newURL);
 		ObjectHelper.driver.get(newURL);
 
 	}
@@ -259,23 +260,21 @@ public class NewBaseClass {
 	 * @Date : 7 Jul 2021
 	 * @Description: Added close browser method for browserstack
 	 */
-	public void checkBrowserOpen() {
-
-		/*
-		 * boolean open = false;
-		 * 
-		 * if (ObjectHelper.driver.getTitle() != null) { open = true; } else if
-		 * (ObjectHelper.driver.getTitle().isEmpty()) { open = false; }
-		 * 
-		 * return open;
-		 */
-		try {
-			ObjectHelper.driver.getTitle();
-			log.info("Browser Window is still exist");
-		} catch (Exception e) {
-			log.error("Brower window is closed");
-		}
-	}
+	/*
+	 * public void checkBrowserOpen() {
+	 * 
+	 * 
+	 * boolean open = false;
+	 * 
+	 * if (ObjectHelper.driver.getTitle() != null) { open = true; } else if
+	 * (ObjectHelper.driver.getTitle().isEmpty()) { open = false; }
+	 * 
+	 * return open;
+	 * 
+	 * try { ObjectHelper.driver.getTitle();
+	 * log.info("Browser Window is still exist"); } catch (Exception e) {
+	 * log.error("Brower window is closed"); } }
+	 */
 
 	/**
 	 * @Author : Chetan Sonparote
