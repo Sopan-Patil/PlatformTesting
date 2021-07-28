@@ -102,6 +102,8 @@ public class FooterPage {
 
 	public void switchToPreviousTab() {
 		ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
+		driver.switchTo().window(tab.get(1));
+		driver.close();
 		driver.switchTo().window(tab.get(0));
 		// driver.close();
 	}
@@ -112,7 +114,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(termsOfUseLink)) {
 			termsOfUseLink.click();
 			log.info("Terms of Use Link is working");
-			Thread.sleep(500);
+			Thread.sleep(3000);
 			driver.navigate().back();
 		} else {
 			log.error("Terms of Use Link is not working");
@@ -121,7 +123,7 @@ public class FooterPage {
 		CommonFunctions.scrolltoElement(privacyPolicyLink);
 		if (CommonFunctions.isElementClickable(privacyPolicyLink)) {
 			privacyPolicyLink.click();
-			Thread.sleep(500);
+			Thread.sleep(5000);
 			log.info("Privacy Policy Link is working");
 			switchToPreviousTab();
 		} else {
@@ -132,7 +134,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(specifiedCommodityTradingLawLink)) {
 			specifiedCommodityTradingLawLink.click();
 			log.info("Specified Commodity Trading Law Link is working");
-			Thread.sleep(500);
+			Thread.sleep(3000);
 			driver.navigate().back();
 		} else {
 			log.error("Specified Commodity Trading Law Link is not working");
@@ -142,7 +144,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(qnALink)) {
 			qnALink.click();
 			log.info("Q and A Link working");
-			Thread.sleep(500);
+			Thread.sleep(5000);
 			switchToPreviousTab();
 		} else {
 			log.error("Q and A Link is not working");
@@ -152,7 +154,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(footerExaminationWindowLink)) {
 			footerExaminationWindowLink.click();
 			log.info("footer Examination Window Link is working");
-			Thread.sleep(500);
+			Thread.sleep(3000);
 			driver.navigate().back();
 		} else {
 			log.error("footer Examination Window Link Link is not working");
@@ -162,7 +164,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(footerScbtLink)) {
 			footerScbtLink.click();
 			log.info("footer Scbt Link is working");
-			Thread.sleep(500);
+			Thread.sleep(5000);
 			switchToPreviousTab();
 		} else {
 			log.error("footer Scbt Link is not working");
@@ -172,7 +174,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(footerCasecLink)) {
 			footerCasecLink.click();
 			log.info("footer Casec Link is working");
-			Thread.sleep(500);
+			Thread.sleep(5000);
 			switchToPreviousTab();
 		} else {
 			log.error("footer Casec Link is not working");
@@ -182,7 +184,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(footerLearningWindowLink)) {
 			footerLearningWindowLink.click();
 			log.info("footer Learning Window Link is working");
-			Thread.sleep(500);
+			Thread.sleep(3000);
 			driver.navigate().back();
 		} else {
 			log.error("footer Learning Window Link is not working");
@@ -192,7 +194,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(footerStagiaEikenLink)) {
 			footerStagiaEikenLink.click();
 			log.info("footer Stagia Eiken Link is working");
-			Thread.sleep(500);
+			Thread.sleep(3000);
 			driver.navigate().back();
 		} else {
 			log.error("footer Stagia Eiken Link is not working");
@@ -202,7 +204,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(informationWindowLink)) {
 			informationWindowLink.click();
 			log.info("information Window Link is working");
-			Thread.sleep(500);
+			Thread.sleep(3000);
 			driver.navigate().back();
 
 		} else {
@@ -213,7 +215,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(cramSchoolPitaLink)) {
 			cramSchoolPitaLink.click();
 			log.info("cram School Pita Link is working");
-			Thread.sleep(500);
+			Thread.sleep(5000);
 			switchToPreviousTab();
 		} else {
 			log.error("cram School Pita Link is not working");
@@ -223,7 +225,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(stagiaUniversityExamLink)) {
 			stagiaUniversityExamLink.click();
 			log.info("stagia University Exam Link is working");
-			Thread.sleep(500);
+			Thread.sleep(5000);
 			switchToPreviousTab();
 		} else {
 			log.error("stagia University Exam Link is not working");
@@ -233,7 +235,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(educationCostConsulatationSupportLink)) {
 			educationCostConsulatationSupportLink.click();
 			log.info("education CostConsulatation Support Link is working");
-			Thread.sleep(500);
+			Thread.sleep(5000);
 			switchToPreviousTab();
 		} else {
 			log.error("education CostConsulatation Support Link is not working");
@@ -246,7 +248,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(accountSecurity)) {
 			accountSecurity.click();
 			log.info("account Security Link is working");
-			Thread.sleep(500);
+			Thread.sleep(3000);
 			driver.navigate().back();
 		} else {
 			log.error("account Security Link is not working");
@@ -256,7 +258,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(memberStatus)) {
 			memberStatus.click();
 			log.info("Membership Status Link is working");
-			Thread.sleep(500);
+			Thread.sleep(3000);
 			driver.navigate().back();
 		} else {
 			log.error("Membership Status Link is not working");
@@ -266,7 +268,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(servicesUsing)) {
 			servicesUsing.click();
 			log.info("Services you are using Using Link is working");
-			Thread.sleep(500);
+			Thread.sleep(3000);
 			driver.navigate().back();
 		} else {
 			log.error("Services you are using Using Link is not working");
@@ -276,7 +278,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(orderHistory)) {
 			orderHistory.click();
 			log.info("order History Link is working");
-			Thread.sleep(500);
+			Thread.sleep(3000);
 			driver.navigate().back();
 		} else {
 			log.error("order History Link is not working");
@@ -286,7 +288,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(logout)) {
 			logout.click();
 			log.info("Logout Link is working");
-			Thread.sleep(500);
+			Thread.sleep(3000);
 			driver.navigate().back();
 		} else {
 			log.error("Logout Link is not working");
@@ -300,7 +302,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(accountQnA)) {
 			accountQnA.click();
 			log.info("QnA Link is working");
-			Thread.sleep(500);
+			Thread.sleep(3000);
 		} else {
 			log.error("QnA Link is not working");
 		}
@@ -309,7 +311,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(accountTerms)) {
 			accountTerms.click();
 			log.info("Terms of Use Link is working");
-			Thread.sleep(500);
+			Thread.sleep(3000);
 		} else {
 			log.error("Terms of Use Link is not working");
 		}
@@ -318,7 +320,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(accountPrivacy)) {
 			accountPrivacy.click();
 			log.info("Privacy Policy Link is working");
-			Thread.sleep(500);
+			Thread.sleep(3000);
 		} else {
 			log.error("Privacy Policy Link is not working");
 		}
@@ -327,7 +329,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(accountTax)) {
 			accountTax.click();
 			log.info("Account Tax Link working");
-			Thread.sleep(500);
+			Thread.sleep(3000);
 		} else {
 			log.error("Account Tax Link is not working");
 		}
@@ -340,7 +342,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(withdraw)) {
 			withdraw.click();
 			log.info("Withdraw Link working");
-			Thread.sleep(500);
+			Thread.sleep(3000);
 		} else {
 			log.error("Withdraw Link is not working");
 		}
