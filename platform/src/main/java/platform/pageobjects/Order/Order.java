@@ -176,6 +176,44 @@ public class Order {
 	@FindBy(xpath = "//div[@class='box-order-history']/div[1]/div[1]//div[1]")
 	public WebElement orderHistoryOrderDateLabel;
 
+	// credit card thank you page
+
+	@FindBy(xpath = "//div[@class='box-head']//h3")
+	public WebElement thankYouForYourApplicationCreditCardLabel;
+
+	@FindBy(xpath = "//div[@class='box-body__item mb-3']//strong//span")
+	public WebElement orderNumberCreditCardLabel;
+
+	@FindBy(xpath = "//a[@class='button button--default button--uplarge']//span")
+	public WebElement StartNowButton;
+
+	@FindBy(xpath = "//a[contains(text(),'よくある質問・お問合せ')]")
+	public WebElement FAQLink;
+
+	@FindBy(xpath = "//img[@alt='Stagia Support Center Help Center Home Page']")
+	public WebElement FAQPageLogo;
+
+	@FindBy(xpath = "//a[contains(text(),'利用規約・個人情報の取扱')]")
+	public WebElement termsOfUseLink;
+
+	@FindBy(xpath = "//h3[contains(text(),'「スタギア」利用規約')]")
+	public WebElement STAGIATermsofServiceLabel;
+
+	@FindBy(xpath = "//a[contains(text(),'個人情報保護方針')]")
+	public WebElement privacyPolicyLink;
+
+	@FindBy(xpath = "//h2[@class='firstChild']//img[@alt='privacy policy']")
+	public WebElement privacyPolicyLinkPageLabel;
+
+	@FindBy(xpath = "//a[contains(text(),'特定商取引法に基づく表示')]")
+	public WebElement commercialTransactionsLawLink;
+
+	@FindBy(xpath = "//h3[contains(text(),'「特定商取引に関する法律」に基づく表示')]")
+	public WebElement commercialTransactionsPageLabel;
+
+	@FindBy(xpath = "//p[@class='copy-right']")
+	public WebElement copyRightLabel;
+
 	// not used
 	@FindBy(xpath = "//button[@type='submit']")
 	public WebElement SubmitButton;
@@ -214,14 +252,161 @@ public class Order {
 		step3ConfirmOrderButton.click();
 		log.info("Step 3 tab :- click to 'Confirm the order' button");
 
-		CommonFunctions.isElementVisible(step4ThankYouForYourPurchaseLabel);
+		// call thank you method
+
+		String[] str_Array = methodForCreditCardThankYouPage();
+		System.out.println("Array returned from method:" + Arrays.toString(str_Array));
+
+		String orderNumberLabelSTR = str_Array[0].toString();
+		log.info("Order number from thank you page,now can use to next method:- " + orderNumberLabelSTR);
+
+		// open top page on next tab
+		Actions newTab = new Actions(driver);
+		newTab.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).click(FAQLink).keyUp(Keys.CONTROL).keyUp(Keys.SHIFT).build()
+				.perform();
+		log.info("Step 4 tab :- click on FAQ and it open in new browser tab");
+		Thread.sleep(2000);
+		newTab.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).click(termsOfUseLink).keyUp(Keys.CONTROL).keyUp(Keys.SHIFT)
+				.build().perform();
+		log.info("Step 4 tab :- click on terms Of Use Link and it open in new browser tab");
+		Thread.sleep(2000);
+		newTab.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).click(privacyPolicyLink).keyUp(Keys.CONTROL).keyUp(Keys.SHIFT)
+				.build().perform();
+		log.info("Step 4 tab :- click on privery policy Link and it open in new browser tab");
+		Thread.sleep(2000);
+		newTab.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).click(commercialTransactionsLawLink).keyUp(Keys.CONTROL)
+				.keyUp(Keys.SHIFT).build().perform();
+		log.info("Step 4 tab :- click on commercial transaction law Link and it open in new browser tab");
+
+		// handle windows change
+		String base1 = driver.getWindowHandle();
+		Set<String> set = driver.getWindowHandles();
+
+		set.remove(base1);
+		assert set.size() == 4;
+		driver.switchTo().window((String) set.toArray()[0]);
+		log.info("Step 4 tab :- switched to commercial Transactions page");
+		Thread.sleep(1000);
+		CommonFunctions.waitForVisiblity(commercialTransactionsPageLabel, waitTime);
+		log.info("commercial Transactions text visible on commercial Transactions page");
+		// close the window and switch back to the base tab
+		driver.close();
+
+		driver.switchTo().window((String) set.toArray()[1]);
+		log.info("Step 4 tab :- switched to privacy Policy page");
+		Thread.sleep(1000);
+		CommonFunctions.waitForVisiblity(privacyPolicyLinkPageLabel, waitTime);
+		log.info("privacy Policy text visible on privacy Policy Page");
+		// close the window and switch back to the base tab
+		driver.close();
+
+		driver.switchTo().window((String) set.toArray()[2]);
+		log.info("Step 4 tab :- switched to Terms of Service page");
+		Thread.sleep(1000);
+		CommonFunctions.waitForVisiblity(STAGIATermsofServiceLabel, waitTime);
+		log.info("STAGIA Terms of Service visible on FAQ page");
+		// close the window and switch back to the base tab
+		driver.close();
+
+		driver.switchTo().window((String) set.toArray()[3]);
+		log.info("Step 4 tab :- switched to FAQ page");
+		Thread.sleep(1000);
+		CommonFunctions.waitForVisiblity(FAQPageLogo, waitTime);
+		log.info("FAQ logo visible on FAQ page");
+		// close the window and switch back to the base tab
+		driver.close();
+
+		driver.switchTo().window(base1);
+		log.info("Step 4 tab :- switched to thank you page again");
+
+		Thread.sleep(2000);
+		CommonFunctions.waitForVisiblity(checkOrderHistoryLink, waitTime);
+		checkOrderHistoryLink.click();
+
+		methodForCreditCardOrderHistoryPage(orderNumberLabelSTR);
+
 		log.info("Step 4 tab :- order complete");
 
-		/*
-		 * if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
-		 * CommonFunctions.clickUsingJavaExecutor(SubmitButton); }
-		 */
+	}
 
+	public String[] methodForCreditCardThankYouPage() throws Exception {
+
+		// thank you page
+		CommonFunctions.waitForVisiblity(thankYouForYourApplicationCreditCardLabel, waitTime);
+		String thankYouForYourApplicationLabelSTR = thankYouForYourApplicationCreditCardLabel.getText();
+		String expectedThankYouForYourApplicationLabelSTR = "ご購入ありがとうございます。";
+		log.info("Step 4 tab :- thank You For Your Application text visible:- " + thankYouForYourApplicationLabelSTR);
+		CommonFunctions.assertString(thankYouForYourApplicationLabelSTR, expectedThankYouForYourApplicationLabelSTR);
+
+		CommonFunctions.waitForVisiblity(orderNumberCreditCardLabel, waitTime);
+		String orderNumberCreditCardLabelSTR = orderNumberCreditCardLabel.getText();
+		log.info("Step 4 tab :- Order number text visible:- " + orderNumberCreditCardLabelSTR);
+
+		CommonFunctions.waitForVisiblity(checkOrderHistoryLink, waitTime);
+		log.info("Step 4 tab :- order history link visible");
+
+		CommonFunctions.waitForVisiblity(StartNowButton, waitTime);
+		String startNowButtonSTR = StartNowButton.getText();
+		String expectedstartNowButtonSTR = "今すぐはじめる";
+		log.info("Step 4 tab :- start now button visible:- " + startNowButtonSTR);
+		CommonFunctions.assertString(expectedstartNowButtonSTR, startNowButtonSTR);
+
+		CommonFunctions.waitForVisiblity(FAQLink, waitTime);
+		log.info("Step 4 tab :- Frequently Asked Questions / Inquiries link visible");
+
+		CommonFunctions.waitForVisiblity(termsOfUseLink, waitTime);
+		log.info("Step 4 tab :- Terms of use ・ Handling of personal information link visible");
+
+		CommonFunctions.waitForVisiblity(privacyPolicyLink, waitTime);
+		log.info("Step 4 tab :- privacy policy link visible");
+
+		CommonFunctions.waitForVisiblity(commercialTransactionsLawLink, waitTime);
+		log.info("Step 4 tab :- Display based on the Specified Commercial Transactions Law link visible");
+
+		// define string array
+		String[] ret_Array = { orderNumberCreditCardLabelSTR };
+		// return string array
+		return ret_Array;
+	}
+
+	public void methodForCreditCardOrderHistoryPage(String orderNumberLabelSTR) throws Exception {
+
+		String expectedOrderNumberLabelSTR = orderNumberLabelSTR;
+
+		log.info("Store Order Number from methodForCreditCardThankYouPage:- " + expectedOrderNumberLabelSTR);
+
+		CommonFunctions.waitForVisiblity(orderHistoryBuyAgainButton, waitTime);
+		String orderHistoryBuyAgainButtonSTR = orderHistoryBuyAgainButton.getText();
+		String expectedBuyAgainButton = "再度購入";
+		log.info("Order history page:- buy again button visible " + orderHistoryBuyAgainButtonSTR);
+		CommonFunctions.assertString(expectedBuyAgainButton, orderHistoryBuyAgainButtonSTR);
+
+		CommonFunctions.waitForVisiblity(orderHistoryOrderNumberLabel, waitTime);
+		String orderHistoryOrderNumberLabelforTrim = orderHistoryOrderNumberLabel.getText();
+		String orderHistoryOrderNumberLabelSTR = orderHistoryOrderNumberLabelforTrim.substring(6, 30);
+		log.info("Order history page:- order number is " + orderHistoryOrderNumberLabelSTR);
+		CommonFunctions.assertString(expectedOrderNumberLabelSTR, orderHistoryOrderNumberLabelSTR);
+
+		CommonFunctions.waitForVisiblity(orderHistoryPaymentStatusLabel, waitTime);
+		String orderHistoryPaymentStatusLabelSTR = orderHistoryPaymentStatusLabel.getText();
+		String expectedStatusPaymentconfirmed = "支払い確認済み";
+		log.info("Order history page:- payment status is Payment confirmed " + expectedStatusPaymentconfirmed);
+		CommonFunctions.assertString(expectedStatusPaymentconfirmed, orderHistoryPaymentStatusLabelSTR);
+
+		CommonFunctions.waitForVisiblity(orderHistoryProductNameLabel, waitTime);
+		String orderHistoryProductNameLabelSTR = orderHistoryProductNameLabel.getText();
+		log.info("Order history page:- product name is " + orderHistoryProductNameLabelSTR);
+
+		CommonFunctions.waitForVisiblity(orderHistoryPriceLabel, waitTime);
+		String orderHistoryPriceLabelSTR = orderHistoryPriceLabel.getText();
+		log.info("Order history page:- product price is " + orderHistoryPriceLabelSTR);
+
+		CommonFunctions.waitForVisiblity(orderHistoryOrderDateLabel, waitTime);
+		String orderHistoryOrderDateLabelforTrim = orderHistoryOrderDateLabel.getText();
+		log.info("Order history page:- order date is " + orderHistoryOrderDateLabelforTrim);
+		String orderHistoryOrderDateLabelSTR = orderHistoryOrderDateLabelforTrim.substring(5, 15);
+		String currentDate = java.time.LocalDate.now().toString();
+		CommonFunctions.assertString(currentDate, orderHistoryOrderDateLabelSTR);
 	}
 
 	public void orderWithValidCreditcard() throws Exception {
@@ -540,8 +725,8 @@ public class Order {
 
 	}
 
-	public void methodForOrderHistoryPage(String thankYouPagePaymentDeadlineSTR, String thankYouPageorderNumberLabelSTR)
-			throws Exception {
+	public void methodForConStoreOrderHistoryPage(String thankYouPagePaymentDeadlineSTR,
+			String thankYouPageorderNumberLabelSTR) throws Exception {
 
 		String expectedThankYouPagePaymentDeadlineSTR = thankYouPagePaymentDeadlineSTR;
 		String expectedThankYouPageorderNumberLabelSTR = thankYouPageorderNumberLabelSTR;
@@ -551,23 +736,28 @@ public class Order {
 		log.info("Store Order Number from methodForConStoreThankYouPage:- " + expectedThankYouPageorderNumberLabelSTR);
 
 		CommonFunctions.waitForVisiblity(orderHistoryPaymentDeadlineLabel, waitTime);
-		String orderHistoryPaymentDeadlineLabelSTR = orderHistoryPaymentDeadlineLabel.getText();
+		String orderHistoryPaymentDeadlineLabelForTrim = orderHistoryPaymentDeadlineLabel.getText();
+		String orderHistoryPaymentDeadlineLabelSTR = orderHistoryPaymentDeadlineLabelForTrim.substring(5, 15);
 		log.info("Order history page:- actual Payment deadline date " + orderHistoryPaymentDeadlineLabelSTR);
 		CommonFunctions.assertString(expectedThankYouPagePaymentDeadlineSTR, orderHistoryPaymentDeadlineLabelSTR);
 
-		if (CommonFunctions.assertString(expectedThankYouPagePaymentDeadlineSTR, orderHistoryPaymentDeadlineLabelSTR))
-
-			CommonFunctions.waitForVisiblity(orderHistoryBuyAgainButton, waitTime);
+		CommonFunctions.waitForVisiblity(orderHistoryBuyAgainButton, waitTime);
 		String orderHistoryBuyAgainButtonSTR = orderHistoryBuyAgainButton.getText();
+		String expectedBuyAgainButton = "再度購入";
 		log.info("Order history page:- buy again button visible " + orderHistoryBuyAgainButtonSTR);
+		CommonFunctions.assertString(expectedBuyAgainButton, orderHistoryBuyAgainButtonSTR);
 
 		CommonFunctions.waitForVisiblity(orderHistoryOrderNumberLabel, waitTime);
-		String orderHistoryOrderNumberLabelSTR = orderHistoryOrderNumberLabel.getText();
+		String orderHistoryOrderNumberLabeltrim = orderHistoryOrderNumberLabel.getText();
+		String orderHistoryOrderNumberLabelSTR = orderHistoryOrderNumberLabeltrim.substring(6, 30);
 		log.info("Order history page:- order number is " + orderHistoryOrderNumberLabelSTR);
+		CommonFunctions.assertString(expectedThankYouPageorderNumberLabelSTR, orderHistoryOrderNumberLabelSTR);
 
 		CommonFunctions.waitForVisiblity(orderHistoryPaymentStatusLabel, waitTime);
 		String orderHistoryPaymentStatusLabelSTR = orderHistoryPaymentStatusLabel.getText();
+		String expectedStatusPaymentUnconfirmed = "支払い未確認";
 		log.info("Order history page:- payment status is Payment unconfirmed " + orderHistoryPaymentStatusLabelSTR);
+		CommonFunctions.assertString(expectedStatusPaymentUnconfirmed, orderHistoryPaymentStatusLabelSTR);
 
 		CommonFunctions.waitForVisiblity(orderHistoryProductNameLabel, waitTime);
 		String orderHistoryProductNameLabelSTR = orderHistoryProductNameLabel.getText();
@@ -651,7 +841,7 @@ public class Order {
 		System.out.println("Array returned from method:" + Arrays.toString(str_Array));
 
 		String thankYouPagePaymentDeadlineSTR = str_Array[0].toString();
-		log.info("Payment date line date from thank you page,now can use to next method:- "
+		log.info("Payment dead line date from thank you page,now can use to next method:- "
 				+ thankYouPagePaymentDeadlineSTR);
 
 		String thankYouPageorderNumberLabelSTR = str_Array[1].toString();
@@ -684,9 +874,15 @@ public class Order {
 		CommonFunctions.waitForVisiblity(checkOrderHistoryLink, waitTime);
 		checkOrderHistoryLink.click();
 
-		methodForOrderHistoryPage(thankYouPagePaymentDeadlineSTR, thankYouPageorderNumberLabelSTR);
+		methodForConStoreOrderHistoryPage(thankYouPagePaymentDeadlineSTR, thankYouPageorderNumberLabelSTR);
 
 		log.info("Step 4 tab :- order complete");
+
+	}
+
+	public void checktrim() {
+//		String orderHistoryOrderDateLabelforTrim = "注文日: 2021-07-27";
+//		String orderHistoryOrderDateLabelSTR = orderHistoryOrderDateLabelforTrim.substring(5, 15);
 
 	}
 }

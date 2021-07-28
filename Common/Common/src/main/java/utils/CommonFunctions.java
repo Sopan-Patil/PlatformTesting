@@ -141,7 +141,8 @@ public class CommonFunctions {
 	public static boolean assertString(String actualText, String expectedText) {
 		boolean result = false;
 		try {
-			assertTrue(actualText.equals(expectedText));
+			log.info("Try to match text " + actualText + " with " +expectedText );
+			assertTrue(actualText.equals(expectedText));			
 			assertFalse(actualText == expectedText);
 			assertEquals(actualText, expectedText);
 			result = true;
