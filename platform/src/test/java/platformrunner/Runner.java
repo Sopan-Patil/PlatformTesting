@@ -1,5 +1,7 @@
 package platformrunner;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.runner.RunWith;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -37,12 +39,18 @@ import utils.ObjectHelper;
 public class Runner extends AbstractTestNGCucumberTests {
 
 	NewBaseClass newBaseClass;
+	private static Logger log = LogManager.getLogger(Runner.class.getName());
 
 	@BeforeTest
 	@org.testng.annotations.Parameters(value = { "mode", "browser", "config", "environment" })
 	public void setUpBrowser(@Optional("null") String mode, @Optional("null") String browser,
 			@Optional("null") String config, @Optional("null") String environment) throws Exception {
+
 		newBaseClass = new NewBaseClass();
+		log.info("mode:" + mode);
+		log.info("browser:" + browser);
+		log.info("config:" + config);
+		log.info("environment:" + environment);
 
 		newBaseClass.openBrowser(mode, browser, config, environment);
 
