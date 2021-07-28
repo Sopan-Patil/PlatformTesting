@@ -27,7 +27,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 		glue = { "platformstepdefinition" },
 
-		tags = { "@FeatureTest", "~@CreateAccountTest", "~@Smoke" },
+		tags = { "~@FeatureTest", "~@CreateAccountTest", "~@Smoke", "@PFInvalidCC" },
 
 		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
@@ -36,21 +36,15 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 public class Runner extends AbstractTestNGCucumberTests {
 
 	NewBaseClass newBaseClass;
-//	public WebDriver driver;// = ObjectHelper.driver;
 
 	@BeforeTest
 	@org.testng.annotations.Parameters(value = { "mode", "browser", "config", "environment" })
 	public void setUpBrowser(@Optional("null") String mode, @Optional("null") String browser,
 			@Optional("null") String config, @Optional("null") String environment) throws Exception {
 		newBaseClass = new NewBaseClass();
-		// driver =
+
 		newBaseClass.openBrowser(mode, browser, config, environment);
-		// driver = ObjectHelper.driver;
 
-		// String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
-
-		// capabilities.setCapability("build", buildName);
-		// System.out.println("buildName:" + buildName);
 		newBaseClass.closeZkaiPopup();
 	}
 

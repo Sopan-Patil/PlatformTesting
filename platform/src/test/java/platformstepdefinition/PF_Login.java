@@ -46,6 +46,8 @@ public class PF_Login extends NewBaseClass {
 
 		loginToPlatform.loginToPlatform();
 
+		driver.close();
+
 		// TopBar topBar = new TopBar(driver);
 		// topBar.clickSignUpLinkLink();
 
