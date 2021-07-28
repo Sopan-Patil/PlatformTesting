@@ -153,11 +153,11 @@ public class BrowserstackUtility {
 
 	// public static String browserName;
 
-	public void tearDown() throws Exception {
+	public void tearDown(WebDriver driver) throws Exception {
 
-		// this.driver = driver;
+		this.driver = driver;
 		//mark();
-		ObjectHelper.driver.quit();
+		driver.quit();
 		if (l != null)
 			l.stop();
 		//mark();

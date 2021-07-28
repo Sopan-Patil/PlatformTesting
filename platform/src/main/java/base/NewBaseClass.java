@@ -276,7 +276,7 @@ public class NewBaseClass {
 	public void closeBrowserstack() {
 		try {
 			browserstackUtility = new BrowserstackUtility();
-			browserstackUtility.tearDown();
+			browserstackUtility.tearDown(ObjectHelper.driver);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
