@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/0/1</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jul 13 19:24:32 IST 2021</td>
+<td>Started on:</td><td>Wed Jul 28 12:49:10 IST 2021</td>
 </tr>
-<tr><td>Total time:</td><td>19 seconds (19346 ms)</td>
+<tr><td>Total time:</td><td>90 seconds (90391 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,13 +76,13 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='platformrunner.Runner.setUpBrowser()'><b>setUpBrowser</b><br>Test class: platformrunner.Runner<br>Parameters: browserstack, null, mustHave.conf.json, env4</td>
-<td><div><pre>org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started (WARNING: The server did not provide any stacktrace information)
+<td><div><pre>org.openqa.selenium.UnsupportedCommandException: Command not supported. (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;192.168.1.5&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;11.11.0.40&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {64bit: false, acceptSslCert: true, acceptSslCerts: true, appActivity: com.google.android.apps.chr..., appPackage: com.android.chrome, browser: android, browserName: chrome, browserstack.appium_version: 1.17.0, browserstack.is_hub_canary: false, buildName: browserstack_must_have, chromeOptions: {args: [--ignore-certificate-errors, --proxy-bypass-list=&lt;-loopb..., test-type, --proxy-server=http://183.1..., --disable-features=TranslateUI], w3c: false}, chromedriverPort: 18085, databaseEnabled: false, detected_language: Apache-HttpClient/4.5.3 (Ja..., device: Samsung Galaxy S21, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-G991B, deviceName: RFCR205NM9A, deviceOrientation: portrait, deviceScreenDensity: 480, deviceScreenSize: 1080x2400, deviceUDID: RFCR205NM9A, enablePerformanceLogging: false, javascriptEnabled: true, locationContextEnabled: false, loggingPrefs: org.openqa.selenium.logging..., mobile: {browser: mobile, version: Samsung Galaxy S21-11.0}, networkConnectionEnabled: true, newCommandTimeout: 0, new_bucketing: true, orientation: PORTRAIT, orig_os: android, osVersion: 11.0, os_version: 11.0, pixelRatio: 3, platform: ANDROID, platformName: ANDROID, platformVersion: 11, realMobile: true, real_mobile: true, sessionName: must_have_test, skipServerInstallation: true, statBarHeight: 79, systemPort: 8205, takesScreenshot: true, udid: RFCR205NM9A, version: , viewportRect: {height: 2097, left: 0, top: 79, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: ca8d365ce301d7018a2bd8161f08d9c9f94b8608
+Capabilities {64bit: false, acceptSslCert: true, acceptSslCerts: true, appActivity: com.google.android.apps.chr..., appPackage: com.android.chrome, browser: android, browserName: chrome, browserstack.appium_version: 1.17.0, browserstack.is_hub_canary: false, buildName: test, chromeOptions: {args: [--ignore-certificate-errors, --proxy-bypass-list=&lt;-loopb..., test-type, --proxy-server=http://183.1..., --disable-features=TranslateUI], w3c: false}, chromedriverPort: 18087, databaseEnabled: false, detected_language: Apache-HttpClient/4.5.3 (Ja..., device: Samsung Galaxy S21, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-G991B, deviceName: RFCR205Q4RM, deviceOrientation: portrait, deviceScreenDensity: 480, deviceScreenSize: 1080x2400, deviceUDID: RFCR205Q4RM, enablePerformanceLogging: false, javascriptEnabled: true, locationContextEnabled: false, loggingPrefs: org.openqa.selenium.logging..., mobile: {browser: mobile, version: Samsung Galaxy S21-11.0}, networkConnectionEnabled: true, newCommandTimeout: 0, new_bucketing: true, orientation: PORTRAIT, orig_os: android, osVersion: 11.0, os_version: 11.0, pixelRatio: 3, platform: ANDROID, platformName: ANDROID, platformVersion: 11, realMobile: true, real_mobile: true, sessionName: must_have_test, skipServerInstallation: true, statBarHeight: 79, systemPort: 8207, takesScreenshot: true, udid: RFCR205Q4RM, version: , viewportRect: {height: 2097, left: 0, top: 79, width: 1080}, warnings: {}, webStorageEnabled: false}
+Session ID: a9d6804e8b0169c1b96c73be3962929de96c2ab9
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
 	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
@@ -90,20 +90,21 @@ Session ID: ca8d365ce301d7018a2bd8161f08d9c9f94b8608
 	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:310)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:897)
-	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:58)
-	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:118)
-	at base.NewBaseClass.openBrowser(NewBaseClass.java:154)
-	at platformrunner.Runner.setUpBrowser(Runner.java:48)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace491800785", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace491800785'><pre>org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started (WARNING: The server did not provide any stacktrace information)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:643)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:877)
+	at base.NewBaseClass.replaceurl(NewBaseClass.java:228)
+	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:62)
+	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:161)
+	at base.NewBaseClass.openBrowser(NewBaseClass.java:198)
+	at platformrunner.Runner.setUpBrowser(Runner.java:46)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace276060674", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace276060674'><pre>org.openqa.selenium.UnsupportedCommandException: Command not supported. (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;192.168.1.5&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;11.11.0.40&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {64bit: false, acceptSslCert: true, acceptSslCerts: true, appActivity: com.google.android.apps.chr..., appPackage: com.android.chrome, browser: android, browserName: chrome, browserstack.appium_version: 1.17.0, browserstack.is_hub_canary: false, buildName: browserstack_must_have, chromeOptions: {args: [--ignore-certificate-errors, --proxy-bypass-list=&lt;-loopb..., test-type, --proxy-server=http://183.1..., --disable-features=TranslateUI], w3c: false}, chromedriverPort: 18085, databaseEnabled: false, detected_language: Apache-HttpClient/4.5.3 (Ja..., device: Samsung Galaxy S21, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-G991B, deviceName: RFCR205NM9A, deviceOrientation: portrait, deviceScreenDensity: 480, deviceScreenSize: 1080x2400, deviceUDID: RFCR205NM9A, enablePerformanceLogging: false, javascriptEnabled: true, locationContextEnabled: false, loggingPrefs: org.openqa.selenium.logging..., mobile: {browser: mobile, version: Samsung Galaxy S21-11.0}, networkConnectionEnabled: true, newCommandTimeout: 0, new_bucketing: true, orientation: PORTRAIT, orig_os: android, osVersion: 11.0, os_version: 11.0, pixelRatio: 3, platform: ANDROID, platformName: ANDROID, platformVersion: 11, realMobile: true, real_mobile: true, sessionName: must_have_test, skipServerInstallation: true, statBarHeight: 79, systemPort: 8205, takesScreenshot: true, udid: RFCR205NM9A, version: , viewportRect: {height: 2097, left: 0, top: 79, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: ca8d365ce301d7018a2bd8161f08d9c9f94b8608
+Capabilities {64bit: false, acceptSslCert: true, acceptSslCerts: true, appActivity: com.google.android.apps.chr..., appPackage: com.android.chrome, browser: android, browserName: chrome, browserstack.appium_version: 1.17.0, browserstack.is_hub_canary: false, buildName: test, chromeOptions: {args: [--ignore-certificate-errors, --proxy-bypass-list=&lt;-loopb..., test-type, --proxy-server=http://183.1..., --disable-features=TranslateUI], w3c: false}, chromedriverPort: 18087, databaseEnabled: false, detected_language: Apache-HttpClient/4.5.3 (Ja..., device: Samsung Galaxy S21, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-G991B, deviceName: RFCR205Q4RM, deviceOrientation: portrait, deviceScreenDensity: 480, deviceScreenSize: 1080x2400, deviceUDID: RFCR205Q4RM, enablePerformanceLogging: false, javascriptEnabled: true, locationContextEnabled: false, loggingPrefs: org.openqa.selenium.logging..., mobile: {browser: mobile, version: Samsung Galaxy S21-11.0}, networkConnectionEnabled: true, newCommandTimeout: 0, new_bucketing: true, orientation: PORTRAIT, orig_os: android, osVersion: 11.0, os_version: 11.0, pixelRatio: 3, platform: ANDROID, platformName: ANDROID, platformVersion: 11, realMobile: true, real_mobile: true, sessionName: must_have_test, skipServerInstallation: true, statBarHeight: 79, systemPort: 8207, takesScreenshot: true, udid: RFCR205Q4RM, version: , viewportRect: {height: 2097, left: 0, top: 79, width: 1080}, warnings: {}, webStorageEnabled: false}
+Session ID: a9d6804e8b0169c1b96c73be3962929de96c2ab9
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -116,12 +117,13 @@ Session ID: ca8d365ce301d7018a2bd8161f08d9c9f94b8608
 	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:310)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:897)
-	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:58)
-	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:118)
-	at base.NewBaseClass.openBrowser(NewBaseClass.java:154)
-	at platformrunner.Runner.setUpBrowser(Runner.java:48)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:643)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:877)
+	at base.NewBaseClass.replaceurl(NewBaseClass.java:228)
+	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:62)
+	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:161)
+	at base.NewBaseClass.openBrowser(NewBaseClass.java:198)
+	at platformrunner.Runner.setUpBrowser(Runner.java:46)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -147,8 +149,8 @@ Session ID: ca8d365ce301d7018a2bd8161f08d9c9f94b8608
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>19</td>
-<td>platformrunner.Runner@f80945f</td></tr>
+<td>90</td>
+<td>platformrunner.Runner@5ee2b6f9</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
@@ -161,7 +163,7 @@ Session ID: ca8d365ce301d7018a2bd8161f08d9c9f94b8608
 <td title='platformrunner.Runner.closeBrowser()'><b>closeBrowser</b><br>Test class: platformrunner.Runner</td>
 <td></td>
 <td>0</td>
-<td>platformrunner.Runner@f80945f</td></tr>
+<td>platformrunner.Runner@5ee2b6f9</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
@@ -172,13 +174,13 @@ Session ID: ca8d365ce301d7018a2bd8161f08d9c9f94b8608
 </tr>
 <tr>
 <td title='platformrunner.Runner.feature()'><b>feature</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Feature</td>
-<td><div><pre>org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started (WARNING: The server did not provide any stacktrace information)
+<td><div><pre>org.openqa.selenium.UnsupportedCommandException: Command not supported. (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;192.168.1.5&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;11.11.0.40&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {64bit: false, acceptSslCert: true, acceptSslCerts: true, appActivity: com.google.android.apps.chr..., appPackage: com.android.chrome, browser: android, browserName: chrome, browserstack.appium_version: 1.17.0, browserstack.is_hub_canary: false, buildName: browserstack_must_have, chromeOptions: {args: [--ignore-certificate-errors, --proxy-bypass-list=&lt;-loopb..., test-type, --proxy-server=http://183.1..., --disable-features=TranslateUI], w3c: false}, chromedriverPort: 18085, databaseEnabled: false, detected_language: Apache-HttpClient/4.5.3 (Ja..., device: Samsung Galaxy S21, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-G991B, deviceName: RFCR205NM9A, deviceOrientation: portrait, deviceScreenDensity: 480, deviceScreenSize: 1080x2400, deviceUDID: RFCR205NM9A, enablePerformanceLogging: false, javascriptEnabled: true, locationContextEnabled: false, loggingPrefs: org.openqa.selenium.logging..., mobile: {browser: mobile, version: Samsung Galaxy S21-11.0}, networkConnectionEnabled: true, newCommandTimeout: 0, new_bucketing: true, orientation: PORTRAIT, orig_os: android, osVersion: 11.0, os_version: 11.0, pixelRatio: 3, platform: ANDROID, platformName: ANDROID, platformVersion: 11, realMobile: true, real_mobile: true, sessionName: must_have_test, skipServerInstallation: true, statBarHeight: 79, systemPort: 8205, takesScreenshot: true, udid: RFCR205NM9A, version: , viewportRect: {height: 2097, left: 0, top: 79, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: ca8d365ce301d7018a2bd8161f08d9c9f94b8608
+Capabilities {64bit: false, acceptSslCert: true, acceptSslCerts: true, appActivity: com.google.android.apps.chr..., appPackage: com.android.chrome, browser: android, browserName: chrome, browserstack.appium_version: 1.17.0, browserstack.is_hub_canary: false, buildName: test, chromeOptions: {args: [--ignore-certificate-errors, --proxy-bypass-list=&lt;-loopb..., test-type, --proxy-server=http://183.1..., --disable-features=TranslateUI], w3c: false}, chromedriverPort: 18087, databaseEnabled: false, detected_language: Apache-HttpClient/4.5.3 (Ja..., device: Samsung Galaxy S21, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-G991B, deviceName: RFCR205Q4RM, deviceOrientation: portrait, deviceScreenDensity: 480, deviceScreenSize: 1080x2400, deviceUDID: RFCR205Q4RM, enablePerformanceLogging: false, javascriptEnabled: true, locationContextEnabled: false, loggingPrefs: org.openqa.selenium.logging..., mobile: {browser: mobile, version: Samsung Galaxy S21-11.0}, networkConnectionEnabled: true, newCommandTimeout: 0, new_bucketing: true, orientation: PORTRAIT, orig_os: android, osVersion: 11.0, os_version: 11.0, pixelRatio: 3, platform: ANDROID, platformName: ANDROID, platformVersion: 11, realMobile: true, real_mobile: true, sessionName: must_have_test, skipServerInstallation: true, statBarHeight: 79, systemPort: 8207, takesScreenshot: true, udid: RFCR205Q4RM, version: , viewportRect: {height: 2097, left: 0, top: 79, width: 1080}, warnings: {}, webStorageEnabled: false}
+Session ID: a9d6804e8b0169c1b96c73be3962929de96c2ab9
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
 	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
@@ -186,20 +188,21 @@ Session ID: ca8d365ce301d7018a2bd8161f08d9c9f94b8608
 	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:310)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:897)
-	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:58)
-	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:118)
-	at base.NewBaseClass.openBrowser(NewBaseClass.java:154)
-	at platformrunner.Runner.setUpBrowser(Runner.java:48)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace903383636", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace903383636'><pre>org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started (WARNING: The server did not provide any stacktrace information)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:643)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:877)
+	at base.NewBaseClass.replaceurl(NewBaseClass.java:228)
+	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:62)
+	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:161)
+	at base.NewBaseClass.openBrowser(NewBaseClass.java:198)
+	at platformrunner.Runner.setUpBrowser(Runner.java:46)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1537311996", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1537311996'><pre>org.openqa.selenium.UnsupportedCommandException: Command not supported. (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;192.168.1.5&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;11.11.0.40&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {64bit: false, acceptSslCert: true, acceptSslCerts: true, appActivity: com.google.android.apps.chr..., appPackage: com.android.chrome, browser: android, browserName: chrome, browserstack.appium_version: 1.17.0, browserstack.is_hub_canary: false, buildName: browserstack_must_have, chromeOptions: {args: [--ignore-certificate-errors, --proxy-bypass-list=&lt;-loopb..., test-type, --proxy-server=http://183.1..., --disable-features=TranslateUI], w3c: false}, chromedriverPort: 18085, databaseEnabled: false, detected_language: Apache-HttpClient/4.5.3 (Ja..., device: Samsung Galaxy S21, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-G991B, deviceName: RFCR205NM9A, deviceOrientation: portrait, deviceScreenDensity: 480, deviceScreenSize: 1080x2400, deviceUDID: RFCR205NM9A, enablePerformanceLogging: false, javascriptEnabled: true, locationContextEnabled: false, loggingPrefs: org.openqa.selenium.logging..., mobile: {browser: mobile, version: Samsung Galaxy S21-11.0}, networkConnectionEnabled: true, newCommandTimeout: 0, new_bucketing: true, orientation: PORTRAIT, orig_os: android, osVersion: 11.0, os_version: 11.0, pixelRatio: 3, platform: ANDROID, platformName: ANDROID, platformVersion: 11, realMobile: true, real_mobile: true, sessionName: must_have_test, skipServerInstallation: true, statBarHeight: 79, systemPort: 8205, takesScreenshot: true, udid: RFCR205NM9A, version: , viewportRect: {height: 2097, left: 0, top: 79, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: ca8d365ce301d7018a2bd8161f08d9c9f94b8608
+Capabilities {64bit: false, acceptSslCert: true, acceptSslCerts: true, appActivity: com.google.android.apps.chr..., appPackage: com.android.chrome, browser: android, browserName: chrome, browserstack.appium_version: 1.17.0, browserstack.is_hub_canary: false, buildName: test, chromeOptions: {args: [--ignore-certificate-errors, --proxy-bypass-list=&lt;-loopb..., test-type, --proxy-server=http://183.1..., --disable-features=TranslateUI], w3c: false}, chromedriverPort: 18087, databaseEnabled: false, detected_language: Apache-HttpClient/4.5.3 (Ja..., device: Samsung Galaxy S21, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-G991B, deviceName: RFCR205Q4RM, deviceOrientation: portrait, deviceScreenDensity: 480, deviceScreenSize: 1080x2400, deviceUDID: RFCR205Q4RM, enablePerformanceLogging: false, javascriptEnabled: true, locationContextEnabled: false, loggingPrefs: org.openqa.selenium.logging..., mobile: {browser: mobile, version: Samsung Galaxy S21-11.0}, networkConnectionEnabled: true, newCommandTimeout: 0, new_bucketing: true, orientation: PORTRAIT, orig_os: android, osVersion: 11.0, os_version: 11.0, pixelRatio: 3, platform: ANDROID, platformName: ANDROID, platformVersion: 11, realMobile: true, real_mobile: true, sessionName: must_have_test, skipServerInstallation: true, statBarHeight: 79, systemPort: 8207, takesScreenshot: true, udid: RFCR205Q4RM, version: , viewportRect: {height: 2097, left: 0, top: 79, width: 1080}, warnings: {}, webStorageEnabled: false}
+Session ID: a9d6804e8b0169c1b96c73be3962929de96c2ab9
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -212,12 +215,13 @@ Session ID: ca8d365ce301d7018a2bd8161f08d9c9f94b8608
 	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:310)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:897)
-	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:58)
-	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:118)
-	at base.NewBaseClass.openBrowser(NewBaseClass.java:154)
-	at platformrunner.Runner.setUpBrowser(Runner.java:48)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:643)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:877)
+	at base.NewBaseClass.replaceurl(NewBaseClass.java:228)
+	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:62)
+	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:161)
+	at base.NewBaseClass.openBrowser(NewBaseClass.java:198)
+	at platformrunner.Runner.setUpBrowser(Runner.java:46)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -244,7 +248,7 @@ Session ID: ca8d365ce301d7018a2bd8161f08d9c9f94b8608
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>platformrunner.Runner@f80945f</td></tr>
+<td>platformrunner.Runner@5ee2b6f9</td></tr>
 </table><p>
 </body>
 </html>

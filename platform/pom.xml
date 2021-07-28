@@ -489,6 +489,12 @@
 			
 		</plugins>
 	</build>
+<!-- 	
+	/**
+ * @Author : Chetan Sonparote
+ * @Date : 28 Jul 2021
+ * @Description: Added profiles for Jenkins
+ */ -->
 	
 	 <profiles>
         <profile>
