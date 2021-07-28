@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -26,7 +27,7 @@ import utils.Screenshots;
 public class Listeners extends ExtentReporter implements ITestListener {
 
 	public ExtentTest test;
-	ExtentReports extent = ExtentReporter.getReportObject();
+	public ExtentReports extent = ExtentReporter.getReportObject();
 	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
 	BrowserstackUtility browserstackUtility;
 
@@ -44,7 +45,8 @@ public class Listeners extends ExtentReporter implements ITestListener {
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
 		extentTest.get().log(Status.PASS, "Test Passed");
-		// browserstackUtility.setResultStatus(result);
+		browserstackUtility.setTestResult("PASS");
+		Assert.assertTrue(true);
 
 	}
 
@@ -53,7 +55,8 @@ public class Listeners extends ExtentReporter implements ITestListener {
 		// TODO Auto-generated method stub
 
 		extentTest.get().fail(result.getThrowable());
-
+		browserstackUtility.setTestResult("FAIL");
+		Assert.fail();
 		// result.getTestName().
 
 		WebDriver driver = null;
@@ -83,6 +86,7 @@ public class Listeners extends ExtentReporter implements ITestListener {
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		// TODO Auto-generated method stub
+		browserstackUtility.setTestResult("SKIPPED");
 
 	}
 
