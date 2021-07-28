@@ -389,3 +389,77 @@
 ■ 運営会社<br/>
 株式会社 教育測定研究所：https://www.jiem.co.jp/<br/>
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+13:06:55.502 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+13:07:18.034 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+13:07:28.147 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering invalid credit card no to 'credit card number' textbox
+13:07:45.228 [main] INFO  platform.pageobjects.Authentication.LoginPage - clicking on 'Expiration year' Dropdown
+13:07:50.127 [main] INFO  platform.pageobjects.Authentication.LoginPage - clicking on 'Expiration year' Dropdown
+13:07:52.621 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering crdit card holder name to 'card name' textbox
+13:07:59.886 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering security code to 'securitycode' textbox
+13:10:11.982 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+13:10:35.062 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+13:10:48.719 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering invalid credit card no to 'credit card number' textbox
+13:12:04.213 [main] INFO  platform.pageobjects.Authentication.LoginPage - clicking on 'Expiration year' Dropdown
+13:12:07.274 [main] INFO  platform.pageobjects.Authentication.LoginPage - clicking on 'Expiration year' Dropdown
+13:12:11.024 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering crdit card holder name to 'card name' textbox
+13:12:18.498 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering security code to 'securitycode' textbox
+13:26:42.552 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+13:27:10.788 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+13:27:25.878 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering invalid credit card no to 'credit card number' textbox
+13:27:50.590 [main] INFO  platform.pageobjects.Authentication.LoginPage - clicking on 'Expiration year' Dropdown
+13:27:51.380 [main] INFO  platform.pageobjects.Authentication.LoginPage - clicking on 'Expiration year' Dropdown
+13:27:52.085 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering crdit card holder name to 'card name' textbox
+13:27:54.107 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering security code to 'securitycode' textbox
+13:30:29.350 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+13:30:59.884 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+13:31:16.823 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering invalid credit card no to 'credit card number' textbox
+13:34:32.910 [main] INFO  platform.pageobjects.Authentication.LoginPage - clicking on 'Expiration year' Dropdown
+13:34:33.696 [main] INFO  platform.pageobjects.Authentication.LoginPage - clicking on 'Expiration year' Dropdown
+13:34:34.437 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering crdit card holder name to 'card name' textbox
+13:34:36.577 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering security code to 'securitycode' textbox
+13:37:13.334 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+13:37:37.778 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+13:37:48.602 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering invalid credit card no to 'credit card number' textbox
+13:40:00.193 [main] INFO  platform.pageobjects.Authentication.LoginPage - clicking on 'Expiration year' Dropdown
+13:40:01.071 [main] INFO  platform.pageobjects.Authentication.LoginPage - clicking on 'Expiration year' Dropdown
+13:40:01.843 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering crdit card holder name to 'card name' textbox
+13:40:03.994 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering security code to 'securitycode' textbox
+13:42:14.867 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+13:42:43.924 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+13:42:57.484 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering invalid credit card no to 'credit card number' textbox
+13:43:00.117 [main] INFO  platform.pageobjects.Authentication.LoginPage - clicking on 'Expiration year' Dropdown
+13:43:00.861 [main] INFO  platform.pageobjects.Authentication.LoginPage - clicking on 'Expiration year' Dropdown
+13:43:01.527 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering crdit card holder name to 'card name' textbox
+13:43:03.420 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering security code to 'securitycode' textbox
+13:47:08.553 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+13:47:44.680 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+13:47:57.307 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering invalid credit card no to 'credit card number' textbox
+13:47:58.126 [main] INFO  platform.pageobjects.Authentication.LoginPage - clicking on 'Expiration year' Dropdown
+13:47:58.913 [main] INFO  platform.pageobjects.Authentication.LoginPage - clicking on 'Expiration year' Dropdown
+13:47:59.614 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering crdit card holder name to 'card name' textbox
+13:48:01.592 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering security code to 'securitycode' textbox
+13:48:51.886 [main] INFO  platform.pageobjects.Authentication.LoginPage - The invalid credit card is failed message match with expected message
+14:28:49.096 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+14:29:10.625 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+14:29:18.284 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering invalid credit card no to 'credit card number' textbox
+14:29:19.075 [main] INFO  platform.pageobjects.Authentication.LoginPage - clicking on 'Expiration year' Dropdown
+14:29:19.806 [main] INFO  platform.pageobjects.Authentication.LoginPage - clicking on 'Expiration year' Dropdown
+14:29:20.495 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering crdit card holder name to 'card name' textbox
+14:29:22.396 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering security code to 'securitycode' textbox
+14:30:05.547 [main] INFO  platform.pageobjects.Authentication.LoginPage - The invalid credit card is failed message match with expected message
+14:31:31.302 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+14:31:55.621 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+14:32:04.444 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering invalid credit card no to 'credit card number' textbox
+14:32:05.246 [main] INFO  platform.pageobjects.Authentication.LoginPage - clicking on 'Expiration year' Dropdown
+14:32:05.980 [main] INFO  platform.pageobjects.Authentication.LoginPage - clicking on 'Expiration year' Dropdown
+14:32:06.644 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering crdit card holder name to 'card name' textbox
+14:32:08.540 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering security code to 'securitycode' textbox
+14:32:50.769 [main] INFO  platform.pageobjects.Authentication.LoginPage - The invalid credit card is failed message match with expected message
+15:17:38.172 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:17:58.551 [main] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:18:06.614 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering invalid credit card no to 'credit card number' textbox
+15:18:07.408 [main] INFO  platform.pageobjects.Authentication.LoginPage - clicking on 'Expiration year' Dropdown
+15:18:08.146 [main] INFO  platform.pageobjects.Authentication.LoginPage - clicking on 'Expiration year' Dropdown
+15:18:08.826 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering crdit card holder name to 'card name' textbox
+15:18:10.772 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering security code to 'securitycode' textbox
+15:18:54.089 [main] INFO  platform.pageobjects.Authentication.LoginPage - The invalid credit card is failed message match with expected message
