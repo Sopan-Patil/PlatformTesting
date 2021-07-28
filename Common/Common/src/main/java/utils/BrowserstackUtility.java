@@ -212,14 +212,13 @@ public class BrowserstackUtility {
 	 * @Date : 28 Jul 2021
 	 * @Description: Getting test results from listeners
 	 */
-	String testResult = null;
-
-	public String getTestResult() {
-		return testResult;
-	}
-
-	public void setTestResult(String testResult) {
-		this.testResult = testResult;
-	}
+	/*
+	 * String testResult = null;
+	 * 
+	 * public String getTestResult() { return testResult; }
+	 * 
+	 * public void setTestResult(String testResult) { this.testResult = testResult;
+	 * }
+	 */
 
 }

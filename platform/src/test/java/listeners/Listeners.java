@@ -14,7 +14,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import reporting.ExtentReporter;
-import utils.BrowserstackUtility;
 import utils.ObjectHelper;
 import utils.Screenshots;
 
@@ -29,7 +28,7 @@ public class Listeners extends ExtentReporter implements ITestListener {
 	public ExtentTest test;
 	public ExtentReports extent = ExtentReporter.getReportObject();
 	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
-	BrowserstackUtility browserstackUtility;
+	// BrowserstackUtility browserstackUtility;
 
 	@Override
 	public void onTestStart(ITestResult result) {
@@ -37,7 +36,7 @@ public class Listeners extends ExtentReporter implements ITestListener {
 
 		test = extent.createTest(result.getMethod().getMethodName());
 		extentTest.set(test);
-		browserstackUtility = new BrowserstackUtility();
+		// browserstackUtility = new BrowserstackUtility();
 
 	}
 
@@ -45,7 +44,7 @@ public class Listeners extends ExtentReporter implements ITestListener {
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
 		extentTest.get().log(Status.PASS, "Test Passed");
-		browserstackUtility.setTestResult("PASS");
+		// browserstackUtility.setTestResult("PASS");
 		Assert.assertTrue(true);
 
 	}
@@ -55,7 +54,7 @@ public class Listeners extends ExtentReporter implements ITestListener {
 		// TODO Auto-generated method stub
 
 		extentTest.get().fail(result.getThrowable());
-		browserstackUtility.setTestResult("FAIL");
+		// browserstackUtility.setTestResult("FAIL");
 		Assert.fail();
 		// result.getTestName().
 
@@ -86,7 +85,7 @@ public class Listeners extends ExtentReporter implements ITestListener {
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		// TODO Auto-generated method stub
-		browserstackUtility.setTestResult("SKIPPED");
+		// browserstackUtility.setTestResult("SKIPPED");
 
 	}
 
