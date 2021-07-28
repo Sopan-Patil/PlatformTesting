@@ -12,6 +12,7 @@ import base.NewBaseClass;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 import utils.BrowserstackUtility;
+import utils.ObjectHelper;
 
 /**
  * @Author : Chetan Sonparote
@@ -58,8 +59,9 @@ public class Runner extends AbstractTestNGCucumberTests {
 		} else if (mode.equalsIgnoreCase("browserstack")) {
 
 			BrowserstackUtility browserstackUtility = new BrowserstackUtility();
-			browserstackUtility.tearDown();
+			// browserstackUtility.tearDown();
 			// newBaseClass.closeBrowserstack();
+			ObjectHelper.driver.quit();
 		}
 	}
 
