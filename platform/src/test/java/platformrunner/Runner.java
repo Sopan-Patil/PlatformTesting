@@ -11,7 +11,6 @@ import com.github.mkolisnyk.cucumber.runner.ExtendedCucumberOptions;
 import base.NewBaseClass;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
-import utils.BrowserstackUtility;
 import utils.ObjectHelper;
 
 /**
@@ -53,16 +52,18 @@ public class Runner extends AbstractTestNGCucumberTests {
 	@AfterTest
 	@org.testng.annotations.Parameters(value = { "mode" })
 	public void closeBrowser(String mode) throws Exception {
-		newBaseClass = new NewBaseClass();
-		if (mode.equalsIgnoreCase("local")) {
-			newBaseClass.closebrowser();
-		} else if (mode.equalsIgnoreCase("browserstack")) {
 
-			BrowserstackUtility browserstackUtility = new BrowserstackUtility();
-			// browserstackUtility.tearDown();
-			// newBaseClass.closeBrowserstack();
-			ObjectHelper.driver.quit();
-		}
+		ObjectHelper.driver.quit();
+		/*
+		 * newBaseClass = new NewBaseClass(); if (mode.equalsIgnoreCase("local")) {
+		 * //newBaseClass.closebrowser(); } else if
+		 * (mode.equalsIgnoreCase("browserstack")) {
+		 * 
+		 * BrowserstackUtility browserstackUtility = new BrowserstackUtility(); //
+		 * browserstackUtility.tearDown(); // newBaseClass.closeBrowserstack();
+		 * 
+		 * }
+		 */
 	}
 
 }
