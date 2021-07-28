@@ -489,6 +489,31 @@
 			
 		</plugins>
 	</build>
+<!-- 	
+	/**
+ * @Author : Chetan Sonparote
+ * @Date : 28 Jul 2021
+ * @Description: Added profiles for Jenkins
+ */ -->
+	
+	 <profiles>
+        <profile>
+            <id>single</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>./TestNGSuites/Browserstack/single.browserstack.testng.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        </profiles>
 	
 
 </project>
