@@ -40,13 +40,13 @@ public class FooterPage {
 	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][normalize-space()='Q&A']")
 	public WebElement qnALink;
 
-	@FindBy(xpath = "////a[@class='link'][contains(text(),'受験の窓口')]")
+	@FindBy(xpath = "//a[@class='link'][contains(text(),'受験の窓口')]")
 	public WebElement footerExaminationWindowLink;
 
 	@FindBy(xpath = "//a[@class='sub-menu__text'][contains(text(),'英検S-CBT')]")
 	public WebElement footerScbtLink;
 
-	@FindBy(xpath = "//a[contains(text(),'CASEC')]")
+	@FindBy(xpath = "//a[@class='sub-menu__text'][normalize-space()='CASEC']")
 	public WebElement footerCasecLink;
 
 	@FindBy(xpath = "//div[@id='footer']//li[1]//ul[1]//li[3]//a[1]")

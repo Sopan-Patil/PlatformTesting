@@ -11,8 +11,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 @RunWith(ExtendedCucumber.class)
 @ExtendedCucumberOptions(jsonReport = "target/cucumber.json", overviewReport = true, outputFolder = "target")
 
-@CucumberOptions(monochrome = true, strict = false, dryRun = false, features = {
-		".//src//test//java//platformfeatures/PF_Footer.feature"
+@CucumberOptions(monochrome = true, strict = false, dryRun = false, features = { ".//src//test//java//platformfeatures/"
 
 }, glue = { "platformstepdefinition" }, tags = { "~@FooterTest", "~@FunctionalTest", "@FooterPage",
 		"~@BrowserstackTest", "~@FunctionalLoginTest" }, plugin = { "pretty", "html:target/cucumber_html_report",
