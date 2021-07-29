@@ -15,8 +15,10 @@ Scenario Outline: User is withdrawing the account
 
 #Scenario: User is withdrawing the account
 
-Given User is on Withdrawal Page ticks the checkbox and withdraw account <browser>
+Given Open Browser and URL <browser>
+Then User is on Withdrawal Page ticks the checkbox and withdraw account
 Then Account gets deleted
+Then Browser is closed
 
 
 Examples:

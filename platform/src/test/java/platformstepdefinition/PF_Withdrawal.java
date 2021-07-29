@@ -21,9 +21,13 @@ public class PF_Withdrawal extends NewBaseClass {
 
 	public WebDriver driver;
 
-	@Given("^User is on Withdrawal Page ticks the checkbox and withdraw account (.+)$")
-	public void user_is_on_Withdrawal_Page_ticks_the_checkbox_and_withdraw_account(String browser) throws Throwable {
+	@Given("^Open Browser and URL (.+)$")
+	public void open_Browser_and_URL(String browser) throws Throwable {
 		driver = openbrowser(browser);
+	}
+
+	@Then("^User is on Withdrawal Page ticks the checkbox and withdraw account$")
+	public void user_is_on_Withdrawal_Page_ticks_the_checkbox_and_withdraw_account(String browser) throws Throwable {
 		LoginPage loginToPlatform = new LoginPage(driver);
 		loginToPlatform.loginToPlatform();
 		FooterPage footerobj = new FooterPage(driver);
@@ -31,12 +35,21 @@ public class PF_Withdrawal extends NewBaseClass {
 		Withdrawal withdrawal = new Withdrawal(driver);
 		withdrawal.accountWithdrawal();
 
+		System.out.println("Account has been deleted.");
+
 	}
 
 	@Then("^Account gets deleted$")
 	public void Account_gets_deleted(String browser) throws Throwable {
 
 		System.out.println("Account has been deleted.");
+
+	}
+
+	@Then("^Close Browser$")
+	public void Close_Browser(String browser) throws Throwable {
+
+		driver.close();
 
 	}
 
