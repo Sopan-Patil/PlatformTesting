@@ -53,4 +53,17 @@ public class CreateAccountStep5 {
 		}
 
 	}
+
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 29 Jul 2021
+	 * @Description:Method to get new account details
+	 */
+	public void getCreatedAccountDetails() {
+
+		log.info("Created email:" + CreateAccountStep1.email);
+		log.info("Created eid:" + CreateAccountStep1.eid);
+		log.info("Created password:" + CreateAccountStep3.password);
+
+	}
 }

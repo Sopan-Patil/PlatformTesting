@@ -113,8 +113,10 @@ public class CreateAccountStep3 {
 	@FindBy(xpath = "//*[contains(text(),'Agree to the terms below and go to the confirmatio') or contains(text(),'下の規約に同意して、確認画面へ')]")
 	public WebElement agreeButton;
 
+	public static String password;
+
 	public void enterValidUserDetails() throws InterruptedException {
-		String password = "pfqa_123";
+		password = "pfqa_123";
 		passwordField.sendKeys(password);
 		log.info("Password :" + password);
 
