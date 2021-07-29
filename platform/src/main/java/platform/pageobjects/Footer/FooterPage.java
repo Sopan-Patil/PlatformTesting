@@ -13,8 +13,8 @@ import org.openqa.selenium.support.PageFactory;
 import utils.CommonFunctions;
 
 /**
- * @Author : Chetan Sonparote, Sahaj Balgunde
- * @Date of Creation : 20 July 2021
+ * @Author : Chetan Sonparote
+ * @Date of Creation : 26 June 2021
  * @Description: Additional Locator variables and Methods for footer.
  */
 
@@ -100,6 +100,12 @@ public class FooterPage {
 	@FindBy(xpath = "//a[contains(text(),'特定商取引法に基づく表示')]")
 	public WebElement accountTax;
 
+	/**
+	 * @Author : Sahaj Balgunde
+	 * @Date of Creation : 20 July 2021
+	 * @Description: Additional Locator variables and Methods for footer.
+	 */
+
 	public void switchToPreviousTab() {
 		ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 		driver.switchTo().window(tab.get(1));
@@ -108,7 +114,7 @@ public class FooterPage {
 		// driver.close();
 	}
 
-	public void footerFunctions() throws Exception {
+	public void clickFooterLinksBeforeLogin() throws Exception {
 
 		CommonFunctions.scrolltoElement(termsOfUseLink);
 		if (CommonFunctions.isElementClickable(termsOfUseLink)) {
@@ -243,7 +249,7 @@ public class FooterPage {
 
 	}
 
-	public void afterLoginFooter() throws Exception {
+	public void clickFooterLinksAfterLogin() throws Exception {
 		CommonFunctions.scrolltoElement(accountSecurity);
 		if (CommonFunctions.isElementClickable(accountSecurity)) {
 			accountSecurity.click();
@@ -296,7 +302,7 @@ public class FooterPage {
 
 	}
 
-	public void accountServicesOrderFooter() throws Exception {
+	public void clickOrderFlowFooterLinks() throws Exception {
 
 		CommonFunctions.scrolltoElement(accountQnA);
 		if (CommonFunctions.isElementClickable(accountQnA)) {
@@ -336,7 +342,47 @@ public class FooterPage {
 
 	}
 
-	public void AccountFooter() throws Exception {
+	public void clickAccountServicesFooterLinks() throws Exception {
+
+		CommonFunctions.scrolltoElement(accountQnA);
+		if (CommonFunctions.isElementClickable(accountQnA)) {
+			accountQnA.click();
+			log.info("QnA Link is working");
+			Thread.sleep(3000);
+		} else {
+			log.error("QnA Link is not working");
+		}
+
+		CommonFunctions.scrolltoElement(accountTerms);
+		if (CommonFunctions.isElementClickable(accountTerms)) {
+			accountTerms.click();
+			log.info("Terms of Use Link is working");
+			Thread.sleep(3000);
+		} else {
+			log.error("Terms of Use Link is not working");
+		}
+
+		CommonFunctions.scrolltoElement(accountPrivacy);
+		if (CommonFunctions.isElementClickable(accountPrivacy)) {
+			accountPrivacy.click();
+			log.info("Privacy Policy Link is working");
+			Thread.sleep(3000);
+		} else {
+			log.error("Privacy Policy Link is not working");
+		}
+
+		CommonFunctions.scrolltoElement(accountTax);
+		if (CommonFunctions.isElementClickable(accountTax)) {
+			accountTax.click();
+			log.info("Account Tax Link working");
+			Thread.sleep(3000);
+		} else {
+			log.error("Account Tax Link is not working");
+		}
+
+	}
+
+	public void clickWithdrawalFooterLink() throws Exception {
 
 		CommonFunctions.scrolltoElement(withdraw);
 		if (CommonFunctions.isElementClickable(withdraw)) {

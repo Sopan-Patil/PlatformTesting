@@ -11,17 +11,18 @@ import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
 import platform.pageobjects.Authentication.LoginPage;
 import platform.pageobjects.Footer.FooterPage;
+import utils.ObjectHelper;
 
 @RunWith(Cucumber.class)
 public class PF_Footer extends NewBaseClass {
 
-	public WebDriver driver;
+	public WebDriver driver = ObjectHelper.driver;
 
 	@Given("^Navigate to URL and check footer links (.+)$")
 	public void navigate_to_URL_and_check_footer_links(String browser) throws Throwable {
 		driver = openbrowser(browser);
 		FooterPage footer = new FooterPage(driver);
-		footer.footerFunctions();
+		footer.clickFooterLinksBeforeLogin();
 	}
 
 	@And("^check footer links with after login (.+)$")
@@ -29,7 +30,7 @@ public class PF_Footer extends NewBaseClass {
 		LoginPage loginToPlatform = new LoginPage(driver);
 		loginToPlatform.loginToPlatform();
 		FooterPage footer = new FooterPage(driver);
-		footer.afterLoginFooter();
+		footer.clickFooterLinksAfterLogin();
 		throw new PendingException();
 	}
 
