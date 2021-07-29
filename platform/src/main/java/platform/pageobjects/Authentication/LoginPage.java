@@ -41,7 +41,7 @@ public class LoginPage {
 	@FindBy(xpath = "//input[@id='password']")
 	public WebElement passwordTextField;
 
-	@FindBy(xpath = "//span[contains(text(),'ログイン')]")
+	@FindBy(xpath = "//a[@class='button button--white3 button--medium button--header']")
 	public WebElement logInButton;
 
 	@FindBy(xpath = "//button[@type='submit']")
@@ -118,10 +118,15 @@ public class LoginPage {
 		// CommonFunctions.wa
 		if (CommonFunctions.waitForVisiblity(logInButton, waitTime)) {
 			logInButton.click();
+
 		}
 
 		log.info("Login button is clicked");
 		System.out.println("inside loginToPlatform()");
+
+			log.info("Login button is clicked");
+		}
+
 
 		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
 			emailtextfield.click();

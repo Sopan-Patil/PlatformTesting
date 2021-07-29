@@ -814,6 +814,13 @@ public class Order {
 		phonenoTextbox.sendKeys("9890324119");
 		log.info("Step 2 tab :- provide phone no 'phone no' textbox");
 
+				//
+			}
+		}
+		Thread.sleep(2000);
+		CommonFunctions.waitForVisiblity(securitycodeTextbox, waitTime);
+		CommonFunctions.waitForClickable(securitycodeTextbox, waitTime);
+
 		CommonFunctions.waitForVisiblity(emailaddressTextbox, waitTime);
 		emailaddressTextbox.clear();
 		emailaddressTextbox.sendKeys("rahul.shinde+82@scispl.com");

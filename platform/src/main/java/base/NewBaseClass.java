@@ -2,10 +2,12 @@ package base;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 
@@ -228,12 +230,24 @@ public class NewBaseClass {
 		ObjectHelper.driver.manage().window().maximize();
 	}
 
-	public void replaceurlMailinator() {
+	/**
+	 * 
+	 * @Author : Sopan Patil
+	 * @Date : 27 Jul 2021
+	 * @Description: Added method for replacing authentication popup on chnage card
+	 */
+
+	public void replaceurlChangeCard() {
 		System.out.println("Old" + ObjectHelper.driver.getCurrentUrl());
-		String newURL = ObjectHelper.driver.getCurrentUrl().replace("https://", "https://sgepuser:9tg6gxxCEaL3@");
+		String newURL = ObjectHelper.driver.getCurrentUrl().replaceFirst("https://", "https://sgepuser:9tg6gxxCEaL3@");
+		((JavascriptExecutor) ObjectHelper.driver).executeScript("window.open()");
+		ArrayList<String> tabs = new ArrayList<String>(ObjectHelper.driver.getWindowHandles());
+		ObjectHelper.driver.switchTo().window(tabs.get(0));
+		ObjectHelper.driver.close();
+		ObjectHelper.driver.switchTo().window(tabs.get(1));
 		System.out.println(newURL);
 		ObjectHelper.driver.get(newURL);
-		ObjectHelper.driver.manage().window().maximize();
+
 	}
 
 	public void closebrowser() {
@@ -246,23 +260,21 @@ public class NewBaseClass {
 	 * @Date : 7 Jul 2021
 	 * @Description: Added close browser method for browserstack
 	 */
-	public void checkBrowserOpen() {
-
-		/*
-		 * boolean open = false;
-		 * 
-		 * if (ObjectHelper.driver.getTitle() != null) { open = true; } else if
-		 * (ObjectHelper.driver.getTitle().isEmpty()) { open = false; }
-		 * 
-		 * return open;
-		 */
-		try {
-			ObjectHelper.driver.getTitle();
-			log.info("Browser Window is still exist");
-		} catch (Exception e) {
-			log.error("Brower window is closed");
-		}
-	}
+	/*
+	 * public void checkBrowserOpen() {
+	 * 
+	 * 
+	 * boolean open = false;
+	 * 
+	 * if (ObjectHelper.driver.getTitle() != null) { open = true; } else if
+	 * (ObjectHelper.driver.getTitle().isEmpty()) { open = false; }
+	 * 
+	 * return open;
+	 * 
+	 * try { ObjectHelper.driver.getTitle();
+	 * log.info("Browser Window is still exist"); } catch (Exception e) {
+	 * log.error("Brower window is closed"); } }
+	 */
 
 	/**
 	 * @Author : Chetan Sonparote
@@ -271,6 +283,7 @@ public class NewBaseClass {
 	 */
 	public void closeBrowserstack() {
 		try {
+			browserstackUtility = new BrowserstackUtility();
 			browserstackUtility.tearDown();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

@@ -8,6 +8,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
 import platform.pageobjects.Authentication.LoginPage;
+import utils.ObjectHelper;
 
 /**
  * @Author : Chetan Sonparote 
@@ -24,7 +25,7 @@ import platform.pageobjects.Authentication.LoginPage;
 @RunWith(Cucumber.class)
 public class PF_Login extends NewBaseClass {
 
-	public WebDriver driver;
+	public WebDriver driver = ObjectHelper.driver;
 
 	// String emailid = "";
 
@@ -45,6 +46,9 @@ public class PF_Login extends NewBaseClass {
 		LoginPage loginToPlatform = new LoginPage(driver);
 
 		loginToPlatform.loginToPlatform();
+
+		// driver.close();
+
 		// TopBar topBar = new TopBar(driver);
 		// topBar.clickSignUpLinkLink();
 

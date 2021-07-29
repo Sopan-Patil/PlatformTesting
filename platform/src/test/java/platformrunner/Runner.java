@@ -1,5 +1,7 @@
 package platformrunner;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.runner.RunWith;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -11,6 +13,7 @@ import com.github.mkolisnyk.cucumber.runner.ExtendedCucumberOptions;
 import base.NewBaseClass;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
+import utils.ObjectHelper;
 
 /**
  * @Author : Chetan Sonparote
@@ -27,7 +30,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 		glue = { "platformstepdefinition" },
 
-		tags = { "@FeatureTest", "~@CreateAccountTest", "~@Smoke" },
+		tags = { "@PF_test" },
 
 		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
@@ -36,33 +39,40 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 public class Runner extends AbstractTestNGCucumberTests {
 
 	NewBaseClass newBaseClass;
-//	public WebDriver driver;// = ObjectHelper.driver;
+	private static Logger log = LogManager.getLogger(Runner.class.getName());
 
 	@BeforeTest
 	@org.testng.annotations.Parameters(value = { "mode", "browser", "config", "environment" })
 	public void setUpBrowser(@Optional("null") String mode, @Optional("null") String browser,
 			@Optional("null") String config, @Optional("null") String environment) throws Exception {
+
 		newBaseClass = new NewBaseClass();
-		// driver =
+		log.info("mode:" + mode);
+		log.info("browser:" + browser);
+		log.info("config:" + config);
+		log.info("environment:" + environment);
+
 		newBaseClass.openBrowser(mode, browser, config, environment);
-		// driver = ObjectHelper.driver;
 
-		// String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
-
-		// capabilities.setCapability("build", buildName);
-		// System.out.println("buildName:" + buildName);
 		newBaseClass.closeZkaiPopup();
 	}
 
 	@AfterTest
 	@org.testng.annotations.Parameters(value = { "mode" })
-	public void closeBrowser(String mode) {
-		newBaseClass = new NewBaseClass();
-		if (mode.equalsIgnoreCase("local")) {
-			newBaseClass.closebrowser();
-		} else if (mode.equalsIgnoreCase("browserstack")) {
-			newBaseClass.closeBrowserstack();
-		}
+	public void closeBrowser(String mode) throws Exception {
+
+		ObjectHelper.driver.quit();
+		/*
+		 * newBaseClass = new NewBaseClass(); if (mode.equalsIgnoreCase("local")) { //
+		 * newBaseClass.closebrowser(); } else if
+		 * (mode.equalsIgnoreCase("browserstack")) {
+		 * 
+		 * // BrowserstackUtility browserstackUtility = new BrowserstackUtility(); // //
+		 * browserstackUtility.tearDown(); // newBaseClass.closeBrowserstack();
+		 * 
+		 * }
+		 */
+
 	}
 
 }
