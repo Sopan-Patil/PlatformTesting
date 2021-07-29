@@ -3,6 +3,7 @@ package platformrunner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.runner.RunWith;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 
@@ -56,21 +57,22 @@ public class Runner extends AbstractTestNGCucumberTests {
 		newBaseClass.closeZkaiPopup();
 	}
 
-	// @AfterTest
+	@AfterTest
 	@org.testng.annotations.Parameters(value = { "mode" })
 	public void closeBrowser(String mode) throws Exception {
 
 		ObjectHelper.driver.quit();
 		/*
-		 * newBaseClass = new NewBaseClass(); if (mode.equalsIgnoreCase("local")) {
-		 * //newBaseClass.closebrowser(); } else if
+		 * newBaseClass = new NewBaseClass(); if (mode.equalsIgnoreCase("local")) { //
+		 * newBaseClass.closebrowser(); } else if
 		 * (mode.equalsIgnoreCase("browserstack")) {
 		 * 
-		 * BrowserstackUtility browserstackUtility = new BrowserstackUtility(); //
+		 * // BrowserstackUtility browserstackUtility = new BrowserstackUtility(); // //
 		 * browserstackUtility.tearDown(); // newBaseClass.closeBrowserstack();
 		 * 
 		 * }
 		 */
+
 	}
 
 }
