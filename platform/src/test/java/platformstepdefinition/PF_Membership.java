@@ -14,7 +14,7 @@ public class PF_Membership extends NewBaseClass {
 
 	public WebDriver driver;
 
-	@Given("^Login To Platform and check membership plans (.+)$")
+	@Given("^Login To Platform and check membership plan (.+)$")
 	public void navigate_to_url_(String browser) throws Throwable {
 		driver = openbrowser(browser);
 		LoginPage loginpage = new LoginPage(driver);

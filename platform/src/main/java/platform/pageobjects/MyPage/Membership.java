@@ -36,13 +36,7 @@ public class Membership {
 	@FindBy(xpath = " /html/body/div/div[4]/div[2]/ul/li[3]/a")
 	public WebElement primeBenefit3;
 
-	@FindBy(xpath = "//a[contains(text(),'8æœˆå®Ÿæ–½åˆ†')]")
-	public WebElement augustMembership;
-
-	@FindBy(xpath = "//a[contains(text(),'9æœˆå®Ÿæ–½åˆ†')]")
-	public WebElement septemberMembership;
-
-	@FindBy(xpath = "//a[contains(text(),'è©³ã�—ã��ã�¯ã�“ã�¡ã‚‰')]")
+	@FindBy(xpath = "")
 	public WebElement clickhereformoredetails;
 
 	@FindBy(xpath = "//div[@class='teaser-head teaser-head--ft']//form")
@@ -51,7 +45,7 @@ public class Membership {
 	@FindBy(xpath = "//button[@class='button button--default button--xmedium button--member-plan button--member-plan-last aos-init aos-animate']")
 	public WebElement applyforPrime3;
 
-	@FindBy(xpath = "//a[contains(text(),'アカウント情報')]")
+	@FindBy(xpath = "/html/body/div/div[1]/div[1]/div/div[2]/div/div/a")
 	public WebElement accountInformation;
 
 	@FindBy(xpath = "/html/body/div/div[1]/div[1]/div/div[2]/div/div/div/ul/li[2]/a")
@@ -85,12 +79,7 @@ public class Membership {
 		if (CommonFunctions.isElementClickable(primeBenefit3)) {
 			primeBenefit3.click();
 			log.info("clicked on prime benefit 3 on member plan page ");
-		}
 
-		CommonFunctions.scrolltoElement(augustMembership);
-		if (CommonFunctions.isElementClickable(augustMembership)) {
-			augustMembership.click();
-			log.info("clicked on august membership button member plan page");
 		}
 
 		CommonFunctions.scrolltoElement(septemberMembership);
@@ -112,7 +101,7 @@ public class Membership {
 			}
 
 			CommonFunctions.scrolltoElement(applyforPrime2);
-			if (CommonFunctions.isElementClickable(applyforPrime3)) {
+			if (CommonFunctions.isElementClickable(applyforPrime)) {
 				applyforPrime2.click();
 				log.info("clicked on apply prime button on member plan page");
 				driver.navigate().back();
@@ -153,14 +142,15 @@ public class Membership {
 		CommonFunctions.isElementVisible(primeBenefit1);
 		primeBenefit1.click();
 		log.info("clicked on prime benefit 1 ");
+		Thread.sleep(200);
 
 		CommonFunctions.scrolltoElement(primeBenefit2);
-		CommonFunctions.isElementVisible(primeBenefit2);
+		CommonFunctions.waitForVisiblity(primeBenefit2, waitTime);
 		primeBenefit2.click();
 		log.info("clicked on prime benefit 2 ");
 
 		CommonFunctions.scrolltoElement(primeBenefit3);
-		CommonFunctions.isElementVisible(primeBenefit3);
+		CommonFunctions.waitForVisiblity(primeBenefit3, waitTime);
 		primeBenefit3.click();
 		log.info("clicked on prime benefit 3");
 
