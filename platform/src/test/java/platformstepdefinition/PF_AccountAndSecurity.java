@@ -4,6 +4,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import base.NewBaseClass;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
 import platform.pageobjects.MyPage.AccountAndSecurity;
@@ -29,5 +30,11 @@ public class PF_AccountAndSecurity extends NewBaseClass {
 	public void Click_on_Change_Button() throws Throwable {
 		AccountAndSecurity changeButton = new AccountAndSecurity(driver);
 		changeButton.clickChangeButton();
+	}
+
+	@And("^Update Account Information$")
+	public void Update_Account_Information() throws Throwable {
+		AccountAndSecurity updateaccountinfo = new AccountAndSecurity(driver);
+		updateaccountinfo.UpdateAccountAndSecurityInformation();
 	}
 }

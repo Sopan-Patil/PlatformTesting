@@ -27,9 +27,7 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
-		tags = { "~@FeatureTest", "~@CreateAccountTest", "~@Smoke", "@PFInvalidCC", "~@PFAccountAndSecurity" },
-
-
+		tags = { "~@FeatureTest", "~@CreateAccountTest", "~@Smoke", "~@PFInvalidCC", "@PFAccountAndSecurity" },
 
 		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
