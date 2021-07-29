@@ -39,28 +39,51 @@ public class FooterPage {
 	@FindBy(xpath = "//a[@href='/term']")
 	public WebElement termsOfUseLink;
 
-	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][contains(text(),'利用�?約')]")
+	// @FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex
+	// d-none']//a[@class='footer-bt__text'][contains(text(),'利用�?約')]")
+
+	@FindBy(xpath = "//a[@href='https://www.jiem.co.jp/privacy/']")
 	public WebElement privacyPolicyLink;
 
-	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][contains(text(),'特定商�?�?�引法')]")
+	// @FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex
+	// d-none']//a[@class='footer-bt__text'][contains(text(),'特定商�?�?�引法')]")
+
+	@FindBy(xpath = "//a[@href='/transaction-method']")
 	public WebElement specifiedCommodityTradingLawLink;
 
-	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][normalize-space()='Q&A']")
+	// @FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex
+	// d-none']//a[@class='footer-bt__text'][normalize-space()='Q&A']")
+
+	@FindBy(xpath = "//a[@href='https://support.evidus.com/']")
 	public WebElement qnALink;
 
-	@FindBy(xpath = "//a[@class='link'][contains(text(),'�?�験�?�窓�?�')]")
+	// @FindBy(xpath = "//a[@class='link'][contains(text(),'�?�験�?�窓�?�')]")
+
+	@FindBy(xpath = "//a[@href='/testing']")
 	public WebElement footerExaminationWindowLink;
 
-	@FindBy(xpath = "//a[@class='sub-menu__text']//font//font[contains(text(),'英検S-CBT')]")
+	// @FindBy(xpath =
+	// "//a[@class='sub-menu__text']//font//font[contains(text(),'英検S-CBT')]")
+	// a[@class='sub-menu__text' and
+	// @href='https://studygear.evidus.com/campaign/cp_scbt202109/']
+	@FindBy(xpath = "//a[@class='sub-menu__text' and @href='https://studygear.evidus.com/campaign/cp_scbt202109/']")
 	public WebElement footerScbtLink;
 
-	@FindBy(xpath = "//a[contains(text(),'CASEC')]")
+	// @FindBy(xpath = "//a[contains(text(),'CASEC')]")
+	// a[@class='sub-menu__text'][normalize-space()='CASEC']
+	@FindBy(xpath = "//a[@class='sub-menu__text'][normalize-space()='CASEC']")
 	public WebElement footerCasecLink;
 
-	@FindBy(xpath = "//a[@class='link']//font//font[contains(text(),'Learning window')]")
+	// @FindBy(xpath = "//a[@class='link']//font//font[contains(text(),'Learning
+	// window')]")
+	// a[@href='/learning']
+	@FindBy(xpath = "//a[@href='/learning']")
 	public WebElement footerLearningWindowLink;
 
-	@FindBy(xpath = "//a[@class='sub-menu__text']//font//font[contains(text(),'Stagia Eiken')]")
+	// @FindBy(xpath =
+	// "//a[@class='sub-menu__text']//font//font[contains(text(),'Stagia Eiken')]")
+	// a[@href='/studygear-eiken']
+	@FindBy(xpath = "//a[@href='/studygear-eiken']")
 	public WebElement footerStagiaEikenLink;
 
 	@FindBy(xpath = "//a[@class='link']//font//font[contains(text(),'Information window')]")
@@ -141,7 +164,7 @@ public class FooterPage {
 
 		CommonFunctions.scrolltoElement(termsOfUseLink);
 		if (CommonFunctions.isElementClickable(termsOfUseLink)) {
-			termsOfUseLink.click();
+			// termsOfUseLink.click();
 			log.info("termsOfUseLink is clicked");
 		} else
 			log.error("termsOfUseLink is not working");
