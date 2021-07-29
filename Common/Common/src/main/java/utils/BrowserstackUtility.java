@@ -70,8 +70,8 @@ public class BrowserstackUtility {
 		// String username = System.getenv("BROWSERSTACK_USERNAME");
 		// String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
 		String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
-		String browserstackLocal = System.getenv("BROWSERSTACK_LOCAL");
-		String browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
+	//	String browserstackLocal = System.getenv("BROWSERSTACK_LOCAL");
+	//	String browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
 
 		JSONParser parser = new JSONParser();
 		JSONObject config = (JSONObject) parser.parse(new FileReader(System.getProperty("user.dir") + File.separator
@@ -135,8 +135,8 @@ public class BrowserstackUtility {
 		capabilities.setCapability("browserstack.idleTimeout", "30");
 
 		capabilities.setCapability("build", buildName);
-		capabilities.setCapability("browserstack.local", browserstackLocal);
-		capabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
+		//capabilities.setCapability("browserstack.local", browserstackLocal);
+		//capabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
 
 		driver = new RemoteWebDriver(
 				// new URL("https://" + username + ":" + accessKey + "@" + config.get("server")
