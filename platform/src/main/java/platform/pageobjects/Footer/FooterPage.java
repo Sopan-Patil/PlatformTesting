@@ -86,19 +86,31 @@ public class FooterPage {
 	@FindBy(xpath = "//a[@href='/studygear-eiken']")
 	public WebElement footerStagiaEikenLink;
 
-	@FindBy(xpath = "//a[@class='link']//font//font[contains(text(),'Information window')]")
+	// @FindBy(xpath = "//a[@class='link']//font//font[contains(text(),'Information
+	// window')]")
+	// a[@href='/media']
+	@FindBy(xpath = "//a[@href='/media']")
 	public WebElement informationWindowLink;
 
-	@FindBy(xpath = "//a[@class='sub-menu__text js-pitaElement']//font//font[contains(text(),'Cram school pita')]")
+	// @FindBy(xpath = "//a[@class='sub-menu__text
+	// js-pitaElement']//font//font[contains(text(),'Cram school pita')]")
+	@FindBy(xpath = "//a[@class='sub-menu__text' and @href='https://stg.jyuku-pita.evidus.com/']")
 	public WebElement cramSchoolPitaLink;
 
-	@FindBy(xpath = "//a[@class='sub-menu__text']//font//font[contains(text(),'Stagia University Exam')]")
+	// @FindBy(xpath =
+	// "//a[@class='sub-menu__text']//font//font[contains(text(),'Stagia University
+	// Exam')]")
+	@FindBy(xpath = "//a[@class='sub-menu__text' and @href='https://juken.ei-navi.jp/']")
 	public WebElement stagiaUniversityExamLink;
 
-	@FindBy(xpath = "//a[@class='sub-menu__text']//font//font[contains(text(),'Education cost consultation support')]")
+	// @FindBy(xpath =
+	// "//a[@class='sub-menu__text']//font//font[contains(text(),'Education cost
+	// consultation support')]")
+	@FindBy(xpath = "//a[@class='sub-menu__text' and @href='https://consult.evidus.com/']")
 	public WebElement educationCostConsulatationSupportLink;
 
-	@FindBy(xpath = "//a[@class='sub-menu__text']//font//font[contains(text(),'sign up')]")
+//	@FindBy(xpath = "//a[@class='sub-menu__text']//font//font[contains(text(),'sign up')]")
+	@FindBy(xpath = "//a[@class='sub-menu__text' and @href='/register']")
 	public WebElement signUpLink;
 
 	public void clickSignUpLinkLink() {
