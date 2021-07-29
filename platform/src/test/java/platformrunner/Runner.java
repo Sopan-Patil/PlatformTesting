@@ -1,14 +1,13 @@
 package platformrunner;
 
 import org.junit.runner.RunWith;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 
-import com.github.mkolisnyk.cucumber.runner.ExtendedCucumber;
-import com.github.mkolisnyk.cucumber.runner.ExtendedCucumberOptions;
-
 import base.NewBaseClass;
 import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 import utils.ObjectHelper;
 
@@ -18,9 +17,8 @@ import utils.ObjectHelper;
  * @Description: Runner for new projct structure. to be integrated after success
  */
 
-@RunWith(ExtendedCucumber.class)
-@ExtendedCucumberOptions(jsonReport = "target/cucumber.json", overviewReport = true, outputFolder = "target")
-
+@RunWith(Cucumber.class)
+//@ExtendedCucumberOptions(jsonReport = "target/cucumber.json", overviewReport = true, outputFolder = "target")
 @CucumberOptions(monochrome = true, strict = false, dryRun = false, features = { ".//src//test//java//platformfeatures/"
 
 },
@@ -48,7 +46,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 		newBaseClass.closeZkaiPopup();
 	}
 
-	// @AfterTest
+	@AfterTest
 	@org.testng.annotations.Parameters(value = { "mode" })
 	public void closeBrowser(String mode) throws Exception {
 
