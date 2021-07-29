@@ -142,7 +142,9 @@ public class FooterPage {
 		CommonFunctions.scrolltoElement(termsOfUseLink);
 		if (CommonFunctions.isElementClickable(termsOfUseLink)) {
 			termsOfUseLink.click();
-		}
+			log.info("termsOfUseLink is clicked");
+		} else
+			log.error("termsOfUseLink is not working");
 
 	}
 
