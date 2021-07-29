@@ -139,7 +139,10 @@ public class FooterPage {
 
 	public void clickTermsOfUseLink() {
 
-		termsOfUseLink.click();
+		CommonFunctions.scrolltoElement(termsOfUseLink);
+		if (CommonFunctions.isElementClickable(termsOfUseLink)) {
+			termsOfUseLink.click();
+		}
 
 	}
 
