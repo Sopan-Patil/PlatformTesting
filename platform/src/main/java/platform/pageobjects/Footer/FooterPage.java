@@ -28,7 +28,15 @@ public class FooterPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][contains(text(),'利用�?約')]")
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 29 Jul 2021
+	 * @Description: Removed contains. text() from xpath
+	 */
+	// @FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex
+	// d-none']//a[@class='footer-bt__text'][contains(text(),'利用�?約')]")
+	// a[@href='/term']
+	@FindBy(xpath = "//a[@href='/term']")
 	public WebElement termsOfUseLink;
 
 	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][contains(text(),'利用�?約')]")
