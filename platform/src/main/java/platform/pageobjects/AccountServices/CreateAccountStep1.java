@@ -37,7 +37,7 @@ public class CreateAccountStep1 {
 	@FindBy(xpath = "//input[@id='entryIdentifier']")
 	public WebElement eidField;
 
-	@FindBy(xpath = "//*[@class='button__text' or contains(text(),'Send confirmation email')]")
+	@FindBy(xpath = "//button[@type='submit']")
 	public WebElement sendConfirmationButton;
 
 	public void clickSendConfirmationButton() {

@@ -44,10 +44,10 @@ public class CreateAccountStep3 {
 	@FindBy(xpath = "//input[@id='last-name-kana']")
 	public WebElement lastNameKanaField;
 
-	@FindBy(xpath = "//label[@for='male' or contains(text(),'男性')]")
+	@FindBy(xpath = "//label[@for='male'] ")
 	public WebElement maleRadioButton;
 
-	@FindBy(xpath = "//label[@for='female' or contains(text(),'女性')]")
+	@FindBy(xpath = "//label[@for='female']")
 	public WebElement femaleRadioButton;
 
 	@FindBy(xpath = "//select[@id='birthday.year']")
@@ -65,16 +65,16 @@ public class CreateAccountStep3 {
 	@FindBy(xpath = "//input[@id='code2']")
 	public WebElement secondPostalCodeField;
 
-	@FindBy(xpath = "//label[@for='self' or contains(text(),'本人')]")
+	@FindBy(xpath = "//label[@for='self']")
 	public WebElement selfRadioButton;
 
-	@FindBy(xpath = "//label[@for='protector' or contains(text(),'保護者')]")
+	@FindBy(xpath = "//label[@for='protector']")
 	public WebElement parentRadioButton;
 
-	@FindBy(xpath = "//label[@for='school' or contains(text(),'学校・塾関係者')]")
+	@FindBy(xpath = "//label[@for='school']")
 	public WebElement schoolRadioButton;
 
-	@FindBy(xpath = "//label[@for='other' or contains(text(),'その他')]")
+	@FindBy(xpath = "//label[@for='other']")
 	public WebElement otherRadioButton;
 
 	@FindBy(xpath = "//label[@for='receive-email']//span[@class='checkmark']")
@@ -83,7 +83,10 @@ public class CreateAccountStep3 {
 	@FindBy(xpath = "//label[@for='notice-by-mail']//span[@class='checkmark']")
 	public WebElement mailCheckbox;
 
-	@FindBy(xpath = "//*[contains(text(),'Get address from zip code') or contains(text(),'郵便番号から住所取得')")
+	// @FindBy(xpath = "//*[contains(text(),'Get address from zip code') or
+	// contains(text(),'郵便番号から住所取得')")
+	// button[@class='button button--form js-postcode-fill']
+	@FindBy(xpath = "//button[@class='button button--form js-postcode-fill']")
 	public WebElement postalButton;
 
 	@FindBy(xpath = "//select[@id='province']")
@@ -110,7 +113,7 @@ public class CreateAccountStep3 {
 	@FindBy(xpath = "//input[@id='phone3']")
 	public WebElement phone3Field;
 
-	@FindBy(xpath = "//*[contains(text(),'Agree to the terms below and go to the confirmatio') or contains(text(),'下の規約に同意して、確認画面へ')]")
+	@FindBy(xpath = "//button[@id=\"js-btn-submit-basic\"]")
 	public WebElement agreeButton;
 
 	public static String password;
