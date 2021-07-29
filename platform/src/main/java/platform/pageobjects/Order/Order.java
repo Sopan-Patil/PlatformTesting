@@ -51,14 +51,11 @@ public class Order {
 	@FindBy(xpath = "//*[@id=\"finalizeButton\"]/span/span")
 	public WebElement step2ProceedButton;
 
-	@FindBy(xpath = "//a[@id='finalizeButton']")
+	@FindBy(xpath = "//a[@id='finalizeButton']//span")
 	public WebElement step3ConfirmOrderButton;
 
-	@FindBy(xpath = "//h3[contains(text(),'ご購入ありがとうございます。')]")
+	@FindBy(xpath = "//div[@class='box-head']//h3")
 	public WebElement step4ThankYouForYourPurchaseLabel;
-
-	@FindBy(xpath = "//label[contains(text(),'クレジットカード情報を登録する')]")
-	public WebElement registerYouCreditCardRadioButton_1;
 
 	@FindBy(xpath = "//label[@for='register']")
 	public WebElement registerYouCreditCardRadioButton;
@@ -103,16 +100,16 @@ public class Order {
 	@FindBy(xpath = "//label[@for='atm-payment']")
 	public WebElement convenienceStorePaymentRadioButton;
 
-	@FindBy(xpath = "//label[contains(text(),'ローソン')]")
+	@FindBy(xpath = "//div[@id='convenience']//div[1]")
 	public WebElement lawsonRadioButton;
 
-	@FindBy(xpath = "//label[contains(text(),'ファミリーマート')]")
+	@FindBy(xpath = "//div[@id='convenience']//div[2]")
 	public WebElement familyMartRadioButton;
 
-	@FindBy(xpath = "//label[contains(text(),'ミニストップ')]")
+	@FindBy(xpath = "//div[@id='convenience']//div[3]")
 	public WebElement ministopRadioButton;
 
-	@FindBy(xpath = "//label[contains(text(),'セイコーマート')]")
+	@FindBy(xpath = "//div[@id='convenience']//div[4]")
 	public WebElement seikoMartRadioButton;
 
 	@FindBy(xpath = "//input[@id='userName']")
@@ -129,9 +126,6 @@ public class Order {
 
 	// con store thank you page xpath
 
-	@FindBy(xpath = "//h3[contains(text(),'お申し込みありがとうございます。')]")
-	public WebElement thankYouForYourApplicationLabel;
-
 	@FindBy(xpath = "//div[@class='box-store-payment__content']//div[1]//div[2]")
 	public WebElement customerNumberLabel;
 
@@ -147,7 +141,7 @@ public class Order {
 	@FindBy(xpath = "//div[@class='box-body__item']//strong")
 	public WebElement orderNumberLabel;
 
-	@FindBy(xpath = "//span[contains(text(),'注文履歴を確認')]")
+	@FindBy(xpath = "//a[@href='/order-history']//span[2]")
 	public WebElement checkOrderHistoryLink;
 
 	@FindBy(xpath = "//span[@class='button__text']")
@@ -187,28 +181,28 @@ public class Order {
 	@FindBy(xpath = "//a[@class='button button--default button--uplarge']//span")
 	public WebElement StartNowButton;
 
-	@FindBy(xpath = "//a[contains(text(),'よくある質問・お問合せ')]")
+	@FindBy(xpath = "//a[@href='https://support.evidus.com/']")
 	public WebElement FAQLink;
 
-	@FindBy(xpath = "//img[@alt='Stagia Support Center Help Center Home Page']")
+	@FindBy(xpath = "//div[@class='logo']")
 	public WebElement FAQPageLogo;
 
-	@FindBy(xpath = "//a[contains(text(),'利用規約・個人情報の取扱')]")
+	@FindBy(xpath = "//a[@href='/term']")
 	public WebElement termsOfUseLink;
 
-	@FindBy(xpath = "//h3[contains(text(),'「スタギア」利用規約')]")
+	@FindBy(xpath = "//div[@class='header']//h1")
 	public WebElement STAGIATermsofServiceLabel;
 
-	@FindBy(xpath = "//a[contains(text(),'個人情報保護方針')]")
+	@FindBy(xpath = "//a[@href='https://www.jiem.co.jp/privacy/']")
 	public WebElement privacyPolicyLink;
 
 	@FindBy(xpath = "//h2[@class='firstChild']//img[@alt='privacy policy']")
 	public WebElement privacyPolicyLinkPageLabel;
 
-	@FindBy(xpath = "//a[contains(text(),'特定商取引法に基づく表示')]")
+	@FindBy(xpath = "//a[@href='/transaction-method']")
 	public WebElement commercialTransactionsLawLink;
 
-	@FindBy(xpath = "//h3[contains(text(),'「特定商取引に関する法律」に基づく表示')]")
+	@FindBy(xpath = "//div[@class='header']//h1")
 	public WebElement commercialTransactionsPageLabel;
 
 	@FindBy(xpath = "//p[@class='copy-right']")
@@ -657,7 +651,7 @@ public class Order {
 		step2ProceedButton.click();
 		log.info("Step 2 tab :- click to 'Confirmation of order details' button");
 
-		String expectedInvalidCreditCardText = "11入力してください";
+		String expectedInvalidCreditCardText = "入力してください";
 		CommonFunctions.isElementVisible(blankCardNoTextHandler);
 		String blankCardNoTextHandlerString = blankCardNoTextHandler.getText();
 		CommonFunctions.assertString(blankCardNoTextHandlerString, expectedInvalidCreditCardText);
@@ -683,8 +677,8 @@ public class Order {
 	public String[] methodForConStoreThankYouPage() throws Exception {
 
 		// thank you page
-		CommonFunctions.waitForVisiblity(thankYouForYourApplicationLabel, waitTime);
-		String thankYouForYourApplicationLabelSTR = thankYouForYourApplicationLabel.getText();
+		CommonFunctions.waitForVisiblity(step4ThankYouForYourPurchaseLabel, waitTime);
+		String thankYouForYourApplicationLabelSTR = step4ThankYouForYourPurchaseLabel.getText();
 		log.info("Step 4 tab :- thank You For Your Application text visible:- " + thankYouForYourApplicationLabelSTR);
 
 		CommonFunctions.waitForVisiblity(customerNumberLabel, waitTime);
@@ -880,9 +874,4 @@ public class Order {
 
 	}
 
-	public void checktrim() {
-//		String orderHistoryOrderDateLabelforTrim = "注文日: 2021-07-27";
-//		String orderHistoryOrderDateLabelSTR = orderHistoryOrderDateLabelforTrim.substring(5, 15);
-
-	}
 }

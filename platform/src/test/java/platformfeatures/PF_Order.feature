@@ -1,17 +1,7 @@
-@OrderValid @Smoke
-Feature: Validate order with credit card
+Feature: Validate order flow
 
-@FunctionalTest 
-Scenario Outline: Validate order with credit card
+@OrderCreditCardValid @Smoke @Full
+Scenario: Validate order with valid Credit Card
 
-Given Navigate to URL and login and perform order flow with valid credit <browser>
-Given Navigate to URL and login and perform order flow with invalid credit<browser>
-Then Close browsers
-
-Examples:
-|browser|
-|chrome	|
-
-
-
-
+Given Login To Platform Portal
+And Perform order valid credit card flow

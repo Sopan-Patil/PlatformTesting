@@ -89,26 +89,24 @@ public class LoginPage {
 
 	public void clickLoginButton() {
 
-		// System.out.println("inside clickLoginButton()");
 		if (CommonFunctions.waitForVisiblity(logInButton, waitTime)) {
-
-			logInButton.click(); // changes done
+			logInButton.click();
 		}
 
 	}
 
 	public void loginToPlatform() throws Exception {
 
-		/**
-		 * @Author : rahul shinde
-		 * @Date : 19 Jul 2021
-		 * @Description: handle zkai popup
-		 */
-
-		if (CommonFunctions.waitForVisiblity(zkai_popup, waitTime)) {
-			zkai_popupCloseButton.click();
-			log.info("Close Zkai pop up");
-		}
+//		/**
+//		 * @Author : rahul shinde
+//		 * @Date : 19 Jul 2021
+//		 * @Description: handle zkai popup
+//		 */
+//
+//		if (CommonFunctions.waitForVisiblity(zkai_popup, waitTime)) {
+//			zkai_popupCloseButton.click();
+//			log.info("Close Zkai pop up");
+//		}
 
 		String[] shipmentdata;
 
@@ -119,9 +117,9 @@ public class LoginPage {
 
 		// CommonFunctions.wa
 		if (CommonFunctions.waitForVisiblity(logInButton, waitTime)) {
-
+			logInButton.click();
 		}
-		logInButton.click();
+
 		log.info("Login button is clicked");
 		System.out.println("inside loginToPlatform()");
 

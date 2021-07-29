@@ -94,23 +94,7 @@ public class CommonFunctions {
 		return result;
 	}
 	
-	public static boolean waitForVisiblity1(WebElement element, int waitTime) {
-		boolean result = false;
-		try {
-			ObjectHelper.driver.switchTo().activeElement();
-			scrolltoElement(element);
 
-			WebDriverWait wait = new WebDriverWait(ObjectHelper.driver, waitTime);
-			// element = wait.until(ExpectedConditions.elementToBeClickable(element));
-			element = wait.until(ExpectedConditions.visibilityOf(element));
-			result = true;
-		} catch (Exception e) {
-			result = false;
-			throw e;
-		}
-		return result;
-	}
-	
 	
 	
 	
