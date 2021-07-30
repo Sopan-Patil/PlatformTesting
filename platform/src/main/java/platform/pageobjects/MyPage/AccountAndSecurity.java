@@ -27,7 +27,7 @@ import utils.XLHandler;
 public class AccountAndSecurity {
 	static String kanjiSurNameExcel, kanaNameExcel, kanaFirstNameExcel, kanaLastNameExcel, birthYear, birthMonth,
 			birthDate, postalCode1Excel, postalCode2Excel, AddressCityExcel, AddressTownExcel, AddressStreetExcel,
-			AddressApartmentExcel, phone1Excel, phone2Excel, phone3Excel;
+			AddressApartmentExcel, phone1Excel, phone2Excel, phone3Excel, gender;
 	List<String[]> testdata;
 	public WebDriver driver;
 	private static Logger log = LogManager.getLogger(LoginPage.class.getName());
@@ -119,6 +119,21 @@ public class AccountAndSecurity {
 	@FindBy(xpath = "//div[@class='account-security']/ul/li[5]/p[2]")
 	public WebElement updatedNameKana;
 
+	@FindBy(xpath = "//div[@class='account-security']/ul/li[6]/p[2]")
+	public WebElement updatedGender;
+
+	@FindBy(xpath = "//div[@class='account-security']/ul/li[7]/p[2]")
+	public WebElement updatedDOB;
+
+	@FindBy(xpath = "//div[@class='account-security']/ul/li[8]/p[2]")
+	public WebElement updatedPostalCode;
+
+	@FindBy(xpath = "//div[@class='account-security']/ul/li[10]/p[2]")
+	public WebElement updatedNotice;
+
+	@FindBy(xpath = "//div[@class='account-security']/ul/li[12]/p[2]")
+	public WebElement updatedPhone;
+
 	public void clickAccountInformation() {
 		if (CommonFunctions.waitForVisiblity(accountInformation, waitTime)) {
 			accountInformation.click();
@@ -168,6 +183,7 @@ public class AccountAndSecurity {
 		CommonFunctions.scrolltoElement(postalCode1TextField);
 		WebElement radioBtn1 = genderOption;
 		((JavascriptExecutor) ObjectHelper.driver).executeScript("arguments[0].checked = true;", radioBtn1);
+		gender = radioBtn1.getText();
 		// genderOption.click();
 
 		Select BirthYear = new Select(birthYearDropdown);
@@ -270,6 +286,13 @@ public class AccountAndSecurity {
 		shipmentdata = XLHandler.readexcel("UpdateAccountInformation", "NewTestData.xlsx");
 		Assert.assertEquals(updatedNameKanji.getText(), kanjiSurNameExcel + " " + kanaNameExcel);
 		Assert.assertEquals(updatedNameKana.getText(), kanaFirstNameExcel + " " + kanaLastNameExcel);
+		Assert.assertEquals(gender, updatedGender.getText());
+		Assert.assertEquals(updatedDOB.getText(), birthYear + birthMonth + birthDate);
+		Assert.assertEquals(updatedPostalCode.getText(), postalCode1Excel + postalCode2Excel);
+		Assert.assertEquals(updatedNotice.getText(),
+				AddressCityExcel + AddressTownExcel + AddressStreetExcel + AddressApartmentExcel);
+		Assert.assertEquals(updatedNotice.getText(),
+				AddressCityExcel + "-" + phone1Excel + "-" + phone2Excel + phone3Excel);
 
 	}
 }
