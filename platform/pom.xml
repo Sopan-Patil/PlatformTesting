@@ -18,19 +18,19 @@
 
 		<jre.level>1.8</jre.level>
 		<jdk.level>1.8</jdk.level>
+		
+		 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+        <surefire.version>2.19.1</surefire.version>
 
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.6</maven.compiler.source>
-		<maven.compiler.target>1.6</maven.compiler.target>
-		<surefire.version>2.19.1</surefire.version>
-
-		<test.file></test.file>
-		<config.file>default</config.file>
+        <test.file></test.file>
+        <config.file>default</config.file>
 
 	</properties>
-
-
-
+	
+	
+	
 
 	<dependencies>
 		<dependency>
@@ -54,19 +54,22 @@
 			<artifactId>log4j-core</artifactId>
 			<version>2.13.3</version>
 		</dependency>
-		<!-- <dependency> <groupId>commons-io</groupId> <artifactId>commons-io</artifactId> 
-			<version>2.6</version> </dependency> -->
+		<!-- <dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+		</dependency> -->
 		<!-- https://mvnrepository.com/artifact/com.beust/jcommander -->
 		<dependency>
 			<groupId>com.beust</groupId>
 			<artifactId>jcommander</artifactId>
 			<version>1.81</version>
 		</dependency>
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>24.1-jre</version>
-		</dependency>
+<dependency>
+<groupId>com.google.guava</groupId>
+<artifactId>guava</artifactId>
+<version>24.1-jre</version>
+</dependency>
 
 		<dependency>
 
@@ -166,8 +169,11 @@
 			<version>3.11.0</version>
 		</dependency>
 
-		<!-- <dependency> <groupId>org.seleniumhq.selenium</groupId> <artifactId>selenium-server</artifactId> 
-			<version>3.11.0</version> </dependency> -->
+	<!-- 	<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-server</artifactId>
+			<version>3.11.0</version>
+		</dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-api -->
 		<dependency>
@@ -197,12 +203,18 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-		<!-- <dependency> <groupId>org.seleniumhq.selenium</groupId> <artifactId>selenium-java</artifactId> 
-			<version>3.141.59</version> </dependency> -->
+		<!-- <dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.141.59</version>
+		</dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-		<!-- <dependency> <groupId>org.seleniumhq.selenium</groupId> <artifactId>selenium-java</artifactId> 
-			<version>4.0.0-beta-4</version> </dependency> -->
+	<!-- 	<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.0.0-beta-4</version>
+		</dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
 		<dependency>
@@ -226,8 +238,11 @@
 		</dependency>
 		<!-- Extend Report 26 Jul 2021 End -->
 
-		<!-- <dependency> <groupId>org.testng</groupId> <artifactId>testng</artifactId> 
-			<version>6.13</version> </dependency> -->
+		<!-- <dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.13</version>
+		</dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 		<dependency>
@@ -250,11 +265,23 @@
 			<type>jar</type>
 
 		</dependency>
+		
 
+<!--  	<dependency>
 
-		<!-- <dependency> <groupId>com.browserstack</groupId> <artifactId>testng-browserstack</artifactId> 
-			<version>1.0-SNAPSHOT</version> <scope>compile</scope> <type>jar</type> <type>jar</type> 
-			<packaging>jar</packaging> </dependency> -->
+	
+
+    <groupId>com.browserstack</groupId>
+    <artifactId>testng-browserstack</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <scope>compile</scope>
+
+			<type>jar</type>    
+
+			<type>jar</type>
+    <packaging>jar</packaging>
+
+    </dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.json/json -->
 		<dependency>
@@ -312,8 +339,11 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
-		<!-- <dependency> <groupId>com.googlecode.json-simple</groupId> <artifactId>json-simple</artifactId> 
-			<version>1.1</version> </dependency> -->
+	<!-- 	<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1</version>
+		</dependency> -->
 		<dependency>
 			<groupId>com.browserstack</groupId>
 			<artifactId>automate-testassist</artifactId>
@@ -330,8 +360,12 @@
 		<!-- <dependency> <groupId>org.jmockit</groupId> <artifactId>jmockit</artifactId> 
 			<version>1.24</version> <scope>test</scope> </dependency> -->
 
-		<!-- <dependency> <groupId>junit</groupId> <artifactId>junit</artifactId> 
-			<version>4.11</version> <scope>test</scope> </dependency> -->
+	<!-- 	<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency> -->
 
 		<dependency>
 			<groupId>com.browserstack</groupId>
@@ -375,13 +409,22 @@
 	<!-- <artifactId>browserstack-integration</artifactId> <version>1.0.8-SNAPSHOT</version> 
 		<packaging>hpi</packaging> -->
 
-	<!-- <name>BrowserStack</name> <description>This plugin allows you to integrate 
-		with BrowserStack.</description> <url>https://wiki.jenkins-ci.org/display/JENKINS/BrowserStack+Plugin</url> -->
+<!-- 	<name>BrowserStack</name>
+	<description>This plugin allows you to integrate with BrowserStack.</description>
+	<url>https://wiki.jenkins-ci.org/display/JENKINS/BrowserStack+Plugin</url> -->
 
-	<!-- <developers> <developer> <id>support</id> <name>BrowserStack Support</name> 
-		<email>support@browserstack.com</email> </developer> <developer> <id>integration</id> 
-		<name>BrowserStack Integrations</name> <email>integrations@browserstack.com</email> 
-		</developer> </developers> -->
+	<!-- <developers>
+		<developer>
+			<id>support</id>
+			<name>BrowserStack Support</name>
+			<email>support@browserstack.com</email>
+		</developer>
+		<developer>
+			<id>integration</id>
+			<name>BrowserStack Integrations</name>
+			<email>integrations@browserstack.com</email>
+		</developer>
+	</developers> -->
 
 	<scm>
 		<connection>scm:git:ssh://github.com/jenkinsci/browserstack-integration-plugin.git</connection>
@@ -405,7 +448,7 @@
 	</distributionManagement>
 
 
-
+	
 
 	<licenses>
 		<license>
@@ -446,14 +489,14 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-					<encoding>UTF-8</encoding>
-				</configuration>
-			</plugin>
+		<plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+                <encoding>UTF-8</encoding>
+            </configuration>
+        </plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -473,9 +516,9 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.18.1</version>
 				<configuration>
-
+				
 					<suiteXmlFiles>
-						<!-- pass testng.xml files as argument from command -->
+						<!-- pass testng.xml files as argument from command  -->
 						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
 						<!-- <suiteXmlFile>.platform/testng.xml</suiteXmlFile> -->
 
@@ -483,81 +526,85 @@
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
-
+			
 		</plugins>
 	</build>
-	<!-- /** * @Author : Chetan Sonparote * @Date : 28 Jul 2021 * @Description: 
-		Added profiles for Jenkins */ -->
+<!-- 	
+	/**
+ * @Author : Chetan Sonparote
+ * @Date : 28 Jul 2021
+ * @Description: Added profiles for Jenkins
+ */ -->
+	
+	 <profiles>
+        <profile>
+            <id>single</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>./TestNGSuites/Browserstack/single.browserstack.testng.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>local</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>./TestNGSuites/Browserstack/local.browserstack.testng.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
 
-	<profiles>
-		<profile>
-			<id>single</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-surefire-plugin</artifactId>
-						<configuration>
-							<suiteXmlFiles>
-								<suiteXmlFile>./TestNGSuites/Browserstack/single.browserstack.testng.xml</suiteXmlFile>
-							</suiteXmlFiles>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-		<profile>
-			<id>local</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-surefire-plugin</artifactId>
-						<configuration>
-							<suiteXmlFiles>
-								<suiteXmlFile>./TestNGSuites/Browserstack/local.browserstack.testng.xml</suiteXmlFile>
-							</suiteXmlFiles>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
+        <profile>
+            <id>parallel</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>./TestNGSuites/Browserstack/parallel.browserstack.testng.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
 
-		<profile>
-			<id>parallel</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-surefire-plugin</artifactId>
-						<configuration>
-							<suiteXmlFiles>
-								<suiteXmlFile>./TestNGSuites/Browserstack/parallel.browserstack.testng.xml</suiteXmlFile>
-							</suiteXmlFiles>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-
-		<profile>
-			<id>must have</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-surefire-plugin</artifactId>
-						<configuration>
-							<suiteXmlFiles>
-								<suiteXmlFile>./TestNGSuites/Browserstack/must.have.browserstack.testng.xml</suiteXmlFile>
-							</suiteXmlFiles>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-
-	</profiles>
-
+        <profile>
+            <id>must have</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>./TestNGSuites/Browserstack/must.have.browserstack.testng.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+   
+        </profiles>
+	
 
 </project>
