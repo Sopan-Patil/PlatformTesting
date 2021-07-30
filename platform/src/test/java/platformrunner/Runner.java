@@ -27,8 +27,8 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
-
-		tags = { "~@FeatureTest", "~@CreateAccountTest", "~@Smoke", "~@PFInvalidCC", "@PFAccountAndSecurity" },
+		// tags = { "~@FeatureTest", "~@CreateAccountTest", "~@Smoke", "~@PFInvalidCC",
+		// "@PFAccountAndSecurity" },
 
 		tags = { "@PF_test" },
 
@@ -58,20 +58,10 @@ public class Runner extends AbstractTestNGCucumberTests {
 	}
 
 	@AfterTest
-	@org.testng.annotations.Parameters(value = { "mode" })
+
 	public void closeBrowser(String mode) throws Exception {
 
 		ObjectHelper.driver.quit();
-		/*
-		 * newBaseClass = new NewBaseClass(); if (mode.equalsIgnoreCase("local")) { //
-		 * newBaseClass.closebrowser(); } else if
-		 * (mode.equalsIgnoreCase("browserstack")) {
-		 * 
-		 * // BrowserstackUtility browserstackUtility = new BrowserstackUtility(); // //
-		 * browserstackUtility.tearDown(); // newBaseClass.closeBrowserstack();
-		 * 
-		 * }
-		 */
 
 	}
 
