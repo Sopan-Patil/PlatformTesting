@@ -59,7 +59,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 
 	@AfterTest
 
-	public void closeBrowser(String mode) throws Exception {
+	public void closeBrowser() throws Exception {
 
 		ObjectHelper.driver.quit();
 
