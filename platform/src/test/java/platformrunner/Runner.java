@@ -5,7 +5,6 @@ import org.apache.logging.log4j.Logger;
 import org.junit.runner.RunWith;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Optional;
 
 import base.NewBaseClass;
 import cucumber.api.CucumberOptions;
@@ -16,7 +15,8 @@ import utils.ObjectHelper;
 /**
  * @Author : Chetan Sonparote
  * @Date : 12 Jul 2021
- * @Description: Runner for new projct structure. to be integrated after success
+ * @Description: Runner for new project structure. to be integrated after
+ *               success
  */
 
 @RunWith(Cucumber.class)
@@ -30,11 +30,12 @@ import utils.ObjectHelper;
 		// tags = { "~@FeatureTest", "~@CreateAccountTest", "~@Smoke", "~@PFInvalidCC",
 		// "@PFAccountAndSecurity" },
 
-		tags = { "~@PF_test", "@PFAccountAndSecurity" },
+		tags = { "@PF_test", "~@PFAccountAndSecurity" },
 
 		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
-				"junit:target/cucumber_html_report/junit_platform.xml", "rerun:rerun/failed_scenarios.txt", })
+				"junit:target/cucumber_html_report/junit_platform.xml", "rerun:rerun/failed_scenarios.txt",
+				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" })
 
 public class Runner extends AbstractTestNGCucumberTests {
 
@@ -43,8 +44,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 
 	@BeforeTest
 	@org.testng.annotations.Parameters(value = { "mode", "browser", "config", "environment" })
-	public void setUpBrowser(@Optional("null") String mode, @Optional("null") String browser,
-			@Optional("null") String config, @Optional("null") String environment) throws Exception {
+	public void setUpBrowser(String mode, String browser, String config, String environment) throws Exception {
 
 		newBaseClass = new NewBaseClass();
 		log.info("mode:" + mode);
