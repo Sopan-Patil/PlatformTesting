@@ -25,7 +25,7 @@ import utils.ObjectHelper;
 
 },
 
-		glue = { "platformstepdefinition", "listeners" },
+		glue = { "platformstepdefinition" },
 
 		// tags = { "~@FeatureTest", "~@CreateAccountTest", "~@Smoke", "~@PFInvalidCC",
 		// "@PFAccountAndSecurity" },
@@ -34,8 +34,7 @@ import utils.ObjectHelper;
 
 		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
-				"junit:target/cucumber_html_report/junit_platform.xml", "rerun:rerun/failed_scenarios.txt",
-				"listeners.CustomReportListener" })
+				"junit:target/cucumber_html_report/junit_platform.xml", "rerun:rerun/failed_scenarios.txt", })
 
 public class Runner extends AbstractTestNGCucumberTests {
 
