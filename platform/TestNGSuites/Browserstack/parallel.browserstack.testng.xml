@@ -7,7 +7,7 @@
 	</listeners>
 	
     <test name="SingleTestEnv1">
-        <parameter name="config" value="./resources/browserstackConfig/parallel.conf.json"/>
+        <parameter name="config" value="parallel.conf.json"/>
          <parameter name="mode" value="browserstack" />
         <parameter name="environment" value="env1"/>
         <classes>
