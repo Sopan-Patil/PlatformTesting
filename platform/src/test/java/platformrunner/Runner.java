@@ -25,16 +25,17 @@ import utils.ObjectHelper;
 
 },
 
-		glue = { "platformstepdefinition" },
+		glue = { "platformstepdefinition", "listeners" },
 
 		// tags = { "~@FeatureTest", "~@CreateAccountTest", "~@Smoke", "~@PFInvalidCC",
 		// "@PFAccountAndSecurity" },
 
-		tags = { "@PF_test" },
+		tags = { "~@PF_test", "@PFAccountAndSecurity" },
 
 		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
-				"junit:target/cucumber_html_report/junit_platform.xml", "rerun:rerun/failed_scenarios.txt", })
+				"junit:target/cucumber_html_report/junit_platform.xml", "rerun:rerun/failed_scenarios.txt",
+				"listeners.CustomReportListener" })
 
 public class Runner extends AbstractTestNGCucumberTests {
 
@@ -64,5 +65,9 @@ public class Runner extends AbstractTestNGCucumberTests {
 		ObjectHelper.driver.quit();
 
 	}
-
+	/*
+	 * @DataProvider(parallel = true)
+	 * 
+	 * @Override public Object[][] scenarios() { return super.scenarios(); }
+	 */
 }

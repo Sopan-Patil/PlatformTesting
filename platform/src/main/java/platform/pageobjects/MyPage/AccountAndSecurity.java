@@ -268,7 +268,6 @@ public class AccountAndSecurity {
 	public void Validate_Updated_Account_Information() throws Exception {
 		String[] shipmentdata;
 		shipmentdata = XLHandler.readexcel("UpdateAccountInformation", "NewTestData.xlsx");
-
 		Assert.assertEquals(updatedNameKanji.getText(), kanjiSurNameExcel + " " + kanaNameExcel);
 		Assert.assertEquals(updatedNameKana.getText(), kanaFirstNameExcel + " " + kanaLastNameExcel);
 
