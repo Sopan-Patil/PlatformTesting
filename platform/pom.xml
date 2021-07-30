@@ -20,6 +20,9 @@
 		<jdk.level>1.8</jdk.level>
 
 	</properties>
+	
+	
+	
 
 	<dependencies>
 		<dependency>
@@ -43,11 +46,11 @@
 			<artifactId>log4j-core</artifactId>
 			<version>2.13.3</version>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.6</version>
-		</dependency>
+		</dependency> -->
 		<!-- https://mvnrepository.com/artifact/com.beust/jcommander -->
 		<dependency>
 			<groupId>com.beust</groupId>
@@ -154,11 +157,11 @@
 			<version>3.11.0</version>
 		</dependency>
 
-		<dependency>
+	<!-- 	<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-server</artifactId>
 			<version>3.11.0</version>
-		</dependency>
+		</dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-api -->
 		<dependency>
@@ -188,18 +191,18 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>3.141.59</version>
-		</dependency>
+		</dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-		<dependency>
+	<!-- 	<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>4.0.0-beta-4</version>
-		</dependency>
+		</dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
 		<dependency>
@@ -223,11 +226,11 @@
 		</dependency>
 		<!-- Extend Report 26 Jul 2021 End -->
 
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>6.13</version>
-		</dependency>
+		</dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 		<dependency>
@@ -250,6 +253,15 @@
 			<type>jar</type>
 
 		</dependency>
+		
+		<dependency>
+    <groupId>com.browserstack</groupId>
+    <artifactId>testng-browserstack</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <scope>compile</scope>
+			<type>jar</type>
+   <!--  <packaging>jar</packaging> -->
+    </dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.json/json -->
 		<dependency>
@@ -307,11 +319,11 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
-		<dependency>
+	<!-- 	<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
 			<artifactId>json-simple</artifactId>
 			<version>1.1</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>com.browserstack</groupId>
 			<artifactId>automate-testassist</artifactId>
@@ -377,11 +389,11 @@
 	<!-- <artifactId>browserstack-integration</artifactId> <version>1.0.8-SNAPSHOT</version> 
 		<packaging>hpi</packaging> -->
 
-	<name>BrowserStack</name>
+<!-- 	<name>BrowserStack</name>
 	<description>This plugin allows you to integrate with BrowserStack.</description>
-	<url>https://wiki.jenkins-ci.org/display/JENKINS/BrowserStack+Plugin</url>
+	<url>https://wiki.jenkins-ci.org/display/JENKINS/BrowserStack+Plugin</url> -->
 
-	<developers>
+	<!-- <developers>
 		<developer>
 			<id>support</id>
 			<name>BrowserStack Support</name>
@@ -392,7 +404,7 @@
 			<name>BrowserStack Integrations</name>
 			<email>integrations@browserstack.com</email>
 		</developer>
-	</developers>
+	</developers> -->
 
 	<scm>
 		<connection>scm:git:ssh://github.com/jenkinsci/browserstack-integration-plugin.git</connection>
