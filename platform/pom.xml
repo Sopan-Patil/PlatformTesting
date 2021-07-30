@@ -18,6 +18,14 @@
 
 		<jre.level>1.8</jre.level>
 		<jdk.level>1.8</jdk.level>
+		
+		 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+        <surefire.version>2.19.1</surefire.version>
+
+        <test.file></test.file>
+        <config.file>default</config.file>
 
 	</properties>
 	
@@ -254,14 +262,14 @@
 
 		</dependency>
 		
-		<dependency>
+		<!-- <dependency>
     <groupId>com.browserstack</groupId>
     <artifactId>testng-browserstack</artifactId>
     <version>1.0-SNAPSHOT</version>
     <scope>compile</scope>
 			<type>jar</type>
-   <!--  <packaging>jar</packaging> -->
-    </dependency>
+    <packaging>jar</packaging>
+    </dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.json/json -->
 		<dependency>
