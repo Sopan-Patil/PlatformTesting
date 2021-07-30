@@ -1,30 +1,22 @@
 @LoginFeature @Smoke
-Feature: Validate new login 
+Feature: Validate new login
 
+  @FunctionalTest1
+  Scenario Outline: Validate new login features
+    Given Navigate to URL on <browser>
+    Then Login To Platform
 
-@FunctionalTest
-Scenario Outline: Validate new login features 
+    Examples: 
+      | browser |
+      | chrome  |
 
-Given Navigate to URL on <browser>
-Then Login To Platform
+  @BrowserstackTest
+  Scenario Outline: Validate new login features
+    Given Navigate to URL with <config> and <environment> PFQA_123_1
+    Given Navigate to URL with <config> PFQA_123_1
+    Then Login for PFQA_123_1
+    And Close browser
 
-
-Examples:
-|browser|
-|chrome	|
-
-
-@BrowserstackTest
-Scenario Outline: Validate new login features 
-
-Given Navigate to URL with <config> and <environment> PFQA_123_1
-Given Navigate to URL with <config> PFQA_123_1
-Then Login for PFQA_123_1
-And Close browser
-
-Examples:
-
-|config|environment|
-|single.conf.json|chrome|
-
-
+    Examples: 
+      | config           | environment |
+      | single.conf.json | chrome      |

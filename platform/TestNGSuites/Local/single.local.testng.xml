@@ -8,7 +8,8 @@
   <parameter name="mode" value="local" />
   <parameter name="browser" value="chrome" />
     <classes>
-   <class name="platformrunner.Runner"/>
+   <!-- <class name="platformrunner.Runner"/> -->
+    <class name="platformrunner.Runner"/>
     </classes>
   </test>
 </suite>

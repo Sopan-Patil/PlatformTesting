@@ -10,6 +10,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
 
 import platform.properties.ConfigProp;
 import utils.BrowserstackUtility;
@@ -42,6 +45,31 @@ public class NewBaseClass {
 
 	public static String greencolorRGB = "rgb(179, 198, 53)";
 	private static Logger log = LogManager.getLogger(NewBaseClass.class.getName());
+
+	// private static Logger log = LogManager.getLogger(Runner.class.getName());
+
+	@BeforeTest
+	@org.testng.annotations.Parameters(value = { "mode", "browser", "config", "environment" })
+	public void setUpBrowser(@Optional("null") String mode, @Optional("null") String browser,
+			@Optional("null") String config, @Optional("null") String environment) throws Exception {
+
+		// newBaseClass = new NewBaseClass();
+		log.info("mode:" + mode);
+		log.info("browser:" + browser);
+		log.info("config:" + config);
+		log.info("environment:" + environment);
+
+		openBrowser(mode, browser, config, environment);
+
+		closeZkaiPopup();
+	}
+
+	@AfterTest
+	public void closeBrowser() throws Exception {
+
+		ObjectHelper.driver.quit();
+
+	}
 
 	private void setUpObjectHelper() {
 		String testDataFileName = ConfigProp.testDataFile;

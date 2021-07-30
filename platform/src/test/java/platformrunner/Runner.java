@@ -31,7 +31,7 @@ import utils.ObjectHelper;
 		// tags = { "~@FeatureTest", "~@CreateAccountTest", "~@Smoke", "~@PFInvalidCC",
 		// "@PFAccountAndSecurity" },
 
-		tags = { "@PF_test", "~@PFAccountAndSecurity" },
+		tags = { "@PF_test", "~@CreateAccountTest" },
 
 		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
@@ -60,15 +60,10 @@ public class Runner extends AbstractTestNGCucumberTests {
 	}
 
 	@AfterTest
-
 	public void closeBrowser() throws Exception {
 
 		ObjectHelper.driver.quit();
 
 	}
-	/*
-	 * @DataProvider(parallel = true)
-	 * 
-	 * @Override public Object[][] scenarios() { return super.scenarios(); }
-	 */
+
 }
