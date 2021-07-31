@@ -11,6 +11,7 @@ import base.NewBaseClass;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
+import utils.BrowserstackUtility;
 import utils.ObjectHelper;
 
 /**
@@ -41,6 +42,7 @@ import utils.ObjectHelper;
 public class Runner extends AbstractTestNGCucumberTests {
 
 	NewBaseClass newBaseClass;
+	BrowserstackUtility browserstackUtility;
 	private static Logger log = LogManager.getLogger(Runner.class.getName());
 
 	@BeforeTest
@@ -49,14 +51,22 @@ public class Runner extends AbstractTestNGCucumberTests {
 			@Optional("null") String config, @Optional("null") String environment) throws Exception {
 
 		newBaseClass = new NewBaseClass();
+		browserstackUtility = new BrowserstackUtility();
 		log.info("mode:" + mode);
 		log.info("browser:" + browser);
 		log.info("config:" + config);
 		log.info("environment:" + environment);
 
-		newBaseClass.openBrowser(mode, browser, config, environment);
+		// newBaseClass.openBrowser(mode, browser, config, environment);
+		if (mode.equalsIgnoreCase("local")) {
+			ObjectHelper.driver = newBaseClass.openbrowser(browser);
+		} else if (mode.equalsIgnoreCase("browserstack")) {
+			ObjectHelper.driver = browserstackUtility.initializaBrowserstackDriver(config, environment);
+			// openBrowserstack(config, environment);
 
-		newBaseClass.closeZkaiPopup();
+		}
+
+		// newBaseClass.closeZkaiPopup();
 	}
 
 	@AfterTest
