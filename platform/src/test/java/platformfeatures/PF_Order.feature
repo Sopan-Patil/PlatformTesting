@@ -13,7 +13,7 @@ And Verify thank you page for credit card transaction
 And Verify thank you page data on order history page for credit card transaction
 And logout
 
-@OrderWithCreditCardValid @SmokeSmoke @Full
+@OrderWithCreditCardValid @Smoke @Full
 Scenario: Validate order with valid Credit Card
 
 Given Login To Platform Portal
@@ -27,7 +27,7 @@ And Verify thank you page data on order history page for credit card transaction
 And logout
 
 
-@OrderWithCreditCardInValid @SmokeSmoke @Full
+@OrderWithCreditCardInValid @Smoke @Full
 Scenario: Validate order with In valid Credit Card
 
 Given Login To Platform Portal
@@ -37,7 +37,7 @@ And Reglogin between Step 1 page to Step 2 page
 And Step2 Payment With In Valid Credit Card
 And logout
 
-@OrderWithCreditCardBlankValid @SmokeSmoke @Full
+@OrderWithCreditCardBlankValid @Smoke @Full
 Scenario: Validate order with Blank valid Credit Card
 
 Given Login To Platform Portal
@@ -47,7 +47,7 @@ And Reglogin between Step 1 page to Step 2 page
 And Step2 Payment With Blank Credit Card
 And logout
 
-@OrderWithConvenienceStoreValid @SmokeSmoke @Full
+@OrderWithConvenienceStoreValid @Smoke @Full
 Scenario: Validate order with Blank valid Credit Card
 
 Given Login To Platform Portal
@@ -60,7 +60,7 @@ And Verify thank you page for convenience store transaction
 And Verify thank you page data on order history page for convenience store transaction
 And logout
 
-@OrderWithExistingCreditCardPurchaseKanji @SmokeSmoke @Full
+@OrderWithExistingCreditCardPurchaseKanji @Smoke @Full
 Scenario: Validate order with Existing valid Credit Card to purchase kanji product
 
 Given Login To Platform Portal
