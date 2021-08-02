@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Platform Testing Cucumber Testng" verbose="1" parallel="tests">
-
+<suite name="LocalSingleBrowser" thread-count="5" parallel="tests">
 <listeners>
-<listener class-name="listeners.Listeners" />
-<!-- <listener class-name = "resources.ExtentReporterNG"/> -->
-</listeners>
-      
-      <test name="Cucumber Testng">      
-   
-	  
-	      <classes>
-		        <!-- <class name="poc.BaseClassTestNG"/> -->
-		      <class name="platformrunner.Runner"/>
-		  </classes>		  
-      </test>
+		<listener class-name="listeners.Listeners" />
+	</listeners>
+  <test name="SingleBrowserTest">
+  <parameter name="mode" value="local" />
+  <parameter name="browser" value="chrome" />
+    <classes>
+   <!-- <class name="platformrunner.Runner"/> -->
+    <class name="platformrunner.Runner"/>
+    </classes>
+  </test>
 </suite>
