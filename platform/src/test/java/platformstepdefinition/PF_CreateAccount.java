@@ -39,6 +39,7 @@ public class PF_CreateAccount extends NewBaseClass {
 	@Then("^Validate that new account is created$")
 	public void validate_that_new_account_is_created() throws Throwable {
 		CreateAccountStep5 createAccountStep5 = new CreateAccountStep5(driver);
+		createAccountStep5.getCreatedAccountDetails();
 		createAccountStep5.clickGotoTopLink();
 		// throw new PendingException();
 	}
