@@ -116,10 +116,12 @@ public class BrowserstackUtility {
 
 		getUserCredentials();
 
-		/*
-		 * if (buildName == null || buildName == "test") { buildName = (String)
-		 * config.get("build"); }
-		 */
+		String build = System.getenv("BROWSERSTACK_BUILD_NAME");
+		  if (build == null || build == "test") { build = (String)
+		  config.get("build"); }
+		 
+		  String buildName = (String)
+				  config.get("name");
 
 		String app = System.getenv("BROWSERSTACK_APP_ID");
 		if (app != null && !app.isEmpty()) {
@@ -136,6 +138,12 @@ public class BrowserstackUtility {
 
 		capabilities.setCapability("acceptSslCerts", "true");
 		capabilities.setCapability("browserstack.idleTimeout", "30");
+		
+		
+		
+		capabilities.setCapability("name", buildName); // test buildName
+		capabilities.setCapability("build", build); // CI/CD job name using BROWSERSTACK_BUILD_NAME env variable
+
 
 	//	capabilities.setCapability("name", buildName);
 		//capabilities.setCapability("build", buildName);
