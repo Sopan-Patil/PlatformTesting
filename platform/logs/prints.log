@@ -463,3 +463,29 @@
 15:18:08.826 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering crdit card holder name to 'card name' textbox
 15:18:10.772 [main] INFO  platform.pageobjects.Authentication.LoginPage - entering security code to 'securitycode' textbox
 15:18:54.089 [main] INFO  platform.pageobjects.Authentication.LoginPage - The invalid credit card is failed message match with expected message
+12:02:22.237 [TestNG-tests-1] INFO  platformrunner.Runner - mode:local
+12:02:22.248 [TestNG-tests-1] INFO  platformrunner.Runner - browser:chrome
+12:02:22.248 [TestNG-tests-1] INFO  platformrunner.Runner - config:null
+12:02:22.248 [TestNG-tests-1] INFO  platformrunner.Runner - environment:null
+12:14:04.570 [TestNG-tests-1] INFO  platformrunner.Runner - mode:local
+12:14:04.578 [TestNG-tests-1] INFO  platformrunner.Runner - browser:chrome
+12:14:04.578 [TestNG-tests-1] INFO  platformrunner.Runner - config:null
+12:14:04.578 [TestNG-tests-1] INFO  platformrunner.Runner - environment:null
+12:15:07.230 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+12:15:43.337 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Kanji Sur Name to 'kanji Sur Name' textbox
+12:15:44.229 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Kanji Name to 'kanji  Name' textbox
+12:15:45.099 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Kanji First Name to 'kanji First Name' textbox
+12:15:45.970 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Kanji Last Name to 'kanji Last Name' textbox
+12:15:53.389 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - selecting 'Birth year ' Dropdown
+12:15:53.813 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - selecting 'Birth month ' Dropdown
+12:15:54.259 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - selecting 'Birth date ' Dropdown
+12:15:55.140 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Postal Code to 'Postal Code 1' textbox
+12:15:56.034 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Postal Code to 'Postal Code 2' textbox
+12:16:03.393 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - selecting 'Address prefecture' Dropdown
+12:16:04.248 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Address City to 'Address City' textbox
+12:16:05.758 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Address Town to 'Address Town' textbox
+12:16:06.628 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Address Street to 'Address Street' textbox
+12:16:07.503 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Address Apartment to 'Address Apartment' textbox
+12:16:08.335 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Phone to 'Phone 1' textbox
+12:16:09.356 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Phone to 'Phone 2' textbox
+12:16:10.473 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Phone to 'Phone 3' textbox
