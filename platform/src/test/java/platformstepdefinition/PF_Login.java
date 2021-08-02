@@ -54,6 +54,20 @@ public class PF_Login extends NewBaseClass {
 
 	}
 
+	/**
+	 * @Author : rahul shinde
+	 * @Date : 02 Aug 2021
+	 * @Description: Logout
+	 */
+
+	@Then("^logout$")
+	public void logout() throws Throwable {
+
+		LoginPage loginToPlatform = new LoginPage(driver);
+
+		loginToPlatform.logoutFromPlatform();
+
+	}
 	/*
 	 * @And("^Close browser$") public void close_browser() throws Throwable { // //
 	 * closebrowser(); }

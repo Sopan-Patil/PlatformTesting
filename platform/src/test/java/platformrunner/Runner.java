@@ -13,7 +13,6 @@ import com.github.mkolisnyk.cucumber.runner.ExtendedCucumberOptions;
 import base.NewBaseClass;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
-import utils.ObjectHelper;
 
 /**
  * @Author : Chetan Sonparote
@@ -30,7 +29,7 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
-		tags = { "@PF_test" },
+		tags = { "@Smoke" },
 
 		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
@@ -61,7 +60,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 	@org.testng.annotations.Parameters(value = { "mode" })
 	public void closeBrowser(String mode) throws Exception {
 
-		ObjectHelper.driver.quit();
+		// ObjectHelper.driver.quit();
 		/*
 		 * newBaseClass = new NewBaseClass(); if (mode.equalsIgnoreCase("local")) { //
 		 * newBaseClass.closebrowser(); } else if
