@@ -1,5 +1,5 @@
 Feature: Test browser
-@PF_test @Smoke
+@PF_test
 Scenario: Test opening browser
 Then run test
 

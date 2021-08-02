@@ -489,3 +489,59 @@
 12:16:08.335 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Phone to 'Phone 1' textbox
 12:16:09.356 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Phone to 'Phone 2' textbox
 12:16:10.473 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Phone to 'Phone 3' textbox
+20:08:15.946 [TestNG-tests-1] INFO  platformrunner.Runner - mode:local
+20:08:15.951 [TestNG-tests-1] INFO  platformrunner.Runner - browser:chrome
+20:08:15.952 [TestNG-tests-1] INFO  platformrunner.Runner - config:null
+20:08:15.952 [TestNG-tests-1] INFO  platformrunner.Runner - environment:null
+20:08:51.473 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+20:08:51.473 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+20:09:08.508 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Kanji Sur Name to 'kanji Sur Name' textbox
+20:09:09.222 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Kanji Name to 'kanji  Name' textbox
+20:09:09.938 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Kanji First Name to 'kanji First Name' textbox
+20:09:10.688 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Kanji Last Name to 'kanji Last Name' textbox
+20:09:11.622 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - selecting 'Birth year ' Dropdown
+20:09:11.916 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - selecting 'Birth month ' Dropdown
+20:09:12.191 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - selecting 'Birth date ' Dropdown
+20:09:12.962 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Postal Code to 'Postal Code 1' textbox
+20:09:13.711 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Postal Code to 'Postal Code 2' textbox
+20:09:13.975 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - selecting 'Address prefecture' Dropdown
+20:09:14.755 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Address City to 'Address City' textbox
+20:09:16.025 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Address Town to 'Address Town' textbox
+20:09:16.774 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Address Street to 'Address Street' textbox
+20:09:17.517 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Address Apartment to 'Address Apartment' textbox
+20:09:18.250 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Phone to 'Phone 1' textbox
+20:09:19.041 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Phone to 'Phone 2' textbox
+20:09:19.846 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Phone to 'Phone 3' textbox
+20:09:25.231 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+20:09:32.066 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+20:09:32.067 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+20:09:55.782 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+20:09:55.782 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+20:10:06.654 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering invalid credit card no to 'credit card number' textbox
+20:10:07.497 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - clicking on 'Expiration year' Dropdown
+20:10:08.234 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - clicking on 'Expiration year' Dropdown
+20:10:08.896 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering crdit card holder name to 'card name' textbox
+20:10:10.811 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering security code to 'securitycode' textbox
+20:11:54.855 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text E61: E61010002: カードの登録に失敗しました with E61: E61010002: カードの登録に失敗しました
+20:11:54.856 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The invalid credit card is failed message match with expected message
+20:12:31.823 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+20:12:31.824 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+20:13:08.832 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+20:13:08.832 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+20:13:17.805 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+20:13:20.290 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on buy button from product list page,select 1st product-CASEC １
+20:13:22.997 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 1 tab :- click to 'To payment method selection' button
+20:13:34.704 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - go to relogin page
+20:13:34.852 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Re Login button is clicked
+20:13:49.268 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'Confirmation of order details' button
+20:13:53.898 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 3 tab :- click to 'Confirm the order' button
+20:13:55.909 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- thank You For Your Application text visible:- ご購入ありがとうございます。
+20:13:55.909 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text ご購入ありがとうございます。 with ご購入ありがとうございます。
+20:13:57.002 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Order number text visible:- ORD000000000000000005836
+20:13:57.765 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- order history link visible
+20:13:58.642 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- start now button visible:- 今すぐはじめる
+20:13:58.642 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 今すぐはじめる with 今すぐはじめる
+20:13:59.437 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Frequently Asked Questions / Inquiries link visible
+20:14:00.171 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Terms of use ・ Handling of personal information link visible
+20:14:01.139 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- privacy policy link visible
+20:14:01.958 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Display based on the Specified Commercial Transactions Law link visible

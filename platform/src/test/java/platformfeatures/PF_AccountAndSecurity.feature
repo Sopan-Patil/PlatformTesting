@@ -1,6 +1,6 @@
 Feature: Validate Account information
 
-@PFAccountAndSecurity @Smoke
+@PFAccountAndSecurity @Smoke @Full
  Scenario:  Validate Account information
  
 #Given Navigate to URL on <browser>

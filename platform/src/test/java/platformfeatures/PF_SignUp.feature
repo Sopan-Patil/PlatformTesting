@@ -11,7 +11,7 @@ Examples:
 |browser|
 |chrome	|
 
-@BrowserstackTest
+
 Scenario Outline: Validate new login features 
 
 Given Navigate to URL with <config> and <environment> PFQA_123_1
