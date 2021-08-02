@@ -188,7 +188,7 @@ public class NewBaseClass {
 
 		// WebHandler.openBrowser();
 
-		createExtentReport();
+		// createExtentReport();
 		navigateToUrl();
 		return ObjectHelper.driver;
 	}
