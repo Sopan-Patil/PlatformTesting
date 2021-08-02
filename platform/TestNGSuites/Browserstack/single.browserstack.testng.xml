@@ -8,7 +8,7 @@
         <parameter name="config" value="single.conf.json"/>
         <parameter name="environment" value="chrome"/>
          <parameter name="mode" value="browserstack" />
-          <parameter name="browser" value="null" />
+          <parameter name="browser" value="chrome" />
         <classes>
             <class name="platformrunner.Runner"/>
         </classes>
