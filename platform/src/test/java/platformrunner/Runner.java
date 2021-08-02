@@ -10,7 +10,6 @@ import base.NewBaseClass;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
-import utils.BrowserstackUtility;
 import utils.ObjectHelper;
 
 /**
@@ -40,7 +39,7 @@ import utils.ObjectHelper;
 public class Runner extends AbstractTestNGCucumberTests {
 
 	NewBaseClass newBaseClass;
-	BrowserstackUtility browserstackUtility;
+
 	private static Logger log = LogManager.getLogger(Runner.class.getName());
 
 	@BeforeTest
@@ -51,7 +50,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 			@org.testng.annotations.Optional("chrome") String environment) throws Exception {
 
 		newBaseClass = new NewBaseClass();
-		browserstackUtility = new BrowserstackUtility();
+
 		log.info("mode:" + mode);
 		log.info("browser:" + browser);
 		log.info("config:" + config);
