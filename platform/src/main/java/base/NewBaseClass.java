@@ -16,7 +16,6 @@ import org.testng.annotations.Optional;
 
 import platform.properties.ConfigProp;
 import utils.BrowserstackUtility;
-import utils.CommonFunctions;
 import utils.ObjectHelper;
 import utils.WebHandler;
 
@@ -134,7 +133,10 @@ public class NewBaseClass {
 		// Alert alert = driver.switchTo().alert();
 		// alert.dismiss();
 
-		if (CommonFunctions.waitForClickable(ObjectHelper.driver.findElement(zkai_popupCloseButton), 1)) {
+		// if
+		// (CommonFunctions.waitForClickable(ObjectHelper.driver.findElement(zkai_popupCloseButton),
+		// 1)) {
+		if (ObjectHelper.driver.findElement(zkai_popupCloseButton).isDisplayed()) {
 			if (ObjectHelper.driver.findElements(zkai_popupCloseButton).size() > 0) {
 				ObjectHelper.driver.findElement(zkai_popupCloseButton).click();
 			}
