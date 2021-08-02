@@ -47,8 +47,8 @@ public class Runner extends AbstractTestNGCucumberTests {
 
 	@BeforeTest
 	@Parameters(/* value = */ { "mode", "browser", "config", "environment" })
-	public void setUpBrowser(@Optional("null") String mode, @Optional("null") String browser,
-			@Optional("null") String config, @Optional("null") String environment) throws Exception {
+	public void setUpBrowser(@Optional("local") String mode, @Optional("chrome") String browser,
+			@Optional("local.conf.json") String config, @Optional("chrome") String environment) throws Exception {
 
 		newBaseClass = new NewBaseClass();
 		browserstackUtility = new BrowserstackUtility();

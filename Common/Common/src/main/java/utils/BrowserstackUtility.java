@@ -57,8 +57,9 @@ public class BrowserstackUtility {
 		properties.load(fis);
 	}
 
-	public WebDriver initializaBrowserstackDriver(@Optional("local.conf.json") String config_file,
-			@Optional("chrome") String environment) throws Exception {
+	public WebDriver initializaBrowserstackDriver(
+			/* @Optional("local.conf.json") */ String config_file,
+			/* @Optional("chrome") */ String environment) throws Exception {
 		// loadPropertiesFile();
 
 		/**
