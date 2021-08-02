@@ -12,7 +12,7 @@
 	  
 	      <classes>
 		        <!-- <class name="poc.BaseClassTestNG"/> -->
-		      <class name="platformrunner.PlatformTestRunners"/>
+		      <class name="platformrunner.Runner"/>
 		  </classes>		  
       </test>
 </suite>
