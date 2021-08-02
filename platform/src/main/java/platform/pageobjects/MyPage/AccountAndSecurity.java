@@ -292,6 +292,5 @@ public class AccountAndSecurity {
 		Assert.assertEquals(updatedAddress.getText(), addprefecture + " " + AddressCityExcel + " " + AddressTownExcel
 				+ " " + AddressStreetExcel + " " + AddressApartmentExcel);
 		Assert.assertEquals(updatedPhone.getText(), phone1Excel + "-" + phone2Excel + "-" + phone3Excel);
-
 	}
 }

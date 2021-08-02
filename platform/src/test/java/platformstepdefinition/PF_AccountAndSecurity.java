@@ -42,5 +42,6 @@ public class PF_AccountAndSecurity extends NewBaseClass {
 	public void Validate_Updated_Account_Information() throws Throwable {
 		AccountAndSecurity updateaccountinfo = new AccountAndSecurity(driver);
 		updateaccountinfo.Validate_Updated_Account_Information();
+
 	}
 }
