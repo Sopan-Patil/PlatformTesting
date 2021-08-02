@@ -1,5 +1,6 @@
 package listeners;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -14,8 +15,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import reporting.ExtentReporter;
-import utils.ObjectHelper;
-import utils.Screenshots;
 
 /**
  * @Author : Chetan Sonparote
@@ -77,8 +76,20 @@ public class Listeners extends ExtentReporter implements ITestListener/* , Event
 		LocalDateTime now = LocalDateTime.now();
 
 		String fileName = dtf.format(now);
-		extentTest.get().addScreenCaptureFromPath(Screenshots.takeScreenshot(fileName, ObjectHelper.driver),
-				result.getMethod().getMethodName());
+		/*
+		 * extentTest.get().addScreenCaptureFromPath(Screenshots.takeScreenshot(
+		 * fileName, ObjectHelper.driver), result.getMethod().getMethodName());
+		 */
+
+		try {
+
+			extentTest.get().addScreenCaptureFromPath(getScreenShotPath(testMethodName, driver),
+					result.getMethod().getMethodName());
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 

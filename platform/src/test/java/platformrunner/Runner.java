@@ -11,10 +11,8 @@ import base.NewBaseClass;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
-
 import utils.BrowserstackUtility;
 import utils.ObjectHelper;
-
 
 /**
  * @Author : Chetan Sonparote
@@ -31,14 +29,12 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
-
 		// tags = { "~@FeatureTest", "~@CreateAccountTest", "~@Smoke", "~@PFInvalidCC",
 		// "@PFAccountAndSecurity" },
 
-		tags = { "~@PF_test", "@PFAccountAndSecurity" },
+		tags = { "@PF_test", "~@PFAccountAndSecurity" },
 
-		tags = { "@Smoke" },
-
+		// tags = { "@Smoke" },
 
 		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
@@ -63,21 +59,22 @@ public class Runner extends AbstractTestNGCucumberTests {
 		log.info("config:" + config);
 		log.info("environment:" + environment);
 
-		// newBaseClass.openBrowser(mode, browser, config, environment);
-		if (mode.equalsIgnoreCase("local")) {
-			ObjectHelper.driver = newBaseClass.openbrowser(browser);
-		} else if (mode.equalsIgnoreCase("browserstack")) {
-			ObjectHelper.driver = browserstackUtility.initializaBrowserstackDriver(config, environment);
-			// openBrowserstack(config, environment);
-
-		}
+		newBaseClass.openBrowser(mode, browser, config, environment);
+		/*
+		 * if (mode.equalsIgnoreCase("local")) { ObjectHelper.driver =
+		 * newBaseClass.openbrowser(browser); } else if
+		 * (mode.equalsIgnoreCase("browserstack")) { ObjectHelper.driver =
+		 * browserstackUtility.initializaBrowserstackDriver(config, environment); //
+		 * openBrowserstack(config, environment);
+		 * 
+		 * }
+		 */
 
 		// newBaseClass.closeZkaiPopup();
 	}
 
 	@AfterTest
 	public void closeBrowser() throws Exception {
-
 
 		ObjectHelper.driver.quit();
 
@@ -92,7 +89,6 @@ public class Runner extends AbstractTestNGCucumberTests {
 		 * 
 		 * }
 		 */
-
 
 	}
 
