@@ -283,7 +283,8 @@ public class Order {
 	// Order flow step 3
 	public void methodForOrderFlowStep3() throws Exception {
 
-		CommonFunctions.isElementVisible(step3ConfirmOrderButton);
+		// CommonFunctions.isElementVisible(step3ConfirmOrderButton);
+		CommonFunctions.scrolltoElement(step3ConfirmOrderButton);
 		CommonFunctions.waitForVisiblity(step3ConfirmOrderButton, waitTime);
 		step3ConfirmOrderButton.click();
 		log.info("Step 3 tab :- click to 'Confirm the order' button");
