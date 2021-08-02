@@ -9,7 +9,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import base.NewBaseClass;
 import utils.CommonFunctions;
+import utils.ObjectHelper;
 import utils.XLHandler;
 
 /**
@@ -202,9 +204,24 @@ public class LoginPage {
 	 */
 	public void logoutFromPlatform() throws Exception {
 
+		NewBaseClass baseObj = new NewBaseClass();
+		ObjectHelper.driver.navigate().to(ObjectHelper.enviURL);// API
+
+		baseObj.replaceurl();
+
 		CommonFunctions.waitForVisiblity(logoutButton, waitTime);
 		logoutButton.click();
 		log.info("The user logout successfully");
+
+	}
+
+	public void navigateToHomePage() throws Exception {
+
+		NewBaseClass baseObj = new NewBaseClass();
+		ObjectHelper.driver.navigate().to(ObjectHelper.enviURL);// API
+
+		baseObj.replaceurl();
+		log.info("The home page is open");
 
 	}
 
