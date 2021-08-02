@@ -31,7 +31,7 @@ import utils.ObjectHelper;
 		// tags = { "~@FeatureTest", "~@CreateAccountTest", "~@Smoke", "~@PFInvalidCC",
 		// "@PFAccountAndSecurity" },
 
-		tags = { "@PF_test", "~@CreateAccountTest" },
+		tags = { "~@PF_test", "@PFAccountAndSecurity" },
 
 		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",

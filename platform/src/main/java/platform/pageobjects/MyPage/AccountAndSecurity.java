@@ -27,7 +27,7 @@ import utils.XLHandler;
 public class AccountAndSecurity {
 	static String kanjiSurNameExcel, kanaNameExcel, kanaFirstNameExcel, kanaLastNameExcel, birthYear, birthMonth,
 			birthDate, postalCode1Excel, postalCode2Excel, AddressCityExcel, AddressTownExcel, AddressStreetExcel,
-			AddressApartmentExcel, phone1Excel, phone2Excel, phone3Excel, gender;
+			AddressApartmentExcel, phone1Excel, phone2Excel, phone3Excel, gender, addprefecture;
 	List<String[]> testdata;
 	public WebDriver driver;
 	private static Logger log = LogManager.getLogger(LoginPage.class.getName());
@@ -128,8 +128,8 @@ public class AccountAndSecurity {
 	@FindBy(xpath = "//div[@class='account-security']/ul/li[8]/p[2]")
 	public WebElement updatedPostalCode;
 
-	@FindBy(xpath = "//div[@class='account-security']/ul/li[10]/p[2]")
-	public WebElement updatedNotice;
+	@FindBy(xpath = "//div[@class='account-security']/ul/li[11]/p[2]")
+	public WebElement updatedAddress;
 
 	@FindBy(xpath = "//div[@class='account-security']/ul/li[12]/p[2]")
 	public WebElement updatedPhone;
@@ -184,7 +184,6 @@ public class AccountAndSecurity {
 		WebElement radioBtn1 = genderOption;
 		((JavascriptExecutor) ObjectHelper.driver).executeScript("arguments[0].checked = true;", radioBtn1);
 		gender = radioBtn1.getText();
-		// genderOption.click();
 
 		Select BirthYear = new Select(birthYearDropdown);
 		BirthYear.selectByIndex(2);
@@ -213,7 +212,6 @@ public class AccountAndSecurity {
 		postalCode2Excel = shipmentdata[5].toString();
 		log.info("entering Postal Code to 'Postal Code 2' textbox");
 		if (driver.findElement(By.xpath("//select[@id='address_prefecture']")).isDisplayed()) {
-			System.out.println("Selected");
 		} else {
 			receiveNotificationsByMailCheckBox.click();
 		}
@@ -234,7 +232,8 @@ public class AccountAndSecurity {
 		shipmentdata = XLHandler.readexcel("UpdateAccountInformation", "NewTestData.xlsx");
 
 		Select AddDropdown = new Select(AddressPrefectureDropdown);
-		AddDropdown.selectByIndex(2);
+		AddDropdown.selectByIndex(0);
+		addprefecture = AddDropdown.getFirstSelectedOption().getText();
 		log.info("selecting 'Address prefecture' Dropdown");
 
 		CommonFunctions.waitForVisiblity(AddressCityTextField, waitTime);
@@ -286,13 +285,13 @@ public class AccountAndSecurity {
 		shipmentdata = XLHandler.readexcel("UpdateAccountInformation", "NewTestData.xlsx");
 		Assert.assertEquals(updatedNameKanji.getText(), kanjiSurNameExcel + " " + kanaNameExcel);
 		Assert.assertEquals(updatedNameKana.getText(), kanaFirstNameExcel + " " + kanaLastNameExcel);
-		Assert.assertEquals(gender, updatedGender.getText());
-		Assert.assertEquals(updatedDOB.getText(), birthYear + birthMonth + birthDate);
+		String[] birthYear1 = birthYear.split("\\s+");
+		String birthYearactual = birthYear1[0];
+		Assert.assertEquals(updatedDOB.getText(), birthYearactual + "年" + birthMonth + "月" + birthDate + "日");
 		Assert.assertEquals(updatedPostalCode.getText(), postalCode1Excel + postalCode2Excel);
-		Assert.assertEquals(updatedNotice.getText(),
-				AddressCityExcel + AddressTownExcel + AddressStreetExcel + AddressApartmentExcel);
-		Assert.assertEquals(updatedNotice.getText(),
-				AddressCityExcel + "-" + phone1Excel + "-" + phone2Excel + phone3Excel);
+		Assert.assertEquals(updatedAddress.getText(), addprefecture + " " + AddressCityExcel + " " + AddressTownExcel
+				+ " " + AddressStreetExcel + " " + AddressApartmentExcel);
+		Assert.assertEquals(updatedPhone.getText(), phone1Excel + "-" + phone2Excel + "-" + phone3Excel);
 
 	}
 }
