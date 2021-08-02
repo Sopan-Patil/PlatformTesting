@@ -291,7 +291,7 @@ public class AccountAndSecurity {
 		Assert.assertEquals(updatedPostalCode.getText(), postalCode1Excel + postalCode2Excel);
 		Assert.assertEquals(updatedAddress.getText(), addprefecture + " " + AddressCityExcel + " " + AddressTownExcel
 				+ " " + AddressStreetExcel + " " + AddressApartmentExcel);
-		Assert.assertEquals(updatedPhone.getText(), phone1Excel + "-" + phone2Excel + "dfd-" + phone3Excel);
+		Assert.assertEquals(updatedPhone.getText(), phone1Excel + "-" + phone2Excel + "-" + phone3Excel);
 
 	}
 }
