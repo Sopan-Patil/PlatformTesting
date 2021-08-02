@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 import base.NewBaseClass;
 import cucumber.api.CucumberOptions;
@@ -45,7 +46,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 	private static Logger log = LogManager.getLogger(Runner.class.getName());
 
 	@BeforeTest
-	@org.testng.annotations.Parameters(value = { "mode", "browser", "config", "environment" })
+	@Parameters(value = { "mode", "browser", "config", "environment" })
 	public void setUpBrowser(@Optional("null") String mode, @Optional("null") String browser,
 			@Optional("null") String config, @Optional("null") String environment) throws Exception {
 
