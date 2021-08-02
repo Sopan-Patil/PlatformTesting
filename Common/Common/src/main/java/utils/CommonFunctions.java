@@ -11,6 +11,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -81,7 +82,6 @@ public class CommonFunctions {
 		boolean result = false;
 		try {
 			ObjectHelper.driver.switchTo().activeElement();
-
 			scrolltoElement(element);
 
 			WebDriverWait wait = new WebDriverWait(ObjectHelper.driver, waitTime);
@@ -93,6 +93,10 @@ public class CommonFunctions {
 		}
 		return result;
 	}
+	
+
+	
+	
 	
 	/**
 	 * @Author : rahul shinde
@@ -117,10 +121,12 @@ public class CommonFunctions {
 		return result;
 	}
 	
+	
 	public static boolean assertString(String actualText, String expectedText) {
 		boolean result = false;
 		try {
-			assertTrue(actualText.equals(expectedText));
+			log.info("Try to match text " + actualText + " with " +expectedText );
+			assertTrue(actualText.equals(expectedText));			
 			assertFalse(actualText == expectedText);
 			assertEquals(actualText, expectedText);
 			result = true;
@@ -129,10 +135,35 @@ public class CommonFunctions {
 		}
 		return result;
 	}
+	
+	/**
+	 * @return 
+	 * @Author : rahul shinde
+	 * @Date : 26 Jul 2021
+	 * @Description: compare 2 strings
+	 */
+	public static  void stringContains(String actualText, String expectedText) {
+		
+		try {
+			if(actualText.contains(expectedText))	
+			{
+				log.info("string match");
+			}
+			else
+			{
+				throw  new Exception("string not match");
+				
+			}
+		
+		} catch (Exception e) {
+			e.getMessage();
+			
+		}
+		
+	}
 
 
-
-    
+   
 	public static void clickUsingJavaExecutor(String xpath) {
 		WebElement element = ObjectHelper.driver.findElement(By.xpath(xpath));
 

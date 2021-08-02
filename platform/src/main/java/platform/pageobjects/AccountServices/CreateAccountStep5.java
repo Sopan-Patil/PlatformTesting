@@ -30,10 +30,10 @@ public class CreateAccountStep5 {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//*[@class='button__text' or contains(text(),'Start using the service')]")
+	@FindBy(xpath = "//a[@class='button button--default button--uplarge button--complete']")
 	public WebElement startServiceButton;
 
-	@FindBy(xpath = "//*[contains(text(),'スタギアトップへ') or contains(text(),'To the staggered top')]")
+	@FindBy(xpath = "//div[@class='link-step-5']")
 	public WebElement gotoTopLink;
 
 	public void clickStartServiceButton() {
@@ -51,6 +51,19 @@ public class CreateAccountStep5 {
 
 			gotoTopLink.click();
 		}
+
+	}
+
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 29 Jul 2021
+	 * @Description:Method to get new account details
+	 */
+	public void getCreatedAccountDetails() {
+
+		log.info("Created email:" + CreateAccountStep1.email);
+		log.info("Created eid:" + CreateAccountStep1.eid);
+		log.info("Created password:" + CreateAccountStep3.password);
 
 	}
 }

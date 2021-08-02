@@ -1,6 +1,6 @@
 Feature: Create account with new user
 
-@CreateAccountTest 
+@PF_CreateAccount
 Scenario: Create new account with valid details
 
 When User begins account creation
