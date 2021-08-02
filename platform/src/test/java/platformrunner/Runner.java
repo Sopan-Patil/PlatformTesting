@@ -35,7 +35,7 @@ import utils.ObjectHelper;
 		// tags = { "~@FeatureTest", "~@CreateAccountTest", "~@Smoke", "~@PFInvalidCC",
 		// "@PFAccountAndSecurity" },
 
-		tags = { "~@PF_test", "@PFAccountAndSecurity" },
+		//tags = { "~@PF_test", "@PFAccountAndSecurity" },
 
 		tags = { "@Smoke" },
 
