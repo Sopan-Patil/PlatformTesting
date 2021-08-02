@@ -1,9 +1,9 @@
 {
-  "server": "hub-cloud.browserstack.com",
+  
  
 
   "capabilities": {
-	 "build": "BROWSERSTACK_BUILD_NAME",
+	
     "name": "single_test",
     "browserstack.debug": true,
    	"browserstack.networkLogs": true
