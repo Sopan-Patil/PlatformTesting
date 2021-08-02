@@ -46,7 +46,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 	private static Logger log = LogManager.getLogger(Runner.class.getName());
 
 	@BeforeTest
-	@Parameters(value = { "mode", "browser", "config", "environment" })
+	@Parameters(/* value = */ { "mode", "browser", "config", "environment" })
 	public void setUpBrowser(@Optional("null") String mode, @Optional("null") String browser,
 			@Optional("null") String config, @Optional("null") String environment) throws Exception {
 
