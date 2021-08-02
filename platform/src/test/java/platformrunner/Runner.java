@@ -11,8 +11,10 @@ import base.NewBaseClass;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
+
 import utils.BrowserstackUtility;
 import utils.ObjectHelper;
+
 
 /**
  * @Author : Chetan Sonparote
@@ -29,10 +31,14 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
+
 		// tags = { "~@FeatureTest", "~@CreateAccountTest", "~@Smoke", "~@PFInvalidCC",
 		// "@PFAccountAndSecurity" },
 
 		tags = { "~@PF_test", "@PFAccountAndSecurity" },
+
+		tags = { "@Smoke" },
+
 
 		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
@@ -72,7 +78,21 @@ public class Runner extends AbstractTestNGCucumberTests {
 	@AfterTest
 	public void closeBrowser() throws Exception {
 
+
 		ObjectHelper.driver.quit();
+
+		// ObjectHelper.driver.quit();
+		/*
+		 * newBaseClass = new NewBaseClass(); if (mode.equalsIgnoreCase("local")) { //
+		 * newBaseClass.closebrowser(); } else if
+		 * (mode.equalsIgnoreCase("browserstack")) {
+		 * 
+		 * // BrowserstackUtility browserstackUtility = new BrowserstackUtility(); // //
+		 * browserstackUtility.tearDown(); // newBaseClass.closeBrowserstack();
+		 * 
+		 * }
+		 */
+
 
 	}
 

@@ -47,6 +47,9 @@ public class LoginPage {
 	@FindBy(xpath = "//button[@type='submit']")
 	public WebElement SubmitButton;
 
+	@FindBy(xpath = "//a[@href='/logout']")
+	public WebElement logoutButton;
+
 	/**
 	 * 
 	 * @Author : rahul shinde
@@ -89,10 +92,8 @@ public class LoginPage {
 
 	public void clickLoginButton() {
 
-		// System.out.println("inside clickLoginButton()");
 		if (CommonFunctions.waitForVisiblity(logInButton, waitTime)) {
-
-			logInButton.click(); // changes done
+			logInButton.click();
 		}
 
 	}
@@ -120,8 +121,13 @@ public class LoginPage {
 		// CommonFunctions.wa
 		if (CommonFunctions.waitForVisiblity(logInButton, waitTime)) {
 			logInButton.click();
-			log.info("Login button is clicked");
+
 		}
+
+		log.info("Login button is clicked");
+		System.out.println("inside loginToPlatform()");
+
+		log.info("Login button is clicked");
 
 		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
 			emailtextfield.click();
@@ -185,6 +191,20 @@ public class LoginPage {
 		 * if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
 		 * CommonFunctions.clickUsingJavaExecutor(SubmitButton); }
 		 */
+
+	}
+
+	/**
+	 * @Author : Rahul Shinde
+	 * @Date : 02 aug 2021
+	 * @Description: used for logout
+	 * 
+	 */
+	public void logoutFromPlatform() throws Exception {
+
+		CommonFunctions.waitForVisiblity(logoutButton, waitTime);
+		logoutButton.click();
+		log.info("The user logout successfully");
 
 	}
 
