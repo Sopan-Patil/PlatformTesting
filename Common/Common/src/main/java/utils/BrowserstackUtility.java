@@ -58,6 +58,7 @@ public class BrowserstackUtility {
 		properties.load(fis);
 	}
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public WebDriver initializaBrowserstackDriver(
 			/* @Optional("local.conf.json") */ String config_file,
 			/* @Optional("chrome") */ String environment) throws Exception {
@@ -68,6 +69,10 @@ public class BrowserstackUtility {
 		 * @Date :26 Jul 2021
 		 * @Description: Browserstack jenkins parameters stored in this var
 		 */
+		//log.info("mode:" + mode);
+		log.info("values inside initializaBrowserstackDriver():");
+		log.info("config:" + config_file);
+		log.info("environment:" + environment);
 
 		// String username = System.getenv("BROWSERSTACK_USERNAME");
 		// String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
@@ -84,9 +89,11 @@ public class BrowserstackUtility {
 
 		// DO not delete. commented for test
 
+		@SuppressWarnings("unchecked")
 		Map<String, String> envCapabilities = (Map<String, String>) envs.get(environment);
-		Iterator it = envCapabilities.entrySet().iterator();
+		Iterator<?> it = envCapabilities.entrySet().iterator();
 		while (it.hasNext()) {
+			@SuppressWarnings("rawtypes")
 			Map.Entry pair = (Map.Entry) it.next();
 			capabilities.setCapability(pair.getKey().toString(), pair.getValue().toString());
 		}
@@ -141,8 +148,8 @@ public class BrowserstackUtility {
 		
 		
 		
-		capabilities.setCapability("name", buildName); // test buildName
-		capabilities.setCapability("build", build); // CI/CD job name using BROWSERSTACK_BUILD_NAME env variable
+	//	capabilities.setCapability("name", buildName); // test buildName
+	//	capabilities.setCapability("build", build); // CI/CD job name using BROWSERSTACK_BUILD_NAME env variable
 
 
 	//	capabilities.setCapability("name", buildName);
