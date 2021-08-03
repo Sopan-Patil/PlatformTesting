@@ -27,7 +27,7 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
-		// tags = { "@PF_test" },
+		// tags = { "@PF_CreateAccount" },
 
 		tags = { "@Smoke" },
 

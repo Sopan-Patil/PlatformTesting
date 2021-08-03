@@ -1,6 +1,6 @@
 Feature: Create account with new user
 
-@PF_CreateAccount
+@PF_CreateAccount @Smoke @Full
 Scenario: Create new account with valid details
 Given User is on home page
 When User begins account creation
