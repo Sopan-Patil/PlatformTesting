@@ -42,7 +42,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 
 	private static Logger log = LogManager.getLogger(Runner.class.getName());
 
-	@BeforeTest
+	@BeforeTest(alwaysRun = true)
 	@org.testng.annotations.Parameters(value = { "mode", "browser", "config", "environment" })
 //	public void setUpBrowser(@org.testng.annotations.Optional("null") String mode,
 //			@org.testng.annotations.Optional("null") String browser,
@@ -61,7 +61,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 
 	}
 
-	@AfterTest
+	@AfterTest(alwaysRun = true)
 	public void closeBrowser() throws Exception {
 
 		ObjectHelper.driver.quit();
