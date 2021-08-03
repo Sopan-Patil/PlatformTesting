@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -46,6 +47,8 @@ public class Listeners extends ExtentReporter implements ITestListener {
 		extentTest.get().log(Status.PASS, "Test Passed");
 		// browserstackUtility.setResultStatus(result);
 		// browserstackUtility.setResult("PASS");
+		Assert.assertTrue(true, "Test Passed");
+
 	}
 
 	@Override
@@ -53,6 +56,7 @@ public class Listeners extends ExtentReporter implements ITestListener {
 		// TODO Auto-generated method stub
 
 		extentTest.get().fail(result.getThrowable());
+		Assert.assertTrue(true, "Test Fail");
 
 		WebDriver driver = null;
 

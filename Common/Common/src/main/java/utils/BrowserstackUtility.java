@@ -184,8 +184,7 @@ public class BrowserstackUtility {
 
 	// Method to mark test as pass / fail on BrowserStack
 
-	public void mark(
-	/* SessionId session, */ /* String username, String accessKey */)
+	public void mark()
 			throws URISyntaxException, UnsupportedEncodingException, IOException {
 		getUserCredentials();
 		SessionId session = ((RemoteWebDriver) driver).getSessionId();
@@ -197,7 +196,7 @@ public class BrowserstackUtility {
 		// System.out.println("getResult():"+getResult());
 
 		ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-		nameValuePairs.add((new BasicNameValuePair("status", "pass")));// get test status from assertion status here
+		nameValuePairs.add((new BasicNameValuePair("status", "")));// get test status from assertion status here
 		// nameValuePairs.add((new BasicNameValuePair("status", result)));
 		nameValuePairs.add((new BasicNameValuePair("reason", "")));// get failure reason here
 		putRequest.setEntity(new UrlEncodedFormEntity(nameValuePairs));

@@ -2,7 +2,7 @@ Feature: Create account with new user
 
 @PF_CreateAccount
 Scenario: Create new account with valid details
-
+Given User is on home page
 When User begins account creation
 And creates new credentials
 And enters confirmation code
