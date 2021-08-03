@@ -230,12 +230,12 @@ public class NewBaseClass {
 	public /* WebDriver */void openBrowser(String mode, String browser, String config, String environment)
 			throws Exception {
 
-		log.error("inside openBrowser:");
-
-		log.error("mode:" + mode);
-		log.error("browser:" + browser);
-		log.error("config:" + config);
-		log.error("environment:" + environment);
+//		log.error("inside openBrowser:");
+//
+//		log.error("mode:" + mode);
+//		log.error("browser:" + browser);
+//		log.error("config:" + config);
+//		log.error("environment:" + environment);
 		if (mode.equalsIgnoreCase("local")) {
 			ObjectHelper.driver = openbrowser(browser);
 		} else if (mode.equalsIgnoreCase("browserstack")) {
