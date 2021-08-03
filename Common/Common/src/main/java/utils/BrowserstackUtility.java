@@ -123,12 +123,12 @@ public class BrowserstackUtility {
 
 		getUserCredentials();
 
-		String build = System.getenv("BROWSERSTACK_BUILD_NAME");
-		  if (build == null || build == "test") { build = (String)
-		  config.get("build"); }
-		 
-		  String buildName = (String)
-				  config.get("name");
+//		String build = System.getenv("BROWSERSTACK_BUILD_NAME");
+//		  if (build == null || build == "test") { build = (String)
+//		  config.get("build"); }
+//		 
+//		  String buildName = (String)
+//				  config.get("name");
 
 		String app = System.getenv("BROWSERSTACK_APP_ID");
 		if (app != null && !app.isEmpty()) {
