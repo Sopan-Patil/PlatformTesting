@@ -60,7 +60,7 @@ And Verify thank you page for convenience store transaction
 And Verify thank you page data on order history page for convenience store transaction
 And logout
 
-@OrderWithExistingCreditCardPurchaseKanji @Smoke @Full
+@OrderWithExistingCreditCardPurchaseKanji @Full
 Scenario: Validate order with Existing valid Credit Card to purchase kanji product
 
 Given Login To Platform Portal
