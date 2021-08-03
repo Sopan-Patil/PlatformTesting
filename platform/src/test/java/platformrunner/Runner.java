@@ -44,10 +44,10 @@ public class Runner extends AbstractTestNGCucumberTests {
 
 	@BeforeTest
 	@org.testng.annotations.Parameters(value = { "mode", "browser", "config", "environment" })
-	public void setUpBrowser(@org.testng.annotations.Optional("local") String mode,
-			@org.testng.annotations.Optional("chrome") String browser,
-			@org.testng.annotations.Optional("local.conf.json") String config,
-			@org.testng.annotations.Optional("chrome") String environment) throws Exception {
+	public void setUpBrowser(@org.testng.annotations.Optional("null") String mode,
+			@org.testng.annotations.Optional("null") String browser,
+			@org.testng.annotations.Optional("null") String config,
+			@org.testng.annotations.Optional("null") String environment) throws Exception {
 		// public void setUpBrowser(String mode, String browser, String config, String
 		// environment) throws Exception {
 
