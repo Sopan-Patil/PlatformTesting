@@ -182,12 +182,12 @@ public class NewBaseClass {
 	public WebDriver openBrowserstack(String config, String environment) throws Exception {
 		browserstackUtility = new BrowserstackUtility();
 
-		log.error("inside openopenBrowserstackBrowser:");
-
-		// log.error("mode:" + mode);
-		// log.error("browser:" + browser);
-		log.error("config:" + config);
-		log.error("environment:" + environment);
+//		log.error("inside openopenBrowserstackBrowser:");
+//
+//		// log.error("mode:" + mode);
+//		// log.error("browser:" + browser);
+//		log.error("config:" + config);
+//		log.error("environment:" + environment);
 
 		ObjectHelper.driver = browserstackUtility.initializaBrowserstackDriver(config, environment);
 		// setObjectHelper();

@@ -70,9 +70,9 @@ public class BrowserstackUtility {
 		 * @Description: Browserstack jenkins parameters stored in this var
 		 */
 		//log.info("mode:" + mode);
-		log.info("values inside initializaBrowserstackDriver():");
-		log.info("config:" + config_file);
-		log.info("environment:" + environment);
+		log.error("values inside initializaBrowserstackDriver():");
+		log.error("config:" + config_file);
+		log.error("environment:" + environment);
 
 		// String username = System.getenv("BROWSERSTACK_USERNAME");
 		// String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");

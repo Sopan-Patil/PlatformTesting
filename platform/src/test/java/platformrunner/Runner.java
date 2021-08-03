@@ -51,11 +51,11 @@ public class Runner extends AbstractTestNGCucumberTests {
 //	public void setUpBrowser(String mode, String browser, String config, String environment) throws Exception {
 
 		newBaseClass = new NewBaseClass();
-
-		log.error("mode:" + mode);
-		log.error("browser:" + browser);
-		log.error("config:" + config);
-		log.error("environment:" + environment);
+//
+//		log.error("mode:" + mode);
+//		log.error("browser:" + browser);
+//		log.error("config:" + config);
+//		log.error("environment:" + environment);
 
 		newBaseClass.openBrowser(mode, browser, config, environment);
 
