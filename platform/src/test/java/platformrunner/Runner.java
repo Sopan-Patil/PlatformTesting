@@ -52,8 +52,8 @@ public class Runner extends AbstractTestNGCucumberTests {
 
 		newBaseClass = new NewBaseClass();
 
-		log.info("mode:" + mode);
-		log.debug("browser:" + browser);
+		log.error("mode:" + mode);
+		log.error("browser:" + browser);
 		log.error("config:" + config);
 		log.error("environment:" + environment);
 
