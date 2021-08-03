@@ -95,9 +95,9 @@ public class BrowserstackUtility {
 		while (it.hasNext()) {
 			@SuppressWarnings("rawtypes")
 			Map.Entry pair = (Map.Entry) it.next();
-			log.info("envCapabilities:");
-			log.info("pair.getKey().toString():"+pair.getKey().toString());
-			log.info("pair.getValue().toString():"+pair.getValue().toString());
+			log.error("envCapabilities:");
+			log.error("pair.getKey().toString():"+pair.getKey().toString());
+			log.error("pair.getValue().toString():"+pair.getValue().toString());
 			capabilities.setCapability(pair.getKey().toString(), pair.getValue().toString());
 		}
 
@@ -106,9 +106,9 @@ public class BrowserstackUtility {
 		while (it.hasNext()) {
 			Map.Entry pair = (Map.Entry) it.next();
 			if (capabilities.getCapability(pair.getKey().toString()) == null) {
-				log.info("commonCapabilities:");
-				log.info("pair.getKey().toString():"+pair.getKey().toString());
-				log.info("pair.getValue().toString():"+pair.getValue().toString());
+				log.error("commonCapabilities:");
+				log.error("pair.getKey().toString():"+pair.getKey().toString());
+				log.error("pair.getValue().toString():"+pair.getValue().toString());
 				capabilities.setCapability(pair.getKey().toString(), pair.getValue().toString());
 			}
 		}
