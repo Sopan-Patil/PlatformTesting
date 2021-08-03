@@ -3,8 +3,8 @@ package platformrunner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.runner.RunWith;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import base.NewBaseClass;
 import cucumber.api.CucumberOptions;
@@ -27,7 +27,7 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
-		tags = { "@PF_test" },
+		tags = { "@PF_CreateAccount" },
 
 		// tags = { "@Smoke" },
 
@@ -42,7 +42,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 
 	private static Logger log = LogManager.getLogger(Runner.class.getName());
 
-	@BeforeTest(alwaysRun = true)
+	@BeforeMethod(alwaysRun = true)
 	@org.testng.annotations.Parameters(value = { "mode", "browser", "config", "environment" })
 	public void setUpBrowser(@org.testng.annotations.Optional("null") String mode,
 			@org.testng.annotations.Optional("null") String browser,
@@ -61,7 +61,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 
 	}
 
-	@AfterTest(alwaysRun = true)
+	@AfterMethod(alwaysRun = true)
 	public void closeBrowser() throws Exception {
 
 		ObjectHelper.driver.quit();
