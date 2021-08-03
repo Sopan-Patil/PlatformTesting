@@ -70,9 +70,9 @@ public class BrowserstackUtility {
 		 * @Description: Browserstack jenkins parameters stored in this var
 		 */
 		//log.info("mode:" + mode);
-		log.error("values inside initializaBrowserstackDriver():");
-		log.error("config:" + config_file);
-		log.error("environment:" + environment);
+//		log.error("values inside initializaBrowserstackDriver():");
+//		log.error("config:" + config_file);
+//		log.error("environment:" + environment);
 
 		// String username = System.getenv("BROWSERSTACK_USERNAME");
 		// String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
@@ -95,9 +95,9 @@ public class BrowserstackUtility {
 		while (it.hasNext()) {
 			@SuppressWarnings("rawtypes")
 			Map.Entry pair = (Map.Entry) it.next();
-			log.error("envCapabilities:");
-			log.error("pair.getKey().toString():"+pair.getKey().toString());
-			log.error("pair.getValue().toString():"+pair.getValue().toString());
+//			log.error("envCapabilities:");
+//			log.error("pair.getKey().toString():"+pair.getKey().toString());
+//			log.error("pair.getValue().toString():"+pair.getValue().toString());
 			capabilities.setCapability(pair.getKey().toString(), pair.getValue().toString());
 		}
 
@@ -106,9 +106,9 @@ public class BrowserstackUtility {
 		while (it.hasNext()) {
 			Map.Entry pair = (Map.Entry) it.next();
 			if (capabilities.getCapability(pair.getKey().toString()) == null) {
-				log.error("commonCapabilities:");
-				log.error("pair.getKey().toString():"+pair.getKey().toString());
-				log.error("pair.getValue().toString():"+pair.getValue().toString());
+//				log.error("commonCapabilities:");
+//				log.error("pair.getKey().toString():"+pair.getKey().toString());
+//				log.error("pair.getValue().toString():"+pair.getValue().toString());
 				capabilities.setCapability(pair.getKey().toString(), pair.getValue().toString());
 			}
 		}
@@ -129,13 +129,13 @@ public class BrowserstackUtility {
 
 		getUserCredentials();
 
-//		String build = System.getenv("BROWSERSTACK_BUILD_NAME");
-//		  if (build == null || build == "test") { build = (String)
-//		  config.get("build"); }
-//		 
+		String build = System.getenv("BROWSERSTACK_BUILD_NAME");
+		  if (build == null || build == "test") { build = (String)
+		  config.get("build"); }
+		 
 //		  String buildName = (String)
 //				  config.get("name");
-
+//
 		String app = System.getenv("BROWSERSTACK_APP_ID");
 		if (app != null && !app.isEmpty()) {
 			capabilities.setCapability("app", app);
@@ -155,7 +155,7 @@ public class BrowserstackUtility {
 		
 		
 	//	capabilities.setCapability("name", buildName); // test buildName
-	//	capabilities.setCapability("build", build); // CI/CD job name using BROWSERSTACK_BUILD_NAME env variable
+		capabilities.setCapability("build", build); // CI/CD job name using BROWSERSTACK_BUILD_NAME env variable
 
 
 	//	capabilities.setCapability("name", buildName);
