@@ -54,24 +54,29 @@ public class PF_Order extends NewBaseClass {
 		orderObj.methodForOrderFlowStep3();
 	}
 
-	@And("^Step2 Payment With Valid Credit Card$")
+	@And("^Step 2 Payment With Valid Credit Card$")
 	public void step2_payment_with_valid_credit_card() throws Throwable {
 		orderObj.methodForStep2PaymentWithValidCreditCard();
 	}
 
-	@And("^Step2 Payment With In Valid Credit Card$")
-	public void step2_payment_with_in_valid_credit_card() throws Throwable {
-		orderObj.methodForStep2PaymentWithInValidCreditCard();
-	}
-
-	@And("^Step2 Payment With Blank Credit Card$")
+	@And("^Step 2 Payment With Blank Credit Card$")
 	public void step2_payment_with_blank_credit_card() throws Throwable {
 		orderObj.methodForStep2PaymentWithBlankCreditCard();
 	}
 
-	@And("^Step2 Payment With Valid Convenience Store$")
+	@And("^Step 2 Payment With InValid Credit Card$")
+	public void step_2_payment_with_invalid_credit_card() throws Throwable {
+		orderObj.methodForStep2PaymentWithInValidCreditCard();
+	}
+
+	@And("^Step 2 Payment With Valid Convenience Store$")
 	public void step2_payment_with_valid_convenience_store() throws Throwable {
 		orderObj.methodForStep2PaymentWithConStore();
+	}
+
+	@And("^Step 2 Payment With InValid Convenience Store$")
+	public void step_2_payment_with_invalid_convenience_store() throws Throwable {
+		orderObj.step2PaymentWithInValidConStore();
 	}
 
 	@And("^Verify thank you page for credit card transaction$")

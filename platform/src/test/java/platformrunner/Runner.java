@@ -12,7 +12,6 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 import utils.BrowserstackUtility;
-import utils.ObjectHelper;
 
 /**
  * @Author : Chetan Sonparote
@@ -32,7 +31,7 @@ import utils.ObjectHelper;
 		// tags = { "~@FeatureTest", "~@CreateAccountTest", "~@Smoke", "~@PFInvalidCC",
 		// "@PFAccountAndSecurity" },
 
-		tags = { "@Smoke" },
+		tags = { "@PF_test" },
 
 		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
@@ -74,7 +73,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 	@AfterTest
 	public void closeBrowser() throws Exception {
 
-		ObjectHelper.driver.quit();
+		// ObjectHelper.driver.quit();
 
 		// ObjectHelper.driver.quit();
 		/*

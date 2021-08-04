@@ -86,6 +86,9 @@ public class Order {
 	@FindBy(xpath = "//ul[@class='list']")
 	public WebElement invalidCreditCardTextHandler;
 
+	@FindBy(xpath = "//span[@id='userEmailleb_id']")
+	public WebElement invalidConStoreEmailTextHandler;
+
 	@FindBy(xpath = "//span[@id='cardnoleb_id']")
 	public WebElement blankCardNoTextHandler;
 
@@ -511,6 +514,50 @@ public class Order {
 		CommonFunctions.waitForVisiblity(step2ProceedButton, waitTime);
 		step2ProceedButton.click();
 		log.info("Step 2 tab :- click to 'Confirmation of order details' button");
+	}
+
+	// payment with invalid con store
+	public void step2PaymentWithInValidConStore() throws Exception {
+		CommonFunctions.isElementVisible(step2ProceedButton);
+
+		CommonFunctions.waitForVisiblity(convenienceStorePaymentRadioButton, waitTime);
+		convenienceStorePaymentRadioButton.click();
+		log.info("Step 2 tab :- click to 'convenience Store Payment' radio button");
+
+		CommonFunctions.waitForVisiblity(lawsonRadioButton, waitTime);
+		lawsonRadioButton.click();
+		log.info("Step 2 tab :- click to 'lawson' radio button");
+
+		CommonFunctions.waitForVisiblity(kanjiNameTextbox, waitTime);
+		kanjiNameTextbox.clear();
+		kanjiNameTextbox.sendKeys("柏木佳　奈子");
+		log.info("Step 2 tab :- provide name 'kanji Name' textbox");
+
+		CommonFunctions.waitForVisiblity(kanaNameTextbox, waitTime);
+		kanaNameTextbox.clear();
+		kanaNameTextbox.sendKeys("カシワギ　カナコ");
+		log.info("Step 2 tab :- provide name 'kana Name' textbox");
+
+		CommonFunctions.waitForVisiblity(phonenoTextbox, waitTime);
+		phonenoTextbox.clear();
+		phonenoTextbox.sendKeys("9890324119");
+		log.info("Step 2 tab :- provide phone no 'phone no' textbox");
+
+		CommonFunctions.waitForVisiblity(emailaddressTextbox, waitTime);
+		emailaddressTextbox.clear();
+		emailaddressTextbox.sendKeys("rahul.shinde");
+		log.info("Step 2 tab :- provide email to 'email address' textbox");
+
+		CommonFunctions.isElementVisible(step2ProceedButton);
+		CommonFunctions.waitForVisiblity(step2ProceedButton, waitTime);
+		step2ProceedButton.click();
+		log.info("Step 2 tab :- click to 'Confirmation of order details' button");
+
+		CommonFunctions.waitForVisiblity(invalidConStoreEmailTextHandler, waitTime);
+		String invalidEmailConStoreText = invalidConStoreEmailTextHandler.getText().trim();
+		String expectedinvalidEmailConStoreText = "有効なメールアドレスを入力してください";
+		CommonFunctions.assertString(invalidEmailConStoreText, expectedinvalidEmailConStoreText);
+		log.info("The invalid email address of con store message match with our expected message");
 	}
 
 	public String[] methodForConStoreThankYouPage() throws Exception {
