@@ -31,3 +31,18 @@ PlatformTesting project contains automation of Platform site.
 - Set properties from configuration
 - Run testng.xml with command line or eclipse
 - Run test runner as Junit or TestNG for testing individual scripts
+
+### Usage for Common
+- Add following depndacy in your project pom.xml
+```
+<dependency>
+	<groupId>Platform</groupId>
+	<artifactId>common</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<scope>compile</scope>
+	<type>jar</type>
+</dependency>
+ ```
+- All utilities can be accessed using CommonFuntions class
+- Load pom.xml from Common in Build parameter of jenkin job    
+
