@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import platform.pageobjects.Authentication.LoginPage;
 import utils.CommonFunctions;
@@ -40,6 +41,9 @@ public class CreateAccountStep1 {
 	@FindBy(xpath = "//button[@type='submit']")
 	public WebElement sendConfirmationButton;
 
+	@FindBy(xpath = "//p[@class='alert__des']")
+	public WebElement errorMessageText;
+
 	public void clickSendConfirmationButton() {
 
 		if (CommonFunctions.waitForVisiblity(sendConfirmationButton, waitTime)) {
@@ -66,6 +70,34 @@ public class CreateAccountStep1 {
 			log.info("Generated eid:" + eid);
 
 		}
+	}
+
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 4 Aug 2021
+	 * @Description:methods for invalid email
+	 */
+
+	public void enterInvalidEmail() {
+		emailField.click();
+		emailField.sendKeys("abc@abc");
+
+	}
+
+	public void validateErrorMessage(WebElement element, String expectedString) {
+
+		// span[contains(text(),'メールアドレスは、メールアドレス形式で入力してください。')]
+
+		// p[@class='alert__des']
+
+		// メールアドレスは、メールアドレス形式で入力してください。
+
+		String actualString = element.getText();
+		// if(actualString.contains(expectedString))
+		// {
+		Assert.assertTrue(actualString.contains(expectedString));
+		// }
+		// CommonFunctions.assertString(actualString, expectedString);
 	}
 
 }

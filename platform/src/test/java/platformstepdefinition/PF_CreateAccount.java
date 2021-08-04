@@ -90,4 +90,21 @@ public class PF_CreateAccount extends NewBaseClass {
 
 	}
 
+	@Then("^Validate error message is displayed$")
+	public void validate_error_message_is_displayed() throws Throwable {
+		// throw new PendingException();
+
+		CreateAccountStep1 createAccountStep1 = new CreateAccountStep1(driver);
+		createAccountStep1.validateErrorMessage(createAccountStep1.errorMessageText, "メールアドレスは、メールアドレス形式で入力してください。");
+	}
+
+	@And("^User enters invalid email$")
+	public void user_enters_invalid_email() throws Throwable {
+		// throw new PendingException();
+		CreateAccountStep1 createAccountStep1 = new CreateAccountStep1(driver);
+		createAccountStep1.enterInvalidEmail();
+		createAccountStep1.clickSendConfirmationButton();
+		// createAccountStep1
+	}
+
 }
