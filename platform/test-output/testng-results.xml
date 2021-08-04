@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< Updated upstream
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
@@ -11,32 +12,109 @@
     <test started-at="2021-07-23T03:51:23Z" name="SingleBrowserTest" finished-at="2021-07-23T03:52:11Z" duration-ms="48403">
       <class name="platformrunner.Runner">
         <test-method is-config="true" signature="setUpBrowser(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:platformrunner.Runner@50687efb]" started-at="2021-07-23T09:21:23Z" name="setUpBrowser" finished-at="2021-07-23T09:21:36Z" duration-ms="13336" status="PASS">
+=======
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-08-04T14:49:13 IST" name="BrowserstackParallel" finished-at="2021-08-04T14:56:00 IST" duration-ms="406547">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:platformrunner.Runner@4650a407]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:platformrunner.Runner@6b3871d6]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:platformrunner.Runner@7923f5b3]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2021-08-04T14:49:13 IST" name="SingleTestEnv2" finished-at="2021-08-04T14:52:48 IST" duration-ms="214504">
+      <class name="platformrunner.Runner">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:platformrunner.Runner@6b3871d6]" started-at="2021-08-04T14:49:13 IST" name="setUpClass" finished-at="2021-08-04T14:49:13 IST" duration-ms="379" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="setUpBrowser(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:platformrunner.Runner@6b3871d6]" started-at="2021-08-04T14:49:14 IST" name="setUpBrowser" finished-at="2021-08-04T14:51:43 IST" duration-ms="149236" status="PASS">
+>>>>>>> Stashed changes
           <params>
             <param index="0">
               <value>
-                <![CDATA[local]]>
+                <![CDATA[browserstack]]>
               </value>
             </param>
             <param index="1">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="2">
-              <value is-null="true"/>
+              <value>
+                <![CDATA[parallel.conf.json]]>
+              </value>
             </param>
             <param index="3">
-              <value is-null="true"/>
+              <value>
+                <![CDATA[env2]]>
+              </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBrowser -->
+<<<<<<< Updated upstream
         <test-method is-config="true" signature="setUpClass()[pri:0, instance:platformrunner.Runner@50687efb]" started-at="2021-07-23T09:21:36Z" name="setUpClass" finished-at="2021-07-23T09:21:37Z" duration-ms="229" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
         <test-method signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:platformrunner.Runner@50687efb]" started-at="2021-07-23T09:21:37Z" name="feature" description="Runs Cucumber Feature" data-provider="features" finished-at="2021-07-23T09:22:11Z" duration-ms="34639" status="PASS">
+=======
+        <test-method signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:platformrunner.Runner@6b3871d6]" started-at="2021-08-04T14:51:43 IST" name="feature" description="Runs Cucumber Feature" data-provider="features" finished-at="2021-08-04T14:52:46 IST" duration-ms="63365" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Validate Account information]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:platformrunner.Runner@6b3871d6]" started-at="2021-08-04T14:52:46 IST" name="closeBrowser" finished-at="2021-08-04T14:52:47 IST" duration-ms="1229" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:platformrunner.Runner@6b3871d6]" started-at="2021-08-04T14:52:47 IST" name="tearDownClass" finished-at="2021-08-04T14:52:48 IST" duration-ms="111" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- platformrunner.Runner -->
+    </test> <!-- SingleTestEnv2 -->
+    <test started-at="2021-08-04T14:49:13 IST" name="SingleTestEnv3" finished-at="2021-08-04T14:54:12 IST" duration-ms="298713">
+      <class name="platformrunner.Runner">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:platformrunner.Runner@7923f5b3]" started-at="2021-08-04T14:49:13 IST" name="setUpClass" finished-at="2021-08-04T14:49:13 IST" duration-ms="379" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="setUpBrowser(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:platformrunner.Runner@7923f5b3]" started-at="2021-08-04T14:49:14 IST" name="setUpBrowser" finished-at="2021-08-04T14:53:03 IST" duration-ms="229317" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[browserstack]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[parallel.conf.json]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[env3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBrowser -->
+        <test-method signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:platformrunner.Runner@7923f5b3]" started-at="2021-08-04T14:53:03 IST" name="feature" description="Runs Cucumber Feature" data-provider="features" finished-at="2021-08-04T14:54:10 IST" duration-ms="67550" status="PASS">
+>>>>>>> Stashed changes
           <params>
             <param index="0">
               <value>
@@ -47,11 +125,72 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
+<<<<<<< Updated upstream
         <test-method is-config="true" signature="tearDownClass()[pri:0, instance:platformrunner.Runner@50687efb]" started-at="2021-07-23T09:22:11Z" name="tearDownClass" finished-at="2021-07-23T09:22:11Z" duration-ms="80" status="PASS">
+          <reporter-output>
+          </reporter-output>
+=======
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:platformrunner.Runner@7923f5b3]" started-at="2021-08-04T14:54:10 IST" name="closeBrowser" finished-at="2021-08-04T14:54:12 IST" duration-ms="1275" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:platformrunner.Runner@7923f5b3]" started-at="2021-08-04T14:54:12 IST" name="tearDownClass" finished-at="2021-08-04T14:54:12 IST" duration-ms="22" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- platformrunner.Runner -->
-    </test> <!-- SingleBrowserTest -->
-  </suite> <!-- LocalSingleBrowser -->
+    </test> <!-- SingleTestEnv3 -->
+    <test started-at="2021-08-04T14:49:13 IST" name="SingleTestEnv1" finished-at="2021-08-04T14:56:00 IST" duration-ms="406547">
+      <class name="platformrunner.Runner">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:platformrunner.Runner@4650a407]" started-at="2021-08-04T14:49:13 IST" name="setUpClass" finished-at="2021-08-04T14:49:13 IST" duration-ms="379" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="setUpBrowser(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:platformrunner.Runner@4650a407]" started-at="2021-08-04T14:49:14 IST" name="setUpBrowser" finished-at="2021-08-04T14:54:28 IST" duration-ms="314325" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[browserstack]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[parallel.conf.json]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[env1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBrowser -->
+        <test-method signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:platformrunner.Runner@4650a407]" started-at="2021-08-04T14:54:28 IST" name="feature" description="Runs Cucumber Feature" data-provider="features" finished-at="2021-08-04T14:55:58 IST" duration-ms="90209" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Validate Account information]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:platformrunner.Runner@4650a407]" started-at="2021-08-04T14:55:58 IST" name="closeBrowser" finished-at="2021-08-04T14:56:00 IST" duration-ms="1444" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:platformrunner.Runner@4650a407]" started-at="2021-08-04T14:56:00 IST" name="tearDownClass" finished-at="2021-08-04T14:56:00 IST" duration-ms="20" status="PASS">
+          <reporter-output>
+          </reporter-output>
+>>>>>>> Stashed changes
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- platformrunner.Runner -->
+    </test> <!-- SingleTestEnv1 -->
+  </suite> <!-- BrowserstackParallel -->
 </testng-results>
