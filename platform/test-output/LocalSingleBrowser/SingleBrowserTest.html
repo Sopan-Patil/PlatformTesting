@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>SingleBrowserTest</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Aug 02 21:01:33 IST 2021</td>
+<td>Started on:</td><td>Wed Aug 04 19:11:07 IST 2021</td>
 </tr>
-<tr><td>Total time:</td><td>626 seconds (626808 ms)</td>
+<tr><td>Total time:</td><td>146 seconds (146429 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,8 +75,9 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='platformrunner.Runner.feature()'><b>feature</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Feature<br>Parameters: Validate order flow</td>
-<td><div><pre>cucumber.runtime.CucumberException: java.lang.AssertionError: expected [true] but found [false]
+<td title='platformrunner.Runner.feature()'><b>feature</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Feature<br>Parameters: Validate Account information</td>
+<td><div><pre>cucumber.runtime.CucumberException: org.junit.ComparisonFailure: expected:&lt;[
+]郵便番号形式で入力してください。&gt; but was:&lt;[]郵便番号形式で入力してください。&gt;
 	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
 	at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
 	at java.util.ArrayList.forEach(ArrayList.java:1249)
@@ -84,13 +85,18 @@ function toggleAllBoxes() {
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-Caused by: java.lang.AssertionError: expected [true] but found [false]
-	at utils.CommonFunctions.assertString(CommonFunctions.java:129)
-	at platform.pageobjects.Order.Order.verifyLearnButtonFromServiceYouAreUsingPage(Order.java:788)
-	at platformstepdefinition.PF_Order.verify_learn_button_from_service_you_are_using_page(PF_Order.java:118)
-	at ✽.And Verify learn button from Service you are using page(PF_Order.feature:74)
-... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1551774356", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1551774356'><pre>cucumber.runtime.CucumberException: java.lang.AssertionError: expected [true] but found [false]
+Caused by: org.junit.ComparisonFailure: expected:&lt;[
+]郵便番号形式で入力してください。&gt; but was:&lt;[]郵便番号形式で入力してください。&gt;
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at platform.pageobjects.MyPage.AccountAndSecurity.Validate_Updated_Invalid_Account_Information(AccountAndSecurity.java:448)
+	at platform.pageobjects.MyPage.AccountAndSecurity.ReceiveNotificationsByMailInfoInavlidData(AccountAndSecurity.java:406)
+	at platform.pageobjects.MyPage.AccountAndSecurity.UpdateAccountAndSecurityInavlidInformation(AccountAndSecurity.java:308)
+	at platformstepdefinition.PF_AccountAndSecurity.Update_Invalid_Account_Information(PF_AccountAndSecurity.java:51)
+	at ✽.And Update and Validate Invalid Account Information(PF_AccountAndSecurity.feature:19)
+... Removed 20 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2059083208", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2059083208'><pre>cucumber.runtime.CucumberException: org.junit.ComparisonFailure: expected:&lt;[
+]郵便番号形式で入力してください。&gt; but was:&lt;[]郵便番号形式で入力してください。&gt;
 	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
 	at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -105,7 +111,7 @@ Caused by: java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at org.testng.TestRunner$$Lambda$220/532429411.accept(Unknown Source)
+	at org.testng.TestRunner$$Lambda$100/1766898791.accept(Unknown Source)
 	at java.util.ArrayList.forEach(ArrayList.java:1249)
 	at org.testng.TestRunner.privateRun(TestRunner.java:794)
 	at org.testng.TestRunner.run(TestRunner.java:596)
@@ -113,41 +119,23 @@ Caused by: java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
 	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
 	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
-	at org.testng.internal.thread.ThreadUtil$$Lambda$91/116289363.call(Unknown Source)
+	at org.testng.internal.thread.ThreadUtil$$Lambda$87/824900551.call(Unknown Source)
 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-Caused by: java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng.Assert.assertTrue(Assert.java:45)
-	at org.testng.Assert.assertTrue(Assert.java:55)
-	at utils.CommonFunctions.assertString(CommonFunctions.java:129)
-	at platform.pageobjects.Order.Order.verifyLearnButtonFromServiceYouAreUsingPage(Order.java:788)
-	at platformstepdefinition.PF_Order.verify_learn_button_from_service_you_are_using_page(PF_Order.java:118)
-	at ✽.And Verify learn button from Service you are using page(PF_Order.feature:74)
+Caused by: org.junit.ComparisonFailure: expected:&lt;[
+]郵便番号形式で入力してください。&gt; but was:&lt;[]郵便番号形式で入力してください。&gt;
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at platform.pageobjects.MyPage.AccountAndSecurity.Validate_Updated_Invalid_Account_Information(AccountAndSecurity.java:448)
+	at platform.pageobjects.MyPage.AccountAndSecurity.ReceiveNotificationsByMailInfoInavlidData(AccountAndSecurity.java:406)
+	at platform.pageobjects.MyPage.AccountAndSecurity.UpdateAccountAndSecurityInavlidInformation(AccountAndSecurity.java:308)
+	at platformstepdefinition.PF_AccountAndSecurity.Update_Invalid_Account_Information(PF_AccountAndSecurity.java:51)
+	at ✽.And Update and Validate Invalid Account Information(PF_AccountAndSecurity.feature:19)
 </pre></div></td>
-<td>451</td>
-<td>platformrunner.Runner@4f9a2c08</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='platformrunner.Runner.feature()'><b>feature</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Feature<br>Parameters: Validate Account information</td>
-<td></td>
-<td>44</td>
-<td>platformrunner.Runner@4f9a2c08</td></tr>
-<tr>
-<td title='platformrunner.Runner.feature()'><b>feature</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Feature<br>Parameters: Validate Invalid credit card no</td>
-<td></td>
-<td>98</td>
-<td>platformrunner.Runner@4f9a2c08</td></tr>
+<td>107</td>
+<td>platformrunner.Runner@6d64b553</td></tr>
 </table><p>
 </body>
 </html>
