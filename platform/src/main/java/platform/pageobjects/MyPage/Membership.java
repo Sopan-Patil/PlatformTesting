@@ -36,15 +36,6 @@ public class Membership {
 	@FindBy(xpath = " /html/body/div/div[4]/div[2]/ul/li[3]/a")
 	public WebElement primeBenefit3;
 
-	@FindBy(xpath = "")
-	public WebElement clickhereformoredetails;
-
-	@FindBy(xpath = "//div[@class='teaser-head teaser-head--ft']//form")
-	public WebElement applyforPrime2;
-
-	@FindBy(xpath = "//button[@class='button button--default button--xmedium button--member-plan button--member-plan-last aos-init aos-animate']")
-	public WebElement applyforPrime3;
-
 	@FindBy(xpath = "/html/body/div/div[1]/div[1]/div/div[2]/div/div/a")
 	public WebElement accountInformation;
 
