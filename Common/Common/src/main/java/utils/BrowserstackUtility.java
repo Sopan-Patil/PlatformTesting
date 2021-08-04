@@ -48,9 +48,9 @@ public class BrowserstackUtility {
 	public Properties properties;
 	private static Logger log = LogManager.getLogger(BrowserstackUtility.class.getName());
 
-	String username = null;// System.getenv("BROWSERSTACK_USERNAME");
-	String accessKey = null;// System.getenv("BROWSERSTACK_ACCESS_KEY");
-	//String buildName= null;
+	String username = null;
+	String accessKey = null;
+	
 
 	public void loadPropertiesFile() throws IOException {
 		properties = new Properties();
@@ -60,25 +60,16 @@ public class BrowserstackUtility {
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public WebDriver initializaBrowserstackDriver(
-			/* @Optional("local.conf.json") */ String config_file,
-			/* @Optional("chrome") */ String environment) throws Exception {
-		// loadPropertiesFile();
+			 String config_file,
+			String environment) throws Exception {
+		
 
 		/**
 		 * @Author : Chetan Sonparote
 		 * @Date :26 Jul 2021
 		 * @Description: Browserstack jenkins parameters stored in this var
 		 */
-		//log.info("mode:" + mode);
-//		log.error("values inside initializaBrowserstackDriver():");
-//		log.error("config:" + config_file);
-//		log.error("environment:" + environment);
-
-		// String username = System.getenv("BROWSERSTACK_USERNAME");
-		// String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
-		/* String */// buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
-	//	String browserstackLocal = System.getenv("BROWSERSTACK_LOCAL");
-	//	String browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
+		
 
 		JSONParser parser = new JSONParser();
 		JSONObject config = (JSONObject) parser.parse(new FileReader(System.getProperty("user.dir") + File.separator
@@ -95,9 +86,7 @@ public class BrowserstackUtility {
 		while (it.hasNext()) {
 			@SuppressWarnings("rawtypes")
 			Map.Entry pair = (Map.Entry) it.next();
-//			log.error("envCapabilities:");
-//			log.error("pair.getKey().toString():"+pair.getKey().toString());
-//			log.error("pair.getValue().toString():"+pair.getValue().toString());
+
 			capabilities.setCapability(pair.getKey().toString(), pair.getValue().toString());
 		}
 
@@ -106,26 +95,12 @@ public class BrowserstackUtility {
 		while (it.hasNext()) {
 			Map.Entry pair = (Map.Entry) it.next();
 			if (capabilities.getCapability(pair.getKey().toString()) == null) {
-//				log.error("commonCapabilities:");
-//				log.error("pair.getKey().toString():"+pair.getKey().toString());
-//				log.error("pair.getValue().toString():"+pair.getValue().toString());
+
 				capabilities.setCapability(pair.getKey().toString(), pair.getValue().toString());
 			}
 		}
 
-		/**
-		 * @Author : Chetan Sonparote
-		 * @Date : 23 Jul 2021
-		 * @Description: Added user name and password from env properties for jenkins
-		 */
-
-		/*
-		 * if (username == null) { username =
-		 * properties.getProperty("BROWSERSTACK_USERNAME"); }
-		 * 
-		 * if (accessKey == null) { accessKey =
-		 * properties.getProperty("BROWSERSTACK_ACCESS_KEY"); }
-		 */
+		
 
 		getUserCredentials();
 
@@ -151,26 +126,21 @@ public class BrowserstackUtility {
 
 		capabilities.setCapability("acceptSslCerts", "true");
 		capabilities.setCapability("browserstack.idleTimeout", "30");
+		//capabilities for selenium action class
+		capabilities.setCapability("browserstack.selenium_version", "3.141.59");
+		capabilities.setCapability("browserstack.use_w3c", "true");
 		
 		
-		
-	//	capabilities.setCapability("name", buildName); // test buildName
-		capabilities.setCapability("build", build); // CI/CD job name using BROWSERSTACK_BUILD_NAME env variable
+	
+		capabilities.setCapability("build", build); 
 
 
-	//	capabilities.setCapability("name", buildName);
-		//capabilities.setCapability("build", buildName);
-		//capabilities.setCapability("browserstack.local", browserstackLocal);
-		//capabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
 
-		driver = new RemoteWebDriver(
-				// new URL("https://" + username + ":" + accessKey + "@" + config.get("server")
-				// + "/wd/hub"),
+
+		driver = new RemoteWebDriver(		
 				new URL("https://" + username + ":" + accessKey + "@hub-cloud.browserstack.com/wd/hub"), capabilities);
 
-		// SessionId session = ((RemoteWebDriver) driver).getSessionId();
-
-		// mark(/* session, */ username, accessKey);
+	
 
 		return driver;
 
@@ -231,18 +201,6 @@ public class BrowserstackUtility {
 
 	}
 
-	/**
-	 * @Author : Chetan Sonparote
-	 * @Date : 28 Jul 2021
-	 * @Description: Getting test results from listeners
-	 */
-	/*
-	 * String testResult = null;
-	 * 
-	 * public String getTestResult() { return testResult; }
-	 * 
-	 * public void setTestResult(String testResult) { this.testResult = testResult;
-	 * }
-	 */
+	
 
 }
