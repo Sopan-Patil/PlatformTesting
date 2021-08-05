@@ -174,6 +174,9 @@ public class AccountAndSecurity {
 	@FindBy(xpath = "//div[@class='account-security']/ul/li[12]/p[2]")
 	public WebElement updatedPhone;
 
+	@FindBy(xpath = "//a[@class='button button--gray button--xxmedium ep-order__btn ep-order__btn--back']")
+	public WebElement cancelButton;
+
 	public void clickAccountInformation() {
 		if (CommonFunctions.waitForVisiblity(accountInformation, waitTime)) {
 			accountInformation.click();
@@ -456,4 +459,12 @@ public class AccountAndSecurity {
 		Assert.assertEquals(phone1TextFieldExcelError, phone1TextFieldError.getText());
 
 	}
+
+	public void Cancel_Button() throws Exception {
+		CommonFunctions.waitForVisiblity(cancelButton, waitTime);
+		UpdateAccountAndSecurityInavlidInformation();
+		cancelButton.click();
+		Validate_Updated_Account_Information();
+	}
+
 }
