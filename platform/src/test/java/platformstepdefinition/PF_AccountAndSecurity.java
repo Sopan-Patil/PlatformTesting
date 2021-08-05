@@ -44,4 +44,11 @@ public class PF_AccountAndSecurity extends NewBaseClass {
 		updateaccountinfo.Validate_Updated_Account_Information();
 
 	}
+
+	@And("^Update and Validate Invalid Account Information$")
+	public void Validate_Invalid_Account_Information() throws Throwable {
+		AccountAndSecurity updateaccountinfo = new AccountAndSecurity(driver);
+		updateaccountinfo.UpdateAccountAndSecurityInavlidInformation();
+
+	}
 }

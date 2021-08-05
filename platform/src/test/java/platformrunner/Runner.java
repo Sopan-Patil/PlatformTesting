@@ -26,11 +26,17 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
-		tags = { "@FunctionalTest" },
+
+		//tags = { "@FunctionalTest" },
 
 		// tags = { "@PF_CreateAccount " },
 
 		// tags = { "@Smoke" },
+
+		// tags = { "@PF_test" },
+
+		tags = { "@PFAccountAndSecurityInvalidData" },
+
 
 		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
