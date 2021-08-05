@@ -7,6 +7,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -19,6 +21,8 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+
 
 public class XLHandler {
 
@@ -78,8 +82,13 @@ public class XLHandler {
 	 * @Date : 5 Aug 2021
 	 * @Description:Added excel write method
 	 */
+	
+	private static Logger log = LogManager.getLogger(XLHandler.class.getName());
 
-	public static void writeToExcel(String sheetName, String fileName, int cellNumber,String cellData) throws IOException {
+	//public static void writeToExcel(String sheetName, String fileName, int cellNumber,String cellData) throws IOException {
+	public static void writeToExcel(String sheetName, String fileName, ArrayList<String> cellData) throws IOException {
+		
+		
 		// Create an object of File class to open xls file
 		/*
 		 * File file = new File("E:\\TestData\\TestData.xls");
@@ -160,15 +169,35 @@ public class XLHandler {
 		
 		// Row row = sheet.getRow(0);
 		 Row    row = sheet.createRow(1);
-		 Cell cell = row.createCell(cellNumber);
+		 
+		    //Create a loop over the cell of newly created Row
+
+		    for(int i = 0; i < cellData.size(); i++){
+
+		        //Fill data in row
+
+		        Cell cell = row.createCell(i);
+		      //  log.info("cellData[i] :"+cellData.get(i));
+
+		        cell.setCellValue(cellData.get(i));
+
+		    }
+
+		    //Close input stream
+
+		  //  inputStream.close();
+
+		// Cell cell = row.createCell(cellNumber);
 		 //Now we need to find out the type of the value we want to enter. 
 		                //If it is a string, we need to set the cell type as string 
 		                //if it is numeric, we need to set the cell type as number
 		// cell.setCellType(cell.CELL_TYPE_STRING);
-		 cell.setCellValue(cellData);
+	//	 cell.setCellValue(cellData);
+		 fis.close();
 		 FileOutputStream fos = new FileOutputStream(excelPath);
 		 workbook.write(fos);
 		 fos.close();
+		 workbook.close();
 		// System.out.println("END OF WRITING DATA IN EXCEL");
 	}
 

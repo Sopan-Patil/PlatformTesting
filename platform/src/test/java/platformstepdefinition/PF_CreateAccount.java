@@ -16,7 +16,6 @@ import platform.pageobjects.AccountServices.CreateAccountStep4;
 import platform.pageobjects.AccountServices.CreateAccountStep5;
 import platform.pageobjects.Authentication.LoginPage;
 import utils.ObjectHelper;
-import utils.XLHandler;
 
 /**
  * @Author : Chetan Sonparote
@@ -50,7 +49,8 @@ public class PF_CreateAccount extends NewBaseClass {
 	public void validate_that_new_account_is_created() throws Throwable {
 		CreateAccountStep5 createAccountStep5 = new CreateAccountStep5(driver);
 		createAccountStep5.getCreatedAccountDetails();
-		XLHandler.writeToExcel("NewUser", "NewTestData.xlsx", 0, "email2");
+		createAccountStep5.writeCredentialsToExcel();
+
 		createAccountStep5.clickGotoTopLink();
 		// throw new PendingException();
 	}
