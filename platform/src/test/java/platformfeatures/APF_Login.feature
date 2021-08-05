@@ -27,3 +27,10 @@ Given User is on home page
 When User clicks login button
 And User enters valid user name and invalid password
 Then Validate that error is displayed for invalid password
+
+@APF_Login_InvalidDetails
+Scenario: Login with invalid password
+Given User is on home page
+When User clicks login button
+And User enters invalid details
+Then Validate that error is displayed for invalid details

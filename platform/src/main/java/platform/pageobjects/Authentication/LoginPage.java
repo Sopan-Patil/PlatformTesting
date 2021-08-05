@@ -240,15 +240,16 @@ public class LoginPage {
 	 * @Description: Added new method for invlaid login
 	 */
 
-	public void enterInvalidUser() throws EncryptedDocumentException, InvalidFormatException, IOException {
-		setUserData("user");
-	}
+	/*
+	 * public void enterInvalidUser() throws EncryptedDocumentException,
+	 * InvalidFormatException, IOException { setUserData("user"); }
+	 * 
+	 * public void enterInvalidPassword() throws EncryptedDocumentException,
+	 * InvalidFormatException, IOException { setUserData("password"); }
+	 */
 
-	public void enterInvalidPassword() throws EncryptedDocumentException, InvalidFormatException, IOException {
-		setUserData("password");
-	}
-
-	public void setUserData(String invalid) throws EncryptedDocumentException, InvalidFormatException, IOException {
+	public void setInvalidUserData(String invalid)
+			throws EncryptedDocumentException, InvalidFormatException, IOException {
 		CommonFunctions.isElementVisible(emailtextfield);
 		String[] userData;
 
@@ -292,5 +293,13 @@ public class LoginPage {
 			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
 		}
 	}
+
+	/*
+	 * public void enterInvalidDetails() throws EncryptedDocumentException,
+	 * InvalidFormatException, IOException { // TODO Auto-generated method stub
+	 * setUserData("both");
+	 * 
+	 * }
+	 */
 
 }

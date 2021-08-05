@@ -105,7 +105,7 @@ public class PF_Login extends NewBaseClass {
 	public void user_enters_invalid_user_name_and_valid_password() throws Throwable {
 		// throw new PendingException();
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.enterInvalidUser();
+		loginPage.setInvalidUserData("user");
 
 	}
 
@@ -122,7 +122,23 @@ public class PF_Login extends NewBaseClass {
 	public void user_enters_valid_user_name_and_invalid_password() throws Throwable {
 		// throw new PendingException();
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.enterInvalidPassword();
+		loginPage.setInvalidUserData("password");
 	}
 
+	@Then("^Validate that error is displayed for invalid details$")
+	public void validate_that_error_is_displayed_for_invalid_details() throws Throwable {
+		// throw new PendingException();
+
+		NewBaseClass newBaseClass = new NewBaseClass();
+		LoginPage loginPage = new LoginPage(driver);
+		newBaseClass.validateErrorMessage(loginPage.invalidDataErrorText, "メールアドレスは、メールアドレス形式で入力してください。");
+
+	}
+
+	@And("^User enters invalid details$")
+	public void user_enters_invalid_details() throws Throwable {
+		// throw new PendingException();
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.setInvalidUserData("both");
+	}
 }
