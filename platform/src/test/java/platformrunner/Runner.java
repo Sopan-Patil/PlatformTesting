@@ -3,6 +3,7 @@ package platformrunner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.runner.RunWith;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import base.NewBaseClass;
@@ -19,7 +20,6 @@ import utils.ObjectHelper;
  */
 
 @RunWith(Cucumber.class)
-//@ExtendedCucumberOptions(jsonReport = "target/cucumber.json", overviewReport = true, outputFolder = "target")
 @CucumberOptions(monochrome = true, strict = false, dryRun = false, features = { ".//src//test//java//platformfeatures/"
 
 },
@@ -49,20 +49,14 @@ public class Runner extends AbstractTestNGCucumberTests {
 			@org.testng.annotations.Optional("null") String browser,
 			@org.testng.annotations.Optional("null") String config,
 			@org.testng.annotations.Optional("null") String environment) throws Exception {
-//	public void setUpBrowser(String mode, String browser, String config, String environment) throws Exception {
 
 		newBaseClass = new NewBaseClass();
-//
-//		log.error("mode:" + mode);
-//		log.error("browser:" + browser);
-//		log.error("config:" + config);
-//		log.error("environment:" + environment);
 
 		newBaseClass.openBrowser(mode, browser, config, environment);
 
 	}
 
-	// @AfterMethod(alwaysRun = true)
+	@AfterMethod(alwaysRun = true)
 	public void closeBrowser() throws Exception {
 
 		ObjectHelper.driver.quit();
