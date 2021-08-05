@@ -28,7 +28,7 @@ import utils.ObjectHelper;
 
 		// tags = { "@PF_test" },
 
-		tags = { "@APF_Login_InvalidUser" },
+		tags = { "@APF_Login_InvalidPassword" },
 
 		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",

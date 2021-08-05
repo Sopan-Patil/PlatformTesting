@@ -237,23 +237,45 @@ public class LoginPage {
 	 * @throws EncryptedDocumentException
 	 * @Author : Chetan Sonparote
 	 * @Date : 5 Aug 2021
-	 * @Description: Added new method for invlaid user name
+	 * @Description: Added new method for invlaid login
 	 */
 
 	public void enterInvalidUser() throws EncryptedDocumentException, InvalidFormatException, IOException {
+		setUserData("user");
+	}
+
+	public void enterInvalidPassword() throws EncryptedDocumentException, InvalidFormatException, IOException {
+		setUserData("password");
+	}
+
+	public void setUserData(String invalid) throws EncryptedDocumentException, InvalidFormatException, IOException {
 		CommonFunctions.isElementVisible(emailtextfield);
-		String[] shipmentdata;
+		String[] userData;
 
-		shipmentdata = XLHandler.readexcel("User", "NewTestData.xlsx");
+		userData = XLHandler.readexcel("User", "NewTestData.xlsx");
 
-		System.out.println(shipmentdata[0]);
-		System.out.println(shipmentdata[1]);
+		// System.out.println(shipmentdata[0]);
+		// System.out.println(shipmentdata[1]);
+
+		String user = null;
+		String password = null;
+
+		if (invalid == "user") {
+			user = "inval@abd";
+			password = userData[1];
+		} else if (invalid == "password") {
+			user = userData[0];
+			password = "fail";
+		} else if (invalid == "both") {
+			user = "inval@abd";
+			password = "fail";
+		}
 
 		log.info("Re Login button is clicked");
 
 		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
 			emailtextfield.click();
-			emailtextfield.sendKeys("inval@abc");
+			emailtextfield.sendKeys(user);
 
 		}
 
@@ -262,7 +284,7 @@ public class LoginPage {
 			// passwordTextField.sendKeys("Test-123");
 			passwordTextField.click();
 
-			passwordTextField.sendKeys(shipmentdata[1]);
+			passwordTextField.sendKeys(password);
 			// System.out.println(passwordTextField.getText());
 		}
 

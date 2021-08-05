@@ -109,4 +109,20 @@ public class PF_Login extends NewBaseClass {
 
 	}
 
+	@Then("^Validate that error is displayed for invalid password$")
+	public void validate_that_error_is_displayed_for_invalid_password() throws Throwable {
+		// throw new PendingException();
+		NewBaseClass newBaseClass = new NewBaseClass();
+		LoginPage loginPage = new LoginPage(driver);
+		newBaseClass.validateErrorMessage(loginPage.invalidDataErrorText, "メールアドレスまたEiDまたはパスワードをご確認してください。");
+
+	}
+
+	@And("^User enters valid user name and invalid password$")
+	public void user_enters_valid_user_name_and_invalid_password() throws Throwable {
+		// throw new PendingException();
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.enterInvalidPassword();
+	}
+
 }
