@@ -1,9 +1,12 @@
 package platform.pageobjects.Authentication;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -127,7 +130,7 @@ public class LoginPage {
 		}
 
 		log.info("Login button is clicked");
-		System.out.println("inside loginToPlatform()");
+		// System.out.println("inside loginToPlatform()");
 
 		log.info("Login button is clicked");
 
@@ -222,6 +225,55 @@ public class LoginPage {
 
 		baseObj.replaceurl();
 		log.info("The home page is open");
+
+	}
+
+	/**
+	 * @throws IOException
+	 * @throws InvalidFormatException
+	 * @throws EncryptedDocumentException
+	 * @Author : Chetan Sonparote
+	 * @Date : 5 Aug 2021
+	 * @Description: Added new method for login with new user
+	 */
+
+	public void loginWithNewUser() throws EncryptedDocumentException, InvalidFormatException, IOException {
+		String[] newuser = null;
+
+		newuser = XLHandler.readexcel("NewUser", "NewTestData.xlsx");
+
+		log.info("New User Email : " + newuser[0]);
+		log.info("New User password : " + newuser[1]);
+		// System.out.println(newuser[0]);
+		// System.out.println(newuser[1]);
+
+		if (CommonFunctions.waitForVisiblity(logInButton, waitTime)) {
+			logInButton.click();
+			log.info("Login button is clicked");
+
+		}
+
+		// System.out.println("inside loginToPlatform()");
+
+		// log.info("Login button is clicked");
+
+		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
+			emailtextfield.click();
+			emailtextfield.sendKeys(newuser[0]);
+
+		}
+
+		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
+
+			// passwordTextField.sendKeys("Test-123");
+			passwordTextField.click();
+
+			passwordTextField.sendKeys(newuser[1]);
+			// System.out.println(passwordTextField.getText());
+		}
+		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
+			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
+		}
 
 	}
 

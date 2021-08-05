@@ -50,7 +50,14 @@ public class XLHandler {
 		Sheet sheet = workbook.getSheet(sheetname);
 		int lastRow = sheet.getLastRowNum();
 		// System.out.println("Last row- " + lastRow);
-		for (int i = 0; i <= lastRow; i++) {
+	//	for (int i = 0; i <= lastRow; i++) { //DO NOT REMOVE
+		/**
+		 * @throws IOException
+		 * @Author : Chetan Sonparote
+		 * @Date : 5 Aug 2021
+		 * @Description:Changed i <= lastRow to i < lastRow to resolve initialization error
+		 */
+		for (int i = 0; i < lastRow; i++) {
 			Row row = sheet.getRow(i);
 			int lastCell = row.getLastCellNum();
 			value = new String[lastCell];

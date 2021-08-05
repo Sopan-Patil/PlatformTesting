@@ -226,7 +226,12 @@ public class CreateAccountStep3 {
 	}
 
 	public void clickAgreeButton() {
-		agreeButton.click();
+
+		if (CommonFunctions.waitForVisiblity(agreeButton, waitTime)) {
+
+			agreeButton.click();
+		}
+
 	}
 
 }
