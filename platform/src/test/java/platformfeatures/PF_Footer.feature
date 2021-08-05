@@ -2,7 +2,8 @@ Feature: Validate footer links
 @FooterPage
 Scenario Outline: Validate Footer Links
 
-Given Navigate to URL and check footer links <browser>
+Given Open Browser <browser>
+And Check footer links
 #SAnd check footer links after login
 Then Close browser
 

@@ -18,9 +18,13 @@ public class PF_Footer extends NewBaseClass {
 
 	public WebDriver driver = ObjectHelper.driver;
 
-	@Given("^Navigate to URL and check footer links (.+)$")
+	@Given("^Open Browser (.+)$")
 	public void navigate_to_URL_and_check_footer_links(String browser) throws Throwable {
 		driver = openbrowser(browser);
+	}
+
+	@And("^Check footer links$")
+	public void check_footer_links() throws Throwable {
 		FooterPage footer = new FooterPage(driver);
 		footer.clickFooterLinksBeforeLogin();
 	}
