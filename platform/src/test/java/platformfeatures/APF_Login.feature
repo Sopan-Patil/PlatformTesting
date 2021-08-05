@@ -1,7 +1,8 @@
 Feature: Validate new login 
 
 
-@FunctionalTest
+#@FunctionalTest
+@APF_Login
 Scenario: Validate new login features 
 
 #Given Navigate to URL on <browser>
