@@ -77,28 +77,11 @@ public class PF_Login extends NewBaseClass {
 
 		loginToPlatform.navigateToHomePage();
 	}
-	/*
-	 * @And("^Close browser$") public void close_browser() throws Throwable { // //
-	 * closebrowser(); }
-	 */
 
-	/*
-	 * @Given("^Navigate to URL with (.+) and (.+) PFQA_123_1$") public void
-	 * navigate_to_url_with_and_pfqa1231(String config, String environment) throws
-	 * Throwable { // throw new PendingException(); driver =
-	 * openBrowserstack(config, environment); // driver
-	 * 
-	 * }
-	 */
-
-	/*
-	 * @AfterTest public void tearDown() { driver.quit(); }
-	 */
-	/*
-	 * @Given("^Navigate to URL with (.+) PFQA_123_1$") public void
-	 * navigate_to_url_with_pfqa1231(String config) throws Throwable { // throw new
-	 * PendingException(); String environment = null; driver =
-	 * openBrowserstack(config, environment); }
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 5 Aug 2021
+	 * @Description: Added method for validating login
 	 */
 
 }
