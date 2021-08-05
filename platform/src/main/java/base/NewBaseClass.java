@@ -8,6 +8,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.ITestResult;
 
 import platform.properties.ConfigProp;
@@ -355,6 +357,19 @@ public class NewBaseClass {
 	public void refreshbrowser() {
 		// TODO Auto-generated method stub
 		WebHandler.refreshbrowser();
+	}
+
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 5 Aug 2021
+	 * @Description: Added common method for validating error message
+	 */
+	public void validateErrorMessage(WebElement element, String expectedString) {
+
+		String actualString = element.getText();
+
+		Assert.assertTrue(actualString.contains(expectedString));
+
 	}
 
 }

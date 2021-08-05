@@ -7,6 +7,7 @@ import base.NewBaseClass;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import cucumber.api.junit.Cucumber;
 import platform.pageobjects.Authentication.LoginPage;
 import utils.ObjectHelper;
@@ -83,5 +84,25 @@ public class PF_Login extends NewBaseClass {
 	 * @Date : 5 Aug 2021
 	 * @Description: Added method for validating login
 	 */
+
+	@When("^User clicks login button$")
+	public void user_clicks_login_button() throws Throwable {
+		// throw new PendingException();
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.clickLoginButton();
+	}
+
+	@Then("^Validate that error is displayed for invalid user name$")
+	public void validate_that_error_is_displayed_for_invalid_user_name() throws Throwable {
+		// throw new PendingException();
+	}
+
+	@And("^User enters invalid user name and valid password$")
+	public void user_enters_invalid_user_name_and_valid_password() throws Throwable {
+		// throw new PendingException();
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.enterInvalidUser();
+
+	}
 
 }

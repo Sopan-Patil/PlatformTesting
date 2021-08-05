@@ -1,9 +1,12 @@
 package platform.pageobjects.Authentication;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -223,6 +226,46 @@ public class LoginPage {
 		baseObj.replaceurl();
 		log.info("The home page is open");
 
+	}
+
+	/**
+	 * @throws IOException
+	 * @throws InvalidFormatException
+	 * @throws EncryptedDocumentException
+	 * @Author : Chetan Sonparote
+	 * @Date : 5 Aug 2021
+	 * @Description: Added new method for invlaid user name
+	 */
+
+	public void enterInvalidUser() throws EncryptedDocumentException, InvalidFormatException, IOException {
+		CommonFunctions.isElementVisible(emailtextfield);
+		String[] shipmentdata;
+
+		shipmentdata = XLHandler.readexcel("User", "NewTestData.xlsx");
+
+		System.out.println(shipmentdata[0]);
+		System.out.println(shipmentdata[1]);
+
+		log.info("Re Login button is clicked");
+
+		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
+			emailtextfield.click();
+			emailtextfield.sendKeys("inval");
+
+		}
+
+		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
+
+			// passwordTextField.sendKeys("Test-123");
+			passwordTextField.click();
+
+			passwordTextField.sendKeys(shipmentdata[1]);
+			// System.out.println(passwordTextField.getText());
+		}
+
+		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
+			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
+		}
 	}
 
 }
