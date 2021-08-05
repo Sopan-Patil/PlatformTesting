@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="1" ignored="0" total="3" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="LocalSingleBrowser" duration-ms="146429" started-at="2021-08-04T19:11:07 IST" finished-at="2021-08-04T19:13:33 IST">
+  <suite name="LocalSingleBrowser" duration-ms="626808" started-at="2021-08-02T21:01:33 IST" finished-at="2021-08-02T21:11:59 IST">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:platformrunner.Runner@6d64b553]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:platformrunner.Runner@4f9a2c08]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="SingleBrowserTest" duration-ms="146429" started-at="2021-08-04T19:11:07 IST" finished-at="2021-08-04T19:13:33 IST">
+    <test name="SingleBrowserTest" duration-ms="626808" started-at="2021-08-02T21:01:33 IST" finished-at="2021-08-02T21:11:59 IST">
       <class name="platformrunner.Runner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:platformrunner.Runner@6d64b553]" name="setUpClass" is-config="true" duration-ms="250" started-at="2021-08-04T19:11:07 IST" finished-at="2021-08-04T19:11:07 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="setUpBrowser(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:platformrunner.Runner@6d64b553]" name="setUpBrowser" is-config="true" duration-ms="37360" started-at="2021-08-04T19:11:07 IST" finished-at="2021-08-04T19:11:45 IST">
+        <test-method status="PASS" signature="setUpBrowser(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:platformrunner.Runner@4f9a2c08]" name="setUpBrowser" is-config="true" duration-ms="30709" started-at="2021-08-02T21:01:33 IST" finished-at="2021-08-02T21:02:03 IST">
           <params>
             <param index="0">
               <value>
@@ -36,7 +32,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBrowser -->
-        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:platformrunner.Runner@6d64b553]" name="feature" duration-ms="107725" started-at="2021-08-04T19:11:45 IST" description="Runs Cucumber Feature" data-provider="features" finished-at="2021-08-04T19:13:33 IST">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:platformrunner.Runner@4f9a2c08]" name="setUpClass" is-config="true" duration-ms="202" started-at="2021-08-02T21:02:03 IST" finished-at="2021-08-02T21:02:04 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:platformrunner.Runner@4f9a2c08]" name="feature" duration-ms="44499" started-at="2021-08-02T21:02:04 IST" description="Runs Cucumber Feature" data-provider="features" finished-at="2021-08-02T21:02:48 IST">
           <params>
             <param index="0">
               <value>
@@ -44,14 +44,34 @@
               </value>
             </param>
           </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:platformrunner.Runner@4f9a2c08]" name="feature" duration-ms="98465" started-at="2021-08-02T21:02:48 IST" description="Runs Cucumber Feature" data-provider="features" finished-at="2021-08-02T21:04:27 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Validate Invalid credit card no]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:platformrunner.Runner@4f9a2c08]" name="feature" duration-ms="451770" started-at="2021-08-02T21:04:27 IST" description="Runs Cucumber Feature" data-provider="features" finished-at="2021-08-02T21:11:58 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Validate order flow]]>
+              </value>
+            </param>
+          </params>
           <exception class="cucumber.runtime.CucumberException">
             <message>
-              <![CDATA[org.junit.ComparisonFailure: expected:<[
-]郵便番号形式で入力してください。> but was:<[]郵便番号形式で入力してください。>]]>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[cucumber.runtime.CucumberException: org.junit.ComparisonFailure: expected:<[
-]郵便番号形式で入力してください。> but was:<[]郵便番号形式で入力してください。>
+              <![CDATA[cucumber.runtime.CucumberException: java.lang.AssertionError: expected [true] but found [false]
 at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
 at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -66,7 +86,7 @@ at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java
 at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at org.testng.TestRunner$$Lambda$100/1766898791.accept(Unknown Source)
+at org.testng.TestRunner$$Lambda$220/532429411.accept(Unknown Source)
 at java.util.ArrayList.forEach(ArrayList.java:1249)
 at org.testng.TestRunner.privateRun(TestRunner.java:794)
 at org.testng.TestRunner.run(TestRunner.java:596)
@@ -74,34 +94,34 @@ at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
 at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
 at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
 at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
-at org.testng.internal.thread.ThreadUtil$$Lambda$87/824900551.call(Unknown Source)
+at org.testng.internal.thread.ThreadUtil$$Lambda$91/116289363.call(Unknown Source)
 at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 at java.lang.Thread.run(Thread.java:745)
-Caused by: org.junit.ComparisonFailure: expected:<[
-]郵便番号形式で入力してください。> but was:<[]郵便番号形式で入力してください。>
-at org.junit.Assert.assertEquals(Assert.java:115)
-at org.junit.Assert.assertEquals(Assert.java:144)
-at platform.pageobjects.MyPage.AccountAndSecurity.Validate_Updated_Invalid_Account_Information(AccountAndSecurity.java:448)
-at platform.pageobjects.MyPage.AccountAndSecurity.ReceiveNotificationsByMailInfoInavlidData(AccountAndSecurity.java:406)
-at platform.pageobjects.MyPage.AccountAndSecurity.UpdateAccountAndSecurityInavlidInformation(AccountAndSecurity.java:308)
-at platformstepdefinition.PF_AccountAndSecurity.Update_Invalid_Account_Information(PF_AccountAndSecurity.java:51)
-at ✽.And Update and Validate Invalid Account Information(PF_AccountAndSecurity.feature:19)
+Caused by: java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at org.testng.Assert.assertTrue(Assert.java:55)
+at utils.CommonFunctions.assertString(CommonFunctions.java:129)
+at platform.pageobjects.Order.Order.verifyLearnButtonFromServiceYouAreUsingPage(Order.java:788)
+at platformstepdefinition.PF_Order.verify_learn_button_from_service_you_are_using_page(PF_Order.java:118)
+at ✽.And Verify learn button from Service you are using page(PF_Order.feature:74)
 ]]>
             </full-stacktrace>
           </exception> <!-- cucumber.runtime.CucumberException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:platformrunner.Runner@6d64b553]" name="closeBrowser" is-config="true" duration-ms="672" started-at="2021-08-04T19:13:33 IST" finished-at="2021-08-04T19:13:33 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:platformrunner.Runner@6d64b553]" name="tearDownClass" is-config="true" duration-ms="92" started-at="2021-08-04T19:13:33 IST" finished-at="2021-08-04T19:13:33 IST">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:platformrunner.Runner@4f9a2c08]" name="tearDownClass" is-config="true" duration-ms="68" started-at="2021-08-02T21:11:59 IST" finished-at="2021-08-02T21:11:59 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:platformrunner.Runner@4f9a2c08]" name="closeBrowser" is-config="true" duration-ms="848" started-at="2021-08-02T21:11:59 IST" finished-at="2021-08-02T21:11:59 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
       </class> <!-- platformrunner.Runner -->
     </test> <!-- SingleBrowserTest -->
   </suite> <!-- LocalSingleBrowser -->
