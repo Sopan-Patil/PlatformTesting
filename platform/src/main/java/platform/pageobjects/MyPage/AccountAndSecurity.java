@@ -462,6 +462,9 @@ public class AccountAndSecurity {
 
 	public void Cancel_Button() throws Exception {
 		CommonFunctions.waitForVisiblity(cancelButton, waitTime);
+
+		UpdateAccountAndSecurityInavlidInformation();
+
 		cancelButton.click();
 		Validate_Updated_Account_Information();
 	}

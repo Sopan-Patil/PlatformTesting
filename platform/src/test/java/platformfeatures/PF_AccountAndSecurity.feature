@@ -1,6 +1,10 @@
 Feature: Validate Account information
 
-@PFAccountAndSecurity1 @Smoke @Full
+
+@PFAccountAndSecurity @Smoke @Full
+
+@PFAccountAndSecurity @Smoke @Full
+
  Scenario:  Validate Account information with Valid data 
 
 Given Login To Platform
