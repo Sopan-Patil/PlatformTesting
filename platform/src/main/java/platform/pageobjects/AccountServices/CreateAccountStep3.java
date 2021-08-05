@@ -11,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import platform.pageobjects.Authentication.LoginPage;
+import utils.CommonFunctions;
 
 /**
  * @Author : Chetan Sonparote
@@ -22,7 +23,7 @@ public class CreateAccountStep3 {
 	List<String[]> testdata;
 	public WebDriver driver;
 	private static Logger log = LogManager.getLogger(LoginPage.class.getName());
-	int waitTime = 5;
+	int waitTime = 1;
 
 	public CreateAccountStep3(WebDriver driver) {
 		this.driver = driver;
@@ -117,13 +118,21 @@ public class CreateAccountStep3 {
 	public WebElement agreeButton;
 
 	public static String password;
+	// int waitTime = 1;
 
 	public void enterValidUserDetails() throws InterruptedException {
 		password = "pfqa_123";
-		passwordField.sendKeys(password);
+
+		if (CommonFunctions.waitForVisiblity(passwordField, waitTime)) {
+			passwordField.sendKeys(password);
+		}
+
 		log.info("Password :" + password);
 
-		firstNameKanjiField.sendKeys("名前");
+		if (CommonFunctions.waitForVisiblity(firstNameKanjiField, waitTime)) {
+			firstNameKanjiField.sendKeys("名前");
+		}
+
 		lastNameKanjiField.sendKeys("名字");
 
 		firstNameKanaField.sendKeys("ヤスイ");

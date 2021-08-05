@@ -545,3 +545,52 @@
 20:14:00.171 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Terms of use ・ Handling of personal information link visible
 20:14:01.139 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- privacy policy link visible
 20:14:01.958 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Display based on the Specified Commercial Transactions Law link visible
+09:14:00.406 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+11:10:09.748 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+11:10:15.416 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Generated email:TestPF1221+05082021111015@gmail.com
+11:10:16.118 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Generated eid:TestPF1221_05082021111015
+11:10:25.738 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Password :pfqa_123
+11:10:30.690 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created email:TestPF1221+05082021111015@gmail.com
+11:10:30.692 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created eid:TestPF1221_05082021111015
+11:10:30.693 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created password:pfqa_123
+11:11:51.893 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+11:11:57.641 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Generated email:TestPF1221+05082021111157@gmail.com
+11:11:58.334 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Generated eid:TestPF1221_05082021111157
+11:13:08.642 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+11:13:14.898 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Generated email:TestPF1221+05082021111314@gmail.com
+11:13:15.590 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Generated eid:TestPF1221_05082021111314
+11:13:25.339 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Password :pfqa_123
+11:13:30.111 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created email:TestPF1221+05082021111314@gmail.com
+11:13:30.112 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created eid:TestPF1221_05082021111314
+11:13:30.114 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created password:pfqa_123
+11:15:29.556 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+11:15:35.200 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Generated email:TestPF1221+05082021111535@gmail.com
+11:15:35.895 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Generated eid:TestPF1221_05082021111535
+11:15:44.947 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Password :pfqa_123
+11:15:49.498 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created email:TestPF1221+05082021111535@gmail.com
+11:15:49.499 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created eid:TestPF1221_05082021111535
+11:15:49.500 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created password:pfqa_123
+11:17:55.037 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+11:18:00.840 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Generated email:TestPF1221+05082021111800@gmail.com
+11:18:01.503 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Generated eid:TestPF1221_05082021111800
+11:19:57.015 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+11:20:45.897 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Generated email:TestPF1221+05082021112045@gmail.com
+11:20:46.597 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Generated eid:TestPF1221_05082021112045
+11:20:56.508 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Password :pfqa_123
+11:21:01.451 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created email:TestPF1221+05082021112045@gmail.com
+11:21:01.452 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created eid:TestPF1221_05082021112045
+11:21:01.453 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created password:pfqa_123
+11:25:13.130 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+11:26:38.470 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Generated email:TestPF1221+05082021112638@gmail.com
+11:26:39.169 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Generated eid:TestPF1221_05082021112638
+11:26:51.859 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Password :pfqa_123
+11:26:56.651 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created email:TestPF1221+05082021112638@gmail.com
+11:26:56.652 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created eid:TestPF1221_05082021112638
+11:26:56.653 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created password:pfqa_123
+11:32:53.711 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+11:32:59.292 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Generated email:TestPF1221+05082021113259@gmail.com
+11:32:59.954 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Generated eid:TestPF1221_05082021113259
+11:33:10.839 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Password :pfqa_123
+11:33:15.556 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created email:TestPF1221+05082021113259@gmail.com
+11:33:15.557 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created eid:TestPF1221_05082021113259
+11:33:15.559 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created password:pfqa_123

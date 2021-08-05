@@ -88,7 +88,7 @@ public class NewBaseClass {
 		ObjectHelper.driver.navigate().to(ObjectHelper.enviURL);// API
 
 		replaceurl();
-		closeZkaiPopup();
+		// closeZkaiPopup();//DO NOT DELETE: Commented for test
 	}
 
 	/**
@@ -122,6 +122,8 @@ public class NewBaseClass {
 		// driver.findElements(By.xpath("//div[@class='modal-content']"));
 		// List<WebElement> zkai_popupCloseButton =
 		// driver.findElements(By.xpath("//button[@aria-label='Close']"));
+
+		By zkai_popup = By.xpath("//div[@class='modal-content']");
 
 		By zkai_popupCloseButton = By.xpath("//button[@aria-label='Close']");
 		// System.out.println("inside closeZkaiPopup()");
