@@ -368,6 +368,8 @@ public class NewBaseClass {
 
 		String actualString = element.getText();
 
+		log.info("actualString :" + actualString);
+
 		Assert.assertTrue(actualString.contains(expectedString));
 
 	}

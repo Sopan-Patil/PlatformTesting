@@ -55,6 +55,9 @@ public class LoginPage {
 	@FindBy(xpath = "//a[@href='/logout']")
 	public WebElement logoutButton;
 
+	@FindBy(xpath = "//p[@class='alert__des']")
+	public WebElement invalidDataErrorText;
+
 	/**
 	 * 
 	 * @Author : rahul shinde
@@ -250,7 +253,7 @@ public class LoginPage {
 
 		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
 			emailtextfield.click();
-			emailtextfield.sendKeys("inval");
+			emailtextfield.sendKeys("inval@abc");
 
 		}
 

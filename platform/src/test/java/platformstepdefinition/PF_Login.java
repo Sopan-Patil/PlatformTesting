@@ -94,7 +94,11 @@ public class PF_Login extends NewBaseClass {
 
 	@Then("^Validate that error is displayed for invalid user name$")
 	public void validate_that_error_is_displayed_for_invalid_user_name() throws Throwable {
-		// throw new PendingException();
+		// throw new PendingException();;
+		NewBaseClass newBaseClass = new NewBaseClass();
+		LoginPage loginPage = new LoginPage(driver);
+		newBaseClass.validateErrorMessage(loginPage.invalidDataErrorText, "メールアドレスは、メールアドレス形式で入力してください。");
+
 	}
 
 	@And("^User enters invalid user name and valid password$")
