@@ -132,39 +132,96 @@ public class CreateAccountStep3 {
 		if (CommonFunctions.waitForVisiblity(firstNameKanjiField, waitTime)) {
 			firstNameKanjiField.sendKeys("名前");
 		}
+		if (CommonFunctions.waitForVisiblity(lastNameKanjiField, waitTime)) {
+			lastNameKanjiField.sendKeys("名字");
 
-		lastNameKanjiField.sendKeys("名字");
+		}
 
-		firstNameKanaField.sendKeys("ヤスイ");
-		lastNameKanaField.sendKeys("アズマ");
+		if (CommonFunctions.waitForVisiblity(firstNameKanaField, waitTime)) {
+			firstNameKanaField.sendKeys("ヤスイ");
 
-		femaleRadioButton.click();
+		}
+		if (CommonFunctions.waitForVisiblity(lastNameKanaField, waitTime)) {
+			lastNameKanaField.sendKeys("アズマ");
 
-		Select yearSelect = new Select(yearDropdown);
-		yearSelect.selectByValue("2000");
+		}
 
-		Select monthSelect = new Select(monthDropdown);
-		monthSelect.selectByVisibleText("9");
+		if (CommonFunctions.waitForVisiblity(femaleRadioButton, waitTime)) {
+			femaleRadioButton.click();
 
-		Select daySelect = new Select(dayDropdown);
-		daySelect.selectByVisibleText("3");
+		}
 
-		firstPostalCodeField.sendKeys("530");
-		secondPostalCodeField.sendKeys("0045");
+		if (CommonFunctions.waitForVisiblity(yearDropdown, waitTime)) {
+			Select yearSelect = new Select(yearDropdown);
+			yearSelect.selectByValue("2000");
 
-		parentRadioButton.click();
+		}
+		if (CommonFunctions.waitForVisiblity(monthDropdown, waitTime)) {
 
-		Select adressSelect = new Select(addressDropdown);
-		adressSelect.selectByVisibleText("大阪府");
+			Select monthSelect = new Select(monthDropdown);
+			monthSelect.selectByVisibleText("9");
 
-		cityField.sendKeys("大阪市北区");
-		townField.sendKeys("天神西町");
-		streetField.sendKeys("犬上郡多賀町");
-		apartmentField.sendKeys("犬上郡多賀町");
+		}
+		if (CommonFunctions.waitForVisiblity(dayDropdown, waitTime)) {
 
-		phone1Field.sendKeys("081");
-		phone2Field.sendKeys("1111");
-		phone3Field.sendKeys("2222");
+			Select daySelect = new Select(dayDropdown);
+			daySelect.selectByVisibleText("3");
+		}
+
+		if (CommonFunctions.waitForVisiblity(firstPostalCodeField, waitTime)) {
+
+			firstPostalCodeField.sendKeys("530");
+		}
+		if (CommonFunctions.waitForVisiblity(secondPostalCodeField, waitTime)) {
+
+			secondPostalCodeField.sendKeys("0045");
+		}
+
+		if (CommonFunctions.waitForVisiblity(parentRadioButton, waitTime)) {
+
+			parentRadioButton.click();
+		}
+
+		if (CommonFunctions.waitForVisiblity(addressDropdown, waitTime)) {
+
+			Select addressSelect = new Select(addressDropdown);
+			addressSelect.selectByVisibleText("大阪府");
+		}
+
+		if (CommonFunctions.waitForVisiblity(cityField, waitTime)) {
+
+			cityField.sendKeys("大阪市北区");
+		}
+
+		if (CommonFunctions.waitForVisiblity(townField, waitTime)) {
+
+			townField.sendKeys("天神西町");
+		}
+
+		if (CommonFunctions.waitForVisiblity(streetField, waitTime)) {
+
+			streetField.sendKeys("犬上郡多賀町");
+		}
+
+		if (CommonFunctions.waitForVisiblity(apartmentField, waitTime)) {
+
+			apartmentField.sendKeys("犬上郡多賀町");
+		}
+
+		if (CommonFunctions.waitForVisiblity(phone1Field, waitTime)) {
+
+			phone1Field.sendKeys("081");
+		}
+
+		if (CommonFunctions.waitForVisiblity(phone2Field, waitTime)) {
+
+			phone2Field.sendKeys("1111");
+		}
+
+		if (CommonFunctions.waitForVisiblity(phone3Field, waitTime)) {
+
+			phone3Field.sendKeys("2222");
+		}
 
 	}
 
