@@ -44,5 +44,12 @@ PlatformTesting project contains automation of Platform site.
 </dependency>
  ```
 - All utilities can be accessed using CommonFuntions class
-- Load pom.xml from Common in Build parameter of jenkin job    
+- Load pom.xml from Common in Build parameter of jenkin job  
+<------------------------------------------------------------------------------------->
+Path : Common>>utils
+Description : Closing Zkai Popup
+Method Name :ClosePopup
+How To Use : Create object for "ClosePopup" class and call "closeZkaiPopup" method.
+<------------------------------------------------------------------------------------->
+
 
