@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -24,26 +25,29 @@ public class Membership {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "/html/body/div/div[4]/div[1]/form/button")
-	public WebElement applyPrime;
-
-	@FindBy(xpath = "/html/body/div/div[4]/div[2]/ul/li[1]/a")
-	public WebElement primeBenefit1;
-
-	@FindBy(xpath = "/html/body/div/div[4]/div[2]/ul/li[2]/a")
-	public WebElement primeBenefit2;
-
-	@FindBy(xpath = " /html/body/div/div[4]/div[2]/ul/li[3]/a")
-	public WebElement primeBenefit3;
-
-	@FindBy(xpath = "/html/body/div/div[1]/div[1]/div/div[2]/div/div/a")
+	@FindBy(xpath = "//a[@class='link js-not-link']")
 	public WebElement accountInformation;
 
-	@FindBy(xpath = "/html/body/div/div[1]/div[1]/div/div[2]/div/div/div/ul/li[2]/a")
+	@FindBy(xpath = "//a[@class='submenu__link'][contains(text(),'会員ステータス')]")
 	public WebElement membershipStatus;
 
 	@FindBy(xpath = "//div[@class='link-learn__content']")
 	public WebElement membershipButton;
+
+	@FindBy(xpath = "//button[@type='submit']")
+	public WebElement applyPrime;
+
+	@FindBy(xpath = "//a[@class='box-link__link box-link__link-blue']")
+	public WebElement primeBenefit1;
+
+	@FindBy(xpath = "//a[@class='box-link__link box-link__link-orange']")
+	public WebElement primeBenefit2;
+
+	@FindBy(xpath = "//a[@class='box-link__link box-link__link-mint']")
+	public WebElement primeBenefit3;
+
+	@FindBy(xpath = "//div[@class='ep-order__title']")
+	public WebElement orderDetails;
 
 	public void membershipFunctions() throws Exception {
 
@@ -71,33 +75,6 @@ public class Membership {
 			primeBenefit3.click();
 			log.info("clicked on prime benefit 3 on member plan page ");
 
-		}
-
-		CommonFunctions.scrolltoElement(septemberMembership);
-		if (CommonFunctions.isElementClickable(septemberMembership)) {
-			septemberMembership.click();
-			log.info("clicked on september membership button member plan page");
-
-			CommonFunctions.scrolltoElement(clickhereformoredetails);
-			if (CommonFunctions.isElementClickable(clickhereformoredetails)) {
-				clickhereformoredetails.click();
-				log.info("clicked on clickhereformoredetails button member plan page");
-			}
-
-			CommonFunctions.scrolltoElement(applyforPrime2);
-			if (CommonFunctions.isElementClickable(applyforPrime2)) {
-				applyforPrime2.click();
-				log.info("clicked on apply prime button on member plan page");
-				driver.navigate().back();
-			}
-
-			CommonFunctions.scrolltoElement(applyforPrime2);
-			if (CommonFunctions.isElementClickable(applyforPrime)) {
-				applyforPrime2.click();
-				log.info("clicked on apply prime button on member plan page");
-				driver.navigate().back();
-			}
-
 			CommonFunctions.scrolltoElement(membershipButton);
 			if (CommonFunctions.isElementClickable(membershipButton)) {
 				membershipButton.click();
@@ -112,20 +89,26 @@ public class Membership {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(accountInformation).perform();
 		log.info("Opened Submenu");
-		Thread.sleep(100);
 		membershipStatus.click();
 		log.info("Opened membership status page");
-		Thread.sleep(200);
-		// driver.navigate().back();
 
 		CommonFunctions.scrolltoElement(membershipButton);
 		CommonFunctions.isElementVisible(membershipButton);
 		membershipButton.click();
 		log.info("clicked on membership button on member status page");
 
+	}
+
+	public void membershipPlanPage() throws Exception {
 		CommonFunctions.scrolltoElement(applyPrime);
 		CommonFunctions.isElementVisible(applyPrime);
 		applyPrime.click();
+		CommonFunctions.waitForVisiblity(orderDetails, 7);
+		String actualString = orderDetails.getText();
+		String expectedString = "ご注文内容";
+		System.out.println(actualString);
+		System.out.println(expectedString);
+		Assert.assertEquals(actualString, expectedString);
 		log.info("clicked on membership button on member plan page");
 		driver.navigate().back();
 
@@ -133,7 +116,6 @@ public class Membership {
 		CommonFunctions.isElementVisible(primeBenefit1);
 		primeBenefit1.click();
 		log.info("clicked on prime benefit 1 ");
-		Thread.sleep(200);
 
 		CommonFunctions.scrolltoElement(primeBenefit2);
 		CommonFunctions.waitForVisiblity(primeBenefit2, waitTime);

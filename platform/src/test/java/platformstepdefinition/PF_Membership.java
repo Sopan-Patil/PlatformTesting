@@ -22,6 +22,7 @@ public class PF_Membership extends NewBaseClass {
 		loginpage.loginToPlatform();
 		Membership membershipobj = new Membership(driver);
 		membershipobj.membershipPlan();
+		membershipobj.membershipPlanPage();
 
 	}
 
