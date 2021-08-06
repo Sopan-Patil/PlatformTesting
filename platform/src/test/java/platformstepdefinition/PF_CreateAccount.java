@@ -62,8 +62,9 @@ public class PF_CreateAccount extends NewBaseClass {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.loginWithNewUser();
 
+		Assert.assertTrue(loginPage.logoutButton.isDisplayed());
 		if (CommonFunctions.isElementVisible(loginPage.logoutButton)) {
-			Assert.assertTrue(loginPage.logoutButton.isDisplayed());
+
 			log.info("New User is logged in");
 			loginPage.logoutButton.click();
 		}
