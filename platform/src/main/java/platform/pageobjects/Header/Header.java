@@ -111,7 +111,6 @@ public class Header extends NewBaseClass {
 	public void checkHeaderAndSubMenuLinkVisibility() throws Exception {
 
 		Actions actions = new Actions(driver);
-		Thread.sleep(5000);
 
 		CommonFunctions.isElementVisible(examinationWindowLink);
 		log.info("Menu : Examnination Window Link is visible");
