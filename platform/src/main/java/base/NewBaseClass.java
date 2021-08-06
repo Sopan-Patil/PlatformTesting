@@ -13,6 +13,7 @@ import org.testng.ITestResult;
 
 import platform.properties.ConfigProp;
 import utils.BrowserstackUtility;
+import utils.CommonFunctions;
 import utils.ObjectHelper;
 import utils.WebHandler;
 
@@ -89,7 +90,7 @@ public class NewBaseClass {
 
 		replaceurl();
 
-		// closeZkaiPopup();
+		closeZkaiPopup();
 
 	}
 
@@ -125,7 +126,9 @@ public class NewBaseClass {
 		// List<WebElement> zkai_popupCloseButton =
 		// driver.findElements(By.xpath("//button[@aria-label='Close']"));
 
+
 		By zkai_popup = By.xpath("//div[@class='modal-content']");
+
 
 		By zkai_popupCloseButton = By.xpath("//button[@aria-label='Close']");
 		// System.out.println("inside closeZkaiPopup()");
@@ -135,6 +138,7 @@ public class NewBaseClass {
 
 		// Alert alert = driver.switchTo().alert();
 		// alert.dismiss();
+
 
 		// if
 		// (CommonFunctions.waitForClickable(ObjectHelper.driver.findElement(zkai_popupCloseButton),
@@ -176,6 +180,18 @@ public class NewBaseClass {
 //		}
 //
 //	}
+
+		if (CommonFunctions.waitForClickable(ObjectHelper.driver.findElement(zkai_popupCloseButton), 1))
+
+		{
+			if (ObjectHelper.driver.findElement(zkai_popupCloseButton).isDisplayed()) {
+				if (ObjectHelper.driver.findElements(zkai_popupCloseButton).size() > 0) {
+					ObjectHelper.driver.findElement(zkai_popupCloseButton).click();
+				}
+			}
+		}
+	}
+
 
 	/**
 	 * @Author : Chetan Sonparote
