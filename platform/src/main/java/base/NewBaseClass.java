@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
@@ -113,7 +114,6 @@ public class NewBaseClass {
 	// WebElement zkai_popup;
 	// WebElement zkai_popupCloseButton;
 
-
 	public void closeZkaiPopup() {
 		/*
 		 * if (CommonFunctions.waitForVisiblity(zkai_popup, 3)) {
@@ -144,13 +144,13 @@ public class NewBaseClass {
 				ObjectHelper.driver.findElement(zkai_popupCloseButton).click();
 			}
 		}
+	}
 
 	// public void closeZkaiPopup() {
 	/*
 	 * if (CommonFunctions.waitForVisiblity(zkai_popup, 3)) {
 	 * zkai_popupCloseButton.click(); log.info("Close Zkai pop up"); }
 	 */
-
 
 	// List<WebElement> zkai_popup =
 	// driver.findElements(By.xpath("//div[@class='modal-content']"));
