@@ -51,4 +51,11 @@ public class PF_AccountAndSecurity extends NewBaseClass {
 		updateaccountinfo.UpdateAccountAndSecurityInavlidInformation();
 
 	}
+
+	@And("^Click on Cancel button$")
+	public void Account_Information_Cancel_Button() throws Throwable {
+		AccountAndSecurity CancelButton = new AccountAndSecurity(driver);
+		CancelButton.Cancel_Button();
+
+	}
 }
