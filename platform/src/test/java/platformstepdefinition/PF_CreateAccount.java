@@ -1,5 +1,8 @@
 package platformstepdefinition;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.junit.Assert;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
@@ -15,6 +18,7 @@ import platform.pageobjects.AccountServices.CreateAccountStep3;
 import platform.pageobjects.AccountServices.CreateAccountStep4;
 import platform.pageobjects.AccountServices.CreateAccountStep5;
 import platform.pageobjects.Authentication.LoginPage;
+import utils.CommonFunctions;
 import utils.ObjectHelper;
 
 /**
@@ -45,11 +49,26 @@ public class PF_CreateAccount extends NewBaseClass {
 
 	}
 
+	private static Logger log = LogManager.getLogger(PF_CreateAccount.class.getName());
+
 	@Then("^Validate that new account is created$")
 	public void validate_that_new_account_is_created() throws Throwable {
+		log.info("inside validate_that_new_account_is_created()");
 		CreateAccountStep5 createAccountStep5 = new CreateAccountStep5(driver);
 		createAccountStep5.getCreatedAccountDetails();
+		createAccountStep5.writeCredentialsToExcel();
 		createAccountStep5.clickGotoTopLink();
+
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.loginWithNewUser();
+
+		if (CommonFunctions.isElementVisible(loginPage.logoutButton)) {
+			Assert.assertTrue(loginPage.logoutButton.isDisplayed());
+			log.info("New User is logged in");
+			loginPage.logoutButton.click();
+		}
+		// Assert.assertTrue(loginPage.logoutButton.isDisplayed());
+
 		// throw new PendingException();
 	}
 
@@ -88,6 +107,23 @@ public class PF_CreateAccount extends NewBaseClass {
 		createAccountStep2.addConfirmationCode();
 		createAccountStep2.clickNextButton();
 
+	}
+
+	@Then("^Validate error message is displayed$")
+	public void validate_error_message_is_displayed() throws Throwable {
+		// throw new PendingException();
+
+		CreateAccountStep1 createAccountStep1 = new CreateAccountStep1(driver);
+		createAccountStep1.validateErrorMessage(createAccountStep1.errorMessageText, "メールアドレスは、メールアドレス形式で入力してください。");
+	}
+
+	@And("^User enters invalid email$")
+	public void user_enters_invalid_email() throws Throwable {
+		// throw new PendingException();
+		CreateAccountStep1 createAccountStep1 = new CreateAccountStep1(driver);
+		createAccountStep1.enterInvalidEmail();
+		createAccountStep1.clickSendConfirmationButton();
+		// createAccountStep1
 	}
 
 }

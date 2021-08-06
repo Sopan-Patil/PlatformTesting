@@ -1,5 +1,7 @@
 package platform.pageobjects.AccountServices;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -11,6 +13,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import platform.pageobjects.Authentication.LoginPage;
 import utils.CommonFunctions;
+import utils.XLHandler;
 
 /**
  * @Author : Chetan Sonparote
@@ -66,4 +69,30 @@ public class CreateAccountStep5 {
 		log.info("Created password:" + CreateAccountStep3.password);
 
 	}
+
+	/**
+	 * @throws IOException
+	 * @Author : Chetan Sonparote
+	 * @Date :5 Aug 2021
+	 * @Description:Method to write new account details in excel
+	 */
+	public void writeCredentialsToExcel() throws IOException {
+
+		ArrayList<String> newLoginData = new ArrayList<>();
+
+		newLoginData.add(0, CreateAccountStep1.email);
+		newLoginData.add(1, CreateAccountStep3.password);
+		newLoginData.add(2, CreateAccountStep1.eid);
+		// = { CreateAccountStep1.email, CreateAccountStep3.password,
+		// CreateAccountStep1.eid };
+		// XLHandler.writeToExcel("NewUser", "NewTestData.xlsx", 0,
+		// CreateAccountStep1.email);
+		// XLHandler.writeToExcel("NewUser", "NewTestData.xlsx", 1,
+		// CreateAccountStep3.password);
+		// XLHandler.writeToExcel("NewUser", "NewTestData.xlsx", 2,
+		// CreateAccountStep1.eid);
+
+		XLHandler.writeToExcel("NewUser", "NewTestData.xlsx", newLoginData);
+	}
+
 }
