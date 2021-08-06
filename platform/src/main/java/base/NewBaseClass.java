@@ -89,7 +89,18 @@ public class NewBaseClass {
 		ObjectHelper.driver.navigate().to(ObjectHelper.enviURL);// API
 
 		replaceurl();
+
 		closeZkaiPopup();
+
+		/**
+		 * @Author : Sopan Patil
+		 * @Date : 06 Aug 2021
+		 * @Description: Closing Zakai Popup
+		 */
+
+		// utils.ClosePopup ClosePopup = new ClosePopup();
+		// ClosePopup.closeZkaiPopup();
+
 	}
 
 	/**
