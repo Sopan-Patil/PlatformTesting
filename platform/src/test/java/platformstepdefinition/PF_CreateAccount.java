@@ -115,13 +115,6 @@ public class PF_CreateAccount extends NewBaseClass {
 
 	}
 
-	/*
-	 * @And("^enters new confirmation code$") public void
-	 * enters_new_confirmation_code() throws Throwable { // throw new
-	 * PendingException(); CreateAccountStep2 createAccountStep2 = new
-	 * CreateAccountStep2(driver); createAccountStep2.addConfirmationCode(); }
-	 */
-
 	@Then("^Validate that error is displayed for invalid code$")
 	public void validate_that_error_is_displayed_for_invalid_code() throws Throwable {
 		// throw new PendingException();
