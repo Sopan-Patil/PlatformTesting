@@ -27,37 +27,20 @@ public class Header extends NewBaseClass {
 	private static Logger log = LogManager.getLogger(Header.class.getName());
 	int waitTime = 1;
 
-	@Override
-	public void closeZkaiPopup() {
-		if (CommonFunctions.waitForVisiblity(zkai_popup, waitTime)) {
-			zkai_popupCloseButton.click();
-			log.info("Close Zkai pop up");
-		}
-	}
-
 	public Header(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//div[@class='modal-content']")
-	public WebElement zkai_popup;
-
-	@FindBy(xpath = "//button[@aria-label='Close']")
-	public WebElement zkai_popupCloseButton;
-
 	// Xpaths for the elements
 
-	@FindBy(xpath = "//a[@class='logo logo-white']")
-	public WebElement stagiaLogo;
-
-	@FindBy(xpath = "//a[@class='menu__link js-not-link'][contains(text(),'受験の窓口')]")
+	@FindBy(xpath = "//a[@href='/testing']")
 	public WebElement examinationWindowLink;
 
-	@FindBy(xpath = "//a[@class='menu__link js-not-link'][contains(text(),'学習の窓口')]")
+	@FindBy(xpath = "//a[@href='/learning']")
 	public WebElement learningWindowLink;
 
-	@FindBy(xpath = "//a[@class='menu__link js-not-link'][contains(text(),'情報の窓口')]")
+	@FindBy(xpath = "//a[@href='/media']")
 	public WebElement informationWindowLink;
 
 	@FindBy(xpath = "//a[@href='/product-list']")
@@ -85,50 +68,49 @@ public class Header extends NewBaseClass {
 
 	// Xpaths for the Sub Menus
 
-	@FindBy(xpath = "/html/body/div/div[1]/div[1]/div/div[1]/ul/li[1]/div/ul/li[1]/a/span")
+	@FindBy(xpath = "//ul[@class='submenu__list submenu__list--img']//li[1]//a[1]")
 	public WebElement testTopLink;
 
-	@FindBy(xpath = "/html/body/div/div[1]/div[1]/div/div[1]/ul/li[1]/div/ul/li[2]/a/span")
+	@FindBy(xpath = "//ul[@class='submenu__list submenu__list--img']//li[2]//a[1]")
 	public WebElement eikenSCBTLink;
 
-	@FindBy(xpath = "/html/body/div/div[1]/div[1]/div/div[1]/ul/li[1]/div/ul/li[3]/a/span")
+	@FindBy(xpath = "//ul[@class='submenu__list submenu__list--img']//li[3]//a[1]")
 	public WebElement casecLink;
 
-	@FindBy(xpath = "/html/body/div/div[1]/div[1]/div/div[1]/ul/li[1]/div/ul/li[4]/a/span")
+	@FindBy(xpath = "//ul[@class='submenu__list submenu__list--img']//li[4]//a[1]")
 	public WebElement commonTestMeasureCBTLink;
 
-	@FindBy(xpath = "/html/body/div/div[1]/div[1]/div/div[1]/ul/li[2]/div/ul/li[1]/a/span")
+	@FindBy(xpath = "//li[2]//ul[@class='submenu__list submenu__list--img']//li[1]//a[1]")
 	public WebElement learningTopLink;
 
-	@FindBy(xpath = "/html/body/div/div[1]/div[1]/div/div[1]/ul/li[2]/div/ul/li[2]/a/span")
+	@FindBy(xpath = "//li[2]//ul[@class='submenu__list submenu__list--img']//li[2]//a[1]")
+	public WebElement stagiaKankenLink;
+
+	@FindBy(xpath = "//li[2]//ul[@class='submenu__list submenu__list--img']//li[3]//a[1]")
 	public WebElement stagiaEikenLink;
 
-	@FindBy(xpath = "/html/body/div/div[1]/div[1]/div/div[1]/ul/li[3]/div/ul/li[1]/a/span")
+	@FindBy(xpath = "//ul[@class='submenu__list']//li[1]//a[1]")
 	public WebElement mediaTopLink;
 
-	@FindBy(xpath = "/html/body/div/div[1]/div[1]/div/div[1]/ul/li[3]/div/ul/li[2]/a/span")
+	@FindBy(xpath = "//ul[@class='submenu__list']//li[2]//a[1]")
 	public WebElement cramSchoolPitaLink;
 
-	@FindBy(xpath = "/html/body/div/div[1]/div[1]/div/div[1]/ul/li[3]/div/ul/li[3]/a/span")
+	@FindBy(xpath = "//ul[@class='submenu__list']//li[3]//a[1]")
 	public WebElement stagiaUniversityExamLink;
 
-	@FindBy(xpath = "/html/body/div/div[1]/div[1]/div/div[1]/ul/li[3]/div/ul/li[4]/a/span")
+	@FindBy(xpath = "//ul[@class='submenu__list']//li[4]//a[1]")
 	public WebElement educationCostConsultationSupportLink;
 
-	public void switchToPreviousTabAndClose() {
+	// Method : switches the current tab to the first tab
+	public void switchToPreviousTab() {
 		ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 		driver.switchTo().window(tab.get(0));
 	}
 
-	public void headerAndSubMenuLinksVisibilityChecking() throws Exception {
+	// Method : Checks the Header menu and SubMenu Links
+	public void checkHeaderAndSubMenuLinkVisibility() throws Exception {
 
 		Actions actions = new Actions(driver);
-
-		if (CommonFunctions.waitForVisiblity(zkai_popup, waitTime)) {
-			zkai_popupCloseButton.click();
-			log.info("Close Zkai pop up");
-		}
-
 		Thread.sleep(5000);
 
 		CommonFunctions.isElementVisible(examinationWindowLink);
@@ -200,7 +182,8 @@ public class Header extends NewBaseClass {
 		log.info("Login Link is visible");
 	}
 
-	public void headerLinksChecking() throws Exception {
+	// Method : Checks the Header menu links are working by clicking on them
+	public void checkHeaderLinksWorking() throws Exception {
 
 		CommonFunctions.isElementVisible(examinationWindowLink);
 		CommonFunctions.waitForVisiblity(examinationWindowLink, waitTime);
@@ -250,111 +233,131 @@ public class Header extends NewBaseClass {
 		driver.navigate().back();
 		log.info("Back on Previous Page");
 
-		CommonFunctions.waitForVisiblity(examinationWindowLink, waitTime);
-		examinationWindowLink.click();
 	}
 
-	public void subMenuLinkChecking() throws Exception {
+	// Method : Checks the Header SubMenu links are working by clicking on them
+	public void checkSubMenuLinkWorking() throws Exception {
 
-		Thread.sleep(5000);
 		Actions actions = new Actions(driver);
 
+		CommonFunctions.waitandClear(examinationWindowLink, waitTime);
 		actions.moveToElement(examinationWindowLink).perform();
 		log.info("Opened Submenu");
-		Thread.sleep(100);
+		CommonFunctions.isElementVisible(testTopLink);
+		CommonFunctions.waitForVisiblity(testTopLink, waitTime);
 		testTopLink.click();
 		log.info("Opened Test Top submenu");
-		Thread.sleep(200);
 		driver.navigate().back();
 		log.info("Back on Previous Page");
 
+		CommonFunctions.waitForVisiblity(eikenSCBTLink, waitTime);
 		actions.moveToElement(examinationWindowLink).perform();
 		log.info("Opened Submenu");
-		Thread.sleep(100);
+		CommonFunctions.isElementVisible(eikenSCBTLink);
+		CommonFunctions.waitForVisiblity(eikenSCBTLink, waitTime);
 		eikenSCBTLink.click();
 		log.info("Opened Eiken S-CBT submenu");
-		Thread.sleep(5000);
-		switchToPreviousTabAndClose();
+		CommonFunctions.waitandClear(eikenSCBTLink, waitTime);
+		switchToPreviousTab();
 		log.info("Back on Previous Page");
 
-		Thread.sleep(200);
+		CommonFunctions.waitForVisiblity(casecLink, waitTime);
 		actions.moveToElement(examinationWindowLink).perform();
 		log.info("Opened Submenu");
-		Thread.sleep(100);
+		CommonFunctions.isElementVisible(casecLink);
+		CommonFunctions.waitForVisiblity(casecLink, waitTime);
 		casecLink.click();
 		log.info("Opened CASEC submenu");
-		Thread.sleep(5000);
-		switchToPreviousTabAndClose();
+		CommonFunctions.waitandClear(casecLink, waitTime);
+		switchToPreviousTab();
 		log.info("Back on Previous Page");
 
-		Thread.sleep(200);
+		CommonFunctions.waitForVisiblity(commonTestMeasureCBTLink, waitTime);
 		actions.moveToElement(examinationWindowLink).perform();
 		log.info("Opened Submenu");
-		Thread.sleep(100);
+		CommonFunctions.isElementVisible(commonTestMeasureCBTLink);
+		CommonFunctions.waitForVisiblity(commonTestMeasureCBTLink, waitTime);
 		commonTestMeasureCBTLink.click();
 		log.info("Opened Common Test Measure CBT submenu");
-		Thread.sleep(5000);
+		CommonFunctions.waitForVisiblity(commonTestMeasureCBTLink, waitTime);
 		driver.navigate().back();
 		log.info("Back on Previous Page");
 
-		Thread.sleep(200);
+		CommonFunctions.waitForVisiblity(learningTopLink, waitTime);
 		actions.moveToElement(learningWindowLink).perform();
 		log.info("Opened Submenu");
-		Thread.sleep(100);
+		CommonFunctions.isElementVisible(learningTopLink);
+		CommonFunctions.waitForVisiblity(learningTopLink, waitTime);
 		learningTopLink.click();
 		log.info("Opened Learning Top submenu");
-		Thread.sleep(5000);
+		CommonFunctions.waitForVisiblity(learningTopLink, waitTime);
 		driver.navigate().back();
 		log.info("Back on Previous Page");
 
-		Thread.sleep(200);
+		CommonFunctions.waitForVisiblity(stagiaEikenLink, waitTime);
 		actions.moveToElement(learningWindowLink).perform();
 		log.info("Opened Submenu");
-		Thread.sleep(100);
+		CommonFunctions.isElementVisible(stagiaEikenLink);
+		CommonFunctions.waitForVisiblity(stagiaEikenLink, waitTime);
 		stagiaEikenLink.click();
 		log.info("Opened Stagia Eiken submenu");
-		Thread.sleep(5000);
+		CommonFunctions.waitForVisiblity(stagiaEikenLink, waitTime);
 		driver.navigate().back();
 		log.info("Back on Previous Page");
 
-		Thread.sleep(200);
+		CommonFunctions.waitForVisiblity(stagiaKankenLink, waitTime);
+		actions.moveToElement(learningWindowLink).perform();
+		log.info("Opened Submenu");
+		CommonFunctions.isElementVisible(stagiaKankenLink);
+		CommonFunctions.waitForVisiblity(stagiaKankenLink, waitTime);
+		stagiaKankenLink.click();
+		log.info("Opened Stagia Kanken submenu");
+		CommonFunctions.waitForVisiblity(stagiaKankenLink, waitTime);
+		driver.navigate().back();
+		log.info("Back on Previous Page");
+
+		CommonFunctions.waitForVisiblity(mediaTopLink, waitTime);
 		actions.moveToElement(informationWindowLink).perform();
 		log.info("Opened Submenu");
-		Thread.sleep(100);
+		CommonFunctions.isElementVisible(mediaTopLink);
+		CommonFunctions.waitForVisiblity(mediaTopLink, waitTime);
 		mediaTopLink.click();
 		log.info("Opened Media Top submenu");
-		Thread.sleep(5000);
+		CommonFunctions.waitForVisiblity(mediaTopLink, waitTime);
 		driver.navigate().back();
 		log.info("Back on Previous Page");
 
-		Thread.sleep(200);
+		CommonFunctions.waitForVisiblity(cramSchoolPitaLink, waitTime);
 		actions.moveToElement(informationWindowLink).perform();
 		log.info("Opened Submenu");
-		Thread.sleep(100);
+		CommonFunctions.isElementVisible(cramSchoolPitaLink);
+		CommonFunctions.waitForVisiblity(cramSchoolPitaLink, waitTime);
 		cramSchoolPitaLink.click();
 		log.info("Opened Cram School Pita submenu");
-		Thread.sleep(5000);
-		switchToPreviousTabAndClose();
+		CommonFunctions.waitForVisiblity(cramSchoolPitaLink, waitTime);
+		switchToPreviousTab();
 		log.info("Back on Previous Page");
 
-		Thread.sleep(200);
+		CommonFunctions.waitForVisiblity(stagiaUniversityExamLink, waitTime);
 		actions.moveToElement(informationWindowLink).perform();
 		log.info("Opened Submenu");
-		Thread.sleep(100);
+		CommonFunctions.isElementVisible(stagiaUniversityExamLink);
+		CommonFunctions.waitForVisiblity(stagiaUniversityExamLink, waitTime);
 		stagiaUniversityExamLink.click();
 		log.info("Opened Stagia University submenu");
-		Thread.sleep(5000);
-		switchToPreviousTabAndClose();
+		CommonFunctions.waitForVisiblity(stagiaUniversityExamLink, waitTime);
+		switchToPreviousTab();
 		log.info("Back on Previous Page");
 
-		Thread.sleep(200);
+		CommonFunctions.waitForVisiblity(educationCostConsultationSupportLink, waitTime);
 		actions.moveToElement(informationWindowLink).perform();
 		log.info("Opened Submenu");
-		Thread.sleep(100);
+		CommonFunctions.isElementVisible(educationCostConsultationSupportLink);
+		CommonFunctions.waitForVisiblity(educationCostConsultationSupportLink, waitTime);
 		educationCostConsultationSupportLink.click();
 		log.info("Opened Education Cost Consultation Support Link submenu");
-		Thread.sleep(5000);
-		switchToPreviousTabAndClose();
+		CommonFunctions.waitForVisiblity(educationCostConsultationSupportLink, waitTime);
+		switchToPreviousTab();
 		log.info("Back on Previous Page");
 
 	}
