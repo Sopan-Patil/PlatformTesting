@@ -358,7 +358,6 @@ public class Header extends NewBaseClass {
 		CommonFunctions.waitForVisiblity(educationCostConsultationSupportLink, waitTime);
 		switchToPreviousTab();
 		log.info("Back on Previous Page");
-
 	}
 
 }
