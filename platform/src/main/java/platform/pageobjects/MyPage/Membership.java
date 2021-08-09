@@ -61,24 +61,24 @@ public class Membership {
 		CommonFunctions.scrolltoElement(primeBenefit1);
 		if (CommonFunctions.isElementClickable(primeBenefit1)) {
 			primeBenefit1.click();
-			log.info("clicked on prime benefit 1 on member plan page");
+			log.info("Clicked on prime benefit 1 on member plan page");
 		}
 
 		CommonFunctions.scrolltoElement(primeBenefit2);
 		if (CommonFunctions.isElementClickable(primeBenefit2)) {
 			primeBenefit2.click();
-			log.info("clicked on prime benefit 2 on member plan page");
+			log.info("Clicked on prime benefit 2 on member plan page");
 		}
 
 		CommonFunctions.scrolltoElement(primeBenefit3);
 		if (CommonFunctions.isElementClickable(primeBenefit3)) {
 			primeBenefit3.click();
-			log.info("clicked on prime benefit 3 on member plan page ");
+			log.info("Clicked on prime benefit 3 on member plan page ");
 
 			CommonFunctions.scrolltoElement(membershipButton);
 			if (CommonFunctions.isElementClickable(membershipButton)) {
 				membershipButton.click();
-				log.info("clicked on membership button on member status page");
+				log.info("Clicked on membership button on member status page");
 
 			}
 		}

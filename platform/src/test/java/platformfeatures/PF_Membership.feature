@@ -1,10 +1,12 @@
 Feature: Validate buttons on member plan page
 
-@FunctionalTest
+@MembershipPlan
 Scenario Outline: Validate all the buttons on member plan page
 
-Given Login To Platform and check membership plan <browser>
-#Then Click membership status
+Given Navigate to URL<browser> 
+Then Login To PF Portal 
+Then Click on Membership Status and Click on apply for prime membership banner
+Then Check the link validation on member plan page
 
 
 
