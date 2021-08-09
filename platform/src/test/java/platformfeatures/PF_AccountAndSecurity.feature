@@ -21,6 +21,7 @@ And Update and Validate Invalid Account Information
 And logout
 
 @PFAccountAndSecurityCancel @Smoke @Full 
+
  Scenario:  Validate Account information  with Invalid data
 Given Login To Platform
 Then Click on Change button
@@ -35,3 +36,4 @@ Then Click on Account and Security
 Then Click on Change button
 And Validate Missing Values Of Account Information
 And logout
+
