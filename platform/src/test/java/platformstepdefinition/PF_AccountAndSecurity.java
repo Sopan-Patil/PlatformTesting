@@ -56,7 +56,6 @@ public class PF_AccountAndSecurity extends NewBaseClass {
 	public void Account_Information_Cancel_Button() throws Throwable {
 		AccountAndSecurity CancelButton = new AccountAndSecurity(driver);
 		CancelButton.Cancel_Button();
-
 	}
 
 	@And("^Validate Missing Values Of Account Information$")
