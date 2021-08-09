@@ -1,5 +1,6 @@
 package base;
 
+import java.awt.AWTException;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import org.testng.ITestResult;
 
 import platform.properties.ConfigProp;
 import utils.BrowserstackUtility;
+import utils.ClosePopup;
 import utils.ObjectHelper;
 import utils.WebHandler;
 
@@ -83,11 +85,20 @@ public class NewBaseClass {
 		ObjectHelper.reportfilepath = "//ExtentReport//UPP_Status_Report.html";
 	}
 
-	private void navigateToUrl() {
+	private void navigateToUrl() throws AWTException {
 		ObjectHelper.driver.navigate().to(ObjectHelper.enviURL);// API
 
 		replaceurl();
-		// closeZkaiPopup();
+
+		/**
+		 * @Author : Sopan Patil
+		 * @Date : 06 Aug 2021
+		 * @Description: Closing Zakai Popup
+		 */
+
+		utils.ClosePopup ClosePopup = new ClosePopup();
+		ClosePopup.closeZkaiPopup();
+
 	}
 
 	/**
@@ -110,37 +121,6 @@ public class NewBaseClass {
 
 	// WebElement zkai_popup;
 	// WebElement zkai_popupCloseButton;
-
-	// public void closeZkaiPopup() {
-	/*
-	 * if (CommonFunctions.waitForVisiblity(zkai_popup, 3)) {
-	 * zkai_popupCloseButton.click(); log.info("Close Zkai pop up"); }
-	 */
-
-	// List<WebElement> zkai_popup =
-	// driver.findElements(By.xpath("//div[@class='modal-content']"));
-	// List<WebElement> zkai_popupCloseButton =
-	// driver.findElements(By.xpath("//button[@aria-label='Close']"));
-
-	// By zkai_popupCloseButton = By.xpath("//button[@aria-label='Close']");
-	// System.out.println("inside closeZkaiPopup()");
-	// if (CommonFunctions.isElementVisible(zkai_popup)) {
-	// zkai_popupCloseButton.click();
-	// }
-
-	// Alert alert = driver.switchTo().alert();
-	// alert.dismiss();
-
-	// if
-	// (CommonFunctions.waitForClickable(ObjectHelper.driver.findElement(zkai_popupCloseButton),
-	// 1)) {
-//		if (ObjectHelper.driver.findElement(zkai_popupCloseButton).isDisplayed()) {
-//			if (ObjectHelper.driver.findElements(zkai_popupCloseButton).size() > 0) {
-//				ObjectHelper.driver.findElement(zkai_popupCloseButton).click();
-//			}
-//		}
-//
-//	}
 
 	/**
 	 * @Author : Chetan Sonparote
