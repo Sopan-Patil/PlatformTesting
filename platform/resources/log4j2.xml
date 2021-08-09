@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
 <Configuration status="WARN">
 	<Properties>
 		<Property name="basePath">./logs</Property>
@@ -11,7 +12,7 @@
 			<SizeBasedTriggeringPolicy size="50000000" />
 		</RollingFile>
 
-		<RollingFile name="fileLogger"
+<!-- 		<RollingFile name="fileLogger"
 			fileName="${basePath}/ApplicationTestLogs.html"
 			filePattern="${basePath}/ApplicationTestLogs-%d{yyyy-MM-dd}.html">
 			<HTMLLayout charset="UTF-8" title="Platform testing" datePattern="%d{DEFAULT}"  timezone="%d{HH:mm:ss,SSS}"
@@ -21,9 +22,9 @@
 					modulate="true" />
 				<SizeBasedTriggeringPolicy size="10 MB" />
 			</Policies>
-		</RollingFile>
+		</RollingFile> -->
 
-		<RollingFile name="Rolling-default"
+<!-- 		<RollingFile name="Rolling-default"
 			fileName="${basePath}/prints.html"
 			filePattern="logs/$${date:yyyy-MM}/bssauto-%d{MM-dd-yyyy}-%i.log.gz">
 			<CustomHTMLLayout charset="UTF-8"
@@ -33,7 +34,7 @@
 				<SizeBasedTriggeringPolicy size="10 MB" />
 			</Policies>
 		</RollingFile>
-
+ -->
 
 		<Console name="Console" target="SYSTEM_OUT">
 			<PatternLayout
@@ -43,8 +44,8 @@
 	<Loggers>
 		<Root level="trace">
 			<AppenderRef ref="File" />
-			<AppenderRef ref="Rolling-default" />
-			<AppenderRef ref="fileLogger" />
+			<!-- <AppenderRef ref="Rolling-default" /> -->
+			<!-- <AppenderRef ref="fileLogger" /> -->
 			<AppenderRef ref="Console" />
 		</Root>
 	</Loggers>

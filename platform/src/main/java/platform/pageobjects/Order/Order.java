@@ -37,15 +37,33 @@ public class Order {
 	@FindBy(xpath = "//a[@href='/product-list']")
 	public WebElement productListLink;
 
+	@FindBy(xpath = "//span[@class='teaser-head__text-member'][1]")
+	public WebElement topPageMemberPlanLink;
+
+	@FindBy(xpath = "//button[@type='submit']//span[@class='button__text']")
+	public WebElement applyForPrimeMembershipButton;
+
 	@FindBy(xpath = "//body[1]/div[1]/div[3]/div[1]/div[1]/div[4]/form[1]/button[1]/span[1]")
 	public WebElement selectCasec1ProductFromProductList;
 
 	@FindBy(xpath = "/html/body/div/div[3]/div[2]/div[2]/div[4]/form/button")
 	public WebElement selectKanjiProductFromProductList;
 
+	@FindBy(xpath = "//a[@class='button button--gray button--xxmedium ep-order__btn ep-order__btn--back']//span")
+	public WebElement orderFlowBackPageButton;
+
 	// @FindBy(xpath = "//button[@type='submit'] //span[@class='button__text']")
-	@FindBy(xpath = "//button[@role='button']")
+	@FindBy(xpath = "//button[@role='button']//span")
 	public WebElement step1ProceedButton;
+
+	@FindBy(xpath = "//div[@class='ep-order__title']")
+	public WebElement step1OrderDetailsLabel;
+
+	@FindBy(xpath = "//span[@class='step-order__icon mr-1 icon-step1']")
+	public WebElement step2SelectPaymentMethodLabel;
+
+	@FindBy(xpath = "//h2[@class=\"ep-order__title\"]")
+	public WebElement step3SelectPaymentMethodLabel;
 
 	@FindBy(xpath = "//input[@id='email']")
 	public WebElement emailtextfield;
@@ -55,6 +73,9 @@ public class Order {
 
 	@FindBy(xpath = "//a[@id='finalizeButton']//span")
 	public WebElement step3ConfirmOrderButton;
+
+	@FindBy(xpath = "//button[@class='button button--blue1 button--xsmall']")
+	public WebElement primeMembershipBenefitsLabel;
 
 	@FindBy(xpath = "//div[@class='box-head']//h3")
 	public WebElement step4ThankYouForYourPurchaseLabel;
@@ -129,6 +150,16 @@ public class Order {
 	@FindBy(xpath = "//input[@id='userEmail']")
 	public WebElement emailaddressTextbox;
 
+	// con store blank xpath
+	@FindBy(xpath = "//span[@id='userNameleb_id']")
+	public WebElement blankKanjiNameTextHandler;
+
+	@FindBy(xpath = "//span[@id='userFuriganaleb_id']")
+	public WebElement blankKanaNameTextHandler;
+
+	@FindBy(xpath = "//span[@id='userPhoneleb_id']")
+	public WebElement blankPhonenoTextHandler;
+
 	// con store thank you page xpath
 
 	@FindBy(xpath = "//div[@class='box-store-payment__content']//div[1]//div[2]")
@@ -180,11 +211,20 @@ public class Order {
 	@FindBy(xpath = "//div[@class='box-head']//h3")
 	public WebElement thankYouForYourApplicationCreditCardLabel;
 
+	@FindBy(xpath = "//div[@class='box-head']//h3")
+	public WebElement thankYouForYourApplicationPrimeLabel;
+
 	@FindBy(xpath = "//div[@class='box-body__item mb-3']//strong//span")
 	public WebElement orderNumberCreditCardLabel;
 
+	@FindBy(xpath = "//div[@class='box-body__item']//strong")
+	public WebElement orderNumberPrimeLabel;
+
 	@FindBy(xpath = "//a[@class='button button--default button--uplarge']//span")
 	public WebElement StartNowButton;
+
+	@FindBy(xpath = "//a[@class='button button--default button--uplarge']//span")
+	public WebElement thankYouPageTopPageButton;
 
 	@FindBy(xpath = "//a[@href='https://support.evidus.com/']")
 	public WebElement FAQLink;
@@ -217,8 +257,30 @@ public class Order {
 	@FindBy(xpath = "//div[@class='ep-my-page__side-bar']//a[3]")
 	public WebElement sideMenuServiceYouAreUsingPage;
 
+	@FindBy(xpath = "//div[@class='ep-my-page__side-bar']//a[2]")
+	public WebElement sideMembershipStatusPage;
+
 	@FindBy(xpath = "//span[contains(@class,'button button--default button--medium')]//span[1]")
 	public WebElement learnButtonForKankenProduct;
+
+	// xpath for prime m
+	@FindBy(xpath = "//p[@class='ep-box-member__title']")
+	public WebElement membershipPagePrimeLabel;
+
+	@FindBy(xpath = "//div[@class='ep-member-info ep-member-info--amount']//div[@class='ep-member-info__content justify-content-between']//span[2]")
+	public WebElement membershipPagePrimePriceLabel;
+
+	@FindBy(xpath = "//span[@class='ep-member-info__payment']")
+	public WebElement membershipPagePrimeCreditCardLabel;
+
+	@FindBy(xpath = "//a[@href='mypage-management-payment-method']//span")
+	public WebElement membershipPageChangeCardButton;
+
+	@FindBy(xpath = "//a[contains(@class,'button button--gray button--xmedium')]//span")
+	public WebElement membershipPageEndMembershipButton;
+
+	@FindBy(xpath = "//a[@class='button button--blue1 button--xsmall font-weight-normal']//span")
+	public WebElement primeButtonOnHeaderPage;
 
 	// not used
 	@FindBy(xpath = "//button[@type='submit']")
@@ -235,6 +297,74 @@ public class Order {
 		CommonFunctions.waitForVisiblity(selectCasec1ProductFromProductList, waitTime);
 		selectCasec1ProductFromProductList.click();
 		log.info("Click on buy button from product list page,select 1st product-CASEC １");
+
+	}
+
+	public void openProductListPage() throws Exception {
+
+		CommonFunctions.waitForVisiblity(productListLink, waitTime);
+		productListLink.click();
+		log.info("Click on product list page");
+
+	}
+
+	public void openMemberPlanPageFromTopPage() throws Exception {
+
+		CommonFunctions.waitForVisiblity(topPageMemberPlanLink, waitTime);
+		topPageMemberPlanLink.click();
+		log.info("Click on top Page Member Plan Link");
+
+	}
+
+	public void clickApplyForPrimeMembershipButton() throws Exception {
+		CommonFunctions.scrolltoElement(applyForPrimeMembershipButton);
+		CommonFunctions.waitForVisiblity(applyForPrimeMembershipButton, waitTime);
+		applyForPrimeMembershipButton.click();
+		log.info("Click Apply For Prime Membership Button");
+
+	}
+
+	public void clickOnOrderFlowBackButton() throws Exception {
+		CommonFunctions.scrolltoElement(orderFlowBackPageButton);
+		CommonFunctions.waitForVisiblity(orderFlowBackPageButton, waitTime);
+		orderFlowBackPageButton.click();
+		log.info("Click On Order Flow Back Button");
+
+	}
+
+	public void proceedWith1stCasecProduct() throws Exception {
+
+		CommonFunctions.waitForVisiblity(selectCasec1ProductFromProductList, waitTime);
+		selectCasec1ProductFromProductList.click();
+		log.info("Click on buy button from product list page,select 1st product-CASEC １");
+
+	}
+
+	public void orderFlowStep1PageLoadedSuccessfully() throws Exception {
+
+		CommonFunctions.waitForVisiblity(step1OrderDetailsLabel, waitTime);
+		log.info("step 1 Page Loaded Successfully");
+
+	}
+
+	public void orderFlowStep2PageLoadedSuccessfully() throws Exception {
+
+		CommonFunctions.waitForVisiblity(step2SelectPaymentMethodLabel, waitTime);
+		log.info("step 2 Page Loaded Successfully");
+
+	}
+
+	public void orderFlowStep3PageLoadedSuccessfully() throws Exception {
+
+		CommonFunctions.waitForVisiblity(step3SelectPaymentMethodLabel, waitTime);
+		log.info("step 3 Page Loaded Successfully");
+
+	}
+
+	public void orderFlowStep4ThankYouPageLoadedSuccessfully() throws Exception {
+		CommonFunctions.scrolltoElement(copyRightLabel);
+		CommonFunctions.waitForVisiblity(copyRightLabel, waitTime);
+		log.info("step 3 thank you Page Loaded Successfully");
 
 	}
 
@@ -276,7 +406,7 @@ public class Order {
 	// Order flow step 2
 	public void methodForOrderFlowStep2() throws Exception {
 
-		CommonFunctions.isElementVisible(step2ProceedButton);
+		// CommonFunctions.isElementVisible(step2ProceedButton);
 		CommonFunctions.waitForVisiblity(step2ProceedButton, waitTime);
 		step2ProceedButton.click();
 		log.info("Step 2 tab :- click to 'Confirmation of order details' button");
@@ -560,7 +690,7 @@ public class Order {
 		log.info("The invalid email address of con store message match with our expected message");
 	}
 
-	// payment with invalid con store
+	// payment with blank con store
 	public void step2PaymentWithBlankConStore() throws Exception {
 		CommonFunctions.isElementVisible(step2ProceedButton);
 
@@ -574,34 +704,40 @@ public class Order {
 
 		CommonFunctions.waitForVisiblity(kanjiNameTextbox, waitTime);
 		kanjiNameTextbox.clear();
-		kanjiNameTextbox.sendKeys("柏木佳　奈子");
-		log.info("Step 2 tab :- provide name 'kanji Name' textbox");
+		log.info("Step 2 tab :- clear 'kanji Name' textbox value");
 
 		CommonFunctions.waitForVisiblity(kanaNameTextbox, waitTime);
 		kanaNameTextbox.clear();
-		kanaNameTextbox.sendKeys("カシワギ　カナコ");
-		log.info("Step 2 tab :- provide name 'kana Name' textbox");
+		log.info("Step 2 tab :- clear 'kana Name' textbox value");
 
 		CommonFunctions.waitForVisiblity(phonenoTextbox, waitTime);
 		phonenoTextbox.clear();
-		phonenoTextbox.sendKeys("9890324119");
-		log.info("Step 2 tab :- provide phone no 'phone no' textbox");
+		log.info("Step 2 tab :- clear phone no 'phone no' textbox value");
 
 		CommonFunctions.waitForVisiblity(emailaddressTextbox, waitTime);
 		emailaddressTextbox.clear();
-		emailaddressTextbox.sendKeys("rahul.shinde");
-		log.info("Step 2 tab :- provide email to 'email address' textbox");
+		log.info("Step 2 tab :- clear 'email address' textbox value");
 
 		CommonFunctions.isElementVisible(step2ProceedButton);
 		CommonFunctions.waitForVisiblity(step2ProceedButton, waitTime);
 		step2ProceedButton.click();
 		log.info("Step 2 tab :- click to 'Confirmation of order details' button");
 
-		CommonFunctions.waitForVisiblity(invalidConStoreEmailTextHandler, waitTime);
-		String invalidEmailConStoreText = invalidConStoreEmailTextHandler.getText().trim();
-		String expectedinvalidEmailConStoreText = "有効なメールアドレスを入力してください";
-		CommonFunctions.assertString(invalidEmailConStoreText, expectedinvalidEmailConStoreText);
-		log.info("The invalid email address of con store message match with our expected message");
+		String expectedBlankConStoreText = "入力してください";
+		CommonFunctions.waitForVisiblity(blankKanjiNameTextHandler, waitTime);
+		String blankKanjiNameTextHandlerString = blankKanjiNameTextHandler.getText().trim();
+		CommonFunctions.assertString(expectedBlankConStoreText, blankKanjiNameTextHandlerString);
+		log.info("The blank Kanji Name message match with our expected message");
+
+		CommonFunctions.waitForVisiblity(blankKanaNameTextHandler, waitTime);
+		String blankKanaNameTextHandlerString = blankKanaNameTextHandler.getText().trim();
+		CommonFunctions.assertString(expectedBlankConStoreText, blankKanaNameTextHandlerString);
+		log.info("The blank Kana Name message match with our expected message");
+
+		CommonFunctions.waitForVisiblity(blankPhonenoTextHandler, waitTime);
+		String blankPhonenoTextHandlerString = blankPhonenoTextHandler.getText().trim();
+		CommonFunctions.assertString(expectedBlankConStoreText, blankPhonenoTextHandlerString);
+		log.info("The blank telephone number Name message match with our expected message");
 	}
 
 	public String[] methodForConStoreThankYouPage() throws Exception {
@@ -824,6 +960,107 @@ public class Order {
 		return ret_Array;
 	}
 
+	public String[] methodForPrimeThankYouPage() throws Exception {
+
+		// thank you page
+		CommonFunctions.waitForVisiblity(thankYouForYourApplicationPrimeLabel, waitTime);
+		// stringToCompare = thankYouForYourApplicationCreditCardLabel.getText();
+		String ThankYouForYourApplicationLabelForTrim = thankYouForYourApplicationPrimeLabel.getText().trim();
+		String ThankYouForYourApplicationLabelSTR = ThankYouForYourApplicationLabelForTrim.substring(0, 11);
+		String expectedThankYouForYourApplicationLabelSTR = "ありがとうございます！";
+		log.info("Step 4 tab :- thank You For Your Application text visible:- " + ThankYouForYourApplicationLabelSTR);
+		CommonFunctions.assertString(ThankYouForYourApplicationLabelSTR, expectedThankYouForYourApplicationLabelSTR);
+
+		CommonFunctions.waitForVisiblity(orderNumberPrimeLabel, waitTime);
+		String orderNumberPrimeLabelSTR = orderNumberPrimeLabel.getText();
+		log.info("Step 4 tab :- Order number text visible:- " + orderNumberPrimeLabelSTR);
+
+		CommonFunctions.waitForVisiblity(checkOrderHistoryLink, waitTime);
+		log.info("Step 4 tab :- order history link visible");
+
+		CommonFunctions.waitForVisiblity(thankYouPageTopPageButton, waitTime);
+		String thankYouPageTopPageButtonSTR = thankYouPageTopPageButton.getText();
+		String expectedstartNowButtonSTR = "トップページ";
+		log.info("Step 4 tab :- start now button visible:- " + thankYouPageTopPageButtonSTR);
+		CommonFunctions.assertString(expectedstartNowButtonSTR, thankYouPageTopPageButtonSTR);
+
+		CommonFunctions.waitForVisiblity(FAQLink, waitTime);
+		log.info("Step 4 tab :- Frequently Asked Questions / Inquiries link visible");
+
+		CommonFunctions.waitForVisiblity(termsOfUseLink, waitTime);
+		log.info("Step 4 tab :- Terms of use ・ Handling of personal information link visible");
+
+		CommonFunctions.waitForVisiblity(privacyPolicyLink, waitTime);
+		log.info("Step 4 tab :- privacy policy link visible");
+
+		CommonFunctions.waitForVisiblity(commercialTransactionsLawLink, waitTime);
+		log.info("Step 4 tab :- Display based on the Specified Commercial Transactions Law link visible");
+
+		// open footer menu on next tab
+		Actions newTab = new Actions(driver);
+		newTab.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).click(FAQLink).keyUp(Keys.CONTROL).keyUp(Keys.SHIFT).build()
+				.perform();
+		log.info("Step 4 tab :- click on FAQ and it open in new browser tab");
+		Thread.sleep(2000);
+		newTab.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).click(termsOfUseLink).keyUp(Keys.CONTROL).keyUp(Keys.SHIFT)
+				.build().perform();
+		log.info("Step 4 tab :- click on terms Of Use Link and it open in new browser tab");
+		Thread.sleep(2000);
+		newTab.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).click(privacyPolicyLink).keyUp(Keys.CONTROL).keyUp(Keys.SHIFT)
+				.build().perform();
+		log.info("Step 4 tab :- click on privery policy Link and it open in new browser tab");
+		Thread.sleep(2000);
+		newTab.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).click(commercialTransactionsLawLink).keyUp(Keys.CONTROL)
+				.keyUp(Keys.SHIFT).build().perform();
+		log.info("Step 4 tab :- click on commercial transaction law Link and it open in new browser tab");
+
+		// handle windows change
+		String base1 = driver.getWindowHandle();
+		Set<String> set = driver.getWindowHandles();
+
+		set.remove(base1);
+		assert set.size() == 4;
+		driver.switchTo().window((String) set.toArray()[0]);
+		log.info("Step 4 tab :- switched to commercial Transactions page");
+		Thread.sleep(1000);
+		CommonFunctions.waitForVisiblity(commercialTransactionsPageLabel, waitTime);
+		log.info("commercial Transactions text visible on commercial Transactions page");
+		// close the window and switch back to the base tab
+		driver.close();
+
+		driver.switchTo().window((String) set.toArray()[1]);
+		log.info("Step 4 tab :- switched to privacy Policy page");
+		Thread.sleep(1000);
+		CommonFunctions.waitForVisiblity(privacyPolicyLinkPageLabel, waitTime);
+		log.info("privacy Policy text visible on privacy Policy Page");
+		// close the window and switch back to the base tab
+		driver.close();
+
+		driver.switchTo().window((String) set.toArray()[2]);
+		log.info("Step 4 tab :- switched to Terms of Service page");
+		Thread.sleep(1000);
+		CommonFunctions.waitForVisiblity(STAGIATermsofServiceLabel, waitTime);
+		log.info("STAGIA Terms of Service visible on FAQ page");
+		// close the window and switch back to the base tab
+		driver.close();
+
+		driver.switchTo().window((String) set.toArray()[3]);
+		log.info("Step 4 tab :- switched to FAQ page");
+		Thread.sleep(1000);
+		CommonFunctions.waitForVisiblity(FAQPageLogo, waitTime);
+		log.info("FAQ logo visible on FAQ page");
+		// close the window and switch back to the base tab
+		driver.close();
+
+		driver.switchTo().window(base1);
+		log.info("Step 4 tab :- switched to thank you page again");
+
+		// define string array
+		String[] ret_Array = { orderNumberPrimeLabelSTR };
+		// return string array
+		return ret_Array;
+	}
+
 	public void methodForCreditCardOrderHistoryPage(String orderNumberLabelSTR) throws Exception {
 
 		String expectedOrderNumberLabelSTR = orderNumberLabelSTR;
@@ -865,6 +1102,105 @@ public class Order {
 		String orderHistoryOrderDateLabelSTR = orderHistoryOrderDateLabelforTrim.substring(5, 15);
 		String currentDate = java.time.LocalDate.now().toString();
 		CommonFunctions.assertString(currentDate, orderHistoryOrderDateLabelSTR);
+	}
+
+	public void methodForPrimeOrderHistoryPage(String orderNumberLabelSTR) throws Exception {
+
+		String expectedOrderNumberLabelSTR = orderNumberLabelSTR;
+
+		log.info("Store Order Number from methodForCreditCardThankYouPage:- " + expectedOrderNumberLabelSTR);
+
+		CommonFunctions.waitForVisiblity(checkOrderHistoryLink, waitTime);
+		checkOrderHistoryLink.click();
+
+		CommonFunctions.waitForVisiblity(orderHistoryOrderNumberLabel, waitTime);
+		String orderHistoryOrderNumberLabelforTrim = orderHistoryOrderNumberLabel.getText();
+		String orderHistoryOrderNumberLabelSTR = orderHistoryOrderNumberLabelforTrim.substring(6, 30);
+		log.info("Order history page:- order number is " + orderHistoryOrderNumberLabelSTR);
+		CommonFunctions.assertString(expectedOrderNumberLabelSTR, orderHistoryOrderNumberLabelSTR);
+
+		CommonFunctions.waitForVisiblity(orderHistoryPaymentStatusLabel, waitTime);
+		String orderHistoryPaymentStatusLabelSTR = orderHistoryPaymentStatusLabel.getText();
+		String expectedStatusPaymentconfirmed = "支払い確認済み";
+		log.info("Order history page:- payment status is Payment confirmed " + expectedStatusPaymentconfirmed);
+		CommonFunctions.assertString(expectedStatusPaymentconfirmed, orderHistoryPaymentStatusLabelSTR);
+
+		CommonFunctions.waitForVisiblity(orderHistoryProductNameLabel, waitTime);
+		String orderHistoryProductNameLabelSTR = orderHistoryProductNameLabel.getText().trim();
+		String expectedPrimeLabel = "プライム会員プラン";
+		log.info("Order history page:- displayed " + orderHistoryProductNameLabelSTR);
+		CommonFunctions.assertString(expectedPrimeLabel, orderHistoryProductNameLabelSTR);
+
+		CommonFunctions.waitForVisiblity(orderHistoryPriceLabel, waitTime);
+		String orderHistoryPriceLabelForTrim = orderHistoryPriceLabel.getText();
+		String expectedPrimePrice = "500";
+		String orderHistoryPriceLabelSTR = orderHistoryPriceLabelForTrim.substring(0, 3);
+		log.info("Order history page:- price for prime " + orderHistoryPriceLabelSTR);
+		CommonFunctions.assertString(expectedPrimePrice, orderHistoryPriceLabelSTR);
+
+		CommonFunctions.waitForVisiblity(orderHistoryOrderDateLabel, waitTime);
+		String orderHistoryOrderDateLabelforTrim = orderHistoryOrderDateLabel.getText();
+		log.info("Order history page:- order date is " + orderHistoryOrderDateLabelforTrim);
+		String orderHistoryOrderDateLabelSTR = orderHistoryOrderDateLabelforTrim.substring(5, 15);
+		String currentDate = java.time.LocalDate.now().toString();
+		CommonFunctions.assertString(currentDate, orderHistoryOrderDateLabelSTR);
+
+		CommonFunctions.waitForVisiblity(primeButtonOnHeaderPage, waitTime);
+		String primeButtonOnHeaderPageSTR = primeButtonOnHeaderPage.getText().trim();
+		String expectedPrimeLabelOnHeaderPage = "プライム会員";
+		log.info("Prime Label On Header Page:- displayed " + primeButtonOnHeaderPageSTR);
+		CommonFunctions.assertString(expectedPrimeLabelOnHeaderPage, primeButtonOnHeaderPageSTR);
+
+	}
+
+	public void verifyMembershipStatusPageForPrime() throws Exception {
+
+		CommonFunctions.waitForVisiblity(sideMembershipStatusPage, waitTime);
+		sideMembershipStatusPage.click();
+		log.info("Open Membership Status Page page");
+
+		CommonFunctions.waitForVisiblity(membershipPagePrimeLabel, waitTime);
+		String membershipPagePrimeLabelSTR = membershipPagePrimeLabel.getText().trim();
+		String expectedMembershipPagePrimeLabelSTR = "プライム会員";
+		log.info("Membership page:- prime label displayed " + membershipPagePrimeLabelSTR);
+		CommonFunctions.assertString(expectedMembershipPagePrimeLabelSTR, membershipPagePrimeLabelSTR);
+
+		CommonFunctions.waitForVisiblity(membershipPagePrimePriceLabel, waitTime);
+		String membershipPagePrimePriceLabelForTrim = membershipPagePrimePriceLabel.getText();
+		String expectedPrimePrice = "500";
+		String membershipPagePrimePriceLabelSTR = membershipPagePrimePriceLabelForTrim.substring(0, 3);
+		log.info("Membership page:- prime price displayed " + membershipPagePrimePriceLabelSTR);
+		CommonFunctions.assertString(expectedPrimePrice, membershipPagePrimePriceLabelSTR);
+
+		CommonFunctions.waitForVisiblity(membershipPagePrimeCreditCardLabel, waitTime);
+		String membershipPagePrimeCreditCardLabelSTR = membershipPagePrimeCreditCardLabel.getText().trim();
+		String expectedMembershipPagePrimeCreditCardLabelSTR = "クレジットカード支払い";
+		log.info("Membership page:- displayed " + membershipPagePrimeCreditCardLabelSTR);
+		CommonFunctions.assertString(expectedMembershipPagePrimeCreditCardLabelSTR,
+				membershipPagePrimeCreditCardLabelSTR);
+
+		CommonFunctions.waitForVisiblity(membershipPageChangeCardButton, waitTime);
+		log.info("Membership page:- change card button displayed");
+
+		CommonFunctions.waitForVisiblity(membershipPageEndMembershipButton, waitTime);
+		log.info("Membership page:- end membership button displayed");
+
+	}
+
+	public void verifyServiceYouAreUsingPageForPrime() throws Exception {
+
+//		CommonFunctions.waitForVisiblity(sideMenuServiceYouAreUsingPage, waitTime);
+//		sideMenuServiceYouAreUsingPage.click();
+//		log.info("Open Service you are using page");
+		driver.navigate().to("https://stg.studygear.evidus.net/mypage-member-service");
+
+		CommonFunctions.waitForVisiblity(primeMembershipBenefitsLabel, waitTime);
+		int actualPrimeMembershipBenefitsCount = driver
+				.findElements(By.xpath("//button[@class='button button--blue1 button--xsmall']")).size();
+		int expectedprimeMembershipBenefitsCount = 3;
+		CommonFunctions.assertInt(actualPrimeMembershipBenefitsCount, expectedprimeMembershipBenefitsCount);
+		log.info("It display 3 basic plan products which is free for prime plan");
+
 	}
 
 	public void verifyLearnButtonFromServiceYouAreUsingPage() throws Exception {
