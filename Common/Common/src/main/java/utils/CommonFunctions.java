@@ -12,6 +12,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,6 +20,7 @@ import org.testng.Assert;
 public class CommonFunctions {
 	
 	private static Logger log = LogManager.getLogger(CommonFunctions.class.getName());
+
 
 	public static void waitandClick(By locator, int waitTime) throws Exception {
 		WebElement element;
@@ -135,6 +137,23 @@ public class CommonFunctions {
 		}
 		return result;
 	}
+	/**
+	 * @return 
+	 * @Author : rahul shinde
+	 * @Date : 06 aug 2021
+	 * @Description: assert int value
+	 */
+	public static boolean assertInt(int actualText, int expectedText) {
+		boolean result = false;
+		try {
+			log.info("Try to match int value " + actualText + " with " +expectedText );
+			assertEquals(actualText, expectedText);
+			result = true;
+		} catch (Exception e) {
+			result = false;
+		}
+		return result;
+	}
 	
 	/**
 	 * @return 
@@ -162,7 +181,7 @@ public class CommonFunctions {
 		
 	}
 
-
+	
    
 	public static void clickUsingJavaExecutor(String xpath) {
 		WebElement element = ObjectHelper.driver.findElement(By.xpath(xpath));
