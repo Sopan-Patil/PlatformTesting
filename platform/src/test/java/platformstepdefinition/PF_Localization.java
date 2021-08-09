@@ -1,0 +1,36 @@
+package platformstepdefinition;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.junit.runner.RunWith;
+import org.openqa.selenium.WebDriver;
+
+import base.NewBaseClass;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import cucumber.api.junit.Cucumber;
+import utils.ObjectHelper;
+
+/**
+ * @Author : Chetan Sonparote
+ * @Date : 29 Jul 2021
+ * @Description: test class
+ */
+
+@RunWith(Cucumber.class)
+public class PF_Localization extends NewBaseClass {
+
+	public WebDriver driver = ObjectHelper.driver;
+	private static Logger log = LogManager.getLogger(PF_Localization.class.getName());
+
+	@When("^Read localization data from sheet$")
+	public void read_localization_data_from_sheet() throws Throwable {
+		// throw new PendingException();
+	}
+
+	@Then("^Validate that localization is correct$")
+	public void validate_that_localization_is_correct() throws Throwable {
+		// throw new PendingException();
+	}
+
+}
