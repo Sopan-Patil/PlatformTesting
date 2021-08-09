@@ -92,6 +92,12 @@ public class FooterPage {
 	@FindBy(xpath = "//a[contains(text(),'ログアウト')]")
 	public WebElement logout;
 
+	@FindBy(xpath = "//a[@class='sub-menu__text'][contains(text(),'ログイン')]")
+	public WebElement footerLogin;
+
+	@FindBy(xpath = "//a[@class='sub-menu__text'][contains(text(),'新規登録')]")
+	public WebElement footerRegister;
+
 	@FindBy(xpath = "//a[contains(text(),'よくある質問・お問合せ')]")
 	public WebElement accountQnA;
 
@@ -385,12 +391,21 @@ public class FooterPage {
 			log.error("order History Link is not working");
 		}
 
+		CommonFunctions.scrolltoElement(withdraw);
+		if (CommonFunctions.isElementClickable(withdraw)) {
+			withdraw.click();
+			String ActualTitle = driver.getTitle();
+			String ExpectedTitle = "退会確認 - スタギア";
+			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			log.info("Withdrawal Link is working");
+			driver.navigate().back();
+		} else {
+			log.error("Withdrawal Link is not working");
+		}
+
 		CommonFunctions.scrolltoElement(logout);
 		if (CommonFunctions.isElementClickable(logout)) {
 			logout.click();
-			String ActualTitle = driver.getTitle();
-			String ExpectedTitle = "特定商取引法 - スタギア";
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("Logout Link is working");
 			driver.navigate().back();
 		} else {
@@ -464,6 +479,7 @@ public class FooterPage {
 			String ExpectedTitle = "スタギアサポートセンター";
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("QnA Link is working");
+			switchToPreviousTab();
 		} else {
 			log.error("QnA Link is not working");
 		}
@@ -472,10 +488,12 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(accountTerms)) {
 			accountTerms.click();
 			CommonFunctions.waitForVisiblity(footerTermsforAssert, 5);
-			String ActualTitle = driver.getTitle();
+			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
+			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
 			String ExpectedTitle = "利用規約 - スタギア";
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("Terms of Use Link is working");
+			switchToPreviousTab();
 		} else {
 			log.error("Terms of Use Link is not working");
 		}
@@ -489,6 +507,7 @@ public class FooterPage {
 			String ExpectedTitle = "プライバシーポリシー｜株式会社教育測定研究所（JIEM）";
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("Privacy Policy Link is working");
+			switchToPreviousTab();
 		} else {
 			log.error("Privacy Policy Link is not working");
 		}
@@ -497,10 +516,12 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(accountTax)) {
 			accountTax.click();
 			CommonFunctions.waitForVisiblity(footerTaxforAssert, 5);
-			String ActualTitle = driver.getTitle();
+			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
+			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
 			String ExpectedTitle = "特定商取引法 - スタギア";
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("Account Tax Link working");
+			switchToPreviousTab();
 		} else {
 			log.error("Account Tax Link is not working");
 		}
@@ -515,6 +536,28 @@ public class FooterPage {
 			log.info("Withdraw Link working");
 		} else {
 			log.error("Withdraw Link is not working");
+		}
+	}
+
+	public void clickLoginFooterLink() throws Exception {
+
+		CommonFunctions.scrolltoElement(footerLogin);
+		if (CommonFunctions.isElementClickable(footerLogin)) {
+			footerLogin.click();
+			log.info("Footer Login Link working");
+		} else {
+			log.error("Footer Login Link is not working");
+		}
+	}
+
+	public void clickRegistrationFooterLink() throws Exception {
+
+		CommonFunctions.scrolltoElement(footerRegister);
+		if (CommonFunctions.isElementClickable(footerRegister)) {
+			footerRegister.click();
+			log.info("Footer Registration Link working");
+		} else {
+			log.error("Footer Registration Link is not working");
 		}
 	}
 

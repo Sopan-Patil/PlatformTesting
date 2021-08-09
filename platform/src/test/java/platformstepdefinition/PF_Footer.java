@@ -4,7 +4,6 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import base.NewBaseClass;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -18,7 +17,7 @@ public class PF_Footer extends NewBaseClass {
 
 	public WebDriver driver = ObjectHelper.driver;
 
-	@Given("^Open Browser (.+)$")
+	@Given("^Navigate to URL (.+)$")
 	public void navigate_to_URL_and_check_footer_links(String browser) throws Throwable {
 		driver = openbrowser(browser);
 	}
@@ -29,13 +28,20 @@ public class PF_Footer extends NewBaseClass {
 		footer.clickFooterLinksBeforeLogin();
 	}
 
-	@And("^check footer links with after login (.+)$")
-	public void check_footer_links_after_login(String browser) throws Throwable {
-		LoginPage loginToPlatform = new LoginPage(driver);
-		loginToPlatform.loginToPlatform();
-		FooterPage footer = new FooterPage(driver);
-		footer.clickFooterLinksAfterLogin();
-		throw new PendingException();
+	@Then("^Check footer links on Login Page$")
+	public void check_footer_links_on_login_page() throws Throwable {
+		FooterPage checklinks = new FooterPage(driver);
+		checklinks.clickLoginFooterLink();
+		checklinks.clickAccountServicesFooterLinks();
+		driver.navigate().back();
+	}
+
+	@Then("^Check footer links on top page after login$")
+	public void check_footer_links_after_login_() throws Throwable {
+		LoginPage loginfunction = new LoginPage(driver);
+		loginfunction.loginToPlatform();
+		FooterPage checklinks = new FooterPage(driver);
+		checklinks.clickFooterLinksAfterLogin();
 	}
 
 	@Then("^Close browser(.+)$")
