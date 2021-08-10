@@ -34,6 +34,9 @@ public class Header extends NewBaseClass {
 
 	// Xpaths for the elements
 
+	@FindBy(xpath = "//a[@class='logo']")
+	public WebElement logo;
+
 	@FindBy(xpath = "//a[@href='/testing']")
 	public WebElement examinationWindowLink;
 
@@ -47,9 +50,12 @@ public class Header extends NewBaseClass {
 	public WebElement productListLink;
 
 	@FindBy(xpath = "//a[@class='link link--smaller']")
-	public WebElement singUpLink;
+	public WebElement signUpLink;
 
 	@FindBy(xpath = "//a[@class='button button--default button--medium button--header']")
+	public WebElement loginLink1;
+
+	@FindBy(xpath = "//a[@class='button button--white3 button--medium button--header']")
 	public WebElement loginLink;
 
 	// Xpaths for the Textboxes and Buttons
@@ -108,13 +114,38 @@ public class Header extends NewBaseClass {
 	}
 
 	// Method : Checks the Header menu and SubMenu Links
-	public void checkHeaderAndSubMenuLinkVisibility() throws Exception {
+	public void checkHeaderMenuLinksVisibility() throws Exception {
 
 		Actions actions = new Actions(driver);
 
+		actions.moveToElement(examinationWindowLink).perform();
 		CommonFunctions.isElementVisible(examinationWindowLink);
 		log.info("Menu : Examnination Window Link is visible");
 
+		actions.moveToElement(learningWindowLink).perform();
+		CommonFunctions.isElementVisible(learningWindowLink);
+		log.info("Menu : Learning Window Link is visible");
+
+		actions.moveToElement(informationWindowLink).perform();
+		CommonFunctions.isElementVisible(informationWindowLink);
+		log.info("Menu : Information Window Link is visible");
+
+		actions.moveToElement(productListLink).perform();
+		CommonFunctions.isElementVisible(productListLink);
+		log.info("Menu : Product List link is visible");
+
+		actions.moveToElement(signUpLink).perform();
+		CommonFunctions.isElementVisible(signUpLink);
+		log.info("Sign Up Link is visible");
+
+		actions.moveToElement(loginLink).perform();
+		CommonFunctions.isElementVisible(loginLink);
+		log.info("Login Link is visible");
+	}
+
+	public void checkSubMenuLinkVisibility() throws Exception {
+
+		Actions actions = new Actions(driver);
 		actions.moveToElement(examinationWindowLink).perform();
 		log.info("Opened Submenu");
 		CommonFunctions.isElementVisible(testTopLink);
@@ -135,9 +166,6 @@ public class Header extends NewBaseClass {
 		CommonFunctions.isElementVisible(commonTestMeasureCBTLink);
 		log.info("Submenu : Common Test Measure CBT Link is visible");
 
-		CommonFunctions.isElementVisible(learningWindowLink);
-		log.info("Menu : Learning Window Link is visible");
-
 		actions.moveToElement(learningWindowLink).perform();
 		log.info("Opened Submenu");
 		CommonFunctions.isElementVisible(learningTopLink);
@@ -148,8 +176,10 @@ public class Header extends NewBaseClass {
 		CommonFunctions.isElementVisible(stagiaEikenLink);
 		log.info("Submenu : Stagia Eiken Link is visible");
 
-		CommonFunctions.isElementVisible(informationWindowLink);
-		log.info("Menu : Information Window Link is visible");
+		actions.moveToElement(learningWindowLink).perform();
+		log.info("Opened Submenu");
+		CommonFunctions.isElementVisible(stagiaKankenLink);
+		log.info("Submenu : Stagia KanKen Link is visible");
 
 		actions.moveToElement(informationWindowLink).perform();
 		log.info("Opened Submenu");
@@ -171,14 +201,6 @@ public class Header extends NewBaseClass {
 		CommonFunctions.isElementVisible(educationCostConsultationSupportLink);
 		log.info("Submenu : Education Cost Consultation Support Link is visible");
 
-		CommonFunctions.isElementVisible(productListLink);
-		log.info("Menu : Product List link is visible");
-
-		CommonFunctions.isElementVisible(singUpLink);
-		log.info("Sign Up Link is visible");
-
-		CommonFunctions.isElementVisible(loginLink);
-		log.info("Login Link is visible");
 	}
 
 	// Method : Checks the Header menu links are working by clicking on them
@@ -204,9 +226,9 @@ public class Header extends NewBaseClass {
 		productListLink.click();
 		log.info("Clicked on Product List page");
 
-		CommonFunctions.isElementVisible(singUpLink);
-		CommonFunctions.waitForVisiblity(singUpLink, waitTime);
-		singUpLink.click();
+		CommonFunctions.isElementVisible(signUpLink);
+		CommonFunctions.waitForVisiblity(signUpLink, waitTime);
+		signUpLink.click();
 		log.info("Clicked on SignUp page");
 		CommonFunctions.isElementVisible(emailTextBox);
 		log.info("Email Textbox is visible");
@@ -217,6 +239,11 @@ public class Header extends NewBaseClass {
 
 		driver.navigate().back();
 		log.info("Back on Previous Page");
+
+		CommonFunctions.isElementVisible(logo);
+		CommonFunctions.waitForVisiblity(logo, waitTime);
+		logo.click();
+		log.info("Back on Home Page");
 
 		CommonFunctions.isElementVisible(loginLink);
 		CommonFunctions.waitForVisiblity(loginLink, waitTime);
