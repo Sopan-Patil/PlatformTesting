@@ -9,8 +9,8 @@ import base.NewBaseClass;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumber.api.junit.Cucumber;
+import platform.pageobjects.localization.LocalizationData;
 import utils.ObjectHelper;
-import utils.XLHandler;
 
 /**
  * @Author : Chetan Sonparote
@@ -27,14 +27,16 @@ public class PF_Localization extends NewBaseClass {
 	@When("^Read localization data from sheet$")
 	public void read_localization_data_from_sheet() throws Throwable {
 		// throw new PendingException();
-		// LocalizationData localizationData = new LocalizationData(driver);
-		// localizationData.readLocalizationData();
-		XLHandler.readexcel("LocalizationTestData.xlsx", "NoLogin", "Locator");
+		LocalizationData localizationData = new LocalizationData(driver);
+		localizationData.readLocalizationData();
+
 	}
 
 	@Then("^Validate that localization is correct$")
 	public void validate_that_localization_is_correct() throws Throwable {
 		// throw new PendingException();
+		LocalizationData localizationData = new LocalizationData(driver);
+		localizationData.validateLocalizationData();
 	}
 
 }

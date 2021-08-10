@@ -134,7 +134,7 @@ public class XLHandler {
 		    } 
 		    
 			
-		    log.info("value :"+value);
+		    //log.info("value :"+value);
 		    
 		fis.close();
 		workBook.close();
