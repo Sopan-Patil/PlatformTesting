@@ -28,12 +28,11 @@ public class XLHandler {
 	 */
 
 	/**
-	*@author Sopan patil
-	*@Date : 01 Jul 21
-	*@Description : Read Excel sheet
-	*
+	 * @author Sopan patil
+	 * @Date : 01 Jul 21
+	 * @Description : Read Excel sheet
+	 *
 	 */
-	
 
 	@SuppressWarnings("null")
 	public static String[] readexcel(String sheetname, String filename)
@@ -43,9 +42,9 @@ public class XLHandler {
 		Object result;
 		Workbook workbook = WorkbookFactory
 				.create(new File(new File(".", "\\TestData\\" + filename).getAbsolutePath()));
-		Sheet sheet = workbook.getSheet(sheetname);	
+		Sheet sheet = workbook.getSheet(sheetname);
 		int lastRow = sheet.getLastRowNum();
-		//System.out.println("Last row- " + lastRow);
+		// System.out.println("Last row- " + lastRow);
 		for (int i = 0; i <= lastRow; i++) {
 			Row row = sheet.getRow(i);
 			int lastCell = row.getLastCellNum();
@@ -54,44 +53,41 @@ public class XLHandler {
 				Cell cell = row.getCell(j);
 				DataFormatter formatter = new DataFormatter();
 				String text = formatter.formatCellValue(cell);
-				//System.out.println(text);
+				// System.out.println(text);
 
 				// value[cell.getRowIndex()] = formatter.formatCellValue(cell);
 				value[cell.getColumnIndex()] = formatter.formatCellValue(cell);
-				//return value;
+				// return value;
 
-				//value[cell.getRowIndex()] = formatter.formatCellValue(cell);
+				// value[cell.getRowIndex()] = formatter.formatCellValue(cell);
 				value[cell.getColumnIndex()] = formatter.formatCellValue(cell);
 
-				//value[cell.getRowIndex()] = formatter.formatCellValue(cell);
+				// value[cell.getRowIndex()] = formatter.formatCellValue(cell);
 				value[cell.getColumnIndex()] = formatter.formatCellValue(cell);
-				
 
 			}
-			//System.out.println();
+			// System.out.println();
 		}
-		return value;		
+		return value;
 	}
 
 	/**
 	 * @Author : Chetan Sonparote
 	 * @Date : 9 Aug 2021
-	 * @Description: method to read localization data with parameters file,sheet,coloumn
+	 * @Description: method to read localization data with parameters
+	 *               file,sheet,coloumn
 	 */
 	public static ArrayList<String> readExcelData(String fileName, String sheetName) throws IOException {
 		ArrayList<String> value = new ArrayList<String>();
-		
-		String excelPath = System.getProperty("user.dir") + File.separator
-				+ "TestData" +  File.separator
-				+ fileName;//"NewTestData.xlsx";
+
+		String excelPath = System.getProperty("user.dir") + File.separator + "TestData" + File.separator + fileName;// "NewTestData.xlsx";
 		FileInputStream fis = new FileInputStream(excelPath);
 
-		//FileInputStream fis = new FileInputStream("D:\\SeleniumPractice\\ExcelDemo.xlsx");
+		// FileInputStream fis = new
+		// FileInputStream("D:\\SeleniumPractice\\ExcelDemo.xlsx");
 		XSSFWorkbook workBook = new XSSFWorkbook(fis);
-		Sheet sheet = workBook.getSheet(sheetName);	
-		
-		
-		
+		Sheet sheet = workBook.getSheet(sheetName);
+
 //		int lastRow = sheet.getLastRowNum();
 //		//System.out.println("Last row- " + lastRow);
 //		for (int i = 0; i <= lastRow; i++) {
@@ -117,12 +113,11 @@ public class XLHandler {
 //				
 //
 //			} }
-		
-		
+
 		Iterator<Row> rows = sheet.iterator();
 		Row firstRow = rows.next();
 		Iterator<Cell> ce = firstRow.cellIterator();
-		//ce.next();
+		// ce.next();
 
 		int k = 0;
 		int coloumn = 0;
@@ -132,12 +127,12 @@ public class XLHandler {
 				coloumn = k;
 				DataFormatter formatter = new DataFormatter();
 				String text = formatter.formatCellValue(cellValue);
-				System.out.println("excel text : "+text);
+				System.out.println("excel text : " + text);
 			}
 //			DataFormatter formatter = new DataFormatter();
 //			String text = formatter.formatCellValue(cellValue);
 //			System.out.println("excel text : "+text);
-			
+
 			k++;
 
 		}
@@ -145,27 +140,40 @@ public class XLHandler {
 
 		while (rows.hasNext()) {
 			Row r = rows.next();
+			Cell cellValue = r.getCell(coloumn);
 			
-//			  if (r.getCell(coloumn).getStringCellValue().equalsIgnoreCase(testCase)) {
-//			  Iterator<Cell> cv = r.cellIterator(); while (cv.hasNext()) {
-//			  
-//			  Cell cellValue = cv.next();
-//			  
-//			  
-//			  } }
-			 
-			if (r.getCell(coloumn).getStringCellValue()!=null)
+			if(cellValue.getCellType()!=Cell.CELL_TYPE_BLANK)
 			{
 				DataFormatter formatter = new DataFormatter();
-				String text = formatter.formatCellValue(r.getCell(coloumn));
-				System.out.println("excel text : "+text);
-
+				String text = formatter.formatCellValue(cellValue);
+				System.out.println("excel text : " + text);
 			}
-			
+		
+
+//			if (r.getCell(coloumn).getStringCellValue().equalsIgnoreCase(testCase)) {
+//				Iterator<Cell> cv = r.cellIterator();
+//				while (cv.hasNext()) {
+//
+//					Cell cellValue = cv.next();
+//
+//				}
+//			}
+
+//			Cell cellValue = r.getCell(coloumn);
+//		//	if (cellValue != null || cellValue.getCellType() != Cell.CELL_TYPE_BLANK) {
+//				
+//		//	}
+//			if (r.getSheet()!=null)
+//			{
+//				DataFormatter formatter = new DataFormatter();
+//				String text = formatter.formatCellValue(r.getCell(coloumn));
+//				System.out.println("excel text : "+text);
+//
+//			}
+
 			// return arrList;
 		}
 
-		
 //		 int rowCount;
 //		 
 //		 rowCount = sheet.getLastRowNum()-sheet.getFirstRowNum();
@@ -190,13 +198,10 @@ public class XLHandler {
 //
 //		       // System.out.println();
 //		    } 
-	
-		  
 
-		
 		fis.close();
 		workBook.close();
-		return value;	
+		return value;
 	}
-	
+
 }
