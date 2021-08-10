@@ -28,7 +28,7 @@ public class Membership {
 	@FindBy(xpath = "//a[@class='link js-not-link']")
 	public WebElement accountInformation;
 
-	@FindBy(xpath = "//a[@class='submenu__link'][contains(text(),'会員ステータス')]")
+	@FindBy(xpath = "//div[@class='header__control']//li[2]//a[1]")
 	public WebElement membershipStatus;
 
 	@FindBy(xpath = "//div[@class='link-learn__content']")
@@ -38,18 +38,18 @@ public class Membership {
 	public WebElement applyPrime;
 
 	@FindBy(xpath = "//a[@class='box-link__link box-link__link-blue']")
-	public WebElement primeBenefit1;
+	public WebElement primeBenefit1Link;
 
 	@FindBy(xpath = "//a[@class='box-link__link box-link__link-orange']")
-	public WebElement primeBenefit2;
+	public WebElement primeBenefit2Link;
 
 	@FindBy(xpath = "//a[@class='box-link__link box-link__link-mint']")
-	public WebElement primeBenefit3;
+	public WebElement primeBenefit3Link;
 
 	@FindBy(xpath = "//div[@class='ep-order__title']")
 	public WebElement orderDetails;
 
-	public void membershipFunctions() throws Exception {
+	public void becomingPrimeMember() throws Exception {
 
 		CommonFunctions.scrolltoElement(applyPrime);
 		if (CommonFunctions.isElementClickable(applyPrime)) {
@@ -58,22 +58,22 @@ public class Membership {
 			driver.navigate().back();
 		}
 
-		CommonFunctions.scrolltoElement(primeBenefit1);
-		if (CommonFunctions.isElementClickable(primeBenefit1)) {
-			primeBenefit1.click();
-			log.info("Clicked on prime benefit 1 on member plan page");
+		CommonFunctions.scrolltoElement(primeBenefit1Link);
+		if (CommonFunctions.isElementClickable(primeBenefit1Link)) {
+			primeBenefit1Link.click();
+			log.info("Clicked on prime benefit 1 link on member plan page");
 		}
 
-		CommonFunctions.scrolltoElement(primeBenefit2);
-		if (CommonFunctions.isElementClickable(primeBenefit2)) {
-			primeBenefit2.click();
-			log.info("Clicked on prime benefit 2 on member plan page");
+		CommonFunctions.scrolltoElement(primeBenefit2Link);
+		if (CommonFunctions.isElementClickable(primeBenefit2Link)) {
+			primeBenefit2Link.click();
+			log.info("Clicked on prime benefit 2 link on member plan page");
 		}
 
-		CommonFunctions.scrolltoElement(primeBenefit3);
-		if (CommonFunctions.isElementClickable(primeBenefit3)) {
-			primeBenefit3.click();
-			log.info("Clicked on prime benefit 3 on member plan page ");
+		CommonFunctions.scrolltoElement(primeBenefit3Link);
+		if (CommonFunctions.isElementClickable(primeBenefit3Link)) {
+			primeBenefit3Link.click();
+			log.info("Clicked on prime benefit 3 link on member plan page ");
 
 			CommonFunctions.scrolltoElement(membershipButton);
 			if (CommonFunctions.isElementClickable(membershipButton)) {
@@ -85,7 +85,7 @@ public class Membership {
 
 	}
 
-	public void membershipPlan() throws Exception {
+	public void applyPrimeMembership() throws Exception {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(accountInformation).perform();
 		log.info("Opened Submenu");
@@ -99,32 +99,30 @@ public class Membership {
 
 	}
 
-	public void membershipPlanPage() throws Exception {
+	public void introductionTomembershipPlan() throws Exception {
 		CommonFunctions.scrolltoElement(applyPrime);
 		CommonFunctions.isElementVisible(applyPrime);
 		applyPrime.click();
 		CommonFunctions.waitForVisiblity(orderDetails, 7);
 		String actualString = orderDetails.getText();
 		String expectedString = "ご注文内容";
-		System.out.println(actualString);
-		System.out.println(expectedString);
 		Assert.assertEquals(actualString, expectedString);
 		log.info("clicked on membership button on member plan page");
 		driver.navigate().back();
 
-		CommonFunctions.scrolltoElement(primeBenefit1);
-		CommonFunctions.isElementVisible(primeBenefit1);
-		primeBenefit1.click();
+		CommonFunctions.scrolltoElement(primeBenefit1Link);
+		CommonFunctions.isElementVisible(primeBenefit1Link);
+		primeBenefit1Link.click();
 		log.info("clicked on prime benefit 1 ");
 
-		CommonFunctions.scrolltoElement(primeBenefit2);
-		CommonFunctions.waitForVisiblity(primeBenefit2, waitTime);
-		primeBenefit2.click();
+		CommonFunctions.scrolltoElement(primeBenefit2Link);
+		CommonFunctions.waitForVisiblity(primeBenefit2Link, waitTime);
+		primeBenefit2Link.click();
 		log.info("clicked on prime benefit 2 ");
 
-		CommonFunctions.scrolltoElement(primeBenefit3);
-		CommonFunctions.waitForVisiblity(primeBenefit3, waitTime);
-		primeBenefit3.click();
+		CommonFunctions.scrolltoElement(primeBenefit3Link);
+		CommonFunctions.waitForVisiblity(primeBenefit3Link, waitTime);
+		primeBenefit3Link.click();
 		log.info("clicked on prime benefit 3");
 
 	}
