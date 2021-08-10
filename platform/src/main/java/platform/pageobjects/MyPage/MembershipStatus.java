@@ -11,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import platform.pageobjects.Authentication.LoginPage;
 import utils.CommonFunctions;
+import utils.XLHandler;
 
 /**
  * @Author : Sopan Patil
@@ -23,6 +24,7 @@ public class MembershipStatus {
 	private static Logger log = LogManager.getLogger(LoginPage.class.getName());
 	int waitTime = 5;
 	String[] shipmentdata;
+	String freeuser, primeuser;
 
 	public MembershipStatus(WebDriver driver) {
 		this.driver = driver;
@@ -47,13 +49,19 @@ public class MembershipStatus {
 		}
 	}
 
-	public void clickMemberShipStatus() {
+	public void clickMemberShipStatus() throws Exception {
 		if (CommonFunctions.waitForVisiblity(membershipStatus, waitTime)) {
+			shipmentdata = XLHandler.readexcel("MembershipStatus", "NewTestData.xlsx");
 			membershipStatus.click();
 			if (freeMemberTitle.isDisplayed()) {
-				log.info("free user now in membership staus page");
-			} else if (primeMemberTitle.isDisplayed()) {
-				log.info("prime user now in membership staus page");
+				freeuser = shipmentdata[0].toString();
+				primeuser = shipmentdata[1].toString();
+				if (freeMemberTitle.getText().contentEquals(freeuser)) {
+					log.info("free user is now in membership status page");
+				} else if (primeMemberTitle.getText().contentEquals(primeuser)) {
+					log.info("prime user is now in membership status page");
+				}
+
 			}
 
 		}
