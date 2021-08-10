@@ -29,7 +29,7 @@ public class PF_Localization extends NewBaseClass {
 		// throw new PendingException();
 		// LocalizationData localizationData = new LocalizationData(driver);
 		// localizationData.readLocalizationData();
-		XLHandler.readExcelData("LocalizationTestData.xlsx", "NoLogin");
+		XLHandler.readexcel("LocalizationTestData.xlsx", "NoLogin", "Locator");
 	}
 
 	@Then("^Validate that localization is correct$")

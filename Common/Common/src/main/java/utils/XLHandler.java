@@ -81,7 +81,7 @@ public class XLHandler {
 	 * @Description: method to read localization data with parameters
 	 *               file,sheet,coloumn
 	 */
-	public static ArrayList<String> readExcelData(String fileName, String sheetName) throws IOException {
+	public static ArrayList<String> readexcel(String fileName, String sheetName, String columnName) throws IOException {
 		ArrayList<String> value = new ArrayList<String>();
 
 		String excelPath = System.getProperty("user.dir") + File.separator + "TestData" + File.separator + fileName;// "NewTestData.xlsx";
@@ -101,7 +101,7 @@ public class XLHandler {
 		int coloumn = 0;
 		while (ce.hasNext()) {
 			Cell cellValue = ce.next();
-			if (cellValue.getStringCellValue().equalsIgnoreCase("Locator")) {
+			if (cellValue.getStringCellValue().equalsIgnoreCase(columnName)) {
 				coloumn = k;
 
 			}
