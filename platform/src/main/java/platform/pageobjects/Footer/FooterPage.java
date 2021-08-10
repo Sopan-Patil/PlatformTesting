@@ -12,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utils.CommonFunctions;
+import utils.XLHandler;
 
 /**
  * @Author : Chetan Sonparote
@@ -20,9 +21,12 @@ import utils.CommonFunctions;
  */
 
 public class FooterPage {
+	static String expectedTitile, actualTitle;
 	List<String[]> testdata;
 	public WebDriver driver;
 	private static Logger log = LogManager.getLogger(FooterPage.class.getName());
+
+	String[] shipmentdata;
 
 	public FooterPage(WebDriver driver) {
 		this.driver = driver;
@@ -144,12 +148,14 @@ public class FooterPage {
 
 	public void clickFooterLinksBeforeLogin() throws Exception {
 
+		shipmentdata = XLHandler.readexcel("Sheet1", "FooterAssertion.xlsx");
+
 		CommonFunctions.scrolltoElement(termsOfUseLink);
 		if (CommonFunctions.isElementClickable(termsOfUseLink)) {
 			termsOfUseLink.click();
 			CommonFunctions.waitForVisiblity(footerTermsforAssert, 5);
 			String ActualTitle = driver.getTitle();
-			String ExpectedTitle = "利用規約 - スタギア";
+			String ExpectedTitle = shipmentdata[0].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("Terms of Use Link is working");
 			driver.navigate().back();
@@ -163,7 +169,7 @@ public class FooterPage {
 			CommonFunctions.waitForVisiblity(footerPrivacyforAssert, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
-			String ExpectedTitle = "プライバシーポリシー｜株式会社教育測定研究所（JIEM）";
+			String ExpectedTitle = shipmentdata[1].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("Privacy Policy Link is working");
 			switchToPreviousTab();
@@ -176,7 +182,7 @@ public class FooterPage {
 			specifiedCommodityTradingLawLink.click();
 			CommonFunctions.waitForVisiblity(footerTaxforAssert, 5);
 			String ActualTitle = driver.getTitle();
-			String ExpectedTitle = "特定商取引法 - スタギア";
+			String ExpectedTitle = shipmentdata[2].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("Specified Commodity Trading Law Link is working");
 			driver.navigate().back();
@@ -190,7 +196,7 @@ public class FooterPage {
 			CommonFunctions.waitForVisiblity(footerQandAforAssert, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
-			String ExpectedTitle = "スタギアサポートセンター";
+			String ExpectedTitle = shipmentdata[3].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("Q and A Link working");
 			switchToPreviousTab();
@@ -203,7 +209,7 @@ public class FooterPage {
 			footerExaminationWindowLink.click();
 			CommonFunctions.waitForVisiblity(footerExaminationWindowLinkforAssert, 5);
 			String ActualTitle = driver.getTitle();
-			String ExpectedTitle = "【スタギア 受験の窓口】各種検定・試験をお得に便利に申込み！";
+			String ExpectedTitle = shipmentdata[4].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("footer Examination Window Link is working");
 			driver.navigate().back();
@@ -217,7 +223,7 @@ public class FooterPage {
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
 			CommonFunctions.waitForVisiblity(ScbtLinkforAssert, 5);
-			String ExpectedTitle = "【スタギア】英検S-CBT｜平日受験がおトク！";
+			String ExpectedTitle = shipmentdata[5].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("footer Scbt Link is working");
 			switchToPreviousTab();
@@ -230,7 +236,7 @@ public class FooterPage {
 			footerCasecLink.click();
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
-			String ExpectedTitle = "CASECとは？：Point1 すぐ測定 | CASEC（キャセック） - TOEICスコア・英検級の目安がすぐわかる英語テスト";
+			String ExpectedTitle = shipmentdata[6].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("footer Casec Link is working");
 			switchToPreviousTab();
@@ -242,7 +248,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(footerCommontestZKai)) {
 			footerCommontestZKai.click();
 			String ActualTitle = driver.getTitle();
-			String ExpectedTitle = "大学入学共通テストの到達度確認！『Z会×スタギア』在宅CBT";
+			String ExpectedTitle = shipmentdata[7].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("footer Casec Link is working");
 			driver.navigate().back();
@@ -254,7 +260,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(footerLearningWindowLink)) {
 			footerLearningWindowLink.click();
 			String ActualTitle = driver.getTitle();
-			String ExpectedTitle = "【スタギア 学習の窓口】英検・漢検・数検の公式学習はスタギア";
+			String ExpectedTitle = shipmentdata[8].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("footer Learning Window Link is working");
 			driver.navigate().back();
@@ -266,7 +272,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(footerStagiaEikenLink)) {
 			footerStagiaEikenLink.click();
 			String ActualTitle = driver.getTitle();
-			String ExpectedTitle = "英検公式学習はスタギア | 準1級から5級の合格をサポート";
+			String ExpectedTitle = shipmentdata[9].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("footer Stagia Eiken Link is working");
 			driver.navigate().back();
@@ -278,7 +284,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(footerStagiaKankenLink)) {
 			footerStagiaKankenLink.click();
 			String ActualTitle = driver.getTitle();
-			String ExpectedTitle = "漢検公式学習はスタギア | 検定合格から日常学習までサポート";
+			String ExpectedTitle = shipmentdata[10].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("footer Stagia Kanken Link is working");
 			driver.navigate().back();
@@ -290,7 +296,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(informationWindowLink)) {
 			informationWindowLink.click();
 			String ActualTitle = driver.getTitle();
-			String ExpectedTitle = "【スタギア 情報の窓口】検定・入試・塾などの情報をいち早く";
+			String ExpectedTitle = shipmentdata[11].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("information Window Link is working");
 			driver.navigate().back();
@@ -319,7 +325,7 @@ public class FooterPage {
 			stagiaUniversityExamLink.click();
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
-			String ExpectedTitle = "スタギア大学受験 | 偏差値や学費などの大学情報満載";
+			String ExpectedTitle = shipmentdata[13].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("stagia University Exam Link is working");
 			switchToPreviousTab();
@@ -332,7 +338,7 @@ public class FooterPage {
 			educationCostConsulatationSupportLink.click();
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
-			String ExpectedTitle = "教育費・教育資金 相談サポート";
+			String ExpectedTitle = shipmentdata[14].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("education CostConsulatation Support Link is working");
 			switchToPreviousTab();
@@ -344,7 +350,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(footerLogin)) {
 			footerLogin.click();
 			String ActualTitle = driver.getTitle();
-			String ExpectedTitle = "ログイン - スタギア";
+			String ExpectedTitle = shipmentdata[15].toString();
 			// Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("Footer Login Link is working");
 			driver.navigate().back();
@@ -357,7 +363,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(footerRegister)) {
 			footerRegister.click();
 			String ActualTitle = driver.getTitle();
-			String ExpectedTitle = "アカウント作成 - スタギア";
+			String ExpectedTitle = shipmentdata[16].toString();
 			// Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("Footer Registration Link is working");
 			driver.navigate().back();
@@ -369,11 +375,14 @@ public class FooterPage {
 	}
 
 	public void clickFooterLinksAfterLogin() throws Exception {
+
+		shipmentdata = XLHandler.readexcel("Sheet1", "FooterAssertion.xlsx");
+
 		CommonFunctions.scrolltoElement(accountSecurity);
 		if (CommonFunctions.isElementClickable(accountSecurity)) {
 			accountSecurity.click();
 			String ActualTitle = driver.getTitle();
-			String ExpectedTitle = "アカウントとセキュリティ - スタギア";
+			String ExpectedTitle = shipmentdata[17].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("account Security Link is working");
 			driver.navigate().back();
@@ -385,7 +394,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(memberStatus)) {
 			memberStatus.click();
 			String ActualTitle = driver.getTitle();
-			String ExpectedTitle = "会員ステータス - スタギア";
+			String ExpectedTitle = shipmentdata[18].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("Membership Status Link is working");
 			driver.navigate().back();
@@ -397,7 +406,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(servicesUsing)) {
 			servicesUsing.click();
 			String ActualTitle = driver.getTitle();
-			String ExpectedTitle = "ご利用中のサービス - スタギア";
+			String ExpectedTitle = shipmentdata[19].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("Services you are using Using Link is working");
 			driver.navigate().back();
@@ -409,7 +418,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(orderHistory)) {
 			orderHistory.click();
 			String ActualTitle = driver.getTitle();
-			String ExpectedTitle = "ご注文履歴 - スタギア";
+			String ExpectedTitle = shipmentdata[20].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("order History Link is working");
 			driver.navigate().back();
@@ -421,7 +430,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(withdraw)) {
 			withdraw.click();
 			String ActualTitle = driver.getTitle();
-			String ExpectedTitle = "退会確認 - スタギア";
+			String ExpectedTitle = shipmentdata[21].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("Withdrawal Link is working");
 			driver.navigate().back();
@@ -448,7 +457,7 @@ public class FooterPage {
 			CommonFunctions.waitForVisiblity(footerQandAforAssert, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
-			String ExpectedTitle = "スタギアサポートセンター";
+			String ExpectedTitle = shipmentdata[22].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("QnA Link is working");
 		} else {
@@ -460,7 +469,7 @@ public class FooterPage {
 			footerAccountTerms.click();
 			CommonFunctions.waitForVisiblity(footerTermsforAssert, 5);
 			String ActualTitle = driver.getTitle();
-			String ExpectedTitle = "利用規約 - スタギア";
+			String ExpectedTitle = shipmentdata[23].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("Terms of Use Link is working");
 		} else {
@@ -473,7 +482,7 @@ public class FooterPage {
 			CommonFunctions.waitForVisiblity(footerPrivacyforAssert, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
-			String ExpectedTitle = "プライバシーポリシー｜株式会社教育測定研究所（JIEM）";
+			String ExpectedTitle = shipmentdata[24].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("Privacy Policy Link is working");
 		} else {
@@ -485,7 +494,7 @@ public class FooterPage {
 			footerAccountTax.click();
 			CommonFunctions.waitForVisiblity(footerTaxforAssert, 5);
 			String ActualTitle = driver.getTitle();
-			String ExpectedTitle = "特定商取引法 - スタギア";
+			String ExpectedTitle = shipmentdata[25].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("Account Tax Link working");
 		} else {
@@ -496,13 +505,15 @@ public class FooterPage {
 
 	public void clickAccountServicesFooterLinks() throws Exception {
 
+		shipmentdata = XLHandler.readexcel("Sheet1", "FooterAssertion.xlsx");
+
 		CommonFunctions.scrolltoElement(footerAccountQnA);
 		if (CommonFunctions.isElementClickable(footerAccountQnA)) {
 			footerAccountQnA.click();
 			CommonFunctions.waitForVisiblity(footerQandAforAssert, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
-			String ExpectedTitle = "スタギアサポートセンター";
+			String ExpectedTitle = shipmentdata[26].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("QnA Link is working");
 			switchToPreviousTab();
@@ -516,7 +527,7 @@ public class FooterPage {
 			CommonFunctions.waitForVisiblity(footerTermsforAssert, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
-			String ExpectedTitle = "利用規約 - スタギア";
+			String ExpectedTitle = shipmentdata[27].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("Terms of Use Link is working");
 			switchToPreviousTab();
@@ -530,7 +541,7 @@ public class FooterPage {
 			CommonFunctions.waitForVisiblity(footerPrivacyforAssert, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
-			String ExpectedTitle = "プライバシーポリシー｜株式会社教育測定研究所（JIEM）";
+			String ExpectedTitle = shipmentdata[28].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("Privacy Policy Link is working");
 			switchToPreviousTab();
@@ -544,7 +555,7 @@ public class FooterPage {
 			CommonFunctions.waitForVisiblity(footerTaxforAssert, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
-			String ExpectedTitle = "特定商取引法 - スタギア";
+			String ExpectedTitle = shipmentdata[29].toString();
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("Account Tax Link working");
 			switchToPreviousTab();
