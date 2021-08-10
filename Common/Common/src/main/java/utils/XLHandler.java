@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Cell;
@@ -18,6 +20,8 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.ss.util.NumberToTextConverter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+
 
 public class XLHandler {
 
@@ -33,7 +37,7 @@ public class XLHandler {
 	 * @Description : Read Excel sheet
 	 *
 	 */
-
+	private static Logger log = LogManager.getLogger(XLHandler.class.getName());
 	@SuppressWarnings("null")
 	public static String[] readexcel(String sheetname, String filename)
 			throws EncryptedDocumentException, InvalidFormatException, IOException {
@@ -83,36 +87,10 @@ public class XLHandler {
 		String excelPath = System.getProperty("user.dir") + File.separator + "TestData" + File.separator + fileName;// "NewTestData.xlsx";
 		FileInputStream fis = new FileInputStream(excelPath);
 
-		// FileInputStream fis = new
-		// FileInputStream("D:\\SeleniumPractice\\ExcelDemo.xlsx");
+	
 		XSSFWorkbook workBook = new XSSFWorkbook(fis);
 		Sheet sheet = workBook.getSheet(sheetName);
 
-//		int lastRow = sheet.getLastRowNum();
-//		//System.out.println("Last row- " + lastRow);
-//		for (int i = 0; i <= lastRow; i++) {
-//			Row row = sheet.getRow(i);
-//			int lastCell = row.getLastCellNum();
-//			//value = new String[lastCell];
-//			for (int j = 0; j < lastCell; j++) {
-//				Cell cell = row.getCell(j);
-//				DataFormatter formatter = new DataFormatter();
-//				String text = formatter.formatCellValue(cell);
-//				System.out.println("excel text : "+text);
-//				//row.getCell(j).
-//
-//				// value[cell.getRowIndex()] = formatter.formatCellValue(cell);
-//			//	value[cell.getColumnIndex()] = formatter.formatCellValue(cell);
-//				//return value;
-//
-//				//value[cell.getRowIndex()] = formatter.formatCellValue(cell);
-//			//	value[cell.getColumnIndex()] = formatter.formatCellValue(cell);
-//
-//				//value[cell.getRowIndex()] = formatter.formatCellValue(cell);
-//			//	value[cell.getColumnIndex()] = formatter.formatCellValue(cell);
-//				
-//
-//			} }
 
 		Iterator<Row> rows = sheet.iterator();
 		Row firstRow = rows.next();
@@ -125,80 +103,39 @@ public class XLHandler {
 			Cell cellValue = ce.next();
 			if (cellValue.getStringCellValue().equalsIgnoreCase("Locator")) {
 				coloumn = k;
-				DataFormatter formatter = new DataFormatter();
-				String text = formatter.formatCellValue(cellValue);
-				System.out.println("excel text : " + text);
+
 			}
-//			DataFormatter formatter = new DataFormatter();
-//			String text = formatter.formatCellValue(cellValue);
-//			System.out.println("excel text : "+text);
+
 
 			k++;
 
 		}
-		System.out.println(coloumn);
+	
 
-		while (rows.hasNext()) {
-			Row r = rows.next();
-			Cell cellValue = r.getCell(coloumn);
-			
-			if(cellValue.getCellType()!=Cell.CELL_TYPE_BLANK)
-			{
-				DataFormatter formatter = new DataFormatter();
-				String text = formatter.formatCellValue(cellValue);
-				System.out.println("excel text : " + text);
-			}
+		 int rowCount;
+		 
+		 rowCount = sheet.getLastRowNum()-sheet.getFirstRowNum();
+	
+		    for (int i = 1; i < rowCount+1; i++) {
+
+		  
+		    	Row row = sheet.getRow(i);
+		        Cell cellValue = row.getCell(coloumn);
+		      
+		        if(cellValue.getCellType()!=Cell.CELL_TYPE_BLANK)
+				{
+					DataFormatter formatter = new DataFormatter();
+					String text = formatter.formatCellValue(cellValue);
+					
+					value.add(i-1, text);
+				}
+
 		
-
-//			if (r.getCell(coloumn).getStringCellValue().equalsIgnoreCase(testCase)) {
-//				Iterator<Cell> cv = r.cellIterator();
-//				while (cv.hasNext()) {
-//
-//					Cell cellValue = cv.next();
-//
-//				}
-//			}
-
-//			Cell cellValue = r.getCell(coloumn);
-//		//	if (cellValue != null || cellValue.getCellType() != Cell.CELL_TYPE_BLANK) {
-//				
-//		//	}
-//			if (r.getSheet()!=null)
-//			{
-//				DataFormatter formatter = new DataFormatter();
-//				String text = formatter.formatCellValue(r.getCell(coloumn));
-//				System.out.println("excel text : "+text);
-//
-//			}
-
-			// return arrList;
-		}
-
-//		 int rowCount;
-//		 
-//		 rowCount = sheet.getLastRowNum()-sheet.getFirstRowNum();
-//		 System.out.print("rowCount:"+rowCount);
-//
-//		    //Create a loop over all the rows of excel file to read it
-//
-//		    for (int i = 0; i < rowCount+1; i++) {
-//
-//		    //	if(sheet.)
-//		        Row row = sheet.getRow(i);
-//
-//		        //Create a loop to print cell values in a row
-//
-//		        for (int j = 0; j < row.getLastCellNum(); j++) {
-//
-//		            //Print Excel data in console
-//
-//		          //  System.out.print(row.getCell(j).getStringCellValue()+"|| ");
-//
-//		        }
-//
-//		       // System.out.println();
-//		    } 
-
+		    } 
+		    
+			
+		    log.info("value :"+value);
+		    
 		fis.close();
 		workBook.close();
 		return value;
