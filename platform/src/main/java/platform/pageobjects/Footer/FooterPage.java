@@ -29,86 +29,86 @@ public class FooterPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][contains(text(),'利用規約')]")
+	@FindBy(xpath = "//div[@class='footer-bt']//li[1]//a[1]")
 	public WebElement termsOfUseLink;
 
-	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][contains(text(),'プライバシーポリシー')]")
+	@FindBy(xpath = "//div[@class='footer-bt']//li[2]//a[1]")
 	public WebElement privacyPolicyLink;
 
-	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][contains(text(),'特定商品取引法')]")
+	@FindBy(xpath = "//div[@class='footer-bt']//li[3]//a[1]")
 	public WebElement specifiedCommodityTradingLawLink;
 
-	@FindBy(xpath = "//ul[@class='footer-bt__menu d-md-flex d-none']//a[@class='footer-bt__text'][normalize-space()='Q&A']")
+	@FindBy(xpath = "//div[@class='footer-bt']//li[4]//a[1]")
 	public WebElement qnALink;
 
-	@FindBy(xpath = "//a[@class='link'][contains(text(),'受験の窓口')]")
+	@FindBy(xpath = "//ul[@class='footer__link']/li[1]/a[1]")
 	public WebElement footerExaminationWindowLink;
 
-	@FindBy(xpath = "//a[@class='sub-menu__text'][contains(text(),'英検S-CBT')]")
+	@FindBy(xpath = "//div[@id='footer']//li[1]//ul[1]//li[1]//a[1]")
 	public WebElement footerScbtLink;
 
-	@FindBy(xpath = "//a[@class='sub-menu__text'][normalize-space()='CASEC']")
+	@FindBy(xpath = "//div[@id='footer']//li[1]//ul[1]//li[2]//a[1]")
 	public WebElement footerCasecLink;
 
 	@FindBy(xpath = "//div[@id='footer']//li[1]//ul[1]//li[3]//a[1]")
 	public WebElement footerCommontestZKai;
 
-	@FindBy(xpath = "//a[@class='link'][contains(text(),'学習の窓口')]")
+	@FindBy(xpath = "//ul[@class='footer__link']/li[2]/a[1]")
 	public WebElement footerLearningWindowLink;
 
-	@FindBy(xpath = "//a[@class='sub-menu__text'][contains(text(),'スタギア英検')]")
+	@FindBy(xpath = "//div[@id='footer']//li[2]//ul[1]//li[1]//a[1]")
 	public WebElement footerStagiaEikenLink;
 
-	@FindBy(xpath = "//a[@class='sub-menu__text'][contains(text(),'スタギア英検')]")
+	@FindBy(xpath = "//div[@id='footer']//li[2]//ul[1]//li[2]//a[1]")
 	public WebElement footerStagiaKankenLink;
 
-	@FindBy(xpath = "//a[@class='link'][contains(text(),'情報の窓口')]")
+	@FindBy(xpath = "//ul[@class='footer__link']/li[3]/a[1]")
 	public WebElement informationWindowLink;
 
-	@FindBy(xpath = "//a[@class='sub-menu__text'][contains(text(),'塾ピタ')]")
+	@FindBy(xpath = "//div[@id='footer']//li[3]//ul[1]//li[1]//a[1]")
 	public WebElement cramSchoolPitaLink;
 
-	@FindBy(xpath = "//a[@class='sub-menu__text'][contains(text(),'スタギア大学受験')]")
+	@FindBy(xpath = "//div[@id='footer']//li[3]//ul[1]//li[2]//a[1]")
 	public WebElement stagiaUniversityExamLink;
 
-	@FindBy(xpath = "//a[@class='sub-menu__text'][contains(text(),'教育費相談サポート')]")
+	@FindBy(xpath = "//div[@id='footer']//li[3]//ul[1]//li[3]//a[1]")
 	public WebElement educationCostConsulatationSupportLink;
 
-	@FindBy(xpath = "//a[@class='sub-menu__text'][contains(text(),'アカウントとセキュリティ')]")
+	@FindBy(xpath = "//div[@id='footer']//li[4]//ul[1]//li[1]//a[1]")
 	public WebElement accountSecurity;
 
-	@FindBy(xpath = "//a[@class='sub-menu__text'][contains(text(),'会員ステータス')]")
+	@FindBy(xpath = "//div[@id='footer']//li[4]//ul[1]//li[2]//a[1]")
 	public WebElement memberStatus;
 
-	@FindBy(xpath = "//a[@class='sub-menu__text'][contains(text(),'ご利用中のサービス')]")
+	@FindBy(xpath = "//div[@id='footer']//li[4]//ul[1]//li[3]//a[1]")
 	public WebElement servicesUsing;
 
-	@FindBy(xpath = "//a[@class='sub-menu__text'][contains(text(),'ご注文履歴')]")
+	@FindBy(xpath = "//div[@id='footer']//li[4]//ul[1]//li[4]//a[1]")
 	public WebElement orderHistory;
 
-	@FindBy(xpath = "//a[contains(text(),'退会')]")
+	@FindBy(xpath = "//div[@id='footer']//li[4]//ul[1]//li[5]//a[1]")
 	public WebElement withdraw;
 
-	@FindBy(xpath = "//a[contains(text(),'ログアウト')]")
+	@FindBy(xpath = "//div[@id='footer']//li[4]//ul[1]//li[6]//a[1]")
 	public WebElement logout;
 
-	@FindBy(xpath = "//a[@class='sub-menu__text'][contains(text(),'ログイン')]")
+	@FindBy(xpath = "//div[@id='footer']//li[4]//ul[1]//li[1]//a[1]")
 	public WebElement footerLogin;
 
-	@FindBy(xpath = "//a[@class='sub-menu__text'][contains(text(),'新規登録')]")
+	@FindBy(xpath = "//div[@id='footer']//li[4]//ul[1]//li[2]//a[1]")
 	public WebElement footerRegister;
 
-	@FindBy(xpath = "//a[contains(text(),'よくある質問・お問合せ')]")
-	public WebElement accountQnA;
+	@FindBy(xpath = "//div[@class='ep-auth__footer']/ul[1]/li[1]//a[1]")
+	public WebElement footerAccountQnA;
 
-	@FindBy(xpath = "//a[contains(text(),'利用規約・個人情報の取扱')]")
-	public WebElement accountTerms;
+	@FindBy(xpath = "//div[@class='ep-auth__footer']/ul[1]/li[2]//a[1]")
+	public WebElement footerAccountTerms;
 
-	@FindBy(xpath = "//a[contains(text(),'個人情報保護方針')]")
-	public WebElement accountPrivacy;
+	@FindBy(xpath = "//div[@class='ep-auth__footer']/ul[1]/li[3]//a[1]")
+	public WebElement footerAccountPrivacy;
 
-	@FindBy(xpath = "//a[contains(text(),'特定商取引法に基づく表示')]")
-	public WebElement accountTax;
+	@FindBy(xpath = "//div[@class='ep-auth__footer']/ul[1]/li[4]//a[1]")
+	public WebElement footerAccountTax;
 
 	@FindBy(xpath = "//h3[contains(text(),'「スタギア」利用規約')]")
 	public WebElement footerTermsforAssert;
@@ -278,7 +278,7 @@ public class FooterPage {
 		if (CommonFunctions.isElementClickable(footerStagiaKankenLink)) {
 			footerStagiaKankenLink.click();
 			String ActualTitle = driver.getTitle();
-			String ExpectedTitle = "英検公式学習はスタギア | 準1級から5級の合格をサポート";
+			String ExpectedTitle = "漢検公式学習はスタギア | 検定合格から日常学習までサポート";
 			Assert.assertEquals(ExpectedTitle, ActualTitle);
 			log.info("footer Stagia Kanken Link is working");
 			driver.navigate().back();
@@ -338,6 +338,32 @@ public class FooterPage {
 			switchToPreviousTab();
 		} else {
 			log.error("education CostConsulatation Support Link is not working");
+		}
+
+		CommonFunctions.scrolltoElement(footerLogin);
+		if (CommonFunctions.isElementClickable(footerLogin)) {
+			footerLogin.click();
+			String ActualTitle = driver.getTitle();
+			String ExpectedTitle = "ログイン - スタギア";
+			// Assert.assertEquals(ExpectedTitle, ActualTitle);
+			log.info("Footer Login Link is working");
+			driver.navigate().back();
+
+		} else {
+			log.error("Footer Login Link is not working");
+		}
+
+		CommonFunctions.scrolltoElement(footerRegister);
+		if (CommonFunctions.isElementClickable(footerRegister)) {
+			footerRegister.click();
+			String ActualTitle = driver.getTitle();
+			String ExpectedTitle = "アカウント作成 - スタギア";
+			// Assert.assertEquals(ExpectedTitle, ActualTitle);
+			log.info("Footer Registration Link is working");
+			driver.navigate().back();
+
+		} else {
+			log.error("Footer Registration Link is not working");
 		}
 
 	}
@@ -416,9 +442,9 @@ public class FooterPage {
 
 	public void clickOrderFlowFooterLinks() throws Exception {
 
-		CommonFunctions.scrolltoElement(accountQnA);
-		if (CommonFunctions.isElementClickable(accountQnA)) {
-			accountQnA.click();
+		CommonFunctions.scrolltoElement(footerAccountQnA);
+		if (CommonFunctions.isElementClickable(footerAccountQnA)) {
+			footerAccountQnA.click();
 			CommonFunctions.waitForVisiblity(footerQandAforAssert, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
@@ -429,9 +455,9 @@ public class FooterPage {
 			log.error("QnA Link is not working");
 		}
 
-		CommonFunctions.scrolltoElement(accountTerms);
-		if (CommonFunctions.isElementClickable(accountTerms)) {
-			accountTerms.click();
+		CommonFunctions.scrolltoElement(footerAccountTerms);
+		if (CommonFunctions.isElementClickable(footerAccountTerms)) {
+			footerAccountTerms.click();
 			CommonFunctions.waitForVisiblity(footerTermsforAssert, 5);
 			String ActualTitle = driver.getTitle();
 			String ExpectedTitle = "利用規約 - スタギア";
@@ -441,9 +467,9 @@ public class FooterPage {
 			log.error("Terms of Use Link is not working");
 		}
 
-		CommonFunctions.scrolltoElement(accountPrivacy);
-		if (CommonFunctions.isElementClickable(accountPrivacy)) {
-			accountPrivacy.click();
+		CommonFunctions.scrolltoElement(footerAccountPrivacy);
+		if (CommonFunctions.isElementClickable(footerAccountPrivacy)) {
+			footerAccountPrivacy.click();
 			CommonFunctions.waitForVisiblity(footerPrivacyforAssert, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
@@ -454,9 +480,9 @@ public class FooterPage {
 			log.error("Privacy Policy Link is not working");
 		}
 
-		CommonFunctions.scrolltoElement(accountTax);
-		if (CommonFunctions.isElementClickable(accountTax)) {
-			accountTax.click();
+		CommonFunctions.scrolltoElement(footerAccountTax);
+		if (CommonFunctions.isElementClickable(footerAccountTax)) {
+			footerAccountTax.click();
 			CommonFunctions.waitForVisiblity(footerTaxforAssert, 5);
 			String ActualTitle = driver.getTitle();
 			String ExpectedTitle = "特定商取引法 - スタギア";
@@ -470,9 +496,9 @@ public class FooterPage {
 
 	public void clickAccountServicesFooterLinks() throws Exception {
 
-		CommonFunctions.scrolltoElement(accountQnA);
-		if (CommonFunctions.isElementClickable(accountQnA)) {
-			accountQnA.click();
+		CommonFunctions.scrolltoElement(footerAccountQnA);
+		if (CommonFunctions.isElementClickable(footerAccountQnA)) {
+			footerAccountQnA.click();
 			CommonFunctions.waitForVisiblity(footerQandAforAssert, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
@@ -484,9 +510,9 @@ public class FooterPage {
 			log.error("QnA Link is not working");
 		}
 
-		CommonFunctions.scrolltoElement(accountTerms);
-		if (CommonFunctions.isElementClickable(accountTerms)) {
-			accountTerms.click();
+		CommonFunctions.scrolltoElement(footerAccountTerms);
+		if (CommonFunctions.isElementClickable(footerAccountTerms)) {
+			footerAccountTerms.click();
 			CommonFunctions.waitForVisiblity(footerTermsforAssert, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
@@ -498,9 +524,9 @@ public class FooterPage {
 			log.error("Terms of Use Link is not working");
 		}
 
-		CommonFunctions.scrolltoElement(accountPrivacy);
-		if (CommonFunctions.isElementClickable(accountPrivacy)) {
-			accountPrivacy.click();
+		CommonFunctions.scrolltoElement(footerAccountPrivacy);
+		if (CommonFunctions.isElementClickable(footerAccountPrivacy)) {
+			footerAccountPrivacy.click();
 			CommonFunctions.waitForVisiblity(footerPrivacyforAssert, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
@@ -512,9 +538,9 @@ public class FooterPage {
 			log.error("Privacy Policy Link is not working");
 		}
 
-		CommonFunctions.scrolltoElement(accountTax);
-		if (CommonFunctions.isElementClickable(accountTax)) {
-			accountTax.click();
+		CommonFunctions.scrolltoElement(footerAccountTax);
+		if (CommonFunctions.isElementClickable(footerAccountTax)) {
+			footerAccountTax.click();
 			CommonFunctions.waitForVisiblity(footerTaxforAssert, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
