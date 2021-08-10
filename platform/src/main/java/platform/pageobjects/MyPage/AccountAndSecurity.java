@@ -21,7 +21,7 @@ import utils.XLHandler;
 /**
  * @Author : Sopan Patil
  * @Date : 22 Jul 2021
- * @Description:Class for entering invalid credit card details
+ * @Description:Class for entering Account Information details
  */
 public class AccountAndSecurity {
 	static String kanjiSurNameExcel, kanaNameExcel, kanaFirstNameExcel, kanaLastNameExcel, birthYear, birthMonth,
