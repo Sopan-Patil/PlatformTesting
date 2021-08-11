@@ -490,7 +490,7 @@ public class AccountAndSecurity {
 		ValidatingUpdatedAccountInformation();
 	}
 
-	public void MissngValuesErrorOnAccountAndSecurityInformation() throws Exception {
+	public void checkMissngValuesErrorOnAccountAndSecurityInformation() throws Exception {
 		CommonFunctions.isElementVisible(kanjiSurNameTextField);
 		CommonFunctions.waitForVisiblity(kanjiSurNameTextField, waitTime);
 		kanjiSurNameTextField.clear();
