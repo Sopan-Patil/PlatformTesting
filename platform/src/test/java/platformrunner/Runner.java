@@ -29,7 +29,7 @@ import utils.ObjectHelper;
 
 		// tags = { "@PF_test" },
 
-		tags = { "@PF_CreateAccount" },
+		tags = { "@PF_CreateAccountInvalidEmail" },
 
 		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",

@@ -83,14 +83,6 @@ public class CreateAccountStep5 {
 		newLoginData.add(0, CreateAccountStep1.email);
 		newLoginData.add(1, CreateAccountStep3.password);
 		newLoginData.add(2, CreateAccountStep1.eid);
-		// = { CreateAccountStep1.email, CreateAccountStep3.password,
-		// CreateAccountStep1.eid };
-		// XLHandler.writeToExcel("NewUser", "NewTestData.xlsx", 0,
-		// CreateAccountStep1.email);
-		// XLHandler.writeToExcel("NewUser", "NewTestData.xlsx", 1,
-		// CreateAccountStep3.password);
-		// XLHandler.writeToExcel("NewUser", "NewTestData.xlsx", 2,
-		// CreateAccountStep1.eid);
 
 		XLHandler.writeToExcel("NewUser", "NewTestData.xlsx", newLoginData);
 	}

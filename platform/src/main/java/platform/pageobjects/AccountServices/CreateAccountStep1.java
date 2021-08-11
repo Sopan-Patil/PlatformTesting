@@ -86,18 +86,10 @@ public class CreateAccountStep1 {
 
 	public void validateErrorMessage(WebElement element, String expectedString) {
 
-		// span[contains(text(),'メールアドレスは、メールアドレス形式で入力してください。')]
-
-		// p[@class='alert__des']
-
-		// メールアドレスは、メールアドレス形式で入力してください。
-
 		String actualString = element.getText();
-		// if(actualString.contains(expectedString))
-		// {
+
 		Assert.assertTrue(actualString.contains(expectedString));
-		// }
-		// CommonFunctions.assertString(actualString, expectedString);
+
 	}
 
 }
