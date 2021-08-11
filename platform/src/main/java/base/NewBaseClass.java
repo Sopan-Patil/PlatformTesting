@@ -13,6 +13,7 @@ import org.testng.ITestResult;
 
 import platform.properties.ConfigProp;
 import utils.BrowserstackUtility;
+import utils.ClosePopup;
 import utils.ObjectHelper;
 import utils.WebHandler;
 
@@ -97,8 +98,8 @@ public class NewBaseClass {
 		 * @Description: Closing Zakai Popup
 		 */
 
-		// utils.ClosePopup ClosePopup = new ClosePopup();
-		// ClosePopup.closeZkaiPopup();
+		utils.ClosePopup ClosePopup = new ClosePopup();
+		ClosePopup.closeZkaiPopup();
 
 	}
 

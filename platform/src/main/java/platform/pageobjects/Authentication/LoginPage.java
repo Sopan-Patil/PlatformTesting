@@ -1,12 +1,9 @@
 package platform.pageobjects.Authentication;
 
-import java.io.IOException;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.poi.EncryptedDocumentException;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import base.NewBaseClass;
 import utils.CommonFunctions;
+import utils.ExcelUtil;
 import utils.ObjectHelper;
 import utils.XLHandler;
 
@@ -229,21 +227,24 @@ public class LoginPage {
 	}
 
 	/**
-	 * @throws IOException
-	 * @throws InvalidFormatException
-	 * @throws EncryptedDocumentException
+	 * @throws Exception
 	 * @Author : Chetan Sonparote
 	 * @Date : 5 Aug 2021
 	 * @Description: Added new method for login with new user
 	 */
 
-	public void loginWithNewUser() throws EncryptedDocumentException, InvalidFormatException, IOException {
-		String[] newuser = null;
+	public void loginWithNewUser() throws Exception {
+		// String[] newuser = null;
 
-		newuser = XLHandler.readexcel("NewUser", "NewTestData.xlsx");
+		ExcelUtil excelUtil = new ExcelUtil();
+		excelUtil.setExcelFile("NewTestData.xlsx", "NewUser");
+		String email = excelUtil.getCellData("Email", 1);
+		String password = excelUtil.getCellData("Password", 1);
+		// ArrayList<String> newuser = new ArrayList<String>();
+		// newuser = XLHandler.readexcel("NewUser", "NewTestData.xlsx");
 
-		log.info("New User Email : " + newuser[0]);
-		log.info("New User password : " + newuser[1]);
+		log.info("New User Email : " + email);
+		log.info("New User password : " + password);
 		// System.out.println(newuser[0]);
 		// System.out.println(newuser[1]);
 
@@ -259,7 +260,7 @@ public class LoginPage {
 
 		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
 			emailtextfield.click();
-			emailtextfield.sendKeys(newuser[0]);
+			emailtextfield.sendKeys(email);
 
 		}
 
@@ -268,7 +269,7 @@ public class LoginPage {
 			// passwordTextField.sendKeys("Test-123");
 			passwordTextField.click();
 
-			passwordTextField.sendKeys(newuser[1]);
+			passwordTextField.sendKeys(password);
 			// System.out.println(passwordTextField.getText());
 		}
 		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
