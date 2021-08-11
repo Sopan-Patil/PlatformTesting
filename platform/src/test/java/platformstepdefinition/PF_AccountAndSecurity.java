@@ -62,7 +62,7 @@ public class PF_AccountAndSecurity extends NewBaseClass {
 	@And("^Validate Missing Values Of Account Information$")
 	public void Validate_Missing_Values_Of_Account_Information() throws Throwable {
 		AccountAndSecurity MissingValues = new AccountAndSecurity(driver);
-		MissingValues.CheckMissngValuesErrorOnAccountAndSecurityInformation();
+		MissingValues.checkMissngValuesErrorOnAccountAndSecurityInformation();
 	}
 
 }
