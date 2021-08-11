@@ -40,7 +40,10 @@ public class MembershipStatus {
 	@FindBy(xpath = "//p[@class='ep-box-member__title']")
 	public WebElement memberTitle;
 
-	@FindBy(xpath = "//p[@class='ep-box-member__title']")
+//	@FindBy(xpath = "//p[@class='ep-box-member__title']")
+//	public WebElement freeMemberTitle;
+
+	@FindBy(xpath = "//a[@class='button button--blue1 button--xsmall font-weight-normal']/span")
 	public WebElement freeMemberTitle;
 
 //	@FindBy(xpath = "//p[@class='ep-box-member__title']")
@@ -54,6 +57,27 @@ public class MembershipStatus {
 
 	@FindBy(xpath = "//button[@class='button button--default button--uplarge ep-order__btn ep-order__btn--back']")
 	public WebElement suspendQualificationButton;
+
+	@FindBy(xpath = "//p[@class='ep-box-member__title']")
+	public WebElement freeMembershipPlanTitle;
+
+	@FindBy(xpath = "//div[@class='balloon__content']/span")
+	public WebElement freeMembershipPlanButton;
+
+	@FindBy(xpath = "//div[@class='link-learn__content']")
+	public WebElement freeMembershipPlanDetails;
+
+	@FindBy(xpath = "//p[@class='ep-box-member__title']")
+	public WebElement primeMembershipPlanTitle;
+
+	@FindBy(xpath = "//div[@class='ep-box-member__info']/div")
+	public WebElement primeMembershipPlanPaymentDetails;
+
+	@FindBy(xpath = "//div[@class='ep-box-member__info']/div[2]")
+	public WebElement primeMembershipPlanPaymentMethod;
+
+	@FindBy(xpath = "//a[contains(@class,'button button--default button--xmedium')]")
+	public WebElement primeMemberChangeCardButton;
 
 	public void clickAccountInformation() {
 		if (CommonFunctions.waitForVisiblity(accountInformation, waitTime)) {
@@ -78,22 +102,43 @@ public class MembershipStatus {
 		}
 	}
 
-	public void EndMembershipStatus() throws Exception {
+	public void CancellingPrimeMembership() throws Exception {
 		shipmentdata = XLHandler.readexcel("MembershipStatus", "NewTestData.xlsx");
+		freeuser = shipmentdata[0].toString();
 		primeuser = shipmentdata[1].toString();
 		clickAccountInformation();
 		if (CommonFunctions.waitForVisiblity(membershipStatusLink, waitTime)) {
 			membershipStatusLink.click();
-			System.out.println(primeMemberTitle.isDisplayed());
-			System.out.println(primeMemberTitle.getText());
-			System.out.println(primeuser);
-
 			if (primeMemberTitle.isDisplayed() && (primeMemberTitle.getText().contentEquals(primeuser))) {
 				clickEndMemberShipButton();
 				clickSuspendQualificationButton();
 				log.info("prime user is now cancelling Prime membership");
-
+				clickAccountInformation();
+				membershipStatusLink.click();
+				if (freeMemberTitle.isDisplayed() && (freeMemberTitle.getText().contentEquals(freeuser))) {
+					log.info("user is now free member");
+				}
 			} else {
+				log.info("user is not Prime member");
+
+			}
+		}
+	}
+
+	public void CheckFreeAndPrimeMembershipPlanDetails() throws Exception {
+		shipmentdata = XLHandler.readexcel("MembershipStatus", "NewTestData.xlsx");
+		freeuser = shipmentdata[0].toString();
+		primeuser = shipmentdata[1].toString();
+		clickAccountInformation();
+		if (CommonFunctions.waitForVisiblity(membershipStatusLink, waitTime)) {
+			membershipStatusLink.click();
+			if (freeMembershipPlanTitle.isDisplayed()
+					&& (freeMembershipPlanDetails.isDisplayed() && (freeMembershipPlanButton.isDisplayed()))) {
+
+				log.info("Logged user is Free User");
+
+			} else if (primeMembershipPlanTitle.isDisplayed() && (primeMembershipPlanPaymentDetails.isDisplayed()
+					&& (primeMembershipPlanPaymentMethod.isDisplayed() && primeMemberChangeCardButton.isDisplayed()))) {
 				log.info("user is not Prime member");
 
 			}

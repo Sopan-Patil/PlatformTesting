@@ -29,8 +29,14 @@ public class PF_MembershipStatus extends NewBaseClass {
 	@Then("^Click on End Membership$")
 	public void Click_on_End_Membership() throws Throwable {
 		MembershipStatus EndButton = new MembershipStatus(driver);
-		EndButton.EndMembershipStatus();
+		EndButton.CancellingPrimeMembership();
 
 	}
 
+	@Then("^Validate Free and Prime Membership Plan Details$")
+	public void Validate_Free_and_Prime_Membership_Plan_Details() throws Throwable {
+		MembershipStatus EndButton = new MembershipStatus(driver);
+		EndButton.CancellingPrimeMembership();
+
+	}
 }
