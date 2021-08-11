@@ -6,25 +6,48 @@
 	<groupId>Platform</groupId>
 	<artifactId>Platform</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
+	<!-- <packaging>jar</packaging> -->
 
 
- 
+
 
 	<properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<!-- <maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target> -->
 
-		<jre.level>1.8</jre.level>
-		<jdk.level>1.8</jdk.level>
+		<!-- <jre.level>1.8</jre.level>
+		<jdk.level>1.8</jdk.level> -->
+		
+		 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+       <!--  <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+        <surefire.version>2.19.1</surefire.version> -->
+
+        <test.file></test.file>
+        <config.file>default</config.file>
+
 	</properties>
+	
+	
+	
 
 	<dependencies>
 	<dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-remote-driver</artifactId>
-    <version>3.6.0</version>
-</dependency>
+       <groupId>org.slf4j</groupId>
+       <artifactId>slf4j-api</artifactId>
+       <version>1.7.5</version>
+   </dependency>
+   <dependency>
+       <groupId>org.slf4j</groupId>
+       <artifactId>slf4j-log4j12</artifactId>
+       <version>1.7.5</version>
+   </dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-remote-driver</artifactId>
+			<version>3.6.0</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 		<dependency>
 			<groupId>commons-io</groupId>
@@ -41,18 +64,70 @@
 			<artifactId>log4j-core</artifactId>
 			<version>2.13.3</version>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.6</version>
-		</dependency>
+		</dependency> -->
 		<!-- https://mvnrepository.com/artifact/com.beust/jcommander -->
 		<dependency>
 			<groupId>com.beust</groupId>
 			<artifactId>jcommander</artifactId>
 			<version>1.81</version>
 		</dependency>
+<dependency>
+<groupId>com.google.guava</groupId>
+<artifactId>guava</artifactId>
+<version>24.1-jre</version>
+</dependency>
 
+
+<!-- dependancy for extent report  -->
+<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+ <dependency>
+ <groupId>io.cucumber</groupId>
+ <artifactId>cucumber-java</artifactId>
+ <version>6.8.1</version>
+ </dependency>
+ <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-picocontainer -->
+ <dependency>
+ <groupId>io.cucumber</groupId>
+ <artifactId>cucumber-picocontainer</artifactId>
+ <version>6.8.1</version>
+ <scope>test</scope>
+ </dependency>
+ <!-- https://mvnrepository.com/artifact/io.cucumber/gherkin -->
+ <dependency>
+ <groupId>io.cucumber</groupId>
+ <artifactId>gherkin</artifactId>
+ <version>15.0.2</version>
+ </dependency>
+ <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm -->
+ <dependency>
+ <groupId>io.cucumber</groupId>
+ <artifactId>cucumber-jvm</artifactId>
+ <version>6.8.1</version>
+ <type>pom</type>
+ </dependency>
+ <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+ <dependency>
+ <groupId>io.cucumber</groupId>
+ <artifactId>cucumber-testng</artifactId>
+ <version>6.8.1</version>
+ </dependency>
+ <dependency>
+ <groupId>tech.grasshopper</groupId>
+ <artifactId>extentreports-cucumber6-adapter</artifactId>
+ <version>2.0.0</version>
+ <scope>test</scope>
+ </dependency>
+ <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+ <dependency>
+ <groupId>com.aventstack</groupId>
+ <artifactId>extentreports</artifactId>
+ <version>5.0.4</version>
+ </dependency>
+<!-- end -->
 
 		<dependency>
 
@@ -71,7 +146,7 @@
 			<!-- <scope>test</scope> -->
 		</dependency>
 
-		<dependency>
+	<!-- 	<dependency>
 
 			<groupId>com.browserstack</groupId>
 
@@ -79,7 +154,7 @@
 
 			<version>0.1.0</version>
 
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>com.stripe</groupId>
 			<artifactId>stripe-java</artifactId>
@@ -113,7 +188,32 @@
 			<version>1.2.5</version>
 			<scope>test</scope>
 		</dependency>
-
+	<!-- 	<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>3.1.5</version>
+</dependency>  -->
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports-cucumber4-adapter</artifactId>
+    <version>1.0.7</version>
+</dependency>
+<!-- <dependency>
+ <groupId>io.cucumber</groupId>
+ <artifactId>cucumber-testng</artifactId>
+ <version>6.8.1</version>
+ </dependency>
+ <dependency>
+ <groupId>io.cucumber</groupId>
+ <artifactId>cucumber-jvm</artifactId>
+ <version>6.8.1</version>
+ <type>pom</type>
+ </dependency>
+  <dependency>
+ <groupId>io.cucumber</groupId>
+ <artifactId>cucumber-java</artifactId>
+ <version>6.8.1</version>
+ </dependency> -->
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-jvm-deps</artifactId>
@@ -131,6 +231,17 @@
 			<artifactId>gherkin</artifactId>
 			<version>2.12.2</version>
 		</dependency>
+<!-- 		 <dependency>
+ <groupId>io.cucumber</groupId>
+ <artifactId>gherkin</artifactId>
+ <version>15.0.2</version>
+ </dependency>
+  <dependency>
+ <groupId>io.cucumber</groupId>
+ <artifactId>cucumber-picocontainer</artifactId>
+ <version>6.8.1</version>
+ <scope>test</scope>
+ </dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-picocontainer -->
 		<dependency>
@@ -152,11 +263,11 @@
 			<version>3.11.0</version>
 		</dependency>
 
-		<dependency>
+	<!-- 	<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-server</artifactId>
 			<version>3.11.0</version>
-		</dependency>
+		</dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-api -->
 		<dependency>
@@ -184,20 +295,35 @@
 			<artifactId>webdrivermanager</artifactId>
 			<version>4.4.3</version>
 		</dependency>
+		
+		<!-- <dependency>
+ <groupId>tech.grasshopper</groupId>
+ <artifactId>extentreports-cucumber6-adapter</artifactId>
+ <version>2.0.0</version>
+ <scope>test</scope>
+ </dependency> -->
+ 
+ <!-- https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber6-adapter -->
+<!-- <dependency>
+    <groupId>tech.grasshopper</groupId>
+    <artifactId>extentreports-cucumber6-adapter</artifactId>
+    <version>2.8.2</version>
+</dependency> -->
+ 
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>3.141.59</version>
-		</dependency>
+		</dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-		<dependency>
+	<!-- 	<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>4.0.0-beta-4</version>
-		</dependency>
+		</dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
 		<dependency>
@@ -207,18 +333,25 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-		<dependency>
+	<!-- 	<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
 			<version>5.0.8</version>
-		</dependency>
+		</dependency> -->
 
+		<!-- Extend Report 26 Jul 2021 Start -->
+		<!-- <dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports-cucumber4-adapter</artifactId>
+			<version>1.0.0</version>
+		</dependency> -->
+		<!-- Extend Report 26 Jul 2021 End -->
 
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>6.13</version>
-		</dependency>
+		</dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 		<dependency>
@@ -241,6 +374,23 @@
 			<type>jar</type>
 
 		</dependency>
+		
+
+<!--  	<dependency>
+
+	
+
+    <groupId>com.browserstack</groupId>
+    <artifactId>testng-browserstack</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <scope>compile</scope>
+
+			<type>jar</type>    
+
+			<type>jar</type>
+    <packaging>jar</packaging>
+
+    </dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.json/json -->
 		<dependency>
@@ -298,11 +448,11 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
-		<dependency>
+	<!-- 	<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
 			<artifactId>json-simple</artifactId>
 			<version>1.1</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>com.browserstack</groupId>
 			<artifactId>automate-testassist</artifactId>
@@ -314,162 +464,204 @@
 			<groupId>com.browserstack</groupId>
 			<artifactId>automate-maven-plugin</artifactId>
 			<version>1.1.1</version>
+			 
 		</dependency>
 
-<!--  <dependency>
-            <groupId>org.jmockit</groupId>
-            <artifactId>jmockit</artifactId>
-            <version>1.24</version>
-            <scope>test</scope>
-        </dependency> -->
+		<!-- <dependency> <groupId>org.jmockit</groupId> <artifactId>jmockit</artifactId> 
+			<version>1.24</version> <scope>test</scope> </dependency> -->
 
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
-        </dependency>
+	<!-- 	<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency> -->
 
-        <dependency>
-            <groupId>com.browserstack</groupId>
-            <artifactId>automate-client-java</artifactId>
-            <version>0.2</version>
-        </dependency>
+		<dependency>
+			<groupId>com.browserstack</groupId>
+			<artifactId>automate-client-java</artifactId>
+			<version>0.2</version>
+		</dependency>
 
-        <dependency>
-            <groupId>com.browserstack</groupId>
-            <artifactId>browserstack-local-java</artifactId>
-            <version>1.0.0</version>
-        </dependency>
+		<dependency>
+			<groupId>com.browserstack</groupId>
+			<artifactId>browserstack-local-java</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 
-        <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-            <version>1.10</version>
-        </dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.10</version>
+		</dependency>
 
-        <dependency>
-            <groupId>org.jenkins-ci.plugins</groupId>
-            <artifactId>credentials</artifactId>
-            <version>1.8</version>
-        </dependency>
+		<dependency>
+			<groupId>org.jenkins-ci.plugins</groupId>
+			<artifactId>credentials</artifactId>
+			<version>1.8</version>
+		</dependency>
 
-        <dependency>
-            <groupId>org.jenkins-ci.plugins</groupId>
-            <artifactId>junit</artifactId>
-            <version>1.10</version>
-        </dependency>
+		<dependency>
+			<groupId>org.jenkins-ci.plugins</groupId>
+			<artifactId>junit</artifactId>
+			<version>1.10</version>
+		</dependency>
 
-       <!--  <dependency>
-            <groupId>com.brsanthu</groupId>
-            <artifactId>google-analytics-java</artifactId>
-            <version>1.1.2</version>
-        </dependency> -->
+		<!-- <dependency> <groupId>com.brsanthu</groupId> <artifactId>google-analytics-java</artifactId> 
+			<version>1.1.2</version> </dependency> -->
 
 
 	</dependencies>
+
+	<!-- <parent> <groupId>org.jenkins-ci.plugins</groupId> <artifactId>plugin</artifactId> 
+		<version>1.580.1</version> </parent> -->
+
+	<!-- <artifactId>browserstack-integration</artifactId> <version>1.0.8-SNAPSHOT</version> 
+		<packaging>hpi</packaging> -->
+
+<!-- 	<name>BrowserStack</name>
+	<description>This plugin allows you to integrate with BrowserStack.</description>
+	<url>https://wiki.jenkins-ci.org/display/JENKINS/BrowserStack+Plugin</url> -->
+
+	<!-- <developers>
+		<developer>
+			<id>support</id>
+			<name>BrowserStack Support</name>
+			<email>support@browserstack.com</email>
+		</developer>
+		<developer>
+			<id>integration</id>
+			<name>BrowserStack Integrations</name>
+			<email>integrations@browserstack.com</email>
+		</developer>
+	</developers> -->
+
+	<scm>
+		<connection>scm:git:ssh://github.com/jenkinsci/browserstack-integration-plugin.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/jenkinsci/browserstack-integration-plugin.git</developerConnection>
+		<url>https://github.com/jenkinsci/browserstack-integration-plugin</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<!-- Adding a distribution management section here to override the now defunct 
+		mave.jenkins-ci.org. If we update the parent pom version to newer than 2.5 
+		then this section is not needed. -->
+	<distributionManagement>
+		<repository>
+			<id>maven.jenkins-ci.org</id>
+			<url>https://repo.jenkins-ci.org/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>maven.jenkins-ci.org</id>
+			<url>https://repo.jenkins-ci.org/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+
 	
-	<!-- <parent>
-        <groupId>org.jenkins-ci.plugins</groupId>
-        <artifactId>plugin</artifactId>
-        <version>1.580.1</version>
-    </parent> -->
 
-  <!--   <artifactId>browserstack-integration</artifactId>
-    <version>1.0.8-SNAPSHOT</version>
-    <packaging>hpi</packaging> -->
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://opensource.org/licenses/MIT</url>
+		</license>
+	</licenses>
 
-    <name>BrowserStack</name>
-    <description>This plugin allows you to integrate with BrowserStack.</description>
-    <url>https://wiki.jenkins-ci.org/display/JENKINS/BrowserStack+Plugin</url>
-
-    <developers>
-        <developer>
-            <id>support</id>
-            <name>BrowserStack Support</name>
-            <email>support@browserstack.com</email>
-        </developer>
-        <developer>
-            <id>integration</id>
-            <name>BrowserStack Integrations</name>
-            <email>integrations@browserstack.com</email>
-        </developer>
-    </developers>
-
-    <scm>
-        <connection>scm:git:ssh://github.com/jenkinsci/browserstack-integration-plugin.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/jenkinsci/browserstack-integration-plugin.git</developerConnection>
-        <url>https://github.com/jenkinsci/browserstack-integration-plugin</url>
-      <tag>HEAD</tag>
-    </scm>
-
-    <!-- Adding a distribution management section here to override the now defunct mave.jenkins-ci.org.
-         If we update the parent pom version to newer than 2.5 then this section is not needed. -->
-    <distributionManagement>
-        <repository>
-            <id>maven.jenkins-ci.org</id>
-            <url>https://repo.jenkins-ci.org/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>maven.jenkins-ci.org</id>
-            <url>https://repo.jenkins-ci.org/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
-
-
-  <!--   <properties>
-        Baseline Jenkins version you use to build the plugin. Users must have this version or newer to run.
-        <jenkins.version>1.580.1</jenkins.version>
-        <java.level>6</java.level>
-        <java.level.test>6</java.level.test>
-        <maven-surefire-plugin.version>2.9</maven-surefire-plugin.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-        This is the testing Tracking Id. If you want to build the project for production, please use the
-             production profile which replaces this with the production tracking id.
-        <ga.tracking.id>UA-79358556-2</ga.tracking.id>
-    </properties> -->
-
-    <licenses>
-        <license>
-            <name>MIT License</name>
-            <url>http://opensource.org/licenses/MIT</url>
-        </license>
-    </licenses>
-
-    <repositories>
-        <repository>
-            <id>repo.jenkins-ci.org</id>
-            <url>https://repo.jenkins-ci.org/public</url>
-        </repository>
-        <repository>
-            <id>maven.jenkins-ci.org</id>
-            <url>https://repo.jenkins-ci.org/public</url>
-        </repository>
-        <repository>
-            <id>sonatype-nexus-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>repo.jenkins-ci.org</id>
-            <url>https://repo.jenkins-ci.org/public</url>
-        </pluginRepository>
-        <pluginRepository>
-            <id>maven.jenkins-ci.org</id>
-            <url>https://repo.jenkins-ci.org/public</url>
-        </pluginRepository>
-        <pluginRepository>
-   <id>sonatype-nexus-snapshots</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-  </pluginRepository>
-    </pluginRepositories>
-
+	<repositories>
+		<repository>
+			<id>repo.jenkins-ci.org</id>
+			<url>https://repo.jenkins-ci.org/public</url>
+		</repository>
+		<repository>
+			<id>maven.jenkins-ci.org</id>
+			<url>https://repo.jenkins-ci.org/public</url>
+		</repository>
+		<repository>
+			<id>sonatype-nexus-snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>repo.jenkins-ci.org</id>
+			<url>https://repo.jenkins-ci.org/public</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>maven.jenkins-ci.org</id>
+			<url>https://repo.jenkins-ci.org/public</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>sonatype-nexus-snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</pluginRepository>
+	</pluginRepositories>
 
 
 	<build>
+
 		<plugins>
+		<!-- <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+                <encoding>UTF-8</encoding>
+            </configuration>
+        </plugin> -->
+
+<!-- 		 <pluginManagement>lock down plugins versions to avoid using Maven defaults (may be moved to parent pom)
+ -->      
+ <!-- <plugins> -->
+        <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+<!--         <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin> -->
+     <!--    <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.0</version>
+        </plugin> -->
+      <!--   <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
+        </plugin> -->
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+        </plugin>
+        <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.7.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>3.0.0</version>
+        </plugin>
+   <!--    </plugins>
+    </pluginManagement> -->
+		<!-- 	<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin> -->
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -481,40 +673,120 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.7</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.18.1</version>
 				<configuration>
-					<!-- <includes> <exclude>**/*PlatformTestRunners.java</exclude> </includes> -->
+				
 					<suiteXmlFiles>
-						<!-- pass testng.xml files as argument from command line -->
-						 <suiteXmlFile>${suiteXmlFile}</suiteXmlFile> 
-						<!--<suiteXmlFile>.platform/testng.xml</suiteXmlFile> 		-->	
-						
-						
+						<!-- pass testng.xml files as argument from command  -->
+						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+						<!-- <suiteXmlFile>.platform/testng.xml</suiteXmlFile> -->
+
+
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>com.browserstack</groupId>
-				<artifactId>automate-maven-plugin</artifactId>
-				<version>1.0.0</version>
-				<!-- <version>1.0.0-SNAPSHOT</version> -->
-				<configuration>
-					<!-- <source>${jdk.source.version}</source> <target>${jdk.target.version}</target> 
-						<complianceLevel>${jdk.source.version}</complianceLevel> -->
-					<source>1.8</source>
-					<target>1.8</target>
-					<complianceLevel>1.8</complianceLevel>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>test-compile</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+			 <plugin>
+        <groupId>com.browserstack</groupId>
+        <artifactId>automate-maven-plugin</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        
+        <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+            <complianceLevel>1.6</complianceLevel>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+             <!--  <goal>test-compile</goal> -->
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+			
 		</plugins>
 	</build>
+<!-- 	
+	/**
+ * @Author : Chetan Sonparote
+ * @Date : 28 Jul 2021
+ * @Description: Added profiles for Jenkins
+ */ -->
+	
+	 <profiles>
+        <profile>
+            <id>single</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>./TestNGSuites/Browserstack/single.browserstack.testng.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>local</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>./TestNGSuites/Browserstack/local.browserstack.testng.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>parallel</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>./TestNGSuites/Browserstack/parallel.browserstack.testng.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>must have</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>./TestNGSuites/Browserstack/must.have.browserstack.testng.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+   
+        </profiles>	
 
 </project>

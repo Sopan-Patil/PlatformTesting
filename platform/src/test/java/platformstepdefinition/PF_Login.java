@@ -4,10 +4,12 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import base.NewBaseClass;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
 import platform.pageobjects.Authentication.LoginPage;
+import utils.ObjectHelper;
 
 /**
  * @Author : Chetan Sonparote 
@@ -24,7 +26,7 @@ import platform.pageobjects.Authentication.LoginPage;
 @RunWith(Cucumber.class)
 public class PF_Login extends NewBaseClass {
 
-	public WebDriver driver;
+	public WebDriver driver = ObjectHelper.driver;
 
 	// String emailid = "";
 
@@ -46,11 +48,35 @@ public class PF_Login extends NewBaseClass {
 
 		loginToPlatform.loginToPlatform();
 
+		// driver.close();
+
 		// TopBar topBar = new TopBar(driver);
 		// topBar.clickSignUpLinkLink();
 
 	}
 
+	/**
+	 * @Author : rahul shinde
+	 * @Date : 02 Aug 2021
+	 * @Description: Logout
+	 */
+
+	@And("^logout$")
+	public void logout() throws Throwable {
+
+		LoginPage loginToPlatform = new LoginPage(driver);
+
+		loginToPlatform.logoutFromPlatform();
+
+	}
+
+	@Then("^Navigate to home page$")
+	public void navigate_to_home_page() throws Throwable {
+
+		LoginPage loginToPlatform = new LoginPage(driver);
+
+		loginToPlatform.navigateToHomePage();
+	}
 	/*
 	 * @And("^Close browser$") public void close_browser() throws Throwable { // //
 	 * closebrowser(); }

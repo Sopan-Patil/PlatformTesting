@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import base.NewBaseClass;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumber.api.junit.Cucumber;
@@ -26,6 +27,14 @@ public class PF_CreateAccount extends NewBaseClass {
 
 	public WebDriver driver = ObjectHelper.driver;
 
+	@Given("^User is on home page$")
+	public void user_is_on_home_page() throws Throwable {
+		// throw new PendingException();
+		LoginPage loginToPlatform = new LoginPage(driver);
+
+		loginToPlatform.navigateToHomePage();
+	}
+
 	@When("^User begins account creation$")
 	public void user_begins_account_creation() throws Throwable {
 		// System.out.println("inside user_begins_account_creation()");
@@ -39,6 +48,7 @@ public class PF_CreateAccount extends NewBaseClass {
 	@Then("^Validate that new account is created$")
 	public void validate_that_new_account_is_created() throws Throwable {
 		CreateAccountStep5 createAccountStep5 = new CreateAccountStep5(driver);
+		createAccountStep5.getCreatedAccountDetails();
 		createAccountStep5.clickGotoTopLink();
 		// throw new PendingException();
 	}

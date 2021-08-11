@@ -39,7 +39,7 @@ public class InvalidCC {
 	public WebElement memberShipStatus;
 
 	@FindBy(xpath = "//a[contains(@class,'button button--default button--xmedium')]")
-	public WebElement changeCard;
+	public WebElement changeCardButton;
 
 	@FindBy(xpath = "//input[@id='cardno']")
 	public WebElement creditCardTextField;
@@ -56,23 +56,11 @@ public class InvalidCC {
 	@FindBy(xpath = "//input[@id='securitycode']")
 	public WebElement securitycodeTextbox;
 
-	@FindBy(xpath = "//ul[@class='list']")
-	public WebElement invalidCreditCardTextHandler;
+	@FindBy(xpath = "//div[@class='order-failed']/div[2]/h2/span")
+	public WebElement creditCardRegistrationFailedError;
 
-	@FindBy(xpath = "//span[@id='cardnoleb_id']")
-	public WebElement blankCardNoTextHandler;
-
-	@FindBy(xpath = "//span[@id='monthleb_id']")
-	public WebElement blankMonthYearCardTextHandler;
-
-	@FindBy(xpath = "//span[@id='cardNameLabel_id']")
-	public WebElement blankCardNameTextHandler;
-
-	@FindBy(xpath = "//span[@id='securitycodeLeb_id']")
-	public WebElement BlankSecurityCodeTextHandler;
-
-	@FindBy(xpath = "//input[@id='cardno']")
-	public WebElement creditCardNumerTextbox;
+	@FindBy(xpath = "//a[@id='finalizeButton']")
+	public WebElement saveButton;
 
 	public void clickAccountInformation() {
 		if (CommonFunctions.waitForVisiblity(accountInformation, waitTime)) {
@@ -88,8 +76,8 @@ public class InvalidCC {
 	}
 
 	public void clickChangeCardButton() {
-		if (CommonFunctions.waitForVisiblity(changeCard, waitTime)) {
-			changeCard.click();
+		if (CommonFunctions.waitForVisiblity(changeCardButton, waitTime)) {
+			changeCardButton.click();
 		}
 
 	}
@@ -99,14 +87,8 @@ public class InvalidCC {
 
 		shipmentdata = XLHandler.readexcel("CCPayment", "NewTestData.xlsx");
 
-		System.out.println(shipmentdata[0]);
-		System.out.println(shipmentdata[1]);
-		System.out.println(shipmentdata[2]);
-		System.out.println(shipmentdata[3]);
-		System.out.println(shipmentdata[4]);
-
-		CommonFunctions.waitForVisiblity(creditCardNumerTextbox, waitTime);
-		creditCardNumerTextbox.sendKeys(shipmentdata[0]);
+		CommonFunctions.waitForVisiblity(creditCardTextField, waitTime);
+		creditCardTextField.sendKeys(shipmentdata[0]);
 		log.info("entering invalid credit card no to 'credit card number' textbox");
 
 		CommonFunctions.isElementVisible(ExpiryMonthDropdown);
@@ -131,13 +113,15 @@ public class InvalidCC {
 
 		CommonFunctions.waitForVisiblity(securitycodeTextbox, waitTime);
 		securitycodeTextbox.sendKeys(shipmentdata[4]);
-		log.info("Step 2 tab :- provide security code to 'securitycode' textbox");
+		log.info("entering security code to 'securitycode' textbox");
 
-		CommonFunctions.isElementVisible(invalidCreditCardTextHandler);
-		String invalidCreditCardText = invalidCreditCardTextHandler.getText();
-		String expectedInvalidCreditCardText = "ご利用いただけないクレジットカードです。";
-		CommonFunctions.assertString(invalidCreditCardText, expectedInvalidCreditCardText);
-		log.info("The invalid credit card message match with our expected message");
+		if (CommonFunctions.waitForVisiblity(saveButton, waitTime)) {
+			saveButton.click();
+		}
+		CommonFunctions.isElementVisible(creditCardRegistrationFailedError);
+		String invalidCreditCarderror = creditCardRegistrationFailedError.getText();
+		CommonFunctions.assertString(invalidCreditCarderror, shipmentdata[5]);
+		log.info("The invalid credit card is failed message match with expected message");
 
 	}
 
