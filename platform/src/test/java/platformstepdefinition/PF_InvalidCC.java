@@ -22,16 +22,16 @@ public class PF_InvalidCC extends NewBaseClass {
 
 	public WebDriver driver = ObjectHelper.driver;
 
-	@Given("^Login To Platform Portal (.+)$")
-	public void Login_To_Platform_Portal(String browser) throws Throwable {
-		driver = openbrowser(browser);
+	@Given("^Login To Platform Portal$")
+	public void Login_To_Platform_Portal() throws Throwable {
+		// driver = openbrowser(browser);
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.clickLoginButton();
 		loginPage.loginToPlatform();
 	}
 
-	@Then("^Click on Membership Status$")
-	public void Click_on_Membership_Status() throws Throwable {
+	@Then("^Click on Membership Status link$")
+	public void Click_on_Membership_Status_link() throws Throwable {
 		InvalidCC InvalidCC = new InvalidCC(driver);
 		InvalidCC.clickAccountInformation();
 		InvalidCC.ClickMmemberShipStatus();

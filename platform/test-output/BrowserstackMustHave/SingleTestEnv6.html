@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/0/1</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jul 13 19:25:07 IST 2021</td>
+<td>Started on:</td><td>Wed Jul 28 12:52:55 IST 2021</td>
 </tr>
-<tr><td>Total time:</td><td>61 seconds (61206 ms)</td>
+<tr><td>Total time:</td><td>212 seconds (212860 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,54 +76,47 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='platformrunner.Runner.setUpBrowser()'><b>setUpBrowser</b><br>Test class: platformrunner.Runner<br>Parameters: browserstack, null, mustHave.conf.json, env6</td>
-<td><div><pre>org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
+<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;192.168.1.5&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {64bit: false, acceptSslCert: true, acceptSslCerts: true, autoAcceptAlerts: true, automationName: XCUITest, bootstrapPath: /usr/local/.browserstack/co..., browser: iphone, browserName: safari, browserstack.appium_version: 1.17.0, browserstack.isTargetBased: true, browserstack.is_hub_canary: false, buildName: browserstack_must_have, databaseEnabled: false, detected_language: Apache-HttpClient/4.5.3 (Ja..., device: iphone, deviceName: iPhone 12, deviceOrientation: PORTRAIT, javascriptEnabled: true, locationContextEnabled: false, mobile: {browser: mobile, version: iPhone 12-14.1}, networkConnectionEnabled: false, newCommandTimeout: 0, new_bucketing: true, noReset: true, orientation: PORTRAIT, orig_os: ios, osVersion: 14, os_version: 14.0, platform: MAC, platformName: MAC, realMobile: true, real_mobile: true, safariIgnoreFraudWarning: true, safariInitialUrl: http://mobile-internet-chec..., sessionName: must_have_test, takesScreenshot: true, udid: 00008101-0012408821A0001E, useXctestrunFile: true, version: , wda_port: 8404, webStorageEnabled: false, webkitResponseTimeout: 20000}
-Session ID: f6f3a764d88e3adec8de7c519e5c363ac3ec7ed9
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;11.11.0.40&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+Driver info: driver.version: RemoteWebDriver
+Capabilities {64bit: false, acceptSslCert: true, acceptSslCerts: true, autoAcceptAlerts: true, automationName: XCUITest, bootstrapPath: /usr/local/.browserstack/co..., browser: iphone, browserName: safari, browserstack.appium_version: 1.17.0, browserstack.isTargetBased: true, browserstack.is_hub_canary: false, buildName: test, databaseEnabled: false, detected_language: Apache-HttpClient/4.5.3 (Ja..., device: iphone, deviceName: iPhone 12, deviceOrientation: PORTRAIT, javascriptEnabled: true, locationContextEnabled: false, mobile: {browser: mobile, version: iPhone 12-14.1}, networkConnectionEnabled: false, newCommandTimeout: 0, new_bucketing: true, noReset: true, orientation: PORTRAIT, orig_os: ios, osVersion: 14, os_version: 14.0, platform: MAC, platformName: MAC, realMobile: true, real_mobile: true, safariIgnoreFraudWarning: true, safariInitialUrl: http://mobile-internet-chec..., sessionName: must_have_test, takesScreenshot: true, udid: 00008101-000A242A1430001E, useXctestrunFile: true, version: , wda_port: 8401, webStorageEnabled: false, webkitResponseTimeout: 20000}
+Session ID: 6e73653e0b324791d93fa362f545b0a57bb99f94
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:643)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:877)
+	at base.NewBaseClass.replaceurl(NewBaseClass.java:228)
+	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:62)
+	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:161)
+	at base.NewBaseClass.openBrowser(NewBaseClass.java:198)
+	at platformrunner.Runner.setUpBrowser(Runner.java:46)
+Caused by: java.lang.IllegalArgumentException: expected one element but was: &lt;unknown method, unsupported operation&gt;
+	at com.google.common.collect.Iterators.getOnlyElement(Iterators.java:328)
+	at com.google.common.collect.Iterators.getOnlyElement(Iterators.java:341)
+	at com.google.common.collect.Iterables.getOnlyElement(Iterables.java:280)
+	at org.openqa.selenium.remote.ErrorCodes.toState(ErrorCodes.java:124)
+	at org.openqa.selenium.remote.JsonToBeanConverter.convert(JsonToBeanConverter.java:139)
+	at org.openqa.selenium.remote.JsonToBeanConverter.convert(JsonToBeanConverter.java:47)
 	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
 	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:643)
-	at org.openqa.selenium.remote.RemoteWebDriver.getCurrentUrl(RemoteWebDriver.java:320)
-	at base.NewBaseClass.replaceurl(NewBaseClass.java:180)
-	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:69)
-	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:118)
-	at base.NewBaseClass.openBrowser(NewBaseClass.java:154)
-	at platformrunner.Runner.setUpBrowser(Runner.java:48)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1244989872", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1244989872'><pre>org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
+	... 31 more
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace61277557", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace61277557'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;192.168.1.5&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {64bit: false, acceptSslCert: true, acceptSslCerts: true, autoAcceptAlerts: true, automationName: XCUITest, bootstrapPath: /usr/local/.browserstack/co..., browser: iphone, browserName: safari, browserstack.appium_version: 1.17.0, browserstack.isTargetBased: true, browserstack.is_hub_canary: false, buildName: browserstack_must_have, databaseEnabled: false, detected_language: Apache-HttpClient/4.5.3 (Ja..., device: iphone, deviceName: iPhone 12, deviceOrientation: PORTRAIT, javascriptEnabled: true, locationContextEnabled: false, mobile: {browser: mobile, version: iPhone 12-14.1}, networkConnectionEnabled: false, newCommandTimeout: 0, new_bucketing: true, noReset: true, orientation: PORTRAIT, orig_os: ios, osVersion: 14, os_version: 14.0, platform: MAC, platformName: MAC, realMobile: true, real_mobile: true, safariIgnoreFraudWarning: true, safariInitialUrl: http://mobile-internet-chec..., sessionName: must_have_test, takesScreenshot: true, udid: 00008101-0012408821A0001E, useXctestrunFile: true, version: , wda_port: 8404, webStorageEnabled: false, webkitResponseTimeout: 20000}
-Session ID: f6f3a764d88e3adec8de7c519e5c363ac3ec7ed9
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;11.11.0.40&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+Driver info: driver.version: RemoteWebDriver
+Capabilities {64bit: false, acceptSslCert: true, acceptSslCerts: true, autoAcceptAlerts: true, automationName: XCUITest, bootstrapPath: /usr/local/.browserstack/co..., browser: iphone, browserName: safari, browserstack.appium_version: 1.17.0, browserstack.isTargetBased: true, browserstack.is_hub_canary: false, buildName: test, databaseEnabled: false, detected_language: Apache-HttpClient/4.5.3 (Ja..., device: iphone, deviceName: iPhone 12, deviceOrientation: PORTRAIT, javascriptEnabled: true, locationContextEnabled: false, mobile: {browser: mobile, version: iPhone 12-14.1}, networkConnectionEnabled: false, newCommandTimeout: 0, new_bucketing: true, noReset: true, orientation: PORTRAIT, orig_os: ios, osVersion: 14, os_version: 14.0, platform: MAC, platformName: MAC, realMobile: true, real_mobile: true, safariIgnoreFraudWarning: true, safariInitialUrl: http://mobile-internet-chec..., sessionName: must_have_test, takesScreenshot: true, udid: 00008101-000A242A1430001E, useXctestrunFile: true, version: , wda_port: 8401, webStorageEnabled: false, webkitResponseTimeout: 20000}
+Session ID: 6e73653e0b324791d93fa362f545b0a57bb99f94
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:643)
-	at org.openqa.selenium.remote.RemoteWebDriver.getCurrentUrl(RemoteWebDriver.java:320)
-	at base.NewBaseClass.replaceurl(NewBaseClass.java:180)
-	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:69)
-	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:118)
-	at base.NewBaseClass.openBrowser(NewBaseClass.java:154)
-	at platformrunner.Runner.setUpBrowser(Runner.java:48)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:877)
+	at base.NewBaseClass.replaceurl(NewBaseClass.java:228)
+	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:62)
+	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:161)
+	at base.NewBaseClass.openBrowser(NewBaseClass.java:198)
+	at platformrunner.Runner.setUpBrowser(Runner.java:46)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -148,9 +141,21 @@ Session ID: f6f3a764d88e3adec8de7c519e5c363ac3ec7ed9
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.IllegalArgumentException: expected one element but was: &lt;unknown method, unsupported operation&gt;
+	at com.google.common.collect.Iterators.getOnlyElement(Iterators.java:328)
+	at com.google.common.collect.Iterators.getOnlyElement(Iterators.java:341)
+	at com.google.common.collect.Iterables.getOnlyElement(Iterables.java:280)
+	at org.openqa.selenium.remote.ErrorCodes.toState(ErrorCodes.java:124)
+	at org.openqa.selenium.remote.JsonToBeanConverter.convert(JsonToBeanConverter.java:139)
+	at org.openqa.selenium.remote.JsonToBeanConverter.convert(JsonToBeanConverter.java:47)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	... 31 more
 </pre></div></td>
-<td>61</td>
-<td>platformrunner.Runner@7b84fcf8</td></tr>
+<td>212</td>
+<td>platformrunner.Runner@2b5f4d54</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
@@ -163,7 +168,7 @@ Session ID: f6f3a764d88e3adec8de7c519e5c363ac3ec7ed9
 <td title='platformrunner.Runner.closeBrowser()'><b>closeBrowser</b><br>Test class: platformrunner.Runner</td>
 <td></td>
 <td>0</td>
-<td>platformrunner.Runner@7b84fcf8</td></tr>
+<td>platformrunner.Runner@2b5f4d54</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
@@ -174,54 +179,47 @@ Session ID: f6f3a764d88e3adec8de7c519e5c363ac3ec7ed9
 </tr>
 <tr>
 <td title='platformrunner.Runner.feature()'><b>feature</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Feature</td>
-<td><div><pre>org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
+<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;192.168.1.5&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {64bit: false, acceptSslCert: true, acceptSslCerts: true, autoAcceptAlerts: true, automationName: XCUITest, bootstrapPath: /usr/local/.browserstack/co..., browser: iphone, browserName: safari, browserstack.appium_version: 1.17.0, browserstack.isTargetBased: true, browserstack.is_hub_canary: false, buildName: browserstack_must_have, databaseEnabled: false, detected_language: Apache-HttpClient/4.5.3 (Ja..., device: iphone, deviceName: iPhone 12, deviceOrientation: PORTRAIT, javascriptEnabled: true, locationContextEnabled: false, mobile: {browser: mobile, version: iPhone 12-14.1}, networkConnectionEnabled: false, newCommandTimeout: 0, new_bucketing: true, noReset: true, orientation: PORTRAIT, orig_os: ios, osVersion: 14, os_version: 14.0, platform: MAC, platformName: MAC, realMobile: true, real_mobile: true, safariIgnoreFraudWarning: true, safariInitialUrl: http://mobile-internet-chec..., sessionName: must_have_test, takesScreenshot: true, udid: 00008101-0012408821A0001E, useXctestrunFile: true, version: , wda_port: 8404, webStorageEnabled: false, webkitResponseTimeout: 20000}
-Session ID: f6f3a764d88e3adec8de7c519e5c363ac3ec7ed9
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;11.11.0.40&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+Driver info: driver.version: RemoteWebDriver
+Capabilities {64bit: false, acceptSslCert: true, acceptSslCerts: true, autoAcceptAlerts: true, automationName: XCUITest, bootstrapPath: /usr/local/.browserstack/co..., browser: iphone, browserName: safari, browserstack.appium_version: 1.17.0, browserstack.isTargetBased: true, browserstack.is_hub_canary: false, buildName: test, databaseEnabled: false, detected_language: Apache-HttpClient/4.5.3 (Ja..., device: iphone, deviceName: iPhone 12, deviceOrientation: PORTRAIT, javascriptEnabled: true, locationContextEnabled: false, mobile: {browser: mobile, version: iPhone 12-14.1}, networkConnectionEnabled: false, newCommandTimeout: 0, new_bucketing: true, noReset: true, orientation: PORTRAIT, orig_os: ios, osVersion: 14, os_version: 14.0, platform: MAC, platformName: MAC, realMobile: true, real_mobile: true, safariIgnoreFraudWarning: true, safariInitialUrl: http://mobile-internet-chec..., sessionName: must_have_test, takesScreenshot: true, udid: 00008101-000A242A1430001E, useXctestrunFile: true, version: , wda_port: 8401, webStorageEnabled: false, webkitResponseTimeout: 20000}
+Session ID: 6e73653e0b324791d93fa362f545b0a57bb99f94
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:643)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:877)
+	at base.NewBaseClass.replaceurl(NewBaseClass.java:228)
+	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:62)
+	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:161)
+	at base.NewBaseClass.openBrowser(NewBaseClass.java:198)
+	at platformrunner.Runner.setUpBrowser(Runner.java:46)
+Caused by: java.lang.IllegalArgumentException: expected one element but was: &lt;unknown method, unsupported operation&gt;
+	at com.google.common.collect.Iterators.getOnlyElement(Iterators.java:328)
+	at com.google.common.collect.Iterators.getOnlyElement(Iterators.java:341)
+	at com.google.common.collect.Iterables.getOnlyElement(Iterables.java:280)
+	at org.openqa.selenium.remote.ErrorCodes.toState(ErrorCodes.java:124)
+	at org.openqa.selenium.remote.JsonToBeanConverter.convert(JsonToBeanConverter.java:139)
+	at org.openqa.selenium.remote.JsonToBeanConverter.convert(JsonToBeanConverter.java:47)
 	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
 	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:643)
-	at org.openqa.selenium.remote.RemoteWebDriver.getCurrentUrl(RemoteWebDriver.java:320)
-	at base.NewBaseClass.replaceurl(NewBaseClass.java:180)
-	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:69)
-	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:118)
-	at base.NewBaseClass.openBrowser(NewBaseClass.java:154)
-	at platformrunner.Runner.setUpBrowser(Runner.java:48)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace894783813", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace894783813'><pre>org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
+	... 31 more
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1155436032", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1155436032'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;192.168.1.5&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {64bit: false, acceptSslCert: true, acceptSslCerts: true, autoAcceptAlerts: true, automationName: XCUITest, bootstrapPath: /usr/local/.browserstack/co..., browser: iphone, browserName: safari, browserstack.appium_version: 1.17.0, browserstack.isTargetBased: true, browserstack.is_hub_canary: false, buildName: browserstack_must_have, databaseEnabled: false, detected_language: Apache-HttpClient/4.5.3 (Ja..., device: iphone, deviceName: iPhone 12, deviceOrientation: PORTRAIT, javascriptEnabled: true, locationContextEnabled: false, mobile: {browser: mobile, version: iPhone 12-14.1}, networkConnectionEnabled: false, newCommandTimeout: 0, new_bucketing: true, noReset: true, orientation: PORTRAIT, orig_os: ios, osVersion: 14, os_version: 14.0, platform: MAC, platformName: MAC, realMobile: true, real_mobile: true, safariIgnoreFraudWarning: true, safariInitialUrl: http://mobile-internet-chec..., sessionName: must_have_test, takesScreenshot: true, udid: 00008101-0012408821A0001E, useXctestrunFile: true, version: , wda_port: 8404, webStorageEnabled: false, webkitResponseTimeout: 20000}
-Session ID: f6f3a764d88e3adec8de7c519e5c363ac3ec7ed9
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+System info: host: &apos;DESKTOP-FGAD874&apos;, ip: &apos;11.11.0.40&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+Driver info: driver.version: RemoteWebDriver
+Capabilities {64bit: false, acceptSslCert: true, acceptSslCerts: true, autoAcceptAlerts: true, automationName: XCUITest, bootstrapPath: /usr/local/.browserstack/co..., browser: iphone, browserName: safari, browserstack.appium_version: 1.17.0, browserstack.isTargetBased: true, browserstack.is_hub_canary: false, buildName: test, databaseEnabled: false, detected_language: Apache-HttpClient/4.5.3 (Ja..., device: iphone, deviceName: iPhone 12, deviceOrientation: PORTRAIT, javascriptEnabled: true, locationContextEnabled: false, mobile: {browser: mobile, version: iPhone 12-14.1}, networkConnectionEnabled: false, newCommandTimeout: 0, new_bucketing: true, noReset: true, orientation: PORTRAIT, orig_os: ios, osVersion: 14, os_version: 14.0, platform: MAC, platformName: MAC, realMobile: true, real_mobile: true, safariIgnoreFraudWarning: true, safariInitialUrl: http://mobile-internet-chec..., sessionName: must_have_test, takesScreenshot: true, udid: 00008101-000A242A1430001E, useXctestrunFile: true, version: , wda_port: 8401, webStorageEnabled: false, webkitResponseTimeout: 20000}
+Session ID: 6e73653e0b324791d93fa362f545b0a57bb99f94
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:643)
-	at org.openqa.selenium.remote.RemoteWebDriver.getCurrentUrl(RemoteWebDriver.java:320)
-	at base.NewBaseClass.replaceurl(NewBaseClass.java:180)
-	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:69)
-	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:118)
-	at base.NewBaseClass.openBrowser(NewBaseClass.java:154)
-	at platformrunner.Runner.setUpBrowser(Runner.java:48)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:877)
+	at base.NewBaseClass.replaceurl(NewBaseClass.java:228)
+	at base.NewBaseClass.navigateToUrl(NewBaseClass.java:62)
+	at base.NewBaseClass.openBrowserstack(NewBaseClass.java:161)
+	at base.NewBaseClass.openBrowser(NewBaseClass.java:198)
+	at platformrunner.Runner.setUpBrowser(Runner.java:46)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -246,9 +244,21 @@ Session ID: f6f3a764d88e3adec8de7c519e5c363ac3ec7ed9
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.IllegalArgumentException: expected one element but was: &lt;unknown method, unsupported operation&gt;
+	at com.google.common.collect.Iterators.getOnlyElement(Iterators.java:328)
+	at com.google.common.collect.Iterators.getOnlyElement(Iterators.java:341)
+	at com.google.common.collect.Iterables.getOnlyElement(Iterables.java:280)
+	at org.openqa.selenium.remote.ErrorCodes.toState(ErrorCodes.java:124)
+	at org.openqa.selenium.remote.JsonToBeanConverter.convert(JsonToBeanConverter.java:139)
+	at org.openqa.selenium.remote.JsonToBeanConverter.convert(JsonToBeanConverter.java:47)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	... 31 more
 </pre></div></td>
 <td>0</td>
-<td>platformrunner.Runner@7b84fcf8</td></tr>
+<td>platformrunner.Runner@2b5f4d54</td></tr>
 </table><p>
 </body>
 </html>

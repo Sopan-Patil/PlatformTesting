@@ -37,7 +37,7 @@ public class PF_SignUp extends NewBaseClass {
 	@And("^Close browser$")
 	public void close_browser() throws Throwable { //
 		// throw new PendingException();
-		closebrowser();
+		// closebrowser();
 	}
 
 	@Given("^Navigate to URL with (.+) and (.+) PFQA_123_1$")

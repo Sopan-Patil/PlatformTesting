@@ -39,7 +39,7 @@ public class InvalidCC {
 	public WebElement memberShipStatus;
 
 	@FindBy(xpath = "//a[contains(@class,'button button--default button--xmedium')]")
-	public WebElement changeCard;
+	public WebElement changeCardButton;
 
 	@FindBy(xpath = "//input[@id='cardno']")
 	public WebElement creditCardTextField;
@@ -76,8 +76,8 @@ public class InvalidCC {
 	}
 
 	public void clickChangeCardButton() {
-		if (CommonFunctions.waitForVisiblity(changeCard, waitTime)) {
-			changeCard.click();
+		if (CommonFunctions.waitForVisiblity(changeCardButton, waitTime)) {
+			changeCardButton.click();
 		}
 
 	}
@@ -122,7 +122,7 @@ public class InvalidCC {
 		String invalidCreditCarderror = creditCardRegistrationFailedError.getText();
 		CommonFunctions.assertString(invalidCreditCarderror, shipmentdata[5]);
 		log.info("The invalid credit card is failed message match with expected message");
-		driver.close();
+
 	}
 
 }
