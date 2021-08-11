@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import base.NewBaseClass;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumber.api.junit.Cucumber;
@@ -55,6 +56,26 @@ public class PF_Password extends NewBaseClass {
 		log.info("actualString :" + actualString);
 		Assert.assertTrue(actualString.contains(expectedString));
 
+	}
+
+	@Then("^Validate that password change is complete$")
+	public void validate_that_password_change_is_complete() throws Throwable {
+		// throw new PendingException();
+	}
+
+	@And("^enters email id to reset password$")
+	public void enters_email_id_to_reset_password() throws Throwable {
+		// throw new PendingException();
+	}
+
+//	    @And("^enters confirmation code$")
+//	    public void enters_confirmation_code() throws Throwable {
+//	        throw new PendingException();
+//	    }
+
+	@And("^enters new password$")
+	public void enters_new_password() throws Throwable {
+		// throw new PendingException();
 	}
 
 }

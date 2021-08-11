@@ -18,29 +18,35 @@ import utils.CommonFunctions;
  * @Description:Class for entering credentials in reset password step 1
  */
 
-public class ResetPasswordStep1 {
+public class ResetPasswordStep3 {
 
 	List<String[]> testdata;
 	public WebDriver driver;
 	private static Logger log = LogManager.getLogger(LoginPage.class.getName());
 	int waitTime = 3;
 
-	public ResetPasswordStep1(WebDriver driver) {
+	public ResetPasswordStep3(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//input[@id='userNameOrEmail']")
-	public WebElement emailField;
+	// input[@id='new-password']
+	@FindBy(xpath = "")
+	public WebElement passwordField;
 
-	@FindBy(xpath = "//a[@class='button button--default js-submit']")
-	public WebElement sendConfirmationButton;
+	// input[@id='new-password-confirm']
+	@FindBy(xpath = "")
+	public WebElement passwordConfirmField;
 
-	public void clickSendConfirmationButton() {
+	// a[@class='button button--default js-submit']
+	@FindBy(xpath = "")
+	public WebElement completeResetButton;
 
-		if (CommonFunctions.waitForVisiblity(sendConfirmationButton, waitTime)) {
+	public void clickCompleteResetButton() {
 
-			sendConfirmationButton.click();
+		if (CommonFunctions.waitForVisiblity(completeResetButton, waitTime)) {
+
+			completeResetButton.click();
 		}
 
 	}
