@@ -126,9 +126,6 @@ public class MembershipStatus {
 	}
 
 	public void CheckFreeAndPrimeMembershipPlanDetails() throws Exception {
-		shipmentdata = XLHandler.readexcel("MembershipStatus", "NewTestData.xlsx");
-		freeuser = shipmentdata[0].toString();
-		primeuser = shipmentdata[1].toString();
 		clickAccountInformation();
 		if (CommonFunctions.waitForVisiblity(membershipStatusLink, waitTime)) {
 			membershipStatusLink.click();

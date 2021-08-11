@@ -8,13 +8,13 @@ Given Login To Platform
 Then Click on Membership Status
 And logout
 
-@MembershipStatus @Smoke @Full
+@MembershipStatusEnd @Smoke @Full
  Scenario:  Validate Membership Status information
 Given Login To Platform
 Then Click on End Membership
 And logout
 
-@MembershipStatus @Smoke @Full
+@MembershipStatusPlan @Smoke @Full
  Scenario:  Validate Free and Prime Membership Plan Details
 Given Login To Platform
 Then Click on Membership Status
