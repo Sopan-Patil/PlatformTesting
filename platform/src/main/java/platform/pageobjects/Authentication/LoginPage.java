@@ -234,29 +234,20 @@ public class LoginPage {
 	 */
 
 	public void loginWithNewUser() throws Exception {
-		// String[] newuser = null;
 
 		ExcelUtil excelUtil = new ExcelUtil();
 		excelUtil.setExcelFile("NewTestData.xlsx", "NewUser");
 		String email = excelUtil.getCellData("Email", 1);
 		String password = excelUtil.getCellData("Password", 1);
-		// ArrayList<String> newuser = new ArrayList<String>();
-		// newuser = XLHandler.readexcel("NewUser", "NewTestData.xlsx");
 
 		log.info("New User Email : " + email);
 		log.info("New User password : " + password);
-		// System.out.println(newuser[0]);
-		// System.out.println(newuser[1]);
 
 		if (CommonFunctions.waitForVisiblity(logInButton, waitTime)) {
 			logInButton.click();
 			log.info("Login button is clicked");
 
 		}
-
-		// System.out.println("inside loginToPlatform()");
-
-		// log.info("Login button is clicked");
 
 		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
 			emailtextfield.click();
@@ -266,11 +257,10 @@ public class LoginPage {
 
 		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
 
-			// passwordTextField.sendKeys("Test-123");
 			passwordTextField.click();
 
 			passwordTextField.sendKeys(password);
-			// System.out.println(passwordTextField.getText());
+
 		}
 		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
 			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
