@@ -37,7 +37,7 @@ public class CreateAccountStep1 {
 	@FindBy(xpath = "//input[@id='entryIdentifier']")
 	public WebElement eidField;
 
-	@FindBy(xpath = "//*[@class='button__text' or contains(text(),'Send confirmation email')]")
+	@FindBy(xpath = "//button[@type='submit']")
 	public WebElement sendConfirmationButton;
 
 	public void clickSendConfirmationButton() {
@@ -49,16 +49,19 @@ public class CreateAccountStep1 {
 
 	}
 
+	public static String email;
+	public static String eid;
+
 	public void generateNewCredentials() {
 		if (CommonFunctions.waitForVisiblity(emailField, waitTime)) {
 			emailField.click();
-			String email = CredentialsGenerator.generateEmailAddress();
+			email = CredentialsGenerator.generateEmailAddress();
 			emailField.sendKeys(email);
 			log.info("Generated email:" + email);
 		}
 		if (CommonFunctions.waitForVisiblity(eidField, waitTime)) {
 			eidField.click();
-			String eid = CredentialsGenerator.generateEid();
+			eid = CredentialsGenerator.generateEid();
 			eidField.sendKeys(eid);
 			log.info("Generated eid:" + eid);
 
