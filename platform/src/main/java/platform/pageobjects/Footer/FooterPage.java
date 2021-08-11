@@ -376,7 +376,7 @@ public class FooterPage {
 
 	public void clickFooterLinksAfterLogin() throws Exception {
 
-		shipmentdata = XLHandler.readexcel("Sheet1", "FooterAssertion.xlsx");
+		shipmentdata = XLHandler.readexcel("FooterAssert", "NewTestData.xlsx");
 
 		CommonFunctions.scrolltoElement(accountSecurity);
 		if (CommonFunctions.isElementClickable(accountSecurity)) {
