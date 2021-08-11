@@ -27,7 +27,7 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
-		tags = { "@PF_CreateAccount_ResendCode" },
+		tags = { "@PF_CreateAccount_InvalidCode" },
 
 		// tags = { "@PFAccountAndSecurity, @PFAccountAndSecurityCancel" },
 

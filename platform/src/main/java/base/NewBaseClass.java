@@ -10,7 +10,6 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.ITestResult;
 
@@ -19,6 +18,7 @@ import utils.BrowserstackUtility;
 import utils.ClosePopup;
 import utils.ObjectHelper;
 import utils.WebHandler;
+import utils.XLHandler;
 
 /**
  * @Author : Chetan Sonparote 
@@ -341,24 +341,22 @@ public class NewBaseClass {
 	}
 
 	/**
+	 * @throws IOException
 	 * @Author : Chetan Sonparote
-	 * @Date : 6 Aug 2021
-	 * @Description: Added common method for validating error message
+	 * @Date :11 Aug 2021
+	 * @Description: Added common method for validating message from excel
 	 */
-	public static void validateError(WebElement element, String expectedString) {
 
-		String actualString = null;
+	public void validateMessageFromExcel(String rowName, String xpath) throws IOException {
+		ArrayList<String> value = new ArrayList<String>();
+		value = XLHandler.readexcel("NewTestData.xlsx", "ValidationStrings", "Label", rowName);
+		log.info("value :" + value);
+		String expectedString = value.get(0).trim();
+		log.info("expectedString :" + expectedString);
 
-		if (element == null) {
-			element = ObjectHelper.driver.findElement(By.xpath("//p[@class='alert__des']"));
-		}
-
-		actualString = element.getText();
-
+		String actualString = ObjectHelper.driver.findElement(By.xpath(xpath)).getText().trim();
 		log.info("actualString :" + actualString);
-
 		Assert.assertTrue(actualString.contains(expectedString));
-
 	}
 
 }

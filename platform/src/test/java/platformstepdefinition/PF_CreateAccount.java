@@ -108,17 +108,20 @@ public class PF_CreateAccount extends NewBaseClass {
 
 	@And("^User clicks resend confirmation code$")
 	public void user_clicks_resend_confirmation_code() throws Throwable {
-		// throw new PendingException();
+
 		CreateAccountStep2 createAccountStep2 = new CreateAccountStep2(driver);
 		createAccountStep2.clickResendCodeLink();
-		NewBaseClass.validateError(null, "確認コードを再送しました、宛先メールをご確認ください。");
+
+		NewBaseClass newBaseClass = new NewBaseClass();
+		newBaseClass.validateMessageFromExcel("ResendCodeMessage", "//div[@class='alert__title']");
 
 	}
 
 	@Then("^Validate that error is displayed for invalid code$")
 	public void validate_that_error_is_displayed_for_invalid_code() throws Throwable {
-		// throw new PendingException();
-		NewBaseClass.validateError(null, "6桁の確認コードを入力してください。");
+
+		NewBaseClass newBaseClass = new NewBaseClass();
+		newBaseClass.validateMessageFromExcel("InvalidCodeError", "//p[@class='alert__des']");
 
 	}
 
