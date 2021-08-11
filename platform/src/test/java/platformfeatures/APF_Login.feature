@@ -9,10 +9,6 @@ Then Login To Platform
 And logout
 
 
-#Examples:
-#|browser|
-#|chrome	|
-
 
 @APF_Login_InvalidUser
 Scenario: Login with invalid user name
