@@ -9,7 +9,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
 import platform.pageobjects.Authentication.LoginPage;
-import platform.pageobjects.Footer.FooterPage;
+import platform.pageobjects.Footer.FooterPage_PT90_106;
 import utils.ObjectHelper;
 
 @RunWith(Cucumber.class)
@@ -24,13 +24,13 @@ public class PF_Footer extends NewBaseClass {
 
 	@And("^Check footer links$")
 	public void check_footer_links() throws Throwable {
-		FooterPage footer = new FooterPage(driver);
+		FooterPage_PT90_106 footer = new FooterPage_PT90_106(driver);
 		footer.clickFooterLinksBeforeLogin();
 	}
 
 	@Then("^Check footer links on Login Page$")
 	public void check_footer_links_on_login_page() throws Throwable {
-		FooterPage checklinks = new FooterPage(driver);
+		FooterPage_PT90_106 checklinks = new FooterPage_PT90_106(driver);
 		checklinks.clickLoginFooterLink();
 		checklinks.clickAccountServicesFooterLinks();
 		driver.navigate().back();
@@ -40,7 +40,7 @@ public class PF_Footer extends NewBaseClass {
 	public void check_footer_links_after_login_() throws Throwable {
 		LoginPage loginfunction = new LoginPage(driver);
 		loginfunction.loginToPlatform();
-		FooterPage checklinks = new FooterPage(driver);
+		FooterPage_PT90_106 checklinks = new FooterPage_PT90_106(driver);
 		checklinks.clickFooterLinksAfterLogin();
 	}
 

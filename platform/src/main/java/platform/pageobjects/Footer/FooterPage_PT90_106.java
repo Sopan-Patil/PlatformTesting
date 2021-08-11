@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import base.NewBaseClass;
 import utils.CommonFunctions;
 import utils.XLHandler;
 
@@ -148,15 +149,14 @@ public class FooterPage_PT90_106 {
 
 	public void clickFooterLinksBeforeLogin() throws Exception {
 
-		shipmentdata = XLHandler.readexcel("Sheet1", "FooterAssertion.xlsx");
+		shipmentdata = XLHandler.readexcel("FooterAssert", "NewTestData.xlsx");
 
 		CommonFunctions.scrolltoElement(termsOfUseLink);
 		if (CommonFunctions.isElementClickable(termsOfUseLink)) {
 			termsOfUseLink.click();
 			CommonFunctions.waitForVisiblity(footerTermsforAssert, 5);
-			String ActualTitle = driver.getTitle();
 			String ExpectedTitle = shipmentdata[0].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.getTitle());
 			log.info("Terms of Use Link is working");
 			driver.navigate().back();
 		} else {
@@ -168,9 +168,8 @@ public class FooterPage_PT90_106 {
 			privacyPolicyLink.click();
 			CommonFunctions.waitForVisiblity(footerPrivacyforAssert, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
-			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
 			String ExpectedTitle = shipmentdata[1].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
 			log.info("Privacy Policy Link is working");
 			switchToPreviousTab();
 		} else {
@@ -181,9 +180,8 @@ public class FooterPage_PT90_106 {
 		if (CommonFunctions.isElementClickable(specifiedCommodityTradingLawLink)) {
 			specifiedCommodityTradingLawLink.click();
 			CommonFunctions.waitForVisiblity(footerTaxforAssert, 5);
-			String ActualTitle = driver.getTitle();
 			String ExpectedTitle = shipmentdata[2].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.getTitle());
 			log.info("Specified Commodity Trading Law Link is working");
 			driver.navigate().back();
 		} else {
@@ -195,9 +193,8 @@ public class FooterPage_PT90_106 {
 			qnALink.click();
 			CommonFunctions.waitForVisiblity(footerQandAforAssert, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
-			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
 			String ExpectedTitle = shipmentdata[3].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
 			log.info("Q and A Link working");
 			switchToPreviousTab();
 		} else {
@@ -208,9 +205,8 @@ public class FooterPage_PT90_106 {
 		if (CommonFunctions.isElementClickable(footerExaminationWindowLink)) {
 			footerExaminationWindowLink.click();
 			CommonFunctions.waitForVisiblity(footerExaminationWindowLinkforAssert, 5);
-			String ActualTitle = driver.getTitle();
 			String ExpectedTitle = shipmentdata[4].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.getTitle());
 			log.info("footer Examination Window Link is working");
 			driver.navigate().back();
 		} else {
@@ -221,10 +217,9 @@ public class FooterPage_PT90_106 {
 		if (CommonFunctions.isElementClickable(footerScbtLink)) {
 			footerScbtLink.click();
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
-			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
 			CommonFunctions.waitForVisiblity(ScbtLinkforAssert, 5);
 			String ExpectedTitle = shipmentdata[5].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
 			log.info("footer Scbt Link is working");
 			switchToPreviousTab();
 		} else {
@@ -235,9 +230,8 @@ public class FooterPage_PT90_106 {
 		if (CommonFunctions.isElementClickable(footerCasecLink)) {
 			footerCasecLink.click();
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
-			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
 			String ExpectedTitle = shipmentdata[6].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
 			log.info("footer Casec Link is working");
 			switchToPreviousTab();
 		} else {
@@ -247,21 +241,19 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(footerCommontestZKai);
 		if (CommonFunctions.isElementClickable(footerCommontestZKai)) {
 			footerCommontestZKai.click();
-			String ActualTitle = driver.getTitle();
 			String ExpectedTitle = shipmentdata[7].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
-			log.info("footer Casec Link is working");
+			Assert.assertEquals(ExpectedTitle, driver.getTitle());
+			log.info("footer Z-Kai Link is working");
 			driver.navigate().back();
 		} else {
-			log.error("footer Casec Link is not working");
+			log.error("footer Z-Kai Link is not working");
 		}
 
 		CommonFunctions.scrolltoElement(footerLearningWindowLink);
 		if (CommonFunctions.isElementClickable(footerLearningWindowLink)) {
 			footerLearningWindowLink.click();
-			String ActualTitle = driver.getTitle();
 			String ExpectedTitle = shipmentdata[8].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.getTitle());
 			log.info("footer Learning Window Link is working");
 			driver.navigate().back();
 		} else {
@@ -271,9 +263,8 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(footerStagiaEikenLink);
 		if (CommonFunctions.isElementClickable(footerStagiaEikenLink)) {
 			footerStagiaEikenLink.click();
-			String ActualTitle = driver.getTitle();
 			String ExpectedTitle = shipmentdata[9].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.getTitle());
 			log.info("footer Stagia Eiken Link is working");
 			driver.navigate().back();
 		} else {
@@ -283,9 +274,8 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(footerStagiaKankenLink);
 		if (CommonFunctions.isElementClickable(footerStagiaKankenLink)) {
 			footerStagiaKankenLink.click();
-			String ActualTitle = driver.getTitle();
 			String ExpectedTitle = shipmentdata[10].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.getTitle());
 			log.info("footer Stagia Kanken Link is working");
 			driver.navigate().back();
 		} else {
@@ -295,9 +285,8 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(informationWindowLink);
 		if (CommonFunctions.isElementClickable(informationWindowLink)) {
 			informationWindowLink.click();
-			String ActualTitle = driver.getTitle();
 			String ExpectedTitle = shipmentdata[11].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.getTitle());
 			log.info("information Window Link is working");
 			driver.navigate().back();
 
@@ -309,11 +298,10 @@ public class FooterPage_PT90_106 {
 		if (CommonFunctions.isElementClickable(cramSchoolPitaLink)) {
 			cramSchoolPitaLink.click();
 //			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
-//			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
 //			String ExpectedTitle = "【スタギア 受験の窓口】各種検定・試験をお得に便利に申込み！";
 //			System.out.println(ActualTitle);
 //			System.out.println(ExpectedTitle);
-//			Assert.assertEquals(ExpectedTitle, ActualTitle);
+//			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
 			log.info("cram School Pita Link is working");
 			switchToPreviousTab();
 		} else {
@@ -324,9 +312,8 @@ public class FooterPage_PT90_106 {
 		if (CommonFunctions.isElementClickable(stagiaUniversityExamLink)) {
 			stagiaUniversityExamLink.click();
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
-			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
 			String ExpectedTitle = shipmentdata[13].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
 			log.info("stagia University Exam Link is working");
 			switchToPreviousTab();
 		} else {
@@ -337,9 +324,8 @@ public class FooterPage_PT90_106 {
 		if (CommonFunctions.isElementClickable(educationCostConsulatationSupportLink)) {
 			educationCostConsulatationSupportLink.click();
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
-			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
 			String ExpectedTitle = shipmentdata[14].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
 			log.info("education CostConsulatation Support Link is working");
 			switchToPreviousTab();
 		} else {
@@ -349,9 +335,8 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(footerLogin);
 		if (CommonFunctions.isElementClickable(footerLogin)) {
 			footerLogin.click();
-			String ActualTitle = driver.getTitle();
 			String ExpectedTitle = shipmentdata[15].toString();
-			// Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.getTitle());
 			log.info("Footer Login Link is working");
 			driver.navigate().back();
 
@@ -362,9 +347,10 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(footerRegister);
 		if (CommonFunctions.isElementClickable(footerRegister)) {
 			footerRegister.click();
-			String ActualTitle = driver.getTitle();
+			NewBaseClass auth = new NewBaseClass();
+			auth.replaceurl();
 			String ExpectedTitle = shipmentdata[16].toString();
-			// Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.getTitle());
 			log.info("Footer Registration Link is working");
 			driver.navigate().back();
 
@@ -381,9 +367,8 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(accountSecurity);
 		if (CommonFunctions.isElementClickable(accountSecurity)) {
 			accountSecurity.click();
-			String ActualTitle = driver.getTitle();
 			String ExpectedTitle = shipmentdata[17].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.getTitle());
 			log.info("account Security Link is working");
 			driver.navigate().back();
 		} else {
@@ -393,9 +378,8 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(memberStatus);
 		if (CommonFunctions.isElementClickable(memberStatus)) {
 			memberStatus.click();
-			String ActualTitle = driver.getTitle();
 			String ExpectedTitle = shipmentdata[18].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.getTitle());
 			log.info("Membership Status Link is working");
 			driver.navigate().back();
 		} else {
@@ -405,9 +389,8 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(servicesUsing);
 		if (CommonFunctions.isElementClickable(servicesUsing)) {
 			servicesUsing.click();
-			String ActualTitle = driver.getTitle();
 			String ExpectedTitle = shipmentdata[19].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.getTitle());
 			log.info("Services you are using Using Link is working");
 			driver.navigate().back();
 		} else {
@@ -417,9 +400,8 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(orderHistory);
 		if (CommonFunctions.isElementClickable(orderHistory)) {
 			orderHistory.click();
-			String ActualTitle = driver.getTitle();
 			String ExpectedTitle = shipmentdata[20].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.getTitle());
 			log.info("order History Link is working");
 			driver.navigate().back();
 		} else {
@@ -429,9 +411,8 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(withdraw);
 		if (CommonFunctions.isElementClickable(withdraw)) {
 			withdraw.click();
-			String ActualTitle = driver.getTitle();
 			String ExpectedTitle = shipmentdata[21].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.getTitle());
 			log.info("Withdrawal Link is working");
 			driver.navigate().back();
 		} else {
@@ -456,9 +437,8 @@ public class FooterPage_PT90_106 {
 			footerAccountQnA.click();
 			CommonFunctions.waitForVisiblity(footerQandAforAssert, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
-			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
 			String ExpectedTitle = shipmentdata[22].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
 			log.info("QnA Link is working");
 		} else {
 			log.error("QnA Link is not working");
@@ -468,9 +448,8 @@ public class FooterPage_PT90_106 {
 		if (CommonFunctions.isElementClickable(footerAccountTerms)) {
 			footerAccountTerms.click();
 			CommonFunctions.waitForVisiblity(footerTermsforAssert, 5);
-			String ActualTitle = driver.getTitle();
 			String ExpectedTitle = shipmentdata[23].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.getTitle());
 			log.info("Terms of Use Link is working");
 		} else {
 			log.error("Terms of Use Link is not working");
@@ -481,9 +460,8 @@ public class FooterPage_PT90_106 {
 			footerAccountPrivacy.click();
 			CommonFunctions.waitForVisiblity(footerPrivacyforAssert, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
-			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
 			String ExpectedTitle = shipmentdata[24].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
 			log.info("Privacy Policy Link is working");
 		} else {
 			log.error("Privacy Policy Link is not working");
@@ -493,9 +471,8 @@ public class FooterPage_PT90_106 {
 		if (CommonFunctions.isElementClickable(footerAccountTax)) {
 			footerAccountTax.click();
 			CommonFunctions.waitForVisiblity(footerTaxforAssert, 5);
-			String ActualTitle = driver.getTitle();
 			String ExpectedTitle = shipmentdata[25].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.getTitle());
 			log.info("Account Tax Link working");
 		} else {
 			log.error("Account Tax Link is not working");
@@ -505,16 +482,15 @@ public class FooterPage_PT90_106 {
 
 	public void clickAccountServicesFooterLinks() throws Exception {
 
-		shipmentdata = XLHandler.readexcel("Sheet1", "FooterAssertion.xlsx");
+		shipmentdata = XLHandler.readexcel("FooterAssert", "NewTestData.xlsx");
 
 		CommonFunctions.scrolltoElement(footerAccountQnA);
 		if (CommonFunctions.isElementClickable(footerAccountQnA)) {
 			footerAccountQnA.click();
 			CommonFunctions.waitForVisiblity(footerQandAforAssert, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
-			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
 			String ExpectedTitle = shipmentdata[26].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
 			log.info("QnA Link is working");
 			switchToPreviousTab();
 		} else {
@@ -526,9 +502,8 @@ public class FooterPage_PT90_106 {
 			footerAccountTerms.click();
 			CommonFunctions.waitForVisiblity(footerTermsforAssert, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
-			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
 			String ExpectedTitle = shipmentdata[27].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
 			log.info("Terms of Use Link is working");
 			switchToPreviousTab();
 		} else {
@@ -540,9 +515,8 @@ public class FooterPage_PT90_106 {
 			footerAccountPrivacy.click();
 			CommonFunctions.waitForVisiblity(footerPrivacyforAssert, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
-			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
 			String ExpectedTitle = shipmentdata[28].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
 			log.info("Privacy Policy Link is working");
 			switchToPreviousTab();
 		} else {
@@ -554,9 +528,8 @@ public class FooterPage_PT90_106 {
 			footerAccountTax.click();
 			CommonFunctions.waitForVisiblity(footerTaxforAssert, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
-			String ActualTitle = driver.switchTo().window(tab.get(1)).getTitle();
 			String ExpectedTitle = shipmentdata[29].toString();
-			Assert.assertEquals(ExpectedTitle, ActualTitle);
+			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
 			log.info("Account Tax Link working");
 			switchToPreviousTab();
 		} else {
