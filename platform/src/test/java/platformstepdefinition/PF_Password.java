@@ -50,7 +50,7 @@ public class PF_Password extends NewBaseClass {
 	public void validate_that_password_change_is_complete() throws Throwable {
 		// validate password change message
 		NewBaseClass newBaseClass = new NewBaseClass();
-		newBaseClass.validateMessage("ResetPassword", "PasswordChangeComplete");
+		newBaseClass.validateMessage("Reset password", "PasswordChangeComplete");
 
 		// login with new password
 		// write new password to excel if success
