@@ -21,7 +21,8 @@ import utils.XLHandler;
 /**
  * @Author : Sopan Patil
  * @Date : 22 Jul 2021
- * @Description:Class for entering Account Information details
+* @Description:Class for entering Account Information details
+
  */
 public class AccountAndSecurity {
 	static String kanjiSurNameExcel, kanaNameExcel, kanaFirstNameExcel, kanaLastNameExcel, birthYear, birthMonth,
@@ -200,14 +201,14 @@ public class AccountAndSecurity {
 	@FindBy(xpath = "//form[@id='formEditProfile']/div/div/p[8]")
 	public WebElement addressStreetErrorMissingUI;
 
-	public void clickAccountInformation() {
+	public void clickingAccountInformation() {
 		if (CommonFunctions.waitForVisiblity(accountInformation, waitTime)) {
 			accountInformation.click();
 
 		}
 	}
 
-	public void clickChangeButton() {
+	public void clickingChangeButton() {
 		CommonFunctions.scrolltoElement(changeButton);
 		if (CommonFunctions.waitForVisiblity(changeButton, waitTime)) {
 			changeButton.click();
@@ -215,7 +216,7 @@ public class AccountAndSecurity {
 
 	}
 
-	public void UpdateAccountAndSecurityInformation() throws Exception {
+	public void UpdatingAccountAndSecurityInformation() throws Exception {
 
 		shipmentdata = XLHandler.readexcel("UpdateAccountInformation", "NewTestData.xlsx");
 
@@ -291,7 +292,7 @@ public class AccountAndSecurity {
 		}
 	}
 
-	public void UpdateAccountAndSecurityInavlidInformation() throws Exception {
+	public void UpdatingAccountAndSecurityInavlidInformation() throws Exception {
 
 		shipmentdata = XLHandler.readexcel("UpdateAccountInformation", "NewTestData.xlsx");
 
@@ -426,10 +427,10 @@ public class AccountAndSecurity {
 		phone3TextField.clear();
 		phone3TextField.sendKeys(shipmentdata[25]);
 		log.info("entering Invalid Phone to 'Phone 3' textbox");
-		Validate_Updated_Invalid_Account_Information();
+		ValidatingUpdatedInvalidAccountInformation();
 	}
 
-	public void Validate_Updated_Account_Information() throws Exception {
+	public void ValidatingUpdatedAccountInformation() throws Exception {
 
 		shipmentdata = XLHandler.readexcel("UpdateAccountInformation", "NewTestData.xlsx");
 		Assert.assertEquals(updatedNameKanji.getText(), kanjiSurNameExcel + " " + kanaNameExcel);
@@ -443,7 +444,7 @@ public class AccountAndSecurity {
 		Assert.assertEquals(updatedPhone.getText(), phone1Excel + "-" + phone2Excel + "-" + phone3Excel);
 	}
 
-	public void Validate_Updated_Invalid_Account_Information() throws Exception {
+	public void ValidatingUpdatedInvalidAccountInformation() throws Exception {
 
 		shipmentdata = XLHandler.readexcel("UpdateAccountInformation", "NewTestData.xlsx");
 
@@ -483,15 +484,14 @@ public class AccountAndSecurity {
 
 	}
 
-	public void Cancel_Button() throws Exception {
+	public void ClickingCancelButton() throws Exception {
 		CommonFunctions.waitForVisiblity(cancelButton, waitTime);
-		UpdateAccountAndSecurityInavlidInformation();
-
+		UpdatingAccountAndSecurityInavlidInformation();
 		cancelButton.click();
-		Validate_Updated_Account_Information();
+		ValidatingUpdatedAccountInformation();
 	}
 
-	public void MissngValuesAccountAndSecurityInformation() throws Exception {
+	public void checkMissngValuesErrorOnAccountAndSecurityInformation() throws Exception {
 		CommonFunctions.isElementVisible(kanjiSurNameTextField);
 		CommonFunctions.waitForVisiblity(kanjiSurNameTextField, waitTime);
 		kanjiSurNameTextField.clear();
