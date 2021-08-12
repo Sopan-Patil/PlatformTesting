@@ -19,6 +19,8 @@ public class Membership {
 	public WebDriver driver;
 	private static Logger log = LogManager.getLogger(Membership.class.getName());
 	int waitTime = 5;
+	String[] shipmentdata;
+	String freeuser;
 
 	public Membership(WebDriver driver) {
 		this.driver = driver;
