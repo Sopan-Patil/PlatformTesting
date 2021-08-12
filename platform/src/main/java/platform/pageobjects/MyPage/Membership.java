@@ -113,12 +113,12 @@ public class Membership {
 		CommonFunctions.scrolltoElement(primeBenefit1Link);
 		CommonFunctions.isElementVisible(primeBenefit1Link);
 		primeBenefit1Link.click();
-		log.info("clicked on prime benefit 1 ");
+		log.info("clicked on prime benefit 1");
 
 		CommonFunctions.scrolltoElement(primeBenefit2Link);
 		CommonFunctions.waitForVisiblity(primeBenefit2Link, waitTime);
 		primeBenefit2Link.click();
-		log.info("clicked on prime benefit 2 ");
+		log.info("clicked on prime benefit 2");
 
 		CommonFunctions.scrolltoElement(primeBenefit3Link);
 		CommonFunctions.waitForVisiblity(primeBenefit3Link, waitTime);
