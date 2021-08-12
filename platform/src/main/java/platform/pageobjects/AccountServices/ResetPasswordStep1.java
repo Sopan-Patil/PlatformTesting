@@ -37,6 +37,18 @@ public class ResetPasswordStep1 {
 	@FindBy(xpath = "//a[@class='button button--default js-submit']")
 	public WebElement sendConfirmationButton;
 
+	@FindBy(xpath = "//a[@class='text-link']")
+	public WebElement faqLink;
+
+	public void clickFaqLink() {
+
+		if (CommonFunctions.waitForVisiblity(faqLink, waitTime)) {
+
+			faqLink.click();
+		}
+
+	}
+
 	public void clickSendConfirmationButton() {
 
 		if (CommonFunctions.waitForVisiblity(sendConfirmationButton, waitTime)) {
