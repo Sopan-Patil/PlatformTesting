@@ -48,7 +48,9 @@ public class PF_Password extends NewBaseClass {
 
 	@Then("^Validate that password change is complete$")
 	public void validate_that_password_change_is_complete() throws Throwable {
-		// throw new PendingException();
+		// validate password change message
+		// login with new password
+		// write new password to excel if success
 	}
 
 	@And("^enters email id to reset password$")
@@ -58,11 +60,6 @@ public class PF_Password extends NewBaseClass {
 		resetPasswordStep1.enterEmail();
 		resetPasswordStep1.clickSendConfirmationButton();
 	}
-
-//	    @And("^enters confirmation code$")
-//	    public void enters_confirmation_code() throws Throwable {
-//	        throw new PendingException();
-//	    }
 
 	@And("^enters new password$")
 	public void enters_new_password() throws Throwable {

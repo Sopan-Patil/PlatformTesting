@@ -1,5 +1,7 @@
 package platform.pageobjects.AccountServices;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -48,19 +50,33 @@ public class ResetPasswordStep3 {
 
 	}
 
+	public static String newValidPassword;
+
+	public String generateNewPassword() {
+		String password = null;
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("ddMMyyyyHHmmss");
+		LocalDateTime now = LocalDateTime.now();
+		password = dtf.format(now);
+		return password;
+	}
+
 	public void enterNewValidPassword() {
+
+		newValidPassword = generateNewPassword();
+		log.info("newValidPassword :" + newValidPassword);
 		if (CommonFunctions.waitForVisiblity(passwordField, waitTime)) {
 
 			passwordField.click();
-			passwordField.sendKeys("pfqa_1");
+			passwordField.sendKeys(newValidPassword);
 		}
 	}
 
 	public void enterNewValidPasswordForConfirmation() {
+		log.info("newValidPassword confirm:" + newValidPassword);
 		if (CommonFunctions.waitForVisiblity(passwordConfirmField, waitTime)) {
 
 			passwordConfirmField.click();
-			passwordConfirmField.sendKeys("pfqa_1");
+			passwordConfirmField.sendKeys(newValidPassword);
 		}
 	}
 
