@@ -94,12 +94,8 @@ public class PF_Login extends NewBaseClass {
 
 	@Then("^Validate that error is displayed for invalid user name$")
 	public void validate_that_error_is_displayed_for_invalid_user_name() throws Throwable {
-		// throw new PendingException();;
-		NewBaseClass newBaseClass = new NewBaseClass();
-		// LoginPage loginPage = new LoginPage(driver);
 
-		// newBaseClass.validateErrorMessage(loginPage.invalidDataErrorText,
-		// "メールアドレスは、メールアドレス形式で入力してください。");
+		NewBaseClass newBaseClass = new NewBaseClass();
 
 		newBaseClass.validateMessageFromExcel("InvalidUserNameError", "//p[@class='alert__des']");
 
@@ -115,11 +111,8 @@ public class PF_Login extends NewBaseClass {
 
 	@Then("^Validate that error is displayed for invalid password$")
 	public void validate_that_error_is_displayed_for_invalid_password() throws Throwable {
-		// throw new PendingException();
+
 		NewBaseClass newBaseClass = new NewBaseClass();
-		// LoginPage loginPage = new LoginPage(driver);
-		// newBaseClass.validateErrorMessage(loginPage.invalidDataErrorText,
-		// "メールアドレスまたEiDまたはパスワードをご確認してください。");
 
 		newBaseClass.validateMessageFromExcel("InvalidPasswordError", "//p[@class='alert__des']");
 
@@ -134,12 +127,8 @@ public class PF_Login extends NewBaseClass {
 
 	@Then("^Validate that error is displayed for invalid details$")
 	public void validate_that_error_is_displayed_for_invalid_details() throws Throwable {
-		// throw new PendingException();
 
 		NewBaseClass newBaseClass = new NewBaseClass();
-		// LoginPage loginPage = new LoginPage(driver);
-		// newBaseClass.validateErrorMessage(loginPage.invalidDataErrorText,
-		// "メールアドレスは、メールアドレス形式で入力してください。");
 
 		newBaseClass.validateMessageFromExcel("InvalidDetailsError", "//p[@class='alert__des']");
 
@@ -147,7 +136,7 @@ public class PF_Login extends NewBaseClass {
 
 	@And("^User enters invalid details$")
 	public void user_enters_invalid_details() throws Throwable {
-		// throw new PendingException();
+
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.setInvalidUserData("both");
 	}

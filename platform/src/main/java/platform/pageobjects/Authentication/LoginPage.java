@@ -193,10 +193,6 @@ public class LoginPage {
 			SubmitButton.click();
 
 		}
-		/*
-		 * if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
-		 * CommonFunctions.clickUsingJavaExecutor(SubmitButton); }
-		 */
 
 	}
 
@@ -242,18 +238,9 @@ public class LoginPage {
 		excel.setExcelFile("NewTestData.xlsx", "NewUser");
 
 		CommonFunctions.isElementVisible(emailtextfield);
-		// String[] userData;
-
-		// userData = XLHandler.readexcel("User", "NewTestData.xlsx");
-
-		// System.out.println(userData[0]);
-		// System.out.println(userData[1]);
 
 		String user = null;
 		String password = null;
-
-		// String userNameSTR = excel.getCellData("Email", 1);
-		// String passwordSTR = excel.getCellData("Password", 1);
 
 		if (invalid == "user") {
 			user = "inval@abd";
