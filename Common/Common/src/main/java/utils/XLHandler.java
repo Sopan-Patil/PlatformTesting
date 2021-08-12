@@ -254,7 +254,8 @@ public class XLHandler {
 					if(c.getCellType()==Cell.CELL_TYPE_STRING)
 					{
 						
-						value.add(cv.next().getStringCellValue());
+						value.add(c.getStringCellValue());
+					//	value.add(cv.next().getStringCellValue());
 					}
 					else
 					{

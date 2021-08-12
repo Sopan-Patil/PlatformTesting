@@ -10,9 +10,6 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-
-import org.openqa.selenium.WebElement;
-
 import org.testng.Assert;
 import org.testng.ITestResult;
 
@@ -373,6 +370,7 @@ public class NewBaseClass {
 	 */
 
 	public void validateMessage(String sheetName, String rowName) throws IOException {
+		log.info("sheetName :" + sheetName);
 		ArrayList<String> value = new ArrayList<String>();
 		value = XLHandler.readexcel("ValidationStrings.xlsx", sheetName, "Label", rowName);
 		log.info("value :" + value);
