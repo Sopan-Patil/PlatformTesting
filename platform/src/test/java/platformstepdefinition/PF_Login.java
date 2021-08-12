@@ -137,8 +137,11 @@ public class PF_Login extends NewBaseClass {
 		// throw new PendingException();
 
 		NewBaseClass newBaseClass = new NewBaseClass();
-		LoginPage loginPage = new LoginPage(driver);
-		newBaseClass.validateErrorMessage(loginPage.invalidDataErrorText, "メールアドレスは、メールアドレス形式で入力してください。");
+		// LoginPage loginPage = new LoginPage(driver);
+		// newBaseClass.validateErrorMessage(loginPage.invalidDataErrorText,
+		// "メールアドレスは、メールアドレス形式で入力してください。");
+
+		newBaseClass.validateMessageFromExcel("InvalidDetailsError", "//p[@class='alert__des']");
 
 	}
 
