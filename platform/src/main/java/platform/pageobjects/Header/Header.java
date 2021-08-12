@@ -113,6 +113,19 @@ public class Header extends NewBaseClass {
 		driver.switchTo().window(tab.get(0));
 	}
 
+	// Method : Checks the availblity of link and clicks
+	public void clickSubMenu(WebElement x, WebElement y) throws Exception {
+
+		Actions actions = new Actions(driver);
+		CommonFunctions.waitForVisiblity(x, waitTime);
+		actions.moveToElement(x).perform();
+		log.info("Opened Submenu");
+		CommonFunctions.isElementVisible(y);
+		CommonFunctions.waitForVisiblity(y, waitTime);
+		y.click();
+
+	}
+
 	// Method : Checks the Header menu and SubMenu Links
 	public void checkHeaderMenuLinksVisibility() throws Exception {
 
@@ -143,6 +156,7 @@ public class Header extends NewBaseClass {
 		log.info("Login Link is visible");
 	}
 
+	// Method : Checks SubMenu Links
 	public void checkSubMenuLinkVisibility() throws Exception {
 
 		Actions actions = new Actions(driver);
@@ -229,6 +243,7 @@ public class Header extends NewBaseClass {
 		CommonFunctions.isElementVisible(signUpLink);
 		CommonFunctions.waitForVisiblity(signUpLink, waitTime);
 		signUpLink.click();
+
 		log.info("Clicked on SignUp page");
 		CommonFunctions.isElementVisible(emailTextBox);
 		log.info("Email Textbox is visible");
@@ -243,11 +258,13 @@ public class Header extends NewBaseClass {
 		CommonFunctions.isElementVisible(logo);
 		CommonFunctions.waitForVisiblity(logo, waitTime);
 		logo.click();
+
 		log.info("Back on Home Page");
 
 		CommonFunctions.isElementVisible(loginLink);
 		CommonFunctions.waitForVisiblity(loginLink, waitTime);
 		loginLink.click();
+
 		log.info("Clicked on Login Page");
 		CommonFunctions.isElementVisible(emailTextBox);
 		log.info("Email Textbox is visible");
@@ -264,126 +281,59 @@ public class Header extends NewBaseClass {
 	// Method : Checks the Header SubMenu links are working by clicking on them
 	public void checkSubMenuLinkWorking() throws Exception {
 
-		Actions actions = new Actions(driver);
-
-		CommonFunctions.waitandClear(examinationWindowLink, waitTime);
-		actions.moveToElement(examinationWindowLink).perform();
-		log.info("Opened Submenu");
-		CommonFunctions.isElementVisible(testTopLink);
-		CommonFunctions.waitForVisiblity(testTopLink, waitTime);
-		testTopLink.click();
-		log.info("Opened Test Top submenu");
+		clickSubMenu(examinationWindowLink, testTopLink);
+		log.info("Opened Test Top");
 		driver.navigate().back();
 		log.info("Back on Previous Page");
 
-		CommonFunctions.waitForVisiblity(eikenSCBTLink, waitTime);
-		actions.moveToElement(examinationWindowLink).perform();
-		log.info("Opened Submenu");
-		CommonFunctions.isElementVisible(eikenSCBTLink);
-		CommonFunctions.waitForVisiblity(eikenSCBTLink, waitTime);
-		eikenSCBTLink.click();
-		log.info("Opened Eiken S-CBT submenu");
-		CommonFunctions.waitandClear(eikenSCBTLink, waitTime);
+		clickSubMenu(examinationWindowLink, eikenSCBTLink);
+		log.info("Opened Eiken SCBT");
 		switchToPreviousTab();
 		log.info("Back on Previous Page");
 
-		CommonFunctions.waitForVisiblity(casecLink, waitTime);
-		actions.moveToElement(examinationWindowLink).perform();
-		log.info("Opened Submenu");
-		CommonFunctions.isElementVisible(casecLink);
-		CommonFunctions.waitForVisiblity(casecLink, waitTime);
-		casecLink.click();
-		log.info("Opened CASEC submenu");
-		CommonFunctions.waitandClear(casecLink, waitTime);
+		clickSubMenu(examinationWindowLink, casecLink);
+		log.info("Opened Casec");
 		switchToPreviousTab();
 		log.info("Back on Previous Page");
 
-		CommonFunctions.waitForVisiblity(commonTestMeasureCBTLink, waitTime);
-		actions.moveToElement(examinationWindowLink).perform();
-		log.info("Opened Submenu");
-		CommonFunctions.isElementVisible(commonTestMeasureCBTLink);
-		CommonFunctions.waitForVisiblity(commonTestMeasureCBTLink, waitTime);
-		commonTestMeasureCBTLink.click();
-		log.info("Opened Common Test Measure CBT submenu");
-		CommonFunctions.waitForVisiblity(commonTestMeasureCBTLink, waitTime);
+		clickSubMenu(examinationWindowLink, commonTestMeasureCBTLink);
+		log.info("Opened Common Test Measure CBT");
 		driver.navigate().back();
 		log.info("Back on Previous Page");
 
-		CommonFunctions.waitForVisiblity(learningTopLink, waitTime);
-		actions.moveToElement(learningWindowLink).perform();
-		log.info("Opened Submenu");
-		CommonFunctions.isElementVisible(learningTopLink);
-		CommonFunctions.waitForVisiblity(learningTopLink, waitTime);
-		learningTopLink.click();
-		log.info("Opened Learning Top submenu");
-		CommonFunctions.waitForVisiblity(learningTopLink, waitTime);
+		clickSubMenu(learningWindowLink, learningTopLink);
+		log.info("Opened Learning Top");
 		driver.navigate().back();
 		log.info("Back on Previous Page");
 
-		CommonFunctions.waitForVisiblity(stagiaEikenLink, waitTime);
-		actions.moveToElement(learningWindowLink).perform();
-		log.info("Opened Submenu");
-		CommonFunctions.isElementVisible(stagiaEikenLink);
-		CommonFunctions.waitForVisiblity(stagiaEikenLink, waitTime);
-		stagiaEikenLink.click();
-		log.info("Opened Stagia Eiken submenu");
-		CommonFunctions.waitForVisiblity(stagiaEikenLink, waitTime);
+		clickSubMenu(learningWindowLink, stagiaEikenLink);
+		log.info("Opened Stagia Eiken");
 		driver.navigate().back();
 		log.info("Back on Previous Page");
 
-		CommonFunctions.waitForVisiblity(stagiaKankenLink, waitTime);
-		actions.moveToElement(learningWindowLink).perform();
-		log.info("Opened Submenu");
-		CommonFunctions.isElementVisible(stagiaKankenLink);
-		CommonFunctions.waitForVisiblity(stagiaKankenLink, waitTime);
-		stagiaKankenLink.click();
-		log.info("Opened Stagia Kanken submenu");
-		CommonFunctions.waitForVisiblity(stagiaKankenLink, waitTime);
+		clickSubMenu(learningWindowLink, stagiaKankenLink);
+		log.info("Opened Stagia Kanken");
 		driver.navigate().back();
 		log.info("Back on Previous Page");
 
-		CommonFunctions.waitForVisiblity(mediaTopLink, waitTime);
-		actions.moveToElement(informationWindowLink).perform();
-		log.info("Opened Submenu");
-		CommonFunctions.isElementVisible(mediaTopLink);
-		CommonFunctions.waitForVisiblity(mediaTopLink, waitTime);
-		mediaTopLink.click();
+		clickSubMenu(informationWindowLink, mediaTopLink);
 		log.info("Opened Media Top submenu");
-		CommonFunctions.waitForVisiblity(mediaTopLink, waitTime);
 		driver.navigate().back();
 		log.info("Back on Previous Page");
 
-		CommonFunctions.waitForVisiblity(cramSchoolPitaLink, waitTime);
-		actions.moveToElement(informationWindowLink).perform();
-		log.info("Opened Submenu");
-		CommonFunctions.isElementVisible(cramSchoolPitaLink);
-		CommonFunctions.waitForVisiblity(cramSchoolPitaLink, waitTime);
-		cramSchoolPitaLink.click();
+		clickSubMenu(informationWindowLink, cramSchoolPitaLink);
 		log.info("Opened Cram School Pita submenu");
-		CommonFunctions.waitForVisiblity(cramSchoolPitaLink, waitTime);
-		switchToPreviousTab();
+		driver.navigate().back();
 		log.info("Back on Previous Page");
 
-		CommonFunctions.waitForVisiblity(stagiaUniversityExamLink, waitTime);
-		actions.moveToElement(informationWindowLink).perform();
-		log.info("Opened Submenu");
-		CommonFunctions.isElementVisible(stagiaUniversityExamLink);
-		CommonFunctions.waitForVisiblity(stagiaUniversityExamLink, waitTime);
-		stagiaUniversityExamLink.click();
+		clickSubMenu(informationWindowLink, stagiaUniversityExamLink);
 		log.info("Opened Stagia University submenu");
-		CommonFunctions.waitForVisiblity(stagiaUniversityExamLink, waitTime);
-		switchToPreviousTab();
+		driver.navigate().back();
 		log.info("Back on Previous Page");
 
-		CommonFunctions.waitForVisiblity(educationCostConsultationSupportLink, waitTime);
-		actions.moveToElement(informationWindowLink).perform();
-		log.info("Opened Submenu");
-		CommonFunctions.isElementVisible(educationCostConsultationSupportLink);
-		CommonFunctions.waitForVisiblity(educationCostConsultationSupportLink, waitTime);
-		educationCostConsultationSupportLink.click();
+		clickSubMenu(informationWindowLink, educationCostConsultationSupportLink);
 		log.info("Opened Education Cost Consultation Support Link submenu");
-		CommonFunctions.waitForVisiblity(educationCostConsultationSupportLink, waitTime);
-		switchToPreviousTab();
+		driver.navigate().back();
 		log.info("Back on Previous Page");
 	}
 

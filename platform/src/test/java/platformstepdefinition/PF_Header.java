@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 
 import base.NewBaseClass;
 import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumber.api.junit.Cucumber;
@@ -16,11 +15,6 @@ import utils.ObjectHelper;
 public class PF_Header extends NewBaseClass {
 
 	public WebDriver driver = ObjectHelper.driver;
-
-	@Given("^Open and Navigate to URL on (.+)$")
-	public void navigate_to_url_(String browser) throws Throwable {
-		driver = openbrowser(browser);
-	}
 
 	@When("^User hovers on header Links$")
 	public void User_hovers_on_header_Links() throws Throwable {
@@ -44,11 +38,6 @@ public class PF_Header extends NewBaseClass {
 	public void Validate_that_sub_menus_are_working() throws Throwable {
 		Header headerobj = new Header(driver);
 		headerobj.checkSubMenuLinkWorking();
-	}
-
-	@And("^Close the browsers$")
-	public void close_browsers() throws Throwable {
-		closebrowser();
 	}
 
 }
