@@ -96,8 +96,12 @@ public class PF_Login extends NewBaseClass {
 	public void validate_that_error_is_displayed_for_invalid_user_name() throws Throwable {
 		// throw new PendingException();;
 		NewBaseClass newBaseClass = new NewBaseClass();
-		LoginPage loginPage = new LoginPage(driver);
-		newBaseClass.validateErrorMessage(loginPage.invalidDataErrorText, "メールアドレスは、メールアドレス形式で入力してください。");
+		// LoginPage loginPage = new LoginPage(driver);
+
+		// newBaseClass.validateErrorMessage(loginPage.invalidDataErrorText,
+		// "メールアドレスは、メールアドレス形式で入力してください。");
+
+		newBaseClass.validateMessageFromExcel("InvalidUserNameError", "//p[@class='alert__des']");
 
 	}
 
@@ -113,8 +117,11 @@ public class PF_Login extends NewBaseClass {
 	public void validate_that_error_is_displayed_for_invalid_password() throws Throwable {
 		// throw new PendingException();
 		NewBaseClass newBaseClass = new NewBaseClass();
-		LoginPage loginPage = new LoginPage(driver);
-		newBaseClass.validateErrorMessage(loginPage.invalidDataErrorText, "メールアドレスまたEiDまたはパスワードをご確認してください。");
+		// LoginPage loginPage = new LoginPage(driver);
+		// newBaseClass.validateErrorMessage(loginPage.invalidDataErrorText,
+		// "メールアドレスまたEiDまたはパスワードをご確認してください。");
+
+		newBaseClass.validateMessageFromExcel("InvalidPasswordError", "//p[@class='alert__des']");
 
 	}
 

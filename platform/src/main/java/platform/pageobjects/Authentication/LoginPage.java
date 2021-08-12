@@ -1,12 +1,9 @@
 package platform.pageobjects.Authentication;
 
-import java.io.IOException;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.poi.EncryptedDocumentException;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import base.NewBaseClass;
 import utils.CommonFunctions;
+import utils.ExcelUtil;
 import utils.ObjectHelper;
 import utils.XLHandler;
 
@@ -232,40 +230,36 @@ public class LoginPage {
 	}
 
 	/**
-	 * @throws IOException
-	 * @throws InvalidFormatException
-	 * @throws EncryptedDocumentException
+	 * @throws Exception
 	 * @Author : Chetan Sonparote
 	 * @Date : 5 Aug 2021
 	 * @Description: Added new method for invlaid login
 	 */
 
-	/*
-	 * public void enterInvalidUser() throws EncryptedDocumentException,
-	 * InvalidFormatException, IOException { setUserData("user"); }
-	 * 
-	 * public void enterInvalidPassword() throws EncryptedDocumentException,
-	 * InvalidFormatException, IOException { setUserData("password"); }
-	 */
+	public void setInvalidUserData(String invalid) throws Exception {
 
-	public void setInvalidUserData(String invalid)
-			throws EncryptedDocumentException, InvalidFormatException, IOException {
+		ExcelUtil excel = new ExcelUtil();
+		excel.setExcelFile("NewTestData.xlsx", "NewUser");
+
 		CommonFunctions.isElementVisible(emailtextfield);
-		String[] userData;
+		// String[] userData;
 
-		userData = XLHandler.readexcel("User", "NewTestData.xlsx");
+		// userData = XLHandler.readexcel("User", "NewTestData.xlsx");
 
-		// System.out.println(shipmentdata[0]);
-		// System.out.println(shipmentdata[1]);
+		// System.out.println(userData[0]);
+		// System.out.println(userData[1]);
 
 		String user = null;
 		String password = null;
 
+		// String userNameSTR = excel.getCellData("Email", 1);
+		// String passwordSTR = excel.getCellData("Password", 1);
+
 		if (invalid == "user") {
 			user = "inval@abd";
-			password = userData[1];
+			password = excel.getCellData("Password", 1);
 		} else if (invalid == "password") {
-			user = userData[0];
+			user = excel.getCellData("Email", 1);
 			password = "fail";
 		} else if (invalid == "both") {
 			user = "inval@abd";
@@ -293,13 +287,5 @@ public class LoginPage {
 			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
 		}
 	}
-
-	/*
-	 * public void enterInvalidDetails() throws EncryptedDocumentException,
-	 * InvalidFormatException, IOException { // TODO Auto-generated method stub
-	 * setUserData("both");
-	 * 
-	 * }
-	 */
 
 }
