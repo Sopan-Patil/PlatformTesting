@@ -64,4 +64,11 @@ public class ResetPasswordStep1 {
 
 	}
 
+	public void enterInvalidEmail() {
+		if (CommonFunctions.isElementVisible(emailField)) {
+			emailField.click();
+			emailField.sendKeys("invalid@invalid");
+		}
+	}
+
 }

@@ -78,14 +78,25 @@ public class PF_Password extends NewBaseClass {
 		resetPasswordStep3.clickCompleteResetButton();
 	}
 
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date :12 Aug 2021
+	 * @Description: Methods for invalid email id
+	 */
+
 	@Then("^Validate that error message is displayed for invalid email id$")
 	public void validate_that_error_message_is_displayed_for_invalid_email_id() throws Throwable {
 		// throw new PendingException();
+		NewBaseClass newBaseClass = new NewBaseClass();
+		newBaseClass.validateMessage("Reset password", "InvalidEmailError");
 	}
 
 	@And("^enters invalid email id$")
 	public void enters_invalid_email_id() throws Throwable {
 		// throw new PendingException();
+		ResetPasswordStep1 resetPasswordStep1 = new ResetPasswordStep1(driver);
+		resetPasswordStep1.enterInvalidEmail();
+		resetPasswordStep1.clickSendConfirmationButton();
 	}
 
 }
