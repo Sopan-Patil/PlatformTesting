@@ -30,16 +30,13 @@ public class ResetPasswordStep3 {
 		PageFactory.initElements(driver, this);
 	}
 
-	// input[@id='new-password']
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//input[@id='new-password']")
 	public WebElement passwordField;
 
-	// input[@id='new-password-confirm']
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//input[@id='new-password-confirm']")
 	public WebElement passwordConfirmField;
 
-	// a[@class='button button--default js-submit']
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//a[@class='button button--default js-submit']")
 	public WebElement completeResetButton;
 
 	public void clickCompleteResetButton() {
@@ -49,6 +46,22 @@ public class ResetPasswordStep3 {
 			completeResetButton.click();
 		}
 
+	}
+
+	public void enterNewValidPassword() {
+		if (CommonFunctions.waitForVisiblity(passwordField, waitTime)) {
+
+			passwordField.click();
+			passwordField.sendKeys("pfqa_1");
+		}
+	}
+
+	public void enterNewValidPasswordForConfirmation() {
+		if (CommonFunctions.waitForVisiblity(passwordConfirmField, waitTime)) {
+
+			passwordConfirmField.click();
+			passwordConfirmField.sendKeys("pfqa_1");
+		}
 	}
 
 }

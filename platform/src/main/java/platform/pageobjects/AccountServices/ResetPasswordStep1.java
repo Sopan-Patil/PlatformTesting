@@ -11,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import platform.pageobjects.Authentication.LoginPage;
 import utils.CommonFunctions;
+import utils.ExcelUtil;
 
 /**
  * @Author : Chetan Sonparote
@@ -45,7 +46,19 @@ public class ResetPasswordStep1 {
 
 	}
 
-	public void enterEmail() {
+	public void enterEmail() throws Exception {
+
+		// String email = null;
+
+		ExcelUtil excel = new ExcelUtil();
+		excel.setExcelFile("NewTestData.xlsx", "NewUser");
+
+		String userNameSTR = excel.getCellData("Email", 1);
+
+		if (CommonFunctions.isElementVisible(emailField)) {
+			emailField.click();
+			emailField.sendKeys(userNameSTR);
+		}
 
 	}
 

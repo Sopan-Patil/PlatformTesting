@@ -3,7 +3,6 @@ package platformrunner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.runner.RunWith;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import base.NewBaseClass;
@@ -29,7 +28,7 @@ import utils.ObjectHelper;
 
 		// tags = { "@PF_test" },
 
-		tags = { "@PF_Password_ForgotPasswordPage" },
+		tags = { "@PF_Password_ResetPassword" },
 
 		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
@@ -61,7 +60,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 
 	}
 
-	@AfterMethod(alwaysRun = true)
+	// @AfterMethod(alwaysRun = true)
 	public void closeBrowser() throws Exception {
 
 		ObjectHelper.driver.quit();

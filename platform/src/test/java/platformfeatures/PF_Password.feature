@@ -12,4 +12,4 @@ When User clicks on forgot password link
 And enters email id to reset password
 And enters confirmation code
 And enters new password
-Then Validate that password change is complete
+#Then Validate that password change is complete

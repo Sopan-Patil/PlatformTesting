@@ -1,23 +1,20 @@
 package platformstepdefinition;
 
-import java.util.ArrayList;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 import base.NewBaseClass;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumber.api.junit.Cucumber;
+import platform.pageobjects.AccountServices.ResetPasswordStep1;
+import platform.pageobjects.AccountServices.ResetPasswordStep3;
 import platform.pageobjects.Authentication.ForgotPassword;
 import platform.pageobjects.Authentication.LoginPage;
 import utils.ObjectHelper;
-import utils.XLHandler;
 
 /**
  * @Author : Chetan Sonparote
@@ -43,18 +40,9 @@ public class PF_Password extends NewBaseClass {
 
 	@Then("^Validate that forgot password page is visible$")
 	public void validate_that_forgot_password_page_is_visible() throws Throwable {
-		// throw new PendingException();
 
-		// String actualString
-		ArrayList<String> value = new ArrayList<String>();
-		value = XLHandler.readexcel("NewTestData.xlsx", "ValidationStrings", "Label", "ForgotPasswordPageMessage2");
-		log.info("value :" + value);
-		String expectedString = value.get(0).trim();
-		log.info("expectedString :" + expectedString);
-		String actualString = ObjectHelper.driver.findElement(By.xpath("//p[@class='ep-reset-pass__desc']")).getText()
-				.trim();
-		log.info("actualString :" + actualString);
-		Assert.assertTrue(actualString.contains(expectedString));
+		NewBaseClass newBaseClass = new NewBaseClass();
+		newBaseClass.validateMessageFromExcel("ForgotPasswordPageMessage2", "//p[@class='ep-reset-pass__desc']");
 
 	}
 
@@ -66,6 +54,9 @@ public class PF_Password extends NewBaseClass {
 	@And("^enters email id to reset password$")
 	public void enters_email_id_to_reset_password() throws Throwable {
 		// throw new PendingException();
+		ResetPasswordStep1 resetPasswordStep1 = new ResetPasswordStep1(driver);
+		resetPasswordStep1.enterEmail();
+		resetPasswordStep1.clickSendConfirmationButton();
 	}
 
 //	    @And("^enters confirmation code$")
@@ -75,7 +66,10 @@ public class PF_Password extends NewBaseClass {
 
 	@And("^enters new password$")
 	public void enters_new_password() throws Throwable {
-		// throw new PendingException();
+		ResetPasswordStep3 resetPasswordStep3 = new ResetPasswordStep3(driver);
+		resetPasswordStep3.enterNewValidPassword();
+		resetPasswordStep3.enterNewValidPasswordForConfirmation();
+		resetPasswordStep3.clickCompleteResetButton();
 	}
 
 }
