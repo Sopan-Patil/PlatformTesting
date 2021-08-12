@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -11,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utils.CommonFunctions;
+import utils.XLHandler;
 
 public class Membership {
 
@@ -51,7 +53,7 @@ public class Membership {
 	public WebElement orderDetails;
 
 	public void becomePrimeMember() throws Exception {
-
+		shipmentdata = XLHandler.readexcel("MembershipPlanAssert", "NewTestData.xlsx");
 		CommonFunctions.scrolltoElement(applyPrime);
 		if (CommonFunctions.isElementClickable(applyPrime)) {
 			applyPrime.click();
@@ -101,9 +103,14 @@ public class Membership {
 	}
 
 	public void introduceMembershipPlan() throws Exception {
+		shipmentdata = XLHandler.readexcel("MembershipPlanAssert", "NewTestData.xlsx");
 		CommonFunctions.scrolltoElement(applyPrime);
 		CommonFunctions.isElementVisible(applyPrime);
 		applyPrime.click();
+		CommonFunctions.waitForVisiblity(orderDetails, 7);
+		String actualString = orderDetails.getText();
+		String expectedString = shipmentdata[0].toString();
+		Assert.assertEquals(actualString, expectedString);
 		log.info("clicked on membership button on member plan page");
 		driver.navigate().back();
 
