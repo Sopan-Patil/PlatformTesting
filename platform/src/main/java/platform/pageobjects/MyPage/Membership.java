@@ -49,7 +49,7 @@ public class Membership {
 	@FindBy(xpath = "//div[@class='ep-order__title']")
 	public WebElement orderDetails;
 
-	public void becomingPrimeMember() throws Exception {
+	public void becomePrimeMember() throws Exception {
 
 		CommonFunctions.scrolltoElement(applyPrime);
 		if (CommonFunctions.isElementClickable(applyPrime)) {
@@ -99,7 +99,7 @@ public class Membership {
 
 	}
 
-	public void introductionTomembershipPlan() throws Exception {
+	public void introduceMembershipPlan() throws Exception {
 		CommonFunctions.scrolltoElement(applyPrime);
 		CommonFunctions.isElementVisible(applyPrime);
 		applyPrime.click();
