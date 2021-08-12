@@ -59,7 +59,11 @@ public class XLHandler {
 		 * @Date : 5 Aug 2021
 		 * @Description:Changed i <= lastRow to i < lastRow to resolve initialization error
 		 */
-		for (int i = 0; i < lastRow; i++) {
+
+
+		for (int i = 0; i <= lastRow; i++) {
+
+
 			Row row = sheet.getRow(i);
 			int lastCell = row.getLastCellNum();
 			value = new String[lastCell];
@@ -165,6 +169,7 @@ public class XLHandler {
 
 			k++;
 
+
 		}
 	
 
@@ -263,6 +268,105 @@ public class XLHandler {
 			
 		}
 
+		}
+	
+
+		 int rowCount;
+		 
+		 rowCount = sheet.getLastRowNum()-sheet.getFirstRowNum();
+	
+		    for (int i = 1; i < rowCount+1; i++) {
+
+		  
+		    	Row row = sheet.getRow(i);
+		        Cell cellValue = row.getCell(coloumn);
+		      
+		        if(cellValue.getCellType()!=Cell.CELL_TYPE_BLANK)
+				{
+					DataFormatter formatter = new DataFormatter();
+					String text = formatter.formatCellValue(cellValue);
+					
+					value.add(i-1, text);
+				}
+
+		
+		    } 
+		    
+			
+		    //log.info("value :"+value);
+		    
+		fis.close();
+		workBook.close();
+		return value;
+	}
+	
+	
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date :11 Aug 2021
+	 * @Description: Overloaded read excel to read specific row value
+	 */
+	public static ArrayList<String> readexcel(String fileName, String sheetName, String columnName, String rowName) throws IOException {
+		ArrayList<String> value = new ArrayList<String>();
+		//String value;
+
+		String excelPath = System.getProperty("user.dir") + File.separator + "TestData" + File.separator + fileName;// "NewTestData.xlsx";
+		FileInputStream fis = new FileInputStream(excelPath);
+
+	
+		XSSFWorkbook workBook = new XSSFWorkbook(fis);
+		Sheet sheet = workBook.getSheet(sheetName);
+
+
+		Iterator<Row> rows = sheet.iterator();
+		Row firstRow = rows.next();
+		Iterator<Cell> ce = firstRow.cellIterator();
+		// ce.next();
+
+		int k = 0;
+		int coloumn = 0;
+		while (ce.hasNext()) {
+			Cell cellValue = ce.next();
+			if (cellValue.getStringCellValue().equalsIgnoreCase(columnName)) {
+				coloumn = k;
+
+			}
+
+
+			k++;
+
+		}
+	
+
+		
+		System.out.println(coloumn);
+		
+		while (rows.hasNext()) {
+			Row r = rows.next();
+			if (r.getCell(coloumn).getStringCellValue().equalsIgnoreCase(rowName)) {
+				Iterator<Cell> cv = r.cellIterator();
+				while (cv.hasNext()) 
+				{
+					
+					Cell c =  cv.next();
+					if(c.getCellType()==Cell.CELL_TYPE_STRING)
+					{
+						
+						value.add(cv.next().getStringCellValue());
+					}
+					else
+					{
+						
+						value.add(NumberToTextConverter.toText(c.getNumericCellValue()));
+					}
+					
+				}
+			}
+
+			
+		}
+
+
 		    
 		fis.close();
 		workBook.close();
@@ -270,3 +374,5 @@ public class XLHandler {
 	}
 
 }
+
+

@@ -1,5 +1,10 @@
 package platformstepdefinition;
 
+import java.util.ArrayList;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.junit.Assert;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -18,6 +23,7 @@ import platform.pageobjects.AccountServices.CreateAccountStep5;
 import platform.pageobjects.Authentication.LoginPage;
 import utils.CommonFunctions;
 import utils.ObjectHelper;
+import utils.XLHandler;
 
 /**
  * @Author : Chetan Sonparote
@@ -31,7 +37,7 @@ public class PF_CreateAccount extends NewBaseClass {
 
 	@Given("^User is on home page$")
 	public void user_is_on_home_page() throws Throwable {
-		// throw new PendingException();
+
 		LoginPage loginToPlatform = new LoginPage(driver);
 
 		loginToPlatform.navigateToHomePage();
@@ -39,7 +45,7 @@ public class PF_CreateAccount extends NewBaseClass {
 
 	@When("^User begins account creation$")
 	public void user_begins_account_creation() throws Throwable {
-		// System.out.println("inside user_begins_account_creation()");
+
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.clickLoginButton();
 		loginPage.clickCreateNewAccountButton();
@@ -47,12 +53,26 @@ public class PF_CreateAccount extends NewBaseClass {
 
 	}
 
+	private static Logger log = LogManager.getLogger(PF_CreateAccount.class.getName());
+
 	@Then("^Validate that new account is created$")
 	public void validate_that_new_account_is_created() throws Throwable {
+		log.info("inside validate_that_new_account_is_created()");
 		CreateAccountStep5 createAccountStep5 = new CreateAccountStep5(driver);
 		createAccountStep5.getCreatedAccountDetails();
+		createAccountStep5.writeCredentialsToExcel();
 		createAccountStep5.clickGotoTopLink();
-		// throw new PendingException();
+
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.loginWithNewUser();
+
+		Assert.assertTrue(loginPage.logoutButton.isDisplayed());
+		if (CommonFunctions.isElementVisible(loginPage.logoutButton)) {
+
+			log.info("New User is logged in");
+			loginPage.logoutButton.click();
+		}
+
 	}
 
 	@And("^creates new credentials$")
@@ -63,7 +83,6 @@ public class PF_CreateAccount extends NewBaseClass {
 
 		createAccountStep1.clickSendConfirmationButton();
 
-		// throw new PendingException();
 	}
 
 	@And("^enters valid details$")
@@ -72,12 +91,11 @@ public class PF_CreateAccount extends NewBaseClass {
 		createAccountStep3.enterValidUserDetails();
 		createAccountStep3.clickAgreeButton();
 
-		// throw new PendingException();
 	}
 
 	@And("^confirms details$")
 	public void confirms_details() throws Throwable {
-		// throw new PendingException();
+
 		CreateAccountStep4 createAccountStep4 = new CreateAccountStep4(driver);
 		createAccountStep4.clickSignUpButton();
 	}
@@ -86,11 +104,12 @@ public class PF_CreateAccount extends NewBaseClass {
 	public void enters_confirmation_code() throws Throwable {
 
 		CreateAccountStep2 createAccountStep2 = new CreateAccountStep2(driver);
-		// createAccountStep2.convertOTPToList();
+
 		createAccountStep2.addConfirmationCode();
 		createAccountStep2.clickNextButton();
 
 	}
+
 
 	/**
 	 * @Author : Chetan Sonparote
@@ -134,4 +153,29 @@ public class PF_CreateAccount extends NewBaseClass {
 		createAccountStep2.clickNextButton();
 	}
 
+
+
+	@Then("^Validate error message is displayed$")
+	public void validate_error_message_is_displayed() throws Throwable {
+		// throw new PendingException();
+
+		CreateAccountStep1 createAccountStep1 = new CreateAccountStep1(driver);
+		ArrayList<String> value = new ArrayList<String>();
+		value = XLHandler.readexcel("NewTestData.xlsx", "ValidationStrings", "Label", "InvalidEmailErrorMessage");
+		log.info("value :" + value);
+		String expectedString = value.get(0).trim();
+		log.info("expectedString :" + expectedString);
+		createAccountStep1.validateErrorMessage(createAccountStep1.errorMessageText, expectedString);
+	}
+
+	@And("^User enters invalid email$")
+	public void user_enters_invalid_email() throws Throwable {
+
+		CreateAccountStep1 createAccountStep1 = new CreateAccountStep1(driver);
+		createAccountStep1.enterInvalidEmail();
+		createAccountStep1.clickSendConfirmationButton();
+
+	}
+
 }
+

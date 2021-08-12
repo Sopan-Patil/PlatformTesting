@@ -10,6 +10,9 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.WebElement;
+
 import org.testng.Assert;
 import org.testng.ITestResult;
 
@@ -92,6 +95,8 @@ public class NewBaseClass {
 		ObjectHelper.driver.navigate().to(ObjectHelper.enviURL);// API
 
 		replaceurl();
+
+		// closeZkaiPopup();
 
 		/**
 		 * @Author : Sopan Patil
@@ -341,6 +346,7 @@ public class NewBaseClass {
 	}
 
 	/**
+
 	 * @throws IOException
 	 * @Author : Chetan Sonparote
 	 * @Date :11 Aug 2021
