@@ -11,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import base.NewBaseClass;
 import utils.CommonFunctions;
+import utils.ExcelUtil;
 import utils.ObjectHelper;
 import utils.XLHandler;
 
@@ -127,7 +128,7 @@ public class LoginPage {
 		}
 
 		log.info("Login button is clicked");
-		System.out.println("inside loginToPlatform()");
+		// System.out.println("inside loginToPlatform()");
 
 		log.info("Login button is clicked");
 
@@ -222,6 +223,48 @@ public class LoginPage {
 
 		baseObj.replaceurl();
 		log.info("The home page is open");
+
+	}
+
+	/**
+	 * @throws Exception
+	 * @Author : Chetan Sonparote
+	 * @Date : 5 Aug 2021
+	 * @Description: Added new method for login with new user
+	 */
+
+	public void loginWithNewUser() throws Exception {
+
+		ExcelUtil excelUtil = new ExcelUtil();
+		excelUtil.setExcelFile("NewTestData.xlsx", "NewUser");
+		String email = excelUtil.getCellData("Email", 1);
+		String password = excelUtil.getCellData("Password", 1);
+
+		log.info("New User Email : " + email);
+		log.info("New User password : " + password);
+
+		if (CommonFunctions.waitForVisiblity(logInButton, waitTime)) {
+			logInButton.click();
+			log.info("Login button is clicked");
+
+		}
+
+		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
+			emailtextfield.click();
+			emailtextfield.sendKeys(email);
+
+		}
+
+		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
+
+			passwordTextField.click();
+
+			passwordTextField.sendKeys(password);
+
+		}
+		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
+			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
+		}
 
 	}
 
