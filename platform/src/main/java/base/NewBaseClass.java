@@ -10,7 +10,9 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
+
 import org.testng.Assert;
 import org.testng.ITestResult;
 
@@ -344,21 +346,7 @@ public class NewBaseClass {
 	}
 
 	/**
-	 * @Author : Chetan Sonparote
-	 * @Date : 5 Aug 2021
-	 * @Description: Added common method for validating error message
-	 */
-	public void validateErrorMessage(WebElement element, String expectedString) {
 
-		String actualString = element.getText();
-
-		log.info("actualString :" + actualString);
-
-		Assert.assertTrue(actualString.contains(expectedString));
-
-	}
-
-	/**
 	 * @throws IOException
 	 * @Author : Chetan Sonparote
 	 * @Date :11 Aug 2021

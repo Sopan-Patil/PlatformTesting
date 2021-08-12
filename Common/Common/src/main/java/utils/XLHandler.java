@@ -60,7 +60,9 @@ public class XLHandler {
 		 * @Description:Changed i <= lastRow to i < lastRow to resolve initialization error
 		 */
 
+
 		for (int i = 0; i <= lastRow; i++) {
+
 
 			Row row = sheet.getRow(i);
 			int lastCell = row.getLastCellNum();
@@ -167,6 +169,7 @@ public class XLHandler {
 
 			k++;
 
+
 		}
 	
 
@@ -198,6 +201,8 @@ public class XLHandler {
 		workBook.close();
 		return value;
 	}
+	
+
 	
 	
 	/**
@@ -265,10 +270,13 @@ public class XLHandler {
 			
 		}
 
+
 		    
 		fis.close();
 		workBook.close();
 		return value;
 	}
+
 }
+
 
