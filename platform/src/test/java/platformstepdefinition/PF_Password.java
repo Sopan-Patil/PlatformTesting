@@ -78,4 +78,14 @@ public class PF_Password extends NewBaseClass {
 		resetPasswordStep3.clickCompleteResetButton();
 	}
 
+	@Then("^Validate that error message is displayed for invalid email id$")
+	public void validate_that_error_message_is_displayed_for_invalid_email_id() throws Throwable {
+		// throw new PendingException();
+	}
+
+	@And("^enters invalid email id$")
+	public void enters_invalid_email_id() throws Throwable {
+		// throw new PendingException();
+	}
+
 }
