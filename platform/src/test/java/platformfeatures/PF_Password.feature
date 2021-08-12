@@ -20,3 +20,9 @@ Scenario: Test working of reset password with invalid email
 When User clicks on forgot password link
 And enters invalid email id
 Then Validate that error message is displayed for invalid email id
+
+@PF_Password_FAQ
+Scenario: Verify functionality of FAQ link reset password
+When User clicks on forgot password link
+And click on FAQ link
+Then Validate that FAQ link is open on reset password

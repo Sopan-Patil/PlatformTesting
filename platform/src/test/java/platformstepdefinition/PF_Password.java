@@ -99,4 +99,26 @@ public class PF_Password extends NewBaseClass {
 		resetPasswordStep1.clickSendConfirmationButton();
 	}
 
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date :12 Aug 2021
+	 * @Description: Methods for checking faq link
+	 */
+
+	@Then("^Validate that FAQ link is open on reset password$")
+	public void validate_that_faq_link_is_open_on_reset_password() throws Throwable {
+		ResetPasswordStep1 resetPasswordStep1 = new ResetPasswordStep1(driver);
+		// System.out.println(driver.getTitle());
+		NewBaseClass newBaseClass = new NewBaseClass();
+		newBaseClass.validateLink(resetPasswordStep1.faqLinkVerification);
+
+	}
+
+	@And("^click on FAQ link$")
+	public void click_on_faq_link() throws Throwable {
+//		throw new PendingException();
+		ResetPasswordStep1 resetPasswordStep1 = new ResetPasswordStep1(driver);
+		resetPasswordStep1.clickFaqLink();
+	}
+
 }

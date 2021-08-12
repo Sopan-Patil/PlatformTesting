@@ -28,7 +28,7 @@ import utils.ObjectHelper;
 
 		// tags = { "@PF_CreateAccount" },
 
-		tags = { "@PF_Password_ResetPassword_InvalidEmail" },
+		tags = { "@PF_Password_FAQ" },
 
 		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",

@@ -40,6 +40,9 @@ public class ResetPasswordStep1 {
 	@FindBy(xpath = "//a[@class='text-link']")
 	public WebElement faqLink;
 
+	@FindBy(xpath = "//a[@class='submit-a-request']")
+	public WebElement faqLinkVerification;
+
 	public void clickFaqLink() {
 
 		if (CommonFunctions.waitForVisiblity(faqLink, waitTime)) {

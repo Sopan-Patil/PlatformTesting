@@ -4,12 +4,15 @@ import java.awt.AWTException;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.ITestResult;
 
@@ -40,7 +43,7 @@ import utils.XLHandler;
  */
 public class NewBaseClass {
 
-	public WebDriver driver;
+	public WebDriver driver = ObjectHelper.driver;
 	// public static LoginPage lp;
 
 	public static String greencolorRGB = "rgb(179, 198, 53)";
@@ -382,6 +385,31 @@ public class NewBaseClass {
 		String actualString = ObjectHelper.driver.findElement(By.xpath(xpath)).getText().trim();
 		log.info("actualString :" + actualString);
 		Assert.assertTrue(actualString.contains(expectedString));
+	}
+
+	/**
+	 * @throws IOException
+	 * @Author : Chetan Sonparote
+	 * @Date :12 Aug 2021
+	 * @Description: method for validating opened link
+	 */
+
+	public void validateLink(WebElement element) {
+		log.info("Parent window title:" + ObjectHelper.driver.getTitle());
+		Set<String> ids = ObjectHelper.driver.getWindowHandles();
+		Iterator<String> iterator = ids.iterator();
+		String parentId = iterator.next();
+		String childId = iterator.next();
+		ObjectHelper.driver.switchTo().window(childId);
+		log.info("Child window title:" + ObjectHelper.driver.getTitle());
+
+		Assert.assertTrue(element.isDisplayed());
+		ObjectHelper.driver.close();
+
+		ObjectHelper.driver.switchTo().window(parentId);
+
+		// System.out.println(ObjectHelper.driver.getTitle());
+		log.info("Parent window title:" + ObjectHelper.driver.getTitle());
 	}
 
 }
