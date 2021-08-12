@@ -85,7 +85,7 @@ public class MembershipStatus {
 		}
 	}
 
-	public void MemberShipStatus() throws Exception {
+	public void CheckMemberShipStatus() throws Exception {
 		clickAccountInformation();
 		if (CommonFunctions.waitForVisiblity(membershipStatusLink, waitTime)) {
 			membershipStatusLink.click();
