@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -105,10 +104,6 @@ public class Membership {
 		CommonFunctions.scrolltoElement(applyPrime);
 		CommonFunctions.isElementVisible(applyPrime);
 		applyPrime.click();
-		CommonFunctions.waitForVisiblity(orderDetails, 7);
-		String actualString = orderDetails.getText();
-		String expectedString = "ご注文内容";
-		Assert.assertEquals(actualString, expectedString);
 		log.info("clicked on membership button on member plan page");
 		driver.navigate().back();
 
