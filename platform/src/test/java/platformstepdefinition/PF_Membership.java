@@ -36,7 +36,7 @@ public class PF_Membership extends NewBaseClass {
 	}
 
 	@And("^Checks the link validation on member plan page$")
-	public void Checks_the_link_validation_on_member_plan_page_() throws Throwable {
+	public void Checks_the_links_validation_on_member_plan_page_() throws Throwable {
 		Membership membershipobj = new Membership(driver);
 		membershipobj.introduceMembershipPlan();
 
