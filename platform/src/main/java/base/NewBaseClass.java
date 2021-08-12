@@ -380,4 +380,24 @@ public class NewBaseClass {
 		Assert.assertTrue(actualString.contains(expectedString));
 	}
 
+	/**
+	 * @throws IOException
+	 * @Author : Chetan Sonparote
+	 * @Date :12 Aug 2021
+	 * @Description: method for validating message from new validation string excel
+	 */
+
+	public void validateMessage(String sheetName, String rowName) throws IOException {
+		ArrayList<String> value = new ArrayList<String>();
+		value = XLHandler.readexcel("ValidationStrings.xlsx", sheetName, "Label", rowName);
+		log.info("value :" + value);
+		String xpath = value.get(1).trim();
+		String expectedString = value.get(2).trim();
+		log.info("expectedString :" + expectedString);
+
+		String actualString = ObjectHelper.driver.findElement(By.xpath(xpath)).getText().trim();
+		log.info("actualString :" + actualString);
+		Assert.assertTrue(actualString.contains(expectedString));
+	}
+
 }

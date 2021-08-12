@@ -49,6 +49,9 @@ public class PF_Password extends NewBaseClass {
 	@Then("^Validate that password change is complete$")
 	public void validate_that_password_change_is_complete() throws Throwable {
 		// validate password change message
+		NewBaseClass newBaseClass = new NewBaseClass();
+		newBaseClass.validateMessage("ResetPassword", "PasswordChangeComplete");
+
 		// login with new password
 		// write new password to excel if success
 	}
