@@ -229,7 +229,7 @@ public class LoginPage {
 	 * @throws Exception
 	 * @Author : Chetan Sonparote
 	 * @Date : 5 Aug 2021
-
+	 * 
 	 * @Description: Added new method for invlaid login
 	 */
 
@@ -259,7 +259,7 @@ public class LoginPage {
 		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
 			emailtextfield.click();
 			emailtextfield.sendKeys(user);
-}
+		}
 
 		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
 
@@ -295,11 +295,9 @@ public class LoginPage {
 			emailtextfield.click();
 			emailtextfield.sendKeys(email);
 
-
 		}
 
 		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
-
 
 			// passwordTextField.sendKeys("Test-123");
 			passwordTextField.click();
@@ -312,11 +310,6 @@ public class LoginPage {
 			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
 		}
 
-			passwordTextField.click();
-
-			passwordTextField.sendKeys(password);
-
-		}
 		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
 			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
 		}
