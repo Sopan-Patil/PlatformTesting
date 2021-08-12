@@ -7,8 +7,11 @@ import java.util.ArrayList;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.ITestResult;
 
 import platform.properties.ConfigProp;
@@ -16,6 +19,7 @@ import utils.BrowserstackUtility;
 import utils.ClosePopup;
 import utils.ObjectHelper;
 import utils.WebHandler;
+import utils.XLHandler;
 
 /**
  * @Author : Chetan Sonparote 
@@ -337,6 +341,40 @@ public class NewBaseClass {
 	public void refreshbrowser() {
 		// TODO Auto-generated method stub
 		WebHandler.refreshbrowser();
+	}
+
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 5 Aug 2021
+	 * @Description: Added common method for validating error message
+	 */
+	public void validateErrorMessage(WebElement element, String expectedString) {
+
+		String actualString = element.getText();
+
+		log.info("actualString :" + actualString);
+
+		Assert.assertTrue(actualString.contains(expectedString));
+
+	}
+
+	/**
+	 * @throws IOException
+	 * @Author : Chetan Sonparote
+	 * @Date :11 Aug 2021
+	 * @Description: Added common method for validating message from excel
+	 */
+
+	public void validateMessageFromExcel(String rowName, String xpath) throws IOException {
+		ArrayList<String> value = new ArrayList<String>();
+		value = XLHandler.readexcel("NewTestData.xlsx", "ValidationStrings", "Label", rowName);
+		log.info("value :" + value);
+		String expectedString = value.get(0).trim();
+		log.info("expectedString :" + expectedString);
+
+		String actualString = ObjectHelper.driver.findElement(By.xpath(xpath)).getText().trim();
+		log.info("actualString :" + actualString);
+		Assert.assertTrue(actualString.contains(expectedString));
 	}
 
 }

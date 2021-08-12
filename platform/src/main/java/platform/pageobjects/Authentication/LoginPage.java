@@ -53,6 +53,9 @@ public class LoginPage {
 	@FindBy(xpath = "//a[@href='/logout']")
 	public WebElement logoutButton;
 
+	@FindBy(xpath = "//p[@class='alert__des']")
+	public WebElement invalidDataErrorText;
+
 	/**
 	 * 
 	 * @Author : rahul shinde
@@ -190,10 +193,6 @@ public class LoginPage {
 			SubmitButton.click();
 
 		}
-		/*
-		 * if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
-		 * CommonFunctions.clickUsingJavaExecutor(SubmitButton); }
-		 */
 
 	}
 
@@ -230,8 +229,51 @@ public class LoginPage {
 	 * @throws Exception
 	 * @Author : Chetan Sonparote
 	 * @Date : 5 Aug 2021
-	 * @Description: Added new method for login with new user
+	 * 
+	 * @Description: Added new method for invlaid login
 	 */
+
+	public void setInvalidUserData(String invalid) throws Exception {
+
+		ExcelUtil excel = new ExcelUtil();
+		excel.setExcelFile("NewTestData.xlsx", "NewUser");
+
+		CommonFunctions.isElementVisible(emailtextfield);
+
+		String user = null;
+		String password = null;
+
+		if (invalid == "user") {
+			user = "inval@abd";
+			password = excel.getCellData("Password", 1);
+		} else if (invalid == "password") {
+			user = excel.getCellData("Email", 1);
+			password = "fail";
+		} else if (invalid == "both") {
+			user = "inval@abd";
+			password = "fail";
+		}
+
+		log.info("Re Login button is clicked");
+
+		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
+			emailtextfield.click();
+			emailtextfield.sendKeys(user);
+		}
+
+		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
+
+			// passwordTextField.sendKeys("Test-123");
+			passwordTextField.click();
+
+			passwordTextField.sendKeys(password);
+			// System.out.println(passwordTextField.getText());
+		}
+
+		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
+			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
+		}
+	}
 
 	public void loginWithNewUser() throws Exception {
 
@@ -257,11 +299,17 @@ public class LoginPage {
 
 		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
 
+			// passwordTextField.sendKeys("Test-123");
 			passwordTextField.click();
 
 			passwordTextField.sendKeys(password);
-
+			// System.out.println(passwordTextField.getText());
 		}
+
+		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
+			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
+		}
+
 		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
 			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
 		}
