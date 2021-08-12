@@ -7,7 +7,6 @@ import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 import base.NewBaseClass;
 import cucumber.api.java.en.And;
@@ -110,7 +109,6 @@ public class PF_CreateAccount extends NewBaseClass {
 
 	}
 
-
 	/**
 	 * @Author : Chetan Sonparote
 	 * @Date : 6 Aug 2021
@@ -153,8 +151,6 @@ public class PF_CreateAccount extends NewBaseClass {
 		createAccountStep2.clickNextButton();
 	}
 
-
-
 	@Then("^Validate error message is displayed$")
 	public void validate_error_message_is_displayed() throws Throwable {
 		// throw new PendingException();
@@ -178,4 +174,3 @@ public class PF_CreateAccount extends NewBaseClass {
 	}
 
 }
-
