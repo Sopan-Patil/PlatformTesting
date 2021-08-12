@@ -11,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import platform.pageobjects.Authentication.LoginPage;
 import utils.CommonFunctions;
+import utils.ExcelUtil;
 
 /**
  * @Author : Chetan Sonparote
@@ -30,14 +31,47 @@ public class ResetPasswordStep4 {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//a[@class='button button--default js-submit']")
-	public WebElement sendConfirmationButton;
+	// span[contains(text(),'ログインページへ')]
+	@FindBy(xpath = "//a[@class='button button--default']")
+	public WebElement goToLoginPageButton;
 
-	public void clickSendConfirmationButton() {
+	public void clickGoToLoginPageButton() {
 
-		if (CommonFunctions.waitForVisiblity(sendConfirmationButton, waitTime)) {
+		if (CommonFunctions.waitForVisiblity(goToLoginPageButton, waitTime)) {
 
-			sendConfirmationButton.click();
+			goToLoginPageButton.click();
+		}
+
+	}
+
+	public void loginWithNewPassword() throws Exception {
+		// resetPasswordStep1.
+		LoginPage loginPage = new LoginPage(driver);
+
+		if (CommonFunctions.isElementVisible(loginPage.emailtextfield)) {
+			loginPage.emailtextfield.click();
+			loginPage.emailtextfield.sendKeys(ResetPasswordStep1.userName);
+		}
+
+		if (CommonFunctions.isElementVisible(loginPage.passwordTextField)) {
+			loginPage.passwordTextField.click();
+			loginPage.passwordTextField.sendKeys(ResetPasswordStep3.newValidPassword);
+		}
+
+		if (CommonFunctions.isElementVisible(loginPage.SubmitButton)) {
+			loginPage.SubmitButton.click();
+			// loginPage.passwordTextField.sendKeys(resetPasswordStep3.newValidPassword);
+		}
+
+		if (CommonFunctions.waitForVisiblity(loginPage.logoutButton, 1)) {
+
+			ExcelUtil excel = new ExcelUtil();
+			excel.setExcelFile("NewTestData.xlsx", "NewUser");
+
+			excel.setCellData(ResetPasswordStep3.newValidPassword, 1, 1);
+
+			loginPage.logoutFromPlatform();
+			// loginPage.passwordTextField.sendKeys(resetPasswordStep3.newValidPassword);
 		}
 
 	}

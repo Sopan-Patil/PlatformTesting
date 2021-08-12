@@ -12,6 +12,7 @@ import cucumber.api.java.en.When;
 import cucumber.api.junit.Cucumber;
 import platform.pageobjects.AccountServices.ResetPasswordStep1;
 import platform.pageobjects.AccountServices.ResetPasswordStep3;
+import platform.pageobjects.AccountServices.ResetPasswordStep4;
 import platform.pageobjects.Authentication.ForgotPassword;
 import platform.pageobjects.Authentication.LoginPage;
 import utils.ObjectHelper;
@@ -53,6 +54,11 @@ public class PF_Password extends NewBaseClass {
 		newBaseClass.validateMessage("Reset password", "PasswordChangeComplete");
 
 		// login with new password
+
+		ResetPasswordStep4 resetPasswordStep4 = new ResetPasswordStep4(driver);
+		resetPasswordStep4.clickGoToLoginPageButton();
+		// LoginPage loginPage
+		resetPasswordStep4.loginWithNewPassword();
 		// write new password to excel if success
 	}
 

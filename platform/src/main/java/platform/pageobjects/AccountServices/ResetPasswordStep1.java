@@ -46,6 +46,8 @@ public class ResetPasswordStep1 {
 
 	}
 
+	public static String userName;
+
 	public void enterEmail() throws Exception {
 
 		// String email = null;
@@ -53,11 +55,11 @@ public class ResetPasswordStep1 {
 		ExcelUtil excel = new ExcelUtil();
 		excel.setExcelFile("NewTestData.xlsx", "NewUser");
 
-		String userNameSTR = excel.getCellData("Email", 1);
+		userName = excel.getCellData("Email", 1);
 
 		if (CommonFunctions.isElementVisible(emailField)) {
 			emailField.click();
-			emailField.sendKeys(userNameSTR);
+			emailField.sendKeys(userName);
 		}
 
 	}
