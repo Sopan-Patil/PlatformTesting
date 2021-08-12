@@ -22,7 +22,7 @@ public class PF_MembershipStatus extends NewBaseClass {
 	@Then("^Click on Membership Status$")
 	public void Click_on_Membership_Status() throws Throwable {
 		MembershipStatus MemberShipStatus = new MembershipStatus(driver);
-		MemberShipStatus.MemberShipStatus();
+		MemberShipStatus.CheckMemberShipStatus();
 
 	}
 
