@@ -36,3 +36,13 @@ When User begins account creation
 And User enters invalid email
 Then Validate error message is displayed
 
+
+@PF_CreateAccount_Return
+Scenario: Functionality of Return button
+Given User is on home page
+When User begins account creation
+And creates new credentials
+And enters confirmation code
+And enters valid details
+And clicks return button on step 4
+Then Validate redirection to previous page

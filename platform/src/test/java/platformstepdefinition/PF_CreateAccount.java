@@ -173,4 +173,25 @@ public class PF_CreateAccount extends NewBaseClass {
 
 	}
 
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 13 Aug 2021
+	 * @Description: step def for return button
+	 */
+
+	@Then("^Validate redirection to previous page$")
+	public void validate_redirection_to_previous_page() throws Throwable {
+		// throw new PendingException();
+		CreateAccountStep3 createAccountStep3 = new CreateAccountStep3(driver);
+		Assert.assertTrue(CommonFunctions.isElementVisible(createAccountStep3.passwordField));
+
+	}
+
+	@And("^clicks return button on step 4$")
+	public void clicks_return_button_on_step_4() throws Throwable {
+		// throw new PendingException();
+		CreateAccountStep4 createAccountStep4 = new CreateAccountStep4(driver);
+		createAccountStep4.clickReturnButton();
+	}
+
 }
