@@ -11,8 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import base.NewBaseClass;
 import utils.CommonFunctions;
+import utils.ExcelUtil;
 import utils.ObjectHelper;
-import utils.XLHandler;
 
 /**
  * @Author : Chetan Sonparote
@@ -102,38 +102,22 @@ public class LoginPage {
 
 	public void loginToPlatform() throws Exception {
 
-//		/**
-//		 * @Author : rahul shinde
-//		 * @Date : 19 Jul 2021
-//		 * @Description: handle zkai popup
-//		 */
-//
-//		if (CommonFunctions.waitForVisiblity(zkai_popup, waitTime)) {
-//			zkai_popupCloseButton.click();
-//			log.info("Close Zkai pop up");
-//		}
+		ExcelUtil excel = new ExcelUtil();
+		excel.setExcelFile("NewTestData.xlsx", "User");
 
-		String[] shipmentdata;
+		String userNameSTR = excel.getCellData("UserName", 1);
+		String passwordSTR = excel.getCellData("Password", 1);
 
-		shipmentdata = XLHandler.readexcel("User", "NewTestData.xlsx");
-
-		System.out.println(shipmentdata[0]);
-		System.out.println(shipmentdata[1]);
-
-		// CommonFunctions.wa
 		if (CommonFunctions.waitForVisiblity(logInButton, waitTime)) {
 			logInButton.click();
 
 		}
 
 		log.info("Login button is clicked");
-		System.out.println("inside loginToPlatform()");
-
-		log.info("Login button is clicked");
 
 		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
 			emailtextfield.click();
-			emailtextfield.sendKeys(shipmentdata[0]);
+			emailtextfield.sendKeys(userNameSTR);
 
 		}
 
@@ -142,7 +126,7 @@ public class LoginPage {
 			// passwordTextField.sendKeys("Test-123");
 			passwordTextField.click();
 
-			passwordTextField.sendKeys(shipmentdata[1]);
+			passwordTextField.sendKeys(passwordSTR);
 			System.out.println(passwordTextField.getText());
 		}
 		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
@@ -150,6 +134,57 @@ public class LoginPage {
 		}
 
 	}
+
+//	public void loginToPlatform() throws Exception {
+//
+////		/**
+////		 * @Author : rahul shinde
+////		 * @Date : 19 Jul 2021
+////		 * @Description: handle zkai popup
+////		 */
+////
+////		if (CommonFunctions.waitForVisiblity(zkai_popup, waitTime)) {
+////			zkai_popupCloseButton.click();
+////			log.info("Close Zkai pop up");
+////		}
+//
+//		String[] shipmentdata;
+//
+//		shipmentdata = XLHandler.readexcel("User", "NewTestData.xlsx");
+//
+//		System.out.println(shipmentdata[0]);
+//		System.out.println(shipmentdata[1]);
+//
+//		// CommonFunctions.wa
+//		if (CommonFunctions.waitForVisiblity(logInButton, waitTime)) {
+//			logInButton.click();
+//
+//		}
+//
+//		log.info("Login button is clicked");
+//		System.out.println("inside loginToPlatform()");
+//
+//		log.info("Login button is clicked");
+//
+//		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
+//			emailtextfield.click();
+//			emailtextfield.sendKeys(shipmentdata[0]);
+//
+//		}
+//
+//		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
+//
+//			// passwordTextField.sendKeys("Test-123");
+//			passwordTextField.click();
+//
+//			passwordTextField.sendKeys(shipmentdata[1]);
+//			System.out.println(passwordTextField.getText());
+//		}
+//		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
+//			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
+//		}
+//
+//	}
 
 	/**
 	 * @Author : Rahul Shinde
@@ -157,40 +192,19 @@ public class LoginPage {
 	 * @Description: used in order flow with fresh user login
 	 * 
 	 */
-	public void loginToPlatformWithNewUser() throws Exception {
+	public void loginToPlatformForPayment() throws Exception {
 
-//		/**
-//		 * @Author : rahul shinde
-//		 * @Date : 19 Jul 2021
-//		 * @Description: handle zkai popup
-//		 */
-//
-//		if (CommonFunctions.waitForVisiblity(zkai_popup, waitTime)) {
-//			zkai_popupCloseButton.click();
-//			log.info("Close Zkai pop up");
-//		}
+		ExcelUtil excel = new ExcelUtil();
+		excel.setExcelFile("NewTestData.xlsx", "User");
 
-		String[] shipmentdata;
+		String userNameSTR = excel.getCellData("UserName", 1);
+		String passwordSTR = excel.getCellData("Password", 1);
 
-		shipmentdata = XLHandler.readexcel("NewUser", "NewTestData.xlsx");
-
-		System.out.println(shipmentdata[0]);
-		System.out.println(shipmentdata[1]);
-
-		// CommonFunctions.wa
-		if (CommonFunctions.waitForVisiblity(logInButton, waitTime)) {
-			logInButton.click();
-
-		}
-
-		log.info("Login button is clicked");
-		System.out.println("inside loginToPlatform()");
-
-		log.info("Login button is clicked");
+		CommonFunctions.waitForVisiblity(emailtextfield, waitTime);
 
 		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
 			emailtextfield.click();
-			emailtextfield.sendKeys(shipmentdata[0]);
+			emailtextfield.sendKeys(userNameSTR);
 
 		}
 
@@ -199,57 +213,12 @@ public class LoginPage {
 			// passwordTextField.sendKeys("Test-123");
 			passwordTextField.click();
 
-			passwordTextField.sendKeys(shipmentdata[1]);
+			passwordTextField.sendKeys(passwordSTR);
 			System.out.println(passwordTextField.getText());
 		}
 		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
 			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
 		}
-
-	}
-
-	/**
-	 * @Author : Rahul Shinde
-	 * @Date : 13 Jul 2021
-	 * @Description: used in order flow re login
-	 * 
-	 */
-	public void loginToPlatformForPayment() throws Exception {
-
-		CommonFunctions.isElementVisible(emailtextfield);
-		String[] shipmentdata;
-
-		shipmentdata = XLHandler.readexcel("User", "NewTestData.xlsx");
-
-		System.out.println(shipmentdata[0]);
-		System.out.println(shipmentdata[1]);
-
-		log.info("Re Login button is clicked");
-
-		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
-			emailtextfield.click();
-			emailtextfield.sendKeys(shipmentdata[0]);
-
-		}
-
-		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
-
-			// passwordTextField.sendKeys("Test-123");
-			passwordTextField.click();
-
-			passwordTextField.sendKeys(shipmentdata[1]);
-			System.out.println(passwordTextField.getText());
-		}
-
-		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
-
-			SubmitButton.click();
-
-		}
-		/*
-		 * if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
-		 * CommonFunctions.clickUsingJavaExecutor(SubmitButton); }
-		 */
 
 	}
 

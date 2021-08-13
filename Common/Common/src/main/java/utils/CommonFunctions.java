@@ -141,7 +141,7 @@ public class CommonFunctions {
 	 * @return 
 	 * @Author : rahul shinde
 	 * @Date : 06 aug 2021
-	 * @Description: assert int value
+	 * @Description: assert int and float value and addition of float
 	 */
 	public static boolean assertInt(int actualText, int expectedText) {
 		boolean result = false;
@@ -155,12 +155,27 @@ public class CommonFunctions {
 		return result;
 	}
 	
-	/**
-	 * @return 
-	 * @Author : rahul shinde
-	 * @Date : 26 Jul 2021
-	 * @Description: compare 2 strings
-	 */
+	public static boolean assertFloat(Float actualText, Float expectedText) {
+		boolean result = false;
+		try {
+			log.info("Try to match int value " + actualText + " with " +expectedText );
+			assertEquals(actualText, expectedText);
+			result = true;
+		} catch (Exception e) {
+			result = false;
+		}
+		return result;
+	}
+	
+	public static Float additionOfFloat(Float floatValue1, Float floatValue2) {
+		Float returnFloatValue = Float.sum(floatValue1,floatValue2);  
+		return returnFloatValue;
+	}
+	public static int additionOfInt(int floatValue1, int floatValue2) {
+		int returnintValue = Integer.sum(floatValue1,floatValue2);  
+		return returnintValue;
+	}
+
 	public static  void stringContains(String actualText, String expectedText) {
 		
 		try {
@@ -180,7 +195,35 @@ public class CommonFunctions {
 		}
 		
 	}
+	
+	public static int stringToInt(String stringtoconvert) {
+		
+		int intValue = Integer.parseInt(stringtoconvert);
+		return intValue;
+		
+	}
+	
+	public static int floatToInt(Float stringtoconvert) {
+		float floatValue = stringtoconvert;
+		  int intValue = (int) floatValue;
+	
+		return intValue;
+		
+	}
 
+	public static Float stringToFloat(String stringtoconvert) {
+		
+		Float floatVal = Float.valueOf(stringtoconvert).floatValue();
+		return floatVal;
+		
+	}
+	
+	public static String FloatToString(Float flosttoconvert) {
+		
+		String stringVal=Float.toString(flosttoconvert);
+		return stringVal;
+		
+	}
 	
    
 	public static void clickUsingJavaExecutor(String xpath) {

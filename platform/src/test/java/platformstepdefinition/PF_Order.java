@@ -24,10 +24,22 @@ public class PF_Order extends NewBaseClass {
 	String orderNumberLabelSTR = null;
 	String thankYouPagePaymentDeadlineSTR = null;
 	String thankYouPageorderNumberLabelSTR = null;
+	String productNameFromProductListPage = null;
+	String productPriceFromProductListPage = null;
 
 	@And("^Select 1st product from product list page$")
 	public void select_1st_product_from_product_list_page() throws Throwable {
 		orderObj.select1stCasecProduct();
+
+		String[] str_Array = orderObj.select1stCasecProduct();
+		System.out.println("Array returned from method:" + Arrays.toString(str_Array));
+
+		productNameFromProductListPage = str_Array[0].toString();
+		log.info("Product name from product list page:- " + productNameFromProductListPage);
+
+		productPriceFromProductListPage = str_Array[1].toString();
+		log.info("Product price from product list page:- " + productPriceFromProductListPage);
+
 	}
 
 	@And("^Select 1st kanji product from product list page$")
@@ -37,7 +49,17 @@ public class PF_Order extends NewBaseClass {
 
 	@And("^Step 1 page proceed to next page$")
 	public void step_1_page_proceed_to_next_page() throws Throwable {
-		orderObj.methodForOrderFlowStep1();
+		orderObj.methodForOrderFlowStep1(productNameFromProductListPage, productPriceFromProductListPage);
+	}
+
+	@And("^Step 2 page proceed to next page$")
+	public void step_2_page_proceed_to_next_page() throws Throwable {
+		orderObj.methodForOrderFlowStep2(productNameFromProductListPage, productPriceFromProductListPage);
+	}
+
+	@And("^Step 3 page proceed to next page$")
+	public void step_3_page_proceed_to_next_page() throws Throwable {
+		orderObj.methodForOrderFlowStep3(productNameFromProductListPage, productPriceFromProductListPage);
 	}
 
 	@And("^Open Product List Page$")
@@ -88,16 +110,6 @@ public class PF_Order extends NewBaseClass {
 	@And("^Reglogin between Step 1 page to Step 2 page$")
 	public void reglogin_between_step_1_page_to_step_2_page() throws Throwable {
 		orderObj.methodForReloginForOrderFlow();
-	}
-
-	@And("^Step 2 page proceed to next page$")
-	public void step_2_page_proceed_to_next_page() throws Throwable {
-		orderObj.methodForOrderFlowStep2();
-	}
-
-	@And("^Step 3 page proceed to next page$")
-	public void step_3_page_proceed_to_next_page() throws Throwable {
-		orderObj.methodForOrderFlowStep3();
 	}
 
 	@And("^Step 2 Payment With Valid Credit Card$")

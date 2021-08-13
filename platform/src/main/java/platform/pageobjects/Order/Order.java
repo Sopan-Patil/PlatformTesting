@@ -37,6 +37,12 @@ public class Order {
 	@FindBy(xpath = "//a[@href='/product-list']")
 	public WebElement productListLink;
 
+	@FindBy(xpath = "//p[@class=\"ep-card-product__title\"]//span")
+	public WebElement productListProductName;
+
+	@FindBy(xpath = "//div[@class=\"ep-card-product__price\"]//span")
+	public WebElement productListProductPrice;
+
 	@FindBy(xpath = "//span[@class='teaser-head__text-member'][1]")
 	public WebElement topPageMemberPlanLink;
 
@@ -282,22 +288,85 @@ public class Order {
 	@FindBy(xpath = "//a[@class='button button--blue1 button--xsmall font-weight-normal']//span")
 	public WebElement primeButtonOnHeaderPage;
 
+	// --------------ordstep 1
+
+	@FindBy(xpath = "//div[@class='box-order-confirm']/div[2]/div[2]/div[2]/div[1]/p[2]/span")
+	public WebElement step1ProductPriceExcludingTaxLabel;
+
+	@FindBy(xpath = "//div[@class='box-order-confirm']/div[2]/div[2]/div[2]/div[2]/p[2]/span")
+	public WebElement step1ProductSubtotalLabel;
+
+	@FindBy(xpath = "//div[@class='box-order-confirm']/div[2]/div[2]/div[2]/div[3]/p[2]/span")
+	public WebElement step1ProductConsumptionTaxTenPerLabel;
+
+	@FindBy(xpath = "//div[@class='box-order-confirm']/div[2]/div[2]/div[2]/div[4]/p[2]/span")
+	public WebElement step1ProductBilledAmountLabel;
+
+	// --------------step 2 円
+
+	@FindBy(xpath = "//*[@id=\"form\"]/div[2]/div/div[2]/div[1]/p[2]")
+	public WebElement step2ProductPriceExcludingTaxLabelWithSymbol;
+
+	@FindBy(xpath = "//*[@id=\"form\"]/div[2]/div/div[2]/div[2]/p[2]")
+	public WebElement step2ProductSubtotalLabelWithSymbol;
+
+	@FindBy(xpath = "//*[@id=\"form\"]/div[2]/div/div[2]/div[3]/p[2]")
+	public WebElement step2ProductConsumptionTaxTenPerLabelWithSymbol;
+
+	@FindBy(xpath = "//*[@id=\"form\"]/div[2]/div/div[2]/div[4]/p[2]")
+	public WebElement step2ProductBilledAmountLabelWithSymbol;
+
+	// --------------step 3 円
+
+	@FindBy(xpath = "//div[@class='box-order-confirm']/div[2]/div[1]/p[2]")
+	public WebElement step3ProductPriceExcludingTaxLabelWithSymbol;
+
+	@FindBy(xpath = "//div[@class='box-order-confirm']/div[2]/div[2]/p[2]")
+	public WebElement step3ProductSubtotalLabelWithSymbol;
+
+	@FindBy(xpath = "//div[@class='box-order-confirm']/div[2]/div[3]/p[2]")
+	public WebElement step3ProductConsumptionTaxTenPerLabelWithSymbol;
+
+	@FindBy(xpath = "//div[@class='box-order-confirm']/div[2]/div[4]/p[2]")
+	public WebElement step3ProductBilledAmountLabelWithSymbol;
+
+	@FindBy(xpath = "//div[@class='box-order-confirm__des']//p[2]")
+	public WebElement step2And3ProductNameLabel;
+
+	@FindBy(xpath = "//div[@class='box-order-confirm__title']//span")
+	public WebElement step1ProductNameLabel;
+
 	// not used
 	@FindBy(xpath = "//button[@type='submit']")
 	public WebElement SubmitButton;
 	// not used
 
 	// product list
-	public void select1stCasecProduct() throws Exception {
+	public String[] select1stCasecProduct() throws Exception {
 
 		CommonFunctions.waitForVisiblity(productListLink, waitTime);
 		productListLink.click();
 		log.info("Click on product list page");
 
+		CommonFunctions.isElementVisible(productListProductName);
+		String productListProductNameTxtWithMultiLine = productListProductName.getText().trim();
+
+		String productListProductNameTxt = productListProductNameTxtWithMultiLine.replaceAll("\n", "");
+		log.info("The product name from product list page " + productListProductNameTxt);
+
+		CommonFunctions.isElementVisible(productListProductPrice);
+		String productListProductPriceTxtWithSymbol = productListProductPrice.getText().trim();
+		String productListProductPriceTxt = productListProductPriceTxtWithSymbol.replaceAll(",", "");
+		log.info("The product price from product list page " + productListProductPriceTxt);
+
 		CommonFunctions.waitForVisiblity(selectCasec1ProductFromProductList, waitTime);
 		selectCasec1ProductFromProductList.click();
 		log.info("Click on buy button from product list page,select 1st product-CASEC １");
 
+		// define string array
+		String[] ret_Array = { productListProductNameTxt, productListProductPriceTxt };
+		// return string array
+		return ret_Array;
 	}
 
 	public void openProductListPage() throws Exception {
@@ -381,9 +450,71 @@ public class Order {
 	}
 
 	// Order flow step 1
-	public void methodForOrderFlowStep1() throws Exception {
+	public void methodForOrderFlowStep1(String productNameFromProductListPage, String productPriceFromProductListPage)
+			throws Exception {
 
-		CommonFunctions.isElementVisible(step1ProceedButton);
+		String productNameFromProductListPageSTR = productNameFromProductListPage;
+		String productPriceFromProductListPageSTR = productPriceFromProductListPage;
+
+		CommonFunctions.waitForVisiblity(step1ProductNameLabel, waitTime);
+		String step1And2And3ProductNameLabelString = step1ProductNameLabel.getText().trim();
+		CommonFunctions.assertString(step1And2And3ProductNameLabelString, productNameFromProductListPageSTR);
+		log.info("Order Step 1 product name match with product name from product list page");
+
+		CommonFunctions.waitForVisiblity(step1ProductPriceExcludingTaxLabel, waitTime);
+		String step1ProductPriceExcludingTaxLabelString = step1ProductPriceExcludingTaxLabel.getText().trim();
+		int step1ProductPriceExcludingTaxLabelSTR = CommonFunctions
+				.stringToInt(step1ProductPriceExcludingTaxLabelString);
+		log.info("Order Step 1 Price (excluding tax):- " + step1ProductPriceExcludingTaxLabelSTR);
+
+		CommonFunctions.waitForVisiblity(step1ProductSubtotalLabel, waitTime);
+		String step1ProductSubtotalLabelString = step1ProductSubtotalLabel.getText().trim();
+		int step1ProductSubtotalLabelSTR = CommonFunctions.stringToInt(step1ProductSubtotalLabelString);
+		log.info("Order Step 1 Price Subtotal:- " + step1ProductSubtotalLabelSTR);
+
+		// check Price (excluding tax) and subtotal is same or not
+		CommonFunctions.assertInt(step1ProductPriceExcludingTaxLabelSTR, step1ProductSubtotalLabelSTR);
+		log.info("Price (excluding tax) and subtotal have same amount");
+
+		// expected Consumption tax 10% from subtotal
+		String tenPerTaxString = "0.10";
+		Float tenPerTaxFloatValue = CommonFunctions.stringToFloat(tenPerTaxString);
+		Float calculatedTenPerValue = step1ProductSubtotalLabelSTR * tenPerTaxFloatValue;
+		Float calculatedTenPerRoundedValue = (float) Math.round(calculatedTenPerValue);
+		int calculatedTenPerIntValue = CommonFunctions.floatToInt(calculatedTenPerRoundedValue);
+		log.info("Order Step 1 Price rounded value:- " + calculatedTenPerIntValue);
+
+		// calculate Consumption tax 10% from subtotal
+		CommonFunctions.waitForVisiblity(step1ProductConsumptionTaxTenPerLabel, waitTime);
+		String step1ProductConsumptionTaxTenPerLabelSTR = step1ProductConsumptionTaxTenPerLabel.getText().trim();
+		Float ExpectedTenPerTaxFloatValue = CommonFunctions.stringToFloat(step1ProductConsumptionTaxTenPerLabelSTR);
+		int ExpectedTenPerTaxIntValue = CommonFunctions.floatToInt(ExpectedTenPerTaxFloatValue);
+		log.info("Order Step 1 Price Consumption tax 10%:- " + ExpectedTenPerTaxIntValue);
+
+		// check expected and actual Consumption tax 10%
+		CommonFunctions.assertInt(calculatedTenPerIntValue, ExpectedTenPerTaxIntValue);
+		log.info("expected and actual Consumption tax 10% values is matched");
+
+		// addition of subtotal + Consumption tax 10%
+		int expectedBilledAmountIntValue = CommonFunctions.additionOfInt(ExpectedTenPerTaxIntValue,
+				step1ProductSubtotalLabelSTR);
+		log.info("addition of subtotal + Consumption tax 10% is " + expectedBilledAmountIntValue);
+
+		CommonFunctions.waitForVisiblity(step1ProductBilledAmountLabel, waitTime);
+		String step1ProductBilledAmountLabelString = step1ProductBilledAmountLabel.getText().trim();
+		int step1ProductBilledAmountLabelSTR = CommonFunctions.stringToInt(step1ProductBilledAmountLabelString);
+		log.info("Order Step 1 Billed amount:- " + step1ProductBilledAmountLabelSTR);
+
+		// check expected Billed Amount and actual billed amount
+		CommonFunctions.assertInt(expectedBilledAmountIntValue, step1ProductBilledAmountLabelSTR);
+		log.info("expected Billed Amount and actual billed amount is matched ");
+
+		int productPriceFromProductListPageInt = CommonFunctions.stringToInt(productPriceFromProductListPageSTR);
+
+		// check expected Billed Amount and amount came from product list
+		CommonFunctions.assertInt(productPriceFromProductListPageInt, step1ProductBilledAmountLabelSTR);
+		log.info("expected Billed Amount and amount came from product list is matched ");
+
 		CommonFunctions.waitForVisiblity(step1ProceedButton, waitTime);
 		step1ProceedButton.click();
 		log.info("Step 1 tab :- click to 'To payment method selection' button");
@@ -404,9 +535,82 @@ public class Order {
 	}
 
 	// Order flow step 2
-	public void methodForOrderFlowStep2() throws Exception {
+	public void methodForOrderFlowStep2(String productNameFromProductListPage, String productPriceFromProductListPage)
+			throws Exception {
 
-		// CommonFunctions.isElementVisible(step2ProceedButton);
+		String productNameFromProductListPageSTR = productNameFromProductListPage;
+		String productPriceFromProductListPageSTR = productPriceFromProductListPage;
+
+		CommonFunctions.waitForVisiblity(step2And3ProductNameLabel, waitTime);
+		String step1And2And3ProductNameLabelString = step2And3ProductNameLabel.getText().trim();
+		CommonFunctions.assertString(step1And2And3ProductNameLabelString, productNameFromProductListPageSTR);
+		log.info("Order Step 2 product name match with product name from product list page");
+
+		CommonFunctions.waitForVisiblity(step2ProductPriceExcludingTaxLabelWithSymbol, waitTime);
+		String step2ProductPriceExcludingTaxLabelWithSymbolSTR = step2ProductPriceExcludingTaxLabelWithSymbol.getText()
+				.trim();
+		String step2ProductPriceExcludingTaxLabelWithSymbol = step2ProductPriceExcludingTaxLabelWithSymbolSTR
+				.replaceAll("円", "");
+		int step2ProductPriceExcludingTaxLabelSTR = CommonFunctions
+				.stringToInt(step2ProductPriceExcludingTaxLabelWithSymbol);
+		log.info("Order Step 2 Price (excluding tax):- " + step2ProductPriceExcludingTaxLabelSTR);
+
+		CommonFunctions.waitForVisiblity(step2ProductSubtotalLabelWithSymbol, waitTime);
+		String step2ProductSubtotalLabelWithSymbolStringSTR = step2ProductSubtotalLabelWithSymbol.getText().trim();
+		String step2ProductSubtotalLabelWithSymbolString = step2ProductSubtotalLabelWithSymbolStringSTR.replaceAll("円",
+				"");
+		int step2ProductSubtotalLabelSTR = CommonFunctions.stringToInt(step2ProductSubtotalLabelWithSymbolString);
+		log.info("Order Step 2 Price Subtotal:- " + step2ProductSubtotalLabelSTR);
+
+		// check Price (excluding tax) and subtotal is same or not
+		CommonFunctions.assertInt(step2ProductPriceExcludingTaxLabelSTR, step2ProductSubtotalLabelSTR);
+		log.info("Price (excluding tax) and subtotal have same amount");
+
+		// expected Consumption tax 10% from subtotal
+		String tenPerTaxString = "0.10";
+		Float tenPerTaxFloatValue = CommonFunctions.stringToFloat(tenPerTaxString);
+		Float calculatedTenPerValue = step2ProductSubtotalLabelSTR * tenPerTaxFloatValue;
+		Float calculatedTenPerRoundedValue = (float) Math.round(calculatedTenPerValue);
+		int calculatedTenPerIntValue = CommonFunctions.floatToInt(calculatedTenPerRoundedValue);
+		log.info("Order Step 2 Price rounded value:- " + calculatedTenPerIntValue);
+
+		// calculate Consumption tax 10% from subtotal
+		CommonFunctions.waitForVisiblity(step2ProductConsumptionTaxTenPerLabelWithSymbol, waitTime);
+		String step2ProductConsumptionTaxTenPerLabelWithSymbolSTR = step2ProductConsumptionTaxTenPerLabelWithSymbol
+				.getText().trim();
+		String step2ProductConsumptionTaxTenPerLabelWithSymbolString = step2ProductConsumptionTaxTenPerLabelWithSymbolSTR
+				.replaceAll("円", "");
+		Float ExpectedTenPerTaxFloatValue = CommonFunctions
+				.stringToFloat(step2ProductConsumptionTaxTenPerLabelWithSymbolString);
+		int ExpectedTenPerTaxIntValue = CommonFunctions.floatToInt(ExpectedTenPerTaxFloatValue);
+		log.info("Order Step 2 Price Consumption tax 10%:- " + ExpectedTenPerTaxIntValue);
+
+		// check expected and actual Consumption tax 10%
+		CommonFunctions.assertInt(calculatedTenPerIntValue, ExpectedTenPerTaxIntValue);
+		log.info("expected and actual Consumption tax 10% values is matched");
+
+		// addition of subtotal + Consumption tax 10%
+		int expectedBilledAmountIntValue = CommonFunctions.additionOfInt(ExpectedTenPerTaxIntValue,
+				step2ProductSubtotalLabelSTR);
+		log.info("addition of subtotal + Consumption tax 10% is " + expectedBilledAmountIntValue);
+
+		CommonFunctions.waitForVisiblity(step2ProductBilledAmountLabelWithSymbol, waitTime);
+		String step2ProductBilledAmountLabelTrimSTR = step2ProductBilledAmountLabelWithSymbol.getText().trim();
+		String step2ProductBilledAmountLabelString = step2ProductBilledAmountLabelTrimSTR.replaceAll("円", "");
+		int step2ProductBilledAmountLabelSTR = CommonFunctions.stringToInt(step2ProductBilledAmountLabelString);
+		log.info("Order Step 2 Billed amount:- " + step2ProductBilledAmountLabelSTR);
+
+		////////////// check with assert
+		// check expected Billed Amount and actual billed amount
+		CommonFunctions.assertInt(expectedBilledAmountIntValue, step2ProductBilledAmountLabelSTR);
+		log.info("expected Billed Amount and actual billed amount is matched ");
+
+		int productPriceFromProductListPageInt = CommonFunctions.stringToInt(productPriceFromProductListPageSTR);
+
+		// check expected Billed Amount and amount came from product list
+		CommonFunctions.assertInt(productPriceFromProductListPageInt, step2ProductBilledAmountLabelSTR);
+		log.info("expected Billed Amount and amount came from product list is matched ");
+
 		CommonFunctions.waitForVisiblity(step2ProceedButton, waitTime);
 		step2ProceedButton.click();
 		log.info("Step 2 tab :- click to 'Confirmation of order details' button");
@@ -414,9 +618,79 @@ public class Order {
 	}
 
 	// Order flow step 3
-	public void methodForOrderFlowStep3() throws Exception {
+	public void methodForOrderFlowStep3(String productNameFromProductListPage, String productPriceFromProductListPage)
+			throws Exception {
 
-		// CommonFunctions.isElementVisible(step3ConfirmOrderButton);
+		String productNameFromProductListPageSTR = productNameFromProductListPage;
+		String productPriceFromProductListPageSTR = productPriceFromProductListPage;
+
+		CommonFunctions.waitForVisiblity(step2And3ProductNameLabel, waitTime);
+		String step1And2And3ProductNameLabelString = step2And3ProductNameLabel.getText().trim();
+		CommonFunctions.assertString(step1And2And3ProductNameLabelString, productNameFromProductListPageSTR);
+		log.info("Order Step 3 product name match with product name from product list page");
+
+		CommonFunctions.waitForVisiblity(step3ProductPriceExcludingTaxLabelWithSymbol, waitTime);
+		String step3ProductPriceExcludingTaxLabelWithSymbolSTR = step3ProductPriceExcludingTaxLabelWithSymbol.getText()
+				.trim();
+		String step3ProductPriceExcludingTaxLabel = step3ProductPriceExcludingTaxLabelWithSymbolSTR.replaceAll("円", "");
+		int step3ProductPriceExcludingTaxLabelSTR = CommonFunctions.stringToInt(step3ProductPriceExcludingTaxLabel);
+		log.info("Order Step 3 Price (excluding tax):- " + step3ProductPriceExcludingTaxLabelSTR);
+
+		CommonFunctions.waitForVisiblity(step3ProductSubtotalLabelWithSymbol, waitTime);
+		String step3ProductSubtotalLabelWithSymbolStringSTR = step3ProductSubtotalLabelWithSymbol.getText().trim();
+		String step3ProductSubtotalLabelWithSymbolString = step3ProductSubtotalLabelWithSymbolStringSTR.replaceAll("円",
+				"");
+		int step3ProductSubtotalLabelSTR = CommonFunctions.stringToInt(step3ProductSubtotalLabelWithSymbolString);
+		log.info("Order Step 3 Price Subtotal:- " + step3ProductSubtotalLabelSTR);
+
+		// check Price (excluding tax) and subtotal is same or not
+		CommonFunctions.assertInt(step3ProductPriceExcludingTaxLabelSTR, step3ProductSubtotalLabelSTR);
+		log.info("Price (excluding tax) and subtotal have same amount");
+
+		// expected Consumption tax 10% from subtotal
+		String tenPerTaxString = "0.10";
+		Float tenPerTaxFloatValue = CommonFunctions.stringToFloat(tenPerTaxString);
+		Float calculatedTenPerValue = step3ProductPriceExcludingTaxLabelSTR * tenPerTaxFloatValue;
+		Float calculatedTenPerRoundedValue = (float) Math.round(calculatedTenPerValue);
+		int calculatedTenPerIntValue = CommonFunctions.floatToInt(calculatedTenPerRoundedValue);
+		log.info("Order Step 3 Price rounded value:- " + calculatedTenPerIntValue);
+
+		// calculate Consumption tax 10% from subtotal
+		CommonFunctions.waitForVisiblity(step3ProductConsumptionTaxTenPerLabelWithSymbol, waitTime);
+		String step3ProductConsumptionTaxTenPerLabelWithSymbolSTR = step3ProductConsumptionTaxTenPerLabelWithSymbol
+				.getText().trim();
+		String step3ProductConsumptionTaxTenPerLabelString = step3ProductConsumptionTaxTenPerLabelWithSymbolSTR
+				.replaceAll("円", "");
+		Float ExpectedTenPerTaxFloatValue = CommonFunctions.stringToFloat(step3ProductConsumptionTaxTenPerLabelString);
+		int ExpectedTenPerTaxIntValue = CommonFunctions.floatToInt(ExpectedTenPerTaxFloatValue);
+		log.info("Order Step 3 Price Consumption tax 10%:- " + ExpectedTenPerTaxIntValue);
+
+		// check expected and actual Consumption tax 10%
+		CommonFunctions.assertInt(calculatedTenPerIntValue, ExpectedTenPerTaxIntValue);
+		log.info("expected and actual Consumption tax 10% values is matched");
+
+		// addition of subtotal + Consumption tax 10%
+		int expectedBilledAmountIntValue = CommonFunctions.additionOfInt(ExpectedTenPerTaxIntValue,
+				step3ProductSubtotalLabelSTR);
+		log.info("addition of subtotal + Consumption tax 10% is " + expectedBilledAmountIntValue);
+
+		CommonFunctions.waitForVisiblity(step3ProductBilledAmountLabelWithSymbol, waitTime);
+		String step3ProductBilledAmountLabelTrimSTR = step3ProductBilledAmountLabelWithSymbol.getText().trim();
+		String step3ProductBilledAmountLabelString = step3ProductBilledAmountLabelTrimSTR.replaceAll("円", "");
+		int step3ProductBilledAmountLabelSTR = CommonFunctions.stringToInt(step3ProductBilledAmountLabelString);
+		log.info("Order Step 3 Billed amount:- " + step3ProductBilledAmountLabelSTR);
+
+		////////////// check with assert
+		// check expected Billed Amount and actual billed amount
+		CommonFunctions.assertInt(expectedBilledAmountIntValue, step3ProductBilledAmountLabelSTR);
+		log.info("expected Billed Amount and actual billed amount is matched ");
+
+		int productPriceFromProductListPageInt = CommonFunctions.stringToInt(productPriceFromProductListPageSTR);
+
+		// check expected Billed Amount and amount came from product list
+		CommonFunctions.assertInt(productPriceFromProductListPageInt, step3ProductBilledAmountLabelSTR);
+		log.info("expected Billed Amount and amount came from product list is matched ");
+
 		CommonFunctions.scrolltoElement(step3ConfirmOrderButton);
 		CommonFunctions.waitForVisiblity(step3ConfirmOrderButton, waitTime);
 		step3ConfirmOrderButton.click();
