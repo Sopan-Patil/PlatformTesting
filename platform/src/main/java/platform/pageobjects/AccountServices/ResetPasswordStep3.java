@@ -80,4 +80,14 @@ public class ResetPasswordStep3 {
 		}
 	}
 
+	public void enterNewInvalidPasswordForConfirmation() {
+		String newInvalidPassword = newValidPassword + "invalid";
+		log.info("newInvalidPassword confirm:" + newInvalidPassword);
+		if (CommonFunctions.waitForVisiblity(passwordConfirmField, waitTime)) {
+
+			passwordConfirmField.click();
+			passwordConfirmField.sendKeys(newInvalidPassword);
+		}
+	}
+
 }

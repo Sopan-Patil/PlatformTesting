@@ -26,3 +26,12 @@ Scenario: Verify functionality of FAQ link reset password
 When User clicks on forgot password link
 And click on FAQ link
 Then Validate that FAQ link is open on reset password
+
+
+@PF_Password_ResetPassword_InvalidPassword
+Scenario: Functionality of reset password with invalid password
+When User clicks on forgot password link
+And enters email id to reset password
+And enters confirmation code
+And enters invalid password
+Then Validate that error message is displayed for invalid password

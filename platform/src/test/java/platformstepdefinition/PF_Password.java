@@ -121,4 +121,26 @@ public class PF_Password extends NewBaseClass {
 		resetPasswordStep1.clickFaqLink();
 	}
 
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date :12 Aug 2021
+	 * @Description: Methods for invalid password
+	 */
+
+	@Then("^Validate that error message is displayed for invalid password$")
+	public void validate_that_error_message_is_displayed_for_invalid_password() throws Throwable {
+		// throw new PendingException();
+		NewBaseClass newBaseClass = new NewBaseClass();
+		newBaseClass.validateMessage("Reset password", "InvalidPasswordError");
+	}
+
+	@And("^enters invalid password$")
+	public void enters_invalid_password() throws Throwable {
+		// throw new PendingException();
+		ResetPasswordStep3 resetPasswordStep3 = new ResetPasswordStep3(driver);
+		resetPasswordStep3.enterNewValidPassword();
+		resetPasswordStep3.enterNewInvalidPasswordForConfirmation();
+		resetPasswordStep3.clickCompleteResetButton();
+	}
+
 }
