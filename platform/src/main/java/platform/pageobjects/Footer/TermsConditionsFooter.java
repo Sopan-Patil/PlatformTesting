@@ -14,6 +14,12 @@ import org.openqa.selenium.support.PageFactory;
 import utils.CommonFunctions;
 import utils.XLHandler;
 
+/**
+ * @Author : Sanae Komatsu
+ * @Date of Creation : 2 Aug 2021
+ * @Description: Locator variables for Terms of Use Footer.
+ */
+
 public class TermsConditionsFooter {
 
 	List<String[]> testdata;
@@ -105,6 +111,12 @@ public class TermsConditionsFooter {
 
 	@FindBy(xpath = "//h1[@class='main-view__title ng-scope']")
 	public WebElement NAIOptouttextforWait;
+
+	/**
+	 * @Author : Sahaj Balgunde
+	 * @Date of Creation : 10 Aug 2021
+	 * @Description: Additional Locator variables and Methods for footer.
+	 */
 
 	// Testcase no: PT-122
 	public void ClickLinksinTermsandConditions() throws Exception {
