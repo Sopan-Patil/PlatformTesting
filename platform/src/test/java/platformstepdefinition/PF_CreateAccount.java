@@ -109,6 +109,48 @@ public class PF_CreateAccount extends NewBaseClass {
 
 	}
 
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 6 Aug 2021
+	 * @Description: step def for resend code functionality
+	 */
+
+	@Then("^Validate that new code is accepted$")
+	public void validate_that_new_code_is_accepted() throws Throwable {
+		// throw new PendingException();
+		CreateAccountStep3 createAccountStep3 = new CreateAccountStep3(driver);
+		Assert.assertTrue(CommonFunctions.isElementVisible(createAccountStep3.passwordField));
+
+	}
+
+	@And("^User clicks resend confirmation code$")
+	public void user_clicks_resend_confirmation_code() throws Throwable {
+
+		CreateAccountStep2 createAccountStep2 = new CreateAccountStep2(driver);
+		createAccountStep2.clickResendCodeLink();
+
+		NewBaseClass newBaseClass = new NewBaseClass();
+		newBaseClass.validateMessageFromExcel("ResendCodeMessage", "//div[@class='alert__title']");
+
+	}
+
+	@Then("^Validate that error is displayed for invalid code$")
+	public void validate_that_error_is_displayed_for_invalid_code() throws Throwable {
+
+		NewBaseClass newBaseClass = new NewBaseClass();
+		newBaseClass.validateMessageFromExcel("InvalidCodeError", "//p[@class='alert__des']");
+
+	}
+
+	@And("^User enters invalid code$")
+	public void user_enters_invalid_code() throws Throwable {
+		// throw new PendingException();
+		CreateAccountStep2 createAccountStep2 = new CreateAccountStep2(driver);
+		// createAccountStep2.convertOTPToList();
+		createAccountStep2.enterInvalidCode();
+		createAccountStep2.clickNextButton();
+	}
+
 	@Then("^Validate error message is displayed$")
 	public void validate_error_message_is_displayed() throws Throwable {
 		// throw new PendingException();

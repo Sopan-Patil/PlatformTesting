@@ -12,7 +12,9 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
+
 import org.testng.Assert;
 import org.testng.ITestResult;
 
@@ -346,26 +348,8 @@ public class NewBaseClass {
 	}
 
 	/**
-	 * @throws IOException
-	 * @Author : Chetan Sonparote
-	 * @Date :11 Aug 2021
-	 * @Description: Added common method for validating message from excel
-	 */
 
-	public void validateMessageFromExcel(String rowName, String xpath) throws IOException {
-		ArrayList<String> value = new ArrayList<String>();
-		value = XLHandler.readexcel("NewTestData.xlsx", "ValidationStrings", "Label", rowName);
-		log.info("value :" + value);
-		String expectedString = value.get(0).trim();
-		log.info("expectedString :" + expectedString);
 
-		String actualString = ObjectHelper.driver.findElement(By.xpath(xpath)).getText().trim();
-		log.info("actualString :" + actualString);
-		Assert.assertTrue(actualString.contains(expectedString));
-
-	}
-
-	/**
 	 * @throws IOException
 	 * @Author : Chetan Sonparote
 	 * @Date :12 Aug 2021
