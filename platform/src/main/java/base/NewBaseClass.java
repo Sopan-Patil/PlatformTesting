@@ -4,11 +4,16 @@ import java.awt.AWTException;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.ITestResult;
 
 import platform.properties.ConfigProp;
@@ -16,6 +21,7 @@ import utils.BrowserstackUtility;
 import utils.ClosePopup;
 import utils.ObjectHelper;
 import utils.WebHandler;
+import utils.XLHandler;
 
 /**
  * @Author : Chetan Sonparote 
@@ -37,7 +43,7 @@ import utils.WebHandler;
  */
 public class NewBaseClass {
 
-	public WebDriver driver;
+	public WebDriver driver = ObjectHelper.driver;
 	// public static LoginPage lp;
 
 	public static String greencolorRGB = "rgb(179, 198, 53)";
@@ -89,6 +95,8 @@ public class NewBaseClass {
 		ObjectHelper.driver.navigate().to(ObjectHelper.enviURL);// API
 
 		replaceurl();
+
+		// closeZkaiPopup();
 
 		/**
 		 * @Author : Sopan Patil
@@ -335,6 +343,74 @@ public class NewBaseClass {
 	public void refreshbrowser() {
 		// TODO Auto-generated method stub
 		WebHandler.refreshbrowser();
+	}
+
+	/**
+	 * 
+	 * 
+	 * @throws IOException
+	 * @Author : Chetan Sonparote
+	 * @Date :12 Aug 2021
+	 * @Description: method for validating message from new validation string excel
+	 */
+
+	public void validateMessage(String sheetName, String rowName) throws IOException {
+		log.info("sheetName :" + sheetName);
+		ArrayList<String> value = new ArrayList<String>();
+		value = XLHandler.readexcel("ValidationStrings.xlsx", sheetName, "Label", rowName);
+		log.info("value :" + value);
+		String xpath = value.get(1).trim();
+		String expectedString = value.get(2).trim();
+
+		log.info("expectedString :" + expectedString);
+
+		String actualString = ObjectHelper.driver.findElement(By.xpath(xpath)).getText().trim();
+		log.info("actualString :" + actualString);
+		Assert.assertTrue(actualString.contains(expectedString));
+	}
+
+	/**
+	 * @throws IOException
+	 * @Author : Chetan Sonparote
+	 * @Date :12 Aug 2021
+	 * @Description: method for validating opened link
+	 */
+
+	public void validateLink(WebElement element) {
+		log.info("Parent window title:" + ObjectHelper.driver.getTitle());
+		Set<String> ids = ObjectHelper.driver.getWindowHandles();
+		Iterator<String> iterator = ids.iterator();
+		String parentId = iterator.next();
+		String childId = iterator.next();
+		ObjectHelper.driver.switchTo().window(childId);
+		log.info("Child window title:" + ObjectHelper.driver.getTitle());
+
+		Assert.assertTrue(element.isDisplayed());
+		ObjectHelper.driver.close();
+
+		ObjectHelper.driver.switchTo().window(parentId);
+
+		// System.out.println(ObjectHelper.driver.getTitle());
+		log.info("Parent window title:" + ObjectHelper.driver.getTitle());
+	}
+
+	/**
+	 * @throws IOException
+	 * @Author : Chetan Sonparote
+	 * @Date :11 Aug 2021
+	 * @Description: Added common method for validating message from excel
+	 */
+
+	public void validateMessageFromExcel(String rowName, String xpath) throws IOException {
+		ArrayList<String> value = new ArrayList<String>();
+		value = XLHandler.readexcel("NewTestData.xlsx", "ValidationStrings", "Label", rowName);
+		log.info("value :" + value);
+		String expectedString = value.get(0).trim();
+		log.info("expectedString :" + expectedString);
+
+		String actualString = ObjectHelper.driver.findElement(By.xpath(xpath)).getText().trim();
+		log.info("actualString :" + actualString);
+		Assert.assertTrue(actualString.contains(expectedString));
 	}
 
 }

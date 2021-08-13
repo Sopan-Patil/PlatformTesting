@@ -36,11 +36,23 @@ public class CreateAccountStep2 {
 	@FindBy(xpath = "//a[@class='button button--default button--register-step-2 js-submit']")
 	public WebElement nextButton;
 
+	@FindBy(xpath = "//a[@onclick='resendCode()']")
+	public WebElement resendCodeLink;
+
 	public void clickNextButton() {
 
 		if (CommonFunctions.waitForVisiblity(nextButton, waitTime)) {
 
 			nextButton.click();
+		}
+
+	}
+
+	public void clickResendCodeLink() {
+
+		if (CommonFunctions.waitForVisiblity(resendCodeLink, waitTime)) {
+
+			resendCodeLink.click();
 		}
 
 	}
@@ -80,6 +92,13 @@ public class CreateAccountStep2 {
 	public WebElement findLocatorForCodeDigit(int digit) {
 
 		return driver.findElement(By.xpath("//input[@id='code" + digit + "']"));
+	}
+
+	public void enterInvalidCode() {
+		WebElement invalidCodeField;
+
+		invalidCodeField = findLocatorForCodeDigit(1);
+		invalidCodeField.sendKeys("1");
 	}
 
 }
