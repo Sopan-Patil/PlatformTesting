@@ -2,6 +2,7 @@ package platform.pageobjects.Header;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,7 +26,7 @@ public class Header extends NewBaseClass {
 	List<String[]> testdata;
 	public WebDriver driver;
 	private static Logger log = LogManager.getLogger(Header.class.getName());
-	int waitTime = 1;
+	int waitTime = 5;
 
 	public Header(WebDriver driver) {
 		this.driver = driver;
@@ -110,6 +111,8 @@ public class Header extends NewBaseClass {
 	// Method : switches the current tab to the first tab
 	public void switchToPreviousTab() {
 		ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
+		driver.switchTo().window(tab.get(1));
+		driver.close();
 		driver.switchTo().window(tab.get(0));
 	}
 
@@ -123,7 +126,7 @@ public class Header extends NewBaseClass {
 		CommonFunctions.isElementVisible(y);
 		CommonFunctions.waitForVisiblity(y, waitTime);
 		y.click();
-
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 	}
 
 	// Method : Checks the Header menu and SubMenu Links
@@ -323,17 +326,17 @@ public class Header extends NewBaseClass {
 
 		clickSubMenu(informationWindowLink, cramSchoolPitaLink);
 		log.info("Opened Cram School Pita submenu");
-		driver.navigate().back();
+		switchToPreviousTab();
 		log.info("Back on Previous Page");
 
 		clickSubMenu(informationWindowLink, stagiaUniversityExamLink);
 		log.info("Opened Stagia University submenu");
-		driver.navigate().back();
+		switchToPreviousTab();
 		log.info("Back on Previous Page");
 
 		clickSubMenu(informationWindowLink, educationCostConsultationSupportLink);
 		log.info("Opened Education Cost Consultation Support Link submenu");
-		driver.navigate().back();
+		switchToPreviousTab();
 		log.info("Back on Previous Page");
 	}
 
