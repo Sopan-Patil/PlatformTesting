@@ -6,5 +6,5 @@ Feature: Validate Product Filter feature
 
 Given Login To Platform
 Then Click on Product List
-#Then Validate CASEC Product Details
+Then Validate CASEC Product Details
 And logout
