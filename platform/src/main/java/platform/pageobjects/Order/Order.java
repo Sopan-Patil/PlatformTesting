@@ -608,7 +608,7 @@ public class Order {
 
 		CommonFunctions.waitForVisiblity(orderHistoryOrderNumberLabel, waitTime);
 		String orderHistoryOrderNumberLabeltrim = orderHistoryOrderNumberLabel.getText();
-		String orderHistoryOrderNumberLabelSTR = orderHistoryOrderNumberLabeltrim.substring(6, 31);
+		String orderHistoryOrderNumberLabelSTR = orderHistoryOrderNumberLabeltrim.substring(7, 31);
 		log.info("Order history page:- order number is " + orderHistoryOrderNumberLabelSTR);
 		CommonFunctions.assertString(expectedThankYouPageorderNumberLabelSTR, orderHistoryOrderNumberLabelSTR);
 
@@ -750,7 +750,7 @@ public class Order {
 
 		CommonFunctions.waitForVisiblity(orderHistoryOrderNumberLabel, waitTime);
 		String orderHistoryOrderNumberLabelforTrim = orderHistoryOrderNumberLabel.getText();
-		String orderHistoryOrderNumberLabelSTR = orderHistoryOrderNumberLabelforTrim.substring(6, 31);
+		String orderHistoryOrderNumberLabelSTR = orderHistoryOrderNumberLabelforTrim.substring(7, 31);
 		log.info("Order history page:- order number is " + orderHistoryOrderNumberLabelSTR);
 		CommonFunctions.assertString(expectedOrderNumberLabelSTR, orderHistoryOrderNumberLabelSTR);
 
