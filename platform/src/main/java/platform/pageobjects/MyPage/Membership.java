@@ -53,7 +53,7 @@ public class Membership {
 	public WebElement orderDetails;
 
 	public void becomePrimeMember() throws Exception {
-		shipmentdata = XLHandler.readexcel("MembershipPlanAssert", "NewTestData.xlsx");
+		shipmentdata = XLHandler.readexcel("MemberPlanAssert", "NewTestData.xlsx");
 		CommonFunctions.scrolltoElement(applyPrime);
 		if (CommonFunctions.isElementClickable(applyPrime)) {
 			applyPrime.click();
@@ -103,7 +103,7 @@ public class Membership {
 	}
 
 	public void introduceMembershipPlan() throws Exception {
-		shipmentdata = XLHandler.readexcel("MembershipPlanAssert", "NewTestData.xlsx");
+		shipmentdata = XLHandler.readexcel("MemberPlanAssert", "NewTestData.xlsx");
 		CommonFunctions.scrolltoElement(applyPrime);
 		CommonFunctions.isElementVisible(applyPrime);
 		applyPrime.click();
