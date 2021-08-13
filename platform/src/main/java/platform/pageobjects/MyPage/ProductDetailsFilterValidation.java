@@ -1,9 +1,11 @@
 package platform.pageobjects.MyPage;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +13,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import utils.CommonFunctions;
-import utils.XLHandler;
+import utils.ExcelUtil;
 
 /**
  * @Author : Sopan Patil
@@ -23,7 +25,7 @@ public class ProductDetailsFilterValidation {
 	public WebDriver driver;
 	private static Logger log = LogManager.getLogger(ProductDetailsFilterValidation.class.getName());
 	int waitTime = 5;
-	String[] shipmentdata;
+	String casecProduct, kanjikenteiProduct;
 	String freeuser, primeuser;
 
 	public ProductDetailsFilterValidation(WebDriver driver) {
@@ -46,6 +48,12 @@ public class ProductDetailsFilterValidation {
 	@FindBy(xpath = "//select[@id='type']")
 	public WebElement productTypeDropdown;
 
+	@FindBy(xpath = "//div[@class='ep-filter__button']")
+	public WebElement narrowDownButton;
+
+	@FindBy(xpath = "//div[@class='ep-product-list__row']")
+	public WebElement productListCard;
+
 	public void clickProductList() {
 		if (CommonFunctions.waitForVisiblity(productDetails, waitTime)) {
 			productDetails.click();
@@ -53,32 +61,79 @@ public class ProductDetailsFilterValidation {
 	}
 
 	public void CheckProductFilterFeture() throws Exception {
-		shipmentdata = XLHandler.readexcel("MembershipStatus", "NewTestData.xlsx");
-		freeuser = shipmentdata[0].toString();
-		primeuser = shipmentdata[1].toString();
+
+		ExcelUtil excel = new ExcelUtil();
+		excel.setExcelFile("NewTestData.xlsx", "MembershipStatus");
+		freeuser = excel.getCellData("Freeuser", 1);
+		primeuser = excel.getCellData("Primeuser", 1);
 		if (freeMemberTitle.getText().contentEquals(freeuser)) {
 			productDetails.click();
-			log.info("This is  free user");
-			CheckFreeMembershipProductetails();
+			log.info("This is free user");
+			CheckFreeMembership_CASEC_Productetails();
+			CheckFreeMembership_kanjikentei_Productetails();
 		} else if (primeMemberTitle.getText().contentEquals(primeuser)) {
 			productDetails.click();
 			log.info("This is prime user");
-			CheckPrimeMembershipProductetails();
+			// CheckPrimeMembership_CASEC_Productetails();
+			// CheckFreeMembership_kanjikentei_Productetails();
 		}
 	}
 
-	public void CheckFreeMembershipProductetails() throws Exception {
+	public void CheckFreeMembership_CASEC_Productetails() throws Exception {
 		if (CommonFunctions.waitForVisiblity(productDropdown, waitTime)) {
-			Select productselect = new Select(productDropdown);
-			productselect.selectByVisibleText("CASEC");
-			log.info("Free user is Selected CASEC product");
+			ExcelUtil excel = new ExcelUtil();
+			excel.setExcelFile("NewTestData.xlsx", "MembershipStatus");
+			casecProduct = excel.getCellData("CASEC", 1);
+			// WebElement targetDropdown = driver.findElement(By.id("order-same"));
+			Select target = new Select(productDropdown);
+			List<WebElement> targetListElements = target.getOptions();
+			List<String> targetList = new ArrayList<String>();
+			for (WebElement webElement : targetListElements) {
+				targetList.add(webElement.getText());
+				System.out.println(targetList.toString());
+				System.out.println(targetList.equals(casecProduct));
+				System.out.println(targetList.add(webElement.getText()));
+				if (targetList.equals(casecProduct)) {
+					Select productselect = new Select(productDropdown);
+					productselect.selectByVisibleText(casecProduct);
+					log.info("Free user is Selected CASEC product");
+					narrowDownButton.click();
+					List<WebElement> elements = driver
+							.findElements(By.xpath("//div[@class='ep-product-list__row']/div"));
+					for (int i = 0; i < elements.size(); i++) {
+						System.out.println(i);
+						System.out.println(elements.get(i).getTagName());
+						System.out.println(elements.get(i).getText());
+					}
+				}
+			}
 		}
+	}
 
-		if (CommonFunctions.waitForVisiblity(productTypeDropdown, waitTime)) {
-			Select producttypeselect = new Select(productTypeDropdown);
-			producttypeselect.selectByVisibleText("検定受験");
-			log.info("Free user is Selected Examination product type");
+	public void CheckFreeMembership_kanjikentei_Productetails() throws Exception {
+		if (CommonFunctions.waitForVisiblity(productDropdown, waitTime)) {
+			ExcelUtil excel = new ExcelUtil();
+			excel.setExcelFile("NewTestData.xlsx", "MembershipStatus");
+			kanjikenteiProduct = excel.getCellData("Kanji Kentei", 1);
+			if (kanjikenteiProduct.contentEquals(productDropdown.getText())) {
+				Select productselect = new Select(productDropdown);
+				productselect.selectByVisibleText(kanjikenteiProduct);
+				log.info("Free user is Selected kanjikentei product");
+				narrowDownButton.click();
+				List<WebElement> elements = driver.findElements(By.xpath("//div[@class='ep-product-list__row']/div"));
+				for (int i = 0; i < elements.size(); i++) {
+					System.out.println(i);
+					System.out.println(elements.get(i).getTagName());
+					System.out.println(elements.get(i).getText());
+				}
+			}
 		}
+//		if (CommonFunctions.waitForVisiblity(productTypeDropdown, waitTime)) {
+//			Select producttypeselect = new Select(productTypeDropdown);
+//			producttypeselect.selectByVisibleText("検定受験");
+//			log.info("Free user is Selected Examination product type");
+//			narrowDownButton.click();
+//		}
 	}
 
 	public void CheckPrimeMembershipProductetails() throws Exception {
@@ -86,14 +141,20 @@ public class ProductDetailsFilterValidation {
 			Select productselect = new Select(productDropdown);
 			productselect.selectByVisibleText("CASEC");
 			log.info("Prime user is Selected CASEC product");
+			narrowDownButton.click();
+			List<WebElement> elements = driver.findElements(By.xpath("//div[@class='ep-product-list__row']/div"));
+			for (int i = 0; i < elements.size(); i++) {
+				System.out.println(i);
+				System.out.println(elements.get(i).getTagName());
+			}
 		}
 
-		if (CommonFunctions.waitForVisiblity(productTypeDropdown, waitTime))
-
-		{
-			Select producttypeselect = new Select(productTypeDropdown);
-			producttypeselect.selectByVisibleText("検定受験");
-			log.info("Prime user is Selected Examination product type");
-		}
+//		if (CommonFunctions.waitForVisiblity(productTypeDropdown, waitTime))
+//
+//		{
+//			Select producttypeselect = new Select(productTypeDropdown);
+//			producttypeselect.selectByVisibleText("検定受験");
+//			log.info("Prime user is Selected Examination product type");
+//		}
 	}
 }

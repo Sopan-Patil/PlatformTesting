@@ -26,8 +26,15 @@ public class PF_ProductDetailsFilterValidation extends NewBaseClass {
 
 	}
 
-	@Then("^Begin CASEC Product Filter$")
-	public void Begin_CASEC_Product_Filter() throws Throwable {
+	@Then("^Validate CASEC Product Details$")
+	public void Validate_CASEC_Product_Details() throws Throwable {
+		ProductDetailsFilterValidation ProductDetailsFilterValidation = new ProductDetailsFilterValidation(driver);
+		ProductDetailsFilterValidation.CheckProductFilterFeture();
+
+	}
+
+	@Then("^Validate Kanji Kentei Product Details$")
+	public void Validate_Kanji_Kentei_Product_Details() throws Throwable {
 		ProductDetailsFilterValidation ProductDetailsFilterValidation = new ProductDetailsFilterValidation(driver);
 		ProductDetailsFilterValidation.CheckProductFilterFeture();
 
