@@ -24,8 +24,8 @@ public class PF_Membership extends NewBaseClass {
 
 	}
 
-	@And("^User clicks on Membership Status$")
-	public void User_clicks_on_Membership_Status_() throws Throwable {
+	@And("^User clicks on Membership Status button$")
+	public void User_clicks_on_Membership_Status_button_() throws Throwable {
 		Membership membershipobj = new Membership(driver);
 		membershipobj.applyPrimeMembership();
 	}
