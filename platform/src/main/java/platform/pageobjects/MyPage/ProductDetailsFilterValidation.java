@@ -40,10 +40,10 @@ public class ProductDetailsFilterValidation {
 	@FindBy(xpath = "//a[@class='button button--blue1 button--xsmall font-weight-normal']/span")
 	public WebElement primeMemberTitle;
 
-	@FindBy(xpath = "//div[@class='select-container']")
+	@FindBy(xpath = "//select[@id='category']")
 	public WebElement productDropdown;
 
-	@FindBy(xpath = "//span[@id='select2-type-container']")
+	@FindBy(xpath = "//select[@id='type']")
 	public WebElement productTypeDropdown;
 
 	public void clickProductList() {
@@ -57,42 +57,42 @@ public class ProductDetailsFilterValidation {
 		freeuser = shipmentdata[0].toString();
 		primeuser = shipmentdata[1].toString();
 		if (freeMemberTitle.getText().contentEquals(freeuser)) {
-			log.info("free user is now in membership status page");
+			productDetails.click();
+			log.info("This is  free user");
 			CheckFreeMembershipProductetails();
 		} else if (primeMemberTitle.getText().contentEquals(primeuser)) {
-			log.info("prime user is now in membership status page");
+			productDetails.click();
+			log.info("This is prime user");
 			CheckPrimeMembershipProductetails();
 		}
 	}
 
 	public void CheckFreeMembershipProductetails() throws Exception {
-		if (CommonFunctions.waitForVisiblity(productTypeDropdown, waitTime)) {
-			productTypeDropdown.click();
-			Select ExpiryYear = new Select(productTypeDropdown);
-			ExpiryYear.selectByVisibleText("CASEC");
+		if (CommonFunctions.waitForVisiblity(productDropdown, waitTime)) {
+			Select productselect = new Select(productDropdown);
+			productselect.selectByVisibleText("CASEC");
 			log.info("Free user is Selected CASEC product");
 		}
 
-		if (CommonFunctions.waitForVisiblity(productDropdown, waitTime)) {
-			productDropdown.click();
-			Select ExpiryYear = new Select(productDropdown);
-			ExpiryYear.selectByVisibleText("Examination");
+		if (CommonFunctions.waitForVisiblity(productTypeDropdown, waitTime)) {
+			Select producttypeselect = new Select(productTypeDropdown);
+			producttypeselect.selectByVisibleText("検定受験");
 			log.info("Free user is Selected Examination product type");
 		}
 	}
 
 	public void CheckPrimeMembershipProductetails() throws Exception {
-		if (CommonFunctions.waitForVisiblity(productTypeDropdown, waitTime)) {
-			productTypeDropdown.click();
-			Select ExpiryYear = new Select(productTypeDropdown);
-			ExpiryYear.selectByVisibleText("CASEC");
+		if (CommonFunctions.waitForVisiblity(productDropdown, waitTime)) {
+			Select productselect = new Select(productDropdown);
+			productselect.selectByVisibleText("CASEC");
 			log.info("Prime user is Selected CASEC product");
 		}
 
-		if (CommonFunctions.waitForVisiblity(productDropdown, waitTime)) {
-			productDropdown.click();
-			Select ExpiryYear = new Select(productDropdown);
-			ExpiryYear.selectByVisibleText("Examination");
+		if (CommonFunctions.waitForVisiblity(productTypeDropdown, waitTime))
+
+		{
+			Select producttypeselect = new Select(productTypeDropdown);
+			producttypeselect.selectByVisibleText("検定受験");
 			log.info("Prime user is Selected Examination product type");
 		}
 	}
