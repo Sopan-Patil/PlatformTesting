@@ -205,6 +205,7 @@ public class XLHandler {
 
 	
 	
+	
 	/**
 	 * @Author : Chetan Sonparote
 	 * @Date :11 Aug 2021
@@ -256,7 +257,8 @@ public class XLHandler {
 					if(c.getCellType()==Cell.CELL_TYPE_STRING)
 					{
 						
-						value.add(cv.next().getStringCellValue());
+						value.add(c.getStringCellValue());
+					//	value.add(cv.next().getStringCellValue());
 					}
 					else
 					{
@@ -276,6 +278,7 @@ public class XLHandler {
 		workBook.close();
 		return value;
 	}
+
 
 }
 
