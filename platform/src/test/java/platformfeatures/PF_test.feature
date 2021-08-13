@@ -1,7 +1,7 @@
 Feature: Test browser
-@FeatureTest
+@PF_test
 Scenario: Test opening browser
-Then Close browser
+Then run test
 
 
 

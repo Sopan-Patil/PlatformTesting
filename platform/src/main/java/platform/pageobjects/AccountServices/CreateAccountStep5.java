@@ -1,5 +1,7 @@
 package platform.pageobjects.AccountServices;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -11,6 +13,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import platform.pageobjects.Authentication.LoginPage;
 import utils.CommonFunctions;
+import utils.XLHandler;
 
 /**
  * @Author : Chetan Sonparote
@@ -30,10 +33,10 @@ public class CreateAccountStep5 {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//*[@class='button__text' or contains(text(),'Start using the service')]")
+	@FindBy(xpath = "//a[@class='button button--default button--uplarge button--complete']")
 	public WebElement startServiceButton;
 
-	@FindBy(xpath = "//*[contains(text(),'スタギアトップへ') or contains(text(),'To the staggered top')]")
+	@FindBy(xpath = "//div[@class='link-step-5']")
 	public WebElement gotoTopLink;
 
 	public void clickStartServiceButton() {
@@ -53,4 +56,35 @@ public class CreateAccountStep5 {
 		}
 
 	}
+
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 29 Jul 2021
+	 * @Description:Method to get new account details
+	 */
+	public void getCreatedAccountDetails() {
+
+		log.info("Created email:" + CreateAccountStep1.email);
+		log.info("Created eid:" + CreateAccountStep1.eid);
+		log.info("Created password:" + CreateAccountStep3.password);
+
+	}
+
+	/**
+	 * @throws IOException
+	 * @Author : Chetan Sonparote
+	 * @Date :5 Aug 2021
+	 * @Description:Method to write new account details in excel
+	 */
+	public void writeCredentialsToExcel() throws IOException {
+
+		ArrayList<String> newLoginData = new ArrayList<>();
+
+		newLoginData.add(0, CreateAccountStep1.email);
+		newLoginData.add(1, CreateAccountStep3.password);
+		newLoginData.add(2, CreateAccountStep1.eid);
+
+		XLHandler.writeToExcel("NewUser", "NewTestData.xlsx", newLoginData);
+	}
+
 }

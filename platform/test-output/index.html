@@ -5,8 +5,9 @@
   <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
-    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -23,8 +24,9 @@
   <body>
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
+      <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-LocalSingleBrowser">
-              <span class="suite-name border-passed">LocalSingleBrowser</span>
+              <span class="suite-name border-failed">LocalSingleBrowser</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-LocalSingleBrowser" class="hide-methods failed suite-LocalSingleBrowser"> (hide)</a> <!-- hide-methods failed suite-LocalSingleBrowser -->
+                      <a href="#" panel-name="suite-LocalSingleBrowser" class="show-methods failed suite-LocalSingleBrowser"> (show)</a> <!-- show-methods failed suite-LocalSingleBrowser -->
+                    </span>
+                    <div class="method-list-content failed suite-LocalSingleBrowser">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-LocalSingleBrowser" title="platformrunner.Runner" hash-for-method="feature(Validate order flow)">feature(Validate order flow)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-LocalSingleBrowser -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -100,6 +116,11 @@
                       <a href="#" panel-name="suite-LocalSingleBrowser" class="show-methods passed suite-LocalSingleBrowser"> (show)</a> <!-- show-methods passed suite-LocalSingleBrowser -->
                     </span>
                     <div class="method-list-content passed suite-LocalSingleBrowser">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-LocalSingleBrowser" title="platformrunner.Runner" hash-for-method="feature(Validate Account information)">feature(Validate Account information)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-LocalSingleBrowser" title="platformrunner.Runner" hash-for-method="feature(Validate Invalid credit card no)">feature(Validate Invalid credit card no)</a> <!-- method navigator-link -->
@@ -117,12 +138,55 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-LocalSingleBrowser" class="panel LocalSingleBrowser">
+          <div class="suite-LocalSingleBrowser-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">platformrunner.Runner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="feature(Validate order flow)">
+                  </a> <!-- feature(Validate order flow) -->
+                  <span class="method-name">feature</span>
+                  <span class="parameters">(Validate order flow)</span>
+                  <div class="stack-trace">cucumber.runtime.CucumberException: java.lang.AssertionError: expected [true] but found [false]
+	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
+	at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
+	at java.util.ArrayList.forEach(ArrayList.java:1249)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.AssertionError: expected [true] but found [false]
+	at utils.CommonFunctions.assertString(CommonFunctions.java:129)
+	at platform.pageobjects.Order.Order.verifyLearnButtonFromServiceYouAreUsingPage(Order.java:788)
+	at platformstepdefinition.PF_Order.verify_learn_button_from_service_you_are_using_page(PF_Order.java:118)
+	at ✽.And Verify learn button from Service you are using page(PF_Order.feature:74)
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Feature)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-LocalSingleBrowser-class-failed -->
           <div class="suite-LocalSingleBrowser-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
               <span class="class-name">platformrunner.Runner</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="feature(Validate Account information)">
+                  </a> <!-- feature(Validate Account information) -->
+                  <span class="method-name">feature</span>
+                  <span class="parameters">(Validate Account information)</span>
+                  <em>
+(Runs Cucumber Feature)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="feature(Validate Invalid credit card no)">
@@ -143,12 +207,12 @@
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite thread-count=&quot;-1&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;LocalSingleBrowser&quot;&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;LocalSingleBrowser&quot; parallel=&quot;tests&quot;&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;listeners.Listeners&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test name=&quot;SingleBrowserTest&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;SingleBrowserTest&quot; parallel=&quot;tests&quot;&gt;
     &lt;parameter name=&quot;mode&quot; value=&quot;local&quot;/&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
@@ -200,16 +264,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'feature')
 data.setCell(0, 2, 'platformrunner.Runner')
-data.setCell(0, 3, 104276);
+data.setCell(0, 3, 451770);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'feature')
+data.setCell(1, 2, 'platformrunner.Runner')
+data.setCell(1, 3, 98465);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'feature')
+data.setCell(2, 2, 'platformrunner.Runner')
+data.setCell(2, 3, 44499);
 window.suiteTableData['LocalSingleBrowser']= { tableData: data, tableDiv: 'times-div-LocalSingleBrowser'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 10 minutes</span>
               <div id="times-div-LocalSingleBrowser">
               </div> <!-- times-div-LocalSingleBrowser -->
             </div> <!-- times-div -->
@@ -242,23 +314,34 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
-                <span class="method-start">18172 ms</span>
+                <span class="method-start">30721 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <span class="method-name">feature(Validate Account information)</span>
+                <span class="method-start">31000 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
                 <span class="method-name">feature(Validate Invalid credit card no)</span>
-                <span class="method-start">18539 ms</span>
+                <span class="method-start">75507 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">feature(Validate order flow)</span>
+                <span class="method-start">173973 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">122822 ms</span>
+                <span class="method-start">625887 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-test after">
-                <span class="method-name">closeBrowser(local)</span>
-                <span class="method-start">122875 ms</span>
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">625956 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
     </div> <!-- wrapper -->
   </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
 </html>

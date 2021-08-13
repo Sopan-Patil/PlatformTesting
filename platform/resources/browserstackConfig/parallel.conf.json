@@ -17,8 +17,8 @@
       "browser": "firefox"
     },
     "env3": {
-      "os": "OS X",
-      "browser": "safari"
+      
+      "browser": "edge"
     }
   }
 }

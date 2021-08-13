@@ -4,10 +4,13 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import base.NewBaseClass;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import cucumber.api.junit.Cucumber;
 import platform.pageobjects.Authentication.LoginPage;
+import utils.ObjectHelper;
 
 /**
  * @Author : Chetan Sonparote 
@@ -24,7 +27,7 @@ import platform.pageobjects.Authentication.LoginPage;
 @RunWith(Cucumber.class)
 public class PF_Login extends NewBaseClass {
 
-	public WebDriver driver;
+	public WebDriver driver = ObjectHelper.driver;
 
 	// String emailid = "";
 
@@ -45,34 +48,96 @@ public class PF_Login extends NewBaseClass {
 		LoginPage loginToPlatform = new LoginPage(driver);
 
 		loginToPlatform.loginToPlatform();
-		driver.close();
+
+		// driver.close();
+
 		// TopBar topBar = new TopBar(driver);
 		// topBar.clickSignUpLinkLink();
 
 	}
 
-	/*
-	 * @And("^Close browser$") public void close_browser() throws Throwable { // //
-	 * closebrowser(); }
+	/**
+	 * @Author : rahul shinde
+	 * @Date : 02 Aug 2021
+	 * @Description: Logout
 	 */
 
-	/*
-	 * @Given("^Navigate to URL with (.+) and (.+) PFQA_123_1$") public void
-	 * navigate_to_url_with_and_pfqa1231(String config, String environment) throws
-	 * Throwable { // throw new PendingException(); driver =
-	 * openBrowserstack(config, environment); // driver
-	 * 
-	 * }
+	@And("^logout$")
+	public void logout() throws Throwable {
+
+		LoginPage loginToPlatform = new LoginPage(driver);
+
+		loginToPlatform.logoutFromPlatform();
+
+	}
+
+	@Then("^Navigate to home page$")
+	public void navigate_to_home_page() throws Throwable {
+
+		LoginPage loginToPlatform = new LoginPage(driver);
+
+		loginToPlatform.navigateToHomePage();
+	}
+
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 5 Aug 2021
+	 * @Description: Added method for validating login
 	 */
 
-	/*
-	 * @AfterTest public void tearDown() { driver.quit(); }
-	 */
-	/*
-	 * @Given("^Navigate to URL with (.+) PFQA_123_1$") public void
-	 * navigate_to_url_with_pfqa1231(String config) throws Throwable { // throw new
-	 * PendingException(); String environment = null; driver =
-	 * openBrowserstack(config, environment); }
-	 */
+	@When("^User clicks login button$")
+	public void user_clicks_login_button() throws Throwable {
+		// throw new PendingException();
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.clickLoginButton();
+	}
 
+	@Then("^Validate that error is displayed for invalid user name$")
+	public void validate_that_error_is_displayed_for_invalid_user_name() throws Throwable {
+
+		NewBaseClass newBaseClass = new NewBaseClass();
+
+		newBaseClass.validateMessageFromExcel("InvalidUserNameError", "//p[@class='alert__des']");
+
+	}
+
+	@And("^User enters invalid user name and valid password$")
+	public void user_enters_invalid_user_name_and_valid_password() throws Throwable {
+		// throw new PendingException();
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.setInvalidUserData("user");
+
+	}
+
+	@Then("^Validate that error is displayed for invalid password$")
+	public void validate_that_error_is_displayed_for_invalid_password() throws Throwable {
+
+		NewBaseClass newBaseClass = new NewBaseClass();
+
+		newBaseClass.validateMessageFromExcel("InvalidPasswordError", "//p[@class='alert__des']");
+
+	}
+
+	@And("^User enters valid user name and invalid password$")
+	public void user_enters_valid_user_name_and_invalid_password() throws Throwable {
+		// throw new PendingException();
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.setInvalidUserData("password");
+	}
+
+	@Then("^Validate that error is displayed for invalid details$")
+	public void validate_that_error_is_displayed_for_invalid_details() throws Throwable {
+
+		NewBaseClass newBaseClass = new NewBaseClass();
+
+		newBaseClass.validateMessageFromExcel("InvalidDetailsError", "//p[@class='alert__des']");
+
+	}
+
+	@And("^User enters invalid details$")
+	public void user_enters_invalid_details() throws Throwable {
+
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.setInvalidUserData("both");
+	}
 }

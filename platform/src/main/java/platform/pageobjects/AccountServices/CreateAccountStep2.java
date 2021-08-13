@@ -33,15 +33,26 @@ public class CreateAccountStep2 {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//*[contains(text(),'next') or @role='button']")
+	@FindBy(xpath = "//a[@class='button button--default button--register-step-2 js-submit']")
 	public WebElement nextButton;
+
+	@FindBy(xpath = "//a[@onclick='resendCode()']")
+	public WebElement resendCodeLink;
 
 	public void clickNextButton() {
 
-		// System.out.println("inside clickLoginButton()");
 		if (CommonFunctions.waitForVisiblity(nextButton, waitTime)) {
 
-			nextButton.click(); // changes done
+			nextButton.click();
+		}
+
+	}
+
+	public void clickResendCodeLink() {
+
+		if (CommonFunctions.waitForVisiblity(resendCodeLink, waitTime)) {
+
+			resendCodeLink.click();
 		}
 
 	}
@@ -53,7 +64,7 @@ public class CreateAccountStep2 {
 
 		OTPNumberReader OTPNumberReader = new OTPNumberReader();
 		@SuppressWarnings("static-access")
-		String otp = OTPNumberReader.OTPNumberValue();// OTPNumberReader.getOTPNumberValue();
+		String otp = OTPNumberReader.OTPNumberValue();
 		// System.out.println("otp:" + otp);
 		OTPNumber = new ArrayList<Integer>();
 		Scanner scanner = new Scanner(otp);
@@ -81,6 +92,13 @@ public class CreateAccountStep2 {
 	public WebElement findLocatorForCodeDigit(int digit) {
 
 		return driver.findElement(By.xpath("//input[@id='code" + digit + "']"));
+	}
+
+	public void enterInvalidCode() {
+		WebElement invalidCodeField;
+
+		invalidCodeField = findLocatorForCodeDigit(1);
+		invalidCodeField.sendKeys("1");
 	}
 
 }

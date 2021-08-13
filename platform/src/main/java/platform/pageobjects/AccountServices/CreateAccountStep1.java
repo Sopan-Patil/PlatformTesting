@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import platform.pageobjects.Authentication.LoginPage;
 import utils.CommonFunctions;
@@ -37,8 +38,11 @@ public class CreateAccountStep1 {
 	@FindBy(xpath = "//input[@id='entryIdentifier']")
 	public WebElement eidField;
 
-	@FindBy(xpath = "//*[@class='button__text' or contains(text(),'Send confirmation email')]")
+	@FindBy(xpath = "//button[@type='submit']")
 	public WebElement sendConfirmationButton;
+
+	@FindBy(xpath = "//p[@class='alert__des']")
+	public WebElement errorMessageText;
 
 	public void clickSendConfirmationButton() {
 
@@ -49,20 +53,43 @@ public class CreateAccountStep1 {
 
 	}
 
+	public static String email;
+	public static String eid;
+
 	public void generateNewCredentials() {
 		if (CommonFunctions.waitForVisiblity(emailField, waitTime)) {
 			emailField.click();
-			String email = CredentialsGenerator.generateEmailAddress();
+			email = CredentialsGenerator.generateEmailAddress();
 			emailField.sendKeys(email);
 			log.info("Generated email:" + email);
 		}
 		if (CommonFunctions.waitForVisiblity(eidField, waitTime)) {
 			eidField.click();
-			String eid = CredentialsGenerator.generateEid();
+			eid = CredentialsGenerator.generateEid();
 			eidField.sendKeys(eid);
 			log.info("Generated eid:" + eid);
 
 		}
+	}
+
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 4 Aug 2021
+	 * @Description:methods for invalid email
+	 */
+
+	public void enterInvalidEmail() {
+		emailField.click();
+		emailField.sendKeys("abc@abc");
+
+	}
+
+	public void validateErrorMessage(WebElement element, String expectedString) {
+
+		String actualString = element.getText();
+
+		Assert.assertTrue(actualString.contains(expectedString));
+
 	}
 
 }
