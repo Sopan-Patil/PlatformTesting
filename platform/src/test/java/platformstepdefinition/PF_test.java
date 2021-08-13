@@ -21,7 +21,11 @@ import utils.ObjectHelper;
 public class PF_test extends NewBaseClass {
 
 	public WebDriver driver = ObjectHelper.driver;
+
 	private static final Logger log = LogManager.getLogger(PF_test.class.getName());
+
+	private static Logger log = LogManager.getLogger(PF_test.class.getName());
+
 
 	@Then("^run test$")
 	public void run_test() throws Throwable {

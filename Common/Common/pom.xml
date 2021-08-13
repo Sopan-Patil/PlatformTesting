@@ -33,7 +33,12 @@
         <artifactId>javax.mail</artifactId>
         <version>1.6.2</version>
     </dependency>
-    
+    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-api -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-api</artifactId>
+    <version>3.141.59</version>
+</dependency>
 <dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
@@ -93,12 +98,12 @@
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-api -->
-<dependency>
+<!--<dependency>
    <groupId>org.seleniumhq.selenium</groupId>
    <artifactId>selenium-api</artifactId>
    <version>3.11.0</version>
 </dependency>
-
+ -->
 <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-htmlunit-driver -->
 <dependency>
    <groupId>org.seleniumhq.selenium</groupId>

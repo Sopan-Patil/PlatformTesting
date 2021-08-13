@@ -60,7 +60,6 @@ And Verify thank you page for convenience store transaction
 And Verify thank you page data on order history page for convenience store transaction
 And logout
 
-
 @OrderWithConvenienceStoreInValid @Smoke @Full
 Scenario: Validate order with invalid con store
 

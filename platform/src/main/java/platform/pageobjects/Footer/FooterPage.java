@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import platform.pageobjects.Authentication.LoginPage;
 import utils.CommonFunctions;
 
 /**
@@ -21,7 +20,7 @@ import utils.CommonFunctions;
 public class FooterPage {
 	List<String[]> testdata;
 	public WebDriver driver;
-	private static Logger log = LogManager.getLogger(LoginPage.class.getName());
+	private static Logger log = LogManager.getLogger(FooterPage.class.getName());
 
 	public FooterPage(WebDriver driver) {
 		this.driver = driver;

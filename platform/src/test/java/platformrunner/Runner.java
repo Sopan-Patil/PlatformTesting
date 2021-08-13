@@ -3,15 +3,18 @@ package platformrunner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.runner.RunWith;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Optional;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import base.NewBaseClass;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
+
 import utils.BrowserstackUtility;
+
+import utils.ObjectHelper;
+
 
 /**
  * @Author : Chetan Sonparote
@@ -28,10 +31,16 @@ import utils.BrowserstackUtility;
 
 		glue = { "platformstepdefinition" },
 
-		// tags = { "~@FeatureTest", "~@CreateAccountTest", "~@Smoke", "~@PFInvalidCC",
-		// "@PFAccountAndSecurity" },
 
-		tags = { "@OrderWithConvenienceStoreInValid" },
+
+		//tags = { "@OrderWithConvenienceStoreInValid" },
+
+
+		 tags = { "@PF_test" },
+
+		//tags = { "@PFAccountAndSecurity, @PFAccountAndSecurityCancel" },
+
+
 
 		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
@@ -41,51 +50,32 @@ import utils.BrowserstackUtility;
 public class Runner extends AbstractTestNGCucumberTests {
 
 	NewBaseClass newBaseClass;
-	BrowserstackUtility browserstackUtility;
+
 	private static Logger log = LogManager.getLogger(Runner.class.getName());
 
-	@BeforeTest
+	@BeforeMethod(alwaysRun = true)
 	@org.testng.annotations.Parameters(value = { "mode", "browser", "config", "environment" })
-	public void setUpBrowser(@Optional("null") String mode, @Optional("null") String browser,
-			@Optional("null") String config, @Optional("null") String environment) throws Exception {
+	public void setUpBrowser(@org.testng.annotations.Optional("null") String mode,
+			@org.testng.annotations.Optional("null") String browser,
+			@org.testng.annotations.Optional("null") String config,
+			@org.testng.annotations.Optional("null") String environment) throws Exception {
+//	public void setUpBrowser(String mode, String browser, String config, String environment) throws Exception {
 
 		newBaseClass = new NewBaseClass();
-		browserstackUtility = new BrowserstackUtility();
-		log.info("mode:" + mode);
-		log.info("browser:" + browser);
-		log.info("config:" + config);
-		log.info("environment:" + environment);
+//
+//		log.error("mode:" + mode);
+//		log.error("browser:" + browser);
+//		log.error("config:" + config);
+//		log.error("environment:" + environment);
 
 		newBaseClass.openBrowser(mode, browser, config, environment);
-		/*
-		 * if (mode.equalsIgnoreCase("local")) { ObjectHelper.driver =
-		 * newBaseClass.openbrowser(browser); } else if
-		 * (mode.equalsIgnoreCase("browserstack")) { ObjectHelper.driver =
-		 * browserstackUtility.initializaBrowserstackDriver(config, environment); //
-		 * openBrowserstack(config, environment);
-		 * 
-		 * }
-		 */
 
-		// newBaseClass.closeZkaiPopup();
 	}
 
-	@AfterTest
+	@AfterMethod(alwaysRun = true)
 	public void closeBrowser() throws Exception {
 
 		// ObjectHelper.driver.quit();
-
-		// ObjectHelper.driver.quit();
-		/*
-		 * newBaseClass = new NewBaseClass(); if (mode.equalsIgnoreCase("local")) { //
-		 * newBaseClass.closebrowser(); } else if
-		 * (mode.equalsIgnoreCase("browserstack")) {
-		 * 
-		 * // BrowserstackUtility browserstackUtility = new BrowserstackUtility(); // //
-		 * browserstackUtility.tearDown(); // newBaseClass.closeBrowserstack();
-		 * 
-		 * }
-		 */
 
 	}
 
