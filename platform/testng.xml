@@ -9,7 +9,7 @@
   <parameter name="browser" value="chrome" />
     <classes>
    <!-- <class name="platformrunner.Runner"/> -->
-    <class name="platformrunner.Runner"/>
+    <class name="platformrunner.Runner2"/>
     </classes>
   </test>
 </suite>
