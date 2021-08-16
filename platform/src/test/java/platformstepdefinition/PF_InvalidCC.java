@@ -4,10 +4,10 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import base.NewBaseClass;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import platform.pageobjects.Authentication.LoginPage;
 import platform.pageobjects.MyPage.InvalidCC;
 import utils.ObjectHelper;

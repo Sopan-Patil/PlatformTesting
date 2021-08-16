@@ -26,7 +26,7 @@ import utils.ObjectHelper;
 		glue = { "platformstepdefinition" },
 
 		// tags = { "@OrderWithExistingCreditCard" },
-		tags = "@OrderWithExistingCreditCard",
+		tags = "@PFInvalidCC",
 
 		// tags = { "@PFAccountAndSecurity, @PFAccountAndSecurityCancel" },
 

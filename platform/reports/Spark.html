@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Aug 16, 2021 10:21:08 AM</span></a>
+<a href="#"><span class="badge badge-primary">Aug 16, 2021 03:06:25 PM</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('category-view')">
@@ -79,7 +84,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@Smoke</a><a class="dropdown-item" href="#">@Full</a><a class="dropdown-item" href="#">@OrderWithExistingCreditCard</a>
+<a class="dropdown-item" href="#">@Smoke</a><a class="dropdown-item" href="#">@Full</a><a class="dropdown-item" href="#">@PFInvalidCC</a>
 </ul>
 </li>
 </ul>
@@ -90,9 +95,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Validate order flow</p>
+            <p class="name">Validate Invalid credit card no</p>
             <p class="text-sm">
-              <span>10:21:18 AM</span> / <span>30:00:062</span>
+              <span>15:06:33 PM</span> / <span>31:02:770</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -100,10 +105,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">Validate order flow</h5>
-<span class='badge badge-success'>08.16.2021 10:21:18</span>
-<span class='badge badge-danger'>08.16.2021 10:21:18</span>
-<span class='badge badge-default'>30:00:062</span>
+<h5 class="test-status text-fail">Validate Invalid credit card no</h5>
+<span class='badge badge-success'>08.16.2021 15:06:33</span>
+<span class='badge badge-danger'>08.16.2021 15:07:36</span>
+<span class='badge badge-default'>31:02:770</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 </div>
 <div class="m-t-10 m-l-5"></div>
@@ -113,52 +118,63 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="3"><span class="badge log fail-bg mr-2">Fail</span>Validate order with Existing valid Credit Card</div>
+        <div class="node" id="3"><span class="badge log fail-bg mr-2">Fail</span>Validate Invalid Credit Card</div>
       </div>
     </div>
         <div class="">
           <div class="card-body">
-              <div class="step fail-bg" >
+              <div class="step pass-bg" title="platformstepdefinition.PF_InvalidCC.Login_To_Platform_Portal()">
                 <span>Given Login To Platform Portal</span>
-      <div>Step undefined
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" >
-                <span>And Select 1st product from product list page</span>
-      <div>Step skipped
+              <div class="step pass-bg" title="platformstepdefinition.PF_InvalidCC.Click_on_Membership_Status_link()">
+                <span>Then Click on Membership Status link</span>
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" >
-                <span>And Step 1 page proceed to next page</span>
-      <div>Step skipped
+              <div class="step pass-bg" title="platformstepdefinition.PF_InvalidCC.Click_on_Change_Card()">
+                <span>Then Click on Change Card</span>
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" >
-                <span>And Reglogin between Step 1 page to Step 2 page</span>
-      <div>Step skipped
+              <div class="step fail-bg" title="platformstepdefinition.PF_InvalidCC.Enters_credit_card_details()">
+                <span>Then Enters invalid credit card details</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='cardno']"}
+  (Session info: chrome=92.0.4515.131)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'DESKTOP-FGAD874', ip: '192.168.1.7', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:64604}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: eeb3e0e2a0dab1e46ef85a49292e8464
+*** Element info: {Using=xpath, value=//input[@id='cardno']}
+	at jdk.internal.reflect.GeneratedConstructorAccessor34.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:458)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy46.sendKeys(Unknown Source)
+	at platform.pageobjects.MyPage.InvalidCC.InValidCreditcard(InvalidCC.java:91)
+	at platformstepdefinition.PF_InvalidCC.Enters_credit_card_details(PF_InvalidCC.java:53)
+	at ✽.Enters invalid credit card details(file:///C:/Users/Lenovo/Desktop/WorkSpace/Project/Workspace/GitPFAutomation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_InvalidCC.feature:10)
+</textarea>
+      
       </div>
               </div>
-              <div class="step skip-bg" >
-                <span>And Step 2 page proceed to next page</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" >
-                <span>And Step 3 page proceed to next page</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" >
-                <span>And Verify thank you page for credit card transaction</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" >
-                <span>And Verify thank you page data on order history page for credit card transaction</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" >
+              <div class="step skip-bg" title="platformstepdefinition.PF_Login.logout()">
                 <span>And logout</span>
       <div>Step skipped
       </div>
@@ -178,7 +194,59 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="test-wrapper row view category-view attributes-view">
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.NoSuchElementException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.NoSuchElementException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:07:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='7'>Then Enters invalid credit card details</a>
+<div class="">
+<span class="badge badge-default">Validate Invalid credit card no.Validate Invalid Credit Card.Then Enters invalid credit card details</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view category-view attributes-view">
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
@@ -210,11 +278,11 @@
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>10:21:18 AM</td>
+<td>15:06:33 PM</td>
 <td>
-<a href="#" class="linked" test-id='2' id='3'>Validate order with Existing valid Credit Card</a>
+<a href="#" class="linked" test-id='2' id='3'>Validate Invalid Credit Card</a>
 <div class="">
-<span class="badge badge-default">Validate order flow.Validate order with Existing valid Credit Card</span>
+<span class="badge badge-default">Validate Invalid credit card no.Validate Invalid Credit Card</span>
 </div>
 </td>
 </tr>
@@ -246,11 +314,11 @@
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>10:21:18 AM</td>
+<td>15:06:33 PM</td>
 <td>
-<a href="#" class="linked" test-id='2' id='3'>Validate order with Existing valid Credit Card</a>
+<a href="#" class="linked" test-id='2' id='3'>Validate Invalid Credit Card</a>
 <div class="">
-<span class="badge badge-default">Validate order flow.Validate order with Existing valid Credit Card</span>
+<span class="badge badge-default">Validate Invalid credit card no.Validate Invalid Credit Card</span>
 </div>
 </td>
 </tr>
@@ -263,12 +331,12 @@
 <span class="meta">
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">@OrderWithExistingCreditCard</p>
+<p class="name">@PFInvalidCC</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@OrderWithExistingCreditCard</h4>
+<h4>@PFInvalidCC</h4>
 <span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -282,11 +350,11 @@
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>10:21:18 AM</td>
+<td>15:06:33 PM</td>
 <td>
-<a href="#" class="linked" test-id='2' id='3'>Validate order with Existing valid Credit Card</a>
+<a href="#" class="linked" test-id='2' id='3'>Validate Invalid Credit Card</a>
 <div class="">
-<span class="badge badge-default">Validate order flow.Validate order with Existing valid Credit Card</span>
+<span class="badge badge-default">Validate Invalid credit card no.Validate Invalid Credit Card</span>
 </div>
 </td>
 </tr>
@@ -307,13 +375,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Aug 16, 2021 10:21:08 AM</h3>
+<h3>Aug 16, 2021 03:06:25 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Aug 16, 2021 10:21:20 AM</h3>
+<h3>Aug 16, 2021 03:07:37 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -384,10 +452,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='0%'><b>0</b> steps passed</small></div>
+<div><small data-tooltip='60%'><b>3</b> steps passed</small></div>
 <div>
-<small data-tooltip='11%'><b>1</b> steps failed,
-<b>8</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='20%'><b>1</b> steps failed,
+<b>1</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -403,7 +471,7 @@
 </div></div>
 <script>
 var timeline = {
-"Validate order flow":0.062
+"Validate Invalid credit card no":62.77
 };
 </script>
 <div class="row">
@@ -429,7 +497,7 @@ var timeline = {
 <td>0%</td>
 </tr>
 <tr>
-<td>@OrderWithExistingCreditCard</td>
+<td>@PFInvalidCC</td>
 <td>0</td>
 <td>1</td>
 <td>0</td>
@@ -456,10 +524,10 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 0,
+passGrandChild: 3,
 failGrandChild: 1,
 warningGrandChild: 0,
-skipGrandChild: 8,
+skipGrandChild: 1,
 infoGrandChild: 0,
 eventsCount: 5,
 };
