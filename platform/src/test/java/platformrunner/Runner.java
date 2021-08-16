@@ -6,9 +6,13 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import base.NewBaseClass;
-import io.cucumber.testng.AbstractTestNGCucumberTests;
-import io.cucumber.testng.CucumberOptions;
+import cucumber.api.CucumberOptions;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
+
+import utils.BrowserstackUtility;
+
 import utils.ObjectHelper;
+
 
 /**
  * @Author : Chetan Sonparote
@@ -26,11 +30,16 @@ import utils.ObjectHelper;
 		glue = { "platformstepdefinition" },
 
 		// tags = { "@OrderWithExistingCreditCard" },
-		tags = "@OrderWithExistingCreditCard",
+		// tags = "@OrderWithExistingCreditCard",
 
 		// tags = { "@PFAccountAndSecurity, @PFAccountAndSecurityCancel" },
 
-		// tags = { "@PF_test" },
+
+		//tags = { "@OrderWithConvenienceStoreInValid" },
+
+
+		 tags = { "@PF_test" },
+
 
 		// tags = { "@OrderWithExistingCreditCard" },
 
@@ -38,7 +47,9 @@ import utils.ObjectHelper;
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
 
 				"junit:target/cucumber_html_report/junit_platform.xml", "rerun:rerun/failed_scenarios.txt",
-				"json:target/cucumber.json", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" })
+				"json:target/cucumber.json", /*
+												 * "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+												 */ })
 
 public class Runner extends AbstractTestNGCucumberTests {
 
@@ -62,7 +73,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 	@AfterMethod(alwaysRun = true)
 	public void closeBrowser() throws Exception {
 
-		ObjectHelper.driver.quit();
+		// ObjectHelper.driver.quit();
 
 	}
 
