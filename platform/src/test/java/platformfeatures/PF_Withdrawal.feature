@@ -6,6 +6,6 @@ Feature: Withdraw user account
 @WithdrawAccount
 Scenario: User is withdrawing the account
 
-Then Login To Platform Portal
-#Then Click Withdrawal link on Footer
-#Then Withdraw Account
+Given Login To Platform Portal
+Then Click Withdrawal link on Footer
+Then Withdraw Account

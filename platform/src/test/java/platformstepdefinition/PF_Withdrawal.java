@@ -4,6 +4,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import base.NewBaseClass;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
 import platform.pageobjects.Authentication.LoginPage;
@@ -19,10 +20,11 @@ public class PF_Withdrawal extends NewBaseClass {
 
 	public WebDriver driver;
 
-	@Then("^Login To Platform Portal$")
-	public void Login_to_Platform() throws Throwable {
-		LoginPage platformLogin = new LoginPage(driver);
-		platformLogin.loginToPlatform();
+	@Given("^Login to Platform Portal$")
+	public void login_to_platform_portal() throws Throwable {
+		LoginPage loginfunction = new LoginPage(driver);
+		loginfunction.loginToPlatform();
+		driver.navigate().back();
 	}
 
 	@Then("^Click Withdrawal link on Footer$")
