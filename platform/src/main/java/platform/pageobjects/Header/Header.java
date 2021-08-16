@@ -126,7 +126,7 @@ public class Header extends NewBaseClass {
 		CommonFunctions.isElementVisible(y);
 		CommonFunctions.waitForVisiblity(y, waitTime);
 		y.click();
-		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
 	// Method : Checks the Header menu and SubMenu Links
