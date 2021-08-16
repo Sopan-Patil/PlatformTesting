@@ -13,7 +13,6 @@ import base.NewBaseClass;
 import utils.CommonFunctions;
 import utils.ExcelUtil;
 import utils.ObjectHelper;
-import utils.XLHandler;
 
 /**
  * @Author : Chetan Sonparote
@@ -106,38 +105,26 @@ public class LoginPage {
 
 	public void loginToPlatform() throws Exception {
 
-//		/**
-//		 * @Author : rahul shinde
-//		 * @Date : 19 Jul 2021
-//		 * @Description: handle zkai popup
-//		 */
-//
-//		if (CommonFunctions.waitForVisiblity(zkai_popup, waitTime)) {
-//			zkai_popupCloseButton.click();
-//			log.info("Close Zkai pop up");
-//		}
+		ExcelUtil excel = new ExcelUtil();
+		excel.setExcelFile("NewTestData.xlsx", "User");
 
-		String[] shipmentdata;
+		String userNameSTR = excel.getCellData("UserName", 1);
+		String passwordSTR = excel.getCellData("Password", 1);
 
-		shipmentdata = XLHandler.readexcel("User", "NewTestData.xlsx");
-
-		System.out.println(shipmentdata[0]);
-		System.out.println(shipmentdata[1]);
-
-		// CommonFunctions.wa
 		if (CommonFunctions.waitForVisiblity(logInButton, waitTime)) {
 			logInButton.click();
 
 		}
 
 		log.info("Login button is clicked");
+
 		// System.out.println("inside loginToPlatform()");
 
 		log.info("Login button is clicked");
 
 		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
 			emailtextfield.click();
-			emailtextfield.sendKeys(shipmentdata[0]);
+			emailtextfield.sendKeys(userNameSTR);
 
 		}
 
@@ -146,7 +133,7 @@ public class LoginPage {
 			// passwordTextField.sendKeys("Test-123");
 			passwordTextField.click();
 
-			passwordTextField.sendKeys(shipmentdata[1]);
+			passwordTextField.sendKeys(passwordSTR);
 			System.out.println(passwordTextField.getText());
 		}
 		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
@@ -157,25 +144,23 @@ public class LoginPage {
 
 	/**
 	 * @Author : Rahul Shinde
-	 * @Date : 13 Jul 2021
-	 * @Description: used in order flow re login
+	 * @Date : 05 aug 2021
+	 * @Description: used in order flow with fresh user login
 	 * 
 	 */
 	public void loginToPlatformForPayment() throws Exception {
 
-		CommonFunctions.isElementVisible(emailtextfield);
-		String[] shipmentdata;
+		ExcelUtil excel = new ExcelUtil();
+		excel.setExcelFile("NewTestData.xlsx", "User");
 
-		shipmentdata = XLHandler.readexcel("User", "NewTestData.xlsx");
+		String userNameSTR = excel.getCellData("UserName", 1);
+		String passwordSTR = excel.getCellData("Password", 1);
 
-		System.out.println(shipmentdata[0]);
-		System.out.println(shipmentdata[1]);
-
-		log.info("Re Login button is clicked");
+		CommonFunctions.waitForVisiblity(emailtextfield, waitTime);
 
 		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
 			emailtextfield.click();
-			emailtextfield.sendKeys(shipmentdata[0]);
+			emailtextfield.sendKeys(userNameSTR);
 
 		}
 
@@ -184,14 +169,11 @@ public class LoginPage {
 			// passwordTextField.sendKeys("Test-123");
 			passwordTextField.click();
 
-			passwordTextField.sendKeys(shipmentdata[1]);
+			passwordTextField.sendKeys(passwordSTR);
 			System.out.println(passwordTextField.getText());
 		}
-
 		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
-
-			SubmitButton.click();
-
+			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
 		}
 
 	}
