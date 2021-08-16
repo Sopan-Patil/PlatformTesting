@@ -122,7 +122,6 @@ public class LoginPage {
 
 		log.info("Login button is clicked");
 
-
 		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
 			emailtextfield.click();
 			emailtextfield.sendKeys(userNameSTR);
@@ -142,57 +141,6 @@ public class LoginPage {
 		}
 
 	}
-
-//	public void loginToPlatform() throws Exception {
-//
-////		/**
-////		 * @Author : rahul shinde
-////		 * @Date : 19 Jul 2021
-////		 * @Description: handle zkai popup
-////		 */
-////
-////		if (CommonFunctions.waitForVisiblity(zkai_popup, waitTime)) {
-////			zkai_popupCloseButton.click();
-////			log.info("Close Zkai pop up");
-////		}
-//
-//		String[] shipmentdata;
-//
-//		shipmentdata = XLHandler.readexcel("User", "NewTestData.xlsx");
-//
-//		System.out.println(shipmentdata[0]);
-//		System.out.println(shipmentdata[1]);
-//
-//		// CommonFunctions.wa
-//		if (CommonFunctions.waitForVisiblity(logInButton, waitTime)) {
-//			logInButton.click();
-//
-//		}
-//
-//		log.info("Login button is clicked");
-//		System.out.println("inside loginToPlatform()");
-//
-//		log.info("Login button is clicked");
-//
-//		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
-//			emailtextfield.click();
-//			emailtextfield.sendKeys(shipmentdata[0]);
-//
-//		}
-//
-//		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
-//
-//			// passwordTextField.sendKeys("Test-123");
-//			passwordTextField.click();
-//
-//			passwordTextField.sendKeys(shipmentdata[1]);
-//			System.out.println(passwordTextField.getText());
-//		}
-//		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
-//			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
-//		}
-//
-//	}
 
 	/**
 	 * @Author : Rahul Shinde

@@ -26,6 +26,8 @@ public class PF_Order extends NewBaseClass {
 	String thankYouPageorderNumberLabelSTR = null;
 	String productNameFromProductListPage = null;
 	String productPriceFromProductListPage = null;
+	String primeName = "プライム会員プラン";
+	String primePrice = "500";
 
 	@And("^Select 1st product from product list page$")
 	public void select_1st_product_from_product_list_page() throws Throwable {
@@ -47,19 +49,34 @@ public class PF_Order extends NewBaseClass {
 		orderObj.select1stKanjiProduct();
 	}
 
-	@And("^Step 1 page proceed to next page$")
-	public void step_1_page_proceed_to_next_page() throws Throwable {
-		orderObj.methodForOrderFlowStep1(productNameFromProductListPage, productPriceFromProductListPage);
+	@And("^Compare Product Data On Order Step 1 Page$")
+	public void compare_product_data_on_order_step_1_page() throws Throwable {
+		orderObj.compareProductDataOnOrderStep1(productNameFromProductListPage, productPriceFromProductListPage);
 	}
 
-	@And("^Step 2 page proceed to next page$")
-	public void step_2_page_proceed_to_next_page() throws Throwable {
-		orderObj.methodForOrderFlowStep2(productNameFromProductListPage, productPriceFromProductListPage);
+	@And("^Compare Prime Data On Order Step 1 Page$")
+	public void compare_prime_data_on_order_step_1_page() throws Throwable {
+		orderObj.comparePrimeDataOnOrderStep1(primeName, primePrice);
 	}
 
-	@And("^Step 3 page proceed to next page$")
-	public void step_3_page_proceed_to_next_page() throws Throwable {
-		orderObj.methodForOrderFlowStep3(productNameFromProductListPage, productPriceFromProductListPage);
+	@And("^Compare Product Data On Order Step 2 Page$")
+	public void compare_product_data_on_order_step_2_page() throws Throwable {
+		orderObj.compareProductDataOnOrderStep2(productNameFromProductListPage, productPriceFromProductListPage);
+	}
+
+	@And("^Compare Prime Data On Order Step 2 Page$")
+	public void compare_prime_data_on_order_step_2_page() throws Throwable {
+		orderObj.comparePrimeDataOnOrderStep2(primeName, primePrice);
+	}
+
+	@And("^Compare Product Data On Order Step 3 Page$")
+	public void compare_product_data_on_order_step_3_page() throws Throwable {
+		orderObj.compareProductDataOnOrderStep3(productNameFromProductListPage, productPriceFromProductListPage);
+	}
+
+	@And("^Compare Prime Data On Order Step 3 Page$")
+	public void compare_Prime_data_on_order_step_3_page() throws Throwable {
+		orderObj.comparePrimeDataOnOrderStep3(primeName, primePrice);
 	}
 
 	@And("^Open Product List Page$")
@@ -82,24 +99,24 @@ public class PF_Order extends NewBaseClass {
 		orderObj.clickApplyForPrimeMembershipButton();
 	}
 
-	@And("^Confirm Order Flow Step 1 Page Load Successfully$")
-	public void confirm_order_flow_step_1_page_load_successfully() throws Throwable {
-		orderObj.orderFlowStep1PageLoadedSuccessfully();
+	@And("^Verify Order Flow Step 1 Page Loaded Successfully$")
+	public void verify_order_flow_step_1_page_loaded_successfully() throws Throwable {
+		orderObj.verifyOrderFlowStep1PageLoadedSuccessfully();
 	}
 
-	@And("^Confirm Order Flow Step 2 Page Load Successfully$")
-	public void confirm_order_flow_step_2_page_load_successfully() throws Throwable {
-		orderObj.orderFlowStep2PageLoadedSuccessfully();
+	@And("^Verify Order Flow Step 2 Page Loaded Successfully$")
+	public void verify_order_flow_step_2_page_loaded_successfully() throws Throwable {
+		orderObj.verifyOrderFlowStep2PageLoadedSuccessfully();
 	}
 
-	@And("^Confirm Order Flow Step 3 Page Load Successfully$")
-	public void confirm_order_flow_step_3_page_load_successfully() throws Throwable {
-		orderObj.orderFlowStep3PageLoadedSuccessfully();
+	@And("^Verify Order Flow Step 3 Page Loaded Successfully$")
+	public void verify_order_flow_step_3_page_loaded_successfully() throws Throwable {
+		orderObj.verifyOrderFlowStep3PageLoadedSuccessfully();
 	}
 
-	@And("^Confirm Order Flow Step 4 thank you Page Load Successfully$")
-	public void confirm_order_flow_step_4_thank_you_page_load_successfully() throws Throwable {
-		orderObj.orderFlowStep4ThankYouPageLoadedSuccessfully();
+	@And("^Verify Order Flow Step 4 Thank You Page Loaded Successfully$")
+	public void verify_order_flow_step_4_thank_you_page_loaded_successfully() throws Throwable {
+		orderObj.verifyOrderFlowStep4ThankYouPageLoadedSuccessfully();
 	}
 
 	@And("^Proceeed With 1st Casec Product$")
@@ -109,37 +126,37 @@ public class PF_Order extends NewBaseClass {
 
 	@And("^Reglogin between Step 1 page to Step 2 page$")
 	public void reglogin_between_step_1_page_to_step_2_page() throws Throwable {
-		orderObj.methodForReloginForOrderFlow();
+		orderObj.verifyReloginBetweenStep1ToStep2();
 	}
 
 	@And("^Step 2 Payment With Valid Credit Card$")
 	public void step2_payment_with_valid_credit_card() throws Throwable {
-		orderObj.methodForStep2PaymentWithValidCreditCard();
+		orderObj.verifyPaymentWithValidCreditCardFromStep2();
 	}
 
 	@And("^Step 2 Payment With Blank Credit Card$")
 	public void step2_payment_with_blank_credit_card() throws Throwable {
-		orderObj.methodForStep2PaymentWithBlankCreditCard();
+		orderObj.verifyPaymentWithBlankCreditCardFromStep2();
 	}
 
 	@And("^Step 2 Payment With InValid Credit Card$")
 	public void step_2_payment_with_invalid_credit_card() throws Throwable {
-		orderObj.methodForStep2PaymentWithInValidCreditCard();
+		orderObj.verifyPaymentWithInValidCreditCardFromStep2();
 	}
 
 	@And("^Step 2 Payment With Valid Convenience Store$")
 	public void step2_payment_with_valid_convenience_store() throws Throwable {
-		orderObj.methodForStep2PaymentWithConStore();
+		orderObj.verifyPaymentWithValidConStoreFromStep2();
 	}
 
 	@And("^Step 2 Payment With InValid Convenience Store$")
 	public void step_2_payment_with_invalid_convenience_store() throws Throwable {
-		orderObj.step2PaymentWithInValidConStore();
+		orderObj.verifyPaymentWithInValidConStoreFromStep2();
 	}
 
 	@And("^Step 2 Payment With Blank Con Store$")
 	public void step_2_payment_with_blank_con_store() throws Throwable {
-		orderObj.step2PaymentWithBlankConStore();
+		orderObj.verifyPaymentWithBlankConStoreFromStep2();
 	}
 
 	@And("^Refresh page$")
@@ -150,7 +167,7 @@ public class PF_Order extends NewBaseClass {
 	@And("^Verify thank you page for credit card transaction$")
 	public void verify_thank_you_page_for_credit_card_transaction() throws Throwable {
 
-		String[] str_Array = orderObj.methodForCreditCardThankYouPage();
+		String[] str_Array = orderObj.verifyCreditCardThankYouPage();
 		System.out.println("Array returned from method:" + Arrays.toString(str_Array));
 
 		orderNumberLabelSTR = str_Array[0].toString();
@@ -160,7 +177,7 @@ public class PF_Order extends NewBaseClass {
 	@And("^Verify thank you page for prime transaction$")
 	public void verify_thank_you_page_for_prime_transaction() throws Throwable {
 
-		String[] str_Array = orderObj.methodForPrimeThankYouPage();
+		String[] str_Array = orderObj.verifyPrimeThankYouPage();
 		System.out.println("Array returned from method:" + Arrays.toString(str_Array));
 
 		orderNumberLabelSTR = str_Array[0].toString();
@@ -170,14 +187,14 @@ public class PF_Order extends NewBaseClass {
 	@And("^Verify thank you page data on order history page for credit card transaction$")
 	public void verify_thank_you_page_data_on_order_history_page_for_credit_card_transaction() throws Throwable {
 
-		orderObj.methodForCreditCardOrderHistoryPage(orderNumberLabelSTR);
+		orderObj.verifyCreditCardThankYouPageDataOnOrderHistoryPage(orderNumberLabelSTR);
 
 	}
 
 	@And("^Verify thank you page data on order history page for prime transaction$")
 	public void verify_thank_you_page_data_on_order_history_page_for_prime_transaction() throws Throwable {
 
-		orderObj.methodForPrimeOrderHistoryPage(orderNumberLabelSTR);
+		orderObj.verifyPrimePlanThankYouPageDataOnOrderHistoryPage(orderNumberLabelSTR);
 
 	}
 
@@ -198,7 +215,7 @@ public class PF_Order extends NewBaseClass {
 	@And("^Verify thank you page for convenience store transaction$")
 	public void verify_thank_you_page_for_convenience_store_transaction() throws Throwable {
 
-		String[] str_Array = orderObj.methodForConStoreThankYouPage();
+		String[] str_Array = orderObj.verifyConStoreThankYouPage();
 		System.out.println("Array returned from method:" + Arrays.toString(str_Array));
 
 		thankYouPagePaymentDeadlineSTR = str_Array[0].toString();
@@ -213,7 +230,8 @@ public class PF_Order extends NewBaseClass {
 	@And("^Verify thank you page data on order history page for convenience store transaction$")
 	public void verify_thank_you_page_data_on_order_history_page_for_convenience_store_transaction() throws Throwable {
 
-		orderObj.methodForConStoreOrderHistoryPage(thankYouPagePaymentDeadlineSTR, thankYouPageorderNumberLabelSTR);
+		orderObj.verifyConStoreThankYouPageDataOnOrderHistoryPage(thankYouPagePaymentDeadlineSTR,
+				thankYouPageorderNumberLabelSTR);
 
 	}
 
