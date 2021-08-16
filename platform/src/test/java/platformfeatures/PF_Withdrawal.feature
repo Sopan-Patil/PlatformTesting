@@ -8,4 +8,4 @@ Scenario: User is withdrawing the account
 
 Given Login To Platform Portal
 Then Click Withdrawal link on Footer
-Then Withdraw Account
+#Then Withdraw Account

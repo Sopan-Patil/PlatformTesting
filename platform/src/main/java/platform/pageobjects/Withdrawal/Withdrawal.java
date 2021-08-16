@@ -1,6 +1,5 @@
 package platform.pageobjects.Withdrawal;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -10,25 +9,25 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import platform.pageobjects.Authentication.LoginPage;
 import utils.CommonFunctions;
 
 /**
- * @Author : Chetan Sonparote
- * @Date of Creation : 26 June 2021
- * @Description: Additional Locator variables and Methods for footer.
+ * @Author : Sahaj Balgunde
+ * @Date of Creation : 12 Jul 2021
+ * @Description: Additional Locator variables and Methods for withdrawal page.
  */
 
 public class Withdrawal {
 	List<String[]> testdata;
 	public WebDriver driver;
-	private static Logger log = LogManager.getLogger(Withdrawal.class.getName());
-
-	String[] shipmentdata;
-	int waitTime = 5;
+	private static Logger log = LogManager.getLogger(LoginPage.class.getName());
+	int waitTime = 30;
 
 	public Withdrawal(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+
 	}
 
 	@FindBy(xpath = "//span[@class='checkmark']")
@@ -46,24 +45,8 @@ public class Withdrawal {
 	@FindBy(xpath = "//div[@id='footer']//li[4]//ul[1]//li[5]//a[1]")
 	public WebElement footerWithdrawalLink;
 
-	/**
-	 * @Author : Sahaj Balgunde
-	 * @Date of Creation : 20 July 2021
-	 * @Description: Additional Locator variables and Methods for footer.
-	 */
-
-	public void switchToPreviousTab() {
-		ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
-		driver.switchTo().window(tab.get(1));
-		driver.close();
-		driver.switchTo().window(tab.get(0));
-		// driver.close();
-	}
-
-	// Testcase no: PT-090 to PT-095, PT-102 to PT-105
 	public void gotoWithdrawalPage() throws Exception {
 
-		CommonFunctions.waitForClickable(footerWithdrawalLink, waitTime);
 		CommonFunctions.scrolltoElement(footerWithdrawalLink);
 		if (CommonFunctions.isElementClickable(footerWithdrawalLink)) {
 			footerWithdrawalLink.click();
