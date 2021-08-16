@@ -710,14 +710,4 @@ public class FooterPage_PT90_106 {
 
 	}
 
-	/*
-	 * public void clickFooterScbtLink() {
-	 * 
-	 * CommonFunctions.scrolltoElement(footerScbtLink); if
-	 * (CommonFunctions.isElementClickable(footerScbtLink)) {
-	 * footerScbtLink.click(); }
-	 * 
-	 * }
-	 */
-
 }
