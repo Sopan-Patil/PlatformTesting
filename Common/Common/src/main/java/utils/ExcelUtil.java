@@ -27,8 +27,8 @@ public class ExcelUtil {
 
 			//fis = new FileInputStream(FileName);
 
-			String excelPath = System.getProperty("user.dir") + File.separator + "TestData" + File.separator + FileName;// "NewTestData.xlsx";
-			FileInputStream fis = new FileInputStream(excelPath);
+		excelFilePath = System.getProperty("user.dir") + File.separator + "TestData" + File.separator + FileName;// "NewTestData.xlsx";
+			FileInputStream fis = new FileInputStream(excelFilePath);
 
 		//	Workbook wb = WorkbookFactory.create(new File(new File(".", "\\TestData\\" + fis).getAbsolutePath()));
 			

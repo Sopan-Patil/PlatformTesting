@@ -24,8 +24,15 @@ public class ForgotPassword {
 	@FindBy(xpath = "//a[@href='login']")
 	public WebElement logInButton;
 
-	@FindBy(xpath = "//a[contains(text(),'パスワードをお忘れの方')]")
-	public WebElement FotgotPasswordLink;
+	// @FindBy(xpath = "//a[contains(text(),'パスワードをお忘れの方')]")
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date :11 Aug 2021
+	 * @Description: Added alternate xpath
+	 */
+
+	@FindBy(xpath = "//a[@href='/accounts/modify/password-reset']")
+	public WebElement forgotPasswordLink;
 
 	@FindBy(xpath = "//input[@id='userNameOrEmail']")
 	public WebElement emailtextfield;
@@ -33,11 +40,24 @@ public class ForgotPassword {
 	@FindBy(xpath = "//span[contains(text(),'メール送信')]")
 	public WebElement SendemailButton;
 
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date :11 Aug 2021
+	 * @Description: Method to click forgot password link only
+	 */
+	public void clickForgotPasswordLink() {
+		if (CommonFunctions.waitForVisiblity(forgotPasswordLink, 3)) {
+
+			forgotPasswordLink.click();
+		}
+
+	}
+
 	public void ForgotPassword() throws Exception {
 
 		logInButton.click();
 		log.info("Login button is clicked");
-		FotgotPasswordLink.click();
+		forgotPasswordLink.click();
 		emailtextfield.sendKeys("sopan5@mailinator.com");
 		CommonFunctions.clickUsingJavaExecutor(SendemailButton);
 

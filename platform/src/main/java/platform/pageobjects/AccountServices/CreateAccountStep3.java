@@ -83,9 +83,6 @@ public class CreateAccountStep3 {
 	@FindBy(xpath = "//label[@for='notice-by-mail']//span[@class='checkmark']")
 	public WebElement mailCheckbox;
 
-	// @FindBy(xpath = "//*[contains(text(),'Get address from zip code') or
-	// contains(text(),'郵便番号から住所取得')")
-	// button[@class='button button--form js-postcode-fill']
 	@FindBy(xpath = "//button[@class='button button--form js-postcode-fill']")
 	public WebElement postalButton;
 
