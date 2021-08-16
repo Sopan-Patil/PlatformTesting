@@ -4,11 +4,9 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import base.NewBaseClass;
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
 import platform.pageobjects.Authentication.LoginPage;
-import platform.pageobjects.Footer.FooterPage;
 import platform.pageobjects.Withdrawal.Withdrawal;
 
 /**
@@ -21,35 +19,23 @@ public class PF_Withdrawal extends NewBaseClass {
 
 	public WebDriver driver;
 
-	@Given("^Open Browser and URL (.+)$")
-	public void open_Browser_and_URL(String browser) throws Throwable {
-		driver = openbrowser(browser);
+	@Then("^Login To Platform Portal$")
+	public void Login_to_Platform() throws Throwable {
+		LoginPage platformLogin = new LoginPage(driver);
+		platformLogin.loginToPlatform();
 	}
 
-	@Then("^User is on Withdrawal Page ticks the checkbox and withdraw account$")
-	public void user_is_on_Withdrawal_Page_ticks_the_checkbox_and_withdraw_account(String browser) throws Throwable {
-		LoginPage loginToPlatform = new LoginPage(driver);
-		loginToPlatform.loginToPlatform();
-		FooterPage footerobj = new FooterPage(driver);
-		footerobj.AccountFooter();
-		Withdrawal withdrawal = new Withdrawal(driver);
-		withdrawal.accountWithdrawal();
-
-		System.out.println("Account has been deleted.");
-
+	@Then("^Click Withdrawal link on Footer$")
+	public void Click_Withdrawal_link_on_Footer() throws Throwable {
+		Withdrawal withdraw = new Withdrawal(driver);
+		withdraw.gotoWithdrawalPage();
 	}
 
-	@Then("^Account gets deleted$")
-	public void Account_gets_deleted(String browser) throws Throwable {
+	@Then("^Withdraw Account$")
+	public void Withdraw_Account() throws Throwable {
 
-		System.out.println("Account has been deleted.");
-
-	}
-
-	@Then("^Close Browser$")
-	public void Close_Browser(String browser) throws Throwable {
-
-		driver.close();
+		Withdrawal withdraw = new Withdrawal(driver);
+		withdraw.executeWithdrawalFunction();
 
 	}
 

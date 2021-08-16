@@ -22,10 +22,12 @@ public class Withdrawal {
 	List<String[]> testdata;
 	public WebDriver driver;
 	private static Logger log = LogManager.getLogger(LoginPage.class.getName());
+	int waitTime = 5;
 
 	public Withdrawal(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+
 	}
 
 	@FindBy(xpath = "//span[@class='checkmark']")
@@ -40,7 +42,23 @@ public class Withdrawal {
 	@FindBy(xpath = "//h1[contains(@class,'')]//a[contains(@class,'logo')]")
 	public WebElement topButton;
 
-	public void accountWithdrawal() throws Exception {
+	@FindBy(xpath = "//div[@id='footer']//li[4]//ul[1]//li[5]//a[1]")
+	public WebElement footerWithdrawalLink;
+
+	public void gotoWithdrawalPage() throws Exception {
+
+		CommonFunctions.scrolltoElement(footerWithdrawalLink);
+		if (CommonFunctions.isElementClickable(footerWithdrawalLink)) {
+			footerWithdrawalLink.click();
+			System.out.println("Withdrawal Checked");
+			log.info("Footer Link is Clicked");
+		} else {
+			log.error("Footer Link is not Clicked");
+		}
+	}
+
+	public void executeWithdrawalFunction() throws Exception {
+
 		CommonFunctions.scrolltoElement(withdrawalCheck);
 		if (CommonFunctions.isElementClickable(withdrawalCheck)) {
 			withdrawalCheck.click();
