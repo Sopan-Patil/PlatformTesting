@@ -30,8 +30,18 @@ import utils.ObjectHelper;
 
 		// tags = { "@PFAccountAndSecurity, @PFAccountAndSecurityCancel" },
 
-		plugin = { "pretty", /* "html:target/cucumber_html_report", */
-				"html:target/Destination", "pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
+
+
+		// tags = { "@PF_test" },
+
+		tags = { "@OrderWithExistingCreditCard" },
+
+
+
+
+		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
+				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
+
 				"junit:target/cucumber_html_report/junit_platform.xml", "rerun:rerun/failed_scenarios.txt",
 				"json:target/cucumber.json", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" })
 
