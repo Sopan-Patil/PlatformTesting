@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jul 30, 2021 07:04:58 PM</span></a>
+<a href="#"><span class="badge badge-primary">Aug 16, 2021 10:21:08 AM</span></a>
 </li>
 </ul>
 </div>
@@ -79,7 +79,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@PFAccountAndSecurity</a>
+<a class="dropdown-item" href="#">@Smoke</a><a class="dropdown-item" href="#">@Full</a><a class="dropdown-item" href="#">@OrderWithExistingCreditCard</a>
 </ul>
 </li>
 </ul>
@@ -90,9 +90,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Validate Account information</p>
+            <p class="name">Validate order flow</p>
             <p class="text-sm">
-              <span>19:04:59 PM</span> / <span>30:00:131</span>
+              <span>10:21:18 AM</span> / <span>30:00:062</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -100,10 +100,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">Validate Account information</h5>
-<span class='badge badge-success'>07.30.2021 19:04:59</span>
-<span class='badge badge-danger'>07.30.2021 19:04:59</span>
-<span class='badge badge-default'>30:00:131</span>
+<h5 class="test-status text-fail">Validate order flow</h5>
+<span class='badge badge-success'>08.16.2021 10:21:18</span>
+<span class='badge badge-danger'>08.16.2021 10:21:18</span>
+<span class='badge badge-default'>30:00:062</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 </div>
 <div class="m-t-10 m-l-5"></div>
@@ -113,33 +113,53 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="3"><span class="badge log fail-bg mr-2">Fail</span>Validate Account information</div>
+        <div class="node" id="3"><span class="badge log fail-bg mr-2">Fail</span>Validate order with Existing valid Credit Card</div>
       </div>
     </div>
         <div class="">
           <div class="card-body">
               <div class="step fail-bg" >
-                <span>Given Login To Platform</span>
+                <span>Given Login To Platform Portal</span>
       <div>Step undefined
       </div>
               </div>
               <div class="step skip-bg" >
-                <span>Then Click on Account and Security</span>
+                <span>And Select 1st product from product list page</span>
       <div>Step skipped
       </div>
               </div>
               <div class="step skip-bg" >
-                <span>Then Click on Change button</span>
+                <span>And Step 1 page proceed to next page</span>
       <div>Step skipped
       </div>
               </div>
               <div class="step skip-bg" >
-                <span>And Update Account Information</span>
+                <span>And Reglogin between Step 1 page to Step 2 page</span>
       <div>Step skipped
       </div>
               </div>
               <div class="step skip-bg" >
-                <span>And Validate Updated Account Information</span>
+                <span>And Step 2 page proceed to next page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>And Step 3 page proceed to next page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>And Verify thank you page for credit card transaction</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>And Verify thank you page data on order history page for credit card transaction</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>And logout</span>
       <div>Step skipped
       </div>
               </div>
@@ -162,7 +182,7 @@
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">3</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
@@ -171,12 +191,12 @@
 <span class="meta">
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">@PFAccountAndSecurity</p>
+<p class="name">@Smoke</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@PFAccountAndSecurity</h4>
+<h4>@Smoke</h4>
 <span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -190,11 +210,83 @@
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>19:04:59 PM</td>
+<td>10:21:18 AM</td>
 <td>
-<a href="#" class="linked" test-id='2' id='3'>Validate Account information</a>
+<a href="#" class="linked" test-id='2' id='3'>Validate order with Existing valid Credit Card</a>
 <div class="">
-<span class="badge badge-default">Validate Account information.Validate Account information</span>
+<span class="badge badge-default">Validate order flow.Validate order with Existing valid Credit Card</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@Full</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Full</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>10:21:18 AM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='3'>Validate order with Existing valid Credit Card</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with Existing valid Credit Card</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@OrderWithExistingCreditCard</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@OrderWithExistingCreditCard</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>10:21:18 AM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='3'>Validate order with Existing valid Credit Card</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with Existing valid Credit Card</span>
 </div>
 </td>
 </tr>
@@ -215,13 +307,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jul 30, 2021 07:04:58 PM</h3>
+<h3>Aug 16, 2021 10:21:08 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jul 30, 2021 07:04:59 PM</h3>
+<h3>Aug 16, 2021 10:21:20 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -294,8 +386,8 @@
 <div class="card-footer">
 <div><small data-tooltip='0%'><b>0</b> steps passed</small></div>
 <div>
-<small data-tooltip='20%'><b>1</b> steps failed,
-<b>4</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='11%'><b>1</b> steps failed,
+<b>8</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -311,7 +403,7 @@
 </div></div>
 <script>
 var timeline = {
-"Validate Account information":0.131
+"Validate order flow":0.062
 };
 </script>
 <div class="row">
@@ -321,7 +413,23 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@PFAccountAndSecurity</td>
+<td>@Smoke</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@Full</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@OrderWithExistingCreditCard</td>
 <td>0</td>
 <td>1</td>
 <td>0</td>
@@ -351,7 +459,7 @@ grandChildCount: 5,
 passGrandChild: 0,
 failGrandChild: 1,
 warningGrandChild: 0,
-skipGrandChild: 4,
+skipGrandChild: 8,
 infoGrandChild: 0,
 eventsCount: 5,
 };
