@@ -31,7 +31,7 @@ public class Membership {
 	@FindBy(xpath = "//a[@class='link js-not-link']")
 	public WebElement accountInformation;
 
-	@FindBy(xpath = "//div[@class='header__control']//li[2]//a[1]")
+	@FindBy(xpath = "//a[@href='/mypage-member-status']")
 	public WebElement membershipStatus;
 
 	@FindBy(xpath = "//div[@class='link-learn__content']")
