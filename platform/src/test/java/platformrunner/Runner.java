@@ -2,14 +2,12 @@ package platformrunner;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.runner.RunWith;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import base.NewBaseClass;
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
-import cucumber.api.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 import utils.ObjectHelper;
 
 /**
@@ -19,28 +17,28 @@ import utils.ObjectHelper;
  *               success
  */
 
-@RunWith(Cucumber.class)
+//@RunWith(Cucumber.class)
 //@ExtendedCucumberOptions(jsonReport = "target/cucumber.json", overviewReport = true, outputFolder = "target")
-@CucumberOptions(monochrome = true, strict = false, dryRun = false, features = { ".//src//test//java//platformfeatures/"
+@CucumberOptions(monochrome = true, strict = true, dryRun = false, features = { ".//src//test//java//platformfeatures/"
 
 },
 
 		glue = { "platformstepdefinition" },
 
+		// tags = { "@OrderWithExistingCreditCard" },
+		tags = "@OrderWithExistingCreditCard",
 
+		// tags = { "@PFAccountAndSecurity, @PFAccountAndSecurityCancel" },
 
+		// tags = { "@PF_test" },
 
-		 tags = { "@PF_test" },
+		// tags = { "@OrderWithExistingCreditCard" },
 
-		//tags = { "@PFAccountAndSecurity, @PFAccountAndSecurityCancel" },
-
-
-
-
-		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
+		plugin = { "pretty", /* "html:target/cucumber_html_report", */ "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
+
 				"junit:target/cucumber_html_report/junit_platform.xml", "rerun:rerun/failed_scenarios.txt",
-		/* "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" */ })
+				"json:target/cucumber.json", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" })
 
 public class Runner extends AbstractTestNGCucumberTests {
 
@@ -54,14 +52,8 @@ public class Runner extends AbstractTestNGCucumberTests {
 			@org.testng.annotations.Optional("null") String browser,
 			@org.testng.annotations.Optional("null") String config,
 			@org.testng.annotations.Optional("null") String environment) throws Exception {
-//	public void setUpBrowser(String mode, String browser, String config, String environment) throws Exception {
 
 		newBaseClass = new NewBaseClass();
-//
-//		log.error("mode:" + mode);
-//		log.error("browser:" + browser);
-//		log.error("config:" + config);
-//		log.error("environment:" + environment);
 
 		newBaseClass.openBrowser(mode, browser, config, environment);
 
