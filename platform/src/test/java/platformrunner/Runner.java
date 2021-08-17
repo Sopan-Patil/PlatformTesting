@@ -25,14 +25,7 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
-		// tags = { "@OrderWithExistingCreditCard" },
-		tags = "@PFInvalidCC",
-
-		// tags = { "@PFAccountAndSecurity, @PFAccountAndSecurityCancel" },
-
-		// tags = { "@PF_test" },
-
-		// tags = { "@OrderWithExistingCreditCard" },
+		tags = "@Smoke",
 
 		plugin = { "pretty", /* "html:target/cucumber_html_report", */ "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
