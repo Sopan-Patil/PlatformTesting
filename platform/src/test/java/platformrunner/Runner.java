@@ -24,14 +24,10 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 		glue = { "platformstepdefinition" },
 
-		// tags = { "@OrderWithExistingCreditCard" },
-		// tags = "@OrderWithExistingCreditCard",
+		
+		 tags = { "@Smoke" },
 
-		// tags = { "@PFAccountAndSecurity, @PFAccountAndSecurityCancel" },
-
-		 //tags = { "@OrderRefreshPageWithExistingCreditCard" },
-
-		tags = { "@PF_test" },
+		//tags = { "@PF_test" },
 
 		// tags = { "@OrderWithExistingCreditCard" },
 
