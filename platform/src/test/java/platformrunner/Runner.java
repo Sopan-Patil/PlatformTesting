@@ -24,10 +24,9 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 		glue = { "platformstepdefinition" },
 
-		
-		 tags = { "@Smoke" },
+		tags = { "@PFInvalidCC" },
 
-		//tags = { "@PF_test" },
+		// tags = { "@PF_test" },
 
 		// tags = { "@OrderWithExistingCreditCard" },
 
