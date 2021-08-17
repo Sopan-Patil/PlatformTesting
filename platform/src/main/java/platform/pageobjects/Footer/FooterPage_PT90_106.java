@@ -35,16 +35,16 @@ public class FooterPage_PT90_106 {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//div[@class='footer-bt']//li[1]//a[1]")
+	@FindBy(xpath = "//div[@class='footer-bt']//a[@href = '/term']")
 	public WebElement termsOfUseLink;
 
-	@FindBy(xpath = "//div[@class='footer-bt']//li[2]//a[1]")
+	@FindBy(xpath = "//div[@class='footer-bt']//a[@href = 'https://www.jiem.co.jp/privacy/']")
 	public WebElement privacyPolicyLink;
 
-	@FindBy(xpath = "//div[@class='footer-bt']//li[3]//a[1]")
+	@FindBy(xpath = "//div[@class='footer-bt']//a[@href = '/transaction-method']")
 	public WebElement specifiedCommodityTradingLawLink;
 
-	@FindBy(xpath = "//div[@class='footer-bt']//li[4]//a[1]")
+	@FindBy(xpath = "//div[@class='footer-bt']//a[@href = 'https://support.evidus.com/']")
 	public WebElement qnALink;
 
 	@FindBy(xpath = "//ul[@class='footer__link']//a[@href='/testing']")
