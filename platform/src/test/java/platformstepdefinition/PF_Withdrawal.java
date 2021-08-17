@@ -9,6 +9,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
 import platform.pageobjects.Authentication.LoginPage;
 import platform.pageobjects.Withdrawal.Withdrawal;
+import utils.ObjectHelper;
 
 /**
  * @Author : Sahaj Balgunde
@@ -18,7 +19,7 @@ import platform.pageobjects.Withdrawal.Withdrawal;
 @RunWith(Cucumber.class)
 public class PF_Withdrawal extends NewBaseClass {
 
-	public WebDriver driver;
+	public WebDriver driver = ObjectHelper.driver;
 
 	@Given("^Login to Platform Portal$")
 	public void login_to_platform_portal() throws Throwable {

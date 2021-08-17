@@ -1,6 +1,7 @@
 package platform.pageobjects.Withdrawal;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -42,15 +43,16 @@ public class Withdrawal {
 	@FindBy(xpath = "//h1[contains(@class,'')]//a[contains(@class,'logo')]")
 	public WebElement topButton;
 
-	@FindBy(xpath = "//div[@id='footer']//li[4]//ul[1]//li[5]//a[1]")
+	@FindBy(xpath = "//a[contains(text(),'退会')]")
 	public WebElement footerWithdrawalLink;
 
 	public void gotoWithdrawalPage() throws Exception {
 
-		CommonFunctions.scrolltoElement(footerWithdrawalLink);
-		if (CommonFunctions.isElementClickable(footerWithdrawalLink)) {
+		CommonFunctions.isElementVisible(footerWithdrawalLink);
+		if (CommonFunctions.waitForVisiblity(footerWithdrawalLink, waitTime)) {
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			footerWithdrawalLink.click();
-			driver.navigate().back();
+			log.info("Opened Withdrawal Link");
 		} else {
 			log.error("Withdrawal Link is not working");
 		}
