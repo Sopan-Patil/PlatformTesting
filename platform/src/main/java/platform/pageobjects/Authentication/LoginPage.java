@@ -144,39 +144,10 @@ public class LoginPage {
 
 	/**
 	 * @Author : Rahul Shinde
-	 * @Date : 05 aug 2021
-	 * @Description: used in order flow with fresh user login
+	 * @Date : 16 aug 2021
+	 * @Description: removed unwanted login payment login
 	 * 
 	 */
-	public void loginToPlatformForPayment() throws Exception {
-
-		ExcelUtil excel = new ExcelUtil();
-		excel.setExcelFile("NewTestData.xlsx", "User");
-
-		String userNameSTR = excel.getCellData("UserName", 1);
-		String passwordSTR = excel.getCellData("Password", 1);
-
-		CommonFunctions.waitForVisiblity(emailtextfield, waitTime);
-
-		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
-			emailtextfield.click();
-			emailtextfield.sendKeys(userNameSTR);
-
-		}
-
-		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
-
-			// passwordTextField.sendKeys("Test-123");
-			passwordTextField.click();
-
-			passwordTextField.sendKeys(passwordSTR);
-			System.out.println(passwordTextField.getText());
-		}
-		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
-			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
-		}
-
-	}
 
 	/**
 	 * @Author : Rahul Shinde

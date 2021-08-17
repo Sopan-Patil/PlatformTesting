@@ -613,7 +613,7 @@ public class Order {
 	}
 
 	// re login between step 1 to step 2
-	public void verifyReloginBetweenStep1ToStep2() throws Exception {
+	public void verifyReloginBetweenStep1ToStep2WithExitingUser() throws Exception {
 
 		NewBaseClass base = new NewBaseClass();
 		base.replaceurl();
@@ -621,7 +621,20 @@ public class Order {
 		CommonFunctions.waitForVisiblity(emailtextfield, waitTime);
 		log.info("go to relogin page");
 		LoginPage loginObj = new LoginPage(driver);
-		loginObj.loginToPlatformForPayment();
+		loginObj.loginToPlatform();
+
+	}
+
+	// re login between step 1 to step 2
+	public void verifyReloginBetweenStep1ToStep2WithNewlyCreatedUser() throws Exception {
+
+		NewBaseClass base = new NewBaseClass();
+		base.replaceurl();
+
+		CommonFunctions.waitForVisiblity(emailtextfield, waitTime);
+		log.info("go to relogin page");
+		LoginPage loginObj = new LoginPage(driver);
+		loginObj.loginWithNewUser();
 
 	}
 
@@ -795,6 +808,69 @@ public class Order {
 		CommonFunctions.assertInt(productPriceFromProductListPageInt, step2ProductBilledAmountLabelSTR);
 		log.info("expected Billed Amount and amount came from product list is matched ");
 
+		CommonFunctions.waitForVisiblity(registerYouCreditCardRadioButton, waitTime);
+		registerYouCreditCardRadioButton.click();
+		log.info("Step 2 tab :- click to 'Register your credit card information' radio button");
+
+		CommonFunctions.waitForVisiblity(creditCardNumerTextbox, waitTime);
+		creditCardNumerTextbox.sendKeys("4111111111111111");
+		log.info("Step 2 tab :- provide card no to 'credit card number' textbox");
+
+		CommonFunctions.waitForVisiblity(creditCardHolderNameTextbox, waitTime);
+		creditCardHolderNameTextbox.sendKeys("rahul");
+		log.info("Step 2 tab :- provide card holder name to 'card name' textbox");
+
+		CommonFunctions.isElementVisible(ExpirationYearDropdown);
+
+		CommonFunctions.waitForVisiblity(ExpirationYearDropdown, waitTime);
+		ExpirationYearDropdown.click();
+		log.info("Step 2 tab :- click on 'Expiration year' Dropdown");
+
+		CommonFunctions.isElementVisible(listAllYearValue);
+
+		List<WebElement> Yearlistings = driver.findElements(By.xpath("//ul[@id='select2-expire-year-results']/li"));
+		int YearitemSize = Yearlistings.size();
+		String expectedYearValue = "2025";
+		for (int i = 0; i < YearitemSize; i++) {
+			String yearoptionsValue = Yearlistings.get(i).getText();
+			System.out.println(yearoptionsValue);
+			// match the content here in the if loop
+			if (Yearlistings.get(i).getText().equals(expectedYearValue)) {
+				// perform action
+				Yearlistings.get(i).click();
+				break;
+
+			}
+		}
+		Thread.sleep(2000);
+		CommonFunctions.waitForVisiblity(securitycodeTextbox, waitTime);
+		CommonFunctions.waitForClickable(securitycodeTextbox, waitTime);
+
+		CommonFunctions.waitForVisiblity(securitycodeTextbox, waitTime);
+		securitycodeTextbox.sendKeys("123");
+		log.info("Step 2 tab :- provide security code to 'securitycode' textbox");
+
+		CommonFunctions.waitForVisiblity(ExpirationMonthDropdown, waitTime);
+		ExpirationMonthDropdown.click();
+		log.info("Step 2 tab :- click on 'Expiration Month'Dropdown");
+
+		CommonFunctions.isElementVisible(listAllMonthValue);
+
+		List<WebElement> listings = driver.findElements(By.xpath("//ul[@id='select2-expire-month-results']/li"));
+		int itemSize = listings.size();
+		String expectedMonthValue = "7月";
+		for (int i = 0; i < itemSize; i++) {
+			String optionsValue = listings.get(i).getText();
+			System.out.println(optionsValue);
+			// match the content here in the if loop
+			if (listings.get(i).getText().equals(expectedMonthValue)) {
+				// perform action
+				listings.get(i).click();
+				break;
+			}
+		}
+
+		CommonFunctions.isElementVisible(step2ProceedButton);
 		CommonFunctions.waitForVisiblity(step2ProceedButton, waitTime);
 		step2ProceedButton.click();
 		log.info("Step 2 tab :- click to 'Confirmation of order details' button");
