@@ -40,70 +40,70 @@ public class TermsConditionsFooter {
 		// driver.close();
 	}
 
-	@FindBy(xpath = "//div[@class='container container--small']//div[3]//div[1]//a[1]")
+	@FindBy(xpath = "//a[@href = 'https://hiiragi.evidus.com/petz1/group/dfs/dantai/kiyaku_iframe.jsp']")
 	public WebElement casecTermsLink;
 
-	@FindBy(xpath = "//div[@class='container container--small']//div[3]//div[1]//a[2]")
+	@FindBy(xpath = "//a[@href = 'https://jyuku-pita.evidus.com/terms.html']")
 	public WebElement jyukuPitaTermsLink;
 
-	@FindBy(xpath = "//div[@class='container container--small']//div[3]//div[1]//a[3]")
+	@FindBy(xpath = "//a[@href ='https://juken.ei-navi.jp/term-of-use']")
 	public WebElement jyukenTermsLink;
 
-	@FindBy(xpath = "//div[@class='container container--small']//div[3]//div[1]//a[4]")
+	@FindBy(xpath = "//a[@href='https://consult.evidus.com/terms/']")
 	public WebElement consultTermsLink;
 
-	@FindBy(xpath = "//div[@class='container container--small']//div[3]//div[1]//a[5]")
+	@FindBy(xpath = "//a[@href = 'https://www.eiken.or.jp/s-cbt/documents/s-cbt_2021_kiyaku.pdf']")
 	public WebElement EikenTermsPDFLink;
 
-	@FindBy(xpath = "//div[@class='container container--small']//div[3]//div[1]//a[6]")
+	@FindBy(xpath = "//a[@href = 'https://www.ei-navi.jp/policy/site_policy.html']")
 	public WebElement EikenTermsLink;
 
 	@FindBy(xpath = "//a[normalize-space()='http://www.jiem.co.jp/privacy/index.html']")
 	public WebElement JIEMTermsLink;
 
-	@FindBy(xpath = "//div[@class='container container--small']//div[13]//div[2]//a[1]")
+	@FindBy(xpath = "//a[normalize-space()='https://support.evidus.com/']")
 	public WebElement SupportTermsLink;
 
 	@FindBy(xpath = "//a[normalize-space()='https://www.ei-navi.jp/policy/site_policy.html']")
 	public WebElement einaviPolicyLink;
 
-	@FindBy(xpath = "//div[@class='ep-term__content']//div[15]//div[1]/a[1]")
+	@FindBy(xpath = "//a[@href = 'https://www.facebook.com/policy.php']")
 	public WebElement fbLPolicyLink;
 
-	@FindBy(xpath = "//div[@class='ep-term__content']//div[15]//div[2]/a[1]")
+	@FindBy(xpath = "//a[@href = 'https://www.facebook.com/login.php?next=https%3A%2F%2Fwww.facebook.com%2Fsettings%2F%3Ftab%3Dads']")
 	public WebElement FacebookOptoutLink;
 
-	@FindBy(xpath = "//div[@class='ep-term__content']//div[15]//div[3]/a[1]")
+	@FindBy(xpath = "//a[@href = 'https://twitter.com/privacy?lang=jaTwitter']")
 	public WebElement TwitterPrvivacyPolicy;
 
-	@FindBy(xpath = "//div[@class='ep-term__content']//div[15]//div[4]/a[1]")
+	@FindBy(xpath = "//a[@href = 'https://help.twitter.com/ja/safety-and-security/privacy-controls-for-tailored-ads']")
 	public WebElement CustomizedAdLink;
 
-	@FindBy(xpath = "//div[@class='ep-term__content']//div[15]//div[5]/a[1]")
+	@FindBy(xpath = "//a[@href = 'https://terms.line.me/line_rules/?lang=jaLINE']")
 	public WebElement LinePrivacyPolicyLink;
 
-	@FindBy(xpath = "//div[@class='ep-term__content']//div[15]//div[6]/a[1]")
+	@FindBy(xpath = "//a[@href = 'https://optout.tr.line.me/']")
 	public WebElement LineBehavioralAdvertisingLink;
 
-	@FindBy(xpath = "//div[@class='ep-term__content']//div[15]//div[7]/a[1]")
+	@FindBy(xpath = "//a[@href = 'https://www.amazon.co.jp/gp/help/customer/display.html?nodeId=G64JFZVFDY66XG9K']")
 	public WebElement AmazonTargetAdTermsLink;
 
-	@FindBy(xpath = "//div[@class='ep-term__content']//div[15]//div[8]/a[1]")
+	@FindBy(xpath = "//a[@href = 'https://www.amazon.co.jp/adprefs']")
 	public WebElement ChangeDisplaySettingLink;
 
-	@FindBy(xpath = "//div[@class='ep-term__content']//div[15]//div[9]/a[1]")
+	@FindBy(xpath = "//a[@href = 'https://www.brainpad.co.jp/utility/privacy.html']")
 	public WebElement BrainPadLink;
 
-	@FindBy(xpath = "//div[@class='ep-term__content']//div[15]//div[10]/a[1]")
+	@FindBy(xpath = "//a[@href = 'https://www.ever-rise.co.jp/privacy']")
 	public WebElement Everrise;
 
-	@FindBy(xpath = "//div[@class='ep-term__content']//div[15]//div[11]/a[1]")
+	@FindBy(xpath = "//a[@href = 'https://optout.networkadvertising.org/?c=1#!%2F']")
 	public WebElement NetworkAdvertisingLink;
 
-	@FindBy(xpath = "//div[@class='ep-term__content']//div[15]//div[12]/a[1]")
+	@FindBy(xpath = "//a[@href = 'https://www.aboutads.info/choices/']")
 	public WebElement AboutadsLink;
 
-	@FindBy(xpath = "//div[@class='ep-term__content']//div[15]//div[13]/a[1]")
+	@FindBy(xpath = "//a[@href = 'http://www.ddai.info/optout']")
 	public WebElement DDAILink;
 
 	@FindBy(xpath = "//img[@alt='Facebook']")

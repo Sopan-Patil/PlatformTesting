@@ -47,70 +47,70 @@ public class FooterPage_PT90_106 {
 	@FindBy(xpath = "//div[@class='footer-bt']//li[4]//a[1]")
 	public WebElement qnALink;
 
-	@FindBy(xpath = "//ul[@class='footer__link']/li[1]/a[1]")
+	@FindBy(xpath = "//ul[@class='footer__link']//a[@href='/testing']")
 	public WebElement footerExaminationWindowLink;
 
-	@FindBy(xpath = "//div[@id='footer']//li[1]//ul[1]//li[1]//a[1]")
+	@FindBy(xpath = "//li[@class='sub-menu__item']//a[@href='https://studygear.evidus.com/campaign/cp_scbt202109/']")
 	public WebElement footerScbtLink;
 
-	@FindBy(xpath = "//div[@id='footer']//li[1]//ul[1]//li[2]//a[1]")
+	@FindBy(xpath = "//li[@class='sub-menu__item']//a[@href='https://casec.evidus.com/about/']")
 	public WebElement footerCasecLink;
 
-	@FindBy(xpath = "//div[@id='footer']//li[1]//ul[1]//li[3]//a[1]")
+	@FindBy(xpath = "//li[@class='sub-menu__item']//a[@href='/testing/achievement-test_pf']")
 	public WebElement footerCommontestZKai;
 
-	@FindBy(xpath = "//ul[@class='footer__link']/li[2]/a[1]")
+	@FindBy(xpath = "//ul[@class='footer__link']//a[@href='/learning']")
 	public WebElement footerLearningWindowLink;
 
-	@FindBy(xpath = "//div[@id='footer']//li[2]//ul[1]//li[1]//a[1]")
+	@FindBy(xpath = "//li[@class='sub-menu__item']//a[@href='/studygear-eiken']")
 	public WebElement footerStagiaEikenLink;
 
-	@FindBy(xpath = "//div[@id='footer']//li[2]//ul[1]//li[2]//a[1]")
+	@FindBy(xpath = "//li[@class='sub-menu__item']//a[@href='/studygear-kanken']")
 	public WebElement footerStagiaKankenLink;
 
-	@FindBy(xpath = "//ul[@class='footer__link']/li[3]/a[1]")
+	@FindBy(xpath = "//ul[@class='footer__link']//a[@href='/media']")
 	public WebElement informationWindowLink;
 
-	@FindBy(xpath = "//div[@id='footer']//li[3]//ul[1]//li[1]//a[1]")
+	@FindBy(xpath = "//li[@class='sub-menu__item']//a[@href='https://stg.jyuku-pita.evidus.com/']")
 	public WebElement cramSchoolPitaLink;
 
-	@FindBy(xpath = "//div[@id='footer']//li[3]//ul[1]//li[2]//a[1]")
+	@FindBy(xpath = "//li[@class='sub-menu__item']//a[@href='https://juken.ei-navi.jp/']")
 	public WebElement stagiaUniversityExamLink;
 
-	@FindBy(xpath = "//div[@id='footer']//li[3]//ul[1]//li[3]//a[1]")
+	@FindBy(xpath = "//li[@class='sub-menu__item']//a[@href='https://consult.evidus.com/']")
 	public WebElement educationCostConsulatationSupportLink;
 
-	@FindBy(xpath = "//div[@id='footer']//li[4]//ul[1]//li[1]//a[1]")
+	@FindBy(xpath = "//li[@class='sub-menu__item']//a[@href='/mypage-account-security']")
 	public WebElement accountSecurity;
 
-	@FindBy(xpath = "//div[@id='footer']//li[4]//ul[1]//li[2]//a[1]")
+	@FindBy(xpath = "//li[@class='sub-menu__item']//a[@href='/mypage-member-status']")
 	public WebElement memberStatus;
 
-	@FindBy(xpath = "//div[@id='footer']//li[4]//ul[1]//li[3]//a[1]")
+	@FindBy(xpath = "//li[@class='sub-menu__item']//a[@href='/mypage-member-service']")
 	public WebElement servicesUsing;
 
-	@FindBy(xpath = "//div[@id='footer']//li[4]//ul[1]//li[4]//a[1]")
+	@FindBy(xpath = "//li[@class='sub-menu__item']//a[@href='/order-history']")
 	public WebElement orderHistory;
 
-	@FindBy(xpath = "//div[@id='footer']//li[4]//ul[1]//li[5]//a[1]")
+	@FindBy(xpath = "//a[@href='/withdraw-confirm']")
 	public WebElement withdraw;
 
-	@FindBy(xpath = "//div[@id='footer']//li[4]//ul[1]//li[6]//a[1]")
+	@FindBy(xpath = "//li[@class='sub-menu__item']//a[@href='/logout']")
 	public WebElement logout;
 
-	@FindBy(xpath = "//div[@id='footer']//li[4]//ul[1]//li[1]//a[1]")
+	@FindBy(xpath = "//li[@class='sub-menu__item']//a[@href='/login']")
 	public WebElement footerLogin;
 
-	@FindBy(xpath = "//div[@id='footer']//li[4]//ul[1]//li[2]//a[1]")
+	@FindBy(xpath = "//li[@class='sub-menu__item']//a[@href='/register']")
 	public WebElement footerRegister;
 
-	@FindBy(xpath = "//div[@class='ep-auth__footer']/ul[1]/li[1]//a[1]")
+	@FindBy(xpath = "//a[@href='https://support.evidus.com/']")
 	public WebElement footerAccountQnA;
 
 	@FindBy(xpath = "//div[@class='ep-auth__footer']/ul[1]/li[2]//a[1]")
 	public WebElement footerAccountTerms;
 
-	@FindBy(xpath = "//div[@class='ep-auth__footer']/ul[1]/li[3]//a[1]")
+	@FindBy(xpath = "//a[@href='https://www.jiem.co.jp/privacy/']")
 	public WebElement footerAccountPrivacy;
 
 	@FindBy(xpath = "//div[@class='ep-auth__footer']/ul[1]/li[4]//a[1]")
@@ -137,7 +137,7 @@ public class FooterPage_PT90_106 {
 	@FindBy(xpath = "//a[@href='/product-list']")
 	public WebElement productListLink;
 
-	@FindBy(xpath = "//div[@class='ep-product-list']/div[3]/div[2]/div[2]/div[4]/form[1]/button[1]")
+	@FindBy(xpath = "//form[@action = '/product-bill-generate']/button[@class = 'button button--default button--xmedium']")
 	public WebElement selectKanjiProductFromProductList;
 
 	@FindBy(xpath = "//button[@role='button']")
