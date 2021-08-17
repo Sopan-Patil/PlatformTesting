@@ -46,7 +46,6 @@ public class PF_Footer extends NewBaseClass {
 	public void check_footer_links_on_first_order_screen_() throws Throwable {
 		FooterPage_PT90_106 orderflowone = new FooterPage_PT90_106(driver);
 		orderflowone.gotoOrderStepOneForFooterValidation();
-		orderflowone.clickOrderFlowFooterLinks();
 		driver.navigate().back();
 	}
 

@@ -107,32 +107,38 @@ public class FooterPage_PT90_106 {
 	@FindBy(xpath = "//a[@href='https://support.evidus.com/']")
 	public WebElement footerAccountQnA;
 
-	@FindBy(xpath = "//div[@class='ep-auth__footer']/ul[1]/li[2]//a[1]")
+	@FindBy(xpath = "//a[@href ='https://stg.studygear.evidus.net/term']")
 	public WebElement footerAccountTerms;
 
 	@FindBy(xpath = "//a[@href='https://www.jiem.co.jp/privacy/']")
 	public WebElement footerAccountPrivacy;
 
-	@FindBy(xpath = "//div[@class='ep-auth__footer']/ul[1]/li[4]//a[1]")
+	@FindBy(xpath = "//a[@href ='https://stg.studygear.evidus.net/transaction-method']")
 	public WebElement footerAccountTax;
 
-	@FindBy(xpath = "//h3[contains(text(),'「スタギア」利用規約')]")
-	public WebElement footerTermsforAssert;
+	@FindBy(xpath = "//a[@href ='/term']")
+	public WebElement footerOrderTerms;
+
+	@FindBy(xpath = "//a[@href ='/transaction-method']")
+	public WebElement footerOrderTax;
+
+	@FindBy(xpath = "//h3[@class ='text-center ep-term__title ep-term__title--big mb-0' ]")
+	public WebElement footerTermsforVisibility;
 
 	@FindBy(xpath = "//img[@alt='個人情報保護方針']")
-	public WebElement footerPrivacyforAssert;
+	public WebElement footerPrivacyforVisibility;
 
-	@FindBy(xpath = "//h3[contains(text(),'「特定商取引に関する法律」に基づく表示')]")
-	public WebElement footerTaxforAssert;
+	@FindBy(xpath = "//h3[@class = 'text-center ep-term__title ep-term__title--big mb-0']")
+	public WebElement footerTaxforVisibility;
 
 	@FindBy(xpath = "//img[@alt='スタギアサポートセンター ヘルプセンターのホームページ']")
-	public WebElement footerQandAforAssert;
+	public WebElement footerQandAforVisibility;
 
 	@FindBy(xpath = "//img[@alt='英検S-CBTを平日に受験しよう！']")
-	public WebElement footerExaminationWindowLinkforAssert;
+	public WebElement footerExaminationWindowLinkforVisibility;
 
 	@FindBy(xpath = "//div[@class='title']")
-	public WebElement ScbtLinkforAssert;
+	public WebElement ScbtLinkforVisibility;
 
 	@FindBy(xpath = "//a[@href='/product-list']")
 	public WebElement productListLink;
@@ -170,7 +176,7 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(termsOfUseLink);
 		if (CommonFunctions.isElementClickable(termsOfUseLink)) {
 			termsOfUseLink.click();
-			CommonFunctions.waitForVisiblity(footerTermsforAssert, 5);
+			CommonFunctions.waitForVisiblity(footerTermsforVisibility, 5);
 			String ExpectedTitle = shipmentdata[0].toString();
 			try {
 				Assert.assertEquals(ExpectedTitle, driver.getTitle());
@@ -186,7 +192,7 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(privacyPolicyLink);
 		if (CommonFunctions.isElementClickable(privacyPolicyLink)) {
 			privacyPolicyLink.click();
-			CommonFunctions.waitForVisiblity(footerPrivacyforAssert, 5);
+			CommonFunctions.waitForVisiblity(footerPrivacyforVisibility, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ExpectedTitle = shipmentdata[1].toString();
 			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
@@ -199,7 +205,7 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(specifiedCommodityTradingLawLink);
 		if (CommonFunctions.isElementClickable(specifiedCommodityTradingLawLink)) {
 			specifiedCommodityTradingLawLink.click();
-			CommonFunctions.waitForVisiblity(footerTaxforAssert, 5);
+			CommonFunctions.waitForVisiblity(footerTaxforVisibility, 5);
 			String ExpectedTitle = shipmentdata[2].toString();
 			try {
 				Assert.assertEquals(ExpectedTitle, driver.getTitle());
@@ -215,7 +221,7 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(qnALink);
 		if (CommonFunctions.isElementClickable(qnALink)) {
 			qnALink.click();
-			CommonFunctions.waitForVisiblity(footerQandAforAssert, 5);
+			CommonFunctions.waitForVisiblity(footerQandAforVisibility, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ExpectedTitle = shipmentdata[3].toString();
 			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
@@ -228,7 +234,7 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(footerExaminationWindowLink);
 		if (CommonFunctions.isElementClickable(footerExaminationWindowLink)) {
 			footerExaminationWindowLink.click();
-			CommonFunctions.waitForVisiblity(footerExaminationWindowLinkforAssert, 5);
+			CommonFunctions.waitForVisiblity(footerExaminationWindowLinkforVisibility, 5);
 			String ExpectedTitle = shipmentdata[4].toString();
 			try {
 				Assert.assertEquals(ExpectedTitle, driver.getTitle());
@@ -245,7 +251,7 @@ public class FooterPage_PT90_106 {
 		if (CommonFunctions.isElementClickable(footerScbtLink)) {
 			footerScbtLink.click();
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
-			CommonFunctions.waitForVisiblity(ScbtLinkforAssert, 5);
+			CommonFunctions.waitForVisiblity(ScbtLinkforVisibility, 5);
 			String ExpectedTitle = shipmentdata[5].toString();
 			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
 			log.info("footer Scbt Link is working");
@@ -512,7 +518,7 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(footerAccountQnA);
 		if (CommonFunctions.isElementClickable(footerAccountQnA)) {
 			footerAccountQnA.click();
-			CommonFunctions.waitForVisiblity(footerQandAforAssert, 5);
+			CommonFunctions.waitForVisiblity(footerQandAforVisibility, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ExpectedTitle = shipmentdata[26].toString();
 			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
@@ -525,7 +531,7 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(footerAccountTerms);
 		if (CommonFunctions.isElementClickable(footerAccountTerms)) {
 			footerAccountTerms.click();
-			CommonFunctions.waitForVisiblity(footerTermsforAssert, 5);
+			CommonFunctions.waitForVisiblity(footerTermsforVisibility, 5);
 			String ExpectedTitle = shipmentdata[27].toString();
 			Assert.assertEquals(ExpectedTitle, driver.getTitle());
 			log.info("Terms of Use Link is working");
@@ -537,7 +543,7 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(footerAccountPrivacy);
 		if (CommonFunctions.isElementClickable(footerAccountPrivacy)) {
 			footerAccountPrivacy.click();
-			CommonFunctions.waitForVisiblity(footerPrivacyforAssert, 5);
+			CommonFunctions.waitForVisiblity(footerPrivacyforVisibility, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ExpectedTitle = shipmentdata[28].toString();
 			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
@@ -550,7 +556,7 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(footerAccountTax);
 		if (CommonFunctions.isElementClickable(footerAccountTax)) {
 			footerAccountTax.click();
-			CommonFunctions.waitForVisiblity(footerTaxforAssert, 5);
+			CommonFunctions.waitForVisiblity(footerTaxforVisibility, 5);
 			String ExpectedTitle = shipmentdata[29].toString();
 			Assert.assertEquals(ExpectedTitle, driver.getTitle());
 			log.info("Account Tax Link working");
@@ -569,7 +575,7 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(footerAccountQnA);
 		if (CommonFunctions.isElementClickable(footerAccountQnA)) {
 			footerAccountQnA.click();
-			CommonFunctions.waitForVisiblity(footerQandAforAssert, 5);
+			CommonFunctions.waitForVisiblity(footerQandAforVisibility, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ExpectedTitle = shipmentdata[26].toString();
 			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
@@ -582,7 +588,7 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(footerAccountTerms);
 		if (CommonFunctions.isElementClickable(footerAccountTerms)) {
 			footerAccountTerms.click();
-			CommonFunctions.waitForVisiblity(footerTermsforAssert, 5);
+			CommonFunctions.waitForVisiblity(footerTermsforVisibility, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ExpectedTitle = shipmentdata[27].toString();
 			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
@@ -595,7 +601,7 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(footerAccountPrivacy);
 		if (CommonFunctions.isElementClickable(footerAccountPrivacy)) {
 			footerAccountPrivacy.click();
-			CommonFunctions.waitForVisiblity(footerPrivacyforAssert, 5);
+			CommonFunctions.waitForVisiblity(footerPrivacyforVisibility, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ExpectedTitle = shipmentdata[28].toString();
 			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
@@ -608,7 +614,7 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.scrolltoElement(footerAccountTax);
 		if (CommonFunctions.isElementClickable(footerAccountTax)) {
 			footerAccountTax.click();
-			CommonFunctions.waitForVisiblity(footerTaxforAssert, 5);
+			CommonFunctions.waitForVisiblity(footerTaxforVisibility, 5);
 			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
 			String ExpectedTitle = shipmentdata[29].toString();
 			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
@@ -675,6 +681,58 @@ public class FooterPage_PT90_106 {
 		CommonFunctions.waitForVisiblity(selectKanjiProductFromProductList, waitTime);
 		selectKanjiProductFromProductList.click();
 		log.info("Click on buy button from product list page,select 1st product");
+
+		shipmentdata = XLHandler.readexcel("FooterAssert", "NewTestData.xlsx");
+
+		CommonFunctions.scrolltoElement(footerAccountQnA);
+		if (CommonFunctions.isElementClickable(footerAccountQnA)) {
+			footerAccountQnA.click();
+			CommonFunctions.waitForVisiblity(footerQandAforVisibility, 5);
+			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
+			String ExpectedTitle = shipmentdata[26].toString();
+			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
+			log.info("QnA Link is working");
+			switchToPreviousTab();
+		} else {
+			log.error("QnA Link is not working");
+		}
+
+		CommonFunctions.scrolltoElement(footerOrderTerms);
+		if (CommonFunctions.isElementClickable(footerOrderTerms)) {
+			footerOrderTerms.click();
+			CommonFunctions.waitForVisiblity(footerOrderTerms, 5);
+			String ExpectedTitle = shipmentdata[27].toString();
+			Assert.assertEquals(ExpectedTitle, driver.getTitle());
+			log.info("Order Footer Terms of Use Link is working");
+			driver.navigate().back();
+		} else {
+			log.error("Order Footer Terms of Use Link is not working");
+		}
+
+		CommonFunctions.scrolltoElement(footerAccountPrivacy);
+		if (CommonFunctions.isElementClickable(footerAccountPrivacy)) {
+			footerAccountPrivacy.click();
+			CommonFunctions.waitForVisiblity(footerPrivacyforVisibility, 5);
+			ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
+			String ExpectedTitle = shipmentdata[28].toString();
+			Assert.assertEquals(ExpectedTitle, driver.switchTo().window(tab.get(1)).getTitle());
+			log.info("Privacy Policy Link is working");
+			switchToPreviousTab();
+		} else {
+			log.error("Privacy Policy Link is not working");
+		}
+
+		CommonFunctions.scrolltoElement(footerOrderTax);
+		if (CommonFunctions.isElementClickable(footerOrderTax)) {
+			footerOrderTax.click();
+			CommonFunctions.waitForVisiblity(footerOrderTax, 5);
+			String ExpectedTitle = shipmentdata[29].toString();
+			Assert.assertEquals(ExpectedTitle, driver.getTitle());
+			log.info("Order Footer Tax Link working");
+			driver.navigate().back();
+		} else {
+			log.error("Account Tax Link is not working");
+		}
 
 	}
 
