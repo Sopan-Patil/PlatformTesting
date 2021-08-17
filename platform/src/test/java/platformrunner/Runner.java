@@ -24,8 +24,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 		glue = { "platformstepdefinition" },
 
-		
-		 tags = { "@Smoke" },
+		tags = { "@PFInvalidCC" },
 
 
 
