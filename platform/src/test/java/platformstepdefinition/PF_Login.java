@@ -56,6 +56,13 @@ public class PF_Login extends NewBaseClass {
 
 	}
 
+	@And("^Login To Platform with newly created user$")
+	public void login_to_platform_with_newly_created_user() throws Throwable {
+		LoginPage loginToPlatform = new LoginPage(driver);
+
+		loginToPlatform.loginWithNewUser();
+	}
+
 	/**
 	 * @Author : rahul shinde
 	 * @Date : 02 Aug 2021

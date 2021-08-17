@@ -6,9 +6,14 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import base.NewBaseClass;
+
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import utils.ObjectHelper;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
+
 
 /**
  * @Author : Chetan Sonparote
@@ -25,7 +30,14 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
+
 		tags = "@Smoke",
+
+		tags = { "@PFInvalidCC" },
+
+		// tags = { "@PF_test" },
+
+
 
 		plugin = { "pretty", /* "html:target/cucumber_html_report", */ "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
@@ -55,7 +67,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 	@AfterTest(alwaysRun = true)
 	public void closeBrowser() throws Exception {
 
-		ObjectHelper.driver.quit();
+		// ObjectHelper.driver.quit();
 
 	}
 

@@ -4,6 +4,11 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import base.NewBaseClass;
+
+
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Then;
+
 import cucumber.api.junit.Cucumber;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -22,13 +27,11 @@ public class PF_InvalidCC extends NewBaseClass {
 
 	public WebDriver driver = ObjectHelper.driver;
 
-	@Given("^Login To Platform Portal$")
-	public void Login_To_Platform_Portal() throws Throwable {
-		// driver = openbrowser(browser);
-		LoginPage loginPage = new LoginPage(driver);
-		loginPage.clickLoginButton();
-		loginPage.loginToPlatform();
-	}
+	/**
+	 * @Author : rahul shinde
+	 * @Date : 16 aug 2021
+	 * @Description: remove duplicate login step def
+	 */
 
 	@Then("^Click on Membership Status link$")
 	public void Click_on_Membership_Status_link() throws Throwable {
