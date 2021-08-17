@@ -124,9 +124,14 @@ public class PF_Order extends NewBaseClass {
 		orderObj.proceedWith1stCasecProduct();
 	}
 
-	@And("^Reglogin between Step 1 page to Step 2 page$")
-	public void reglogin_between_step_1_page_to_step_2_page() throws Throwable {
-		orderObj.verifyReloginBetweenStep1ToStep2();
+	@And("^Reglogin between Step 1 page to Step 2 page with exiting user$")
+	public void reglogin_between_step_1_page_to_step_2_page_with_exiting_user() throws Throwable {
+		orderObj.verifyReloginBetweenStep1ToStep2WithExitingUser();
+	}
+
+	@And("^Reglogin between Step 1 page to Step 2 page with newly created user$")
+	public void reglogin_between_step_1_page_to_step_2_page_with_newly_created_user() throws Throwable {
+		orderObj.verifyReloginBetweenStep1ToStep2WithNewlyCreatedUser();
 	}
 
 	@And("^Step 2 Payment With Valid Credit Card$")

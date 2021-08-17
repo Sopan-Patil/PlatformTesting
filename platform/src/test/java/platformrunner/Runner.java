@@ -9,11 +9,6 @@ import base.NewBaseClass;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
-import utils.BrowserstackUtility;
-
-import utils.ObjectHelper;
-
-
 /**
  * @Author : Chetan Sonparote
  * @Date : 12 Jul 2021
@@ -29,17 +24,9 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
-		// tags = { "@OrderWithExistingCreditCard" },
-		// tags = "@OrderWithExistingCreditCard",
+		tags = { "@PFInvalidCC" },
 
-		// tags = { "@PFAccountAndSecurity, @PFAccountAndSecurityCancel" },
-
-
-		//tags = { "@OrderWithConvenienceStoreInValid" },
-
-
-		 tags = { "@PF_test" },
-
+		// tags = { "@PF_test" },
 
 		// tags = { "@OrderWithExistingCreditCard" },
 
