@@ -21,10 +21,10 @@ public class PF_Withdrawal extends NewBaseClass {
 
 	public WebDriver driver = ObjectHelper.driver;
 
-	@Given("^Login to Platform Portal$")
-	public void login_to_platform_portal() throws Throwable {
-		LoginPage loginfunction = new LoginPage(driver);
-		loginfunction.loginToPlatform();
+	@Given("^Login To Platform Portal$")
+	public void login_To_Platform_Portal() throws Throwable {
+		LoginPage login = new LoginPage(driver);
+		login.loginToPlatform();
 	}
 
 	@Then("^Click Withdrawal link on Footer$")
@@ -38,6 +38,13 @@ public class PF_Withdrawal extends NewBaseClass {
 
 		Withdrawal withdraw = new Withdrawal(driver);
 		withdraw.executeWithdrawalFunction();
+
+	}
+
+	@Then("^Check Back button on Withdrawal Page$")
+	public void check_Back_button_on_Withdrawal_Page() throws Throwable {
+		Withdrawal withdraw = new Withdrawal(driver);
+		withdraw.checkWithdrawPageButtons();
 
 	}
 

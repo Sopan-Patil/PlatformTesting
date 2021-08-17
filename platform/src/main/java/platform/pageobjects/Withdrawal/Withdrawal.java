@@ -34,7 +34,7 @@ public class Withdrawal {
 	@FindBy(xpath = "//span[@class='checkmark']")
 	public WebElement withdrawalCheck;
 
-	@FindBy(xpath = "//a[@class='button button--gray button--medium button--coupon-back']//span[contains(text(),'戻る')]")
+	@FindBy(xpath = "//a[@class='button button--gray button--medium button--coupon-back']")
 	public WebElement back;
 
 	@FindBy(xpath = "//button[@role='button']")
@@ -43,7 +43,7 @@ public class Withdrawal {
 	@FindBy(xpath = "//h1[contains(@class,'')]//a[contains(@class,'logo')]")
 	public WebElement topButton;
 
-	@FindBy(xpath = "//a[contains(text(),'退会')]")
+	@FindBy(xpath = "//a[@href = '/withdraw-confirm']")
 	public WebElement footerWithdrawalLink;
 
 	public void gotoWithdrawalPage() throws Exception {
@@ -72,15 +72,14 @@ public class Withdrawal {
 		}
 	}
 
-	public void withdrawButtons() throws Exception {
+	public void checkWithdrawPageButtons() throws Exception {
 
-		CommonFunctions.waitForVisiblity(back, 3);
-		back.click();
-		log.info("Check the back Button");
-
-		CommonFunctions.waitForVisiblity(topButton, 3);
-		topButton.click();
-		log.info("Check the Top Button");
+		if (CommonFunctions.waitForVisiblity(back, 3)) {
+			back.click();
+			log.info("Back button is clickable");
+		} else {
+			log.error("Back button is clickable");
+		}
 
 	}
 }
