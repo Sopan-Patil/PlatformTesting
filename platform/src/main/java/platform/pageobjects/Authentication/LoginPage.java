@@ -11,8 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import base.NewBaseClass;
 import utils.CommonFunctions;
+import utils.ExcelUtil;
 import utils.ObjectHelper;
-import utils.XLHandler;
 
 /**
  * @Author : Chetan Sonparote
@@ -51,6 +51,9 @@ public class LoginPage {
 
 	@FindBy(xpath = "//a[@href='/logout']")
 	public WebElement logoutButton;
+
+	@FindBy(xpath = "//p[@class='alert__des']")
+	public WebElement invalidDataErrorText;
 
 	/**
 	 * 
@@ -102,38 +105,26 @@ public class LoginPage {
 
 	public void loginToPlatform() throws Exception {
 
-//		/**
-//		 * @Author : rahul shinde
-//		 * @Date : 19 Jul 2021
-//		 * @Description: handle zkai popup
-//		 */
-//
-//		if (CommonFunctions.waitForVisiblity(zkai_popup, waitTime)) {
-//			zkai_popupCloseButton.click();
-//			log.info("Close Zkai pop up");
-//		}
+		ExcelUtil excel = new ExcelUtil();
+		excel.setExcelFile("NewTestData.xlsx", "User");
 
-		String[] shipmentdata;
+		String userNameSTR = excel.getCellData("UserName", 1);
+		String passwordSTR = excel.getCellData("Password", 1);
 
-		shipmentdata = XLHandler.readexcel("User", "NewTestData.xlsx");
-
-		System.out.println(shipmentdata[0]);
-		System.out.println(shipmentdata[1]);
-
-		// CommonFunctions.wa
 		if (CommonFunctions.waitForVisiblity(logInButton, waitTime)) {
 			logInButton.click();
 
 		}
 
 		log.info("Login button is clicked");
-		System.out.println("inside loginToPlatform()");
+
+		// System.out.println("inside loginToPlatform()");
 
 		log.info("Login button is clicked");
 
 		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
 			emailtextfield.click();
-			emailtextfield.sendKeys(shipmentdata[0]);
+			emailtextfield.sendKeys(userNameSTR);
 
 		}
 
@@ -142,7 +133,7 @@ public class LoginPage {
 			// passwordTextField.sendKeys("Test-123");
 			passwordTextField.click();
 
-			passwordTextField.sendKeys(shipmentdata[1]);
+			passwordTextField.sendKeys(passwordSTR);
 			System.out.println(passwordTextField.getText());
 		}
 		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
@@ -153,48 +144,10 @@ public class LoginPage {
 
 	/**
 	 * @Author : Rahul Shinde
-	 * @Date : 13 Jul 2021
-	 * @Description: used in order flow re login
+	 * @Date : 16 aug 2021
+	 * @Description: removed unwanted login payment login
 	 * 
 	 */
-	public void loginToPlatformForPayment() throws Exception {
-
-		CommonFunctions.isElementVisible(emailtextfield);
-		String[] shipmentdata;
-
-		shipmentdata = XLHandler.readexcel("User", "NewTestData.xlsx");
-
-		System.out.println(shipmentdata[0]);
-		System.out.println(shipmentdata[1]);
-
-		log.info("Re Login button is clicked");
-
-		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
-			emailtextfield.click();
-			emailtextfield.sendKeys(shipmentdata[0]);
-
-		}
-
-		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
-
-			// passwordTextField.sendKeys("Test-123");
-			passwordTextField.click();
-
-			passwordTextField.sendKeys(shipmentdata[1]);
-			System.out.println(passwordTextField.getText());
-		}
-
-		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
-
-			SubmitButton.click();
-
-		}
-		/*
-		 * if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
-		 * CommonFunctions.clickUsingJavaExecutor(SubmitButton); }
-		 */
-
-	}
 
 	/**
 	 * @Author : Rahul Shinde
@@ -222,6 +175,97 @@ public class LoginPage {
 
 		baseObj.replaceurl();
 		log.info("The home page is open");
+
+	}
+
+	/**
+	 * @throws Exception
+	 * @Author : Chetan Sonparote
+	 * @Date : 5 Aug 2021
+	 * 
+	 * @Description: Added new method for invlaid login
+	 */
+
+	public void setInvalidUserData(String invalid) throws Exception {
+
+		ExcelUtil excel = new ExcelUtil();
+		excel.setExcelFile("NewTestData.xlsx", "NewUser");
+
+		CommonFunctions.isElementVisible(emailtextfield);
+
+		String user = null;
+		String password = null;
+
+		if (invalid == "user") {
+			user = "inval@abd";
+			password = excel.getCellData("Password", 1);
+		} else if (invalid == "password") {
+			user = excel.getCellData("Email", 1);
+			password = "fail";
+		} else if (invalid == "both") {
+			user = "inval@abd";
+			password = "fail";
+		}
+
+		log.info("Re Login button is clicked");
+
+		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
+			emailtextfield.click();
+			emailtextfield.sendKeys(user);
+		}
+
+		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
+
+			// passwordTextField.sendKeys("Test-123");
+			passwordTextField.click();
+
+			passwordTextField.sendKeys(password);
+			// System.out.println(passwordTextField.getText());
+		}
+
+		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
+			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
+		}
+	}
+
+	public void loginWithNewUser() throws Exception {
+
+		ExcelUtil excelUtil = new ExcelUtil();
+		excelUtil.setExcelFile("NewTestData.xlsx", "NewUser");
+		String email = excelUtil.getCellData("Email", 1);
+		String password = excelUtil.getCellData("Password", 1);
+
+		log.info("New User Email : " + email);
+		log.info("New User password : " + password);
+
+		if (CommonFunctions.waitForVisiblity(logInButton, waitTime)) {
+			logInButton.click();
+			log.info("Login button is clicked");
+
+		}
+
+		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
+			emailtextfield.click();
+			emailtextfield.sendKeys(email);
+
+		}
+
+		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
+
+			// passwordTextField.sendKeys("Test-123");
+			passwordTextField.click();
+
+			passwordTextField.sendKeys(password);
+			// System.out.println(passwordTextField.getText());
+		}
+
+		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
+			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
+		}
+
+		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
+			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
+		}
 
 	}
 

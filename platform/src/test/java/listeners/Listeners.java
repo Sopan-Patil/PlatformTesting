@@ -74,8 +74,6 @@ public class Listeners extends ExtentReporter implements ITestListener {
 		String fileName = dtf.format(now);
 		extentTest.get().addScreenCaptureFromPath(Screenshots.takeScreenshot(fileName, ObjectHelper.driver),
 				result.getMethod().getMethodName());
-		// Screenshots.takeScreenshot(fileName, ObjectHelper.driver);
-		// browserstackUtility.setResult("FAIL");
 
 	}
 

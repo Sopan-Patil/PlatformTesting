@@ -21,9 +21,9 @@ import utils.XLHandler;
 /**
  * @Author : Sopan Patil
  * @Date : 22 Jul 2021
- * @Description:Class for entering invalid credit card details
- */
+* @Description:Class for entering Account Information details
 
+ */
 public class AccountAndSecurity {
 	static String kanjiSurNameExcel, kanaNameExcel, kanaFirstNameExcel, kanaLastNameExcel, birthYear, birthMonth,
 			birthDate, postalCode1Excel, postalCode2Excel, AddressCityExcel, AddressTownExcel, AddressStreetExcel,
@@ -177,14 +177,38 @@ public class AccountAndSecurity {
 	@FindBy(xpath = "//a[@class='button button--gray button--xxmedium ep-order__btn ep-order__btn--back']")
 	public WebElement cancelButton;
 
-	public void clickAccountInformation() {
+	@FindBy(xpath = "//form[@id='formEditProfile']/div/div/p[1]")
+	public WebElement kanjiFirstLastErrorMissingUI;
+
+	@FindBy(xpath = "//form[@id='formEditProfile']/div/div/p[2]")
+	public WebElement kanjiFullNameErrorMissingUI;
+
+	@FindBy(xpath = "//form[@id='formEditProfile']/div/div/p[3]")
+	public WebElement kanaNameErrorMissingUI;
+
+	@FindBy(xpath = "//form[@id='formEditProfile']/div/div/p[4]")
+	public WebElement kanaMeiNameErrorMissingUI;
+
+	@FindBy(xpath = "//form[@id='formEditProfile']/div/div/p[5]")
+	public WebElement zipCodeErrorMissingUI;
+
+	@FindBy(xpath = "//form[@id='formEditProfile']/div/div/p[6]")
+	public WebElement addCityErrorMissingUI;
+
+	@FindBy(xpath = "//form[@id='formEditProfile']/div/div/p[7]")
+	public WebElement addressTownErrorMissingUI;
+
+	@FindBy(xpath = "//form[@id='formEditProfile']/div/div/p[8]")
+	public WebElement addressStreetErrorMissingUI;
+
+	public void clickingAccountInformation() {
 		if (CommonFunctions.waitForVisiblity(accountInformation, waitTime)) {
 			accountInformation.click();
 
 		}
 	}
 
-	public void clickChangeButton() {
+	public void clickingChangeButton() {
 		CommonFunctions.scrolltoElement(changeButton);
 		if (CommonFunctions.waitForVisiblity(changeButton, waitTime)) {
 			changeButton.click();
@@ -192,7 +216,7 @@ public class AccountAndSecurity {
 
 	}
 
-	public void UpdateAccountAndSecurityInformation() throws Exception {
+	public void UpdatingAccountAndSecurityInformation() throws Exception {
 
 		shipmentdata = XLHandler.readexcel("UpdateAccountInformation", "NewTestData.xlsx");
 
@@ -268,7 +292,7 @@ public class AccountAndSecurity {
 		}
 	}
 
-	public void UpdateAccountAndSecurityInavlidInformation() throws Exception {
+	public void UpdatingAccountAndSecurityInavlidInformation() throws Exception {
 
 		shipmentdata = XLHandler.readexcel("UpdateAccountInformation", "NewTestData.xlsx");
 
@@ -403,10 +427,10 @@ public class AccountAndSecurity {
 		phone3TextField.clear();
 		phone3TextField.sendKeys(shipmentdata[25]);
 		log.info("entering Invalid Phone to 'Phone 3' textbox");
-		Validate_Updated_Invalid_Account_Information();
+		ValidatingUpdatedInvalidAccountInformation();
 	}
 
-	public void Validate_Updated_Account_Information() throws Exception {
+	public void ValidatingUpdatedAccountInformation() throws Exception {
 
 		shipmentdata = XLHandler.readexcel("UpdateAccountInformation", "NewTestData.xlsx");
 		Assert.assertEquals(updatedNameKanji.getText(), kanjiSurNameExcel + " " + kanaNameExcel);
@@ -420,7 +444,7 @@ public class AccountAndSecurity {
 		Assert.assertEquals(updatedPhone.getText(), phone1Excel + "-" + phone2Excel + "-" + phone3Excel);
 	}
 
-	public void Validate_Updated_Invalid_Account_Information() throws Exception {
+	public void ValidatingUpdatedInvalidAccountInformation() throws Exception {
 
 		shipmentdata = XLHandler.readexcel("UpdateAccountInformation", "NewTestData.xlsx");
 
@@ -460,12 +484,97 @@ public class AccountAndSecurity {
 
 	}
 
-	public void Cancel_Button() throws Exception {
+	public void ClickingCancelButton() throws Exception {
 		CommonFunctions.waitForVisiblity(cancelButton, waitTime);
-		UpdateAccountAndSecurityInavlidInformation();
-
+		UpdatingAccountAndSecurityInavlidInformation();
 		cancelButton.click();
-		Validate_Updated_Account_Information();
+		ValidatingUpdatedAccountInformation();
 	}
 
+	public void checkMissngValuesErrorOnAccountAndSecurityInformation() throws Exception {
+		CommonFunctions.isElementVisible(kanjiSurNameTextField);
+		CommonFunctions.waitForVisiblity(kanjiSurNameTextField, waitTime);
+		kanjiSurNameTextField.clear();
+
+		CommonFunctions.waitForVisiblity(kanaNameTextField, waitTime);
+		kanaNameTextField.clear();
+
+		CommonFunctions.waitForVisiblity(kanaFirstNameTextField, waitTime);
+		kanaFirstNameTextField.clear();
+
+		CommonFunctions.waitForVisiblity(kanaLastNameTextField, waitTime);
+		kanaLastNameTextField.clear();
+
+		CommonFunctions.scrolltoElement(postalCode1TextField);
+		WebElement radioBtn1 = genderOption;
+		((JavascriptExecutor) ObjectHelper.driver).executeScript("arguments[0].checked = true;", radioBtn1);
+		gender = radioBtn1.getText();
+
+		CommonFunctions.waitForVisiblity(postalCode1TextField, waitTime);
+		postalCode1TextField.clear();
+
+		CommonFunctions.waitForVisiblity(postalCode2TextField, waitTime);
+		postalCode2TextField.clear();
+		if (driver.findElement(By.xpath("//select[@id='address_prefecture']")).isDisplayed()) {
+		} else {
+			receiveNotificationsByMailCheckBox.click();
+		}
+		Select AddDropdown = new Select(AddressPrefectureDropdown);
+		AddDropdown.selectByIndex(0);
+		addprefecture = AddDropdown.getFirstSelectedOption().getText();
+
+		CommonFunctions.waitForVisiblity(AddressCityTextField, waitTime);
+		AddressCityTextField.clear();
+
+		CommonFunctions.scrolltoElement(phone1TextField);
+		CommonFunctions.waitForVisiblity(AddressTownTextField, waitTime);
+		AddressTownTextField.clear();
+
+		CommonFunctions.waitForVisiblity(AddressStreetTextField, waitTime);
+		AddressStreetTextField.clear();
+
+		CommonFunctions.waitForVisiblity(AddressApartmentTextField, waitTime);
+		AddressApartmentTextField.clear();
+
+		CommonFunctions.waitForVisiblity(phone1TextField, waitTime);
+		phone1TextField.clear();
+
+		CommonFunctions.waitForVisiblity(phone2TextField, waitTime);
+		phone2TextField.clear();
+
+		CommonFunctions.waitForVisiblity(phone3TextField, waitTime);
+		phone3TextField.clear();
+		if (CommonFunctions.waitForVisiblity(saveButton, waitTime)) {
+			saveButton.click();
+		}
+
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+
+		jse.executeScript("scroll(0, -250);");
+		shipmentdata = XLHandler.readexcel("UpdateAccountInformation", "NewTestData.xlsx");
+
+		String kanjiFirstLastExcelErrorMissing = shipmentdata[37].toString();
+		Assert.assertEquals(kanjiFirstLastExcelErrorMissing, kanaNameTextFieldError.getText());
+
+		String kanjiFullNameExcelErrorMissing = shipmentdata[38].toString();
+		Assert.assertEquals(kanjiFullNameExcelErrorMissing, kanjiFullNameErrorMissingUI.getText());
+
+		String kanaNameExcelErrorMissing = shipmentdata[39].toString();
+		Assert.assertEquals(kanaNameExcelErrorMissing, kanaNameErrorMissingUI.getText());
+
+		String kanaMeiNameExcelErrorMissing = shipmentdata[40].toString();
+		Assert.assertEquals(kanaMeiNameExcelErrorMissing, kanaMeiNameErrorMissingUI.getText());
+
+		String zipCodeExcelErrorMissing = shipmentdata[41].toString();
+		Assert.assertEquals(zipCodeExcelErrorMissing, zipCodeErrorMissingUI.getText());
+
+		String addCityExcelErrorMissing = shipmentdata[42].toString();
+		Assert.assertEquals(addCityExcelErrorMissing, addCityErrorMissingUI.getText());
+
+		String addressTownExcelErrorMissing = shipmentdata[43].toString();
+		Assert.assertEquals(addressTownExcelErrorMissing, addressTownErrorMissingUI.getText());
+
+		String addressStreetExcelErrorMissing1 = shipmentdata[44].toString();
+		Assert.assertEquals(addressStreetExcelErrorMissing1, addressStreetErrorMissingUI.getText());
+	}
 }
