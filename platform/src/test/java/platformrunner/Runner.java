@@ -29,9 +29,9 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 		// tags = { "@PFAccountAndSecurity, @PFAccountAndSecurityCancel" },
 
-		// tags = { "@OrderWithConvenienceStoreInValid" },
+		 tags = { "@OrderRefreshPageWithExistingCreditCard" },
 
-		tags = { "@PF_test" },
+		//tags = { "@PF_test" },
 
 		// tags = { "@OrderWithExistingCreditCard" },
 
