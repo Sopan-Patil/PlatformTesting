@@ -102,6 +102,7 @@ And Verify thank you page for prime transaction
 And Verify thank you page data on order history page for prime transaction
 And Verify Service you are using page for prime transaction
 And Verify Membership status page for prime transaction
+And Verify learn button from Service you are using page
 
 
 @OrderRefreshPageWithExistingCreditCard  @Full
