@@ -545,3 +545,576 @@
 20:14:00.171 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Terms of use ・ Handling of personal information link visible
 20:14:01.139 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- privacy policy link visible
 20:14:01.958 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Display based on the Specified Commercial Transactions Law link visible
+18:28:54.752 [TestNG-tests-1] INFO  utils.ClosePopup - Zakai Popup Detected
+18:28:55.104 [TestNG-tests-1] INFO  utils.ClosePopup - Zakai Popup Closed
+18:30:48.624 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:30:48.624 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:33:37.645 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Kanji Sur Name to 'kanji Sur Name' textbox
+18:33:38.576 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Kanji Name to 'kanji  Name' textbox
+18:33:39.531 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Kanji First Name to 'kanji First Name' textbox
+18:33:40.429 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Kanji Last Name to 'kanji Last Name' textbox
+18:33:41.622 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - selecting 'Birth year ' Dropdown
+18:33:42.031 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - selecting 'Birth month ' Dropdown
+18:33:42.434 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - selecting 'Birth date ' Dropdown
+18:33:43.573 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Postal Code to 'Postal Code 1' textbox
+18:33:44.736 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Postal Code to 'Postal Code 2' textbox
+18:33:45.269 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - selecting 'Address prefecture' Dropdown
+18:33:46.242 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Address City to 'Address City' textbox
+18:33:47.659 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Address Town to 'Address Town' textbox
+18:33:48.510 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Address Street to 'Address Street' textbox
+18:33:49.365 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Address Apartment to 'Address Apartment' textbox
+18:33:50.217 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Phone to 'Phone 1' textbox
+18:33:51.241 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Phone to 'Phone 2' textbox
+18:33:52.251 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Phone to 'Phone 3' textbox
+18:34:00.353 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+18:34:02.649 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:34:02.650 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:34:13.608 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Kanji Sur Name to 'kanji Sur Name' textbox
+18:34:14.574 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Kanji Name to 'kanji  Name' textbox
+18:34:15.525 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Kanji First Name to 'kanji First Name' textbox
+18:34:16.395 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Kanji Last Name to 'kanji Last Name' textbox
+18:34:17.217 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Postal Code to 'Postal Code 1' textbox
+18:34:18.047 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Postal Code to 'Postal Code 2' textbox
+18:34:19.117 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Address City to 'Address City' textbox
+18:34:20.469 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Address Town to 'Address Town' textbox
+18:34:21.313 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Address Street to 'Address Street' textbox
+18:34:22.137 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Address Apartment to 'Address Apartment' textbox
+18:34:22.956 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Phone to 'Phone 1' textbox
+18:34:23.824 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Phone to 'Phone 2' textbox
+18:34:24.613 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Phone to 'Phone 3' textbox
+18:34:29.829 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+18:34:31.558 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:34:31.558 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:34:43.091 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Kanji Sur Name to 'kanji Sur Name' textbox
+18:34:43.943 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Kanji Name to 'kanji  Name' textbox
+18:34:44.776 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Kanji First Name to 'kanji First Name' textbox
+18:34:45.568 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Kanji Last Name to 'kanji Last Name' textbox
+18:34:46.376 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Postal Code to 'Postal Code 1' textbox
+18:34:47.234 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Postal Code to 'Postal Code 2' textbox
+18:34:48.287 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Address City to 'Address City' textbox
+18:34:49.667 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Address Town to 'Address Town' textbox
+18:34:50.518 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Address Street to 'Address Street' textbox
+18:34:51.368 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Address Apartment to 'Address Apartment' textbox
+18:34:52.254 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Phone to 'Phone 1' textbox
+18:34:53.112 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Phone to 'Phone 2' textbox
+18:34:53.942 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Phone to 'Phone 3' textbox
+18:35:03.122 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+18:35:04.793 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:35:04.793 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:35:32.522 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+18:35:34.189 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:35:34.189 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:36:00.671 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:36:00.671 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:36:28.823 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:36:28.824 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:36:48.189 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - free user is now in membership status page
+18:36:51.794 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+18:36:53.798 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:36:53.798 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:37:02.145 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - user is not Prime member
+18:37:06.198 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+18:37:08.012 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:37:08.012 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:37:17.691 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - free user is now in membership status page
+18:37:20.709 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - user is not Prime member
+18:37:26.254 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+18:37:28.020 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:37:28.020 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:37:36.012 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+18:37:36.220 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product name from product list page CASEC１回分
+18:37:36.414 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 3667
+18:37:39.203 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on buy button from product list page,select 1st product-CASEC １
+18:37:40.773 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+18:37:40.881 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product name from product list page CASEC１回分
+18:37:40.991 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 3667
+18:37:44.113 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on buy button from product list page,select 1st product-CASEC １
+18:37:44.113 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product name from product list page:- CASEC１回分
+18:37:44.114 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product price from product list page:- 3667
+18:37:44.818 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text CASEC１回分 with CASEC１回分
+18:37:44.825 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 product name match with product name from product list page
+18:37:45.516 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price (excluding tax):- 3334
+18:37:46.211 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price Subtotal:- 3334
+18:37:46.212 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3334 with 3334
+18:37:46.212 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Price (excluding tax) and subtotal have same amount
+18:37:46.918 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - step 1 product tax:- 0.10
+18:37:46.919 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price rounded value:- 333
+18:37:47.720 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price Consumption tax 10%:- 333
+18:37:47.721 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 333 with 333
+18:37:47.721 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected and actual Consumption tax 10% values is matched
+18:37:47.721 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - addition of subtotal + Consumption tax 10% is 3667
+18:37:48.420 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Billed amount:- 3667
+18:37:48.420 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3667 with 3667
+18:37:48.421 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and actual billed amount is matched 
+18:37:48.421 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3667 with 3667
+18:37:48.421 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+18:37:50.251 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 1 tab :- click to 'To payment method selection' button
+18:38:34.302 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - go to relogin page
+18:38:39.858 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:38:39.859 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:39:17.151 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text CASEC１回分 with CASEC１回分
+18:39:17.151 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 2 product name match with product name from product list page
+18:39:17.820 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 2 Price (excluding tax):- 3334
+18:39:18.484 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 2 Price Subtotal:- 3334
+18:39:18.484 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3334 with 3334
+18:39:18.484 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Price (excluding tax) and subtotal have same amount
+18:39:19.191 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - step 2 product tax:- 0.10
+18:39:19.191 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 2 Price rounded value:- 333
+18:39:19.894 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 2 Price Consumption tax 10%:- 333
+18:39:19.895 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 333 with 333
+18:39:19.895 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected and actual Consumption tax 10% values is matched
+18:39:19.895 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - addition of subtotal + Consumption tax 10% is 3667
+18:39:20.580 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 2 Billed amount:- 3667
+18:39:20.580 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3667 with 3667
+18:39:20.580 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and actual billed amount is matched 
+18:39:20.581 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3667 with 3667
+18:39:20.581 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+18:39:21.987 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'Confirmation of order details' button
+18:39:22.662 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text CASEC１回分 with CASEC１回分
+18:39:22.662 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 product name match with product name from product list page
+18:39:23.342 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 Price (excluding tax):- 3334
+18:39:24.040 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 Price Subtotal:- 3334
+18:39:24.040 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3334 with 3334
+18:39:24.041 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Price (excluding tax) and subtotal have same amount
+18:39:24.710 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - step 3 product tax:- 0.10
+18:39:24.711 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 Price rounded value:- 333
+18:39:25.390 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 Price Consumption tax 10%:- 333
+18:39:25.390 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 333 with 333
+18:39:25.390 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected and actual Consumption tax 10% values is matched
+18:39:25.392 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - addition of subtotal + Consumption tax 10% is 3667
+18:39:26.070 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 Billed amount:- 3667
+18:39:26.070 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3667 with 3667
+18:39:26.071 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and actual billed amount is matched 
+18:39:26.071 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3667 with 3667
+18:39:26.071 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+18:39:29.727 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 3 tab :- click to 'Confirm the order' button
+18:39:31.713 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- thank You For Your Application text visible:- ご購入ありがとうございます。
+18:39:31.713 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text ご購入ありがとうございます。 with ご購入ありがとうございます。
+18:39:32.469 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Order number text visible:- ORD000000000000000006672
+18:39:33.118 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- order history link visible
+18:39:33.800 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- start now button visible:- 今すぐはじめる
+18:39:33.800 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 今すぐはじめる with 今すぐはじめる
+18:39:34.470 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Frequently Asked Questions / Inquiries link visible
+18:39:35.097 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Terms of use ・ Handling of personal information link visible
+18:39:35.732 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- privacy policy link visible
+18:39:36.364 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Display based on the Specified Commercial Transactions Law link visible
+18:39:36.684 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- click on FAQ and it open in new browser tab
+18:39:43.975 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- click on terms Of Use Link and it open in new browser tab
+18:39:51.269 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- click on privery policy Link and it open in new browser tab
+18:39:58.554 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- click on commercial transaction law Link and it open in new browser tab
+18:39:58.620 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to commercial Transactions page
+18:40:00.426 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - commercial Transactions text visible on commercial Transactions page
+18:40:00.529 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to privacy Policy page
+18:40:02.720 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - privacy Policy text visible on privacy Policy Page
+18:40:02.823 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to Terms of Service page
+18:40:04.499 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - STAGIA Terms of Service visible on FAQ page
+18:40:04.585 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to FAQ page
+18:40:06.273 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - FAQ logo visible on FAQ page
+18:40:06.340 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to thank you page again
+18:40:06.340 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Order number from thank you page,now can use to next method:- ORD000000000000000006672
+18:40:06.341 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Store Order Number from CreditCardThankYouPage:- ORD000000000000000006672
+18:40:09.657 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- buy again button visible 再度購入
+18:40:09.657 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 再度購入 with 再度購入
+18:40:10.351 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- order number is ORD000000000000000006672
+18:40:10.351 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text ORD000000000000000006672 with ORD000000000000000006672
+18:40:11.051 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- payment status is Payment confirmed 支払い確認済み
+18:40:11.051 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 支払い確認済み with 支払い確認済み
+18:40:11.725 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- product name is CASEC１回分
+18:40:12.412 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- product price is 3,667円（税込）
+18:40:13.099 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- order date is 注文日: 2021-08-17
+18:40:13.101 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 2021-08-17 with 2021-08-17
+18:40:17.533 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+18:40:19.421 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:40:19.421 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:40:25.742 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+18:40:25.840 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product name from product list page CASEC１回分
+18:40:25.952 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 3667
+18:40:28.560 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on buy button from product list page,select 1st product-CASEC １
+18:40:29.818 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+18:40:29.933 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product name from product list page CASEC１回分
+18:40:30.050 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 3667
+18:40:32.802 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on buy button from product list page,select 1st product-CASEC １
+18:40:32.802 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product name from product list page:- CASEC１回分
+18:40:32.802 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product price from product list page:- 3667
+18:40:33.483 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text CASEC１回分 with CASEC１回分
+18:40:33.484 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 product name match with product name from product list page
+18:40:34.141 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price (excluding tax):- 3334
+18:40:34.820 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price Subtotal:- 3334
+18:40:34.820 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3334 with 3334
+18:40:34.820 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Price (excluding tax) and subtotal have same amount
+18:40:35.528 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - step 1 product tax:- 0.10
+18:40:35.528 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price rounded value:- 333
+18:40:36.207 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price Consumption tax 10%:- 333
+18:40:36.207 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 333 with 333
+18:40:36.208 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected and actual Consumption tax 10% values is matched
+18:40:36.208 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - addition of subtotal + Consumption tax 10% is 3667
+18:40:36.869 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Billed amount:- 3667
+18:40:36.869 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3667 with 3667
+18:40:36.869 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and actual billed amount is matched 
+18:40:36.870 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3667 with 3667
+18:40:36.870 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+18:40:38.869 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 1 tab :- click to 'To payment method selection' button
+18:40:41.021 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - go to relogin page
+18:40:46.529 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:40:46.530 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:41:03.731 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'Register your credit card information' radio button
+18:41:04.510 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide card no to 'credit card number' textbox
+18:41:05.242 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide card holder name to 'card name' textbox
+18:41:06.014 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click on 'Expiration year' Dropdown
+18:41:15.971 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide security code to 'securitycode' textbox
+18:41:16.687 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click on 'Expiration Month'Dropdown
+18:41:18.014 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'Confirmation of order details' button
+18:41:21.257 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text CASEC１回分 with CASEC１回分
+18:41:21.257 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 product name match with product name from product list page
+18:41:21.934 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 Price (excluding tax):- 3334
+18:41:22.608 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 Price Subtotal:- 3334
+18:41:22.608 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3334 with 3334
+18:41:22.609 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Price (excluding tax) and subtotal have same amount
+18:41:23.330 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - step 3 product tax:- 0.10
+18:41:23.330 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 Price rounded value:- 333
+18:41:24.034 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 Price Consumption tax 10%:- 333
+18:41:24.035 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 333 with 333
+18:41:24.036 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected and actual Consumption tax 10% values is matched
+18:41:24.036 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - addition of subtotal + Consumption tax 10% is 3667
+18:41:24.760 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 Billed amount:- 3667
+18:41:24.760 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3667 with 3667
+18:41:24.760 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and actual billed amount is matched 
+18:41:24.761 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3667 with 3667
+18:41:24.761 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+18:41:28.607 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 3 tab :- click to 'Confirm the order' button
+18:41:30.204 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- thank You For Your Application text visible:- ご購入ありがとうございます。
+18:41:30.205 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text ご購入ありがとうございます。 with ご購入ありがとうございます。
+18:41:30.899 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Order number text visible:- ORD000000000000000006674
+18:41:31.533 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- order history link visible
+18:41:32.222 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- start now button visible:- 今すぐはじめる
+18:41:32.222 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 今すぐはじめる with 今すぐはじめる
+18:41:32.871 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Frequently Asked Questions / Inquiries link visible
+18:41:33.531 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Terms of use ・ Handling of personal information link visible
+18:41:34.231 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- privacy policy link visible
+18:41:34.862 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Display based on the Specified Commercial Transactions Law link visible
+18:41:35.110 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- click on FAQ and it open in new browser tab
+18:41:42.387 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- click on terms Of Use Link and it open in new browser tab
+18:41:49.696 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- click on privery policy Link and it open in new browser tab
+18:41:57.012 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- click on commercial transaction law Link and it open in new browser tab
+18:41:57.050 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to commercial Transactions page
+18:41:58.771 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - commercial Transactions text visible on commercial Transactions page
+18:41:58.863 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to privacy Policy page
+18:42:01.045 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - privacy Policy text visible on privacy Policy Page
+18:42:01.135 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to Terms of Service page
+18:42:02.828 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - STAGIA Terms of Service visible on FAQ page
+18:42:02.927 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to FAQ page
+18:42:04.595 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - FAQ logo visible on FAQ page
+18:42:04.678 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to thank you page again
+18:42:04.679 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Order number from thank you page,now can use to next method:- ORD000000000000000006674
+18:42:04.680 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Store Order Number from CreditCardThankYouPage:- ORD000000000000000006674
+18:42:07.401 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- buy again button visible 再度購入
+18:42:07.401 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 再度購入 with 再度購入
+18:42:08.097 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- order number is ORD000000000000000006674
+18:42:08.098 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text ORD000000000000000006674 with ORD000000000000000006674
+18:42:08.804 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- payment status is Payment confirmed 支払い確認済み
+18:42:08.805 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 支払い確認済み with 支払い確認済み
+18:42:09.504 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- product name is CASEC１回分
+18:42:10.190 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- product price is 3,667円（税込）
+18:42:10.871 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- order date is 注文日: 2021-08-17
+18:42:10.871 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 2021-08-17 with 2021-08-17
+18:42:15.371 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+18:42:17.470 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:42:17.470 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:42:25.442 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+18:42:25.521 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product name from product list page CASEC１回分
+18:42:25.657 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 3667
+18:42:27.415 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on buy button from product list page,select 1st product-CASEC １
+18:42:28.856 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+18:42:28.950 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product name from product list page CASEC１回分
+18:42:29.044 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 3667
+18:42:30.846 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on buy button from product list page,select 1st product-CASEC １
+18:42:30.846 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product name from product list page:- CASEC１回分
+18:42:30.847 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product price from product list page:- 3667
+18:42:31.560 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text CASEC１回分 with CASEC１回分
+18:42:31.560 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 product name match with product name from product list page
+18:42:32.236 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price (excluding tax):- 3334
+18:42:32.920 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price Subtotal:- 3334
+18:42:32.920 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3334 with 3334
+18:42:32.920 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Price (excluding tax) and subtotal have same amount
+18:42:33.566 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - step 1 product tax:- 0.10
+18:42:33.566 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price rounded value:- 333
+18:42:34.225 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price Consumption tax 10%:- 333
+18:42:34.226 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 333 with 333
+18:42:34.226 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected and actual Consumption tax 10% values is matched
+18:42:34.226 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - addition of subtotal + Consumption tax 10% is 3667
+18:42:34.888 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Billed amount:- 3667
+18:42:34.888 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3667 with 3667
+18:42:34.889 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and actual billed amount is matched 
+18:42:34.890 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3667 with 3667
+18:42:34.890 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+18:42:37.415 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 1 tab :- click to 'To payment method selection' button
+18:42:39.656 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - go to relogin page
+18:42:45.151 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:42:45.152 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:43:02.416 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'Register your credit card information' radio button
+18:43:03.214 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide card no to 'credit card number' textbox
+18:43:03.979 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide card holder name to 'card name' textbox
+18:43:04.786 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click on 'Expiration year' Dropdown
+18:43:14.803 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide security code to 'securitycode' textbox
+18:43:15.587 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click on 'Expiration Month'Dropdown
+18:43:17.032 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'Confirmation of order details' button
+18:43:19.113 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text ご利用いただけないクレジットカードです。 with ご利用いただけないクレジットカードです。
+18:43:19.113 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The invalid credit card message match with our expected message
+18:43:23.644 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+18:43:25.757 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:43:25.758 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:43:33.363 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+18:43:33.477 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product name from product list page CASEC１回分
+18:43:33.592 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 3667
+18:43:36.353 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on buy button from product list page,select 1st product-CASEC １
+18:43:37.783 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+18:43:37.883 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product name from product list page CASEC１回分
+18:43:37.986 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 3667
+18:43:39.848 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on buy button from product list page,select 1st product-CASEC １
+18:43:39.849 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product name from product list page:- CASEC１回分
+18:43:39.849 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product price from product list page:- 3667
+18:43:40.590 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text CASEC１回分 with CASEC１回分
+18:43:40.590 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 product name match with product name from product list page
+18:43:41.288 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price (excluding tax):- 3334
+18:43:41.976 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price Subtotal:- 3334
+18:43:41.976 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3334 with 3334
+18:43:41.976 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Price (excluding tax) and subtotal have same amount
+18:43:42.647 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - step 1 product tax:- 0.10
+18:43:42.647 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price rounded value:- 333
+18:43:43.349 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price Consumption tax 10%:- 333
+18:43:43.349 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 333 with 333
+18:43:43.350 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected and actual Consumption tax 10% values is matched
+18:43:43.350 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - addition of subtotal + Consumption tax 10% is 3667
+18:43:44.065 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Billed amount:- 3667
+18:43:44.065 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3667 with 3667
+18:43:44.065 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and actual billed amount is matched 
+18:43:44.065 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3667 with 3667
+18:43:44.066 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+18:43:46.387 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 1 tab :- click to 'To payment method selection' button
+18:43:48.397 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - go to relogin page
+18:43:53.907 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:43:53.907 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:44:11.276 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'Register your credit card information' radio button
+18:44:12.092 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'Confirmation of order details' button
+18:44:12.203 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 入力してください with 入力してください
+18:44:12.203 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The card no message match with our expected message
+18:44:12.332 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 入力してください with 入力してください
+18:44:12.332 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The month and year message match with our expected message
+18:44:12.472 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 入力してください with 入力してください
+18:44:12.472 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The card name message match with our expected message
+18:44:12.585 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 入力してください with 入力してください
+18:44:12.585 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The security code message match with our expected message
+18:44:18.796 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+18:44:20.378 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:44:20.379 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:44:29.122 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+18:44:29.268 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product name from product list page CASEC１回分
+18:44:29.388 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 3667
+18:44:32.324 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on buy button from product list page,select 1st product-CASEC １
+18:44:33.950 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+18:44:34.072 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product name from product list page CASEC１回分
+18:44:34.159 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 3667
+18:44:36.735 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on buy button from product list page,select 1st product-CASEC １
+18:44:36.736 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product name from product list page:- CASEC１回分
+18:44:36.736 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product price from product list page:- 3667
+18:44:37.387 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text CASEC１回分 with CASEC１回分
+18:44:37.387 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 product name match with product name from product list page
+18:44:38.082 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price (excluding tax):- 3334
+18:44:38.737 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price Subtotal:- 3334
+18:44:38.737 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3334 with 3334
+18:44:38.737 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Price (excluding tax) and subtotal have same amount
+18:44:39.414 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - step 1 product tax:- 0.10
+18:44:39.415 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price rounded value:- 333
+18:44:40.103 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price Consumption tax 10%:- 333
+18:44:40.104 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 333 with 333
+18:44:40.104 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected and actual Consumption tax 10% values is matched
+18:44:40.104 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - addition of subtotal + Consumption tax 10% is 3667
+18:44:40.851 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Billed amount:- 3667
+18:44:40.852 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3667 with 3667
+18:44:40.852 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and actual billed amount is matched 
+18:44:40.853 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3667 with 3667
+18:44:40.853 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+18:44:42.690 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 1 tab :- click to 'To payment method selection' button
+18:44:44.723 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - go to relogin page
+18:44:50.196 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:44:50.196 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:45:07.474 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'convenience Store Payment' radio button
+18:45:08.169 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'lawson' radio button
+18:45:09.029 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide name 'kanji Name' textbox
+18:45:09.884 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide name 'kana Name' textbox
+18:45:10.755 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide phone no 'phone no' textbox
+18:45:11.646 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide email to 'email address' textbox
+18:45:13.470 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'Confirmation of order details' button
+18:45:14.239 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text CASEC１回分 with CASEC１回分
+18:45:14.239 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 product name match with product name from product list page
+18:45:14.938 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 Price (excluding tax):- 3334
+18:45:15.630 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 Price Subtotal:- 3334
+18:45:15.631 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3334 with 3334
+18:45:15.631 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Price (excluding tax) and subtotal have same amount
+18:45:16.330 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - step 3 product tax:- 0.10
+18:45:16.330 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 Price rounded value:- 333
+18:45:17.006 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 Price Consumption tax 10%:- 333
+18:45:17.006 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 333 with 333
+18:45:17.006 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected and actual Consumption tax 10% values is matched
+18:45:17.006 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - addition of subtotal + Consumption tax 10% is 3667
+18:45:17.703 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 Billed amount:- 3667
+18:45:17.703 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3667 with 3667
+18:45:17.704 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and actual billed amount is matched 
+18:45:17.704 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3667 with 3667
+18:45:17.705 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+18:45:20.750 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 3 tab :- click to 'Confirm the order' button
+18:45:22.322 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- thank You For Your Application text visible:- お申し込みありがとうございます。
+18:45:22.992 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Customer Number text visible:- LW212291848191
+18:45:23.674 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- convenience store text visible:- ローソン
+18:45:24.339 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Authorization number text visible:- 1166
+18:45:25.021 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Payment deadline text visible:- 2021年08月21日　23時59分
+18:45:25.021 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Payment deadline text capture for compare with order history page:- 2021/08/21
+18:45:25.688 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Order number text visible:- ORD000000000000000006680
+18:45:25.949 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- click on top page button and it open in new browser tab
+18:45:28.025 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to top page
+18:45:29.703 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Product list page visible on top page
+18:45:29.804 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to thank you page again
+18:45:29.804 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Payment dead line date from thank you page,now can use to next method:- 2021/08/21
+18:45:29.804 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Order number from thank you page,now can use to next method:-  ORD000000000000000006680
+18:45:29.805 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Store Payment Deadline from ConStoreThankYouPage:- 2021/08/21
+18:45:29.805 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Store Order Number from ConStoreThankYouPage:- ORD000000000000000006680
+18:45:33.030 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- actual Payment deadline date 2021/08/21
+18:45:33.031 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 2021/08/21 with 2021/08/21
+18:45:33.802 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- buy again button visible 再度購入
+18:45:33.802 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 再度購入 with 再度購入
+18:45:34.504 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- order number is ORD000000000000000006680
+18:45:34.504 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text ORD000000000000000006680 with ORD000000000000000006680
+18:45:35.175 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- payment status is Payment unconfirmed 支払い未確認
+18:45:35.175 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 支払い未確認 with 支払い未確認
+18:45:35.834 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- product name is CASEC１回分
+18:45:36.505 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- product price is 3,667円（税込）
+18:45:38.325 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- order date is 
+18:45:42.589 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+18:45:44.425 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:45:44.425 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:45:52.025 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+18:45:52.145 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product name from product list page CASEC１回分
+18:45:52.288 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 3667
+18:45:54.231 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on buy button from product list page,select 1st product-CASEC １
+18:45:56.032 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+18:45:56.187 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product name from product list page CASEC１回分
+18:45:56.320 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 3667
+18:45:58.107 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on buy button from product list page,select 1st product-CASEC １
+18:45:58.107 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product name from product list page:- CASEC１回分
+18:45:58.107 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product price from product list page:- 3667
+18:45:58.862 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text CASEC１回分 with CASEC１回分
+18:45:58.862 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 product name match with product name from product list page
+18:45:59.642 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price (excluding tax):- 3334
+18:46:00.434 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price Subtotal:- 3334
+18:46:00.434 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3334 with 3334
+18:46:00.435 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Price (excluding tax) and subtotal have same amount
+18:46:01.148 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - step 1 product tax:- 0.10
+18:46:01.148 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price rounded value:- 333
+18:46:01.853 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price Consumption tax 10%:- 333
+18:46:01.853 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 333 with 333
+18:46:01.853 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected and actual Consumption tax 10% values is matched
+18:46:01.853 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - addition of subtotal + Consumption tax 10% is 3667
+18:46:02.532 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Billed amount:- 3667
+18:46:02.532 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3667 with 3667
+18:46:02.532 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and actual billed amount is matched 
+18:46:02.532 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3667 with 3667
+18:46:02.532 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+18:46:04.369 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 1 tab :- click to 'To payment method selection' button
+18:46:06.693 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - go to relogin page
+18:46:12.227 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:46:12.227 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:46:29.530 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'convenience Store Payment' radio button
+18:46:30.283 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'lawson' radio button
+18:46:31.120 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide name 'kanji Name' textbox
+18:46:31.956 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide name 'kana Name' textbox
+18:46:32.761 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide phone no 'phone no' textbox
+18:46:33.563 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide email to 'email address' textbox
+18:46:34.353 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'Confirmation of order details' button
+18:46:35.051 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 有効なメールアドレスを入力してください with 有効なメールアドレスを入力してください
+18:46:35.051 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The invalid email address of con store message match with our expected message
+18:46:41.249 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+18:46:43.160 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:46:43.160 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:46:51.867 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+18:46:51.998 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product name from product list page CASEC１回分
+18:46:52.120 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 3667
+18:46:54.971 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on buy button from product list page,select 1st product-CASEC １
+18:46:56.566 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+18:46:56.687 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product name from product list page CASEC１回分
+18:46:56.812 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 3667
+18:46:59.543 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on buy button from product list page,select 1st product-CASEC １
+18:46:59.544 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product name from product list page:- CASEC１回分
+18:46:59.544 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product price from product list page:- 3667
+18:47:00.443 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text CASEC１回分 with CASEC１回分
+18:47:00.443 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 product name match with product name from product list page
+18:47:01.136 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price (excluding tax):- 3334
+18:47:01.811 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price Subtotal:- 3334
+18:47:01.811 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3334 with 3334
+18:47:01.811 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Price (excluding tax) and subtotal have same amount
+18:47:02.531 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - step 1 product tax:- 0.10
+18:47:02.532 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price rounded value:- 333
+18:47:03.252 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price Consumption tax 10%:- 333
+18:47:03.252 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 333 with 333
+18:47:03.252 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected and actual Consumption tax 10% values is matched
+18:47:03.252 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - addition of subtotal + Consumption tax 10% is 3667
+18:47:03.940 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Billed amount:- 3667
+18:47:03.941 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3667 with 3667
+18:47:03.941 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and actual billed amount is matched 
+18:47:03.942 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 3667 with 3667
+18:47:03.942 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+18:47:06.070 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 1 tab :- click to 'To payment method selection' button
+18:47:08.511 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - go to relogin page
+18:47:13.983 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:47:13.983 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:47:30.994 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'convenience Store Payment' radio button
+18:47:31.712 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'lawson' radio button
+18:47:32.468 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- clear 'kanji Name' textbox value
+18:47:33.191 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- clear 'kana Name' textbox value
+18:47:33.925 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- clear phone no 'phone no' textbox value
+18:47:34.675 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- clear 'email address' textbox value
+18:47:35.489 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'Confirmation of order details' button
+18:47:36.164 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 氏名（漢字）を入力してください with 氏名（漢字）を入力してください
+18:47:36.164 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The blank Kanji Name message match with our expected message
+18:47:36.809 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 氏名（カナ）を入力してください with 氏名（カナ）を入力してください
+18:47:36.809 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The blank Kana Name message match with our expected message
+18:47:37.570 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 電話番号を入力してください with 電話番号を入力してください
+18:47:37.571 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The blank telephone number Name message match with our expected message
+18:47:42.649 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+18:47:47.888 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+18:47:53.092 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Generated email:TestPF1221+17082021184752@gmail.com
+18:47:53.936 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Generated eid:TestPF1221_17082021184752
+18:49:20.017 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Password :pfqa_123
+18:49:27.250 [TestNG-tests-1] INFO  platformstepdefinition.PF_CreateAccount - inside validate_that_new_account_is_created()
+18:49:27.251 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created email:TestPF1221+17082021184752@gmail.com
+18:49:27.251 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created eid:TestPF1221_17082021184752
+18:49:27.251 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created password:pfqa_123
+18:49:30.227 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - New User Email : TestPF1221+17082021184752@gmail.com
+18:49:30.227 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - New User password : pfqa_123
+18:49:31.823 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:49:42.866 [TestNG-tests-1] INFO  platformstepdefinition.PF_CreateAccount - New User is logged in
+18:49:44.196 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - New User Email : TestPF1221+17082021184752@gmail.com
+18:49:44.196 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - New User password : pfqa_123
+18:49:45.919 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+18:49:59.684 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on top Page Member Plan Link
+18:50:02.006 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click Apply For Prime Membership Button
+18:50:02.711 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text プライム会員プラン with プライム会員プラン
+18:50:02.711 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 product name match with product name from product list page
+18:50:03.392 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price (excluding tax):- 455
+18:50:04.080 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price Subtotal:- 455
+18:50:04.080 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 455 with 455
+18:50:04.080 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Price (excluding tax) and subtotal have same amount
+18:50:04.762 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - step 1 product tax:- 0.10
+18:50:04.763 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price rounded value:- 45
+18:50:05.457 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Price Consumption tax 10%:- 45
+18:50:05.457 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 45 with 45
+18:50:05.457 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected and actual Consumption tax 10% values is matched
+18:50:05.457 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - addition of subtotal + Consumption tax 10% is 500
+18:50:06.116 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Billed amount:- 500
+18:50:06.116 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 500 with 500
+18:50:06.116 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and actual billed amount is matched 
+18:50:06.116 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 500 with 500
+18:50:06.116 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+18:50:23.528 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 1 tab :- click to 'To payment method selection' button
+18:50:25.261 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - go to relogin page
+18:50:25.302 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - New User Email : TestPF1221+17082021184752@gmail.com
+18:50:25.308 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - New User password : pfqa_123
