@@ -31,7 +31,7 @@ public class PF_Localization extends NewBaseClass {
 		// throw new PendingException();
 		// List<String> data = userState.asList();
 		String sheetName = userState.get(0);
-		;// data.get(0);
+
 		log.info("sheetName :" + sheetName);
 		LocalizationData localizationData = new LocalizationData(driver);
 		localizationData.readLocalizationData(sheetName);

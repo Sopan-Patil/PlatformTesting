@@ -2,12 +2,12 @@ package platformrunner;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import base.NewBaseClass;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
+import utils.ObjectHelper;
 
 /**
  * @Author : Chetan Sonparote
@@ -24,7 +24,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 		glue = { "platformstepdefinition" },
 
-		tags = { "@PF_Localization_PrimeUser" },
+		tags = { "@PF_Localization_NoLogin" },
 
 		// tags = { "@OrderWithExistingCreditCard" },
 
@@ -55,10 +55,10 @@ public class Runner extends AbstractTestNGCucumberTests {
 
 	}
 
-	@AfterMethod(alwaysRun = true)
+	// @AfterMethod(alwaysRun = true)
 	public void closeBrowser() throws Exception {
 
-		// ObjectHelper.driver.quit();
+		ObjectHelper.driver.quit();
 
 	}
 

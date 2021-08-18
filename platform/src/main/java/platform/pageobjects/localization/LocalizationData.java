@@ -3,6 +3,7 @@ package platform.pageobjects.localization;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -88,10 +89,26 @@ public class LocalizationData {
 			log.info("expectedStrings at " + i + " :" + expectedStrings.get(i));
 			ObjectHelper.driver.navigate().to(url.get(i));// API
 			// newBaseClass.replaceurl();
+			// CommonFunctions.waitForVisiblity(null, i)
+			CommonFunctions.scrollToPageBottom();
+//			try {
+//				Thread.sleep(3000);
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+
+			driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
 			WebElement element = ObjectHelper.driver.findElement(By.xpath(locators.get(i)));
-
+			CommonFunctions.scrolltoElement(element);
+//			if (!element.isDisplayed()) {
+//				CommonFunctions.scrolltoElement(element);
+//			}
+			// CommonFunctions.scrolltoElement(element);
 			if (CommonFunctions.waitForVisiblity(element, 3)) {
+
+				// if (element.isDisplayed()) {
 				// if
 				// (CommonFunctions.waitForVisiblity(ObjectHelper.driver.findElement(By.xpath(locators.get(i))),
 				// 3)) {
@@ -101,9 +118,9 @@ public class LocalizationData {
 
 				String actual = element.getText();
 				log.info("actual  :" + actual);
-				// String expected = "メールアドレスまたはEiD";// expectedStrings.get(i);
+				String expected = expectedStrings.get(i);
 				// log.info("expected :" + expected);
-				// Assert.assertEquals(actual, expected);
+				softAssert.assertEquals(actual, expected);
 				// log.error(softAssert.assertEquals(actual, expected));
 				// if (softAssert.toString() != null) {
 				// log.error("error in url at " + i + " :" + url.get(i));
