@@ -24,7 +24,7 @@ public class PF_Withdrawal extends NewBaseClass {
 	@Given("^Login To Platform Portal$")
 	public void login_To_Platform_Portal() throws Throwable {
 		LoginPage login = new LoginPage(driver);
-		login.loginToPlatform();
+		login.loginWithNewUser();
 	}
 
 	@Then("^Click Withdrawal link on Footer$")
