@@ -48,22 +48,22 @@ public class LocalizationData {
 	static ArrayList<String> url;
 	static ArrayList<String> expectedStrings;
 
-	public void readLocalizationData(/* String file, String sheet */)
+	public void readLocalizationData(String sheet)
 			throws EncryptedDocumentException, InvalidFormatException, IOException {
 
 		serialNumber = new ArrayList<String>();
-		serialNumber = XLHandler.readexcel("LocalizationTestData.xlsx", "NoLogin", "SrNo");
+		serialNumber = XLHandler.readexcel("LocalizationTestData.xlsx", sheet, "SrNo");
 
 		locators = new ArrayList<String>();
-		locators = XLHandler.readexcel("LocalizationTestData.xlsx", "NoLogin", "Locator");
+		locators = XLHandler.readexcel("LocalizationTestData.xlsx", sheet, "Locator");
 		// log.info("locators :" + locators);
 
 		url = new ArrayList<String>();
-		url = XLHandler.readexcel("LocalizationTestData.xlsx", "NoLogin", "Screen URL");
+		url = XLHandler.readexcel("LocalizationTestData.xlsx", sheet, "Screen URL");
 		// log.info("url :" + url);
 
 		expectedStrings = new ArrayList<String>();
-		expectedStrings = XLHandler.readexcel("LocalizationTestData.xlsx", "NoLogin", "Expected String");
+		expectedStrings = XLHandler.readexcel("LocalizationTestData.xlsx", sheet, "Expected String");
 		// log.info("expectedStrings :" + expectedStrings);
 
 	}

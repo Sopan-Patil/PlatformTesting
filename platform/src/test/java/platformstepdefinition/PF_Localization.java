@@ -1,5 +1,7 @@
 package platformstepdefinition;
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.runner.RunWith;
@@ -25,10 +27,14 @@ public class PF_Localization extends NewBaseClass {
 	private static Logger log = LogManager.getLogger(PF_Localization.class.getName());
 
 	@When("^Read localization data from sheet$")
-	public void read_localization_data_from_sheet() throws Throwable {
+	public void read_localization_data_from_sheet(List<String> userState) throws Throwable {
 		// throw new PendingException();
+		// List<String> data = userState.asList();
+		String sheetName = userState.get(0);
+		;// data.get(0);
+		log.info("sheetName :" + sheetName);
 		LocalizationData localizationData = new LocalizationData(driver);
-		localizationData.readLocalizationData();
+		localizationData.readLocalizationData(sheetName);
 
 	}
 

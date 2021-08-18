@@ -24,9 +24,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 		glue = { "platformstepdefinition" },
 
-		tags = { "@PFInvalidCC" },
-
-
+		tags = { "@PF_Localization_PrimeUser" },
 
 		// tags = { "@OrderWithExistingCreditCard" },
 

@@ -42,7 +42,7 @@ public class XLHandler {
 	 *
 	 */
 
-	private static Logger log = LogManager.getLogger(XLHandler.class.getName());
+	//private static Logger log = LogManager.getLogger(XLHandler.class.getName());
 
 
 
@@ -161,7 +161,7 @@ public class XLHandler {
 		fis.close();
 		workBook.close();
 
-		}
+		
 		return value;
 	}
 
@@ -211,73 +211,73 @@ public class XLHandler {
 		
 	}
 	
-	/**
-	 * @Author : Chetan Sonparote
-	 * @Date : 9 Aug 2021
-	 * @Description: method to read localization data with parameters
-	 *               file,sheet,coloumn
-	 */
-	public static ArrayList<String> readexcel(String fileName, String sheetName, String columnName) throws IOException {
-		ArrayList<String> value = new ArrayList<String>();
-
-		String excelPath = System.getProperty("user.dir") + File.separator + "TestData" + File.separator + fileName;// "NewTestData.xlsx";
-		FileInputStream fis = new FileInputStream(excelPath);
-
-	
-		XSSFWorkbook workBook = new XSSFWorkbook(fis);
-		Sheet sheet = workBook.getSheet(sheetName);
-
-
-		Iterator<Row> rows = sheet.iterator();
-		Row firstRow = rows.next();
-		Iterator<Cell> ce = firstRow.cellIterator();
-		// ce.next();
-
-		int k = 0;
-		int coloumn = 0;
-		while (ce.hasNext()) {
-			Cell cellValue = ce.next();
-			if (cellValue.getStringCellValue().equalsIgnoreCase(columnName)) {
-				coloumn = k;
-
-			}
-
-
-			k++;
-
-
-		}
-	
-
-		 int rowCount;
-		 
-		 rowCount = sheet.getLastRowNum()-sheet.getFirstRowNum();
-	
-		    for (int i = 1; i < rowCount+1; i++) {
-
-		  
-		    	Row row = sheet.getRow(i);
-		        Cell cellValue = row.getCell(coloumn);
-		      
-		        if(cellValue.getCellType()!=Cell.CELL_TYPE_BLANK)
-				{
-					DataFormatter formatter = new DataFormatter();
-					String text = formatter.formatCellValue(cellValue);
-					
-					value.add(i-1, text);
-				}
-
-		
-		    } 
-		    
-			
-		    //log.info("value :"+value);
-		    
-		fis.close();
-		workBook.close();
-		return value;
-	}
-	
+//	/**
+//	 * @Author : Chetan Sonparote
+//	 * @Date : 9 Aug 2021
+//	 * @Description: method to read localization data with parameters
+//	 *               file,sheet,coloumn
+//	 */
+//	public static ArrayList<String> readexcel(String fileName, String sheetName, String columnName) throws IOException {
+//		ArrayList<String> value = new ArrayList<String>();
+//
+//		String excelPath = System.getProperty("user.dir") + File.separator + "TestData" + File.separator + fileName;// "NewTestData.xlsx";
+//		FileInputStream fis = new FileInputStream(excelPath);
+//
+//	
+//		XSSFWorkbook workBook = new XSSFWorkbook(fis);
+//		Sheet sheet = workBook.getSheet(sheetName);
+//
+//
+//		Iterator<Row> rows = sheet.iterator();
+//		Row firstRow = rows.next();
+//		Iterator<Cell> ce = firstRow.cellIterator();
+//		// ce.next();
+//
+//		int k = 0;
+//		int coloumn = 0;
+//		while (ce.hasNext()) {
+//			Cell cellValue = ce.next();
+//			if (cellValue.getStringCellValue().equalsIgnoreCase(columnName)) {
+//				coloumn = k;
+//
+//			}
+//
+//
+//			k++;
+//
+//
+//		}
+//	
+//
+//		 int rowCount;
+//		 
+//		 rowCount = sheet.getLastRowNum()-sheet.getFirstRowNum();
+//	
+//		    for (int i = 1; i < rowCount+1; i++) {
+//
+//		  
+//		    	Row row = sheet.getRow(i);
+//		        Cell cellValue = row.getCell(coloumn);
+//		      
+//		        if(cellValue.getCellType()!=Cell.CELL_TYPE_BLANK)
+//				{
+//					DataFormatter formatter = new DataFormatter();
+//					String text = formatter.formatCellValue(cellValue);
+//					
+//					value.add(i-1, text);
+//				}
+//
+//		
+//		    } 
+//		    
+//			
+//		    //log.info("value :"+value);
+//		    
+//		fis.close();
+//		workBook.close();
+//		return value;
+//	}
+//	
 
 	
 	
