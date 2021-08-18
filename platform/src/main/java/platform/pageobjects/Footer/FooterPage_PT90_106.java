@@ -755,7 +755,7 @@ public class FooterPage_PT90_106 {
 
 		log.info("go to relogin page");
 		LoginPage loginObj = new LoginPage(driver);
-		loginObj.loginToPlatformForPayment();
+		loginObj.loginToPlatform();
 
 	}
 

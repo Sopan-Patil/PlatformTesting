@@ -4,9 +4,9 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import base.NewBaseClass;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import platform.pageobjects.Authentication.LoginPage;
 import platform.pageobjects.Footer.FooterPage_PT90_106;
 import platform.pageobjects.Footer.TermsConditionsFooter;
@@ -28,12 +28,14 @@ public class PF_Footer extends NewBaseClass {
 		FooterPage_PT90_106 checklinks = new FooterPage_PT90_106(driver);
 		checklinks.clickLoginFooterLink();
 		checklinks.clickAccountServicesFooterLinks();
+		driver.navigate().back();
 	}
 
-	@Given("^Login to Platform Portal$")
+	@Given("Login to Platform Portal")
 	public void login_to_platform_portal() throws Throwable {
-		LoginPage loginfunction = new LoginPage(driver);
-		loginfunction.loginToPlatform();
+		LoginPage login = new LoginPage(driver);
+		login.clickLoginButton();
+		login.loginToPlatform();
 	}
 
 	@Then("^Check footer links on top page after login$")

@@ -1,4 +1,4 @@
-@FooterPage
+@FooterPage @Smoke
 Feature: Validate footer links on Footer Sections
 
 #Testcase no: PT-090 to 95
