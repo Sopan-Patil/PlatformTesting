@@ -12,6 +12,9 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 
+import utils.ObjectHelper;
+
+
 /**
 Author : Chetan Sonparote 
 Date of Creation : 24 Jun 2021 
@@ -29,6 +32,7 @@ public class ExtentReporter {
 		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
 		reporter.config().setReportName("PF Automation Result");
 		reporter.config().setDocumentTitle("Test Results");
+	//	reporter.config()
 
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
@@ -38,12 +42,23 @@ public class ExtentReporter {
 		return extent;
 	}
 
-	public String getScreenShotPath(String testcaseName, WebDriver driver) throws IOException {
-		TakesScreenshot ts = (TakesScreenshot) driver;
-		File source = ts.getScreenshotAs(OutputType.FILE);
-		String destinationFile = System.getProperty("user.dir") + "\\reports\\" + testcaseName + ".png";
-		FileUtils.copyFile(source, new File(destinationFile));
-		return destinationFile;
-	}
+	/*
+	 * public String getScreenShotPath(String testcaseName, WebDriver driver) throws
+	 * IOException { TakesScreenshot ts = (TakesScreenshot) driver; File source =
+	 * ts.getScreenshotAs(OutputType.FILE); String destinationFile =
+	 * System.getProperty("user.dir") + "\\reports\\" + testcaseName + ".png";
+	 * FileUtils.copyFile(source, new File(destinationFile)); return
+	 * destinationFile; }
+	 */
+	
+//	public static void addScreenshot(Scenario scenario) {
+//
+//		// validate if scenario has failed
+//		if (scenario.isFailed()) {
+//			final byte[] screenshot = ((TakesScreenshot) ObjectHelper.driver).getScreenshotAs(OutputType.BYTES);
+//			scenario.attach(screenshot, "image/png", "image");
+//		}
+//
+//	}
 	
 }
