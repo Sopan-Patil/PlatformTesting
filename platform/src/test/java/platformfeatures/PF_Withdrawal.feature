@@ -1,7 +1,7 @@
 
 #Author: Sahaj Balgunde
 #Keywords Summary : Withdawal Test with Checkbox and Without Checkbox
-@WithdrawAccount
+@WithdrawAccount @Full @Smoke
 Feature: Withdraw user account
 
 Scenario: User is clicking on Back button
