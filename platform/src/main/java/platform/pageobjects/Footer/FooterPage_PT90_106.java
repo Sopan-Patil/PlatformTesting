@@ -125,16 +125,16 @@ public class FooterPage_PT90_106 {
 	@FindBy(xpath = "//h3[@class ='text-center ep-term__title ep-term__title--big mb-0' ]")
 	public WebElement footerTermsforVisibility;
 
-	@FindBy(xpath = "//img[@alt='個人情報保護方針']")
+	@FindBy(xpath = "//div[@id ='mainimgArea']")
 	public WebElement footerPrivacyforVisibility;
 
 	@FindBy(xpath = "//h3[@class = 'text-center ep-term__title ep-term__title--big mb-0']")
 	public WebElement footerTaxforVisibility;
 
-	@FindBy(xpath = "//img[@alt='スタギアサポートセンター ヘルプセンターのホームページ']")
+	@FindBy(xpath = "//input[@id='query']")
 	public WebElement footerQandAforVisibility;
 
-	@FindBy(xpath = "//img[@alt='英検S-CBTを平日に受験しよう！']")
+	@FindBy(xpath = "//img[@class='mv__campaign']")
 	public WebElement footerExaminationWindowLinkforVisibility;
 
 	@FindBy(xpath = "//div[@class='title']")
