@@ -85,13 +85,11 @@ public class ProductDetailsFilterValidation {
 			casecProduct = "CASEC";
 			Select target = new Select(productDropdown);
 			List<WebElement> targetListElements = target.getOptions();
-			int itemSize = targetListElements.size();
-			for (int i = 0; i < itemSize; i++) {
+			int DropdownitemSize = targetListElements.size();
+			for (int i = 0; i < DropdownitemSize; i++) {
 				String productValue = targetListElements.get(i).getText();
-				System.out.println(productValue);
 				if (productValue.contains((casecProduct))) {
 					Select productselect = new Select(productDropdown);
-					System.out.println(productselect.toString());
 					productselect.selectByVisibleText(casecProduct);
 					log.info("Free user is Selected CASEC product");
 					narrowDownButton.click();
@@ -120,36 +118,27 @@ public class ProductDetailsFilterValidation {
 			kanjikenteiProduct = "漢検";
 			Select target = new Select(productDropdown);
 			List<WebElement> targetListElements = target.getOptions();
-			int itemSize = targetListElements.size();
-			for (int i = 0; i < itemSize; i++) {
+			int DropdownitemSize = targetListElements.size();
+			for (int i = 0; i < DropdownitemSize; i++) {
 				String productValue = targetListElements.get(i).getText();
-				System.out.println(productValue);
 				if (productValue.contains((kanjikenteiProduct))) {
 					Select productselect = new Select(productDropdown);
-					System.out.println(productselect.toString());
 					productselect.selectByVisibleText(kanjikenteiProduct);
 					log.info("Free user is Selected Kanji Kaneti product");
 					narrowDownButton.click();
 					List<WebElement> pagination = driver.findElements(By.xpath("//div[@class='pagination']/div"));
-					// checkif pagination link exists
-					System.out.println(pagination.size());
+					log.info("Total Pages " + pagination.size());
 					int size = pagination.size();
 					if (size > 0) {
-						System.out.println("pagination exists");
-
-						// click on pagination link
-
 						for (int k = 1; k <= pagination.size(); k++) {
-
 							driver.findElement(By.xpath("//div[@class='pagination']/div[" + k + "]")).click();
 							List<WebElement> elements = driver
 									.findElements(By.xpath("//div[@class='ep-product-list__row']/div"));
+							log.info("Total cards in Page " + elements.size());
 							for (int j = 0; j < elements.size(); j++) {
-//								System.out.println("j value" + j);
-//								System.out.println("tag name" + elements.get(j).getTagName());
-//								System.out.println("tag text" + elements.get(j).getText());
 								if ((elements.get(j).getText()).contains(kanjikenteiProduct)) {
-									log.info("This is Kanji Kaneti product" + j + elements.size());
+									log.info("This is Kanji Kaneti product card " + j + " Of " + elements.size()
+											+ " Total Cards");
 								}
 							}
 							// break;
