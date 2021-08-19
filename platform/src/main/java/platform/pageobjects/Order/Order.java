@@ -1,6 +1,8 @@
 package platform.pageobjects.Order;
 
+import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -15,6 +17,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import base.NewBaseClass;
+import platform.pageobjects.AccountServices.CreateAccountStep1;
+import platform.pageobjects.AccountServices.CreateAccountStep3;
 import platform.pageobjects.Authentication.LoginPage;
 import utils.CommonFunctions;
 import utils.ExcelUtil;
@@ -1871,6 +1875,17 @@ public class Order {
 		log.info("Service you are using:- learn button text " + learnButtonLabelForKankenProductSTR);
 		CommonFunctions.assertString(expectedLearnButtonLabelForKankenProductSTR, learnButtonLabelForKankenProductSTR);
 
+	}
+
+	public void writeCredentialsToExcelForNewPrimeUser() throws IOException {
+
+		ArrayList<String> newLoginData = new ArrayList<>();
+
+		newLoginData.add(0, CreateAccountStep1.email);
+		newLoginData.add(1, CreateAccountStep3.password);
+		newLoginData.add(2, CreateAccountStep1.eid);
+
+		ExcelUtil.writeToExcel("PrimeUser", "NewTestData.xlsx", newLoginData);
 	}
 
 }

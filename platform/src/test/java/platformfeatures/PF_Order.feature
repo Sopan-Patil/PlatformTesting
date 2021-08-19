@@ -103,6 +103,14 @@ And Verify thank you page data on order history page for prime transaction
 And Verify Service you are using page for prime transaction
 And Verify Membership status page for prime transaction
 And Verify learn button from Service you are using page
+Then Add prime user credentials in test data excel
+
+@OrderPrimeWithValidCreditCard1  
+Scenario: Validate prime with valid Credit Card and check on order history,service you are using and membership page
+
+
+Given Login To Platform with newly created user
+Then Add prime user credentials in test data excel
 
 
 @OrderRefreshPageWithExistingCreditCard  @Full

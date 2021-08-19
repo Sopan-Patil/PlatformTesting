@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import base.NewBaseClass;
 import cucumber.api.java.en.And;
 import cucumber.api.junit.Cucumber;
+import io.cucumber.java.en.Then;
 import platform.pageobjects.Order.Order;
 import utils.ObjectHelper;
 
@@ -243,5 +244,10 @@ public class PF_Order extends NewBaseClass {
 	@And("^Verify learn button from Service you are using page$")
 	public void verify_learn_button_from_service_you_are_using_page() throws Throwable {
 		orderObj.verifyLearnButtonFromServiceYouAreUsingPage();
+	}
+
+	@Then("^Add prime user credentials in test data excel$")
+	public void add_prime_user_credentials_in_test_data_excel() throws Throwable {
+		orderObj.writeCredentialsToExcelForNewPrimeUser();
 	}
 }
