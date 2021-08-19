@@ -24,7 +24,7 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
-		tags = { "@PF_Localization_NoLogin" },
+		tags = { "@PF_Localization_FreeUser" },
 
 		// tags = { "@OrderWithExistingCreditCard" },
 

@@ -13,19 +13,27 @@ Then Validate that localization is correct
 
 @PF_Localization_WithLogin
 Scenario: Test Localization strings with login
+Given User is on home page
+And Login To Platform
 When Read localization data from sheet
 | WithLogin |
 Then Validate that localization is correct
+And logout
 
 
 @PF_Localization_FreeUser
 Scenario: Test Localization strings for free user
+Given User is on home page
+And Login To Platform
 When Read localization data from sheet
 | FreeUser |
 Then Validate that localization is correct
+And logout
 
 @PF_Localization_PrimeUser
 Scenario: Test Localization strings for prime user
+Given User is on home page
 When Read localization data from sheet
 | PrimeUser |
 Then Validate that localization is correct
+And logout

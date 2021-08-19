@@ -75,11 +75,6 @@ public class LocalizationData {
 
 	public void validateLocalizationData() {
 
-		// log.info("inside validateLocalizationData()");
-		// log.info("url :" + url);
-		// log.info("locators :" + locators);
-		// log.info("url :" + url);
-		// log.info("expectedStrings :" + expectedStrings);
 		SoftAssert softAssert = new SoftAssert();
 		newBaseClass = new NewBaseClass();
 		for (int i = 0; i < url.size(); i++) {
@@ -91,45 +86,21 @@ public class LocalizationData {
 			// newBaseClass.replaceurl();
 			// CommonFunctions.waitForVisiblity(null, i)
 			CommonFunctions.scrollToPageBottom();
-//			try {
-//				Thread.sleep(3000);
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
 
 			driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
 			WebElement element = ObjectHelper.driver.findElement(By.xpath(locators.get(i)));
 			CommonFunctions.scrolltoElement(element);
-//			if (!element.isDisplayed()) {
-//				CommonFunctions.scrolltoElement(element);
-//			}
-			// CommonFunctions.scrolltoElement(element);
-			if (CommonFunctions.waitForVisiblity(element, 3)) {
 
-				// if (element.isDisplayed()) {
-				// if
-				// (CommonFunctions.waitForVisiblity(ObjectHelper.driver.findElement(By.xpath(locators.get(i))),
-				// 3)) {
-				// if
-				// (CommonFunctions.isElementVisible(ObjectHelper.driver.findElement(By.xpath(locators.get(i)))))
-				// {
+			if (CommonFunctions.waitForVisiblity(element, 3)) {
 
 				String actual = element.getText();
 				log.info("actual  :" + actual);
 				String expected = expectedStrings.get(i);
 				// log.info("expected :" + expected);
 				softAssert.assertEquals(actual, expected);
-				// log.error(softAssert.assertEquals(actual, expected));
-				// if (softAssert.toString() != null) {
-				// log.error("error in url at " + i + " :" + url.get(i));
-				// }
-				// log.info(softAssert.toString());
 
 			}
-
-			// ObjectHelper.driver.findElement(By.xpath(locators.get(i))).getText();
 
 		}
 		softAssert.assertAll();
