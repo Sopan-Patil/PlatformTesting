@@ -9,11 +9,6 @@ import base.NewBaseClass;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
-import utils.BrowserstackUtility;
-
-import utils.ObjectHelper;
-
-
 /**
  * @Author : Chetan Sonparote
  * @Date : 12 Jul 2021
@@ -34,14 +29,11 @@ import utils.ObjectHelper;
 
 		// tags = { "@PFAccountAndSecurity, @PFAccountAndSecurityCancel" },
 
-
-		//tags = { "@OrderWithConvenienceStoreInValid" },
-
+		// tags = { "@OrderWithConvenienceStoreInValid" },
 
 		// tags = { "@PF_test" },
 
-
-		 tags = { "@OrderWithExistingCreditCard" },
+		tags = { "@Smoke" },
 
 		plugin = { "pretty", /* "html:target/cucumber_html_report", */ "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
