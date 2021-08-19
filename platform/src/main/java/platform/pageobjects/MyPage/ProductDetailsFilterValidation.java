@@ -142,28 +142,27 @@ public class ProductDetailsFilterValidation {
 						for (int k = 1; k <= pagination.size(); k++) {
 
 							driver.findElement(By.xpath("//div[@class='pagination']/div[" + k + "]")).click();
+							List<WebElement> elements = driver
+									.findElements(By.xpath("//div[@class='ep-product-list__row']/div"));
+							for (int j = 0; j < elements.size(); j++) {
+//								System.out.println("j value" + j);
+//								System.out.println("tag name" + elements.get(j).getTagName());
+//								System.out.println("tag text" + elements.get(j).getText());
+								if ((elements.get(j).getText()).contains(kanjikenteiProduct)) {
+									log.info("This is Kanji Kaneti product" + j + elements.size());
+								}
+							}
+							// break;
 
 						}
-					} else {
-						System.out.println("pagination not exists");
-					}
 
-					List<WebElement> elements = driver
-							.findElements(By.xpath("//div[@class='ep-product-list__row']/div"));
-					for (int j = 0; j < elements.size(); j++) {
-//						System.out.println("j value" + j);
-//						System.out.println("tag name" + elements.get(j).getTagName());
-//						System.out.println("tag text" + elements.get(j).getText());
-						if ((elements.get(j).getText()).contains(kanjikenteiProduct)) {
-							log.info("This is Kanji Kaneti product" + j++ + elements.size());
-						}
 					}
-					break;
-
 				}
-
 			}
+		} else {
+			System.out.println("pagination not exists");
 		}
+
 	}
 
 	public void CheckPrimeMembershipProductetails() throws Exception {
