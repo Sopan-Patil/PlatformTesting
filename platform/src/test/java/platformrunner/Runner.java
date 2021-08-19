@@ -25,18 +25,7 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
-
 		tags = { "@ProductDetailsFilterValidation" },
-
-		// tags = { "@PFAccountAndSecurity, @PFAccountAndSecurityCancel" },
-
-
-		// tags = { "@OrderWithExistingCreditCard" },
-		// tags = "@OrderWithExistingCreditCard",
-
-		// tags = { "@PFAccountAndSecurity, @PFAccountAndSecurityCancel" },
-
-		tags = { "@PF_test" },
 
 		// tags = { "@OrderWithExistingCreditCard" },
 
