@@ -87,15 +87,15 @@ public class LocalizationData {
 			// CommonFunctions.waitForVisiblity(null, i)
 			CommonFunctions.scrollToPageBottom();
 
-			driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 
 			WebElement element = ObjectHelper.driver.findElement(By.xpath(locators.get(i)));
 			CommonFunctions.scrolltoElement(element);
 
-			if (CommonFunctions.waitForVisiblity(element, 3)) {
+			if (CommonFunctions.waitForVisiblity(element, 1)) {
 
 				String actual = element.getText();
-				log.info("actual  :" + actual);
+				// log.info("actual :" + actual);
 				String expected = expectedStrings.get(i);
 				// log.info("expected :" + expected);
 				softAssert.assertEquals(actual, expected);

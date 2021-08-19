@@ -2,7 +2,6 @@ package platformrunner;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import base.NewBaseClass;
@@ -25,7 +24,9 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
-		tags = "@PF_Localization_FreeUser",
+		tags = "@PF_Localization_NoLogin",
+
+		// tags = "@PF_CreateAccount",
 
 		// tags = { "@PF_test" },
 
@@ -54,9 +55,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 
 	}
 
-	// @AfterMethod(alwaysRun = true)
-
-	@AfterTest(alwaysRun = true)
+	// @AfterTest(alwaysRun = true)
 
 	public void closeBrowser() throws Exception {
 

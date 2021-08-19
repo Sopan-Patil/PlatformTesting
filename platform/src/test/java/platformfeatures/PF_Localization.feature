@@ -24,7 +24,7 @@ And logout
 @PF_Localization_FreeUser
 Scenario: Test Localization strings for free user
 Given User is on home page
-And Login To Platform
+And Login To Platform with newly created user
 When Read localization data from sheet
 | FreeUser |
 Then Validate that localization is correct

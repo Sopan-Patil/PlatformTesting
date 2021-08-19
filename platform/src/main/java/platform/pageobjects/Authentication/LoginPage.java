@@ -263,9 +263,9 @@ public class LoginPage {
 			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
 		}
 
-		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
-			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
-		}
+//		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
+//			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
+//		}
 
 	}
 

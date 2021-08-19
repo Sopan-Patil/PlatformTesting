@@ -25,8 +25,6 @@ import org.apache.poi.ss.util.NumberToTextConverter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-
-
 public class XLHandler {
 
 	/**
@@ -42,9 +40,7 @@ public class XLHandler {
 	 *
 	 */
 
-	//private static Logger log = LogManager.getLogger(XLHandler.class.getName());
-
-
+	// private static Logger log = LogManager.getLogger(XLHandler.class.getName());
 
 	@SuppressWarnings("null")
 	public static String[] readexcel(String sheetname, String filename)
@@ -58,18 +54,16 @@ public class XLHandler {
 		int lastRow = sheet.getLastRowNum();
 		// System.out.println("Last row- " + lastRow);
 
-	//	for (int i = 0; i <= lastRow; i++) { //DO NOT REMOVE
+		// for (int i = 0; i <= lastRow; i++) { //DO NOT REMOVE
 		/**
 		 * @throws IOException
 		 * @Author : Chetan Sonparote
 		 * @Date : 5 Aug 2021
-		 * @Description:Changed i <= lastRow to i < lastRow to resolve initialization error
+		 * @Description:Changed i <= lastRow to i < lastRow to resolve initialization
+		 *                      error
 		 */
 
-
-
 		for (int i = 0; i <= lastRow; i++) {
-
 
 			Row row = sheet.getRow(i);
 			int lastCell = row.getLastCellNum();
@@ -109,10 +103,8 @@ public class XLHandler {
 		String excelPath = System.getProperty("user.dir") + File.separator + "TestData" + File.separator + fileName;// "NewTestData.xlsx";
 		FileInputStream fis = new FileInputStream(excelPath);
 
-	
 		XSSFWorkbook workBook = new XSSFWorkbook(fis);
 		Sheet sheet = workBook.getSheet(sheetName);
-
 
 		Iterator<Row> rows = sheet.iterator();
 		Row firstRow = rows.next();
@@ -128,40 +120,33 @@ public class XLHandler {
 
 			}
 
-
 			k++;
 
 		}
-	
 
-		 int rowCount;
-		 
-		 rowCount = sheet.getLastRowNum()-sheet.getFirstRowNum();
-	
-		    for (int i = 1; i < rowCount+1; i++) {
+		int rowCount;
 
-		  
-		    	Row row = sheet.getRow(i);
-		        Cell cellValue = row.getCell(coloumn);
-		      
-		        if(cellValue.getCellType()!=Cell.CELL_TYPE_BLANK)
-				{
-					DataFormatter formatter = new DataFormatter();
-					String text = formatter.formatCellValue(cellValue);
-					
-					value.add(i-1, text);
-				}
+		rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
 
-		
-		    } 
-		    
-			
-		    //log.info("value :"+value);
-		    
+		for (int i = 1; i < rowCount + 1; i++) {
+
+			Row row = sheet.getRow(i);
+			Cell cellValue = row.getCell(coloumn);
+
+			if (cellValue.getCellType() != Cell.CELL_TYPE_BLANK) {
+				DataFormatter formatter = new DataFormatter();
+				String text = formatter.formatCellValue(cellValue);
+
+				value.add(i - 1, text);
+			}
+
+		}
+
+		// log.info("value :"+value);
+
 		fis.close();
 		workBook.close();
 
-		
 		return value;
 	}
 
@@ -171,133 +156,58 @@ public class XLHandler {
 	 * @Date : 5 Aug 2021
 	 * @Description:Added excel write method
 	 */
-	
+
 	private static Logger log = LogManager.getLogger(XLHandler.class.getName());
 
-	//public static void writeToExcel(String sheetName, String fileName, int cellNumber,String cellData) throws IOException {
+	// public static void writeToExcel(String sheetName, String fileName, int
+	// cellNumber,String cellData) throws IOException {
 	public static void writeToExcel(String sheetName, String fileName, ArrayList<String> cellData) throws IOException {
-		
-		
-		
-		String excelPath = System.getProperty("user.dir") + File.separator
-				+ "TestData" +  File.separator
-				+ fileName;//"NewTestData.xlsx";
+
+		String excelPath = System.getProperty("user.dir") + File.separator + "TestData" + File.separator + fileName;// "NewTestData.xlsx";
 		FileInputStream fis = new FileInputStream(excelPath);
-		 XSSFWorkbook workbook = new XSSFWorkbook(fis);
-		
-		 XSSFSheet sheet = workbook.getSheet(sheetName);
-	
-		 Row    row = sheet.createRow(1);
-		 
-		    //Create a loop over the cell of newly created Row
+		XSSFWorkbook workbook = new XSSFWorkbook(fis);
 
-		    for(int i = 0; i < cellData.size(); i++){
+		XSSFSheet sheet = workbook.getSheet(sheetName);
 
-		        //Fill data in row
+		Row row = sheet.createRow(1);
 
-		        Cell cell = row.createCell(i);
-		      //  log.info("cellData[i] :"+cellData.get(i));
+		// Create a loop over the cell of newly created Row
 
-		        cell.setCellValue(cellData.get(i));
+		for (int i = 0; i < cellData.size(); i++) {
 
-		    }
+			// Fill data in row
 
-		  
-		 fis.close();
-		 FileOutputStream fos = new FileOutputStream(excelPath);
-		 workbook.write(fos);
-		 fos.close();
-		 workbook.close();
-		
+			Cell cell = row.createCell(i);
+			// log.info("cellData[i] :"+cellData.get(i));
+
+			cell.setCellValue(cellData.get(i));
+
+		}
+
+		fis.close();
+		FileOutputStream fos = new FileOutputStream(excelPath);
+		workbook.write(fos);
+		fos.close();
+		workbook.close();
+
 	}
-	
-//	/**
-//	 * @Author : Chetan Sonparote
-//	 * @Date : 9 Aug 2021
-//	 * @Description: method to read localization data with parameters
-//	 *               file,sheet,coloumn
-//	 */
-//	public static ArrayList<String> readexcel(String fileName, String sheetName, String columnName) throws IOException {
-//		ArrayList<String> value = new ArrayList<String>();
-//
-//		String excelPath = System.getProperty("user.dir") + File.separator + "TestData" + File.separator + fileName;// "NewTestData.xlsx";
-//		FileInputStream fis = new FileInputStream(excelPath);
-//
-//	
-//		XSSFWorkbook workBook = new XSSFWorkbook(fis);
-//		Sheet sheet = workBook.getSheet(sheetName);
-//
-//
-//		Iterator<Row> rows = sheet.iterator();
-//		Row firstRow = rows.next();
-//		Iterator<Cell> ce = firstRow.cellIterator();
-//		// ce.next();
-//
-//		int k = 0;
-//		int coloumn = 0;
-//		while (ce.hasNext()) {
-//			Cell cellValue = ce.next();
-//			if (cellValue.getStringCellValue().equalsIgnoreCase(columnName)) {
-//				coloumn = k;
-//
-//			}
-//
-//
-//			k++;
-//
-//
-//		}
-//	
-//
-//		 int rowCount;
-//		 
-//		 rowCount = sheet.getLastRowNum()-sheet.getFirstRowNum();
-//	
-//		    for (int i = 1; i < rowCount+1; i++) {
-//
-//		  
-//		    	Row row = sheet.getRow(i);
-//		        Cell cellValue = row.getCell(coloumn);
-//		      
-//		        if(cellValue.getCellType()!=Cell.CELL_TYPE_BLANK)
-//				{
-//					DataFormatter formatter = new DataFormatter();
-//					String text = formatter.formatCellValue(cellValue);
-//					
-//					value.add(i-1, text);
-//				}
-//
-//		
-//		    } 
-//		    
-//			
-//		    //log.info("value :"+value);
-//		    
-//		fis.close();
-//		workBook.close();
-//		return value;
-//	}
-//	
 
-	
-	
-	
+
 	/**
 	 * @Author : Chetan Sonparote
 	 * @Date :11 Aug 2021
 	 * @Description: Overloaded read excel to read specific row value
 	 */
-	public static ArrayList<String> readexcel(String fileName, String sheetName, String columnName, String rowName) throws IOException {
+	public static ArrayList<String> readexcel(String fileName, String sheetName, String columnName, String rowName)
+			throws IOException {
 		ArrayList<String> value = new ArrayList<String>();
-		//String value;
+		// String value;
 
 		String excelPath = System.getProperty("user.dir") + File.separator + "TestData" + File.separator + fileName;// "NewTestData.xlsx";
 		FileInputStream fis = new FileInputStream(excelPath);
 
-	
 		XSSFWorkbook workBook = new XSSFWorkbook(fis);
 		Sheet sheet = workBook.getSheet(sheetName);
-
 
 		Iterator<Row> rows = sheet.iterator();
 		Row firstRow = rows.next();
@@ -313,50 +223,36 @@ public class XLHandler {
 
 			}
 
-
 			k++;
 
 		}
-	
 
-		
 		System.out.println(coloumn);
-		
+
 		while (rows.hasNext()) {
 			Row r = rows.next();
 			if (r.getCell(coloumn).getStringCellValue().equalsIgnoreCase(rowName)) {
 				Iterator<Cell> cv = r.cellIterator();
-				while (cv.hasNext()) 
-				{
-					
-					Cell c =  cv.next();
-					if(c.getCellType()==Cell.CELL_TYPE_STRING)
-					{
-						
+				while (cv.hasNext()) {
+
+					Cell c = cv.next();
+					if (c.getCellType() == Cell.CELL_TYPE_STRING) {
+
 						value.add(c.getStringCellValue());
-					//	value.add(cv.next().getStringCellValue());
-					}
-					else
-					{
-						
+						// value.add(cv.next().getStringCellValue());
+					} else {
+
 						value.add(NumberToTextConverter.toText(c.getNumericCellValue()));
 					}
-					
+
 				}
 			}
 
-			
 		}
 
-
-		    
 		fis.close();
 		workBook.close();
 		return value;
 	}
 
-
-
 }
-
-
