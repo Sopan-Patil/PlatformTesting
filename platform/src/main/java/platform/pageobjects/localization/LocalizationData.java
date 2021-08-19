@@ -78,10 +78,10 @@ public class LocalizationData {
 		SoftAssert softAssert = new SoftAssert();
 		newBaseClass = new NewBaseClass();
 		for (int i = 0; i < url.size(); i++) {
-			log.info("serialNumber at " + i + " :" + serialNumber.get(i));
-			log.info("url at " + i + " :" + url.get(i));
-			log.info("locators at " + i + " :" + locators.get(i));
-			log.info("expectedStrings at " + i + " :" + expectedStrings.get(i));
+			// log.info("serialNumber at " + i + " :" + serialNumber.get(i));
+			// log.info("url at " + i + " :" + url.get(i));
+			// log.info("locators at " + i + " :" + locators.get(i));
+			// log.info("expectedStrings at " + i + " :" + expectedStrings.get(i));
 			ObjectHelper.driver.navigate().to(url.get(i));// API
 			// newBaseClass.replaceurl();
 			// CommonFunctions.waitForVisiblity(null, i)
