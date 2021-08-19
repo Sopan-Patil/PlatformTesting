@@ -19,7 +19,7 @@ public class Hooks {
 	@AfterStep
 	public void addScreenshot(Scenario scenario) throws IOException {
 
-		System.out.println("inside addScreenshot()");
+		// System.out.println("inside addScreenshot()");
 		// validate if scenario has failed
 		if (scenario.isFailed()) {
 			final byte[] screenshot = ((TakesScreenshot) ObjectHelper.driver).getScreenshotAs(OutputType.BYTES);

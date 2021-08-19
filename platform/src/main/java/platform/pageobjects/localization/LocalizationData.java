@@ -77,6 +77,7 @@ public class LocalizationData {
 
 		SoftAssert softAssert = new SoftAssert();
 		newBaseClass = new NewBaseClass();
+
 		for (int i = 0; i < url.size(); i++) {
 			// log.info("serialNumber at " + i + " :" + serialNumber.get(i));
 			// log.info("url at " + i + " :" + url.get(i));
@@ -94,15 +95,37 @@ public class LocalizationData {
 
 			if (CommonFunctions.waitForVisiblity(element, 1)) {
 
-				String actual = element.getText();
+				String actual = element.getText().trim();
 				// log.info("actual :" + actual);
-				String expected = expectedStrings.get(i);
+				String expected = expectedStrings.get(i).trim();
 				// log.info("expected :" + expected);
-				softAssert.assertEquals(actual, expected);
+//				softAssert.assertEquals(actual, expected, "Validation failed at #" + serialNumber.get(i) + " and url "
+//						+ url.get(i) + "for locator " + locators.get(i) + " ");
+
+				softAssert.assertEquals(actual, expected, "Validation failed at #" + serialNumber.get(i) + " ");
+
+//				if (actual == expected) {
+//					softAssert.assertEquals(actual, expected, "Validation Passed at # " + serialNumber.get(i)
+//							+ " and url " + url.get(i) + "for locator " + locators.get(i) + " ");
+//				} else {
+//					softAssert.assertEquals(actual, expected, "Validation failed at # " + serialNumber.get(i)
+//							+ " and url " + url.get(i) + "for locator " + locators.get(i) + " ");
+//				}
+				System.out.println("softAssert.toString() :" + softAssert.toString());
+
+				// softAssert.toString();
 
 			}
 
 		}
-		softAssert.assertAll();
+		// log.info("Total strings validated = " + serialNumber.size());
+		// softAssert.assertTrue(true, "Total strings validated = " +
+		// serialNumber.size());
+		// softAssert.assertTrue(true, "Total strings validated = " +
+		// serialNumber.size());
+
+		softAssert.assertAll("Total strings validated = " + serialNumber.size() + "\n" + " Total strings FAILED = "
+				+ serialNumber.size() + "\n");
+
 	}
 }
