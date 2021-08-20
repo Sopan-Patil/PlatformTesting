@@ -40,9 +40,9 @@ import utils.ObjectHelper;
 		// tags = { "@PF_test" },
 
 		
-		tags = "@Smoke",
+		//tags = "@Smoke",
 
-		// tags = { "@PF_test" },
+		 tags = { "@PF_test" },
 
 
 		plugin = { "pretty", /* "html:target/cucumber_html_report", */ "json:target/cucumber.json",
