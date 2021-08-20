@@ -98,6 +98,7 @@ public class LocalizationData {
 				String actual = element.getText().trim();
 
 				String expected = expectedStrings.get(i).trim();
+				// log.info("serialNumber at " + i + " :" + serialNumber.get(i));
 
 				softAssert.assertEquals(actual, expected, "Validation failed at #" + serialNumber.get(i) + " ");
 
@@ -105,6 +106,8 @@ public class LocalizationData {
 
 		}
 
+		// softAssert.assertTrue(false, "Total strings validated = " +
+		// serialNumber.size() + "\n");
 		softAssert.assertAll("Total strings validated = " + serialNumber.size() + "\n");
 
 	}
