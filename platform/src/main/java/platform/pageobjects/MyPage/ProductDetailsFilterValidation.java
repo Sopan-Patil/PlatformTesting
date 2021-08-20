@@ -73,8 +73,8 @@ public class ProductDetailsFilterValidation {
 		} else if (primeMemberTitle.getText().contentEquals(primeuser)) {
 			productDetails.click();
 			log.info("This is prime user");
-			// CheckPrimeMembership_CASEC_Productetails();
-			// CheckFreeMembership_kanjikentei_Productetails();
+			CheckPrimeMembership_CASEC_Productetails();
+			CheckPrimeMembership_kanjikentei_Productetails();
 		}
 	}
 
@@ -93,22 +93,32 @@ public class ProductDetailsFilterValidation {
 					productselect.selectByVisibleText(casecProduct);
 					log.info("Free user is Selected CASEC product");
 					narrowDownButton.click();
-					List<WebElement> elements = driver
-							.findElements(By.xpath("//div[@class='ep-product-list__row']/div"));
-					for (int j = 0; j < elements.size(); j++) {
-//						System.out.println("j value" + j);
-//						System.out.println("tag name" + elements.get(j).getTagName());
-//						System.out.println("tag text" + elements.get(j).getText());
-						if ((elements.get(j).getText()).contains(casecProduct)) {
-							log.info("This is CASEC product");
+					List<WebElement> pagination = driver.findElements(By.xpath("//div[@class='pagination']/div"));
+					log.info("Total Pages " + pagination.size());
+					int size = pagination.size();
+					if (size > 0) {
+						for (int k = 1; k <= pagination.size(); k++) {
+							driver.findElement(By.xpath("//div[@class='pagination']/div[" + k + "]")).click();
+							List<WebElement> elements = driver
+									.findElements(By.xpath("//div[@class='ep-product-list__row']/div"));
+							log.info("Total cards in Page " + elements.size());
+							for (int j = 0; j < elements.size(); j++) {
+								if ((elements.get(j).getText()).contains(casecProduct)) {
+									log.info("This is CASEC product card " + j + " Of " + elements.size()
+											+ " Total Cards");
+								}
+							}
+
 						}
+						break;
+
 					}
-					break;
-
 				}
-
 			}
+		} else {
+			System.out.println("pagination not exists");
 		}
+
 	}
 
 	public void CheckFreeMembership_kanjikentei_Productetails() throws Exception {
@@ -154,25 +164,90 @@ public class ProductDetailsFilterValidation {
 
 	}
 
-	public void CheckPrimeMembershipProductetails() throws Exception {
+	public void CheckPrimeMembership_CASEC_Productetails() throws Exception {
 		if (CommonFunctions.waitForVisiblity(productDropdown, waitTime)) {
-			Select productselect = new Select(productDropdown);
-			productselect.selectByVisibleText("CASEC");
-			log.info("Prime user is Selected CASEC product");
-			narrowDownButton.click();
-			List<WebElement> elements = driver.findElements(By.xpath("//div[@class='ep-product-list__row']/div"));
-			for (int i = 0; i < elements.size(); i++) {
-				System.out.println(i);
-				System.out.println(elements.get(i).getTagName());
+//			ExcelUtil excel = new ExcelUtil();
+//			excel.setExcelFile("NewTestData.xlsx", "MembershipStatus");
+			casecProduct = "CASEC";
+			Select target = new Select(productDropdown);
+			List<WebElement> targetListElements = target.getOptions();
+			int DropdownitemSize = targetListElements.size();
+			for (int i = 0; i < DropdownitemSize; i++) {
+				String productValue = targetListElements.get(i).getText();
+				if (productValue.contains((casecProduct))) {
+					Select productselect = new Select(productDropdown);
+					productselect.selectByVisibleText(casecProduct);
+					log.info("Prime user is Selected CASEC product");
+					narrowDownButton.click();
+					List<WebElement> pagination = driver.findElements(By.xpath("//div[@class='pagination']/div"));
+					log.info("Total Pages " + pagination.size());
+					int size = pagination.size();
+					if (size > 0) {
+						for (int k = 1; k <= pagination.size(); k++) {
+							driver.findElement(By.xpath("//div[@class='pagination']/div[" + k + "]")).click();
+							List<WebElement> elements = driver
+									.findElements(By.xpath("//div[@class='ep-product-list__row']/div"));
+							log.info("Total cards in Page " + elements.size());
+							for (int j = 0; j < elements.size(); j++) {
+								if ((elements.get(j).getText()).contains(casecProduct)) {
+									log.info("This is CASEC product card " + j + " Of " + elements.size()
+											+ " Total Cards");
+								}
+							}
+
+						}
+						break;
+
+					}
+				}
 			}
+		} else {
+			System.out.println("pagination not exists");
 		}
 
-//		if (CommonFunctions.waitForVisiblity(productTypeDropdown, waitTime))
-//
-//		{
-//			Select producttypeselect = new Select(productTypeDropdown);
-//			producttypeselect.selectByVisibleText("検定受験");
-//			log.info("Prime user is Selected Examination product type");
-//		}
 	}
+
+	public void CheckPrimeMembership_kanjikentei_Productetails() throws Exception {
+		if (CommonFunctions.waitForVisiblity(productDropdown, waitTime)) {
+//			ExcelUtil excel = new ExcelUtil();
+//			excel.setExcelFile("NewTestData.xlsx", "MembershipStatus");
+			kanjikenteiProduct = "漢検";
+			Select target = new Select(productDropdown);
+			List<WebElement> targetListElements = target.getOptions();
+			int DropdownitemSize = targetListElements.size();
+			for (int i = 0; i < DropdownitemSize; i++) {
+				String productValue = targetListElements.get(i).getText();
+				if (productValue.contains((kanjikenteiProduct))) {
+					Select productselect = new Select(productDropdown);
+					productselect.selectByVisibleText(kanjikenteiProduct);
+					log.info("Prime user is Selected Kanji Kaneti product");
+					narrowDownButton.click();
+					List<WebElement> pagination = driver.findElements(By.xpath("//div[@class='pagination']/div"));
+					log.info("Total Pages " + pagination.size());
+					int size = pagination.size();
+					if (size > 0) {
+						for (int k = 1; k <= pagination.size(); k++) {
+							driver.findElement(By.xpath("//div[@class='pagination']/div[" + k + "]")).click();
+							List<WebElement> elements = driver
+									.findElements(By.xpath("//div[@class='ep-product-list__row']/div"));
+							log.info("Total cards in Page " + elements.size());
+							for (int j = 0; j < elements.size(); j++) {
+								if ((elements.get(j).getText()).contains(kanjikenteiProduct)) {
+									log.info("This is Kanji Kaneti product card " + j + " Of " + elements.size()
+											+ " Total Cards");
+								}
+							}
+							// break;
+
+						}
+
+					}
+				}
+			}
+		} else {
+			System.out.println("pagination not exists");
+		}
+
+	}
+
 }

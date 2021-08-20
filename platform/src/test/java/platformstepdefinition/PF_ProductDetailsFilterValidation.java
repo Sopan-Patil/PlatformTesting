@@ -19,22 +19,8 @@ public class PF_ProductDetailsFilterValidation extends NewBaseClass {
 
 	public WebDriver driver = ObjectHelper.driver;
 
-	@Then("^Click on Product List$")
-	public void Click_on_Product_List() throws Throwable {
-		ProductDetailsFilterValidation ProductDetailsFilterValidation = new ProductDetailsFilterValidation(driver);
-		ProductDetailsFilterValidation.CheckProductFilterFeture();
-
-	}
-
-	@Then("^Validate CASEC Product Details$")
-	public void Validate_CASEC_Product_Details() throws Throwable {
-		ProductDetailsFilterValidation ProductDetailsFilterValidation = new ProductDetailsFilterValidation(driver);
-		ProductDetailsFilterValidation.CheckProductFilterFeture();
-
-	}
-
-	@Then("^Validate Kanji Kentei Product Details$")
-	public void Validate_Kanji_Kentei_Product_Details() throws Throwable {
+	@Then("^Click on Product List and Validate$")
+	public void Click_on_Product_List_and_validate() throws Throwable {
 		ProductDetailsFilterValidation ProductDetailsFilterValidation = new ProductDetailsFilterValidation(driver);
 		ProductDetailsFilterValidation.CheckProductFilterFeture();
 
