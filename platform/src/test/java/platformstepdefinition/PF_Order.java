@@ -244,4 +244,9 @@ public class PF_Order extends NewBaseClass {
 	public void verify_learn_button_from_service_you_are_using_page() throws Throwable {
 		orderObj.verifyLearnButtonFromServiceYouAreUsingPage();
 	}
+
+	@And("^Add prime user credentials in test data excel$")
+	public void add_prime_user_credentials_in_test_data_excel() throws Throwable {
+		orderObj.writeCredentialsToExcelForNewPrimeUser();
+	}
 }

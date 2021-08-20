@@ -6,9 +6,17 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import base.NewBaseClass;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
+
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import utils.ObjectHelper;
+
+
+
+
 
 /**
  * @Author : Chetan Sonparote
@@ -25,11 +33,25 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
+
 		tags = "@PF_Localization_NoLogin",
 
 		// tags = "@PF_CreateAccount",
 
+
+		// tags = { "@OrderWithExistingCreditCard" },
+		// tags = "@OrderWithExistingCreditCard",
+
+		// tags = { "@PFAccountAndSecurity, @PFAccountAndSecurityCancel" },
+
+		// tags = { "@OrderWithConvenienceStoreInValid" },
+
 		// tags = { "@PF_test" },
+
+
+
+		// tags = { "@PF_test" },
+
 
 		plugin = { "pretty", /* "html:target/cucumber_html_report", */ "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
