@@ -111,7 +111,7 @@ public class LocalizationData {
 //					softAssert.assertEquals(actual, expected, "Validation failed at # " + serialNumber.get(i)
 //							+ " and url " + url.get(i) + "for locator " + locators.get(i) + " ");
 //				}
-				System.out.println("softAssert.toString() :" + softAssert.toString());
+				// System.out.println("softAssert.toString() :" + softAssert.toString());
 
 				// softAssert.toString();
 

@@ -33,7 +33,8 @@ And logout
 @PF_Localization_PrimeUser
 Scenario: Test Localization strings for prime user
 Given User is on home page
-When Read localization data from sheet
-| PrimeUser |
-Then Validate that localization is correct
+And Login To Platform with prime user
+#When Read localization data from sheet
+#| PrimeUser |
+#Then Validate that localization is correct
 And logout
