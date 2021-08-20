@@ -11,7 +11,7 @@
       <class name="platformrunner.Runner">
         <methods>
           <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="4 15"/>
+          <include name="runScenario" invocation-numbers="10 15 16 17 18 19 20 21"/>
           <include name="tearDownClass"/>
           <include name="closeBrowser"/>
           <include name="setUpBrowser"/>
