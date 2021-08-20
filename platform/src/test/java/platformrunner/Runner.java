@@ -2,6 +2,7 @@ package platformrunner;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import base.NewBaseClass;
@@ -64,7 +65,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 
 	}
 
-	// @AfterTest(alwaysRun = true)
+	@AfterTest(alwaysRun = true)
 
 	public void closeBrowser() throws Exception {
 

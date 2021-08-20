@@ -17,6 +17,7 @@ import org.testng.asserts.SoftAssert;
 
 import base.NewBaseClass;
 import utils.CommonFunctions;
+import utils.ExcelUtil;
 import utils.ObjectHelper;
 import utils.XLHandler;
 
@@ -56,7 +57,7 @@ public class LocalizationData {
 		serialNumber = XLHandler.readexcel("LocalizationTestData.xlsx", sheet, "SrNo");
 
 		locators = new ArrayList<String>();
-		locators = XLHandler.readexcel("LocalizationTestData.xlsx", sheet, "Locator");
+		locators = ExcelUtil.readexcel("LocalizationTestData.xlsx", sheet, "Locator");
 		// log.info("locators :" + locators);
 
 		url = new ArrayList<String>();
@@ -84,8 +85,7 @@ public class LocalizationData {
 			// log.info("locators at " + i + " :" + locators.get(i));
 			// log.info("expectedStrings at " + i + " :" + expectedStrings.get(i));
 			ObjectHelper.driver.navigate().to(url.get(i));// API
-			// newBaseClass.replaceurl();
-			// CommonFunctions.waitForVisiblity(null, i)
+
 			CommonFunctions.scrollToPageBottom();
 
 			driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
@@ -96,36 +96,16 @@ public class LocalizationData {
 			if (CommonFunctions.waitForVisiblity(element, 1)) {
 
 				String actual = element.getText().trim();
-				// log.info("actual :" + actual);
+
 				String expected = expectedStrings.get(i).trim();
-				// log.info("expected :" + expected);
-//				softAssert.assertEquals(actual, expected, "Validation failed at #" + serialNumber.get(i) + " and url "
-//						+ url.get(i) + "for locator " + locators.get(i) + " ");
 
 				softAssert.assertEquals(actual, expected, "Validation failed at #" + serialNumber.get(i) + " ");
-
-//				if (actual == expected) {
-//					softAssert.assertEquals(actual, expected, "Validation Passed at # " + serialNumber.get(i)
-//							+ " and url " + url.get(i) + "for locator " + locators.get(i) + " ");
-//				} else {
-//					softAssert.assertEquals(actual, expected, "Validation failed at # " + serialNumber.get(i)
-//							+ " and url " + url.get(i) + "for locator " + locators.get(i) + " ");
-//				}
-				// System.out.println("softAssert.toString() :" + softAssert.toString());
-
-				// softAssert.toString();
 
 			}
 
 		}
-		// log.info("Total strings validated = " + serialNumber.size());
-		// softAssert.assertTrue(true, "Total strings validated = " +
-		// serialNumber.size());
-		// softAssert.assertTrue(true, "Total strings validated = " +
-		// serialNumber.size());
 
-		softAssert.assertAll("Total strings validated = " + serialNumber.size() + "\n" + " Total strings FAILED = "
-				+ serialNumber.size() + "\n");
+		softAssert.assertAll("Total strings validated = " + serialNumber.size() + "\n");
 
 	}
 }
