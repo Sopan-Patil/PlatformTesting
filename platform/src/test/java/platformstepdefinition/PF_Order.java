@@ -10,7 +10,6 @@ import org.openqa.selenium.WebDriver;
 import base.NewBaseClass;
 import cucumber.api.java.en.And;
 import cucumber.api.junit.Cucumber;
-import io.cucumber.java.en.Then;
 import platform.pageobjects.Order.Order;
 import utils.ObjectHelper;
 
@@ -246,7 +245,7 @@ public class PF_Order extends NewBaseClass {
 		orderObj.verifyLearnButtonFromServiceYouAreUsingPage();
 	}
 
-	@Then("^Add prime user credentials in test data excel$")
+	@And("^Add prime user credentials in test data excel$")
 	public void add_prime_user_credentials_in_test_data_excel() throws Throwable {
 		orderObj.writeCredentialsToExcelForNewPrimeUser();
 	}
