@@ -1,6 +1,8 @@
 package platform.pageobjects.Order;
 
+import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -15,6 +17,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import base.NewBaseClass;
+import platform.pageobjects.AccountServices.CreateAccountStep1;
+import platform.pageobjects.AccountServices.CreateAccountStep3;
 import platform.pageobjects.Authentication.LoginPage;
 import utils.CommonFunctions;
 import utils.ExcelUtil;
@@ -812,12 +816,36 @@ public class Order {
 		registerYouCreditCardRadioButton.click();
 		log.info("Step 2 tab :- click to 'Register your credit card information' radio button");
 
+		// payment with valid credit card
+		paymentWithValidCreditCardFromOrderPage();
+
+		CommonFunctions.scrolltoElement(step2ProceedButton);
+		CommonFunctions.isElementVisible(step2ProceedButton);
+		CommonFunctions.waitForVisiblity(step2ProceedButton, waitTime);
+		step2ProceedButton.click();
+		log.info("Step 2 tab :- click to 'Confirmation of order details' button");
+
+	}
+
+	// method for valid credit card
+	public void paymentWithValidCreditCardFromOrderPage() throws Exception {
+
+		ExcelUtil excel = new ExcelUtil();
+		excel.setExcelFile("NewTestData.xlsx", "CreditCardTestData");
+
+		String ValidCreditCardNumerSTR = excel.getCellData("ValidCreditCardNumer", 1);
+		String ExpirationMonthSTR = excel.getCellData("ExpirationMonth", 1);
+		String ExpirationYearSTR = excel.getCellData("ExpirationYear", 1);
+		String CreditCardHolderNameSTR = excel.getCellData("CreditCardHolderName", 1);
+		String SecurityCodeSTR = excel.getCellData("SecurityCode", 1);
+
 		CommonFunctions.waitForVisiblity(creditCardNumerTextbox, waitTime);
-		creditCardNumerTextbox.sendKeys("4111111111111111");
+
+		creditCardNumerTextbox.sendKeys(ValidCreditCardNumerSTR);
 		log.info("Step 2 tab :- provide card no to 'credit card number' textbox");
 
 		CommonFunctions.waitForVisiblity(creditCardHolderNameTextbox, waitTime);
-		creditCardHolderNameTextbox.sendKeys("rahul");
+		creditCardHolderNameTextbox.sendKeys(CreditCardHolderNameSTR);
 		log.info("Step 2 tab :- provide card holder name to 'card name' textbox");
 
 		CommonFunctions.isElementVisible(ExpirationYearDropdown);
@@ -830,24 +858,23 @@ public class Order {
 
 		List<WebElement> Yearlistings = driver.findElements(By.xpath("//ul[@id='select2-expire-year-results']/li"));
 		int YearitemSize = Yearlistings.size();
-		String expectedYearValue = "2025";
+		// String expectedYearValue = "2025";
 		for (int i = 0; i < YearitemSize; i++) {
-			String yearoptionsValue = Yearlistings.get(i).getText();
-			System.out.println(yearoptionsValue);
+			// String yearoptionsValue = Yearlistings.get(i).getText();
 			// match the content here in the if loop
-			if (Yearlistings.get(i).getText().equals(expectedYearValue)) {
+			if (Yearlistings.get(i).getText().equals(ExpirationYearSTR)) {
 				// perform action
 				Yearlistings.get(i).click();
 				break;
 
 			}
 		}
-		Thread.sleep(2000);
+
+		CommonFunctions.scrolltoElement(securitycodeTextbox);
 		CommonFunctions.waitForVisiblity(securitycodeTextbox, waitTime);
 		CommonFunctions.waitForClickable(securitycodeTextbox, waitTime);
 
-		CommonFunctions.waitForVisiblity(securitycodeTextbox, waitTime);
-		securitycodeTextbox.sendKeys("123");
+		securitycodeTextbox.sendKeys(SecurityCodeSTR);
 		log.info("Step 2 tab :- provide security code to 'securitycode' textbox");
 
 		CommonFunctions.waitForVisiblity(ExpirationMonthDropdown, waitTime);
@@ -858,22 +885,90 @@ public class Order {
 
 		List<WebElement> listings = driver.findElements(By.xpath("//ul[@id='select2-expire-month-results']/li"));
 		int itemSize = listings.size();
-		String expectedMonthValue = "7月";
+		// String expectedMonthValue = "7月";
 		for (int i = 0; i < itemSize; i++) {
-			String optionsValue = listings.get(i).getText();
-			System.out.println(optionsValue);
+			// String optionsValue = listings.get(i).getText();
 			// match the content here in the if loop
-			if (listings.get(i).getText().equals(expectedMonthValue)) {
+			if (listings.get(i).getText().equals(ExpirationMonthSTR)) {
 				// perform action
 				listings.get(i).click();
 				break;
 			}
 		}
+		log.info("Step 2 tab :- provided valid credit card data");
 
-		CommonFunctions.isElementVisible(step2ProceedButton);
-		CommonFunctions.waitForVisiblity(step2ProceedButton, waitTime);
-		step2ProceedButton.click();
-		log.info("Step 2 tab :- click to 'Confirmation of order details' button");
+	}
+
+	// method for invalid credit card
+	public void paymentWithInValidCreditCardFromOrderPage() throws Exception {
+
+		ExcelUtil excel = new ExcelUtil();
+		excel.setExcelFile("NewTestData.xlsx", "CreditCardTestData");
+
+		String InValidCreditCardNumerSTR = excel.getCellData("InValidCreditCardNumer", 1);
+		String ExpirationMonthSTR = excel.getCellData("ExpirationMonth", 1);
+		String ExpirationYearSTR = excel.getCellData("ExpirationYear", 1);
+		String CreditCardHolderNameSTR = excel.getCellData("CreditCardHolderName", 1);
+		String SecurityCodeSTR = excel.getCellData("SecurityCode", 1);
+
+		CommonFunctions.waitForVisiblity(creditCardNumerTextbox, waitTime);
+
+		creditCardNumerTextbox.sendKeys(InValidCreditCardNumerSTR);
+		log.info("Step 2 tab :- provide invalid card no to 'credit card number' textbox");
+
+		CommonFunctions.waitForVisiblity(creditCardHolderNameTextbox, waitTime);
+		creditCardHolderNameTextbox.sendKeys(CreditCardHolderNameSTR);
+		log.info("Step 2 tab :- provide card holder name to 'card name' textbox");
+
+		CommonFunctions.isElementVisible(ExpirationYearDropdown);
+
+		CommonFunctions.waitForVisiblity(ExpirationYearDropdown, waitTime);
+		ExpirationYearDropdown.click();
+		log.info("Step 2 tab :- click on 'Expiration year' Dropdown");
+
+		CommonFunctions.isElementVisible(listAllYearValue);
+
+		List<WebElement> Yearlistings = driver.findElements(By.xpath("//ul[@id='select2-expire-year-results']/li"));
+		int YearitemSize = Yearlistings.size();
+		// String expectedYearValue = "2025";
+		for (int i = 0; i < YearitemSize; i++) {
+			// String yearoptionsValue = Yearlistings.get(i).getText();
+
+			// match the content here in the if loop
+			if (Yearlistings.get(i).getText().equals(ExpirationYearSTR)) {
+				// perform action
+				Yearlistings.get(i).click();
+				break;
+
+			}
+		}
+
+		CommonFunctions.scrolltoElement(securitycodeTextbox);
+		CommonFunctions.waitForVisiblity(securitycodeTextbox, waitTime);
+		CommonFunctions.waitForClickable(securitycodeTextbox, waitTime);
+
+		securitycodeTextbox.sendKeys(SecurityCodeSTR);
+		log.info("Step 2 tab :- provide security code to 'securitycode' textbox");
+
+		CommonFunctions.waitForVisiblity(ExpirationMonthDropdown, waitTime);
+		ExpirationMonthDropdown.click();
+		log.info("Step 2 tab :- click on 'Expiration Month'Dropdown");
+
+		CommonFunctions.isElementVisible(listAllMonthValue);
+
+		List<WebElement> listings = driver.findElements(By.xpath("//ul[@id='select2-expire-month-results']/li"));
+		int itemSize = listings.size();
+		// String expectedMonthValue = "7月";
+		for (int i = 0; i < itemSize; i++) {
+			// String optionsValue = listings.get(i).getText();
+			// match the content here in the if loop
+			if (listings.get(i).getText().equals(ExpirationMonthSTR)) {
+				// perform action
+				listings.get(i).click();
+				break;
+			}
+		}
+		log.info("Step 2 tab :- provided invalid credit card data");
 
 	}
 
@@ -1058,65 +1153,10 @@ public class Order {
 		registerYouCreditCardRadioButton.click();
 		log.info("Step 2 tab :- click to 'Register your credit card information' radio button");
 
-		CommonFunctions.waitForVisiblity(creditCardNumerTextbox, waitTime);
-		creditCardNumerTextbox.sendKeys("4111111111111111");
-		log.info("Step 2 tab :- provide card no to 'credit card number' textbox");
+		// payment with valid credit card
+		paymentWithValidCreditCardFromOrderPage();
 
-		CommonFunctions.waitForVisiblity(creditCardHolderNameTextbox, waitTime);
-		creditCardHolderNameTextbox.sendKeys("rahul");
-		log.info("Step 2 tab :- provide card holder name to 'card name' textbox");
-
-		CommonFunctions.isElementVisible(ExpirationYearDropdown);
-
-		CommonFunctions.waitForVisiblity(ExpirationYearDropdown, waitTime);
-		ExpirationYearDropdown.click();
-		log.info("Step 2 tab :- click on 'Expiration year' Dropdown");
-
-		CommonFunctions.isElementVisible(listAllYearValue);
-
-		List<WebElement> Yearlistings = driver.findElements(By.xpath("//ul[@id='select2-expire-year-results']/li"));
-		int YearitemSize = Yearlistings.size();
-		String expectedYearValue = "2025";
-		for (int i = 0; i < YearitemSize; i++) {
-			String yearoptionsValue = Yearlistings.get(i).getText();
-			System.out.println(yearoptionsValue);
-			// match the content here in the if loop
-			if (Yearlistings.get(i).getText().equals(expectedYearValue)) {
-				// perform action
-				Yearlistings.get(i).click();
-				break;
-
-			}
-		}
-		Thread.sleep(2000);
-		CommonFunctions.waitForVisiblity(securitycodeTextbox, waitTime);
-		CommonFunctions.waitForClickable(securitycodeTextbox, waitTime);
-
-		CommonFunctions.waitForVisiblity(securitycodeTextbox, waitTime);
-		securitycodeTextbox.sendKeys("123");
-		log.info("Step 2 tab :- provide security code to 'securitycode' textbox");
-
-		CommonFunctions.waitForVisiblity(ExpirationMonthDropdown, waitTime);
-		ExpirationMonthDropdown.click();
-		log.info("Step 2 tab :- click on 'Expiration Month'Dropdown");
-
-		CommonFunctions.isElementVisible(listAllMonthValue);
-
-		List<WebElement> listings = driver.findElements(By.xpath("//ul[@id='select2-expire-month-results']/li"));
-		int itemSize = listings.size();
-		String expectedMonthValue = "7月";
-		for (int i = 0; i < itemSize; i++) {
-			String optionsValue = listings.get(i).getText();
-			System.out.println(optionsValue);
-			// match the content here in the if loop
-			if (listings.get(i).getText().equals(expectedMonthValue)) {
-				// perform action
-				listings.get(i).click();
-				break;
-			}
-		}
-
-		CommonFunctions.isElementVisible(step2ProceedButton);
+		CommonFunctions.scrolltoElement(step2ProceedButton);
 		CommonFunctions.waitForVisiblity(step2ProceedButton, waitTime);
 		step2ProceedButton.click();
 		log.info("Step 2 tab :- click to 'Confirmation of order details' button");
@@ -1124,83 +1164,35 @@ public class Order {
 
 	// payment with in valid credit card
 	public void verifyPaymentWithInValidCreditCardFromStep2() throws Exception {
+
+		ExcelUtil excel = new ExcelUtil();
+		excel.setExcelFile("NewTestData.xlsx", "Order");
+
 		CommonFunctions.isElementVisible(step2ProceedButton);
 		CommonFunctions.waitForVisiblity(registerYouCreditCardRadioButton, waitTime);
 		registerYouCreditCardRadioButton.click();
 		log.info("Step 2 tab :- click to 'Register your credit card information' radio button");
 
-		CommonFunctions.waitForVisiblity(creditCardNumerTextbox, waitTime);
-		creditCardNumerTextbox.sendKeys("1111111111111111");
-		log.info("Step 2 tab :- provide card no to 'credit card number' textbox");
+		// payment with invalid credit card
+		paymentWithInValidCreditCardFromOrderPage();
 
-		CommonFunctions.waitForVisiblity(creditCardHolderNameTextbox, waitTime);
-		creditCardHolderNameTextbox.sendKeys("rahul");
-		log.info("Step 2 tab :- provide card holder name to 'card name' textbox");
-
-		CommonFunctions.isElementVisible(ExpirationYearDropdown);
-
-		CommonFunctions.waitForVisiblity(ExpirationYearDropdown, waitTime);
-		ExpirationYearDropdown.click();
-		log.info("Step 2 tab :- click on 'Expiration year' Dropdown");
-
-		CommonFunctions.isElementVisible(listAllYearValue);
-
-		List<WebElement> Yearlistings = driver.findElements(By.xpath("//ul[@id='select2-expire-year-results']/li"));
-		int YearitemSize = Yearlistings.size();
-		String expectedYearValue = "2025";
-		for (int i = 0; i < YearitemSize; i++) {
-			String yearoptionsValue = Yearlistings.get(i).getText();
-			System.out.println(yearoptionsValue);
-			// match the content here in the if loop
-			if (Yearlistings.get(i).getText().equals(expectedYearValue)) {
-				// perform action
-				Yearlistings.get(i).click();
-				break;
-
-			}
-		}
-		Thread.sleep(2000);
-		CommonFunctions.waitForVisiblity(securitycodeTextbox, waitTime);
-		CommonFunctions.waitForClickable(securitycodeTextbox, waitTime);
-
-		CommonFunctions.waitForVisiblity(securitycodeTextbox, waitTime);
-		securitycodeTextbox.sendKeys("123");
-		log.info("Step 2 tab :- provide security code to 'securitycode' textbox");
-
-		CommonFunctions.waitForVisiblity(ExpirationMonthDropdown, waitTime);
-		ExpirationMonthDropdown.click();
-		log.info("Step 2 tab :- click on 'Expiration Month'Dropdown");
-
-		CommonFunctions.isElementVisible(listAllMonthValue);
-
-		List<WebElement> listings = driver.findElements(By.xpath("//ul[@id='select2-expire-month-results']/li"));
-		int itemSize = listings.size();
-		String expectedMonthValue = "7月";
-		for (int i = 0; i < itemSize; i++) {
-			String optionsValue = listings.get(i).getText();
-			System.out.println(optionsValue);
-			// match the content here in the if loop
-			if (listings.get(i).getText().equals(expectedMonthValue)) {
-				// perform action
-				listings.get(i).click();
-				break;
-			}
-		}
-
-		CommonFunctions.isElementVisible(step2ProceedButton);
+		CommonFunctions.scrolltoElement(step2ProceedButton);
 		CommonFunctions.waitForVisiblity(step2ProceedButton, waitTime);
 		step2ProceedButton.click();
 		log.info("Step 2 tab :- click to 'Confirmation of order details' button");
 
 		CommonFunctions.isElementVisible(invalidCreditCardTextHandler);
 		String invalidCreditCardText = invalidCreditCardTextHandler.getText().trim();
-		String expectedInvalidCreditCardText = "ご利用いただけないクレジットカードです。";
+		String expectedInvalidCreditCardText = excel.getCellData("expectedInvalidCreditCardText", 1);
 		CommonFunctions.assertString(invalidCreditCardText, expectedInvalidCreditCardText);
 		log.info("The invalid credit card message match with our expected message");
 	}
 
 	// payment with in blank credit card
 	public void verifyPaymentWithBlankCreditCardFromStep2() throws Exception {
+		ExcelUtil excel = new ExcelUtil();
+		excel.setExcelFile("NewTestData.xlsx", "Order");
+
 		CommonFunctions.isElementVisible(step2ProceedButton);
 
 		CommonFunctions.waitForVisiblity(registerYouCreditCardRadioButton, waitTime);
@@ -1212,30 +1204,37 @@ public class Order {
 		step2ProceedButton.click();
 		log.info("Step 2 tab :- click to 'Confirmation of order details' button");
 
-		String expectedInvalidCreditCardText = "入力してください";
+		String expectedBlankCreditCardText = excel.getCellData("expectedBlankCreditCardText", 1);
 		CommonFunctions.isElementVisible(blankCardNoTextHandler);
 		String blankCardNoTextHandlerString = blankCardNoTextHandler.getText().trim();
-		CommonFunctions.assertString(blankCardNoTextHandlerString, expectedInvalidCreditCardText);
+		CommonFunctions.assertString(blankCardNoTextHandlerString, expectedBlankCreditCardText);
 		log.info("The card no message match with our expected message");
 
 		CommonFunctions.isElementVisible(blankMonthYearCardTextHandler);
 		String blankMonthYearCardTextHandlerString = blankMonthYearCardTextHandler.getText().trim();
-		CommonFunctions.assertString(blankMonthYearCardTextHandlerString, expectedInvalidCreditCardText);
+		CommonFunctions.assertString(blankMonthYearCardTextHandlerString, expectedBlankCreditCardText);
 		log.info("The month and year message match with our expected message");
 
 		CommonFunctions.isElementVisible(blankCardNameTextHandler);
 		String blankCardNameTextHandlerString = blankCardNameTextHandler.getText().trim();
-		CommonFunctions.assertString(blankCardNameTextHandlerString, expectedInvalidCreditCardText);
+		CommonFunctions.assertString(blankCardNameTextHandlerString, expectedBlankCreditCardText);
 		log.info("The card name message match with our expected message");
 
 		CommonFunctions.isElementVisible(BlankSecurityCodeTextHandler);
 		String BlankSecurityCodeTextHandlerString = BlankSecurityCodeTextHandler.getText().trim();
-		CommonFunctions.assertString(BlankSecurityCodeTextHandlerString, expectedInvalidCreditCardText);
+		CommonFunctions.assertString(BlankSecurityCodeTextHandlerString, expectedBlankCreditCardText);
 		log.info("The security code message match with our expected message");
 	}
 
 	// payment with valid con store
 	public void verifyPaymentWithValidConStoreFromStep2() throws Exception {
+		ExcelUtil excel = new ExcelUtil();
+		excel.setExcelFile("NewTestData.xlsx", "Order");
+		String validConStoreKanjiNameSTR = excel.getCellData("validConStoreKanjiName", 1);
+		String validConStoreKanaNameSTR = excel.getCellData("validConStoreKanaName", 1);
+		String validConStorePhonenoSTR = excel.getCellData("validConStorePhoneno", 1);
+		String validConStoreEmailAddressSTR = excel.getCellData("validConStoreEmailAddress", 1);
+
 		CommonFunctions.isElementVisible(step2ProceedButton);
 
 		CommonFunctions.waitForVisiblity(convenienceStorePaymentRadioButton, waitTime);
@@ -1248,22 +1247,22 @@ public class Order {
 
 		CommonFunctions.waitForVisiblity(kanjiNameTextbox, waitTime);
 		kanjiNameTextbox.clear();
-		kanjiNameTextbox.sendKeys("柏木佳　奈子");
+		kanjiNameTextbox.sendKeys(validConStoreKanjiNameSTR);
 		log.info("Step 2 tab :- provide name 'kanji Name' textbox");
 
 		CommonFunctions.waitForVisiblity(kanaNameTextbox, waitTime);
 		kanaNameTextbox.clear();
-		kanaNameTextbox.sendKeys("カシワギ　カナコ");
+		kanaNameTextbox.sendKeys(validConStoreKanaNameSTR);
 		log.info("Step 2 tab :- provide name 'kana Name' textbox");
 
 		CommonFunctions.waitForVisiblity(phonenoTextbox, waitTime);
 		phonenoTextbox.clear();
-		phonenoTextbox.sendKeys("9890324119");
+		phonenoTextbox.sendKeys(validConStorePhonenoSTR);
 		log.info("Step 2 tab :- provide phone no 'phone no' textbox");
 
 		CommonFunctions.waitForVisiblity(emailaddressTextbox, waitTime);
 		emailaddressTextbox.clear();
-		emailaddressTextbox.sendKeys("rahul.shinde+82@scispl.com");
+		emailaddressTextbox.sendKeys(validConStoreEmailAddressSTR);
 		log.info("Step 2 tab :- provide email to 'email address' textbox");
 
 		CommonFunctions.isElementVisible(step2ProceedButton);
@@ -1274,6 +1273,15 @@ public class Order {
 
 	// payment with invalid con store
 	public void verifyPaymentWithInValidConStoreFromStep2() throws Exception {
+
+		ExcelUtil excel = new ExcelUtil();
+		excel.setExcelFile("NewTestData.xlsx", "Order");
+		String validConStoreKanjiNameSTR = excel.getCellData("validConStoreKanjiName", 1);
+		String validConStoreKanaNameSTR = excel.getCellData("validConStoreKanaName", 1);
+		String validConStorePhonenoSTR = excel.getCellData("validConStorePhoneno", 1);
+		String InValidConStoreEmailAddressSTR = excel.getCellData("InValidConStoreEmailAddress", 1);
+		String expectedinvalidEmailConStoreText = excel.getCellData("expectedinvalidEmailConStoreText", 1);
+
 		CommonFunctions.isElementVisible(step2ProceedButton);
 
 		CommonFunctions.waitForVisiblity(convenienceStorePaymentRadioButton, waitTime);
@@ -1286,22 +1294,22 @@ public class Order {
 
 		CommonFunctions.waitForVisiblity(kanjiNameTextbox, waitTime);
 		kanjiNameTextbox.clear();
-		kanjiNameTextbox.sendKeys("柏木佳　奈子");
+		kanjiNameTextbox.sendKeys(validConStoreKanjiNameSTR);
 		log.info("Step 2 tab :- provide name 'kanji Name' textbox");
 
 		CommonFunctions.waitForVisiblity(kanaNameTextbox, waitTime);
 		kanaNameTextbox.clear();
-		kanaNameTextbox.sendKeys("カシワギ　カナコ");
+		kanaNameTextbox.sendKeys(validConStoreKanaNameSTR);
 		log.info("Step 2 tab :- provide name 'kana Name' textbox");
 
 		CommonFunctions.waitForVisiblity(phonenoTextbox, waitTime);
 		phonenoTextbox.clear();
-		phonenoTextbox.sendKeys("9890324119");
+		phonenoTextbox.sendKeys(validConStorePhonenoSTR);
 		log.info("Step 2 tab :- provide phone no 'phone no' textbox");
 
 		CommonFunctions.waitForVisiblity(emailaddressTextbox, waitTime);
 		emailaddressTextbox.clear();
-		emailaddressTextbox.sendKeys("rahul.shinde");
+		emailaddressTextbox.sendKeys(InValidConStoreEmailAddressSTR);
 		log.info("Step 2 tab :- provide email to 'email address' textbox");
 
 		CommonFunctions.isElementVisible(step2ProceedButton);
@@ -1311,14 +1319,20 @@ public class Order {
 
 		CommonFunctions.waitForVisiblity(invalidConStoreEmailTextHandler, waitTime);
 		String invalidEmailConStoreText = invalidConStoreEmailTextHandler.getText().trim();
-		String expectedinvalidEmailConStoreText = "有効なメールアドレスを入力してください";
 		CommonFunctions.assertString(invalidEmailConStoreText, expectedinvalidEmailConStoreText);
 		log.info("The invalid email address of con store message match with our expected message");
 	}
 
 	// payment with blank con store
 	public void verifyPaymentWithBlankConStoreFromStep2() throws Exception {
-		CommonFunctions.isElementVisible(step2ProceedButton);
+
+		ExcelUtil excel = new ExcelUtil();
+		excel.setExcelFile("NewTestData.xlsx", "Order");
+		String expectedBlankConStoreText = excel.getCellData("expectedBlankConStoreText", 1);
+		String expectedKanaConStoreText = excel.getCellData("expectedKanaConStoreText", 1);
+		String expectedTelePhoneConStoreText = excel.getCellData("expectedTelePhoneConStoreText", 1);
+
+		CommonFunctions.waitForVisiblity(step2ProceedButton, waitTime);
 
 		CommonFunctions.waitForVisiblity(convenienceStorePaymentRadioButton, waitTime);
 		convenienceStorePaymentRadioButton.click();
@@ -1349,19 +1363,16 @@ public class Order {
 		step2ProceedButton.click();
 		log.info("Step 2 tab :- click to 'Confirmation of order details' button");
 
-		String expectedBlankConStoreText = "氏名（漢字）を入力してください";
 		CommonFunctions.waitForVisiblity(blankKanjiNameTextHandler, waitTime);
 		String blankKanjiNameTextHandlerString = blankKanjiNameTextHandler.getText().trim();
 		CommonFunctions.assertString(expectedBlankConStoreText, blankKanjiNameTextHandlerString);
 		log.info("The blank Kanji Name message match with our expected message");
 
-		String expectedKanaConStoreText = "氏名（カナ）を入力してください";
 		CommonFunctions.waitForVisiblity(blankKanaNameTextHandler, waitTime);
 		String blankKanaNameTextHandlerString = blankKanaNameTextHandler.getText().trim();
 		CommonFunctions.assertString(expectedKanaConStoreText, blankKanaNameTextHandlerString);
 		log.info("The blank Kana Name message match with our expected message");
 
-		String expectedTelePhoneConStoreText = "電話番号を入力してください";
 		CommonFunctions.waitForVisiblity(blankPhonenoTextHandler, waitTime);
 		String blankPhonenoTextHandlerString = blankPhonenoTextHandler.getText().trim();
 		CommonFunctions.assertString(expectedTelePhoneConStoreText, blankPhonenoTextHandlerString);
@@ -1442,6 +1453,12 @@ public class Order {
 		String expectedThankYouPagePaymentDeadlineSTR = thankYouPagePaymentDeadlineSTR;
 		String expectedThankYouPageorderNumberLabelSTR = thankYouPageorderNumberLabelSTR;
 
+		ExcelUtil excel = new ExcelUtil();
+		excel.setExcelFile("NewTestData.xlsx", "Order");
+		String expectedBuyAgainButton = excel.getCellData("OrderHistoryPageExpectedBuyAgainButton", 1);
+		String expectedStatusPaymentUnconfirmed = excel.getCellData("OrderHistoryPageExpectedStatusPaymentUnconfirmed",
+				1);
+
 		log.info("Store Payment Deadline from ConStoreThankYouPage:- " + expectedThankYouPagePaymentDeadlineSTR);
 		log.info("Store Order Number from ConStoreThankYouPage:- " + expectedThankYouPageorderNumberLabelSTR);
 
@@ -1456,7 +1473,6 @@ public class Order {
 
 		CommonFunctions.waitForVisiblity(orderHistoryBuyAgainButton, waitTime);
 		String orderHistoryBuyAgainButtonSTR = orderHistoryBuyAgainButton.getText();
-		String expectedBuyAgainButton = "再度購入";
 		log.info("Order history page:- buy again button visible " + orderHistoryBuyAgainButtonSTR);
 		CommonFunctions.assertString(expectedBuyAgainButton, orderHistoryBuyAgainButtonSTR);
 
@@ -1468,7 +1484,6 @@ public class Order {
 
 		CommonFunctions.waitForVisiblity(orderHistoryPaymentStatusLabel, waitTime);
 		String orderHistoryPaymentStatusLabelSTR = orderHistoryPaymentStatusLabel.getText();
-		String expectedStatusPaymentUnconfirmed = "支払い未確認";
 		log.info("Order history page:- payment status is Payment unconfirmed " + orderHistoryPaymentStatusLabelSTR);
 		CommonFunctions.assertString(expectedStatusPaymentUnconfirmed, orderHistoryPaymentStatusLabelSTR);
 
@@ -1489,11 +1504,17 @@ public class Order {
 
 	public String[] verifyCreditCardThankYouPage() throws Exception {
 
+		ExcelUtil excel = new ExcelUtil();
+		excel.setExcelFile("NewTestData.xlsx", "Order");
+		String expectedThankYouForYourApplicationLabelSTR = excel
+				.getCellData("ThankYouPageThankYouForYourApplicationLabel", 1);
+		String expectedstartNowButtonSTR = excel.getCellData("startNowButtonSTRStartNowButton", 1);
+
 		// thank you page
 		CommonFunctions.waitForVisiblity(thankYouForYourApplicationCreditCardLabel, waitTime);
-		// stringToCompare = thankYouForYourApplicationCreditCardLabel.getText();
+
 		String ThankYouForYourApplicationLabelSTR = thankYouForYourApplicationCreditCardLabel.getText();
-		String expectedThankYouForYourApplicationLabelSTR = "ご購入ありがとうございます。";
+
 		log.info("Step 4 tab :- thank You For Your Application text visible:- " + ThankYouForYourApplicationLabelSTR);
 		CommonFunctions.assertString(ThankYouForYourApplicationLabelSTR, expectedThankYouForYourApplicationLabelSTR);
 
@@ -1506,7 +1527,7 @@ public class Order {
 
 		CommonFunctions.waitForVisiblity(StartNowButton, waitTime);
 		String startNowButtonSTR = StartNowButton.getText();
-		String expectedstartNowButtonSTR = "今すぐはじめる";
+
 		log.info("Step 4 tab :- start now button visible:- " + startNowButtonSTR);
 		CommonFunctions.assertString(expectedstartNowButtonSTR, startNowButtonSTR);
 
@@ -1588,15 +1609,18 @@ public class Order {
 	}
 
 	public String[] verifyPrimeThankYouPage() throws Exception {
+		ExcelUtil excel = new ExcelUtil();
+		excel.setExcelFile("NewTestData.xlsx", "Order");
+		String expectedThankYouForPrimeLabelSTR = excel.getCellData("ThankYouPageThankYouForPrimeLabel", 1);
+		String expectedTopPageButtonSTR = excel.getCellData("ThankYouPageTopPageButton", 1);
 
 		// thank you page
 		CommonFunctions.waitForVisiblity(thankYouForYourApplicationPrimeLabel, waitTime);
 		// stringToCompare = thankYouForYourApplicationCreditCardLabel.getText();
 		String ThankYouForYourApplicationLabelForTrim = thankYouForYourApplicationPrimeLabel.getText().trim();
 		String ThankYouForYourApplicationLabelSTR = ThankYouForYourApplicationLabelForTrim.substring(0, 11);
-		String expectedThankYouForYourApplicationLabelSTR = "ありがとうございます！";
 		log.info("Step 4 tab :- thank You For Your Application text visible:- " + ThankYouForYourApplicationLabelSTR);
-		CommonFunctions.assertString(ThankYouForYourApplicationLabelSTR, expectedThankYouForYourApplicationLabelSTR);
+		CommonFunctions.assertString(ThankYouForYourApplicationLabelSTR, expectedThankYouForPrimeLabelSTR);
 
 		CommonFunctions.waitForVisiblity(orderNumberPrimeLabel, waitTime);
 		String orderNumberPrimeLabelSTR = orderNumberPrimeLabel.getText();
@@ -1607,9 +1631,8 @@ public class Order {
 
 		CommonFunctions.waitForVisiblity(thankYouPageTopPageButton, waitTime);
 		String thankYouPageTopPageButtonSTR = thankYouPageTopPageButton.getText();
-		String expectedstartNowButtonSTR = "トップページ";
 		log.info("Step 4 tab :- start now button visible:- " + thankYouPageTopPageButtonSTR);
-		CommonFunctions.assertString(expectedstartNowButtonSTR, thankYouPageTopPageButtonSTR);
+		CommonFunctions.assertString(expectedTopPageButtonSTR, thankYouPageTopPageButtonSTR);
 
 		CommonFunctions.waitForVisiblity(FAQLink, waitTime);
 		log.info("Step 4 tab :- Frequently Asked Questions / Inquiries link visible");
@@ -1692,6 +1715,11 @@ public class Order {
 
 		String expectedOrderNumberLabelSTR = orderNumberLabelSTR;
 
+		ExcelUtil excel = new ExcelUtil();
+		excel.setExcelFile("NewTestData.xlsx", "Order");
+		String expectedBuyAgainButton = excel.getCellData("OrderHistoryPageExpectedBuyAgainButton", 1);
+		String expectedStatusPaymentconfirmed = excel.getCellData("OrderHistoryPageStatusPaymentconfirmed", 1);
+
 		log.info("Store Order Number from CreditCardThankYouPage:- " + expectedOrderNumberLabelSTR);
 
 		CommonFunctions.waitForVisiblity(checkOrderHistoryLink, waitTime);
@@ -1699,7 +1727,6 @@ public class Order {
 
 		CommonFunctions.waitForVisiblity(orderHistoryBuyAgainButton, waitTime);
 		String orderHistoryBuyAgainButtonSTR = orderHistoryBuyAgainButton.getText();
-		String expectedBuyAgainButton = "再度購入";
 		log.info("Order history page:- buy again button visible " + orderHistoryBuyAgainButtonSTR);
 		CommonFunctions.assertString(expectedBuyAgainButton, orderHistoryBuyAgainButtonSTR);
 
@@ -1711,7 +1738,6 @@ public class Order {
 
 		CommonFunctions.waitForVisiblity(orderHistoryPaymentStatusLabel, waitTime);
 		String orderHistoryPaymentStatusLabelSTR = orderHistoryPaymentStatusLabel.getText();
-		String expectedStatusPaymentconfirmed = "支払い確認済み";
 		log.info("Order history page:- payment status is Payment confirmed " + expectedStatusPaymentconfirmed);
 		CommonFunctions.assertString(expectedStatusPaymentconfirmed, orderHistoryPaymentStatusLabelSTR);
 
@@ -1735,6 +1761,12 @@ public class Order {
 
 		String expectedOrderNumberLabelSTR = orderNumberLabelSTR;
 
+		excel.setExcelFile("NewTestData.xlsx", "Order");
+		String expectedPrimeLabel = excel.getCellData("PrimeLabel", 1);
+		String expectedStatusPaymentconfirmed = excel.getCellData("OrderHistoryPageStatusPaymentconfirmed", 1);
+		String expectedPrimePrice = excel.getCellData("PrimePrice", 1);
+		String expectedPrimeLabelOnHeaderPage = excel.getCellData("PrimeButtonOnHeaderPage", 1);
+
 		log.info("Store Order Number from CreditCardThankYouPage:- " + expectedOrderNumberLabelSTR);
 
 		CommonFunctions.waitForVisiblity(checkOrderHistoryLink, waitTime);
@@ -1748,19 +1780,16 @@ public class Order {
 
 		CommonFunctions.waitForVisiblity(orderHistoryPaymentStatusLabel, waitTime);
 		String orderHistoryPaymentStatusLabelSTR = orderHistoryPaymentStatusLabel.getText();
-		String expectedStatusPaymentconfirmed = "支払い確認済み";
 		log.info("Order history page:- payment status is Payment confirmed " + expectedStatusPaymentconfirmed);
 		CommonFunctions.assertString(expectedStatusPaymentconfirmed, orderHistoryPaymentStatusLabelSTR);
 
 		CommonFunctions.waitForVisiblity(orderHistoryProductNameLabel, waitTime);
 		String orderHistoryProductNameLabelSTR = orderHistoryProductNameLabel.getText().trim();
-		String expectedPrimeLabel = "プライム会員プラン";
 		log.info("Order history page:- displayed " + orderHistoryProductNameLabelSTR);
 		CommonFunctions.assertString(expectedPrimeLabel, orderHistoryProductNameLabelSTR);
 
 		CommonFunctions.waitForVisiblity(orderHistoryPriceLabel, waitTime);
 		String orderHistoryPriceLabelForTrim = orderHistoryPriceLabel.getText();
-		String expectedPrimePrice = "500";
 		String orderHistoryPriceLabelSTR = orderHistoryPriceLabelForTrim.substring(0, 3);
 		log.info("Order history page:- price for prime " + orderHistoryPriceLabelSTR);
 		CommonFunctions.assertString(expectedPrimePrice, orderHistoryPriceLabelSTR);
@@ -1774,7 +1803,6 @@ public class Order {
 
 		CommonFunctions.waitForVisiblity(primeButtonOnHeaderPage, waitTime);
 		String primeButtonOnHeaderPageSTR = primeButtonOnHeaderPage.getText().trim();
-		String expectedPrimeLabelOnHeaderPage = "プライム会員";
 		log.info("Prime Label On Header Page:- displayed " + primeButtonOnHeaderPageSTR);
 		CommonFunctions.assertString(expectedPrimeLabelOnHeaderPage, primeButtonOnHeaderPageSTR);
 
@@ -1782,26 +1810,30 @@ public class Order {
 
 	public void verifyMembershipStatusPageForPrime() throws Exception {
 
+		excel.setExcelFile("NewTestData.xlsx", "Order");
+		String expectedMembershipPagePrimeCreditCardLabelSTR = excel.getCellData("MembershipPagePrimeCreditCardLabel",
+				1);
+		String expectedPrimePrice = excel.getCellData("PrimePrice", 1);
+		String expectedMembershipPagePrimeLabelSTR = excel.getCellData("PrimeButtonOnHeaderPage", 1);
+
 		CommonFunctions.waitForVisiblity(sideMembershipStatusPage, waitTime);
 		sideMembershipStatusPage.click();
 		log.info("Open Membership Status Page page");
 
 		CommonFunctions.waitForVisiblity(membershipPagePrimeLabel, waitTime);
 		String membershipPagePrimeLabelSTR = membershipPagePrimeLabel.getText().trim();
-		String expectedMembershipPagePrimeLabelSTR = "プライム会員";
 		log.info("Membership page:- prime label displayed " + membershipPagePrimeLabelSTR);
 		CommonFunctions.assertString(expectedMembershipPagePrimeLabelSTR, membershipPagePrimeLabelSTR);
 
 		CommonFunctions.waitForVisiblity(membershipPagePrimePriceLabel, waitTime);
 		String membershipPagePrimePriceLabelForTrim = membershipPagePrimePriceLabel.getText();
-		String expectedPrimePrice = "500";
+
 		String membershipPagePrimePriceLabelSTR = membershipPagePrimePriceLabelForTrim.substring(0, 3);
 		log.info("Membership page:- prime price displayed " + membershipPagePrimePriceLabelSTR);
 		CommonFunctions.assertString(expectedPrimePrice, membershipPagePrimePriceLabelSTR);
 
 		CommonFunctions.waitForVisiblity(membershipPagePrimeCreditCardLabel, waitTime);
 		String membershipPagePrimeCreditCardLabelSTR = membershipPagePrimeCreditCardLabel.getText().trim();
-		String expectedMembershipPagePrimeCreditCardLabelSTR = "クレジットカード支払い";
 		log.info("Membership page:- displayed " + membershipPagePrimeCreditCardLabelSTR);
 		CommonFunctions.assertString(expectedMembershipPagePrimeCreditCardLabelSTR,
 				membershipPagePrimeCreditCardLabelSTR);
@@ -1832,14 +1864,28 @@ public class Order {
 
 	public void verifyLearnButtonFromServiceYouAreUsingPage() throws Exception {
 
+		excel.setExcelFile("NewTestData.xlsx", "Order");
+		String expectedLearnButtonLabelForKankenProductSTR = excel.getCellData("LearnButtonLabelForKankenProduct", 1);
+
 		CommonFunctions.waitForVisiblity(sideMenuServiceYouAreUsingPage, waitTime);
 		sideMenuServiceYouAreUsingPage.click();
 
 		CommonFunctions.waitForVisiblity(learnButtonForKankenProduct, waitTime);
 		String learnButtonLabelForKankenProductSTR = learnButtonForKankenProduct.getText();
-		String expectedLearnButtonLabelForKankenProductSTR = "漢検にログインして利用開始";
 		log.info("Service you are using:- learn button text " + learnButtonLabelForKankenProductSTR);
 		CommonFunctions.assertString(expectedLearnButtonLabelForKankenProductSTR, learnButtonLabelForKankenProductSTR);
+
+	}
+
+	public void writeCredentialsToExcelForNewPrimeUser() throws IOException {
+
+		ArrayList<String> newLoginData = new ArrayList<>();
+
+		newLoginData.add(0, CreateAccountStep1.email);
+		newLoginData.add(1, CreateAccountStep3.password);
+		newLoginData.add(2, CreateAccountStep1.eid);
+
+		ExcelUtil.writeToExcel("PrimeUser", "NewTestData.xlsx", newLoginData);
 
 	}
 
