@@ -2,12 +2,18 @@ package platformrunner;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
 import base.NewBaseClass;
+
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
+
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+import utils.ObjectHelper;
+
 
 /**
  * @Author : Chetan Sonparote
@@ -24,6 +30,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 		glue = { "platformstepdefinition" },
 
+
 		// tags = { "@OrderWithExistingCreditCard" },
 		// tags = "@OrderWithExistingCreditCard",
 
@@ -33,15 +40,17 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 		// tags = { "@PF_test" },
 
-		tags = { "@Smoke" },
+		
+		tags = "@Smoke",
+
+		// tags = { "@PF_test" },
+
 
 		plugin = { "pretty", /* "html:target/cucumber_html_report", */ "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
 
 				"junit:target/cucumber_html_report/junit_platform.xml", "rerun:rerun/failed_scenarios.txt",
-				"json:target/cucumber.json", /*
-												 * "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
-												 */ })
+				"json:target/cucumber.json", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" })
 
 public class Runner extends AbstractTestNGCucumberTests {
 
@@ -49,7 +58,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 
 	private static Logger log = LogManager.getLogger(Runner.class.getName());
 
-	@BeforeMethod(alwaysRun = true)
+	@BeforeTest(alwaysRun = true)
 	@org.testng.annotations.Parameters(value = { "mode", "browser", "config", "environment" })
 	public void setUpBrowser(@org.testng.annotations.Optional("null") String mode,
 			@org.testng.annotations.Optional("null") String browser,
@@ -62,10 +71,10 @@ public class Runner extends AbstractTestNGCucumberTests {
 
 	}
 
-	@AfterMethod(alwaysRun = true)
+	@AfterTest(alwaysRun = true)
 	public void closeBrowser() throws Exception {
 
-		// ObjectHelper.driver.quit();
+		ObjectHelper.driver.quit();
 
 	}
 

@@ -115,7 +115,7 @@ public class InvalidCC {
 		securitycodeTextbox.sendKeys(shipmentdata[4]);
 		log.info("entering security code to 'securitycode' textbox");
 
-		if (CommonFunctions.waitForVisiblity(saveButton, waitTime)) {
+		if (!CommonFunctions.waitForVisiblity(saveButton, waitTime)) {
 			saveButton.click();
 		}
 		CommonFunctions.isElementVisible(creditCardRegistrationFailedError);
