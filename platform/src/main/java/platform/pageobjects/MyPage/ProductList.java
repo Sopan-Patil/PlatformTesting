@@ -14,15 +14,15 @@ import org.openqa.selenium.support.PageFactory;
 import utils.CommonFunctions;
 import utils.ExcelUtil;
 
-public class ProductListDropdown {
+public class ProductList {
 
 	List<String[]> testdata;
 	public WebDriver driver;
-	private static Logger log = LogManager.getLogger(ProductListDropdown.class.getName());
+	private static Logger log = LogManager.getLogger(ProductList.class.getName());
 	int waitTime = 5;
 	String[] shipmentdata;
 
-	public ProductListDropdown(WebDriver driver) {
+	public ProductList(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -57,24 +57,23 @@ public class ProductListDropdown {
 		}
 	}
 
-	public void CheckProductFilterFeature() throws Exception {
+	/**public void CheckProductFilterFeature() throws Exception {
+	*	ExcelUtil excel = new ExcelUtil();
+	*	excel.setExcelFile("NewTestData.xlsx", "MembershipStatus");
+	*	if (freeMemberTitle.getText().contentEquals(freeuser)) {
+	*		productDetails.click();
+	*		log.info("This is free user");
+	*		CheckFreeMembership_CASEC_Productetails();
+	*		CheckFreeMembership_kanjikentei_Productetails();
+	*	} else if (primeMemberTitle.getText().contentEquals(primeuser)) {
+	*		productDetails.click();
+	*		log.info("This is prime user");
+	*		// CheckPrimeMembership_CASEC_Productetails();
+	*		// CheckFreeMembership_kanjikentei_Productetails();
+	*	}
+	*/}
 
-		ExcelUtil excel = new ExcelUtil();
-		excel.setExcelFile("NewTestData.xlsx", "MembershipStatus");
-		if (freeMemberTitle.getText().contentEquals(freeuser)) {
-			productDetails.click();
-			log.info("This is free user");
-			CheckFreeMembership_CASEC_Productetails();
-			CheckFreeMembership_kanjikentei_Productetails();
-		} else if (primeMemberTitle.getText().contentEquals(primeuser)) {
-			productDetails.click();
-			log.info("This is prime user");
-			// CheckPrimeMembership_CASEC_Productetails();
-			// CheckFreeMembership_kanjikentei_Productetails();
-		}
-	}
-
-	public void CheckFreeMembership_CASEC_Productetails() throws Exception {
+	//public void CheckFreeMembership_CASEC_Productetails() throws Exception {
 		if (CommonFunctions.waitForVisiblity(productTypeDropdown, waitTime)) {
 			ExcelUtil excel = new ExcelUtil();
 			excel.setExcelFile("NewTestData.xlsx", "MembershipStatus");
@@ -105,7 +104,7 @@ public class ProductListDropdown {
 		}
 	}
 
-	public void CheckFreeMembership_kanjikentei_Productetails() throws Exception {
+	//public void CheckFreeMembership_kanjikentei_Productetails() throws Exception {
 		if (CommonFunctions.waitForVisiblity(productDropdown, waitTime)) {
 			ExcelUtil excel = new ExcelUtil();
 			excel.setExcelFile("NewTestData.xlsx", "MembershipStatus");
@@ -131,46 +130,9 @@ public class ProductListDropdown {
 //		}
 	}
 
-	public void CheckPrimeMembershipProductetails() throws Exception {
-		if (CommonFunctions.waitForVisiblity(productDropdown, waitTime)) {
-			Select productselect = new Select(productDropdown);
-			productselect.selectByVisibleText("CASEC");
-			log.info("Prime user is Selected CASEC product");
-			narrowDownButton.click();
-			List<WebElement> elements = driver.findElements(By.xpath("//div[@class='ep-product-list__row']/div"));
-			for (int i = 0; i < elements.size(); i++) {
-				System.out.println(i);
-				System.out.println(elements.get(i).getTagName());
-			}
-		}
-	}
+	
 
-	public void CheckPrimeMembershipProductetails() throws Exception {
-		if (CommonFunctions.waitForVisiblity(productDropdown, waitTime)) {
-			Select productselect = new Select(productDropdown);
-			productselect.selectByVisibleText("CASEC");
-			log.info("Prime user is Selected CASEC product");
-			narrowDownButton.click();
-			List<WebElement> elements = driver.findElements(By.xpath("//div[@class='ep-product-list__row']/div"));
-			for (int i = 0; i < elements.size(); i++) {
-				System.out.println(i);
-				System.out.println(elements.get(i).getTagName());
-			}
-		}
-	}
+	
 
-	public void CheckPrimeMembershipProductetails() throws Exception {
-		if (CommonFunctions.waitForVisiblity(productDropdown, waitTime)) {
-			Select productselect = new Select(productDropdown);
-			productselect.selectByVisibleText("CASEC");
-			log.info("Prime user is Selected CASEC product");
-			narrowDownButton.click();
-			List<WebElement> elements = driver.findElements(By.xpath("//div[@class='ep-product-list__row']/div"));
-			for (int i = 0; i < elements.size(); i++) {
-				System.out.println(i);
-				System.out.println(elements.get(i).getTagName());
-			}
-		}
-	}
-
+	
 }
