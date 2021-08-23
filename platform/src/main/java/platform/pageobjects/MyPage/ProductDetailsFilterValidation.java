@@ -59,7 +59,7 @@ public class ProductDetailsFilterValidation {
 		}
 	}
 
-	public void CheckProductFilterFeture() throws Exception {
+	public void CheckingProductFilterFeature() throws Exception {
 
 		ExcelUtil excel = new ExcelUtil();
 		excel.setExcelFile("NewTestData.xlsx", "MembershipStatus");
