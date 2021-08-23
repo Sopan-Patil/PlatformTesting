@@ -1,7 +1,7 @@
 @ProductDetailsFilterValidation
 Feature: Validate Product Filter feature
 
-@ProductDetailsFilterValidation @Smoke @Full
+@Smoke @Full
  Scenario: Validate Product Filter feature for Free User
 
 Given Login To Platform

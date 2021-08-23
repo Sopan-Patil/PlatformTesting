@@ -68,8 +68,8 @@ public class ProductDetailsFilterValidation {
 		if (freeMemberTitle.getText().contentEquals(freeuser)) {
 			productDetails.click();
 			log.info("This is free user");
-			CheckFreeMembership_CASEC_Productetails();
-			CheckFreeMembership_kanjikentei_Productetails();
+			CheckFreeMembership_CASEC_ProductDetails();
+			CheckFreeMembershipKanjikenteiProductDetails();
 		} else if (primeMemberTitle.getText().contentEquals(primeuser)) {
 			productDetails.click();
 			log.info("This is prime user");
@@ -78,7 +78,7 @@ public class ProductDetailsFilterValidation {
 		}
 	}
 
-	public void CheckFreeMembership_CASEC_Productetails() throws Exception {
+	public void CheckFreeMembership_CASEC_ProductDetails() throws Exception {
 		if (CommonFunctions.waitForVisiblity(productDropdown, waitTime)) {
 //			ExcelUtil excel = new ExcelUtil();
 //			excel.setExcelFile("NewTestData.xlsx", "MembershipStatus");
@@ -121,7 +121,7 @@ public class ProductDetailsFilterValidation {
 
 	}
 
-	public void CheckFreeMembership_kanjikentei_Productetails() throws Exception {
+	public void CheckFreeMembershipKanjikenteiProductDetails() throws Exception {
 		if (CommonFunctions.waitForVisiblity(productDropdown, waitTime)) {
 //			ExcelUtil excel = new ExcelUtil();
 //			excel.setExcelFile("NewTestData.xlsx", "MembershipStatus");
