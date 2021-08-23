@@ -12,7 +12,6 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -20,7 +19,6 @@ import org.testng.Assert;
 public class CommonFunctions {
 	
 	private static Logger log = LogManager.getLogger(CommonFunctions.class.getName());
-
 
 	public static void waitandClick(By locator, int waitTime) throws Exception {
 		WebElement element;
@@ -137,45 +135,13 @@ public class CommonFunctions {
 		}
 		return result;
 	}
+	
 	/**
 	 * @return 
 	 * @Author : rahul shinde
-	 * @Date : 06 aug 2021
-	 * @Description: assert int and float value and addition of float
+	 * @Date : 26 Jul 2021
+	 * @Description: compare 2 strings
 	 */
-	public static boolean assertInt(int actualText, int expectedText) {
-		boolean result = false;
-		try {
-			log.info("Try to match int value " + actualText + " with " +expectedText );
-			assertEquals(actualText, expectedText);
-			result = true;
-		} catch (Exception e) {
-			result = false;
-		}
-		return result;
-	}
-	
-	public static boolean assertFloat(Float actualText, Float expectedText) {
-		boolean result = false;
-		try {
-			log.info("Try to match int value " + actualText + " with " +expectedText );
-			assertEquals(actualText, expectedText);
-			result = true;
-		} catch (Exception e) {
-			result = false;
-		}
-		return result;
-	}
-	
-	public static Float additionOfFloat(Float floatValue1, Float floatValue2) {
-		Float returnFloatValue = Float.sum(floatValue1,floatValue2);  
-		return returnFloatValue;
-	}
-	public static int additionOfInt(int floatValue1, int floatValue2) {
-		int returnintValue = Integer.sum(floatValue1,floatValue2);  
-		return returnintValue;
-	}
-
 	public static  void stringContains(String actualText, String expectedText) {
 		
 		try {
@@ -195,36 +161,8 @@ public class CommonFunctions {
 		}
 		
 	}
-	
-	public static int stringToInt(String stringtoconvert) {
-		
-		int intValue = Integer.parseInt(stringtoconvert);
-		return intValue;
-		
-	}
-	
-	public static int floatToInt(Float stringtoconvert) {
-		float floatValue = stringtoconvert;
-		  int intValue = (int) floatValue;
-	
-		return intValue;
-		
-	}
 
-	public static Float stringToFloat(String stringtoconvert) {
-		
-		Float floatVal = Float.valueOf(stringtoconvert).floatValue();
-		return floatVal;
-		
-	}
-	
-	public static String FloatToString(Float flosttoconvert) {
-		
-		String stringVal=Float.toString(flosttoconvert);
-		return stringVal;
-		
-	}
-	
+
    
 	public static void clickUsingJavaExecutor(String xpath) {
 		WebElement element = ObjectHelper.driver.findElement(By.xpath(xpath));

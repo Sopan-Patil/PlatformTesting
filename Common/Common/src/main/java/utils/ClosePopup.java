@@ -41,7 +41,7 @@ public class ClosePopup {
 	public void closeZkaiPopup() {
 		
 		if (ObjectHelper.driver.findElement(By.xpath("//div[@class='modal-content']")).isDisplayed()) {	
-			log.info("Zakai Popup Detected");	
+			log.info("Zakai Popup Deletected");	
 			By zkai_popupCloseButton = By.xpath("//button[@aria-label='Close']");
 			if (ObjectHelper.driver.findElement((By) zkai_popupCloseButton).isDisplayed()) {
 				if (ObjectHelper.driver.findElements((By) zkai_popupCloseButton).size() > 0) {

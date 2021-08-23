@@ -4,11 +4,11 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import base.NewBaseClass;
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import cucumber.api.junit.Cucumber;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import platform.pageobjects.Authentication.LoginPage;
 import utils.ObjectHelper;
 
@@ -54,13 +54,6 @@ public class PF_Login extends NewBaseClass {
 		// TopBar topBar = new TopBar(driver);
 		// topBar.clickSignUpLinkLink();
 
-	}
-
-	@And("^Login To Platform with newly created user$")
-	public void login_to_platform_with_newly_created_user() throws Throwable {
-		LoginPage loginToPlatform = new LoginPage(driver);
-
-		loginToPlatform.loginWithNewUser();
 	}
 
 	/**

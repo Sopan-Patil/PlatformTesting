@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import base.NewBaseClass;
+import cucumber.api.java.en.Then;
 import cucumber.api.junit.Cucumber;
-import io.cucumber.java.en.Then;
 import platform.pageobjects.Footer.FooterPage;
 import utils.ObjectHelper;
 
@@ -21,9 +21,7 @@ import utils.ObjectHelper;
 public class PF_test extends NewBaseClass {
 
 	public WebDriver driver = ObjectHelper.driver;
-
-	private static final Logger log = LogManager.getLogger(PF_test.class.getName());
-
+	private static Logger log = LogManager.getLogger(PF_test.class.getName());
 
 	@Then("^run test$")
 	public void run_test() throws Throwable {

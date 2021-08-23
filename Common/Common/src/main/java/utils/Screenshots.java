@@ -34,11 +34,11 @@ public class Screenshots {
 		}
 		return destination;
 	}
-//	public static String getScreenShotPath(String testcaseName, WebDriver driver) throws IOException {
-//		TakesScreenshot ts = (TakesScreenshot) driver;
-//		File source = ts.getScreenshotAs(OutputType.FILE);
-//		String destinationFile = System.getProperty("user.dir") + "\\reports\\" + testcaseName + ".png";
-//		FileUtils.copyFile(source, new File(destinationFile));
-//		return destinationFile;
-//	}
+	public static String getScreenShotPath(String testcaseName, WebDriver driver) throws IOException {
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		String destinationFile = System.getProperty("user.dir") + "\\reports\\" + testcaseName + ".png";
+		FileUtils.copyFile(source, new File(destinationFile));
+		return destinationFile;
+	}
 }
