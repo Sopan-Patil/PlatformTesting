@@ -36,4 +36,10 @@ public class PF_ProductList extends NewBaseClass {
 		productListobj.checkButtonsOnProductListPage();
 	}
 
+	@And("^Validate links on product list page$")
+	public void Validate_links_on_product_list_page_() throws Throwable {
+		ProductList productListobj = new ProductList(driver);
+		productListobj.checkButtonsOnProductListPage();
+	}
+
 }
