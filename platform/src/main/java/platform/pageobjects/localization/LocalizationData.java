@@ -78,18 +78,19 @@ public class LocalizationData {
 
 	NewBaseClass newBaseClass;
 	public static ArrayList<String> status;
+	public static int passCount;
+	public static int failCount;
 
 	public void validateLocalizationData() {
 
 		SoftAssert softAssert = new SoftAssert();
 		newBaseClass = new NewBaseClass();
 		status = new ArrayList<String>();
+		passCount = 0;
+		failCount = 0;
 		status.add(0, " Detailed Status is as follows :");
 		for (int i = 0; i < url.size(); i++) {
-			// log.info("serialNumber at " + i + " :" + serialNumber.get(i));
-			// log.info("url at " + i + " :" + url.get(i));
-			// log.info("locators at " + i + " :" + locators.get(i));
-			// log.info("expectedStrings at " + i + " :" + expectedStrings.get(i));
+
 			ObjectHelper.driver.navigate().to(url.get(i));// API
 
 			CommonFunctions.scrollToPageBottom();
@@ -107,13 +108,11 @@ public class LocalizationData {
 				// log.info("serialNumber at " + i + " :" + serialNumber.get(i));
 				String testStatus = null;
 				if (expected.equals(actual)) {
-//					testStatus = "Category :" + categories.get(i).trim() + "\n" + "Expected String :"
-//							+ expectedStrings.get(i).trim() + "\n" + "Status: PASS";
-					testStatus = "Status: PASS";
+					passCount += 1;
+					testStatus = "Status: PASS"; // add count here
 				} else {
-//					testStatus = "Category :" + categories.get(i).trim() + "\n" + "Expected String :"
-//							+ expectedStrings.get(i).trim() + "\n" + "Status: FAIL";
 
+					failCount += 1;
 					testStatus = "Status: FAIL";
 				}
 				status.add(i + 1, testStatus);
@@ -124,8 +123,6 @@ public class LocalizationData {
 
 		}
 
-		// softAssert.assertTrue(false, "Total strings validated = " +
-		// serialNumber.size() + "\n");
 		softAssert.assertAll("Total strings validated = " + serialNumber.size() + "\n");
 
 	}

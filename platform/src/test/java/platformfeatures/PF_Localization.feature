@@ -24,6 +24,7 @@ And logout
 @PF_Localization_FreeUser
 Scenario: Test Localization strings for free user
 Given User is on home page
+And logout
 And Login To Platform with newly created user
 When Read localization data from sheet
 | FreeUser |
@@ -33,6 +34,8 @@ And logout
 @PF_Localization_PrimeUser
 Scenario: Test Localization strings for prime user
 Given User is on home page
+And logout
+#And Logout if already logged in
 And Login To Platform with prime user
 When Read localization data from sheet
 | PrimeUser |
