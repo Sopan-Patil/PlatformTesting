@@ -73,8 +73,8 @@ public class ProductDetailsFilterValidation {
 		} else if (primeMemberTitle.getText().contentEquals(primeuser)) {
 			productDetails.click();
 			log.info("This is prime user");
-			CheckPrimeMembershipCASECProductetails();
-			CheckPrimeMembershipKanjikenteiProductetails();
+			CheckPrimeMembershipCASECProductDetails();
+			CheckPrimeMembershipKanjikenteiProductDetails();
 		}
 	}
 
@@ -164,7 +164,7 @@ public class ProductDetailsFilterValidation {
 
 	}
 
-	public void CheckPrimeMembershipCASECProductetails() throws Exception {
+	public void CheckPrimeMembershipCASECProductDetails() throws Exception {
 		if (CommonFunctions.waitForVisiblity(productDropdown, waitTime)) {
 //			ExcelUtil excel = new ExcelUtil();
 //			excel.setExcelFile("NewTestData.xlsx", "MembershipStatus");
@@ -207,7 +207,7 @@ public class ProductDetailsFilterValidation {
 
 	}
 
-	public void CheckPrimeMembershipKanjikenteiProductetails() throws Exception {
+	public void CheckPrimeMembershipKanjikenteiProductDetails() throws Exception {
 		if (CommonFunctions.waitForVisiblity(productDropdown, waitTime)) {
 //			ExcelUtil excel = new ExcelUtil();
 //			excel.setExcelFile("NewTestData.xlsx", "MembershipStatus");
