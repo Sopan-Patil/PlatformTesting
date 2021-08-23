@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import base.NewBaseClass;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
+import utils.ObjectHelper;
 
 /**
  * @Author : Chetan Sonparote
@@ -24,18 +25,12 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 		glue = { "platformstepdefinition" },
 
-		// tags = { "@OrderWithExistingCreditCard" },
-		// tags = "@OrderWithExistingCreditCard",
-
-		// tags = { "@PFAccountAndSecurity, @PFAccountAndSecurityCancel" },
-
-		// tags = { "@OrderWithConvenienceStoreInValid" },
-
-		tags = { "@PF_test" },
+		tags = { "@ProductDetailsFilterValidation" },
 
 		// tags = { "@OrderWithExistingCreditCard" },
 
 		plugin = { "pretty", /* "html:target/cucumber_html_report", */ "json:target/cucumber.json",
+
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
 
 				"junit:target/cucumber_html_report/junit_platform.xml", "rerun:rerun/failed_scenarios.txt",
@@ -65,7 +60,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 	@AfterMethod(alwaysRun = true)
 	public void closeBrowser() throws Exception {
 
-		// ObjectHelper.driver.quit();
+		ObjectHelper.driver.quit();
 
 	}
 
