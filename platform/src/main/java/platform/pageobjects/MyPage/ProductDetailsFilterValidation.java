@@ -116,7 +116,7 @@ public class ProductDetailsFilterValidation {
 				}
 			}
 		} else {
-			System.out.println("pagination not exists");
+			log.info("pagination not exists");
 		}
 
 	}
@@ -159,7 +159,7 @@ public class ProductDetailsFilterValidation {
 				}
 			}
 		} else {
-			System.out.println("pagination not exists");
+			log.info("pagination not exists");
 		}
 
 	}
@@ -202,7 +202,7 @@ public class ProductDetailsFilterValidation {
 				}
 			}
 		} else {
-			System.out.println("pagination not exists");
+			log.info("pagination not exists");
 		}
 
 	}
@@ -245,7 +245,7 @@ public class ProductDetailsFilterValidation {
 				}
 			}
 		} else {
-			System.out.println("pagination not exists");
+			log.info("pagination not exists");
 		}
 
 	}
