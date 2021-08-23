@@ -22,7 +22,7 @@ public class PF_ProductDetailsFilterValidation extends NewBaseClass {
 	@Then("^Click on Product List and Validate$")
 	public void Click_on_Product_List_and_validate() throws Throwable {
 		ProductDetailsFilterValidation ProductDetailsFilterValidation = new ProductDetailsFilterValidation(driver);
-		ProductDetailsFilterValidation.CheckProductFilterFeture();
+		ProductDetailsFilterValidation.CheckingProductFilterFeature();
 
 	}
 
