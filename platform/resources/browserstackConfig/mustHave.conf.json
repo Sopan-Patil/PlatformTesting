@@ -4,7 +4,7 @@
 		"build": "browserstack_build_must_have",
 		"name": "must_have_test",
 		"browserstack.debug": true,
-			"browserstack.networkLogs": true
+		"browserstack.networkLogs": true
 	},
 	"environments": {
 		"env1": {
@@ -19,33 +19,21 @@
 			"browser": "Edge",
 			"browser_version": "latest"
 		},
+
 		"env3": {
-			"os": "OS X",
-			"os_version": "Big Sur",
-			"browser": "safari",
-			"browser_version": "14.0"
-		},
-		"env4": {
 			"os_version": "11.0",
 			"device": "Samsung Galaxy S21",
 			"real_mobile": "true",
 			"browserstack.local": "false"
 		},
-		"env5": {
+		"env4": {
 			"os_version": "10.0",
 			"device": "Samsung Galaxy Tab S7",
 			"real_mobile": "true",
 			"browserstack.local": "false"
 		}
-		,
-		"env6": {
-			"os_version": "14",
-"device": "iPhone 12",
-			"real_mobile": "true",
-			"browserstack.local": "false"
-		}
-		
-		
+
+
 
 	}
 }

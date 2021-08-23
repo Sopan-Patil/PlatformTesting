@@ -1,0 +1,3277 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title></title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c43b89d03a7c43dae8bb8f0f078bad1997af6b3b/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary"></span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Aug 18, 2021 06:26:48 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@Smoke</a><a class="dropdown-item" href="#">@OrderWithCreditCardInValid</a><a class="dropdown-item" href="#">@PFAccountAndSecurity</a><a class="dropdown-item" href="#">@OrderWithCreditCardBlankValid</a><a class="dropdown-item" href="#">@OrderWithConvenienceStoreValid</a><a class="dropdown-item" href="#">@PFAccountAndSecurityInvalidData</a><a class="dropdown-item" href="#">@MembershipStatusPlan</a><a class="dropdown-item" href="#">@PFAccountAndSecurityMissingValues</a><a class="dropdown-item" href="#">@OrderWithExistingCreditCard</a><a class="dropdown-item" href="#">@WithdrawAccount</a><a class="dropdown-item" href="#">@PFInvalidCC</a><a class="dropdown-item" href="#">@OrderWithConvenienceStoreInValid</a><a class="dropdown-item" href="#">@OrderWithCreditCardValid</a><a class="dropdown-item" href="#">@Full</a><a class="dropdown-item" href="#">@MembershipStatusEnd</a><a class="dropdown-item" href="#">@OrderWithConvenienceStoreBlank</a><a class="dropdown-item" href="#">@PFAccountAndSecurityCancel</a><a class="dropdown-item" href="#">@OrderPrimeWithValidCreditCard</a><a class="dropdown-item" href="#">@AccountAndSecurity</a><a class="dropdown-item" href="#">@FooterPage</a><a class="dropdown-item" href="#">@MembershipStatus</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="2"
+          author=""
+          tag="@AccountAndSecurity"
+          device="">
+          <div class="test-detail">
+            <p class="name">Validate Account information</p>
+            <p class="text-sm">
+              <span>18:26:49 PM</span> / <span>32:07:787</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Validate Account information</h5>
+<span class='badge badge-success'>08.18.2021 18:26:49</span>
+<span class='badge badge-danger'>08.18.2021 18:28:56</span>
+<span class='badge badge-default'>32:07:787</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">@AccountAndSecurity</span></div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>Validate Account information with Valid data</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.Login_to_Platform()">
+                <span>Given Login To Platform</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_AccountAndSecurity.Click_on_Account_and_Security()">
+                <span>When Click on Account and Security</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_AccountAndSecurity.Click_on_Change_Button()">
+                <span>Then Click on Change button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_AccountAndSecurity.Update_Account_Information()">
+                <span>And Update Account Information</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_AccountAndSecurity.Validate_Updated_Account_Information()">
+                <span>Then Validate Updated Account Information</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.logout()">
+                <span>And logout</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="17"><span class="badge log pass-bg mr-2">Pass</span>Validate Account information  with Invalid data</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.Login_to_Platform()">
+                <span>Given Login To Platform</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_AccountAndSecurity.Click_on_Account_and_Security()">
+                <span>When Click on Account and Security</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_AccountAndSecurity.Click_on_Change_Button()">
+                <span>Then Click on Change button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_AccountAndSecurity.Validate_Invalid_Account_Information()">
+                <span>And Update and Validate Invalid Account Information</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.logout()">
+                <span>And logout</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="29"><span class="badge log pass-bg mr-2">Pass</span>Validate Account information error with Invalid data</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.Login_to_Platform()">
+                <span>Given Login To Platform</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_AccountAndSecurity.Click_on_Account_and_Security()">
+                <span>When Click on Account and Security</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_AccountAndSecurity.Click_on_Change_Button()">
+                <span>Then Click on Change button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_AccountAndSecurity.Account_Information_Cancel_Button()">
+                <span>Then Click on Cancel button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.logout()">
+                <span>And logout</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="41"><span class="badge log pass-bg mr-2">Pass</span>Validate Missing Values Of Account Information</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.Login_to_Platform()">
+                <span>Given Login To Platform</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_AccountAndSecurity.Click_on_Account_and_Security()">
+                <span>When Click on Account and Security</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_AccountAndSecurity.Click_on_Change_Button()">
+                <span>Then Click on Change button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_AccountAndSecurity.Validate_Missing_Values_Of_Account_Information()">
+                <span>And Validate Missing Values Of Account Information</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.logout()">
+                <span>And logout</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="53"
+          author=""
+          tag="@Smoke @FooterPage"
+          device="">
+          <div class="test-detail">
+            <p class="name">Validate footer links on Footer Sections</p>
+            <p class="text-sm">
+              <span>18:28:56 PM</span> / <span>36:08:608</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Validate footer links on Footer Sections</h5>
+<span class='badge badge-success'>08.18.2021 18:28:56</span>
+<span class='badge badge-danger'>08.18.2021 18:35:05</span>
+<span class='badge badge-default'>36:08:608</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=53</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">@Smoke</span>
+<span class="badge badge-pill badge-default">@FooterPage</span></div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="54"><span class="badge log pass-bg mr-2">Pass</span>Validate Footer Links on Top Page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Footer.check_footer_link_on_top_page()">
+                <span>Then Check footer links on Top Page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="58"><span class="badge log pass-bg mr-2">Pass</span>Check Links on Terms and Conditions Page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Footer.check_links_on_terms_of_use_page()">
+                <span>Then Check links in Terms of Use Page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="62"><span class="badge log pass-bg mr-2">Pass</span>Validate Footer on Account and Services Page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Footer.check_footer_links_on_login_page()">
+                <span>Then Check footer links on Login Page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="66"><span class="badge log pass-bg mr-2">Pass</span>Validate Footer on User Top Page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Footer.login_to_platform_portal()">
+                <span>Given Login to Platform Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Footer.check_footer_links_after_login_()">
+                <span>Then Check footer links on top page after login</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="72"><span class="badge log pass-bg mr-2">Pass</span>Validate Footer on Order Screen One</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Footer.login_to_platform_portal()">
+                <span>Given Login to Platform Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Footer.check_footer_links_on_first_order_screen_()">
+                <span>Then Check Footer Links on First Order Screen</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="78"><span class="badge log pass-bg mr-2">Pass</span>Validate Footer on Order Screen Two and Three</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Footer.login_to_platform_portal()">
+                <span>Given Login to Platform Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Footer.check_footer_links_on_second_order_screen_()">
+                <span>Then Check Footer Links on Second Order Screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Footer.check_footer_links_on_third_order_screen_()">
+                <span>Then Check Footer Links on Third Order Screen</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="86"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Validate Invalid credit card no</p>
+            <p class="text-sm">
+              <span>18:35:05 PM</span> / <span>31:13:505</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Validate Invalid credit card no</h5>
+<span class='badge badge-success'>08.18.2021 18:35:05</span>
+<span class='badge badge-danger'>08.18.2021 18:36:18</span>
+<span class='badge badge-default'>31:13:505</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=86</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="87"><span class="badge log fail-bg mr-2">Fail</span>Validate Invalid Credit Card</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.Login_to_Platform()">
+                <span>Given Login To Platform</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_InvalidCC.Click_on_Membership_Status_link()">
+                <span>Then Click on Membership Status link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_InvalidCC.Click_on_Change_Card()">
+                <span>Then Click on Change Card</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="platformstepdefinition.PF_InvalidCC.Enters_credit_card_details()">
+                <span>Then Enters invalid credit card details</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='cardno']"}
+  (Session info: chrome=92.0.4515.131)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.7', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b954ca9dc2b818c982690f899977d0bd
+*** Element info: {Using=xpath, value=//input[@id='cardno']}
+	at sun.reflect.GeneratedConstructorAccessor73.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:458)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy45.sendKeys(Unknown Source)
+	at platform.pageobjects.MyPage.InvalidCC.InValidCreditcard(InvalidCC.java:91)
+	at platformstepdefinition.PF_InvalidCC.Enters_credit_card_details(PF_InvalidCC.java:50)
+	at ✽.Enters invalid credit card details(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_InvalidCC.feature:10)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" >
+                <span>platformstepdefinition.Hooks.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Screenshots/embedded1.png' src="../Screenshots/embedded1.png">
+    
+    </div></div>
+</div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Login.logout()">
+                <span>And logout</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="99"
+          author=""
+          tag="@MembershipStatus"
+          device="">
+          <div class="test-detail">
+            <p class="name">Validate Membership Status information</p>
+            <p class="text-sm">
+              <span>18:36:19 PM</span> / <span>31:10:264</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Validate Membership Status information</h5>
+<span class='badge badge-success'>08.18.2021 18:36:19</span>
+<span class='badge badge-danger'>08.18.2021 18:37:29</span>
+<span class='badge badge-default'>31:10:264</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=99</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">@MembershipStatus</span></div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="100"><span class="badge log pass-bg mr-2">Pass</span>Validate Membership Status information</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.Login_to_Platform()">
+                <span>Given Login To Platform</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_MembershipStatus.Click_on_Membership_Status()">
+                <span>Then Click on Membership Status</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.logout()">
+                <span>And logout</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="108"><span class="badge log pass-bg mr-2">Pass</span>Validate Membership Status information</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.Login_to_Platform()">
+                <span>Given Login To Platform</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_MembershipStatus.Click_on_End_Membership()">
+                <span>Then Click on End Membership</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.logout()">
+                <span>And logout</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="116"><span class="badge log pass-bg mr-2">Pass</span>Validate Free and Prime Membership Plan Details</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.Login_to_Platform()">
+                <span>Given Login To Platform</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_MembershipStatus.Click_on_Membership_Status()">
+                <span>Then Click on Membership Status</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_MembershipStatus.Validate_Free_and_Prime_Membership_Plan_Details()">
+                <span>Then Validate Free and Prime Membership Plan Details</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.logout()">
+                <span>And logout</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="126"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Validate order flow</p>
+            <p class="text-sm">
+              <span>18:37:29 PM</span> / <span>35:27:079</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Validate order flow</h5>
+<span class='badge badge-success'>08.18.2021 18:37:29</span>
+<span class='badge badge-danger'>08.18.2021 18:42:56</span>
+<span class='badge badge-default'>35:27:079</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=126</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="127"><span class="badge log pass-bg mr-2">Pass</span>Validate order with Existing valid Credit Card</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.Login_to_Platform()">
+                <span>Given Login To Platform</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Order.select_1st_product_from_product_list_page()">
+                <span>And Select 1st product from product list page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Order.compare_product_data_on_order_step_1_page()">
+                <span>And Compare Product Data On Order Step 1 Page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Order.reglogin_between_step_1_page_to_step_2_page_with_exiting_user()">
+                <span>And Reglogin between Step 1 page to Step 2 page with exiting user</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Order.compare_product_data_on_order_step_2_page()">
+                <span>And Compare Product Data On Order Step 2 Page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Order.compare_product_data_on_order_step_3_page()">
+                <span>And Compare Product Data On Order Step 3 Page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Order.verify_thank_you_page_for_credit_card_transaction()">
+                <span>And Verify thank you page for credit card transaction</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Order.verify_thank_you_page_data_on_order_history_page_for_credit_card_transaction()">
+                <span>And Verify thank you page data on order history page for credit card transaction</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.logout()">
+                <span>And logout</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="147"><span class="badge log fail-bg mr-2">Fail</span>Validate order with valid Credit Card</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.Login_to_Platform()">
+                <span>Given Login To Platform</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Order.select_1st_product_from_product_list_page()">
+                <span>And Select 1st product from product list page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Order.compare_product_data_on_order_step_1_page()">
+                <span>And Compare Product Data On Order Step 1 Page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Order.reglogin_between_step_1_page_to_step_2_page_with_exiting_user()">
+                <span>And Reglogin between Step 1 page to Step 2 page with exiting user</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Order.step2_payment_with_valid_credit_card()">
+                <span>And Step 2 Payment With Valid Credit Card</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="platformstepdefinition.PF_Order.compare_product_data_on_order_step_3_page()">
+                <span>And Compare Product Data On Order Step 3 Page</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=92.0.4515.131)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.7', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b954ca9dc2b818c982690f899977d0bd
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)
+	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:160)
+	at sun.reflect.GeneratedMethodAccessor7.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy45.getText(Unknown Source)
+	at platform.pageobjects.Order.Order.compareProductDataOnOrderStep3(Order.java:888)
+	at platformstepdefinition.PF_Order.compare_product_data_on_order_step_3_page(PF_Order.java:74)
+	at ✽.Compare Product Data On Order Step 3 Page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:24)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" >
+                <span>platformstepdefinition.Hooks.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Screenshots/embedded2.png' src="../Screenshots/embedded2.png">
+    
+    </div></div>
+</div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.verify_thank_you_page_for_credit_card_transaction()">
+                <span>And Verify thank you page for credit card transaction</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.verify_thank_you_page_data_on_order_history_page_for_credit_card_transaction()">
+                <span>And Verify thank you page data on order history page for credit card transaction</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Login.logout()">
+                <span>And logout</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="167"><span class="badge log fail-bg mr-2">Fail</span>Validate order with In valid Credit Card</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.Login_to_Platform()">
+                <span>Given Login To Platform</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="platformstepdefinition.PF_Order.select_1st_product_from_product_list_page()">
+                <span>And Select 1st product from product list page</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@href='/product-list']"}
+  (Session info: chrome=92.0.4515.131)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.7', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b954ca9dc2b818c982690f899977d0bd
+*** Element info: {Using=xpath, value=//a[@href='/product-list']}
+	at sun.reflect.GeneratedConstructorAccessor73.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:458)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy45.click(Unknown Source)
+	at platform.pageobjects.Order.Order.select1stCasecProduct(Order.java:357)
+	at platformstepdefinition.PF_Order.select_1st_product_from_product_list_page(PF_Order.java:34)
+	at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:34)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" >
+                <span>platformstepdefinition.Hooks.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Screenshots/embedded3.png' src="../Screenshots/embedded3.png">
+    
+    </div></div>
+</div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.compare_product_data_on_order_step_1_page()">
+                <span>And Compare Product Data On Order Step 1 Page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.reglogin_between_step_1_page_to_step_2_page_with_exiting_user()">
+                <span>And Reglogin between Step 1 page to Step 2 page with exiting user</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.step_2_payment_with_invalid_credit_card()">
+                <span>And Step 2 Payment With InValid Credit Card</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Login.logout()">
+                <span>And logout</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="181"><span class="badge log fail-bg mr-2">Fail</span>Validate order with Blank valid Credit Card</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.Login_to_Platform()">
+                <span>Given Login To Platform</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="platformstepdefinition.PF_Order.select_1st_product_from_product_list_page()">
+                <span>And Select 1st product from product list page</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@href='/product-list']"}
+  (Session info: chrome=92.0.4515.131)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.7', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b954ca9dc2b818c982690f899977d0bd
+*** Element info: {Using=xpath, value=//a[@href='/product-list']}
+	at sun.reflect.GeneratedConstructorAccessor73.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:458)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy45.click(Unknown Source)
+	at platform.pageobjects.Order.Order.select1stCasecProduct(Order.java:357)
+	at platformstepdefinition.PF_Order.select_1st_product_from_product_list_page(PF_Order.java:34)
+	at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:44)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" >
+                <span>platformstepdefinition.Hooks.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Screenshots/embedded4.png' src="../Screenshots/embedded4.png">
+    
+    </div></div>
+</div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.compare_product_data_on_order_step_1_page()">
+                <span>And Compare Product Data On Order Step 1 Page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.reglogin_between_step_1_page_to_step_2_page_with_exiting_user()">
+                <span>And Reglogin between Step 1 page to Step 2 page with exiting user</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.step2_payment_with_blank_credit_card()">
+                <span>And Step 2 Payment With Blank Credit Card</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Login.logout()">
+                <span>And logout</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="195"><span class="badge log fail-bg mr-2">Fail</span>Validate order with valid con store</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.Login_to_Platform()">
+                <span>Given Login To Platform</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="platformstepdefinition.PF_Order.select_1st_product_from_product_list_page()">
+                <span>And Select 1st product from product list page</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@href='/product-list']"}
+  (Session info: chrome=92.0.4515.131)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.7', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b954ca9dc2b818c982690f899977d0bd
+*** Element info: {Using=xpath, value=//a[@href='/product-list']}
+	at sun.reflect.GeneratedConstructorAccessor73.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:458)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy45.click(Unknown Source)
+	at platform.pageobjects.Order.Order.select1stCasecProduct(Order.java:357)
+	at platformstepdefinition.PF_Order.select_1st_product_from_product_list_page(PF_Order.java:34)
+	at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:54)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" >
+                <span>platformstepdefinition.Hooks.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Screenshots/embedded5.png' src="../Screenshots/embedded5.png">
+    
+    </div></div>
+</div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.compare_product_data_on_order_step_1_page()">
+                <span>And Compare Product Data On Order Step 1 Page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.reglogin_between_step_1_page_to_step_2_page_with_exiting_user()">
+                <span>And Reglogin between Step 1 page to Step 2 page with exiting user</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.step2_payment_with_valid_convenience_store()">
+                <span>And Step 2 Payment With Valid Convenience Store</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.compare_product_data_on_order_step_3_page()">
+                <span>And Compare Product Data On Order Step 3 Page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.verify_thank_you_page_for_convenience_store_transaction()">
+                <span>And Verify thank you page for convenience store transaction</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.verify_thank_you_page_data_on_order_history_page_for_convenience_store_transaction()">
+                <span>And Verify thank you page data on order history page for convenience store transaction</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Login.logout()">
+                <span>And logout</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="215"><span class="badge log fail-bg mr-2">Fail</span>Validate order with invalid con store</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.Login_to_Platform()">
+                <span>Given Login To Platform</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="platformstepdefinition.PF_Order.select_1st_product_from_product_list_page()">
+                <span>And Select 1st product from product list page</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@href='/product-list']"}
+  (Session info: chrome=92.0.4515.131)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.7', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b954ca9dc2b818c982690f899977d0bd
+*** Element info: {Using=xpath, value=//a[@href='/product-list']}
+	at sun.reflect.GeneratedConstructorAccessor73.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:458)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy45.click(Unknown Source)
+	at platform.pageobjects.Order.Order.select1stCasecProduct(Order.java:357)
+	at platformstepdefinition.PF_Order.select_1st_product_from_product_list_page(PF_Order.java:34)
+	at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:67)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" >
+                <span>platformstepdefinition.Hooks.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Screenshots/embedded6.png' src="../Screenshots/embedded6.png">
+    
+    </div></div>
+</div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.compare_product_data_on_order_step_1_page()">
+                <span>And Compare Product Data On Order Step 1 Page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.reglogin_between_step_1_page_to_step_2_page_with_exiting_user()">
+                <span>And Reglogin between Step 1 page to Step 2 page with exiting user</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.step_2_payment_with_invalid_convenience_store()">
+                <span>And Step 2 Payment With InValid Convenience Store</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Login.logout()">
+                <span>And logout</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="229"><span class="badge log fail-bg mr-2">Fail</span>Validate order with Blank Con store</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Login.Login_to_Platform()">
+                <span>Given Login To Platform</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="platformstepdefinition.PF_Order.select_1st_product_from_product_list_page()">
+                <span>And Select 1st product from product list page</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@href='/product-list']"}
+  (Session info: chrome=92.0.4515.131)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.7', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b954ca9dc2b818c982690f899977d0bd
+*** Element info: {Using=xpath, value=//a[@href='/product-list']}
+	at sun.reflect.GeneratedConstructorAccessor73.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:458)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy45.click(Unknown Source)
+	at platform.pageobjects.Order.Order.select1stCasecProduct(Order.java:357)
+	at platformstepdefinition.PF_Order.select_1st_product_from_product_list_page(PF_Order.java:34)
+	at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:77)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" >
+                <span>platformstepdefinition.Hooks.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Screenshots/embedded7.png' src="../Screenshots/embedded7.png">
+    
+    </div></div>
+</div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.compare_product_data_on_order_step_1_page()">
+                <span>And Compare Product Data On Order Step 1 Page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.reglogin_between_step_1_page_to_step_2_page_with_exiting_user()">
+                <span>And Reglogin between Step 1 page to Step 2 page with exiting user</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.step_2_payment_with_blank_con_store()">
+                <span>And Step 2 Payment With Blank Con Store</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Login.logout()">
+                <span>And logout</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="243"><span class="badge log fail-bg mr-2">Fail</span>Validate prime with valid Credit Card and check on order history,service you are using and membership page</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_CreateAccount.user_is_on_home_page()">
+                <span>Given User is on home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_CreateAccount.user_begins_account_creation()">
+                <span>When User begins account creation</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_CreateAccount.creates_new_credentials()">
+                <span>And creates new credentials</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="platformstepdefinition.PF_CreateAccount.enters_confirmation_code()">
+                <span>And enters confirmation code</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.NullPointerException
+	at java.io.StringReader.<init>(StringReader.java:50)
+	at java.util.Scanner.<init>(Scanner.java:702)
+	at platform.pageobjects.AccountServices.CreateAccountStep2.convertOTPToList(CreateAccountStep2.java:70)
+	at platform.pageobjects.AccountServices.CreateAccountStep2.addConfirmationCode(CreateAccountStep2.java:79)
+	at platformstepdefinition.PF_CreateAccount.enters_confirmation_code(PF_CreateAccount.java:107)
+	at ✽.enters confirmation code(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:90)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" >
+                <span>platformstepdefinition.Hooks.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Screenshots/embedded8.png' src="../Screenshots/embedded8.png">
+    
+    </div></div>
+</div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_CreateAccount.enters_valid_details()">
+                <span>And enters valid details</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_CreateAccount.confirms_details()">
+                <span>And confirms details</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_CreateAccount.validate_that_new_account_is_created()">
+                <span>Then Validate that new account is created</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Login.login_to_platform_with_newly_created_user()">
+                <span>Given Login To Platform with newly created user</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.open_membership_plan_page_from_top_page()">
+                <span>And Open MemberShip Plan Page from Top page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.apply_membership_plan_from_top_page()">
+                <span>And Apply MemberShip Plan from Top page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.compare_prime_data_on_order_step_1_page()">
+                <span>And Compare Prime Data On Order Step 1 Page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.reglogin_between_step_1_page_to_step_2_page_with_newly_created_user()">
+                <span>And Reglogin between Step 1 page to Step 2 page with newly created user</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.compare_prime_data_on_order_step_2_page()">
+                <span>And Compare Prime Data On Order Step 2 Page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.compare_Prime_data_on_order_step_3_page()">
+                <span>And Compare Prime Data On Order Step 3 Page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.verify_thank_you_page_for_prime_transaction()">
+                <span>And Verify thank you page for prime transaction</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.verify_thank_you_page_data_on_order_history_page_for_prime_transaction()">
+                <span>And Verify thank you page data on order history page for prime transaction</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.verify_service_you_are_using_page_for_prime_transaction()">
+                <span>And Verify Service you are using page for prime transaction</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="platformstepdefinition.PF_Order.verify_membership_status_page_for_prime_transaction()">
+                <span>And Verify Membership status page for prime transaction</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="281"
+          author=""
+          tag="@Smoke @WithdrawAccount @Full"
+          device="">
+          <div class="test-detail">
+            <p class="name">Withdraw user account</p>
+            <p class="text-sm">
+              <span>18:42:56 PM</span> / <span>31:47:703</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Withdraw user account</h5>
+<span class='badge badge-success'>08.18.2021 18:42:56</span>
+<span class='badge badge-danger'>08.18.2021 18:44:44</span>
+<span class='badge badge-default'>31:47:703</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=281</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">@Smoke</span>
+<span class="badge badge-pill badge-default">@WithdrawAccount</span>
+<span class="badge badge-pill badge-default">@Full</span></div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="282"><span class="badge log pass-bg mr-2">Pass</span>User is clicking on Back button</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Withdrawal.login_To_platform_portal()">
+                <span>Given Login To Platform Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Withdrawal.Click_Withdrawal_link_on_Footer()">
+                <span>Then Click Withdrawal link on Footer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Withdrawal.check_Back_button_on_Withdrawal_Page()">
+                <span>Then Check Back button on Withdrawal Page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="290"><span class="badge log pass-bg mr-2">Pass</span>User is withdrawing the account</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="platformstepdefinition.PF_Withdrawal.Click_Withdrawal_link_on_Footer()">
+                <span>Then Click Withdrawal link on Footer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="platformstepdefinition.PF_Withdrawal.Withdraw_Account()">
+                <span>Then Withdraw Account</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">3</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">java.lang.NullPointerException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.NullPointerException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:42:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='250'>And enters confirmation code</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate prime with valid Credit Card and check on order history,service you are using and membership page.And enters confirmation code</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.NoSuchElementException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.NoSuchElementException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:36:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='86' id='94'>Then Enters invalid credit card details</a>
+<div class="">
+<span class="badge badge-default">Validate Invalid credit card no.Validate Invalid Credit Card.Then Enters invalid credit card details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:40:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='170'>And Select 1st product from product list page</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with In valid Credit Card.And Select 1st product from product list page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:41:05 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='184'>And Select 1st product from product list page</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with Blank valid Credit Card.And Select 1st product from product list page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:41:28 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='198'>And Select 1st product from product list page</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with valid con store.And Select 1st product from product list page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:41:52 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='218'>And Select 1st product from product list page</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with invalid con store.And Select 1st product from product list page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:42:15 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='232'>And Select 1st product from product list page</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with Blank Con store.And Select 1st product from product list page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.StaleElementReferenceException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.StaleElementReferenceException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:40:16 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='158'>And Compare Product Data On Order Step 3 Page</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with valid Credit Card.And Compare Product Data On Order Step 3 Page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">21</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>18</span>
+<span class='badge log badge-danger'>8</span>
+</span>
+<p class="name">@Smoke</p>
+<p class="duration text-sm">26 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Smoke</h4>
+<span status="pass" class='badge log pass-bg'>18 passed</span>
+<span status="fail" class='badge log badge-danger'>8 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:26:49 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='3'>Validate Account information with Valid data</a>
+<div class="">
+<span class="badge badge-default">Validate Account information.Validate Account information with Valid data</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:27:33 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='17'>Validate Account information with Invalid data</a>
+<div class="">
+<span class="badge badge-default">Validate Account information.Validate Account information with Invalid data</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:28:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='29'>Validate Account information error with Invalid data</a>
+<div class="">
+<span class="badge badge-default">Validate Account information.Validate Account information error with Invalid data</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:28:29 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='41'>Validate Missing Values Of Account Information</a>
+<div class="">
+<span class="badge badge-default">Validate Account information.Validate Missing Values Of Account Information</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:28:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='53' id='53'>Validate footer links on Footer Sections</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:28:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='53' id='54'>Validate Footer Links on Top Page</a>
+<div class="">
+<span class="badge badge-default">Validate footer links on Footer Sections.Validate Footer Links on Top Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:30:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='53' id='58'>Check Links on Terms and Conditions Page</a>
+<div class="">
+<span class="badge badge-default">Validate footer links on Footer Sections.Check Links on Terms and Conditions Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:31:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='53' id='62'>Validate Footer on Account and Services Page</a>
+<div class="">
+<span class="badge badge-default">Validate footer links on Footer Sections.Validate Footer on Account and Services Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:32:25 PM</td>
+<td>
+<a href="#" class="linked" test-id='53' id='66'>Validate Footer on User Top Page</a>
+<div class="">
+<span class="badge badge-default">Validate footer links on Footer Sections.Validate Footer on User Top Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:32:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='53' id='72'>Validate Footer on Order Screen One</a>
+<div class="">
+<span class="badge badge-default">Validate footer links on Footer Sections.Validate Footer on Order Screen One</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:33:37 PM</td>
+<td>
+<a href="#" class="linked" test-id='53' id='78'>Validate Footer on Order Screen Two and Three</a>
+<div class="">
+<span class="badge badge-default">Validate footer links on Footer Sections.Validate Footer on Order Screen Two and Three</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:35:05 PM</td>
+<td>
+<a href="#" class="linked" test-id='86' id='87'>Validate Invalid Credit Card</a>
+<div class="">
+<span class="badge badge-default">Validate Invalid credit card no.Validate Invalid Credit Card</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:36:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='99' id='100'>Validate Membership Status information</a>
+<div class="">
+<span class="badge badge-default">Validate Membership Status information.Validate Membership Status information</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:36:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='99' id='108'>Validate Membership Status information</a>
+<div class="">
+<span class="badge badge-default">Validate Membership Status information.Validate Membership Status information</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:37:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='99' id='116'>Validate Free and Prime Membership Plan Details</a>
+<div class="">
+<span class="badge badge-default">Validate Membership Status information.Validate Free and Prime Membership Plan Details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:37:29 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='127'>Validate order with Existing valid Credit Card</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with Existing valid Credit Card</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:39:14 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='147'>Validate order with valid Credit Card</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with valid Credit Card</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:40:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='167'>Validate order with In valid Credit Card</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with In valid Credit Card</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:40:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='181'>Validate order with Blank valid Credit Card</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with Blank valid Credit Card</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:41:06 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='195'>Validate order with valid con store</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with valid con store</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:41:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='215'>Validate order with invalid con store</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with invalid con store</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:41:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='229'>Validate order with Blank Con store</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with Blank Con store</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:42:17 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='243'>Validate prime with valid Credit Card and check on order history,service you are using and membership page</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate prime with valid Credit Card and check on order history,service you are using and membership page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:42:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='281' id='281'>Withdraw user account</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:42:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='281' id='282'>User is clicking on Back button</a>
+<div class="">
+<span class="badge badge-default">Withdraw user account.User is clicking on Back button</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:44:03 PM</td>
+<td>
+<a href="#" class="linked" test-id='281' id='290'>User is withdrawing the account</a>
+<div class="">
+<span class="badge badge-default">Withdraw user account.User is withdrawing the account</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@OrderWithCreditCardInValid</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@OrderWithCreditCardInValid</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:40:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='167'>Validate order with In valid Credit Card</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with In valid Credit Card</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@PFAccountAndSecurity</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@PFAccountAndSecurity</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:26:49 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='3'>Validate Account information with Valid data</a>
+<div class="">
+<span class="badge badge-default">Validate Account information.Validate Account information with Valid data</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@OrderWithCreditCardBlankValid</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@OrderWithCreditCardBlankValid</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:40:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='181'>Validate order with Blank valid Credit Card</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with Blank valid Credit Card</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@OrderWithConvenienceStoreValid</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@OrderWithConvenienceStoreValid</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:41:06 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='195'>Validate order with valid con store</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with valid con store</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@PFAccountAndSecurityInvalidData</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@PFAccountAndSecurityInvalidData</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:27:33 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='17'>Validate Account information with Invalid data</a>
+<div class="">
+<span class="badge badge-default">Validate Account information.Validate Account information with Invalid data</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@MembershipStatusPlan</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@MembershipStatusPlan</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:37:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='99' id='116'>Validate Free and Prime Membership Plan Details</a>
+<div class="">
+<span class="badge badge-default">Validate Membership Status information.Validate Free and Prime Membership Plan Details</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@PFAccountAndSecurityMissingValues</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@PFAccountAndSecurityMissingValues</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:28:29 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='41'>Validate Missing Values Of Account Information</a>
+<div class="">
+<span class="badge badge-default">Validate Account information.Validate Missing Values Of Account Information</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@OrderWithExistingCreditCard</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@OrderWithExistingCreditCard</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:37:29 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='127'>Validate order with Existing valid Credit Card</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with Existing valid Credit Card</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>3</span>
+</span>
+<p class="name">@WithdrawAccount</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@WithdrawAccount</h4>
+<span status="pass" class='badge log pass-bg'>3 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:42:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='281' id='281'>Withdraw user account</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:42:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='281' id='282'>User is clicking on Back button</a>
+<div class="">
+<span class="badge badge-default">Withdraw user account.User is clicking on Back button</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:44:03 PM</td>
+<td>
+<a href="#" class="linked" test-id='281' id='290'>User is withdrawing the account</a>
+<div class="">
+<span class="badge badge-default">Withdraw user account.User is withdrawing the account</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@PFInvalidCC</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@PFInvalidCC</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:35:05 PM</td>
+<td>
+<a href="#" class="linked" test-id='86' id='87'>Validate Invalid Credit Card</a>
+<div class="">
+<span class="badge badge-default">Validate Invalid credit card no.Validate Invalid Credit Card</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@OrderWithConvenienceStoreInValid</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@OrderWithConvenienceStoreInValid</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:41:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='215'>Validate order with invalid con store</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with invalid con store</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@OrderWithCreditCardValid</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@OrderWithCreditCardValid</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:39:14 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='147'>Validate order with valid Credit Card</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with valid Credit Card</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>11</span>
+<span class='badge log badge-danger'>8</span>
+</span>
+<p class="name">@Full</p>
+<p class="duration text-sm">19 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Full</h4>
+<span status="pass" class='badge log pass-bg'>11 passed</span>
+<span status="fail" class='badge log badge-danger'>8 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:26:49 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='3'>Validate Account information with Valid data</a>
+<div class="">
+<span class="badge badge-default">Validate Account information.Validate Account information with Valid data</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:27:33 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='17'>Validate Account information with Invalid data</a>
+<div class="">
+<span class="badge badge-default">Validate Account information.Validate Account information with Invalid data</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:28:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='29'>Validate Account information error with Invalid data</a>
+<div class="">
+<span class="badge badge-default">Validate Account information.Validate Account information error with Invalid data</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:28:29 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='41'>Validate Missing Values Of Account Information</a>
+<div class="">
+<span class="badge badge-default">Validate Account information.Validate Missing Values Of Account Information</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:35:05 PM</td>
+<td>
+<a href="#" class="linked" test-id='86' id='87'>Validate Invalid Credit Card</a>
+<div class="">
+<span class="badge badge-default">Validate Invalid credit card no.Validate Invalid Credit Card</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:36:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='99' id='100'>Validate Membership Status information</a>
+<div class="">
+<span class="badge badge-default">Validate Membership Status information.Validate Membership Status information</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:36:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='99' id='108'>Validate Membership Status information</a>
+<div class="">
+<span class="badge badge-default">Validate Membership Status information.Validate Membership Status information</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:37:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='99' id='116'>Validate Free and Prime Membership Plan Details</a>
+<div class="">
+<span class="badge badge-default">Validate Membership Status information.Validate Free and Prime Membership Plan Details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:37:29 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='127'>Validate order with Existing valid Credit Card</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with Existing valid Credit Card</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:39:14 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='147'>Validate order with valid Credit Card</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with valid Credit Card</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:40:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='167'>Validate order with In valid Credit Card</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with In valid Credit Card</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:40:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='181'>Validate order with Blank valid Credit Card</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with Blank valid Credit Card</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:41:06 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='195'>Validate order with valid con store</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with valid con store</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:41:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='215'>Validate order with invalid con store</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with invalid con store</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:41:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='229'>Validate order with Blank Con store</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with Blank Con store</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:42:17 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='243'>Validate prime with valid Credit Card and check on order history,service you are using and membership page</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate prime with valid Credit Card and check on order history,service you are using and membership page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:42:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='281' id='281'>Withdraw user account</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:42:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='281' id='282'>User is clicking on Back button</a>
+<div class="">
+<span class="badge badge-default">Withdraw user account.User is clicking on Back button</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:44:03 PM</td>
+<td>
+<a href="#" class="linked" test-id='281' id='290'>User is withdrawing the account</a>
+<div class="">
+<span class="badge badge-default">Withdraw user account.User is withdrawing the account</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@MembershipStatusEnd</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@MembershipStatusEnd</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:36:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='99' id='108'>Validate Membership Status information</a>
+<div class="">
+<span class="badge badge-default">Validate Membership Status information.Validate Membership Status information</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@OrderWithConvenienceStoreBlank</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@OrderWithConvenienceStoreBlank</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:41:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='229'>Validate order with Blank Con store</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate order with Blank Con store</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@PFAccountAndSecurityCancel</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@PFAccountAndSecurityCancel</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:28:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='29'>Validate Account information error with Invalid data</a>
+<div class="">
+<span class="badge badge-default">Validate Account information.Validate Account information error with Invalid data</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@OrderPrimeWithValidCreditCard</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@OrderPrimeWithValidCreditCard</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:42:17 PM</td>
+<td>
+<a href="#" class="linked" test-id='126' id='243'>Validate prime with valid Credit Card and check on order history,service you are using and membership page</a>
+<div class="">
+<span class="badge badge-default">Validate order flow.Validate prime with valid Credit Card and check on order history,service you are using and membership page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>5</span>
+</span>
+<p class="name">@AccountAndSecurity</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@AccountAndSecurity</h4>
+<span status="pass" class='badge log pass-bg'>5 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:26:49 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>Validate Account information</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:26:49 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='3'>Validate Account information with Valid data</a>
+<div class="">
+<span class="badge badge-default">Validate Account information.Validate Account information with Valid data</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:27:33 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='17'>Validate Account information with Invalid data</a>
+<div class="">
+<span class="badge badge-default">Validate Account information.Validate Account information with Invalid data</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:28:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='29'>Validate Account information error with Invalid data</a>
+<div class="">
+<span class="badge badge-default">Validate Account information.Validate Account information error with Invalid data</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:28:29 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='41'>Validate Missing Values Of Account Information</a>
+<div class="">
+<span class="badge badge-default">Validate Account information.Validate Missing Values Of Account Information</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>7</span>
+</span>
+<p class="name">@FooterPage</p>
+<p class="duration text-sm">7 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@FooterPage</h4>
+<span status="pass" class='badge log pass-bg'>7 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:28:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='53' id='53'>Validate footer links on Footer Sections</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:28:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='53' id='54'>Validate Footer Links on Top Page</a>
+<div class="">
+<span class="badge badge-default">Validate footer links on Footer Sections.Validate Footer Links on Top Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:30:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='53' id='58'>Check Links on Terms and Conditions Page</a>
+<div class="">
+<span class="badge badge-default">Validate footer links on Footer Sections.Check Links on Terms and Conditions Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:31:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='53' id='62'>Validate Footer on Account and Services Page</a>
+<div class="">
+<span class="badge badge-default">Validate footer links on Footer Sections.Validate Footer on Account and Services Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:32:25 PM</td>
+<td>
+<a href="#" class="linked" test-id='53' id='66'>Validate Footer on User Top Page</a>
+<div class="">
+<span class="badge badge-default">Validate footer links on Footer Sections.Validate Footer on User Top Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:32:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='53' id='72'>Validate Footer on Order Screen One</a>
+<div class="">
+<span class="badge badge-default">Validate footer links on Footer Sections.Validate Footer on Order Screen One</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:33:37 PM</td>
+<td>
+<a href="#" class="linked" test-id='53' id='78'>Validate Footer on Order Screen Two and Three</a>
+<div class="">
+<span class="badge badge-default">Validate footer links on Footer Sections.Validate Footer on Order Screen Two and Three</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>4</span>
+</span>
+<p class="name">@MembershipStatus</p>
+<p class="duration text-sm">4 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@MembershipStatus</h4>
+<span status="pass" class='badge log pass-bg'>4 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:36:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='99' id='99'>Validate Membership Status information</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:36:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='99' id='100'>Validate Membership Status information</a>
+<div class="">
+<span class="badge badge-default">Validate Membership Status information.Validate Membership Status information</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:36:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='99' id='108'>Validate Membership Status information</a>
+<div class="">
+<span class="badge badge-default">Validate Membership Status information.Validate Membership Status information</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:37:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='99' id='116'>Validate Free and Prime Membership Plan Details</a>
+<div class="">
+<span class="badge badge-default">Validate Membership Status information.Validate Free and Prime Membership Plan Details</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Aug 18, 2021 06:26:48 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Aug 18, 2021 06:44:44 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>4</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>2</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='66%'>
+<b>4</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='33%'><b>2</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='66%'><b>16</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='33%'><b>8</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='61%'><b>79</b> steps passed</small></div>
+<div>
+<small data-tooltip='6%'><b>8</b> steps failed,
+<b>41</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Validate Account information":127.787,"Validate footer links on Footer Sections":368.608,"Validate Invalid credit card no":73.505,"Validate Membership Status information":70.264,"Validate order flow":327.079,"Withdraw user account":107.703
+};
+</script>
+<div class="row">
+<div class="col-md-4 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@Smoke</td>
+<td>18</td>
+<td>8</td>
+<td>0</td>
+<td>0</td>
+<td>69.231%</td>
+</tr>
+<tr>
+<td>@OrderWithCreditCardInValid</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@PFAccountAndSecurity</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@OrderWithCreditCardBlankValid</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@OrderWithConvenienceStoreValid</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@PFAccountAndSecurityInvalidData</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@MembershipStatusPlan</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@PFAccountAndSecurityMissingValues</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@OrderWithExistingCreditCard</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@WithdrawAccount</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@PFInvalidCC</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@OrderWithConvenienceStoreInValid</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@OrderWithCreditCardValid</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@Full</td>
+<td>11</td>
+<td>8</td>
+<td>0</td>
+<td>0</td>
+<td>57.895%</td>
+</tr>
+<tr>
+<td>@MembershipStatusEnd</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@OrderWithConvenienceStoreBlank</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@PFAccountAndSecurityCancel</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@OrderPrimeWithValidCreditCard</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@AccountAndSecurity</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@FooterPage</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@MembershipStatus</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 4,
+failParent: 2,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 16,
+failChild: 8,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 79,
+failGrandChild: 8,
+warningGrandChild: 0,
+skipGrandChild: 41,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@14e9bb345ef7e2ed3a102f271d84e9f0267c88e7/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

@@ -1,4 +1,4 @@
-@AccountAndSecurity @smoke
+@AccountAndSecurity
 Feature: Validate Account information
 
 @PFAccountAndSecurity @Smoke @Full
