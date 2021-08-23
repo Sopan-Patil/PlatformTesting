@@ -45,16 +45,20 @@ public class LocalizationData {
 	 * @Description: method to read and validate localization data
 	 */
 
-	static ArrayList<String> serialNumber;
-	static ArrayList<String> locators;
-	static ArrayList<String> url;
-	static ArrayList<String> expectedStrings;
+	public static ArrayList<String> serialNumber;
+	public static ArrayList<String> categories;
+	public static ArrayList<String> locators;
+	public static ArrayList<String> url;
+	public static ArrayList<String> expectedStrings;
 
 	public void readLocalizationData(String sheet)
 			throws EncryptedDocumentException, InvalidFormatException, IOException {
 
 		serialNumber = new ArrayList<String>();
 		serialNumber = XLHandler.readexcel("LocalizationTestData.xlsx", sheet, "SrNo");
+
+		categories = new ArrayList<String>();
+		categories = XLHandler.readexcel("LocalizationTestData.xlsx", sheet, "Categories");
 
 		locators = new ArrayList<String>();
 		locators = ExcelUtil.readexcel("LocalizationTestData.xlsx", sheet, "Locator");
@@ -73,12 +77,14 @@ public class LocalizationData {
 	// compare string
 
 	NewBaseClass newBaseClass;
+	public static ArrayList<String> status;
 
 	public void validateLocalizationData() {
 
 		SoftAssert softAssert = new SoftAssert();
 		newBaseClass = new NewBaseClass();
-
+		status = new ArrayList<String>();
+		status.add(0, " Detailed Status is as follows :");
 		for (int i = 0; i < url.size(); i++) {
 			// log.info("serialNumber at " + i + " :" + serialNumber.get(i));
 			// log.info("url at " + i + " :" + url.get(i));
@@ -99,7 +105,19 @@ public class LocalizationData {
 
 				String expected = expectedStrings.get(i).trim();
 				// log.info("serialNumber at " + i + " :" + serialNumber.get(i));
+				String testStatus = null;
+				if (expected.equals(actual)) {
+//					testStatus = "Category :" + categories.get(i).trim() + "\n" + "Expected String :"
+//							+ expectedStrings.get(i).trim() + "\n" + "Status: PASS";
+					testStatus = "Status: PASS";
+				} else {
+//					testStatus = "Category :" + categories.get(i).trim() + "\n" + "Expected String :"
+//							+ expectedStrings.get(i).trim() + "\n" + "Status: FAIL";
 
+					testStatus = "Status: FAIL";
+				}
+				status.add(i + 1, testStatus);
+				// log.info("status :" + status);
 				softAssert.assertEquals(actual, expected, "Validation failed at #" + serialNumber.get(i) + " ");
 
 			}

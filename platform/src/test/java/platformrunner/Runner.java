@@ -25,7 +25,7 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
-		tags = "@PF_Localization_WithLogin",
+		tags = "@PF_Localization_FreeUser",
 
 		// tags = "@PF_CreateAccount",
 

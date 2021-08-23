@@ -28,8 +28,7 @@ public class PF_Localization extends NewBaseClass {
 
 	@When("^Read localization data from sheet$")
 	public void read_localization_data_from_sheet(List<String> userState) throws Throwable {
-		// throw new PendingException();
-		// List<String> data = userState.asList();
+
 		String sheetName = userState.get(0);
 
 		log.info("sheetName :" + sheetName);
