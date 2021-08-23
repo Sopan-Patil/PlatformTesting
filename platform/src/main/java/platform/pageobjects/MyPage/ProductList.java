@@ -27,12 +27,6 @@ public class ProductList {
 	@FindBy(xpath = "//div[@class='header__menu d-md-block d-none']/ul/li[4]")
 	public WebElement productDetails;
 
-	@FindBy(xpath = "//select[@id='category']")
-	public WebElement testTypeDropdown;
-
-	@FindBy(xpath = "//select[@id='type']")
-	public WebElement productTypeDropdown;
-
 	@FindBy(xpath = "//div[@class='ep-filter__button']")
 	public WebElement narrowDownButton;
 
@@ -45,8 +39,20 @@ public class ProductList {
 	@FindBy(xpath = "//a[normalize-space()='4']")
 	public WebElement productListNumbers4;
 
+	@FindBy(xpath = "//i[@class='icon icon-left button__icon']")
+	public WebElement productListArrowLeft;
+
 	@FindBy(xpath = "//i[@class='icon icon-right button__icon']")
-	public WebElement productListArrows;
+	public WebElement productListArrowRight;
+
+	@FindBy(xpath = "//a[normalize-space()='1']")
+	public WebElement productListArrow1;
+
+	@FindBy(xpath = "//select[@id='category']")
+	public WebElement testTypeDropdown;
+
+	@FindBy(xpath = "//select[@id='type']")
+	public WebElement productTypeDropdown;
 
 	public void clickProductList() {
 		if (CommonFunctions.waitForVisiblity(productDetails, waitTime)) {
@@ -68,12 +74,59 @@ public class ProductList {
 			narrowDownButton.click();
 			log.info("Clicked on narrow down button on product list page");
 		}
+		CommonFunctions.scrolltoElement(productListNumbers2);
+		if (CommonFunctions.isElementClickable(productListNumbers2)) {
+			productListNumbers2.click();
+			log.info("Clicked on product list 2");
+		}
+		CommonFunctions.scrolltoElement(productListNumbers3);
+		if (CommonFunctions.isElementClickable(productListNumbers3)) {
+			productListNumbers3.click();
+			log.info("Clicked on product list 3");
+		}
+		CommonFunctions.scrolltoElement(productListNumbers4);
+		if (CommonFunctions.isElementClickable(productListNumbers4)) {
+			productListNumbers4.click();
+			log.info("Clicked on product list 4");
+		}
+		CommonFunctions.scrolltoElement(productListArrowLeft);
+		if (CommonFunctions.isElementClickable(productListArrowLeft)) {
+			productListArrowLeft.click();
+			log.info("Clicked on left arrow on product list page");
+		}
+		CommonFunctions.scrolltoElement(productListArrowRight);
+		if (CommonFunctions.isElementClickable(productListArrowRight)) {
+			productListArrowRight.click();
+			log.info("Clicked on right arrow on product list page");
+		}
+		CommonFunctions.scrolltoElement(productListArrow1);
+		if (CommonFunctions.isElementClickable(productListArrow1)) {
+			productListArrow1.click();
+			log.info("Clicked on product list 1");
+		}
 	}
 
 	public void checkButtonsOnProductListPage() throws Exception {
 		CommonFunctions.scrolltoElement(narrowDownButton);
 		CommonFunctions.isElementVisible(narrowDownButton);
 		narrowDownButton.click();
-
+		CommonFunctions.scrolltoElement(productListNumbers2);
+		CommonFunctions.isElementVisible(productListNumbers2);
+		productListNumbers2.click();
+		CommonFunctions.scrolltoElement(productListNumbers3);
+		CommonFunctions.isElementVisible(productListNumbers3);
+		productListNumbers3.click();
+		CommonFunctions.scrolltoElement(productListNumbers4);
+		CommonFunctions.isElementVisible(productListNumbers4);
+		productListNumbers4.click();
+		CommonFunctions.scrolltoElement(productListArrowLeft);
+		CommonFunctions.isElementVisible(productListArrowLeft);
+		productListArrowLeft.click();
+		CommonFunctions.scrolltoElement(productListArrowRight);
+		CommonFunctions.isElementVisible(productListArrowRight);
+		productListArrowRight.click();
+		CommonFunctions.scrolltoElement(productListArrow1);
+		CommonFunctions.isElementVisible(productListArrow1);
+		productListArrow1.click();
 	}
 }

@@ -30,7 +30,7 @@ public class PF_ProductList extends NewBaseClass {
 		productListobj.clickProductList();
 	}
 
-	@Then("^Validate narrow down button$")
+	@Then("^Validate various buttons$")
 	public void Validate_narrow_down_button() throws Throwable {
 		ProductList productListobj = new ProductList(driver);
 		productListobj.checkButtonsOnProductListPage();
