@@ -25,9 +25,9 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
-		// tags = "@Smoke",
+		 tags = "@Smoke",
 
-		tags = "@ProductDetailsFilterValidation",
+		//tags = "@ProductDetailsFilterValidation",
 
 		plugin = { "pretty", /* "html:target/cucumber_html_report", */ "json:target/cucumber.json",
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
