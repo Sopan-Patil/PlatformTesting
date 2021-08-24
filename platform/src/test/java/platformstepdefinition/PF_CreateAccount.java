@@ -206,6 +206,12 @@ public class PF_CreateAccount extends NewBaseClass {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.loginWithNewUser();
 
+		Assert.assertTrue(loginPage.logoutButton.isDisplayed());
+		if (CommonFunctions.isElementVisible(loginPage.logoutButton)) {
+
+			log.info("New User can start using study gear");
+			loginPage.logoutButton.click();
+		}
 	}
 
 	@And("^clicks start study gear button$")
