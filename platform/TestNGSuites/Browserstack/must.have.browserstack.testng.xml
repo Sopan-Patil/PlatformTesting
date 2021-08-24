@@ -39,7 +39,7 @@
             <class name="platformrunner.Runner"/>
         </classes>
     </test>
-    <test name="SingleTestEnv5">
+    <!-- <test name="SingleTestEnv5">
         <parameter name="config" value="mustHave.conf.json"/>
          <parameter name="mode" value="browserstack" />
         <parameter name="environment" value="env5"/>
@@ -54,5 +54,5 @@
         <classes>
             <class name="platformrunner.Runner"/>
         </classes>
-    </test>
+    </test> -->
 </suite>

@@ -10,6 +10,7 @@ import org.openqa.selenium.TakesScreenshot;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import platform.pageobjects.Authentication.LoginPage;
 import utils.ObjectHelper;
 
 /**
@@ -60,6 +61,15 @@ public class Hooks {
 		createACC.confirms_details();
 		// Then Validate that new account is created
 		createACC.validate_that_new_account_is_created();
+	}
+
+	@Before
+	public void setup() throws Exception {
+
+		LoginPage loginToPlatform = new LoginPage(ObjectHelper.driver);
+		loginToPlatform.navigateToHomePage();
+		loginToPlatform.logoutFromPlatform();
+
 	}
 
 }
