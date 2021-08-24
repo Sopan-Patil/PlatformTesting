@@ -33,6 +33,14 @@
 	
 
 	<dependencies>
+	
+	<!-- https://mvnrepository.com/artifact/io.percy/percy-java-selenium -->
+<dependency>
+    <groupId>io.percy</groupId>
+    <artifactId>percy-java-selenium</artifactId>
+    <version>1.0.0</version>
+</dependency>
+	
 	<!-- https://mvnrepository.com/artifact/net.masterthought/maven-cucumber-reporting -->
 <dependency>
     <groupId>net.masterthought</groupId>
