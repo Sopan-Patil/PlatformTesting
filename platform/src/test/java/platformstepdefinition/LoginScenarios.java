@@ -14,6 +14,8 @@ import utils.ExcelUtil;
 public class LoginScenarios {
 	public static WebDriver driver;
 	public static String URL = "https://stg.studygear.evidus.net";
+	String notes = null;
+	String result = null;
 
 	@Before
 	public void openbrowser() throws MalformedURIException {
@@ -40,11 +42,13 @@ public class LoginScenarios {
 			driver.findElement(By.xpath("//input[@id='password']")).sendKeys("asasas");
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
 			System.out.println("Test Case Passed Updating Status in TestLink");
-			TestLinkIntegration.updateTestLinkResults("User Logged", null, TestLinkAPIResults.TEST_PASSED);
+			result = TestLinkAPIResults.TEST_PASSED;
+			TestLinkIntegration.updateTestLinkResults("Login Test Case Title", notes, result);
 		} catch (Exception e) {
-
+			notes = e.getMessage();
 			System.out.println("Test Case Failed Updating Status in TestLink");
-			TestLinkIntegration.updateTestLinkResults("User Logged", null, TestLinkAPIResults.TEST_FAILED);
+			result = TestLinkAPIResults.TEST_FAILED;
+			TestLinkIntegration.updateTestLinkResults("Login Test Case Title", notes, result);
 		}
 	}
 
