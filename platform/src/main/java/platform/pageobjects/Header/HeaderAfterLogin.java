@@ -79,19 +79,20 @@ public class HeaderAfterLogin extends NewBaseClass {
 		CommonFunctions.isElementVisible(membershipButton);
 		log.info("Menu : Membership Button Link is visible");
 
-		actions.moveToElement(accountAndSecuritySubmenuLink).perform();
+		actions.moveToElement(accountAndSecurityLink).perform();
+		log.info("Opened Submenu");
 		CommonFunctions.isElementVisible(accountAndSecuritySubmenuLink);
 		log.info("SubMenu : AccountAndSecurity Link is visible");
 
-		actions.moveToElement(membershipSubMenuLink).perform();
+		actions.moveToElement(accountAndSecurityLink).perform();
 		CommonFunctions.isElementVisible(membershipSubMenuLink);
 		log.info("SubMenu : Membership Status Button Link is visible");
 
-		actions.moveToElement(servicesYouAreUsingSubMenuLink).perform();
+		actions.moveToElement(accountAndSecurityLink).perform();
 		CommonFunctions.isElementVisible(servicesYouAreUsingSubMenuLink);
 		log.info("SubMenu : Services You Are Using Link is visible");
 
-		actions.moveToElement(orderHistorySubMenuLink).perform();
+		actions.moveToElement(accountAndSecurityLink).perform();
 		CommonFunctions.isElementVisible(orderHistorySubMenuLink);
 		log.info("Sub Menu : Order History Link is visible");
 
