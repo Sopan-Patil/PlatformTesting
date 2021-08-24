@@ -46,3 +46,14 @@ And enters confirmation code
 And enters valid details
 And clicks return button on step 4
 Then Validate redirection to previous page
+
+@PF_CreateAccount_StudyGear
+Scenario: Redirection to study gear
+Given User is on home page
+When User begins account creation
+And creates new credentials
+And enters confirmation code
+And enters valid details
+And confirms details
+And clicks start study gear button
+Then Validate that user is redirected to study gear page

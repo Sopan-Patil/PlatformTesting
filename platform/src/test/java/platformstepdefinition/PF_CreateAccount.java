@@ -194,4 +194,29 @@ public class PF_CreateAccount extends NewBaseClass {
 		createAccountStep4.clickReturnButton();
 	}
 
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 24 Aug 2021
+	 * @Description: step def for study gear button
+	 */
+
+	@Then("^Validate that user is redirected to study gear page$")
+	public void validate_that_user_is_redirected_to_study_gear_page() throws Throwable {
+		// throw new PendingException();
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.loginWithNewUser();
+
+	}
+
+	@And("^clicks start study gear button$")
+	public void clicks_start_study_gear_button() throws Throwable {
+		// throw new PendingException();
+		CreateAccountStep5 createAccountStep5 = new CreateAccountStep5(driver);
+		// CreateAccountStep5 createAccountStep5 = new CreateAccountStep5(driver);
+		createAccountStep5.getCreatedAccountDetails();
+		createAccountStep5.writeCredentialsToExcel();
+		createAccountStep5.clickStartServiceButton();
+
+	}
+
 }

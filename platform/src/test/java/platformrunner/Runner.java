@@ -2,13 +2,7 @@ package platformrunner;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import org.junit.runner.RunWith;
-import org.testng.annotations.BeforeMethod;
-
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-
 
 import base.NewBaseClass;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
@@ -30,16 +24,16 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
-
-		tags = { "@PF_CreateAccount_Return" },
+		// tags = "@PF_CreateAccount_Return" ,
 
 		// tags = { "@PFAccountAndSecurity, @PFAccountAndSecurityCancel" },
 
-		plugin = { "pretty", "html:target/cucumber_html_report", "json:target/cucumber.json",
+		// plugin = { "pretty", "html:target/cucumber_html_report",
+		// "json:target/cucumber.json",
 
 		// tags = "@Smoke",
 
-		tags = "@ProductDetailsFilterValidation",
+		tags = "@PF_CreateAccount_StudyGear",
 
 		plugin = { "pretty", /* "html:target/cucumber_html_report", */ "json:target/cucumber.json",
 
@@ -67,8 +61,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 
 	}
 
-
-	@AfterTest(alwaysRun = true)
+	// @AfterTest(alwaysRun = true)
 
 	public void closeBrowser() throws Exception {
 
