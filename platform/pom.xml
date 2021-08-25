@@ -28,12 +28,15 @@
         <config.file>default</config.file>
 
 	</properties>
-	
-	
-	
+
 
 	<dependencies>
-
+	<!--below 5 dependency added by Sopan for Testlink Integration -->
+<dependency>
+    <groupId>xml-apis</groupId>
+    <artifactId>xml-apis</artifactId>
+    <version>1.4.01</version>
+</dependency>
 		<!-- https://mvnrepository.com/artifact/com.github.kalokanand/testlink-api-client -->
 		<dependency>
 			<groupId>com.github.kalokanand</groupId>
@@ -58,7 +61,7 @@
 			<artifactId>ws-commons-util</artifactId>
 			<version>1.0.2</version>
 		</dependency>
-	
+		<!--above 5 dependency added by Sopan for Testlink Integration-->
 	
 	<!-- https://mvnrepository.com/artifact/net.masterthought/maven-cucumber-reporting -->
 <dependency>

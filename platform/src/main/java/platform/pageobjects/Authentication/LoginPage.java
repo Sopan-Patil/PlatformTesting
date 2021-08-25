@@ -10,9 +10,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import base.NewBaseClass;
+import testlink.api.java.client.TestLinkAPIResults;
 import utils.CommonFunctions;
 import utils.ExcelUtil;
 import utils.ObjectHelper;
+import utils.TestLinkIntegration;
 
 /**
  * @Author : Chetan Sonparote
@@ -104,40 +106,62 @@ public class LoginPage {
 	}
 
 	public void loginToPlatform() throws Exception {
+		String notes = null;
+		String result = null;
+		try {
+			ExcelUtil excel = new ExcelUtil();
+			excel.setExcelFile("NewTestData.xlsx", "User");
 
-		ExcelUtil excel = new ExcelUtil();
-		excel.setExcelFile("NewTestData.xlsx", "User");
+			String userNameSTR = excel.getCellData("UserName", 1);
+			String passwordSTR = excel.getCellData("Password", 1);
 
-		String userNameSTR = excel.getCellData("UserName", 1);
-		String passwordSTR = excel.getCellData("Password", 1);
+			if (CommonFunctions.waitForVisiblity(logInButton, waitTime)) {
+				logInButton.click();
 
-		if (CommonFunctions.waitForVisiblity(logInButton, waitTime)) {
-			logInButton.click();
+			}
 
-		}
+			log.info("Login button is clicked");
 
-		log.info("Login button is clicked");
+			// System.out.println("inside loginToPlatform()");
 
-		// System.out.println("inside loginToPlatform()");
+			log.info("Login button is clicked");
 
-		log.info("Login button is clicked");
+			if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
+				emailtextfield.click();
+				emailtextfield.sendKeys(userNameSTR);
 
-		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
-			emailtextfield.click();
-			emailtextfield.sendKeys(userNameSTR);
+			}
 
-		}
+			if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
 
-		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
+				// passwordTextField.sendKeys("Test-123");
+				passwordTextField.click();
 
-			// passwordTextField.sendKeys("Test-123");
-			passwordTextField.click();
+				passwordTextField.sendKeys(passwordSTR);
+				System.out.println(passwordTextField.getText());
+			}
+			if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
+				CommonFunctions.clickUsingJavaExecutor(SubmitButton);
+			}
+		} catch (Exception e) {
 
-			passwordTextField.sendKeys(passwordSTR);
-			System.out.println(passwordTextField.getText());
-		}
-		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
-			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
+			result = TestLinkAPIResults.TEST_FAILED;
+			notes = e.getMessage();
+			e.printStackTrace();
+
+		} catch (AssertionError e) {
+
+			String message = e.getMessage();
+			System.out.println(message);
+			result = TestLinkAPIResults.TEST_FAILED;
+			notes = e.getMessage();
+			e.printStackTrace();
+
+		} finally {
+
+			System.out.println("Updating TestCase Execution Status in TestLink");
+			TestLinkIntegration.updateTestLinkResults("Login Test Case Title", notes, result);
+
 		}
 
 	}

@@ -11,7 +11,10 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
+import platformstepdefinition.TestLinkIntegration;
 import reporting.ExtentReporter;
+import testlink.api.java.client.TestLinkAPIException;
+import testlink.api.java.client.TestLinkAPIResults;
 import utils.ObjectHelper;
 import utils.Screenshots;
 
@@ -29,6 +32,7 @@ public class Listeners extends ExtentReporter implements ITestListener {
 	// BrowserstackUtility browserstackUtility;
 
 	static String testName;
+	public static String testLinkResult;
 
 	@Override
 	public void onTestStart(ITestResult result) {
@@ -48,6 +52,13 @@ public class Listeners extends ExtentReporter implements ITestListener {
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
 		extentTest.get().log(Status.PASS, "Test Passed");
+		// testLinkResult = extentTest.get().log(Status.PASS, "Test Passed").toString();
+		try {
+			TestLinkIntegration.updateTestLinkResults("Login Test Case Title", null, TestLinkAPIResults.TEST_PASSED);
+		} catch (TestLinkAPIException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		// browserstackUtility.setResultStatus(result);
 		// browserstackUtility.setResult("PASS");
 		// Assert.assertTrue(true, "Test Passed");
@@ -59,12 +70,20 @@ public class Listeners extends ExtentReporter implements ITestListener {
 		// TODO Auto-generated method stub
 
 		extentTest.get().fail(result.getThrowable());
+		// testLinkResult = extentTest.get().fail(result.getThrowable()).toString();
+		testLinkResult = result.getThrowable().toString();
 
 		// ExtentReporter.addScreenshot();
 		// Assert.assertTrue(true, "Test Fail");
-
+		System.out.println("Test Link Result: " + testLinkResult);
 		// WebDriver driver = null;
-
+		try {
+			TestLinkIntegration.updateTestLinkResults("Login Test Case Title", testLinkResult,
+					TestLinkAPIResults.TEST_FAILED);
+		} catch (TestLinkAPIException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		// String testMethodName = result.getMethod().getMethodName();
 
 //		try {

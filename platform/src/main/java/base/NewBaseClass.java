@@ -10,11 +10,11 @@ import java.util.Set;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-
 import org.openqa.selenium.WebElement;
-
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
 
@@ -348,8 +348,8 @@ public class NewBaseClass {
 	}
 
 	/**
-
-
+	 * 
+	 * 
 	 * @throws IOException
 	 * @Author : Chetan Sonparote
 	 * @Date :12 Aug 2021
@@ -395,8 +395,7 @@ public class NewBaseClass {
 		// System.out.println(ObjectHelper.driver.getTitle());
 		log.info("Parent window title:" + ObjectHelper.driver.getTitle());
 	}
-	
-	
+
 	/**
 	 * @throws IOException
 	 * @Author : Chetan Sonparote
@@ -414,6 +413,18 @@ public class NewBaseClass {
 		String actualString = ObjectHelper.driver.findElement(By.xpath(xpath)).getText().trim();
 		log.info("actualString :" + actualString);
 		Assert.assertTrue(actualString.contains(expectedString));
+	}
+
+	public String getOSBrowserDetails() {
+		Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
+		String BrowserName = cap.getBrowserName().toLowerCase();
+		String os = System.getProperty("os.name").toLowerCase();
+		String BrowserVersion = cap.getVersion().toString();
+		System.out.println("OS = " + os + ", Browser = " + BrowserName + ", BrowserVersion=" + BrowserVersion + "");
+		String OSBrowserDetails = "Test Execution Successfully Passed in OS = " + os + ", Browser = " + BrowserName
+				+ ", BrowserVersion=" + BrowserVersion + "";
+		return OSBrowserDetails;
+
 	}
 
 }
