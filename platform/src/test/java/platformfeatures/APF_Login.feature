@@ -1,7 +1,7 @@
 @LoginAlltest
 Feature: Validate new login 
 
-@FunctionalTest  @PF_test
+@FunctionalTest  @Smoke
 Scenario: Validate new login features 
 #Given Navigate to URL on <browser>
 Then Login To Platform
