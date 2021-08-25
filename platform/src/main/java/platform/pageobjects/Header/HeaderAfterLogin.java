@@ -36,16 +36,16 @@ public class HeaderAfterLogin extends NewBaseClass {
 	@FindBy(xpath = "//a[@class='button button--blue1 button--xsmall font-weight-normal']")
 	public WebElement membershipButton;
 
-	@FindBy(xpath = "//div[@class='submenu']//ul[1]//li[1]//a[1]")
+	@FindBy(xpath = "//div[@class='nav__link']//ul[1]//li[1]//a[1]")
 	public WebElement accountAndSecuritySubmenuLink;
 
-	@FindBy(xpath = "//div[@class='submenu']//ul[1]//li[2]//a[1]")
+	@FindBy(xpath = "//div[@class='nav__link']//ul[1]//li[2]//a[1]")
 	public WebElement membershipSubMenuLink;
 
-	@FindBy(xpath = "//div[@class='submenu']//ul[1]//li[3]//a[1]")
+	@FindBy(xpath = "//div[@class='nav__link']//ul[1]//li[3]//a[1]")
 	public WebElement servicesYouAreUsingSubMenuLink;
 
-	@FindBy(xpath = "//div[@class='submenu']//ul[1]//li[4]//a[1]")
+	@FindBy(xpath = "//div[@class='nav__link']//ul[1]//li[4]//a[1]")
 	public WebElement orderHistorySubMenuLink;
 
 	public void switchToPreviousTab() {
@@ -113,22 +113,22 @@ public class HeaderAfterLogin extends NewBaseClass {
 		driver.navigate().back();
 
 		clickSubMenu(accountAndSecurityLink, accountAndSecuritySubmenuLink);
-		log.info("Submenu : Account and Security Link is visible");
+		log.info("Clicked on Account and Security Link");
 		driver.navigate().back();
 		log.info("Back on Previous Page");
 
 		clickSubMenu(accountAndSecurityLink, membershipSubMenuLink);
-		log.info("Submenu : Membership Status Link is visible");
+		log.info("Clicked on Membership Status Link");
 		driver.navigate().back();
 		log.info("Back on Previous Page");
 
 		clickSubMenu(accountAndSecurityLink, servicesYouAreUsingSubMenuLink);
-		log.info("Submenu : Services you are using is visible");
+		log.info("Clicked on Services you are using");
 		driver.navigate().back();
 		log.info("Back on Previous Page");
 
 		clickSubMenu(accountAndSecurityLink, orderHistorySubMenuLink);
-		log.info("Opened Submenu");
+		log.info("Clicked on Services you are using");
 		driver.navigate().back();
 		log.info("Back on Previous Page");
 
