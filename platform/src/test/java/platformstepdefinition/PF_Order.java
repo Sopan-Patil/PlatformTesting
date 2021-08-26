@@ -29,11 +29,11 @@ public class PF_Order extends NewBaseClass {
 	String primeName = "プライム会員プラン";
 	String primePrice = "500";
 
-	@And("^Select 1st product from product list page$")
-	public void select_1st_product_from_product_list_page() throws Throwable {
-		orderObj.select1stCasecProduct();
+	@And("^Select product from test data excel$")
+	public void select_product_from_test_data_excel() throws Throwable {
+		orderObj.selectProductFromTestDataExcel();
 
-		String[] str_Array = orderObj.select1stCasecProduct();
+		String[] str_Array = orderObj.selectProductFromTestDataExcel();
 		System.out.println("Array returned from method:" + Arrays.toString(str_Array));
 
 		productNameFromProductListPage = str_Array[0].toString();
@@ -249,4 +249,5 @@ public class PF_Order extends NewBaseClass {
 	public void add_prime_user_credentials_in_test_data_excel() throws Throwable {
 		orderObj.writeCredentialsToExcelForNewPrimeUser();
 	}
+
 }

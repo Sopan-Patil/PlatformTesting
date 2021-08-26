@@ -15,6 +15,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import base.NewBaseClass;
 import platform.pageobjects.AccountServices.CreateAccountStep1;
@@ -35,6 +36,9 @@ public class Order {
 	private static Logger log = LogManager.getLogger(Order.class.getName());
 	int waitTime = 1;
 	ExcelUtil excel = new ExcelUtil();
+	String productListProductNameTxt, kanjikenteiProduct, productListProductPriceTxt,
+			productListProductPriceTxtWithSymbol, productCategory;
+	String freeuser, primeuser;
 
 	public Order(WebDriver driver) {
 		this.driver = driver;
@@ -349,35 +353,121 @@ public class Order {
 	@FindBy(xpath = "//div[@class='box-order-confirm__title']//span")
 	public WebElement step1ProductNameLabel;
 
+//product list dynamic handle
+	@FindBy(xpath = "//div[@class='header__menu d-md-block d-none']/ul/li[4]")
+	public WebElement productDetails;
+
+	@FindBy(xpath = "//a[@class='button button--blue1 button--xsmall font-weight-normal']/span")
+	public WebElement freeMemberTitle;
+
+	@FindBy(xpath = "//a[@class='button button--blue1 button--xsmall font-weight-normal']/span")
+	public WebElement primeMemberTitle;
+
+	@FindBy(xpath = "//select[@id='category']")
+	public WebElement productDropdown;
+
+	@FindBy(xpath = "//select[@id='type']")
+	public WebElement productTypeDropdown;
+
+	@FindBy(xpath = "//div[@class='ep-filter__button']")
+	public WebElement narrowDownButton;
+
+	@FindBy(xpath = "//div[@class='ep-product-list__row']")
+	public WebElement productListCard;
+
+	@FindBy(xpath = "//form[@action='/product-bill-generate']//button//span")
+	public WebElement productListBuyAgainBTN;
+
 	// not used
 	@FindBy(xpath = "//button[@type='submit']")
 	public WebElement SubmitButton;
 	// not used
 
 	// product list
-	public String[] select1stCasecProduct() throws Exception {
+	@SuppressWarnings("unused")
+	public String[] selectProductFromTestDataExcel() throws Exception {
 
 		CommonFunctions.waitForVisiblity(productListLink, waitTime);
 		productListLink.click();
 		log.info("Click on product list page");
+		CommonFunctions.scrolltoElement(productDropdown);
+		outerloop: if (CommonFunctions.waitForVisiblity(productDropdown, waitTime)) {
+			ExcelUtil excel = new ExcelUtil();
+			excel.setExcelFile("NewTestData.xlsx", "ProductForOrder");
+			String expectedProductName = excel.getCellData("ProductName", 1);
+			productCategory = excel.getCellData("ProductCategory", 1);
 
-		CommonFunctions.isElementVisible(productListProductName);
-		String productListProductNameTxtWithMultiLine = productListProductName.getText().trim();
+			Select target = new Select(productDropdown);
+			List<WebElement> targetListElements = target.getOptions();
+			int DropdownitemSize = targetListElements.size();
+			for (int i = 0; i < DropdownitemSize; i++) {
+				String productValue = targetListElements.get(i).getText();
+				if (productValue.contains((productCategory))) {
+					Select productselect = new Select(productDropdown);
+					productselect.selectByVisibleText(productCategory);
+					narrowDownButton.click();
 
-		String productListProductNameTxt = productListProductNameTxtWithMultiLine.replaceAll("\n", "");
-		log.info("The product name from product list page " + productListProductNameTxt);
+					List<WebElement> pagination = driver.findElements(By.xpath("//div[@class='pagination']/div"));
+					log.info("Total Pages " + pagination.size());
+					int size = pagination.size();
+					if (size > 0) {
+						for (int k = 1; k <= pagination.size(); k++) {
+							driver.findElement(By.xpath("//div[@class='pagination']/div[" + k + "]")).click();
+							log.info("Click on page no " + k);
 
-		CommonFunctions.isElementVisible(productListProductPrice);
-		String productListProductPriceTxtWithSymbol = productListProductPrice.getText().trim();
-		String productListProductPriceTxt = productListProductPriceTxtWithSymbol.replaceAll(",", "");
-		log.info("The product price from product list page " + productListProductPriceTxt);
+							List<WebElement> productContainer = driver
+									.findElements(By.xpath("//div[@class=\"ep-product-list__row\"]"));
 
-		CommonFunctions.waitForVisiblity(selectCasec1ProductFromProductList, waitTime);
-		selectCasec1ProductFromProductList.click();
-		log.info("Click on buy button from product list page,select 1st product-CASEC １");
+							log.info("Total product contatiner in Page " + productContainer.size());
+							for (int l = 1; l < productContainer.size() + 1; l++) {
+								// l++;
+								List<WebElement> productTitleElement = driver
+										.findElements(By.xpath("//div[@class=\"ep-product-list__row\"][" + l + "]"
+
+												+ "//p[@class='ep-card-product__title']//span"));
+
+								log.info("Total products in Page " + productTitleElement.size());
+								for (int j = 0; j < productTitleElement.size(); j++) {
+									productListProductNameTxt = productTitleElement.get(j).getText().replaceAll("\n",
+											"");
+									log.info("Total name on Page " + productListProductNameTxt);
+									if (productListProductNameTxt.contains(expectedProductName)) {
+										j++;
+										log.info("This is product " + j + " Of " + productTitleElement.size()
+												+ " Total Cards");
+
+										productListProductPriceTxtWithSymbol = driver
+												.findElement(By.xpath("//div[@class=\"ep-product-list__row\"][" + l
+														+ "]" + "//div[@class='ep-card-product'][" + j + "]"
+														+ "//div[@class=\"ep-card-product__price\"]//span"))
+												.getText().trim();
+										productListProductPriceTxt = productListProductPriceTxtWithSymbol
+												.replaceAll(",", "");
+										log.info("The product price from product list page "
+												+ productListProductPriceTxt);
+										driver.findElement(By.xpath("//div[@class=\"ep-product-list__row\"][" + l + "]"
+												+ "//div[@class='ep-card-product'][" + j + "]"
+												+ "//form[@action='/product-bill-generate']//button//span")).click();
+
+										break outerloop;
+									}
+									// break;
+								}
+
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
 
 		// define string array
-		String[] ret_Array = { productListProductNameTxt, productListProductPriceTxt };
+		String[] ret_Array = { productListProductNameTxt, productListProductPriceTxt, productCategory };
 		// return string array
 		return ret_Array;
 	}
@@ -1435,6 +1525,8 @@ public class Order {
 		driver.switchTo().window(base1);
 		log.info("Step 4 tab :- switched to thank you page again");
 
+		verifyFooterLink();
+
 		// define string array
 		String[] ret_Array = { paymentDeadlineCompareSTR, orderNumberLabelSTR };
 		// return string array
@@ -1543,20 +1635,30 @@ public class Order {
 		CommonFunctions.waitForVisiblity(commercialTransactionsLawLink, waitTime);
 		log.info("Step 4 tab :- Display based on the Specified Commercial Transactions Law link visible");
 
+		verifyFooterLink();
+
+		// define string array
+		String[] ret_Array = { orderNumberCreditCardLabelSTR };
+		// return string array
+		return ret_Array;
+	}
+
+	public void verifyFooterLink() throws Exception {
 		// open footer menu on next tab
+		CommonFunctions.scrolltoElement(FAQLink);
 		Actions newTab = new Actions(driver);
 		newTab.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).click(FAQLink).keyUp(Keys.CONTROL).keyUp(Keys.SHIFT).build()
 				.perform();
 		log.info("Step 4 tab :- click on FAQ and it open in new browser tab");
-		Thread.sleep(2000);
+		CommonFunctions.waitForVisiblity(termsOfUseLink, waitTime);
 		newTab.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).click(termsOfUseLink).keyUp(Keys.CONTROL).keyUp(Keys.SHIFT)
 				.build().perform();
 		log.info("Step 4 tab :- click on terms Of Use Link and it open in new browser tab");
-		Thread.sleep(2000);
+		CommonFunctions.waitForVisiblity(privacyPolicyLink, waitTime);
 		newTab.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).click(privacyPolicyLink).keyUp(Keys.CONTROL).keyUp(Keys.SHIFT)
 				.build().perform();
 		log.info("Step 4 tab :- click on privery policy Link and it open in new browser tab");
-		Thread.sleep(2000);
+		CommonFunctions.waitForVisiblity(commercialTransactionsLawLink, waitTime);
 		newTab.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).click(commercialTransactionsLawLink).keyUp(Keys.CONTROL)
 				.keyUp(Keys.SHIFT).build().perform();
 		log.info("Step 4 tab :- click on commercial transaction law Link and it open in new browser tab");
@@ -1569,7 +1671,6 @@ public class Order {
 		assert set.size() == 4;
 		driver.switchTo().window((String) set.toArray()[0]);
 		log.info("Step 4 tab :- switched to commercial Transactions page");
-		Thread.sleep(1000);
 		CommonFunctions.waitForVisiblity(commercialTransactionsPageLabel, waitTime);
 		log.info("commercial Transactions text visible on commercial Transactions page");
 		// close the window and switch back to the base tab
@@ -1577,7 +1678,6 @@ public class Order {
 
 		driver.switchTo().window((String) set.toArray()[1]);
 		log.info("Step 4 tab :- switched to privacy Policy page");
-		Thread.sleep(1000);
 		CommonFunctions.waitForVisiblity(privacyPolicyLinkPageLabel, waitTime);
 		log.info("privacy Policy text visible on privacy Policy Page");
 		// close the window and switch back to the base tab
@@ -1585,7 +1685,6 @@ public class Order {
 
 		driver.switchTo().window((String) set.toArray()[2]);
 		log.info("Step 4 tab :- switched to Terms of Service page");
-		Thread.sleep(1000);
 		CommonFunctions.waitForVisiblity(STAGIATermsofServiceLabel, waitTime);
 		log.info("STAGIA Terms of Service visible on FAQ page");
 		// close the window and switch back to the base tab
@@ -1593,7 +1692,6 @@ public class Order {
 
 		driver.switchTo().window((String) set.toArray()[3]);
 		log.info("Step 4 tab :- switched to FAQ page");
-		Thread.sleep(1000);
 		CommonFunctions.waitForVisiblity(FAQPageLogo, waitTime);
 		log.info("FAQ logo visible on FAQ page");
 		// close the window and switch back to the base tab
@@ -1601,11 +1699,6 @@ public class Order {
 
 		driver.switchTo().window(base1);
 		log.info("Step 4 tab :- switched to thank you page again");
-
-		// define string array
-		String[] ret_Array = { orderNumberCreditCardLabelSTR };
-		// return string array
-		return ret_Array;
 	}
 
 	public String[] verifyPrimeThankYouPage() throws Exception {
@@ -1646,64 +1739,7 @@ public class Order {
 		CommonFunctions.waitForVisiblity(commercialTransactionsLawLink, waitTime);
 		log.info("Step 4 tab :- Display based on the Specified Commercial Transactions Law link visible");
 
-		// open footer menu on next tab
-		Actions newTab = new Actions(driver);
-		newTab.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).click(FAQLink).keyUp(Keys.CONTROL).keyUp(Keys.SHIFT).build()
-				.perform();
-		log.info("Step 4 tab :- click on FAQ and it open in new browser tab");
-		Thread.sleep(2000);
-		newTab.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).click(termsOfUseLink).keyUp(Keys.CONTROL).keyUp(Keys.SHIFT)
-				.build().perform();
-		log.info("Step 4 tab :- click on terms Of Use Link and it open in new browser tab");
-		Thread.sleep(2000);
-		newTab.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).click(privacyPolicyLink).keyUp(Keys.CONTROL).keyUp(Keys.SHIFT)
-				.build().perform();
-		log.info("Step 4 tab :- click on privery policy Link and it open in new browser tab");
-		Thread.sleep(2000);
-		newTab.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).click(commercialTransactionsLawLink).keyUp(Keys.CONTROL)
-				.keyUp(Keys.SHIFT).build().perform();
-		log.info("Step 4 tab :- click on commercial transaction law Link and it open in new browser tab");
-
-		// handle windows change
-		String base1 = driver.getWindowHandle();
-		Set<String> set = driver.getWindowHandles();
-
-		set.remove(base1);
-		assert set.size() == 4;
-		driver.switchTo().window((String) set.toArray()[0]);
-		log.info("Step 4 tab :- switched to commercial Transactions page");
-		Thread.sleep(1000);
-		CommonFunctions.waitForVisiblity(commercialTransactionsPageLabel, waitTime);
-		log.info("commercial Transactions text visible on commercial Transactions page");
-		// close the window and switch back to the base tab
-		driver.close();
-
-		driver.switchTo().window((String) set.toArray()[1]);
-		log.info("Step 4 tab :- switched to privacy Policy page");
-		Thread.sleep(1000);
-		CommonFunctions.waitForVisiblity(privacyPolicyLinkPageLabel, waitTime);
-		log.info("privacy Policy text visible on privacy Policy Page");
-		// close the window and switch back to the base tab
-		driver.close();
-
-		driver.switchTo().window((String) set.toArray()[2]);
-		log.info("Step 4 tab :- switched to Terms of Service page");
-		Thread.sleep(1000);
-		CommonFunctions.waitForVisiblity(STAGIATermsofServiceLabel, waitTime);
-		log.info("STAGIA Terms of Service visible on FAQ page");
-		// close the window and switch back to the base tab
-		driver.close();
-
-		driver.switchTo().window((String) set.toArray()[3]);
-		log.info("Step 4 tab :- switched to FAQ page");
-		Thread.sleep(1000);
-		CommonFunctions.waitForVisiblity(FAQPageLogo, waitTime);
-		log.info("FAQ logo visible on FAQ page");
-		// close the window and switch back to the base tab
-		driver.close();
-
-		driver.switchTo().window(base1);
-		log.info("Step 4 tab :- switched to thank you page again");
+		verifyFooterLink();
 
 		// define string array
 		String[] ret_Array = { orderNumberPrimeLabelSTR };
