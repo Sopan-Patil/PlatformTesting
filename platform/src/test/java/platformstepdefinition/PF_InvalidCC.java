@@ -41,7 +41,7 @@ public class PF_InvalidCC extends NewBaseClass {
 		replaceurlChangeCard();
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.clickLoginButton();
-		loginPage.loginToPlatform();
+		loginPage.loginWithPrimeUser();
 	}
 
 	@And("^Enters invalid credit card details$")
