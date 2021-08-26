@@ -35,6 +35,7 @@ public class Hooks {
 
 	}
 
+
 	/**
 	 * @Author : rahul shinde
 	 * @Date : 20 Aug 2021
@@ -61,7 +62,8 @@ public class Hooks {
 		createACC.confirms_details();
 		// Then Validate that new account is created
 		createACC.validate_that_new_account_is_created();
-	}
+    
+  }
 
 	@Before
 	public void setup() throws Exception {
@@ -69,6 +71,7 @@ public class Hooks {
 		LoginPage loginToPlatform = new LoginPage(ObjectHelper.driver);
 		loginToPlatform.navigateToHomePage();
 		loginToPlatform.logoutFromPlatform();
+
 
 	}
 
