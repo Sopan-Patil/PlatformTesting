@@ -11,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import platform.pageobjects.Authentication.LoginPage;
+import utils.CommonFunctions;
 
 /**
  * @Author : Chetan Sonparote
@@ -117,8 +118,11 @@ public class CreateAccountStep3 {
 
 	public void enterValidUserDetails() throws InterruptedException {
 		password = "pfqa_123";
-		passwordField.sendKeys(password);
-		log.info("Password :" + password);
+
+		if (CommonFunctions.waitForVisiblity(passwordField, waitTime)) {
+			passwordField.sendKeys(password);
+			log.info("Password :" + password);
+		}
 
 		firstNameKanjiField.sendKeys("名前");
 		lastNameKanjiField.sendKeys("名字");

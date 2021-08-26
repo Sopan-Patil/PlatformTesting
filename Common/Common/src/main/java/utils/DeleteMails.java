@@ -27,9 +27,10 @@ public class DeleteMails {
 	 */
 	private static Logger log = LogManager.getLogger(DeleteMails.class.getName());
 
-	public void deletemail(String emailsubject) {
+	public void deletemail( String emailsubject ) {
 		try {
 
+			// String emailsubject = null ;
 			Properties properties = new Properties();
 			FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\resources\\data.properties");
 			properties.load(fis);

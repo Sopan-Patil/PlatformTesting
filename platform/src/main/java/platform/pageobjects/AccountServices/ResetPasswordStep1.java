@@ -54,6 +54,14 @@ public class ResetPasswordStep1 {
 
 	public void clickSendConfirmationButton() {
 
+		/**
+		 * @Author : Chetan Sonparote
+		 * @Date : 26 Aug 2021
+		 * @Description: Deleting old mails before entering confirmation code
+		 */
+		// DeleteMails deleteOldMail = new DeleteMails();
+		// deleteOldMail.deletemail(ConfigProp.Stag_OTP_Email_Subject);
+
 		if (CommonFunctions.waitForVisiblity(sendConfirmationButton, waitTime)) {
 
 			sendConfirmationButton.click();

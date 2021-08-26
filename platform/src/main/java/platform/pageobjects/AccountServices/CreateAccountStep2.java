@@ -14,7 +14,6 @@ import org.openqa.selenium.support.PageFactory;
 
 import platform.pageobjects.Authentication.LoginPage;
 import utils.CommonFunctions;
-import utils.OTPNumberReader;
 
 /**
  * @Author : Chetan Sonparote
@@ -62,19 +61,28 @@ public class CreateAccountStep2 {
 
 	public void convertOTPToList() {
 
-		OTPNumberReader OTPNumberReader = new OTPNumberReader();
+		// OTPNumberReader OTPNumberReader = new OTPNumberReader();
 		@SuppressWarnings("static-access")
 		String otp = null; // OTPNumberReader.OTPNumberValue();
-		if (otp == null) {
-			otp = OTPNumberReader.OTPNumberValue();
-		}
+		// if (otp == null) {
+		// String otp = utils.OTPNumberReader.OTPNumberValue();
+		// }
 		// System.out.println("otp:" + otp);
 		OTPNumber = new ArrayList<Integer>();
-		Scanner scanner = new Scanner(otp);
+		Scanner scanner = null;
+		// if (otp == null) {
+		otp = utils.OTPNumberReader.OTPNumberValue();
+		// }
+		// else {
+		// convertOTPToList();
+		scanner = new Scanner(otp);
+		// }
 
 		while (scanner.hasNextInt()) {
 			OTPNumber.add(scanner.nextInt());
 		}
+
+		scanner.close();
 
 	}
 

@@ -17,28 +17,13 @@ import utils.ObjectHelper;
  *               success
  */
 
-//@RunWith(Cucumber.class)
-//@ExtendedCucumberOptions(jsonReport = "target/cucumber.json", overviewReport = true, outputFolder = "target")
 @CucumberOptions(monochrome = true, strict = true, dryRun = false, features = { ".//src//test//java//platformfeatures/"
 
 },
 
 		glue = { "platformstepdefinition" },
 
-		// tags = "@PF_CreateAccount_Return" ,
-
-		// tags = { "@PFAccountAndSecurity, @PFAccountAndSecurityCancel" },
-
-		// plugin = { "pretty", "html:target/cucumber_html_report",
-		// "json:target/cucumber.json",
-
-		// tags = "@Smoke",
-
-		// tags = "@PF_CreateAccount_StudyGear",
-
-		tags = "@Smoke",
-
-		// tags = "@ProductDetailsFilterValidation",
+		tags = "@PF_CreateAccount_StudyGear",
 
 		plugin = { "pretty", /* "html:target/cucumber_html_report", */ "json:target/cucumber.json",
 
