@@ -4,7 +4,7 @@ import testlink.api.java.client.TestLinkAPIClient;
 import testlink.api.java.client.TestLinkAPIException;
 
 public class TestLinkIntegration {
-	public static String TESTER_KEY = "98229e50859d2ae748f6ba05010e910e"; // Replace your TestLink API Key here
+	public static String TESTER_KEY = "b4a72637b4d539b8b65b466337e8eba7"; // Replace your TestLink API Key here
 	public static String TESTLINK_URL = "http://65.2.104.183/testlink/lib/api/xmlrpc/v1/xmlrpc.php"; // Replace your TestLink url
 	public static final String TEST_PROJECT_NAME = "PlatformTestingQA"; // Provide Project Name form TestLink
 	public static final String TEST_PLAN_NAME = "Platform Testing Test Plan"; // Provide Test Plan Name form TestLink
