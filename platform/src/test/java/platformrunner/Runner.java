@@ -25,11 +25,23 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
+		// tags = "@PF_CreateAccount_Return" ,
+
+		// tags = { "@PFAccountAndSecurity, @PFAccountAndSecurityCancel" },
+
+		// plugin = { "pretty", "html:target/cucumber_html_report",
+		// "json:target/cucumber.json",
+
+		// tags = "@Smoke",
+
+		// tags = "@PF_CreateAccount_StudyGear",
+
 		tags = "@Smoke",
 
 		// tags = "@ProductDetailsFilterValidation",
 
 		plugin = { "pretty", /* "html:target/cucumber_html_report", */ "json:target/cucumber.json",
+
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
 
 				"junit:target/cucumber_html_report/junit_platform.xml", "rerun:rerun/failed_scenarios.txt",
@@ -55,6 +67,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 	}
 
 	@AfterTest(alwaysRun = true)
+
 	public void closeBrowser() throws Exception {
 
 		ObjectHelper.driver.quit();
