@@ -36,7 +36,7 @@ import utils.ObjectHelper;
 
 		// tags = "@PF_CreateAccount_StudyGear",
 
-		tags = "@Smoke",
+		tags = "@PFProductRepurchase",
 
 		// tags = "@ProductDetailsFilterValidation",
 
