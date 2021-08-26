@@ -115,10 +115,10 @@ public class InvalidCC {
 		securitycodeTextbox.sendKeys(shipmentdata[4]);
 		log.info("entering security code to 'securitycode' textbox");
 
-		if (!CommonFunctions.waitForVisiblity(saveButton, waitTime)) {
+		if (CommonFunctions.waitForVisiblity(saveButton, waitTime)) {
 			saveButton.click();
 		}
-		CommonFunctions.isElementVisible(creditCardRegistrationFailedError);
+		CommonFunctions.waitForVisiblity(creditCardRegistrationFailedError, waitTime);
 		String invalidCreditCarderror = creditCardRegistrationFailedError.getText();
 		CommonFunctions.assertString(invalidCreditCarderror, shipmentdata[5]);
 		log.info("The invalid credit card is failed message match with expected message");

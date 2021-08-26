@@ -84,13 +84,6 @@ And logout
 @OrderPrimeWithValidCreditCard  @Smoke @Full
 Scenario: Validate prime with valid Credit Card and check on order history,service you are using and membership page
 
-Given User is on home page
-When User begins account creation
-And creates new credentials
-And enters confirmation code
-And enters valid details
-And confirms details
-Then Validate that new account is created
 Given Login To Platform with newly created user
 And Open MemberShip Plan Page from Top page
 And Apply MemberShip Plan from Top page
@@ -104,6 +97,7 @@ And Verify Service you are using page for prime transaction
 And Verify Membership status page for prime transaction
 And Verify learn button from Service you are using page
 And Add prime user credentials in test data excel
+And logout
 
 
 @OrderRefreshPageWithExistingCreditCard  @Full
