@@ -51,8 +51,9 @@ public class Hooks {
 	}
 
 	@Before
-	public void setup() throws Exception {
-
+	public void setup(Scenario scenario) throws Exception {
+		Listeners.scenarioName = scenario.getName();
+		System.out.println("scenario name:" + scenario.getName());
 		LoginPage loginToPlatform = new LoginPage(ObjectHelper.driver);
 		loginToPlatform.navigateToHomePage();
 		loginToPlatform.logoutFromPlatform();

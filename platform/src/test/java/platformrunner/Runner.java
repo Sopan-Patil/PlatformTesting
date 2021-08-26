@@ -25,7 +25,7 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
-		tags = "@PF_test",
+		tags = "@PF_testlink",
 
 		// tags = "@ProductDetailsFilterValidation",
 

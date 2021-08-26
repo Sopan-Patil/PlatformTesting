@@ -33,6 +33,7 @@ public class Listeners extends ExtentReporter implements ITestListener {
 
 	static String testName;
 	public static String testLinkResult;
+	public static String scenarioName;
 
 	@Override
 	public void onTestStart(ITestResult result) {
@@ -54,7 +55,8 @@ public class Listeners extends ExtentReporter implements ITestListener {
 		extentTest.get().log(Status.PASS, "Test Passed");
 		// testLinkResult = extentTest.get().log(Status.PASS, "Test Passed").toString();
 		try {
-			TestLinkIntegration.updateTestLinkResults("Login Test Case Title", null, TestLinkAPIResults.TEST_PASSED);
+			TestLinkIntegration.updateTestLinkResults(/* "Login Test Case Title" */scenarioName, null,
+					TestLinkAPIResults.TEST_PASSED);
 		} catch (TestLinkAPIException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -78,7 +80,7 @@ public class Listeners extends ExtentReporter implements ITestListener {
 		System.out.println("Test Link Result: " + testLinkResult);
 		// WebDriver driver = null;
 		try {
-			TestLinkIntegration.updateTestLinkResults("Login Test Case Title", testLinkResult,
+			TestLinkIntegration.updateTestLinkResults(/* "Login Test Case Title" */scenarioName, testLinkResult,
 					TestLinkAPIResults.TEST_FAILED);
 		} catch (TestLinkAPIException e) {
 			// TODO Auto-generated catch block

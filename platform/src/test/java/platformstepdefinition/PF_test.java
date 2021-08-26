@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 import base.NewBaseClass;
 import cucumber.api.junit.Cucumber;
@@ -24,7 +25,6 @@ public class PF_test extends NewBaseClass {
 
 	private static final Logger log = LogManager.getLogger(PF_test.class.getName());
 
-
 	@Then("^run test$")
 	public void run_test() throws Throwable {
 		// throw new PendingException();
@@ -37,7 +37,7 @@ public class PF_test extends NewBaseClass {
 		log.fatal("log message as fatal");
 		log.trace("log message as trace");
 		log.warn("log message as warn");
-
+		Assert.assertTrue(false);
 	}
 
 }
