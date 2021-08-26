@@ -385,7 +385,7 @@ public class Order {
 
 	// product list
 	@SuppressWarnings("unused")
-	public String[] select1stCasecProduct() throws Exception {
+	public String[] selectProductFromTestDataExcel() throws Exception {
 
 		CommonFunctions.waitForVisiblity(productListLink, waitTime);
 		productListLink.click();

@@ -1,10 +1,10 @@
 Feature: Validate order flow
 
-@OrderWithExistingCreditCard @Smoke @Full 
+@OrderWithExistingCreditCard @Smoke11 @Full 
 Scenario: Validate order with Existing valid Credit Card
 
 Given Login To Platform
-And Select 1st product from product list page
+And Select product from test data excel
 And Compare Product Data On Order Step 1 Page
 And Reglogin between Step 1 page to Step 2 page with exiting user
 And Compare Product Data On Order Step 2 Page
@@ -13,11 +13,11 @@ And Verify thank you page for credit card transaction
 And Verify thank you page data on order history page for credit card transaction
 And logout
 
-@OrderWithCreditCardValid @Smoke @Full
+@OrderWithCreditCardValid @Smoke11 @Full
 Scenario: Validate order with valid Credit Card
 
 Given Login To Platform
-And Select 1st product from product list page
+And Select product from test data excel
 And Compare Product Data On Order Step 1 Page
 And Reglogin between Step 1 page to Step 2 page with exiting user
 And Step 2 Payment With Valid Credit Card
@@ -27,31 +27,31 @@ And Verify thank you page data on order history page for credit card transaction
 And logout
 
 
-@OrderWithCreditCardInValid @Smoke @Full
+@OrderWithCreditCardInValid @Smoke11 @Full
 Scenario: Validate order with In valid Credit Card
 
 Given Login To Platform
-And Select 1st product from product list page
+And Select product from test data excel
 And Compare Product Data On Order Step 1 Page
 And Reglogin between Step 1 page to Step 2 page with exiting user
 And Step 2 Payment With InValid Credit Card
 And logout
 
-@OrderWithCreditCardBlankValid @Smoke @Full
+@OrderWithCreditCardBlankValid @Smoke11 @Full
 Scenario: Validate order with Blank valid Credit Card
 
 Given Login To Platform
-And Select 1st product from product list page
+And Select product from test data excel
 And Compare Product Data On Order Step 1 Page
 And Reglogin between Step 1 page to Step 2 page with exiting user
 And Step 2 Payment With Blank Credit Card
 And logout
 
-@OrderWithConvenienceStoreValid @Smoke @Full
+@OrderWithConvenienceStoreValid @Smoke11 @Full
 Scenario: Validate order with valid con store
 
 Given Login To Platform
-And Select 1st product from product list page
+And Select product from test data excel
 And Compare Product Data On Order Step 1 Page
 And Reglogin between Step 1 page to Step 2 page with exiting user
 And Step 2 Payment With Valid Convenience Store
@@ -60,28 +60,28 @@ And Verify thank you page for convenience store transaction
 And Verify thank you page data on order history page for convenience store transaction
 And logout
 
-@OrderWithConvenienceStoreInValid @Smoke @Full
+@OrderWithConvenienceStoreInValid @Smoke11 @Full
 Scenario: Validate order with invalid con store
 
 Given Login To Platform
-And Select 1st product from product list page
+And Select product from test data excel
 And Compare Product Data On Order Step 1 Page
 And Reglogin between Step 1 page to Step 2 page with exiting user
 And Step 2 Payment With InValid Convenience Store
 And logout
 
-@OrderWithConvenienceStoreBlank @Smoke @Full
+@OrderWithConvenienceStoreBlank @Smoke11 @Full
 Scenario: Validate order with Blank Con store
 
 Given Login To Platform
-And Select 1st product from product list page
+And Select product from test data excel
 And Compare Product Data On Order Step 1 Page
 And Reglogin between Step 1 page to Step 2 page with exiting user
 And Step 2 Payment With Blank Con Store
 And logout
 
 
-@OrderPrimeWithValidCreditCard  @Smoke @Full
+@OrderPrimeWithValidCreditCard  @Smoke11 @Full
 Scenario: Validate prime with valid Credit Card and check on order history,service you are using and membership page
 
 Given Login To Platform with newly created user
@@ -106,7 +106,7 @@ Scenario: Validate refresh page for order with Existing valid Credit Card
 Given Login To Platform
 And Open Product List Page
 And Refresh page
-And Select 1st product from product list page
+And Select product from test data excel
 And Verify Order Flow Step 1 Page Loaded Successfully
 And Refresh page
 And Compare Product Data On Order Step 1 Page
