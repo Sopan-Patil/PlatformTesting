@@ -162,9 +162,10 @@ public class LoginPage {
 
 		baseObj.replaceurl();
 
-		CommonFunctions.waitForVisiblity(logoutButton, waitTime);
-		logoutButton.click();
-		log.info("The user logout successfully");
+		if (CommonFunctions.waitForVisiblity(logoutButton, waitTime)) {
+			logoutButton.click();
+			log.info("The user logout successfully");
+		}
 
 	}
 
