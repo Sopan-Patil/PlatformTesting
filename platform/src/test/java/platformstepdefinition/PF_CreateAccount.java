@@ -173,4 +173,56 @@ public class PF_CreateAccount extends NewBaseClass {
 
 	}
 
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 13 Aug 2021
+	 * @Description: step def for return button
+	 */
+
+	@Then("^Validate redirection to previous page$")
+	public void validate_redirection_to_previous_page() throws Throwable {
+		// throw new PendingException();
+		CreateAccountStep3 createAccountStep3 = new CreateAccountStep3(driver);
+		Assert.assertTrue(CommonFunctions.isElementVisible(createAccountStep3.passwordField));
+
+	}
+
+	@And("^clicks return button on step 4$")
+	public void clicks_return_button_on_step_4() throws Throwable {
+		// throw new PendingException();
+		CreateAccountStep4 createAccountStep4 = new CreateAccountStep4(driver);
+		createAccountStep4.clickReturnButton();
+	}
+
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 24 Aug 2021
+	 * @Description: step def for study gear button
+	 */
+
+	@Then("^Validate that user is redirected to study gear page$")
+	public void validate_that_user_is_redirected_to_study_gear_page() throws Throwable {
+		// throw new PendingException();
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.loginWithNewUser();
+
+		Assert.assertTrue(loginPage.logoutButton.isDisplayed());
+		if (CommonFunctions.isElementVisible(loginPage.logoutButton)) {
+
+			log.info("New User can start using study gear");
+			loginPage.logoutButton.click();
+		}
+	}
+
+	@And("^clicks start study gear button$")
+	public void clicks_start_study_gear_button() throws Throwable {
+		// throw new PendingException();
+		CreateAccountStep5 createAccountStep5 = new CreateAccountStep5(driver);
+		// CreateAccountStep5 createAccountStep5 = new CreateAccountStep5(driver);
+		createAccountStep5.getCreatedAccountDetails();
+		createAccountStep5.writeCredentialsToExcel();
+		createAccountStep5.clickStartServiceButton();
+
+	}
+
 }
