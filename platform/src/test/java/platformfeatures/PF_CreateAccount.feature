@@ -22,7 +22,7 @@ And enters confirmation code
 Then Validate that new code is accepted
 
 @PF_CreateAccount_InvalidCode
-Scenario: Resend verification code
+Scenario: Resend verification invalid code
 Given User is on home page
 When User begins account creation
 And creates new credentials

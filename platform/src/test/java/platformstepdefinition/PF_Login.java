@@ -111,7 +111,7 @@ public class PF_Login extends NewBaseClass {
 
 		NewBaseClass newBaseClass = new NewBaseClass();
 
-		newBaseClass.validateMessageFromExcel("InvalidUserNameError", "//p[@class='alert__des']");
+		newBaseClass.validateMessage("Login", "InvalidUserNameError");
 
 	}
 
@@ -128,7 +128,7 @@ public class PF_Login extends NewBaseClass {
 
 		NewBaseClass newBaseClass = new NewBaseClass();
 
-		newBaseClass.validateMessageFromExcel("InvalidPasswordError", "//p[@class='alert__des']");
+		newBaseClass.validateMessage("Login", "InvalidPasswordError");
 
 	}
 
@@ -144,7 +144,7 @@ public class PF_Login extends NewBaseClass {
 
 		NewBaseClass newBaseClass = new NewBaseClass();
 
-		newBaseClass.validateMessageFromExcel("InvalidDetailsError", "//p[@class='alert__des']");
+		newBaseClass.validateMessage("Login", "InvalidDetailsError");
 
 	}
 
@@ -153,5 +153,29 @@ public class PF_Login extends NewBaseClass {
 
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.setInvalidUserData("both");
+	}
+
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 20 Aug 2021
+	 * @Description: Added step def for login with prime user
+	 */
+
+	@And("^Login To Platform with prime user$")
+	public void login_to_platform_with_prime_user() throws Throwable {
+		// throw new PendingException();
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.loginWithPrimeUser();
+	}
+
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 23 Aug 2021
+	 * @Description: Added step def to logout user for new test
+	 */
+
+	@And("^Logout if already logged in$")
+	public void logout_if_already_logged_in() throws Throwable {
+		// throw new PendingException();
 	}
 }

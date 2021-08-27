@@ -52,6 +52,7 @@ public class CommonFunctions {
 		boolean result = false;
 		try {
 			ObjectHelper.driver.switchTo().activeElement();
+			
 
 			WebDriverWait wait = new WebDriverWait(ObjectHelper.driver, waitTime);
 
@@ -302,5 +303,19 @@ public class CommonFunctions {
 		
 	}
 	
+	/**
+	 * @Author : Chetan Sonparote
+	 * @Date : 18 Aug 2021
+	 * @Description: Method to scroll bottom of web page
+	 */
+	
+	public static void scrollToPageBottom() {
+		// TODO Auto-generated method stub
+		((JavascriptExecutor) ObjectHelper.driver)
+	    .executeScript("window.scrollTo(0, document.body.scrollHeight)");
 
+		
+	}
+	
+	
 }
