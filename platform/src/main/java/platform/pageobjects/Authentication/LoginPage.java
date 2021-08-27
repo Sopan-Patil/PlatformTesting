@@ -164,9 +164,10 @@ public class LoginPage {
 
 		if (CommonFunctions.waitForVisiblity(logoutButton, waitTime)) {
 			logoutButton.click();
+
+			log.info("The user logout successfully");
 		}
 
-		log.info("The user logout successfully");
 
 	}
 
@@ -318,6 +319,47 @@ public class LoginPage {
 //		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
 //			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
 //		}
+
+	}
+
+	public void loginWithPrimeUser() throws Exception {
+
+		ExcelUtil excelUtil = new ExcelUtil();
+		excelUtil.setExcelFile("NewTestData.xlsx", "PrimeUser");
+		String email = excelUtil.getCellData("Email", 1);
+		String password = excelUtil.getCellData("Password", 1);
+
+		log.info("New Prime User Email : " + email);
+		log.info("New Prime User password : " + password);
+
+		if (CommonFunctions.waitForVisiblity(logInButton, waitTime)) {
+			logInButton.click();
+			log.info("Login button is clicked");
+
+		}
+
+		if (CommonFunctions.waitForVisiblity(emailtextfield, waitTime)) {
+			emailtextfield.click();
+			emailtextfield.sendKeys(email);
+
+		}
+
+		if (CommonFunctions.waitForVisiblity(passwordTextField, waitTime)) {
+
+			// passwordTextField.sendKeys("Test-123");
+			passwordTextField.click();
+
+			passwordTextField.sendKeys(password);
+			// System.out.println(passwordTextField.getText());
+		}
+
+		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
+			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
+		}
+
+		if (CommonFunctions.waitForVisiblity(SubmitButton, waitTime)) {
+			CommonFunctions.clickUsingJavaExecutor(SubmitButton);
+		}
 
 	}
 

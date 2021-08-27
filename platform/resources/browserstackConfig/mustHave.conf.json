@@ -4,7 +4,8 @@
 		"build": "browserstack_build_must_have",
 		"name": "must_have_test",
 		"browserstack.debug": true,
-		"browserstack.networkLogs": true
+		"browserstack.networkLogs": true,
+		"browserstack.local": "false"
 	},
 	"environments": {
 		"env1": {
@@ -23,14 +24,16 @@
 		"env3": {
 			"os_version": "11.0",
 			"device": "Samsung Galaxy S21",
-			"real_mobile": "true",
-			"browserstack.local": "false"
+			"browser": "chrome",
+			"browser_version": "latest"
+			
 		},
 		"env4": {
 			"os_version": "10.0",
 			"device": "Samsung Galaxy Tab S7",
-			"real_mobile": "true",
-			"browserstack.local": "false"
+			"browser": "chrome",
+			"browser_version": "latest"
+		
 		}
 
 

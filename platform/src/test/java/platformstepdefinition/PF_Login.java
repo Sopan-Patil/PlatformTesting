@@ -63,6 +63,13 @@ public class PF_Login extends NewBaseClass {
 		loginToPlatform.loginWithNewUser();
 	}
 
+	@And("^Login To Platform with Prime user$")
+	public void login_to_platform_with_Prime_user() throws Throwable {
+		LoginPage loginToPlatform = new LoginPage(driver);
+
+		loginToPlatform.loginWithPrimeUser();
+	}
+
 	/**
 	 * @Author : rahul shinde
 	 * @Date : 02 Aug 2021

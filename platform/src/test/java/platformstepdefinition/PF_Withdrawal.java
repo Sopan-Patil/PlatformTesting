@@ -9,6 +9,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import platform.pageobjects.Authentication.LoginPage;
 import platform.pageobjects.Withdrawal.Withdrawal;
+import platform.pageobjects.Withdrawal.Withdrawal_PT_111;
 import utils.ObjectHelper;
 
 /**
@@ -45,6 +46,13 @@ public class PF_Withdrawal extends NewBaseClass {
 	public void check_Back_button_on_Withdrawal_Page() throws Throwable {
 		Withdrawal withdraw = new Withdrawal(driver);
 		withdraw.checkWithdrawPageButtons();
+
+	}
+
+	@Then("^Check Top button on Withdrawal Page$")
+	public void check_Top_button_on_Withdrawal_Page() throws Throwable {
+		Withdrawal_PT_111 withdrawal = new Withdrawal_PT_111(driver);
+		withdrawal.checkWithdrawtopPageButtons();
 
 	}
 

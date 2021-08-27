@@ -25,22 +25,15 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
-		tags = "@PF_Localization_NoLogin",
 
-		// tags = "@PF_CreateAccount",
 
-		// tags = { "@OrderWithExistingCreditCard" },
-		// tags = "@OrderWithExistingCreditCard",
 
-		// tags = { "@PFAccountAndSecurity, @PFAccountAndSecurityCancel" },
+		// tags = "@PF_CreateAccount_StudyGear",
 
-		// tags = { "@OrderWithConvenienceStoreInValid" },
-
-		// tags = { "@PF_test" },
-
-		// tags = { "@PF_test" },
+		tags = "@Smoke",
 
 		plugin = { "pretty", /* "html:target/cucumber_html_report", */ "json:target/cucumber.json",
+
 				"pretty:target/cucumber-pretty.txt", "usage:target/cucumber-usage.json",
 
 				"junit:target/cucumber_html_report/junit_platform.xml", "rerun:rerun/failed_scenarios.txt",
