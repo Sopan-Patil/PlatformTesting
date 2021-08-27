@@ -1,6 +1,6 @@
 Feature: To check Header Links
 
-@HeaderValidation
+@HeaderValidation @Full @Smoke
 Scenario: Validate Header Links
 
 When User hovers on header Links
