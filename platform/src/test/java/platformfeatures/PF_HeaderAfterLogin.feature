@@ -1,6 +1,6 @@
 Feature: To check Header Links After Login
 
-@HeaderValidationAfterLogin
+@HeaderValidationAfterLogin @Full @Smoke
 
 Scenario: Validate Header Links After Login
 
