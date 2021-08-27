@@ -37,6 +37,5 @@ public class PF_Membership extends NewBaseClass {
 	public void Checks_the_link_validation_on_member_plan_page_() throws Throwable {
 		Membership membershipobj = new Membership(driver);
 		membershipobj.introduceMembershipPlan();
-
 	}
 }
