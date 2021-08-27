@@ -32,11 +32,11 @@ import utils.ObjectHelper;
 		// plugin = { "pretty", "html:target/cucumber_html_report",
 		// "json:target/cucumber.json",
 
-		// tags = "@Smoke",
+		tags = "@Smoke",
 
 		// tags = "@PF_CreateAccount_StudyGear",
 
-		tags = "@Smoke",
+		// tags = "@APF_Login_InvalidUser",
 
 		// tags = "@ProductDetailsFilterValidation",
 

@@ -43,7 +43,7 @@ public class PF_Password extends NewBaseClass {
 	public void validate_that_forgot_password_page_is_visible() throws Throwable {
 
 		NewBaseClass newBaseClass = new NewBaseClass();
-		newBaseClass.validateMessageFromExcel("ForgotPasswordPageMessage2", "//p[@class='ep-reset-pass__desc']");
+		newBaseClass.validateMessage("Reset password", "ForgotPasswordPageMessage2");
 
 	}
 
