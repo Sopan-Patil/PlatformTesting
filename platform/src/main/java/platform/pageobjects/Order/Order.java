@@ -724,7 +724,7 @@ public class Order {
 
 		NewBaseClass base = new NewBaseClass();
 		base.replaceurl();
-
+		Thread.sleep(2000);
 		CommonFunctions.waitForVisiblity(emailtextfield, waitTime);
 		log.info("go to relogin page");
 		LoginPage loginObj = new LoginPage(driver);
@@ -738,6 +738,7 @@ public class Order {
 
 		String productNameFromProductListPageSTR = productNameFromProductListPage;
 		String productPriceFromProductListPageSTR = productPriceFromProductListPage;
+		// Thread.sleep(2000);
 
 		CommonFunctions.waitForVisiblity(step2And3ProductNameLabel, waitTime);
 		String step1And2And3ProductNameLabelString = step2And3ProductNameLabel.getText().trim();
@@ -825,7 +826,7 @@ public class Order {
 
 		String productNameSTR = primeName;
 		String productPriceSTR = primePrice;
-
+		// Thread.sleep(2000);
 		CommonFunctions.waitForVisiblity(step2And3ProductNameLabel, waitTime);
 		String step1And2And3ProductNameLabelString = step2And3ProductNameLabel.getText().trim();
 		CommonFunctions.assertString(step1And2And3ProductNameLabelString, productNameSTR);
@@ -1068,7 +1069,7 @@ public class Order {
 
 		String productNameFromProductListPageSTR = productNameFromProductListPage;
 		String productPriceFromProductListPageSTR = productPriceFromProductListPage;
-
+		// Thread.sleep(2000);
 		CommonFunctions.waitForVisiblity(step2And3ProductNameLabel, waitTime);
 		String step1And2And3ProductNameLabelString = step2And3ProductNameLabel.getText().trim();
 		CommonFunctions.assertString(step1And2And3ProductNameLabelString, productNameFromProductListPageSTR);
@@ -1153,7 +1154,7 @@ public class Order {
 
 		String productNameSTR = primeName;
 		String productPriceSTR = primePrice;
-
+		// Thread.sleep(2000);
 		CommonFunctions.waitForVisiblity(step2And3ProductNameLabel, waitTime);
 		String step1And2And3ProductNameLabelString = step2And3ProductNameLabel.getText().trim();
 		CommonFunctions.assertString(step1And2And3ProductNameLabelString, productNameSTR);
