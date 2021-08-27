@@ -4,9 +4,9 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import base.NewBaseClass;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.When;
 import cucumber.api.junit.Cucumber;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.When;
 import platform.pageobjects.Authentication.LoginPage;
 import platform.pageobjects.MyPage.Membership;
 import utils.ObjectHelper;
@@ -37,6 +37,5 @@ public class PF_Membership extends NewBaseClass {
 	public void Checks_the_link_validation_on_member_plan_page_() throws Throwable {
 		Membership membershipobj = new Membership(driver);
 		membershipobj.introduceMembershipPlan();
-
 	}
 }
