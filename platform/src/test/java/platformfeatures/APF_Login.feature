@@ -24,7 +24,7 @@ Then Validate that error is displayed for invalid password
 And logout
 
 @APF_Login_InvalidDetails @Smoke
-Scenario: Login with invalid password
+Scenario: Login with invalid details
 Given User is on home page
 When User clicks login button
 And User enters invalid details
