@@ -8,7 +8,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 
 import platform.pageobjects.Authentication.LoginPage;
 import utils.CommonFunctions;
@@ -84,12 +83,12 @@ public class CreateAccountStep1 {
 
 	}
 
-	public void validateErrorMessage(WebElement element, String expectedString) {
-
-		String actualString = element.getText();
-
-		Assert.assertTrue(actualString.contains(expectedString));
-
-	}
+//	public void validateErrorMessage(WebElement element, String expectedString) {
+//
+//		String actualString = element.getText();
+//
+//		Assert.assertTrue(actualString.contains(expectedString));
+//
+//	}
 
 }

@@ -28,9 +28,15 @@ import utils.ObjectHelper;
 
 
 
-		// tags = "@PF_CreateAccount_StudyGear",
+		// plugin = { "pretty", "html:target/cucumber_html_report",
+		// "json:target/cucumber.json",
 
 		tags = "@Smoke",
+
+
+		// tags = "@PF_CreateAccount_StudyGear",
+
+		// tags = "@APF_Login_InvalidUser",
 
 		plugin = { "pretty", /* "html:target/cucumber_html_report", */ "json:target/cucumber.json",
 

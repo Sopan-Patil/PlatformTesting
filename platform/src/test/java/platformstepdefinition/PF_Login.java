@@ -111,7 +111,7 @@ public class PF_Login extends NewBaseClass {
 
 		NewBaseClass newBaseClass = new NewBaseClass();
 
-		newBaseClass.validateMessageFromExcel("InvalidUserNameError", "//p[@class='alert__des']");
+		newBaseClass.validateMessage("Login", "InvalidUserNameError");
 
 	}
 
@@ -128,7 +128,7 @@ public class PF_Login extends NewBaseClass {
 
 		NewBaseClass newBaseClass = new NewBaseClass();
 
-		newBaseClass.validateMessageFromExcel("InvalidPasswordError", "//p[@class='alert__des']");
+		newBaseClass.validateMessage("Login", "InvalidPasswordError");
 
 	}
 
@@ -144,7 +144,7 @@ public class PF_Login extends NewBaseClass {
 
 		NewBaseClass newBaseClass = new NewBaseClass();
 
-		newBaseClass.validateMessageFromExcel("InvalidDetailsError", "//p[@class='alert__des']");
+		newBaseClass.validateMessage("Login", "InvalidDetailsError");
 
 	}
 
