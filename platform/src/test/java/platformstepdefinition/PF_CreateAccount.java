@@ -1,7 +1,5 @@
 package platformstepdefinition;
 
-import java.util.ArrayList;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
@@ -22,7 +20,6 @@ import platform.pageobjects.AccountServices.CreateAccountStep5;
 import platform.pageobjects.Authentication.LoginPage;
 import utils.CommonFunctions;
 import utils.ObjectHelper;
-import utils.XLHandler;
 
 /**
  * @Author : Chetan Sonparote
@@ -130,7 +127,7 @@ public class PF_CreateAccount extends NewBaseClass {
 		createAccountStep2.clickResendCodeLink();
 
 		NewBaseClass newBaseClass = new NewBaseClass();
-		newBaseClass.validateMessageFromExcel("ResendCodeMessage", "//div[@class='alert__title']");
+		newBaseClass.validateMessage("Create Account", "ResendCodeMessage");
 
 	}
 
@@ -138,7 +135,7 @@ public class PF_CreateAccount extends NewBaseClass {
 	public void validate_that_error_is_displayed_for_invalid_code() throws Throwable {
 
 		NewBaseClass newBaseClass = new NewBaseClass();
-		newBaseClass.validateMessageFromExcel("InvalidCodeError", "//p[@class='alert__des']");
+		newBaseClass.validateMessage("Create Account", "InvalidCodeError");
 
 	}
 
@@ -155,13 +152,16 @@ public class PF_CreateAccount extends NewBaseClass {
 	public void validate_error_message_is_displayed() throws Throwable {
 		// throw new PendingException();
 
-		CreateAccountStep1 createAccountStep1 = new CreateAccountStep1(driver);
-		ArrayList<String> value = new ArrayList<String>();
-		value = XLHandler.readexcel("NewTestData.xlsx", "ValidationStrings", "Label", "InvalidEmailErrorMessage");
-		log.info("value :" + value);
-		String expectedString = value.get(0).trim();
-		log.info("expectedString :" + expectedString);
-		createAccountStep1.validateErrorMessage(createAccountStep1.errorMessageText, expectedString);
+//		CreateAccountStep1 createAccountStep1 = new CreateAccountStep1(driver);
+//		ArrayList<String> value = new ArrayList<String>();
+//		value = XLHandler.readexcel("NewTestData.xlsx", "ValidationStrings", "Label", "InvalidEmailErrorMessage");
+//		log.info("value :" + value);
+//		String expectedString = value.get(0).trim();
+//		log.info("expectedString :" + expectedString);
+//		createAccountStep1.validateErrorMessage(createAccountStep1.errorMessageText, expectedString);
+
+		NewBaseClass newBaseClass = new NewBaseClass();
+		newBaseClass.validateMessage("Create Account", "InvalidEmailErrorMessage");
 	}
 
 	@And("^User enters invalid email$")

@@ -25,20 +25,18 @@ import utils.ObjectHelper;
 
 		glue = { "platformstepdefinition" },
 
-		// tags = "@PF_CreateAccount_Return" ,
 
-		// tags = { "@PFAccountAndSecurity, @PFAccountAndSecurityCancel" },
+
 
 		// plugin = { "pretty", "html:target/cucumber_html_report",
 		// "json:target/cucumber.json",
 
-		// tags = "@Smoke",
+		tags = "@Smoke",
+
 
 		// tags = "@PF_CreateAccount_StudyGear",
 
-		tags = "@Smoke",
-
-		// tags = "@ProductDetailsFilterValidation",
+		// tags = "@APF_Login_InvalidUser",
 
 		plugin = { "pretty", /* "html:target/cucumber_html_report", */ "json:target/cucumber.json",
 
