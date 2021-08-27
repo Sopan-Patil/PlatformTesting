@@ -2,7 +2,6 @@ package platformrunner;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import base.NewBaseClass;
@@ -36,7 +35,7 @@ import utils.ObjectHelper;
 
 		// tags = "@PF_CreateAccount_StudyGear",
 
-		tags = "@Smoke",
+		tags = "@APF_Login_InvalidUser",
 
 		// tags = "@ProductDetailsFilterValidation",
 
@@ -66,7 +65,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 
 	}
 
-	@AfterTest(alwaysRun = true)
+	// @AfterTest(alwaysRun = true)
 
 	public void closeBrowser() throws Exception {
 
