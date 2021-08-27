@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="8" ignored="0" total="24" passed="16">
+<testng-results skipped="0" failed="9" ignored="0" total="31" passed="22">
   <reporter-output>
   </reporter-output>
-  <suite name="LocalSingleBrowser" duration-ms="1107616" started-at="2021-08-18T18:26:17 IST" finished-at="2021-08-18T18:44:45 IST">
+  <suite name="LocalSingleBrowser" duration-ms="2779417" started-at="2021-08-27T15:22:54 IST" finished-at="2021-08-27T16:09:13 IST">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="SingleBrowserTest" duration-ms="1107616" started-at="2021-08-18T18:26:17 IST" finished-at="2021-08-18T18:44:45 IST">
+    <test name="SingleBrowserTest" duration-ms="2779417" started-at="2021-08-27T15:22:54 IST" finished-at="2021-08-27T16:09:13 IST">
       <class name="platformrunner.Runner">
-        <test-method status="PASS" signature="setUpBrowser(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:platformrunner.Runner@16fdec90]" name="setUpBrowser" is-config="true" duration-ms="30346" started-at="2021-08-18T18:26:17 IST" finished-at="2021-08-18T18:26:48 IST">
+        <test-method status="PASS" signature="setUpBrowser(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:platformrunner.Runner@16fdec90]" name="setUpBrowser" is-config="true" duration-ms="17518" started-at="2021-08-27T15:22:54 IST" finished-at="2021-08-27T15:23:11 IST">
           <params>
             <param index="0">
               <value>
@@ -32,11 +32,123 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBrowser -->
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:platformrunner.Runner@16fdec90]" name="setUpClass" is-config="true" duration-ms="611" started-at="2021-08-18T18:26:48 IST" finished-at="2021-08-18T18:26:48 IST">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:platformrunner.Runner@16fdec90]" name="setUpClass" is-config="true" duration-ms="767" started-at="2021-08-27T15:23:11 IST" finished-at="2021-08-27T15:23:12 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="44649" started-at="2021-08-18T18:26:48 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:27:33 IST">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="27513" started-at="2021-08-27T15:23:12 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:23:40 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate new login features"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Validate new login]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="16634" started-at="2021-08-27T15:23:40 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:23:56 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Login with invalid user name"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Validate new login]"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at org.testng.Assert.assertTrue(Assert.java:55)
+at base.NewBaseClass.validateMessageFromExcel(NewBaseClass.java:416)
+at platformstepdefinition.PF_Login.validate_that_error_is_displayed_for_invalid_user_name(PF_Login.java:114)
+at ✽.Validate that error is displayed for invalid user name(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/APF_Login.feature:15)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="15564" started-at="2021-08-27T15:23:57 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:24:12 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Login with invalid password"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Validate new login]"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at org.testng.Assert.assertTrue(Assert.java:55)
+at base.NewBaseClass.validateMessageFromExcel(NewBaseClass.java:416)
+at platformstepdefinition.PF_Login.validate_that_error_is_displayed_for_invalid_password(PF_Login.java:131)
+at ✽.Validate that error is displayed for invalid password(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/APF_Login.feature:23)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="15840" started-at="2021-08-27T15:24:12 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:24:28 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Login with invalid password"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Validate new login]"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at org.testng.Assert.assertTrue(Assert.java:55)
+at base.NewBaseClass.validateMessageFromExcel(NewBaseClass.java:416)
+at platformstepdefinition.PF_Login.validate_that_error_is_displayed_for_invalid_details(PF_Login.java:147)
+at ✽.Validate that error is displayed for invalid details(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/APF_Login.feature:31)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="60702" started-at="2021-08-27T15:24:28 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:25:29 IST">
           <params>
             <param index="0">
               <value>
@@ -52,7 +164,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="26810" started-at="2021-08-18T18:27:33 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:28:00 IST">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="36227" started-at="2021-08-27T15:25:29 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:26:05 IST">
           <params>
             <param index="0">
               <value>
@@ -68,7 +180,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="29458" started-at="2021-08-18T18:28:00 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:28:29 IST">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="36132" started-at="2021-08-27T15:26:05 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:26:41 IST">
           <params>
             <param index="0">
               <value>
@@ -84,7 +196,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="27207" started-at="2021-08-18T18:28:29 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:28:56 IST">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="44395" started-at="2021-08-27T15:26:41 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:27:26 IST">
           <params>
             <param index="0">
               <value>
@@ -100,7 +212,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="89695" started-at="2021-08-18T18:28:56 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:30:26 IST">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="164117" started-at="2021-08-27T15:27:26 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:30:10 IST">
           <params>
             <param index="0">
               <value>
@@ -116,7 +228,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="89870" started-at="2021-08-18T18:30:26 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:31:56 IST">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="120782" started-at="2021-08-27T15:30:10 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:32:11 IST">
           <params>
             <param index="0">
               <value>
@@ -132,7 +244,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="28722" started-at="2021-08-18T18:31:56 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:32:25 IST">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="39721" started-at="2021-08-27T15:32:11 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:32:50 IST">
           <params>
             <param index="0">
               <value>
@@ -148,7 +260,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="24931" started-at="2021-08-18T18:32:25 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:32:50 IST">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="39763" started-at="2021-08-27T15:32:50 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:33:30 IST">
           <params>
             <param index="0">
               <value>
@@ -164,7 +276,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="46996" started-at="2021-08-18T18:32:50 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:33:37 IST">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="62744" started-at="2021-08-27T15:33:30 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:34:33 IST">
           <params>
             <param index="0">
               <value>
@@ -180,7 +292,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="88400" started-at="2021-08-18T18:33:37 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:35:05 IST">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="123983" started-at="2021-08-27T15:34:33 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:36:37 IST">
           <params>
             <param index="0">
               <value>
@@ -196,7 +308,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="73511" started-at="2021-08-18T18:35:05 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:36:18 IST">
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="67483" started-at="2021-08-27T15:36:37 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:37:44 IST">
           <params>
             <param index="0">
               <value>
@@ -212,26 +324,26 @@
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='cardno']"}
-  (Session info: chrome=92.0.4515.131)
+  (Session info: chrome=92.0.4515.159)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.7', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
+System info: host: 'DESKTOP-UN79FSK', ip: '11.11.0.33', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
 *** Element info: {Using=xpath, value=//input[@id='cardno']}]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='cardno']"}
-  (Session info: chrome=92.0.4515.131)
+  (Session info: chrome=92.0.4515.159)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.7', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
+System info: host: 'DESKTOP-UN79FSK', ip: '11.11.0.33', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
 *** Element info: {Using=xpath, value=//input[@id='cardno']}
-at sun.reflect.GeneratedConstructorAccessor73.newInstance(Unknown Source)
+at sun.reflect.GeneratedConstructorAccessor47.newInstance(Unknown Source)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
 at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
@@ -246,7 +358,7 @@ at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy45.sendKeys(Unknown Source)
+at com.sun.proxy.$Proxy46.sendKeys(Unknown Source)
 at platform.pageobjects.MyPage.InvalidCC.InValidCreditcard(InvalidCC.java:91)
 at platformstepdefinition.PF_InvalidCC.Enters_credit_card_details(PF_InvalidCC.java:50)
 at ✽.Enters invalid credit card details(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_InvalidCC.feature:10)
@@ -256,7 +368,67 @@ at ✽.Enters invalid credit card details(file:///D:/Sopan/Project/Automation/Pl
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="38376" started-at="2021-08-18T18:36:19 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:36:57 IST">
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="32825" started-at="2021-08-27T15:37:45 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:38:17 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate Membership Status information"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Validate Membership Status information]"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//p[@class='ep-box-member__title']"}
+  (Session info: chrome=92.0.4515.159)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'DESKTOP-UN79FSK', ip: '11.11.0.33', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
+*** Element info: {Using=xpath, value=//p[@class='ep-box-member__title']}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//p[@class='ep-box-member__title']"}
+  (Session info: chrome=92.0.4515.159)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'DESKTOP-UN79FSK', ip: '11.11.0.33', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
+*** Element info: {Using=xpath, value=//p[@class='ep-box-member__title']}
+at sun.reflect.GeneratedConstructorAccessor47.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:458)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy46.isDisplayed(Unknown Source)
+at platform.pageobjects.MyPage.MembershipStatus.CheckMemberShipStatus(MembershipStatus.java:95)
+at platformstepdefinition.PF_MembershipStatus.Click_on_Membership_Status(PF_MembershipStatus.java:25)
+at ✽.Click on Membership Status(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_MemberShipStatus.feature:8)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="105163" started-at="2021-08-27T15:38:18 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:40:03 IST">
           <params>
             <param index="0">
               <value>
@@ -272,23 +444,7 @@ at ✽.Enters invalid credit card details(file:///D:/Sopan/Project/Automation/Pl
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="15317" started-at="2021-08-18T18:36:57 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:37:12 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Validate Membership Status information"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Validate Membership Status information]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="16579" started-at="2021-08-18T18:37:12 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:37:29 IST">
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="53466" started-at="2021-08-27T15:40:03 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:40:56 IST">
           <params>
             <param index="0">
               <value>
@@ -301,10 +457,54 @@ at ✽.Enters invalid credit card details(file:///D:/Sopan/Project/Automation/Pl
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//p[@class='ep-box-member__title']"}
+  (Session info: chrome=92.0.4515.159)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'DESKTOP-UN79FSK', ip: '11.11.0.33', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
+*** Element info: {Using=xpath, value=//p[@class='ep-box-member__title']}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//p[@class='ep-box-member__title']"}
+  (Session info: chrome=92.0.4515.159)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'DESKTOP-UN79FSK', ip: '11.11.0.33', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
+*** Element info: {Using=xpath, value=//p[@class='ep-box-member__title']}
+at sun.reflect.GeneratedConstructorAccessor47.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:458)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy46.isDisplayed(Unknown Source)
+at platform.pageobjects.MyPage.MembershipStatus.CheckMemberShipStatus(MembershipStatus.java:95)
+at platformstepdefinition.PF_MembershipStatus.Click_on_Membership_Status(PF_MembershipStatus.java:25)
+at ✽.Click on Membership Status(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_MemberShipStatus.feature:22)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="105421" started-at="2021-08-18T18:37:29 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:39:14 IST">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="220764" started-at="2021-08-27T15:40:56 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:44:37 IST">
           <params>
             <param index="0">
               <value>
@@ -320,7 +520,7 @@ at ✽.Enters invalid credit card details(file:///D:/Sopan/Project/Automation/Pl
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="64548" started-at="2021-08-18T18:39:14 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:40:19 IST">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="173134" started-at="2021-08-27T15:44:37 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:47:30 IST">
           <params>
             <param index="0">
               <value>
@@ -333,53 +533,10 @@ at ✽.Enters invalid credit card details(file:///D:/Sopan/Project/Automation/Pl
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.StaleElementReferenceException">
-            <message>
-              <![CDATA[stale element reference: element is not attached to the page document
-  (Session info: chrome=92.0.4515.131)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
-Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.7', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=92.0.4515.131)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
-Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.7', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)
-at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:160)
-at sun.reflect.GeneratedMethodAccessor7.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:483)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-at com.sun.proxy.$Proxy45.getText(Unknown Source)
-at platform.pageobjects.Order.Order.compareProductDataOnOrderStep3(Order.java:888)
-at platformstepdefinition.PF_Order.compare_product_data_on_order_step_3_page(PF_Order.java:74)
-at ✽.Compare Product Data On Order Step 3 Page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:24)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="23384" started-at="2021-08-18T18:40:19 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:40:43 IST">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="94550" started-at="2021-08-27T15:47:30 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:49:05 IST">
           <params>
             <param index="0">
               <value>
@@ -392,54 +549,10 @@ at ✽.Compare Product Data On Order Step 3 Page(file:///D:/Sopan/Project/Automa
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//a[@href='/product-list']"}
-  (Session info: chrome=92.0.4515.131)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.7', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-*** Element info: {Using=xpath, value=//a[@href='/product-list']}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@href='/product-list']"}
-  (Session info: chrome=92.0.4515.131)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.7', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-*** Element info: {Using=xpath, value=//a[@href='/product-list']}
-at sun.reflect.GeneratedConstructorAccessor73.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:458)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy45.click(Unknown Source)
-at platform.pageobjects.Order.Order.select1stCasecProduct(Order.java:357)
-at platformstepdefinition.PF_Order.select_1st_product_from_product_list_page(PF_Order.java:34)
-at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:34)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="23381" started-at="2021-08-18T18:40:43 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:41:06 IST">
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="348791" started-at="2021-08-27T15:49:05 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:54:54 IST">
           <params>
             <param index="0">
               <value>
@@ -452,29 +565,26 @@ at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automa
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//a[@href='/product-list']"}
-  (Session info: chrome=92.0.4515.131)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[timeout: Timed out receiving message from renderer: 300.000
+  (Session info: chrome=92.0.4515.159)
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.7', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
+System info: host: 'DESKTOP-UN79FSK', ip: '11.11.0.33', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-*** Element info: {Using=xpath, value=//a[@href='/product-list']}]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@href='/product-list']"}
-  (Session info: chrome=92.0.4515.131)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 300.000
+  (Session info: chrome=92.0.4515.159)
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.7', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
+System info: host: 'DESKTOP-UN79FSK', ip: '11.11.0.33', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-*** Element info: {Using=xpath, value=//a[@href='/product-list']}
-at sun.reflect.GeneratedConstructorAccessor73.newInstance(Unknown Source)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
 at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
@@ -483,23 +593,18 @@ at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCo
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:458)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy45.click(Unknown Source)
-at platform.pageobjects.Order.Order.select1stCasecProduct(Order.java:357)
-at platformstepdefinition.PF_Order.select_1st_product_from_product_list_page(PF_Order.java:34)
-at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:44)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+at platform.pageobjects.Order.Order.selectProductFromTestDataExcel(Order.java:449)
+at platformstepdefinition.PF_Order.select_product_from_test_data_excel(PF_Order.java:34)
+at ✽.Select product from test data excel(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:39)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="23377" started-at="2021-08-18T18:41:06 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:41:30 IST">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="121650" started-at="2021-08-27T15:54:54 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:56:55 IST">
           <params>
             <param index="0">
               <value>
@@ -512,54 +617,10 @@ at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automa
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//a[@href='/product-list']"}
-  (Session info: chrome=92.0.4515.131)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.7', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-*** Element info: {Using=xpath, value=//a[@href='/product-list']}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@href='/product-list']"}
-  (Session info: chrome=92.0.4515.131)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.7', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-*** Element info: {Using=xpath, value=//a[@href='/product-list']}
-at sun.reflect.GeneratedConstructorAccessor73.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:458)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy45.click(Unknown Source)
-at platform.pageobjects.Order.Order.select1stCasecProduct(Order.java:357)
-at platformstepdefinition.PF_Order.select_1st_product_from_product_list_page(PF_Order.java:34)
-at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:54)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="23332" started-at="2021-08-18T18:41:30 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:41:53 IST">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="92142" started-at="2021-08-27T15:56:55 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:58:28 IST">
           <params>
             <param index="0">
               <value>
@@ -572,54 +633,10 @@ at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automa
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//a[@href='/product-list']"}
-  (Session info: chrome=92.0.4515.131)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.7', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-*** Element info: {Using=xpath, value=//a[@href='/product-list']}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@href='/product-list']"}
-  (Session info: chrome=92.0.4515.131)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.7', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-*** Element info: {Using=xpath, value=//a[@href='/product-list']}
-at sun.reflect.GeneratedConstructorAccessor73.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:458)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy45.click(Unknown Source)
-at platform.pageobjects.Order.Order.select1stCasecProduct(Order.java:357)
-at platformstepdefinition.PF_Order.select_1st_product_from_product_list_page(PF_Order.java:34)
-at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:67)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="23193" started-at="2021-08-18T18:41:53 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:42:16 IST">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="82828" started-at="2021-08-27T15:58:28 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T15:59:50 IST">
           <params>
             <param index="0">
               <value>
@@ -632,29 +649,45 @@ at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automa
               </value>
             </param>
           </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="247259" started-at="2021-08-27T15:59:50 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T16:03:58 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate prime with valid Credit Card and check on order history,service you are using and membership page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Validate order flow]"]]>
+              </value>
+            </param>
+          </params>
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//a[@href='/product-list']"}
-  (Session info: chrome=92.0.4515.131)
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='box-order-confirm__des']//p[2]"}
+  (Session info: chrome=92.0.4515.159)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.7', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
+System info: host: 'DESKTOP-UN79FSK', ip: '11.11.0.33', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-*** Element info: {Using=xpath, value=//a[@href='/product-list']}]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
+*** Element info: {Using=xpath, value=//div[@class='box-order-confirm__des']//p[2]}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@href='/product-list']"}
-  (Session info: chrome=92.0.4515.131)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='box-order-confirm__des']//p[2]"}
+  (Session info: chrome=92.0.4515.159)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-UN79FSK', ip: '192.168.0.7', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
+System info: host: 'DESKTOP-UN79FSK', ip: '11.11.0.33', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-*** Element info: {Using=xpath, value=//a[@href='/product-list']}
-at sun.reflect.GeneratedConstructorAccessor73.newInstance(Unknown Source)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
+*** Element info: {Using=xpath, value=//div[@class='box-order-confirm__des']//p[2]}
+at sun.reflect.GeneratedConstructorAccessor47.newInstance(Unknown Source)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
 at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
@@ -669,21 +702,21 @@ at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy45.click(Unknown Source)
-at platform.pageobjects.Order.Order.select1stCasecProduct(Order.java:357)
-at platformstepdefinition.PF_Order.select_1st_product_from_product_list_page(PF_Order.java:34)
-at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:77)
+at com.sun.proxy.$Proxy46.getText(Unknown Source)
+at platform.pageobjects.Order.Order.comparePrimeDataOnOrderStep2(Order.java:964)
+at platformstepdefinition.PF_Order.compare_prime_data_on_order_step_2_page(PF_Order.java:69)
+at ✽.Compare Prime Data On Order Step 2 Page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:82)
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="39381" started-at="2021-08-18T18:42:17 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:42:56 IST">
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="71544" started-at="2021-08-27T16:03:58 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T16:05:09 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Validate prime with valid Credit Card and check on order history,service you are using and membership page"]]>
+                <![CDATA["Validate refresh page for order with Existing valid Credit Card"]]>
               </value>
             </param>
             <param index="1">
@@ -692,22 +725,70 @@ at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automa
               </value>
             </param>
           </params>
-          <exception class="java.lang.NullPointerException">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='box-order-confirm__des']//p[2]"}
+  (Session info: chrome=92.0.4515.159)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'DESKTOP-UN79FSK', ip: '11.11.0.33', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
+*** Element info: {Using=xpath, value=//div[@class='box-order-confirm__des']//p[2]}]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at java.io.StringReader.<init>(StringReader.java:50)
-at java.util.Scanner.<init>(Scanner.java:702)
-at platform.pageobjects.AccountServices.CreateAccountStep2.convertOTPToList(CreateAccountStep2.java:70)
-at platform.pageobjects.AccountServices.CreateAccountStep2.addConfirmationCode(CreateAccountStep2.java:79)
-at platformstepdefinition.PF_CreateAccount.enters_confirmation_code(PF_CreateAccount.java:107)
-at ✽.enters confirmation code(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:90)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='box-order-confirm__des']//p[2]"}
+  (Session info: chrome=92.0.4515.159)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'DESKTOP-UN79FSK', ip: '11.11.0.33', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
+*** Element info: {Using=xpath, value=//div[@class='box-order-confirm__des']//p[2]}
+at sun.reflect.GeneratedConstructorAccessor47.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:458)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy46.getText(Unknown Source)
+at platform.pageobjects.Order.Order.compareProductDataOnOrderStep2(Order.java:830)
+at platformstepdefinition.PF_Order.compare_product_data_on_order_step_2_page(PF_Order.java:64)
+at ✽.Compare Product Data On Order Step 2 Page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:104)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="66597" started-at="2021-08-18T18:42:56 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:44:03 IST">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="39964" started-at="2021-08-27T16:05:10 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T16:05:50 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate Product Filter feature for Free User"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Validate Product Filter feature]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="33942" started-at="2021-08-27T16:05:50 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T16:06:24 IST">
           <params>
             <param index="0">
               <value>
@@ -723,7 +804,23 @@ at ✽.enters confirmation code(file:///D:/Sopan/Project/Automation/PlatformTest
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="41111" started-at="2021-08-18T18:44:03 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T18:44:44 IST">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="55399" started-at="2021-08-27T16:06:24 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T16:07:19 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["User is clicking on Top button in Withdrawal Page."]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Withdraw user account]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:platformrunner.Runner@16fdec90]" name="runScenario" duration-ms="112063" started-at="2021-08-27T16:07:19 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-27T16:09:11 IST">
           <params>
             <param index="0">
               <value>
@@ -739,11 +836,11 @@ at ✽.enters confirmation code(file:///D:/Sopan/Project/Automation/PlatformTest
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:platformrunner.Runner@16fdec90]" name="tearDownClass" is-config="true" duration-ms="807" started-at="2021-08-18T18:44:44 IST" finished-at="2021-08-18T18:44:45 IST">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:platformrunner.Runner@16fdec90]" name="tearDownClass" is-config="true" duration-ms="1145" started-at="2021-08-27T16:09:11 IST" finished-at="2021-08-27T16:09:12 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:platformrunner.Runner@16fdec90]" name="closeBrowser" is-config="true" duration-ms="1" started-at="2021-08-18T18:44:45 IST" finished-at="2021-08-18T18:44:45 IST">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:platformrunner.Runner@16fdec90]" name="closeBrowser" is-config="true" duration-ms="1060" started-at="2021-08-27T16:09:12 IST" finished-at="2021-08-27T16:09:13 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

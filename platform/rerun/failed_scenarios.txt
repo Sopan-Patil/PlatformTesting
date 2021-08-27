@@ -1,2 +1,4 @@
-file:src/test/java/platformfeatures/PF_Order.feature:17:31:41:51:64:74:85
+file:src/test/java/platformfeatures/APF_Login.feature:11:19:27
+file:src/test/java/platformfeatures/PF_Order.feature:37:76:93
+file:src/test/java/platformfeatures/PF_MemberShipStatus.feature:5:19
 file:src/test/java/platformfeatures/PF_InvalidCC.feature:4
