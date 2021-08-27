@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>SingleBrowserTest</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>16/8/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>22/9/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Aug 18 18:26:17 IST 2021</td>
+<td>Started on:</td><td>Fri Aug 27 15:22:54 IST 2021</td>
 </tr>
-<tr><td>Total time:</td><td>1107 seconds (1107616 ms)</td>
+<tr><td>Total time:</td><td>2779 seconds (2779417 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,16 +75,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate order with valid con store", "Optional[Validate order flow]"</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@href=&apos;/product-list&apos;]&quot;}
-  (Session info: chrome=92.0.4515.131)
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate prime with valid Credit Card and check on order history,service you are using and membership page", "Optional[Validate order flow]"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;box-order-confirm__des&apos;]//p[2]&quot;}
+  (Session info: chrome=92.0.4515.159)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;192.168.0.7&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
+System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;11.11.0.33&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-*** Element info: {Using=xpath, value=//a[@href=&apos;/product-list&apos;]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
+*** Element info: {Using=xpath, value=//div[@class=&apos;box-order-confirm__des&apos;]//p[2]}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -97,21 +97,21 @@ Session ID: b954ca9dc2b818c982690f899977d0bd
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy45.click(Unknown Source)
-	at platform.pageobjects.Order.Order.select1stCasecProduct(Order.java:357)
-	at platformstepdefinition.PF_Order.select_1st_product_from_product_list_page(PF_Order.java:34)
-	at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:54)
-... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace208719072", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace208719072'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@href=&apos;/product-list&apos;]&quot;}
-  (Session info: chrome=92.0.4515.131)
+	at com.sun.proxy.$Proxy46.getText(Unknown Source)
+	at platform.pageobjects.Order.Order.comparePrimeDataOnOrderStep2(Order.java:964)
+	at platformstepdefinition.PF_Order.compare_prime_data_on_order_step_2_page(PF_Order.java:69)
+	at ✽.Compare Prime Data On Order Step 2 Page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:82)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1156306505", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1156306505'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;box-order-confirm__des&apos;]//p[2]&quot;}
+  (Session info: chrome=92.0.4515.159)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;192.168.0.7&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
+System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;11.11.0.33&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-*** Element info: {Using=xpath, value=//a[@href=&apos;/product-list&apos;]}
-	at sun.reflect.GeneratedConstructorAccessor73.newInstance(Unknown Source)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
+*** Element info: {Using=xpath, value=//div[@class=&apos;box-order-confirm__des&apos;]//p[2]}
+	at sun.reflect.GeneratedConstructorAccessor47.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
@@ -126,82 +126,22 @@ Session ID: b954ca9dc2b818c982690f899977d0bd
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy45.click(Unknown Source)
-	at platform.pageobjects.Order.Order.select1stCasecProduct(Order.java:357)
-	at platformstepdefinition.PF_Order.select_1st_product_from_product_list_page(PF_Order.java:34)
-	at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:54)
+	at com.sun.proxy.$Proxy46.getText(Unknown Source)
+	at platform.pageobjects.Order.Order.comparePrimeDataOnOrderStep2(Order.java:964)
+	at platformstepdefinition.PF_Order.compare_prime_data_on_order_step_2_page(PF_Order.java:69)
+	at ✽.Compare Prime Data On Order Step 2 Page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:82)
 </pre></div></td>
-<td>23</td>
+<td>247</td>
 <td>platformrunner.Runner@16fdec90</td></tr>
 <tr>
-<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Invalid Credit Card", "Optional[Validate Invalid credit card no]"</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;cardno&apos;]&quot;}
-  (Session info: chrome=92.0.4515.131)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate order with Blank valid Credit Card", "Optional[Validate order flow]"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 300.000
+  (Session info: chrome=92.0.4515.159)
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;192.168.0.7&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
+System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;11.11.0.33&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-*** Element info: {Using=xpath, value=//input[@id=&apos;cardno&apos;]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:458)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy45.sendKeys(Unknown Source)
-	at platform.pageobjects.MyPage.InvalidCC.InValidCreditcard(InvalidCC.java:91)
-	at platformstepdefinition.PF_InvalidCC.Enters_credit_card_details(PF_InvalidCC.java:50)
-	at ✽.Enters invalid credit card details(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_InvalidCC.feature:10)
-... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1609866245", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1609866245'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;cardno&apos;]&quot;}
-  (Session info: chrome=92.0.4515.131)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;192.168.0.7&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-*** Element info: {Using=xpath, value=//input[@id=&apos;cardno&apos;]}
-	at sun.reflect.GeneratedConstructorAccessor73.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:458)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy45.sendKeys(Unknown Source)
-	at platform.pageobjects.MyPage.InvalidCC.InValidCreditcard(InvalidCC.java:91)
-	at platformstepdefinition.PF_InvalidCC.Enters_credit_card_details(PF_InvalidCC.java:50)
-	at ✽.Enters invalid credit card details(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_InvalidCC.feature:10)
-</pre></div></td>
-<td>73</td>
-<td>platformrunner.Runner@16fdec90</td></tr>
-<tr>
-<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate order with valid Credit Card", "Optional[Validate order flow]"</td>
-<td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=92.0.4515.131)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
-Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;192.168.0.7&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -209,21 +149,18 @@ Session ID: b954ca9dc2b818c982690f899977d0bd
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)
-	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:160)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy45.getText(Unknown Source)
-	at platform.pageobjects.Order.Order.compareProductDataOnOrderStep3(Order.java:888)
-	at platformstepdefinition.PF_Order.compare_product_data_on_order_step_3_page(PF_Order.java:74)
-	at ✽.Compare Product Data On Order Step 3 Page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:24)
-... Removed 7 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1992813812", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1992813812'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=92.0.4515.131)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+	at platform.pageobjects.Order.Order.selectProductFromTestDataExcel(Order.java:449)
+	at platformstepdefinition.PF_Order.select_product_from_test_data_excel(PF_Order.java:34)
+	at ✽.Select product from test data excel(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:39)
+... Removed 4 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace71622668", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace71622668'><pre>org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 300.000
+  (Session info: chrome=92.0.4515.159)
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;192.168.0.7&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
+System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;11.11.0.33&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -235,29 +172,24 @@ Session ID: b954ca9dc2b818c982690f899977d0bd
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)
-	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:160)
-	at sun.reflect.GeneratedMethodAccessor7.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:483)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy45.getText(Unknown Source)
-	at platform.pageobjects.Order.Order.compareProductDataOnOrderStep3(Order.java:888)
-	at platformstepdefinition.PF_Order.compare_product_data_on_order_step_3_page(PF_Order.java:74)
-	at ✽.Compare Product Data On Order Step 3 Page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:24)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+	at platform.pageobjects.Order.Order.selectProductFromTestDataExcel(Order.java:449)
+	at platformstepdefinition.PF_Order.select_product_from_test_data_excel(PF_Order.java:34)
+	at ✽.Select product from test data excel(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:39)
 </pre></div></td>
-<td>64</td>
+<td>348</td>
 <td>platformrunner.Runner@16fdec90</td></tr>
 <tr>
-<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate order with Blank valid Credit Card", "Optional[Validate order flow]"</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@href=&apos;/product-list&apos;]&quot;}
-  (Session info: chrome=92.0.4515.131)
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Free and Prime Membership Plan Details", "Optional[Validate Membership Status information]"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[@class=&apos;ep-box-member__title&apos;]&quot;}
+  (Session info: chrome=92.0.4515.159)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;192.168.0.7&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
+System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;11.11.0.33&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-*** Element info: {Using=xpath, value=//a[@href=&apos;/product-list&apos;]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
+*** Element info: {Using=xpath, value=//p[@class=&apos;ep-box-member__title&apos;]}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -270,21 +202,21 @@ Session ID: b954ca9dc2b818c982690f899977d0bd
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy45.click(Unknown Source)
-	at platform.pageobjects.Order.Order.select1stCasecProduct(Order.java:357)
-	at platformstepdefinition.PF_Order.select_1st_product_from_product_list_page(PF_Order.java:34)
-	at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:44)
-... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace538022722", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace538022722'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@href=&apos;/product-list&apos;]&quot;}
-  (Session info: chrome=92.0.4515.131)
+	at com.sun.proxy.$Proxy46.isDisplayed(Unknown Source)
+	at platform.pageobjects.MyPage.MembershipStatus.CheckMemberShipStatus(MembershipStatus.java:95)
+	at platformstepdefinition.PF_MembershipStatus.Click_on_Membership_Status(PF_MembershipStatus.java:25)
+	at ✽.Click on Membership Status(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_MemberShipStatus.feature:22)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1909309639", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1909309639'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[@class=&apos;ep-box-member__title&apos;]&quot;}
+  (Session info: chrome=92.0.4515.159)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;192.168.0.7&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
+System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;11.11.0.33&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-*** Element info: {Using=xpath, value=//a[@href=&apos;/product-list&apos;]}
-	at sun.reflect.GeneratedConstructorAccessor73.newInstance(Unknown Source)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
+*** Element info: {Using=xpath, value=//p[@class=&apos;ep-box-member__title&apos;]}
+	at sun.reflect.GeneratedConstructorAccessor47.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
@@ -299,24 +231,42 @@ Session ID: b954ca9dc2b818c982690f899977d0bd
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy45.click(Unknown Source)
-	at platform.pageobjects.Order.Order.select1stCasecProduct(Order.java:357)
-	at platformstepdefinition.PF_Order.select_1st_product_from_product_list_page(PF_Order.java:34)
-	at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:44)
+	at com.sun.proxy.$Proxy46.isDisplayed(Unknown Source)
+	at platform.pageobjects.MyPage.MembershipStatus.CheckMemberShipStatus(MembershipStatus.java:95)
+	at platformstepdefinition.PF_MembershipStatus.Click_on_Membership_Status(PF_MembershipStatus.java:25)
+	at ✽.Click on Membership Status(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_MemberShipStatus.feature:22)
 </pre></div></td>
-<td>23</td>
+<td>53</td>
 <td>platformrunner.Runner@16fdec90</td></tr>
 <tr>
-<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate order with Blank Con store", "Optional[Validate order flow]"</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@href=&apos;/product-list&apos;]&quot;}
-  (Session info: chrome=92.0.4515.131)
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login with invalid password", "Optional[Validate new login]"</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at base.NewBaseClass.validateMessageFromExcel(NewBaseClass.java:416)
+	at platformstepdefinition.PF_Login.validate_that_error_is_displayed_for_invalid_password(PF_Login.java:131)
+	at ✽.Validate that error is displayed for invalid password(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/APF_Login.feature:23)
+... Removed 4 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace985663036", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace985663036'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertTrue(Assert.java:45)
+	at org.testng.Assert.assertTrue(Assert.java:55)
+	at base.NewBaseClass.validateMessageFromExcel(NewBaseClass.java:416)
+	at platformstepdefinition.PF_Login.validate_that_error_is_displayed_for_invalid_password(PF_Login.java:131)
+	at ✽.Validate that error is displayed for invalid password(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/APF_Login.feature:23)
+</pre></div></td>
+<td>15</td>
+<td>platformrunner.Runner@16fdec90</td></tr>
+<tr>
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Invalid Credit Card", "Optional[Validate Invalid credit card no]"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;cardno&apos;]&quot;}
+  (Session info: chrome=92.0.4515.159)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;192.168.0.7&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
+System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;11.11.0.33&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-*** Element info: {Using=xpath, value=//a[@href=&apos;/product-list&apos;]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
+*** Element info: {Using=xpath, value=//input[@id=&apos;cardno&apos;]}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -329,21 +279,21 @@ Session ID: b954ca9dc2b818c982690f899977d0bd
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy45.click(Unknown Source)
-	at platform.pageobjects.Order.Order.select1stCasecProduct(Order.java:357)
-	at platformstepdefinition.PF_Order.select_1st_product_from_product_list_page(PF_Order.java:34)
-	at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:77)
-... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace696796945", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace696796945'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@href=&apos;/product-list&apos;]&quot;}
-  (Session info: chrome=92.0.4515.131)
+	at com.sun.proxy.$Proxy46.sendKeys(Unknown Source)
+	at platform.pageobjects.MyPage.InvalidCC.InValidCreditcard(InvalidCC.java:91)
+	at platformstepdefinition.PF_InvalidCC.Enters_credit_card_details(PF_InvalidCC.java:50)
+	at ✽.Enters invalid credit card details(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_InvalidCC.feature:10)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1573991485", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1573991485'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;cardno&apos;]&quot;}
+  (Session info: chrome=92.0.4515.159)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;192.168.0.7&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
+System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;11.11.0.33&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-*** Element info: {Using=xpath, value=//a[@href=&apos;/product-list&apos;]}
-	at sun.reflect.GeneratedConstructorAccessor73.newInstance(Unknown Source)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
+*** Element info: {Using=xpath, value=//input[@id=&apos;cardno&apos;]}
+	at sun.reflect.GeneratedConstructorAccessor47.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
@@ -358,24 +308,24 @@ Session ID: b954ca9dc2b818c982690f899977d0bd
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy45.click(Unknown Source)
-	at platform.pageobjects.Order.Order.select1stCasecProduct(Order.java:357)
-	at platformstepdefinition.PF_Order.select_1st_product_from_product_list_page(PF_Order.java:34)
-	at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:77)
+	at com.sun.proxy.$Proxy46.sendKeys(Unknown Source)
+	at platform.pageobjects.MyPage.InvalidCC.InValidCreditcard(InvalidCC.java:91)
+	at platformstepdefinition.PF_InvalidCC.Enters_credit_card_details(PF_InvalidCC.java:50)
+	at ✽.Enters invalid credit card details(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_InvalidCC.feature:10)
 </pre></div></td>
-<td>23</td>
+<td>67</td>
 <td>platformrunner.Runner@16fdec90</td></tr>
 <tr>
-<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate order with In valid Credit Card", "Optional[Validate order flow]"</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@href=&apos;/product-list&apos;]&quot;}
-  (Session info: chrome=92.0.4515.131)
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Membership Status information", "Optional[Validate Membership Status information]"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[@class=&apos;ep-box-member__title&apos;]&quot;}
+  (Session info: chrome=92.0.4515.159)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;192.168.0.7&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
+System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;11.11.0.33&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-*** Element info: {Using=xpath, value=//a[@href=&apos;/product-list&apos;]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
+*** Element info: {Using=xpath, value=//p[@class=&apos;ep-box-member__title&apos;]}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -388,21 +338,21 @@ Session ID: b954ca9dc2b818c982690f899977d0bd
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy45.click(Unknown Source)
-	at platform.pageobjects.Order.Order.select1stCasecProduct(Order.java:357)
-	at platformstepdefinition.PF_Order.select_1st_product_from_product_list_page(PF_Order.java:34)
-	at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:34)
-... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1752441119", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1752441119'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@href=&apos;/product-list&apos;]&quot;}
-  (Session info: chrome=92.0.4515.131)
+	at com.sun.proxy.$Proxy46.isDisplayed(Unknown Source)
+	at platform.pageobjects.MyPage.MembershipStatus.CheckMemberShipStatus(MembershipStatus.java:95)
+	at platformstepdefinition.PF_MembershipStatus.Click_on_Membership_Status(PF_MembershipStatus.java:25)
+	at ✽.Click on Membership Status(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_MemberShipStatus.feature:8)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace753770689", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace753770689'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[@class=&apos;ep-box-member__title&apos;]&quot;}
+  (Session info: chrome=92.0.4515.159)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;192.168.0.7&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
+System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;11.11.0.33&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-*** Element info: {Using=xpath, value=//a[@href=&apos;/product-list&apos;]}
-	at sun.reflect.GeneratedConstructorAccessor73.newInstance(Unknown Source)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
+*** Element info: {Using=xpath, value=//p[@class=&apos;ep-box-member__title&apos;]}
+	at sun.reflect.GeneratedConstructorAccessor47.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
@@ -417,24 +367,60 @@ Session ID: b954ca9dc2b818c982690f899977d0bd
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy45.click(Unknown Source)
-	at platform.pageobjects.Order.Order.select1stCasecProduct(Order.java:357)
-	at platformstepdefinition.PF_Order.select_1st_product_from_product_list_page(PF_Order.java:34)
-	at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:34)
+	at com.sun.proxy.$Proxy46.isDisplayed(Unknown Source)
+	at platform.pageobjects.MyPage.MembershipStatus.CheckMemberShipStatus(MembershipStatus.java:95)
+	at platformstepdefinition.PF_MembershipStatus.Click_on_Membership_Status(PF_MembershipStatus.java:25)
+	at ✽.Click on Membership Status(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_MemberShipStatus.feature:8)
 </pre></div></td>
-<td>23</td>
+<td>32</td>
 <td>platformrunner.Runner@16fdec90</td></tr>
 <tr>
-<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate order with invalid con store", "Optional[Validate order flow]"</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@href=&apos;/product-list&apos;]&quot;}
-  (Session info: chrome=92.0.4515.131)
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login with invalid user name", "Optional[Validate new login]"</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at base.NewBaseClass.validateMessageFromExcel(NewBaseClass.java:416)
+	at platformstepdefinition.PF_Login.validate_that_error_is_displayed_for_invalid_user_name(PF_Login.java:114)
+	at ✽.Validate that error is displayed for invalid user name(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/APF_Login.feature:15)
+... Removed 4 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1325463165", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1325463165'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertTrue(Assert.java:45)
+	at org.testng.Assert.assertTrue(Assert.java:55)
+	at base.NewBaseClass.validateMessageFromExcel(NewBaseClass.java:416)
+	at platformstepdefinition.PF_Login.validate_that_error_is_displayed_for_invalid_user_name(PF_Login.java:114)
+	at ✽.Validate that error is displayed for invalid user name(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/APF_Login.feature:15)
+</pre></div></td>
+<td>16</td>
+<td>platformrunner.Runner@16fdec90</td></tr>
+<tr>
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login with invalid password", "Optional[Validate new login]"</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at base.NewBaseClass.validateMessageFromExcel(NewBaseClass.java:416)
+	at platformstepdefinition.PF_Login.validate_that_error_is_displayed_for_invalid_details(PF_Login.java:147)
+	at ✽.Validate that error is displayed for invalid details(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/APF_Login.feature:31)
+... Removed 4 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1934440976", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1934440976'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertTrue(Assert.java:45)
+	at org.testng.Assert.assertTrue(Assert.java:55)
+	at base.NewBaseClass.validateMessageFromExcel(NewBaseClass.java:416)
+	at platformstepdefinition.PF_Login.validate_that_error_is_displayed_for_invalid_details(PF_Login.java:147)
+	at ✽.Validate that error is displayed for invalid details(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/APF_Login.feature:31)
+</pre></div></td>
+<td>15</td>
+<td>platformrunner.Runner@16fdec90</td></tr>
+<tr>
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate refresh page for order with Existing valid Credit Card", "Optional[Validate order flow]"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;box-order-confirm__des&apos;]//p[2]&quot;}
+  (Session info: chrome=92.0.4515.159)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;192.168.0.7&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
+System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;11.11.0.33&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-*** Element info: {Using=xpath, value=//a[@href=&apos;/product-list&apos;]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
+*** Element info: {Using=xpath, value=//div[@class=&apos;box-order-confirm__des&apos;]//p[2]}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -447,21 +433,21 @@ Session ID: b954ca9dc2b818c982690f899977d0bd
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy45.click(Unknown Source)
-	at platform.pageobjects.Order.Order.select1stCasecProduct(Order.java:357)
-	at platformstepdefinition.PF_Order.select_1st_product_from_product_list_page(PF_Order.java:34)
-	at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:67)
-... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1468849584", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1468849584'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@href=&apos;/product-list&apos;]&quot;}
-  (Session info: chrome=92.0.4515.131)
+	at com.sun.proxy.$Proxy46.getText(Unknown Source)
+	at platform.pageobjects.Order.Order.compareProductDataOnOrderStep2(Order.java:830)
+	at platformstepdefinition.PF_Order.compare_product_data_on_order_step_2_page(PF_Order.java:64)
+	at ✽.Compare Product Data On Order Step 2 Page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:104)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace186231126", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace186231126'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;box-order-confirm__des&apos;]//p[2]&quot;}
+  (Session info: chrome=92.0.4515.159)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;192.168.0.7&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
+System info: host: &apos;DESKTOP-UN79FSK&apos;, ip: &apos;11.11.0.33&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_20&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55813}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b954ca9dc2b818c982690f899977d0bd
-*** Element info: {Using=xpath, value=//a[@href=&apos;/product-list&apos;]}
-	at sun.reflect.GeneratedConstructorAccessor73.newInstance(Unknown Source)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56740}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dae903d7aabdeeed9114ae657d19dae4
+*** Element info: {Using=xpath, value=//div[@class=&apos;box-order-confirm__des&apos;]//p[2]}
+	at sun.reflect.GeneratedConstructorAccessor47.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
@@ -476,32 +462,12 @@ Session ID: b954ca9dc2b818c982690f899977d0bd
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy45.click(Unknown Source)
-	at platform.pageobjects.Order.Order.select1stCasecProduct(Order.java:357)
-	at platformstepdefinition.PF_Order.select_1st_product_from_product_list_page(PF_Order.java:34)
-	at ✽.Select 1st product from product list page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:67)
+	at com.sun.proxy.$Proxy46.getText(Unknown Source)
+	at platform.pageobjects.Order.Order.compareProductDataOnOrderStep2(Order.java:830)
+	at platformstepdefinition.PF_Order.compare_product_data_on_order_step_2_page(PF_Order.java:64)
+	at ✽.Compare Product Data On Order Step 2 Page(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:104)
 </pre></div></td>
-<td>23</td>
-<td>platformrunner.Runner@16fdec90</td></tr>
-<tr>
-<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate prime with valid Credit Card and check on order history,service you are using and membership page", "Optional[Validate order flow]"</td>
-<td><div><pre>java.lang.NullPointerException
-	at java.io.StringReader.&lt;init&gt;(StringReader.java:50)
-	at java.util.Scanner.&lt;init&gt;(Scanner.java:702)
-	at platform.pageobjects.AccountServices.CreateAccountStep2.convertOTPToList(CreateAccountStep2.java:70)
-	at platform.pageobjects.AccountServices.CreateAccountStep2.addConfirmationCode(CreateAccountStep2.java:79)
-	at platformstepdefinition.PF_CreateAccount.enters_confirmation_code(PF_CreateAccount.java:107)
-	at ✽.enters confirmation code(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:90)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1107377405", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1107377405'><pre>java.lang.NullPointerException
-	at java.io.StringReader.&lt;init&gt;(StringReader.java:50)
-	at java.util.Scanner.&lt;init&gt;(Scanner.java:702)
-	at platform.pageobjects.AccountServices.CreateAccountStep2.convertOTPToList(CreateAccountStep2.java:70)
-	at platform.pageobjects.AccountServices.CreateAccountStep2.addConfirmationCode(CreateAccountStep2.java:79)
-	at platformstepdefinition.PF_CreateAccount.enters_confirmation_code(PF_CreateAccount.java:107)
-	at ✽.enters confirmation code(file:///D:/Sopan/Project/Automation/PlatformTesting/platform/./src/test/java/platformfeatures/PF_Order.feature:90)
-</pre></div></td>
-<td>39</td>
+<td>71</td>
 <td>platformrunner.Runner@16fdec90</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -512,84 +478,114 @@ Session ID: b954ca9dc2b818c982690f899977d0bd
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Account information  with Invalid data", "Optional[Validate Account information]"</td>
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate order with In valid Credit Card", "Optional[Validate order flow]"</td>
 <td></td>
-<td>26</td>
-<td>platformrunner.Runner@16fdec90</td></tr>
-<tr>
-<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Account information error with Invalid data", "Optional[Validate Account information]"</td>
-<td></td>
-<td>29</td>
-<td>platformrunner.Runner@16fdec90</td></tr>
-<tr>
-<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Footer on Order Screen One", "Optional[Validate footer links on Footer Sections]"</td>
-<td></td>
-<td>46</td>
-<td>platformrunner.Runner@16fdec90</td></tr>
-<tr>
-<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Membership Status information", "Optional[Validate Membership Status information]"</td>
-<td></td>
-<td>38</td>
-<td>platformrunner.Runner@16fdec90</td></tr>
-<tr>
-<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Membership Status information", "Optional[Validate Membership Status information]"</td>
-<td></td>
-<td>15</td>
-<td>platformrunner.Runner@16fdec90</td></tr>
-<tr>
-<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check Links on Terms and Conditions Page", "Optional[Validate footer links on Footer Sections]"</td>
-<td></td>
-<td>89</td>
-<td>platformrunner.Runner@16fdec90</td></tr>
-<tr>
-<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Footer on User Top Page", "Optional[Validate footer links on Footer Sections]"</td>
-<td></td>
-<td>24</td>
-<td>platformrunner.Runner@16fdec90</td></tr>
-<tr>
-<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate order with Existing valid Credit Card", "Optional[Validate order flow]"</td>
-<td></td>
-<td>105</td>
-<td>platformrunner.Runner@16fdec90</td></tr>
-<tr>
-<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Free and Prime Membership Plan Details", "Optional[Validate Membership Status information]"</td>
-<td></td>
-<td>16</td>
-<td>platformrunner.Runner@16fdec90</td></tr>
-<tr>
-<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Missing Values Of Account Information", "Optional[Validate Account information]"</td>
-<td></td>
-<td>27</td>
-<td>platformrunner.Runner@16fdec90</td></tr>
-<tr>
-<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User is clicking on Back button", "Optional[Withdraw user account]"</td>
-<td></td>
-<td>66</td>
+<td>94</td>
 <td>platformrunner.Runner@16fdec90</td></tr>
 <tr>
 <td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Account information with Valid data", "Optional[Validate Account information]"</td>
 <td></td>
-<td>44</td>
+<td>60</td>
 <td>platformrunner.Runner@16fdec90</td></tr>
 <tr>
-<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Footer on Order Screen Two and Three", "Optional[Validate footer links on Footer Sections]"</td>
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate order with valid con store", "Optional[Validate order flow]"</td>
 <td></td>
-<td>88</td>
+<td>121</td>
 <td>platformrunner.Runner@16fdec90</td></tr>
 <tr>
-<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Footer Links on Top Page", "Optional[Validate footer links on Footer Sections]"</td>
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate order with invalid con store", "Optional[Validate order flow]"</td>
 <td></td>
-<td>89</td>
+<td>92</td>
 <td>platformrunner.Runner@16fdec90</td></tr>
 <tr>
 <td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Footer on Account and Services Page", "Optional[Validate footer links on Footer Sections]"</td>
 <td></td>
-<td>28</td>
+<td>39</td>
+<td>platformrunner.Runner@16fdec90</td></tr>
+<tr>
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Product Filter feature for Free User", "Optional[Validate Product Filter feature]"</td>
+<td></td>
+<td>39</td>
+<td>platformrunner.Runner@16fdec90</td></tr>
+<tr>
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User is clicking on Top button in Withdrawal Page.", "Optional[Withdraw user account]"</td>
+<td></td>
+<td>55</td>
+<td>platformrunner.Runner@16fdec90</td></tr>
+<tr>
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate order with Existing valid Credit Card", "Optional[Validate order flow]"</td>
+<td></td>
+<td>220</td>
+<td>platformrunner.Runner@16fdec90</td></tr>
+<tr>
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Account information  with Invalid data", "Optional[Validate Account information]"</td>
+<td></td>
+<td>36</td>
+<td>platformrunner.Runner@16fdec90</td></tr>
+<tr>
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate order with valid Credit Card", "Optional[Validate order flow]"</td>
+<td></td>
+<td>173</td>
+<td>platformrunner.Runner@16fdec90</td></tr>
+<tr>
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User is clicking on Back button", "Optional[Withdraw user account]"</td>
+<td></td>
+<td>33</td>
+<td>platformrunner.Runner@16fdec90</td></tr>
+<tr>
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Footer on User Top Page", "Optional[Validate footer links on Footer Sections]"</td>
+<td></td>
+<td>39</td>
+<td>platformrunner.Runner@16fdec90</td></tr>
+<tr>
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Footer Links on Top Page", "Optional[Validate footer links on Footer Sections]"</td>
+<td></td>
+<td>164</td>
+<td>platformrunner.Runner@16fdec90</td></tr>
+<tr>
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Missing Values Of Account Information", "Optional[Validate Account information]"</td>
+<td></td>
+<td>44</td>
+<td>platformrunner.Runner@16fdec90</td></tr>
+<tr>
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate order with Blank Con store", "Optional[Validate order flow]"</td>
+<td></td>
+<td>82</td>
+<td>platformrunner.Runner@16fdec90</td></tr>
+<tr>
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate new login features", "Optional[Validate new login]"</td>
+<td></td>
+<td>27</td>
+<td>platformrunner.Runner@16fdec90</td></tr>
+<tr>
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check Links on Terms and Conditions Page", "Optional[Validate footer links on Footer Sections]"</td>
+<td></td>
+<td>120</td>
+<td>platformrunner.Runner@16fdec90</td></tr>
+<tr>
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Membership Status information", "Optional[Validate Membership Status information]"</td>
+<td></td>
+<td>105</td>
+<td>platformrunner.Runner@16fdec90</td></tr>
+<tr>
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Footer on Order Screen One", "Optional[Validate footer links on Footer Sections]"</td>
+<td></td>
+<td>62</td>
+<td>platformrunner.Runner@16fdec90</td></tr>
+<tr>
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Account information error with Invalid data", "Optional[Validate Account information]"</td>
+<td></td>
+<td>36</td>
+<td>platformrunner.Runner@16fdec90</td></tr>
+<tr>
+<td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Footer on Order Screen Two and Three", "Optional[Validate footer links on Footer Sections]"</td>
+<td></td>
+<td>123</td>
 <td>platformrunner.Runner@16fdec90</td></tr>
 <tr>
 <td title='platformrunner.Runner.runScenario()'><b>runScenario</b><br>Test class: platformrunner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User is withdrawing the account", "Optional[Withdraw user account]"</td>
 <td></td>
-<td>41</td>
+<td>112</td>
 <td>platformrunner.Runner@16fdec90</td></tr>
 </table><p>
 </body>

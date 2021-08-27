@@ -1561,3 +1561,841 @@
 18:44:00.067 [TestNG-tests-1] ERROR platform.pageobjects.Authentication.LoginPage - Withdrawal Link is not working
 18:44:03.346 [TestNG-tests-1] ERROR platform.pageobjects.Authentication.LoginPage - Back button is clickable
 18:44:38.980 [TestNG-tests-1] ERROR platform.pageobjects.Authentication.LoginPage - Withdrawal Link is not working
+15:23:11.707 [TestNG-tests-1] INFO  utils.ClosePopup - Zakai Popup Detected
+15:23:11.938 [TestNG-tests-1] INFO  utils.ClosePopup - Zakai Popup Closed
+15:23:14.533 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:23:30.461 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:23:30.461 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:23:40.269 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+15:23:41.819 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:23:51.339 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:23:53.374 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Re Login button is clicked
+15:23:56.370 [TestNG-tests-1] INFO  base.NewBaseClass - value :[InvalidUserNameError, メールアドレスは、メールアドレス形式で入力してください。]
+15:23:56.370 [TestNG-tests-1] INFO  base.NewBaseClass - expectedString :InvalidUserNameError
+15:23:56.436 [TestNG-tests-1] INFO  base.NewBaseClass - actualString :メールアドレスは、メールアドレス形式で入力してください。
+15:23:58.609 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:24:06.797 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:24:08.753 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Re Login button is clicked
+15:24:12.407 [TestNG-tests-1] INFO  base.NewBaseClass - value :[InvalidPasswordError, メールアドレスまたEiDまたはパスワードをご確認してください。]
+15:24:12.407 [TestNG-tests-1] INFO  base.NewBaseClass - expectedString :InvalidPasswordError
+15:24:12.465 [TestNG-tests-1] INFO  base.NewBaseClass - actualString :メールアドレスまたEiDまたはパスワードをご確認してください。
+15:24:15.011 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:24:23.353 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:24:25.423 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Re Login button is clicked
+15:24:28.434 [TestNG-tests-1] INFO  base.NewBaseClass - value :[InvalidDetailsError, メールアドレスは、メールアドレス形式で入力してください。]
+15:24:28.434 [TestNG-tests-1] INFO  base.NewBaseClass - expectedString :InvalidDetailsError
+15:24:28.481 [TestNG-tests-1] INFO  base.NewBaseClass - actualString :メールアドレスは、メールアドレス形式で入力してください。
+15:24:30.453 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:24:39.016 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:24:39.016 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:25:07.318 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Kanji Sur Name to 'kanji Sur Name' textbox
+15:25:08.185 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Kanji Name to 'kanji  Name' textbox
+15:25:09.043 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Kanji First Name to 'kanji First Name' textbox
+15:25:09.888 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Kanji Last Name to 'kanji Last Name' textbox
+15:25:10.962 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - selecting 'Birth year ' Dropdown
+15:25:11.328 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - selecting 'Birth month ' Dropdown
+15:25:11.668 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - selecting 'Birth date ' Dropdown
+15:25:12.568 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Postal Code to 'Postal Code 1' textbox
+15:25:13.473 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Postal Code to 'Postal Code 2' textbox
+15:25:13.940 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - selecting 'Address prefecture' Dropdown
+15:25:14.824 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Address City to 'Address City' textbox
+15:25:16.236 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Address Town to 'Address Town' textbox
+15:25:17.126 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Address Street to 'Address Street' textbox
+15:25:17.963 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Address Apartment to 'Address Apartment' textbox
+15:25:18.811 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Phone to 'Phone 1' textbox
+15:25:19.774 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Phone to 'Phone 2' textbox
+15:25:20.722 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Phone to 'Phone 3' textbox
+15:25:29.482 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+15:25:31.151 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:25:40.263 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:25:40.263 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:25:50.325 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Kanji Sur Name to 'kanji Sur Name' textbox
+15:25:51.157 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Kanji Name to 'kanji  Name' textbox
+15:25:51.983 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Kanji First Name to 'kanji First Name' textbox
+15:25:52.793 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Kanji Last Name to 'kanji Last Name' textbox
+15:25:53.622 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Postal Code to 'Postal Code 1' textbox
+15:25:54.444 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Postal Code to 'Postal Code 2' textbox
+15:25:55.484 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Address City to 'Address City' textbox
+15:25:56.915 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Address Town to 'Address Town' textbox
+15:25:57.758 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Address Street to 'Address Street' textbox
+15:25:58.605 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Address Apartment to 'Address Apartment' textbox
+15:25:59.435 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Phone to 'Phone 1' textbox
+15:26:00.267 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Phone to 'Phone 2' textbox
+15:26:01.128 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Phone to 'Phone 3' textbox
+15:26:05.709 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+15:26:07.105 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:26:15.893 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:26:15.893 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:26:26.865 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Kanji Sur Name to 'kanji Sur Name' textbox
+15:26:27.690 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Kanji Name to 'kanji  Name' textbox
+15:26:28.447 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Kanji First Name to 'kanji First Name' textbox
+15:26:29.177 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Kanji Last Name to 'kanji Last Name' textbox
+15:26:29.987 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Postal Code to 'Postal Code 1' textbox
+15:26:30.814 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Postal Code to 'Postal Code 2' textbox
+15:26:31.815 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Address City to 'Address City' textbox
+15:26:33.248 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Address Town to 'Address Town' textbox
+15:26:34.048 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Address Street to 'Address Street' textbox
+15:26:34.898 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Address Apartment to 'Address Apartment' textbox
+15:26:35.633 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Phone to 'Phone 1' textbox
+15:26:36.437 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Phone to 'Phone 2' textbox
+15:26:37.279 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - entering Invalid Phone to 'Phone 3' textbox
+15:26:41.844 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+15:26:43.364 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:26:53.015 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:26:53.015 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:27:26.241 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+15:27:28.708 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:27:38.999 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Terms of Use Link is working
+15:27:46.236 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Privacy Policy Link is working
+15:27:48.867 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Specified Commodity Trading Law Link is working
+15:27:57.132 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Q and A Link working
+15:28:06.654 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - footer Examination Window Link is working
+15:28:13.652 [TestNG-tests-1] ERROR platform.pageobjects.Footer.FooterPage_PT90_106 - footer Scbt Link is not working
+15:28:17.454 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - footer Casec Link is working
+15:28:55.062 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - footer Z-Kai Link is working
+15:28:59.894 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - footer Learning Window Link is working
+15:29:34.609 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - footer Stagia Eiken Link is working
+15:29:40.798 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - footer Stagia Kanken Link is working
+15:29:44.200 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - information Window Link is working
+15:29:46.539 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - cram School Pita Link is working
+15:29:53.076 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - stagia University Exam Link is working
+15:29:59.280 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - education CostConsulatation Support Link is working
+15:30:04.351 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Footer Login Link is working
+15:30:08.466 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Footer Registration Link is working
+15:30:11.813 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:30:20.289 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Terms of User Footer Link working
+15:30:23.287 [TestNG-tests-1] INFO  platform.pageobjects.Footer.TermsConditionsFooter - CASEC Link is working
+15:30:27.865 [TestNG-tests-1] INFO  platform.pageobjects.Footer.TermsConditionsFooter - Jyukupita is working
+15:30:30.714 [TestNG-tests-1] INFO  platform.pageobjects.Footer.TermsConditionsFooter - Study Gear University Entry Exam Link is working
+15:30:33.056 [TestNG-tests-1] INFO  platform.pageobjects.Footer.TermsConditionsFooter - University Consult Link is working
+15:30:41.957 [TestNG-tests-1] INFO  platform.pageobjects.Footer.TermsConditionsFooter - EiNavi Terms Link is working
+15:30:44.266 [TestNG-tests-1] INFO  platform.pageobjects.Footer.TermsConditionsFooter - JIEM Link is working
+15:30:46.798 [TestNG-tests-1] INFO  platform.pageobjects.Footer.TermsConditionsFooter - Support Link is working
+15:30:49.650 [TestNG-tests-1] INFO  platform.pageobjects.Footer.TermsConditionsFooter - Facebook Link is working
+15:30:56.043 [TestNG-tests-1] INFO  platform.pageobjects.Footer.TermsConditionsFooter - Facebook Output Link is working
+15:31:00.618 [TestNG-tests-1] INFO  platform.pageobjects.Footer.TermsConditionsFooter - Twitter Privacy Policy Link is working
+15:31:13.026 [TestNG-tests-1] INFO  platform.pageobjects.Footer.TermsConditionsFooter - Customized Ad Link is working
+15:31:17.555 [TestNG-tests-1] INFO  platform.pageobjects.Footer.TermsConditionsFooter - LINE Privacy Policy Link is working
+15:31:23.086 [TestNG-tests-1] INFO  platform.pageobjects.Footer.TermsConditionsFooter - LINE Behavioral Advertising Link is working
+15:31:27.050 [TestNG-tests-1] INFO  platform.pageobjects.Footer.TermsConditionsFooter - Amazon Target Ad Terms Link is working
+15:31:31.099 [TestNG-tests-1] INFO  platform.pageobjects.Footer.TermsConditionsFooter - Change Display Setting Link is working
+15:31:38.005 [TestNG-tests-1] INFO  platform.pageobjects.Footer.TermsConditionsFooter - Brain Pad Link is working
+15:31:45.708 [TestNG-tests-1] INFO  platform.pageobjects.Footer.TermsConditionsFooter - Everrise Link is working
+15:31:52.183 [TestNG-tests-1] INFO  platform.pageobjects.Footer.TermsConditionsFooter - Network Advertising Link is working
+15:32:04.675 [TestNG-tests-1] INFO  platform.pageobjects.Footer.TermsConditionsFooter - Aboutads Link is working
+15:32:09.250 [TestNG-tests-1] INFO  platform.pageobjects.Footer.TermsConditionsFooter - DDAI LINE Privacy Policy Link is working
+15:32:13.346 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:32:23.038 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Footer Login Link working
+15:32:29.639 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - QnA Link is working
+15:32:36.188 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Terms of Use Link is working
+15:32:42.735 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Privacy Policy Link is working
+15:32:49.240 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Account Tax Link working
+15:32:53.227 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:33:07.954 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:33:07.954 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:33:18.069 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - account Security Link is working
+15:33:20.161 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Membership Status Link is working
+15:33:22.437 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Services you are using Using Link is working
+15:33:25.492 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - order History Link is working
+15:33:27.545 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Withdrawal Link is working
+15:33:30.090 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Logout Link is working
+15:33:32.058 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:33:46.040 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:33:46.040 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:33:53.772 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Click on product list page
+15:33:58.080 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Click on buy button from product list page,select 1st product
+15:34:04.593 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - QnA Link is working
+15:34:12.165 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Order Footer Terms of Use Link is working
+15:34:19.216 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Privacy Policy Link is working
+15:34:27.885 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Order Footer Tax Link working
+15:34:35.801 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:34:39.686 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+15:34:47.006 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:34:47.006 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:34:56.935 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Click on product list page
+15:35:02.256 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Click on buy button from product list page,select 1st product
+15:35:34.272 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - go to relogin page
+15:35:39.816 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:35:39.816 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:36:02.314 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - QnA Link is working
+15:36:04.585 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Terms of Use Link is working
+15:36:11.499 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Privacy Policy Link is working
+15:36:13.783 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Account Tax Link working
+15:36:23.000 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - QnA Link is working
+15:36:26.728 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Terms of Use Link is working
+15:36:34.263 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Privacy Policy Link is working
+15:36:36.616 [TestNG-tests-1] INFO  platform.pageobjects.Footer.FooterPage_PT90_106 - Account Tax Link working
+15:36:39.057 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:36:44.592 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+15:36:44.729 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - New Prime User Email : TestPF1221+19082021181704@gmail.com
+15:36:44.729 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - New Prime User password : pfqa_123
+15:36:46.896 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:37:12.611 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - New Prime User Email : TestPF1221+19082021181704@gmail.com
+15:37:12.612 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - New Prime User password : pfqa_123
+15:37:49.633 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:37:58.993 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+15:38:05.028 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:38:05.028 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:38:31.624 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:39:00.495 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+15:39:07.656 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:39:07.656 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:39:27.941 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - user is not Prime member
+15:40:03.206 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+15:40:14.811 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:40:35.833 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:40:35.833 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:41:09.145 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:41:23.062 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+15:41:25.635 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:41:25.635 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:41:45.429 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+15:41:51.729 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total Pages 4
+15:41:55.800 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on page no 1
+15:41:55.853 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total product contatiner in Page 3
+15:41:55.904 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:41:55.921 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム１ヶ月
+15:41:55.935 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム３ヶ月
+15:41:55.967 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム６ヶ月
+15:41:56.003 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:41:56.031 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム１ヶ月
+15:41:56.061 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム３ヶ月
+15:41:56.093 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム６ヶ月
+15:41:56.120 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:41:56.152 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム１ヶ月
+15:41:56.188 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム３ヶ月
+15:41:56.219 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム６ヶ月
+15:41:56.219 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - This is product 3 Of 3 Total Cards
+15:41:56.280 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 2000
+15:42:08.445 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+15:42:16.354 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total Pages 4
+15:42:21.430 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on page no 1
+15:42:21.465 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total product contatiner in Page 3
+15:42:21.496 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:42:21.514 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム１ヶ月
+15:42:21.546 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム３ヶ月
+15:42:21.571 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム６ヶ月
+15:42:21.588 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:42:21.612 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム１ヶ月
+15:42:21.634 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム３ヶ月
+15:42:21.651 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム６ヶ月
+15:42:21.665 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:42:21.681 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム１ヶ月
+15:42:21.699 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム３ヶ月
+15:42:21.726 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム６ヶ月
+15:42:21.727 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - This is product 3 Of 3 Total Cards
+15:42:21.772 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 2000
+15:42:25.325 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product name from product list page:- スタギア漢検３級プレミアム６ヶ月
+15:42:25.325 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product price from product list page:- 2000
+15:42:25.992 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text スタギア漢検３級プレミアム６ヶ月 with スタギア漢検３級プレミアム６ヶ月
+15:42:25.992 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 product name match with product name from product list page
+15:42:26.659 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Billed amount:- 2000
+15:42:26.660 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 2000 with 2000
+15:42:26.660 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+15:42:32.885 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 1 tab :- click to 'To payment method selection' button
+15:42:37.813 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - go to relogin page
+15:42:43.274 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:42:43.274 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:43:00.169 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text スタギア漢検３級プレミアム６ヶ月 with スタギア漢検３級プレミアム６ヶ月
+15:43:00.169 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 2 product name match with product name from product list page
+15:43:00.825 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 2 Billed amount:- 2000
+15:43:00.825 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 2000 with 2000
+15:43:00.825 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+15:43:04.676 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'Confirmation of order details' button
+15:43:05.353 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text スタギア漢検３級プレミアム６ヶ月 with スタギア漢検３級プレミアム６ヶ月
+15:43:05.353 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 product name match with product name from product list page
+15:43:06.036 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 Billed amount:- 2000
+15:43:06.036 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 2000 with 2000
+15:43:06.036 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+15:43:09.917 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 3 tab :- click to 'Confirm the order' button
+15:43:13.119 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- thank You For Your Application text visible:- ご購入ありがとうございます。
+15:43:13.119 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text ご購入ありがとうございます。 with ご購入ありがとうございます。
+15:43:13.811 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Order number text visible:- ORD000000000000000007567
+15:43:14.407 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- order history link visible
+15:43:15.073 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- start now button visible:- 今すぐはじめる
+15:43:15.073 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 今すぐはじめる with 今すぐはじめる
+15:43:15.705 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Frequently Asked Questions / Inquiries link visible
+15:43:16.322 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Terms of use ・ Handling of personal information link visible
+15:43:16.949 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- privacy policy link visible
+15:43:17.549 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Display based on the Specified Commercial Transactions Law link visible
+15:43:18.411 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- click on FAQ and it open in new browser tab
+15:43:24.247 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- click on terms Of Use Link and it open in new browser tab
+15:43:30.104 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- click on privery policy Link and it open in new browser tab
+15:43:35.932 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- click on commercial transaction law Link and it open in new browser tab
+15:43:35.969 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to commercial Transactions page
+15:43:40.309 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - commercial Transactions text visible on commercial Transactions page
+15:43:40.397 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to privacy Policy page
+15:43:41.583 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - privacy Policy text visible on privacy Policy Page
+15:43:41.681 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to Terms of Service page
+15:43:42.326 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - STAGIA Terms of Service visible on FAQ page
+15:43:42.417 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to FAQ page
+15:43:43.065 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - FAQ logo visible on FAQ page
+15:43:43.146 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to thank you page again
+15:43:43.147 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Order number from thank you page,now can use to next method:- ORD000000000000000007567
+15:43:43.200 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Store Order Number from CreditCardThankYouPage:- ORD000000000000000007567
+15:43:58.157 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- buy again button visible 再度購入
+15:43:58.157 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 再度購入 with 再度購入
+15:43:58.862 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- order number is ORD000000000000000007567
+15:43:58.862 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text ORD000000000000000007567 with ORD000000000000000007567
+15:43:59.536 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- payment status is Payment confirmed 支払い確認済み
+15:43:59.537 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 支払い確認済み with 支払い確認済み
+15:44:00.214 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- product name is スタギア漢検３級プレミアム６ヶ月
+15:44:00.898 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- product price is 2,000円（税込）
+15:44:01.559 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- order date is 注文日: 2021-08-27
+15:44:01.559 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 2021-08-27 with 2021-08-27
+15:44:37.595 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+15:45:16.703 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:45:28.662 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:45:28.662 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:45:38.403 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+15:45:41.574 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total Pages 4
+15:45:42.790 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on page no 1
+15:45:42.814 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total product contatiner in Page 3
+15:45:42.831 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:45:42.851 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム１ヶ月
+15:45:42.881 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム３ヶ月
+15:45:42.911 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム６ヶ月
+15:45:42.940 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:45:42.974 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム１ヶ月
+15:45:43.005 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム３ヶ月
+15:45:43.043 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム６ヶ月
+15:45:43.078 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:45:43.109 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム１ヶ月
+15:45:43.150 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム３ヶ月
+15:45:43.189 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム６ヶ月
+15:45:43.189 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - This is product 3 Of 3 Total Cards
+15:45:43.263 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 2000
+15:45:49.013 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+15:45:53.209 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total Pages 4
+15:45:54.638 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on page no 1
+15:45:54.659 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total product contatiner in Page 3
+15:45:54.675 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:45:54.700 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム１ヶ月
+15:45:54.726 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム３ヶ月
+15:45:54.759 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム６ヶ月
+15:45:54.790 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:45:54.835 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム１ヶ月
+15:45:54.877 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム３ヶ月
+15:45:54.910 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム６ヶ月
+15:45:54.929 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:45:54.958 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム１ヶ月
+15:45:54.990 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム３ヶ月
+15:45:55.023 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム６ヶ月
+15:45:55.024 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - This is product 3 Of 3 Total Cards
+15:45:55.084 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 2000
+15:45:57.824 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product name from product list page:- スタギア漢検３級プレミアム６ヶ月
+15:45:57.824 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product price from product list page:- 2000
+15:45:58.573 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text スタギア漢検３級プレミアム６ヶ月 with スタギア漢検３級プレミアム６ヶ月
+15:45:58.576 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 product name match with product name from product list page
+15:45:59.250 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Billed amount:- 2000
+15:45:59.250 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 2000 with 2000
+15:45:59.250 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+15:46:03.596 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 1 tab :- click to 'To payment method selection' button
+15:46:05.660 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - go to relogin page
+15:46:11.169 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:46:11.169 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:46:28.496 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'Register your credit card information' radio button
+15:46:29.384 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide card no to 'credit card number' textbox
+15:46:30.156 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide card holder name to 'card name' textbox
+15:46:30.927 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click on 'Expiration year' Dropdown
+15:46:38.565 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide security code to 'securitycode' textbox
+15:46:39.323 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click on 'Expiration Month'Dropdown
+15:46:39.728 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provided valid credit card data
+15:46:41.020 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'Confirmation of order details' button
+15:46:41.757 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text スタギア漢検３級プレミアム６ヶ月 with スタギア漢検３級プレミアム６ヶ月
+15:46:41.757 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 product name match with product name from product list page
+15:46:43.996 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 Billed amount:- 2000
+15:46:43.996 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 2000 with 2000
+15:46:43.996 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+15:46:48.096 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 3 tab :- click to 'Confirm the order' button
+15:46:50.909 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- thank You For Your Application text visible:- ご購入ありがとうございます。
+15:46:50.909 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text ご購入ありがとうございます。 with ご購入ありがとうございます。
+15:46:51.602 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Order number text visible:- ORD000000000000000007569
+15:46:52.250 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- order history link visible
+15:46:52.951 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- start now button visible:- 今すぐはじめる
+15:46:52.952 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 今すぐはじめる with 今すぐはじめる
+15:46:53.595 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Frequently Asked Questions / Inquiries link visible
+15:46:54.219 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Terms of use ・ Handling of personal information link visible
+15:46:54.850 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- privacy policy link visible
+15:46:55.479 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Display based on the Specified Commercial Transactions Law link visible
+15:46:56.291 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- click on FAQ and it open in new browser tab
+15:47:02.165 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- click on terms Of Use Link and it open in new browser tab
+15:47:08.029 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- click on privery policy Link and it open in new browser tab
+15:47:13.850 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- click on commercial transaction law Link and it open in new browser tab
+15:47:13.901 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to commercial Transactions page
+15:47:15.541 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - commercial Transactions text visible on commercial Transactions page
+15:47:15.589 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to privacy Policy page
+15:47:16.723 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - privacy Policy text visible on privacy Policy Page
+15:47:16.811 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to Terms of Service page
+15:47:17.443 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - STAGIA Terms of Service visible on FAQ page
+15:47:17.537 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to FAQ page
+15:47:18.150 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - FAQ logo visible on FAQ page
+15:47:18.222 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to thank you page again
+15:47:18.222 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Order number from thank you page,now can use to next method:- ORD000000000000000007569
+15:47:18.302 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Store Order Number from CreditCardThankYouPage:- ORD000000000000000007569
+15:47:21.776 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- buy again button visible 再度購入
+15:47:21.776 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 再度購入 with 再度購入
+15:47:22.453 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- order number is ORD000000000000000007569
+15:47:22.453 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text ORD000000000000000007569 with ORD000000000000000007569
+15:47:23.140 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- payment status is Payment confirmed 支払い確認済み
+15:47:23.141 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 支払い確認済み with 支払い確認済み
+15:47:23.799 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- product name is スタギア漢検３級プレミアム６ヶ月
+15:47:24.542 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- product price is 2,000円（税込）
+15:47:25.328 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- order date is 注文日: 2021-08-27
+15:47:25.329 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 2021-08-27 with 2021-08-27
+15:47:30.730 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+15:47:32.591 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:47:41.634 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:47:41.635 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:47:50.189 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+15:47:53.310 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total Pages 4
+15:47:54.017 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on page no 1
+15:47:54.039 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total product contatiner in Page 3
+15:47:54.065 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:47:54.092 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム１ヶ月
+15:47:54.117 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム３ヶ月
+15:47:54.141 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム６ヶ月
+15:47:54.165 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:47:54.189 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム１ヶ月
+15:47:54.212 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム３ヶ月
+15:47:54.242 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム６ヶ月
+15:47:54.261 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:47:54.284 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム１ヶ月
+15:47:54.307 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム３ヶ月
+15:47:54.334 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム６ヶ月
+15:47:54.334 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - This is product 3 Of 3 Total Cards
+15:47:54.410 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 2000
+15:47:57.919 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+15:48:00.464 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total Pages 4
+15:48:00.671 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on page no 1
+15:48:00.720 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total product contatiner in Page 3
+15:48:00.747 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:48:00.784 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム１ヶ月
+15:48:00.824 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム３ヶ月
+15:48:00.855 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム６ヶ月
+15:48:00.881 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:48:00.911 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム１ヶ月
+15:48:00.941 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム３ヶ月
+15:48:00.976 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム６ヶ月
+15:48:01.001 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:48:01.026 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム１ヶ月
+15:48:01.068 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム３ヶ月
+15:48:01.101 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム６ヶ月
+15:48:01.101 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - This is product 3 Of 3 Total Cards
+15:48:01.171 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 2000
+15:48:03.213 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product name from product list page:- スタギア漢検３級プレミアム６ヶ月
+15:48:03.213 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product price from product list page:- 2000
+15:48:03.966 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text スタギア漢検３級プレミアム６ヶ月 with スタギア漢検３級プレミアム６ヶ月
+15:48:03.966 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 product name match with product name from product list page
+15:48:04.798 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Billed amount:- 2000
+15:48:04.798 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 2000 with 2000
+15:48:04.798 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+15:48:08.542 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 1 tab :- click to 'To payment method selection' button
+15:48:11.049 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - go to relogin page
+15:48:16.640 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:48:16.641 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:48:33.906 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'Register your credit card information' radio button
+15:48:34.765 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide invalid card no to 'credit card number' textbox
+15:48:35.511 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide card holder name to 'card name' textbox
+15:48:36.327 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click on 'Expiration year' Dropdown
+15:48:43.853 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide security code to 'securitycode' textbox
+15:48:44.570 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click on 'Expiration Month'Dropdown
+15:48:44.933 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provided invalid credit card data
+15:48:46.209 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'Confirmation of order details' button
+15:48:50.446 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text ご利用いただけないクレジットカードです。 with ご利用いただけないクレジットカードです。
+15:48:50.446 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The invalid credit card message match with our expected message
+15:49:05.282 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+15:49:13.001 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:49:28.915 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:49:28.916 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:49:40.802 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+15:49:46.607 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total Pages 4
+15:49:52.951 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on page no 1
+15:49:52.985 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total product contatiner in Page 3
+15:49:53.016 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:49:53.056 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム１ヶ月
+15:49:53.085 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム３ヶ月
+15:49:53.122 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム６ヶ月
+15:49:53.158 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:49:53.189 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム１ヶ月
+15:49:53.222 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム３ヶ月
+15:49:53.255 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム６ヶ月
+15:49:53.284 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:49:53.327 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム１ヶ月
+15:49:53.368 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム３ヶ月
+15:49:53.400 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム６ヶ月
+15:49:53.400 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - This is product 3 Of 3 Total Cards
+15:49:53.461 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 2000
+15:54:56.263 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:55:00.073 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+15:55:02.729 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:55:02.730 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:55:11.654 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+15:55:14.035 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total Pages 4
+15:55:14.579 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on page no 1
+15:55:14.601 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total product contatiner in Page 3
+15:55:14.617 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:55:14.634 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム１ヶ月
+15:55:14.661 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム３ヶ月
+15:55:14.683 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム６ヶ月
+15:55:14.701 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:55:14.724 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム１ヶ月
+15:55:14.747 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム３ヶ月
+15:55:14.765 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム６ヶ月
+15:55:14.786 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:55:14.809 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム１ヶ月
+15:55:14.830 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム３ヶ月
+15:55:14.852 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム６ヶ月
+15:55:14.852 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - This is product 3 Of 3 Total Cards
+15:55:14.891 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 2000
+15:55:18.949 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+15:55:21.828 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total Pages 4
+15:55:22.911 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on page no 1
+15:55:22.936 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total product contatiner in Page 3
+15:55:22.951 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:55:22.972 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム１ヶ月
+15:55:22.998 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム３ヶ月
+15:55:23.029 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム６ヶ月
+15:55:23.056 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:55:23.090 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム１ヶ月
+15:55:23.124 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム３ヶ月
+15:55:23.160 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム６ヶ月
+15:55:23.185 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:55:23.213 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム１ヶ月
+15:55:23.246 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム３ヶ月
+15:55:23.280 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム６ヶ月
+15:55:23.280 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - This is product 3 Of 3 Total Cards
+15:55:23.327 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 2000
+15:55:26.854 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product name from product list page:- スタギア漢検３級プレミアム６ヶ月
+15:55:26.854 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product price from product list page:- 2000
+15:55:27.517 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text スタギア漢検３級プレミアム６ヶ月 with スタギア漢検３級プレミアム６ヶ月
+15:55:27.517 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 product name match with product name from product list page
+15:55:28.180 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Billed amount:- 2000
+15:55:28.181 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 2000 with 2000
+15:55:28.181 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+15:55:30.381 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 1 tab :- click to 'To payment method selection' button
+15:55:32.228 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - go to relogin page
+15:55:37.667 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:55:37.667 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:55:54.750 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'convenience Store Payment' radio button
+15:55:55.699 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'lawson' radio button
+15:55:56.558 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide name 'kanji Name' textbox
+15:55:57.445 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide name 'kana Name' textbox
+15:55:58.315 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide phone no 'phone no' textbox
+15:55:59.254 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide email to 'email address' textbox
+15:56:02.343 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'Confirmation of order details' button
+15:56:03.057 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text スタギア漢検３級プレミアム６ヶ月 with スタギア漢検３級プレミアム６ヶ月
+15:56:03.058 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 product name match with product name from product list page
+15:56:03.724 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 3 Billed amount:- 2000
+15:56:03.724 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 2000 with 2000
+15:56:03.724 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+15:56:06.584 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 3 tab :- click to 'Confirm the order' button
+15:56:08.456 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- thank You For Your Application text visible:- お申し込みありがとうございます。
+15:56:09.145 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Customer Number text visible:- LW212391869465
+15:56:09.826 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- convenience store text visible:- ローソン
+15:56:10.499 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Authorization number text visible:- 8275
+15:56:11.185 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Payment deadline text visible:- 2021年08月31日　23時59分
+15:56:11.185 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Payment deadline text capture for compare with order history page:- 2021/08/31
+15:56:11.886 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- Order number text visible:- ORD000000000000000007576
+15:56:12.229 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- click on top page button and it open in new browser tab
+15:56:14.291 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to top page
+15:56:15.960 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Product list page visible on top page
+15:56:16.101 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to thank you page again
+15:56:17.095 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- click on FAQ and it open in new browser tab
+15:56:22.983 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- click on terms Of Use Link and it open in new browser tab
+15:56:28.968 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- click on privery policy Link and it open in new browser tab
+15:56:34.989 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- click on commercial transaction law Link and it open in new browser tab
+15:56:35.025 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to commercial Transactions page
+15:56:36.671 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - commercial Transactions text visible on commercial Transactions page
+15:56:36.768 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to privacy Policy page
+15:56:37.950 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - privacy Policy text visible on privacy Policy Page
+15:56:38.047 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to Terms of Service page
+15:56:38.691 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - STAGIA Terms of Service visible on FAQ page
+15:56:38.776 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to FAQ page
+15:56:39.443 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - FAQ logo visible on FAQ page
+15:56:39.522 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 4 tab :- switched to thank you page again
+15:56:39.522 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Payment dead line date from thank you page,now can use to next method:- 2021/08/31
+15:56:39.522 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Order number from thank you page,now can use to next method:-  ORD000000000000000007576
+15:56:39.591 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Store Payment Deadline from ConStoreThankYouPage:- 2021/08/31
+15:56:39.591 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Store Order Number from ConStoreThankYouPage:- ORD000000000000000007576
+15:56:42.632 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- actual Payment deadline date 2021/08/31
+15:56:42.632 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 2021/08/31 with 2021/08/31
+15:56:43.304 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- buy again button visible 再度購入
+15:56:43.304 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 再度購入 with 再度購入
+15:56:44.045 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- order number is ORD000000000000000007576
+15:56:44.045 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text ORD000000000000000007576 with ORD000000000000000007576
+15:56:44.773 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- payment status is Payment unconfirmed 支払い未確認
+15:56:44.773 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 支払い未確認 with 支払い未確認
+15:56:45.472 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- product name is スタギア漢検３級プレミアム６ヶ月
+15:56:46.155 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- product price is 2,000円（税込）
+15:56:47.999 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order history page:- order date is 
+15:56:55.882 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+15:56:59.841 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:57:12.753 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:57:12.753 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:57:24.053 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+15:57:26.890 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total Pages 4
+15:57:28.742 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on page no 1
+15:57:28.783 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total product contatiner in Page 3
+15:57:28.820 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:57:28.849 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム１ヶ月
+15:57:28.880 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム３ヶ月
+15:57:28.903 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム６ヶ月
+15:57:28.941 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:57:28.977 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム１ヶ月
+15:57:29.013 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム３ヶ月
+15:57:29.049 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム６ヶ月
+15:57:29.082 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:57:29.120 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム１ヶ月
+15:57:29.152 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム３ヶ月
+15:57:29.188 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム６ヶ月
+15:57:29.188 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - This is product 3 Of 3 Total Cards
+15:57:29.247 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 2000
+15:57:35.536 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+15:57:38.390 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total Pages 4
+15:57:39.833 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on page no 1
+15:57:39.853 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total product contatiner in Page 3
+15:57:39.879 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:57:39.910 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム１ヶ月
+15:57:39.949 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム３ヶ月
+15:57:39.978 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム６ヶ月
+15:57:40.002 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:57:40.035 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム１ヶ月
+15:57:40.065 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム３ヶ月
+15:57:40.100 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム６ヶ月
+15:57:40.131 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:57:40.169 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム１ヶ月
+15:57:40.196 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム３ヶ月
+15:57:40.232 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム６ヶ月
+15:57:40.232 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - This is product 3 Of 3 Total Cards
+15:57:40.276 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 2000
+15:57:44.115 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product name from product list page:- スタギア漢検３級プレミアム６ヶ月
+15:57:44.115 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product price from product list page:- 2000
+15:57:44.795 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text スタギア漢検３級プレミアム６ヶ月 with スタギア漢検３級プレミアム６ヶ月
+15:57:44.795 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 product name match with product name from product list page
+15:57:45.458 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Billed amount:- 2000
+15:57:45.458 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 2000 with 2000
+15:57:45.458 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+15:57:48.122 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 1 tab :- click to 'To payment method selection' button
+15:57:50.281 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - go to relogin page
+15:57:55.854 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:57:55.854 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:58:12.953 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'convenience Store Payment' radio button
+15:58:13.682 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'lawson' radio button
+15:58:14.573 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide name 'kanji Name' textbox
+15:58:15.404 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide name 'kana Name' textbox
+15:58:16.282 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide phone no 'phone no' textbox
+15:58:17.178 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- provide email to 'email address' textbox
+15:58:17.972 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'Confirmation of order details' button
+15:58:18.649 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 有効なメールアドレスを入力してください with 有効なメールアドレスを入力してください
+15:58:18.649 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The invalid email address of con store message match with our expected message
+15:58:28.027 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+15:58:30.752 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+15:58:42.706 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:58:42.706 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:58:51.746 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+15:58:55.004 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total Pages 4
+15:58:56.302 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on page no 1
+15:58:56.336 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total product contatiner in Page 3
+15:58:56.366 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:58:56.405 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム１ヶ月
+15:58:56.436 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム３ヶ月
+15:58:56.465 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム６ヶ月
+15:58:56.489 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:58:56.526 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム１ヶ月
+15:58:56.566 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム３ヶ月
+15:58:56.595 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム６ヶ月
+15:58:56.629 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:58:56.665 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム１ヶ月
+15:58:56.728 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム３ヶ月
+15:58:56.902 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム６ヶ月
+15:58:56.902 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - This is product 3 Of 3 Total Cards
+15:58:56.962 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 2000
+15:59:00.034 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+15:59:03.444 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total Pages 4
+15:59:06.341 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on page no 1
+15:59:06.364 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total product contatiner in Page 3
+15:59:06.377 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:59:06.403 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム１ヶ月
+15:59:06.433 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム３ヶ月
+15:59:06.461 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム６ヶ月
+15:59:06.471 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:59:06.492 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム１ヶ月
+15:59:06.508 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム３ヶ月
+15:59:06.580 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム６ヶ月
+15:59:06.640 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+15:59:06.670 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム１ヶ月
+15:59:06.695 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム３ヶ月
+15:59:06.709 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム６ヶ月
+15:59:06.709 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - This is product 3 Of 3 Total Cards
+15:59:06.741 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 2000
+15:59:10.288 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product name from product list page:- スタギア漢検３級プレミアム６ヶ月
+15:59:10.288 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product price from product list page:- 2000
+15:59:10.950 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text スタギア漢検３級プレミアム６ヶ月 with スタギア漢検３級プレミアム６ヶ月
+15:59:10.950 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 product name match with product name from product list page
+15:59:11.626 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Billed amount:- 2000
+15:59:11.626 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 2000 with 2000
+15:59:11.626 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+15:59:13.564 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 1 tab :- click to 'To payment method selection' button
+15:59:15.950 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - go to relogin page
+15:59:21.380 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:59:21.380 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+15:59:38.757 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'convenience Store Payment' radio button
+15:59:39.449 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'lawson' radio button
+15:59:40.108 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- clear 'kanji Name' textbox value
+15:59:40.749 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- clear 'kana Name' textbox value
+15:59:41.390 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- clear phone no 'phone no' textbox value
+15:59:42.089 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- clear 'email address' textbox value
+15:59:42.780 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 2 tab :- click to 'Confirmation of order details' button
+15:59:43.409 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 氏名（漢字）を入力してください with 氏名（漢字）を入力してください
+15:59:43.409 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The blank Kanji Name message match with our expected message
+15:59:44.069 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 氏名（カナ）を入力してください with 氏名（カナ）を入力してください
+15:59:44.070 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The blank Kana Name message match with our expected message
+15:59:44.704 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text 電話番号を入力してください with 電話番号を入力してください
+15:59:44.704 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The blank telephone number Name message match with our expected message
+15:59:50.859 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+15:59:53.557 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+16:00:03.533 [TestNG-tests-1] INFO  platformstepdefinition.Hooks - Follow create account steps before actual test case OrderPrimeWithValidCreditCard
+16:00:13.282 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+16:00:20.227 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Generated email:TestPF1221+27082021160020@gmail.com
+16:00:20.964 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Generated eid:TestPF1221_27082021160020
+16:01:56.405 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Password :pfqa_123
+16:02:01.747 [TestNG-tests-1] INFO  platformstepdefinition.PF_CreateAccount - inside validate_that_new_account_is_created()
+16:02:01.833 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created email:TestPF1221+27082021160020@gmail.com
+16:02:01.833 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created eid:TestPF1221_27082021160020
+16:02:01.833 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Created password:pfqa_123
+16:02:04.079 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - New User Email : TestPF1221+27082021160020@gmail.com
+16:02:04.079 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - New User password : pfqa_123
+16:02:05.363 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+16:02:15.472 [TestNG-tests-1] INFO  platformstepdefinition.PF_CreateAccount - New User is logged in
+16:02:16.593 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - New User Email : TestPF1221+27082021160020@gmail.com
+16:02:16.593 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - New User password : pfqa_123
+16:02:17.850 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+16:02:29.118 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on top Page Member Plan Link
+16:02:31.755 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click Apply For Prime Membership Button
+16:02:32.475 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text プライム会員プラン with プライム会員プラン
+16:02:32.476 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 product name match with product name from product list page
+16:02:33.127 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Billed amount:- 500
+16:02:33.127 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 500 with 500
+16:02:33.127 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+16:03:25.809 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 1 tab :- click to 'To payment method selection' button
+16:03:29.657 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - go to relogin page
+16:03:29.692 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - New User Email : TestPF1221+27082021160020@gmail.com
+16:03:29.692 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - New User password : pfqa_123
+16:04:00.881 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+16:04:06.353 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+16:04:10.258 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+16:04:10.258 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+16:04:17.162 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+16:04:21.630 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+16:04:24.403 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total Pages 4
+16:04:25.368 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on page no 1
+16:04:25.409 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total product contatiner in Page 3
+16:04:25.439 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+16:04:25.472 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム１ヶ月
+16:04:25.502 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム３ヶ月
+16:04:25.532 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム６ヶ月
+16:04:25.563 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+16:04:25.599 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム１ヶ月
+16:04:25.623 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム３ヶ月
+16:04:25.655 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム６ヶ月
+16:04:25.685 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+16:04:25.719 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム１ヶ月
+16:04:25.755 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム３ヶ月
+16:04:25.781 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム６ヶ月
+16:04:25.781 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - This is product 3 Of 3 Total Cards
+16:04:25.843 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 2000
+16:04:30.174 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on product list page
+16:04:35.311 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total Pages 4
+16:04:36.987 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Click on page no 1
+16:04:37.004 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total product contatiner in Page 3
+16:04:37.018 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+16:04:37.039 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム１ヶ月
+16:04:37.054 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム３ヶ月
+16:04:37.071 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検２級プレミアム６ヶ月
+16:04:37.082 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+16:04:37.103 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム１ヶ月
+16:04:37.117 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム３ヶ月
+16:04:37.134 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検準２級プレミアム６ヶ月
+16:04:37.145 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total products in Page 3
+16:04:37.169 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム１ヶ月
+16:04:37.197 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム３ヶ月
+16:04:37.216 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Total name on Page スタギア漢検３級プレミアム６ヶ月
+16:04:37.216 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - This is product 3 Of 3 Total Cards
+16:04:37.262 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - The product price from product list page 2000
+16:04:39.359 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product name from product list page:- スタギア漢検３級プレミアム６ヶ月
+16:04:39.359 [TestNG-tests-1] INFO  platformstepdefinition.PF_Order - Product price from product list page:- 2000
+16:04:39.981 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - step 1 Page Loaded Successfully
+16:04:41.052 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match text スタギア漢検３級プレミアム６ヶ月 with スタギア漢検３級プレミアム６ヶ月
+16:04:41.052 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 product name match with product name from product list page
+16:04:41.685 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Order Step 1 Billed amount:- 2000
+16:04:41.685 [TestNG-tests-1] INFO  utils.CommonFunctions - Try to match int value 2000 with 2000
+16:04:41.685 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - expected Billed Amount and amount came from product list is matched 
+16:04:43.979 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - Step 1 tab :- click to 'To payment method selection' button
+16:04:45.604 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - go to relogin page
+16:04:50.955 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+16:04:50.955 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+16:05:08.144 [TestNG-tests-1] INFO  platform.pageobjects.Order.Order - step 2 Page Loaded Successfully
+16:05:15.135 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+16:05:22.274 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+16:05:24.189 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+16:05:24.189 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+16:05:31.525 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is free user
+16:05:32.391 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - Free user is Selected CASEC product
+16:05:32.857 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - Total Pages 1
+16:05:33.649 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - Total cards in Page 2
+16:05:33.671 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is CASEC product card 0 Of 2 Total Cards
+16:05:33.701 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is CASEC product card 1 Of 2 Total Cards
+16:05:34.590 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - Free user is Selected Kanji Kaneti product
+16:05:36.402 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - Total Pages 4
+16:05:39.430 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - Total cards in Page 9
+16:05:39.454 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 0 Of 9 Total Cards
+16:05:39.483 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 1 Of 9 Total Cards
+16:05:39.515 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 2 Of 9 Total Cards
+16:05:39.546 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 3 Of 9 Total Cards
+16:05:39.584 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 4 Of 9 Total Cards
+16:05:39.617 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 5 Of 9 Total Cards
+16:05:39.640 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 6 Of 9 Total Cards
+16:05:39.670 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 7 Of 9 Total Cards
+16:05:39.708 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 8 Of 9 Total Cards
+16:05:40.986 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - Total cards in Page 9
+16:05:41.010 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 0 Of 9 Total Cards
+16:05:41.041 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 1 Of 9 Total Cards
+16:05:41.072 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 2 Of 9 Total Cards
+16:05:41.104 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 3 Of 9 Total Cards
+16:05:41.142 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 4 Of 9 Total Cards
+16:05:41.170 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 5 Of 9 Total Cards
+16:05:41.204 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 6 Of 9 Total Cards
+16:05:41.233 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 7 Of 9 Total Cards
+16:05:41.275 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 8 Of 9 Total Cards
+16:05:43.491 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - Total cards in Page 9
+16:05:43.517 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 0 Of 9 Total Cards
+16:05:43.545 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 1 Of 9 Total Cards
+16:05:43.577 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 2 Of 9 Total Cards
+16:05:43.606 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 3 Of 9 Total Cards
+16:05:43.639 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 4 Of 9 Total Cards
+16:05:43.669 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 5 Of 9 Total Cards
+16:05:43.698 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 6 Of 9 Total Cards
+16:05:43.732 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 7 Of 9 Total Cards
+16:05:43.764 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 8 Of 9 Total Cards
+16:05:45.608 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - Total cards in Page 3
+16:05:45.632 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 0 Of 3 Total Cards
+16:05:45.662 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 1 Of 3 Total Cards
+16:05:45.694 [TestNG-tests-1] INFO  platform.pageobjects.MyPage.ProductDetailsFilterValidation - This is Kanji Kaneti product card 2 Of 3 Total Cards
+16:05:50.205 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+16:05:57.597 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+16:06:05.752 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - New User Email : TestPF1221+27082021160020@gmail.com
+16:06:05.752 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - New User password : pfqa_123
+16:06:07.725 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+16:06:23.460 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Opened Withdrawal Link
+16:06:24.148 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Back button is clickable
+16:06:32.063 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+16:06:36.407 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+16:06:36.493 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - New User Email : TestPF1221+27082021160020@gmail.com
+16:06:36.493 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - New User password : pfqa_123
+16:06:38.478 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Login button is clicked
+16:07:16.261 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - Opened Withdrawal Link
+16:07:19.548 [TestNG-tests-1] INFO  platform.pageobjects.Withdrawal.Withdrawal_PT_111 - Top button is clickable
+16:07:25.079 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The home page is open
+16:07:30.152 [TestNG-tests-1] INFO  platform.pageobjects.Authentication.LoginPage - The user logout successfully
+16:08:41.458 [TestNG-tests-1] ERROR platform.pageobjects.Authentication.LoginPage - Withdrawal Link is not working

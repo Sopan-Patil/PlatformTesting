@@ -1,4 +1,4 @@
-package platform.pageobjects.Withdrawal_PT_111;
+package platform.pageobjects.Withdrawal;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
