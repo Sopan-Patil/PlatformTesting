@@ -1,6 +1,6 @@
 Feature: Validate buttons on member plan page
 
-@Smoke
+@MembershipPlan @Smoke
 Scenario: Validate all the buttons on member plan page
 
 When Login To PF Portal
