@@ -42,7 +42,7 @@ public class LoginScenarios extends TestBase {
 		} finally {
 
 			System.out.println("Updating TestCase Execution Status in TestLink");
-			TestLinkIntegration.updateTestLinkResults("Login Test Case Title", notes, result);
+			TestLinkIntegration.updateTestLinkResults("User is clicking on Back button", notes, result);
 
 		}
 
