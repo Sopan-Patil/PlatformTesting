@@ -8,16 +8,16 @@ import testlink.api.java.client.TestLinkAPIResults;
 
 public class LoginScenarios extends TestBase {
 
-	// String TC_Name = "TestJenkinsTestLink"; // Provide Test case Name form
+	String TC_Name = "Validate new login feature"; // Provide Test case Name form
 	String notes = null;
 	String result = null;
 
 	@Test
-	public void TestJenkinsTestLink() throws Exception {
+	public void ValidateNewLoginFeature() throws Exception {
 
 		try {
 
-			driver.findElement(By.xpath("//a[@class='button button--white3 button--medium button--header']")).click();
+			driver.findElement(By.xpath("//span[contains(text(),'ログイン')]")).click();
 			driver.findElement(By.xpath("//input[@id='email']")).sendKeys("Sopan181");
 			driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Test-123");
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -42,7 +42,7 @@ public class LoginScenarios extends TestBase {
 		} finally {
 
 			System.out.println("Updating TestCase Execution Status in TestLink");
-			TestLinkIntegration.updateTestLinkResults("User is clicking on Back button", notes, result);
+			TestLinkIntegration.updateTestLinkResults(TC_Name, notes, result);
 
 		}
 

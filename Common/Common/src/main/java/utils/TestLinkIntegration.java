@@ -4,11 +4,11 @@ import testlink.api.java.client.TestLinkAPIClient;
 import testlink.api.java.client.TestLinkAPIException;
 
 public class TestLinkIntegration {
-	public static String TESTER_KEY = "b23453325a8d8ca9159c1b40ad3b6855"; // Replace your TestLink API Key here
-	public static String TESTLINK_URL = "http://65.2.104.183/testlink/lib/api/xmlrpc/v1/xmlrpc.php"; // Replace your TestLink url
+	public static String TESTER_KEY = "m9lorab29d61r95sbfv65qjsi0"; // Replace your TestLink API Key here
+	public static String TESTLINK_URL = "http://3.108.83.117/testlink/lib/api/xmlrpc/v1/xmlrpc.php"; // Replace your TestLink url
 	public static final String TEST_PROJECT_NAME = "PlatformTestingQA"; // Provide Project Name form TestLink
 	public static final String TEST_PLAN_NAME = "Platform Testing Test Plan"; // Provide Test Plan Name form TestLink
-	public static final String BUILD_NAME = "Platform Testing Build1"; // Provide Build Name form TestLink
+	public static final String BUILD_NAME = "Platform Testing Build"; // Provide Build Name form TestLink
 
 	public static void updateTestLinkResults(String testCaseName, String exception, String Result)
 			throws TestLinkAPIException {
